@@ -1,0 +1,4485 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "Module__BountyManager__AlreadyClaimed",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Module__BountyManager__BountyLocked",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Module__BountyManager__ClaimExceedsGivenPayoutAmounts",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Module__BountyManager__ContributorsChanged",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Module__BountyManager__InvalidBountyId",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Module__BountyManager__InvalidClaimId",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Module__BountyManager__InvalidContributorAddress",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Module__BountyManager__InvalidContributorAmount",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Module__BountyManager__InvalidContributorsLength",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Module__BountyManager__InvalidPayoutAmounts",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Module__BountyManager__OnlyClaimContributor",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Module__ERC20PaymentClient__ArrayLengthMismatch",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Module__ERC20PaymentClient__CallerNotAuthorized",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Module__ERC20PaymentClient__InvalidAmount",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Module__ERC20PaymentClient__InvalidDueTo",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Module__ERC20PaymentClient__InvalidRecipient",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Module__ERC20PaymentClient__TokenTransferFailed",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "bountyId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "minimumPayoutAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "maximumPayoutAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "details",
+          "type": "bytes"
+        }
+      ],
+      "name": "BountyAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "bountyId",
+          "type": "uint256"
+        }
+      ],
+      "name": "BountyLocked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "bountyId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes",
+          "name": "details",
+          "type": "bytes"
+        }
+      ],
+      "name": "BountyUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "claimId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "bountyId",
+          "type": "uint256"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "addr",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "claimAmount",
+              "type": "uint256"
+            }
+          ],
+          "indexed": true,
+          "internalType": "struct IBountyManager.Contributor[]",
+          "name": "contributors",
+          "type": "tuple[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "details",
+          "type": "bytes"
+        }
+      ],
+      "name": "ClaimAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "claimId",
+          "type": "uint256"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "addr",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "claimAmount",
+              "type": "uint256"
+            }
+          ],
+          "indexed": true,
+          "internalType": "struct IBountyManager.Contributor[]",
+          "name": "contributors",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "ClaimContributorsUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "claimId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "details",
+          "type": "bytes"
+        }
+      ],
+      "name": "ClaimDetailsUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "claimId",
+          "type": "uint256"
+        }
+      ],
+      "name": "ClaimVerified",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "PaymentOrderAdded",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "minimumPayoutAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "maximumPayoutAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "details",
+          "type": "bytes"
+        }
+      ],
+      "name": "addBounty",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "bountyId",
+          "type": "uint256"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "addr",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "claimAmount",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IBountyManager.Contributor[]",
+          "name": "contributors",
+          "type": "tuple[]"
+        },
+        {
+          "internalType": "bytes",
+          "name": "details",
+          "type": "bytes"
+        }
+      ],
+      "name": "addClaim",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "amountPaid",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "collectPaymentOrders",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "createdAt",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "dueTo",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IERC20PaymentClient.PaymentOrder[]",
+          "name": "",
+          "type": "tuple[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "bountyId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getBountyInformation",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "minimumPayoutAmount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "maximumPayoutAmount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "details",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bool",
+              "name": "locked",
+              "type": "bool"
+            }
+          ],
+          "internalType": "struct IBountyManager.Bounty",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "claimId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getClaimInformation",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "bountyId",
+              "type": "uint256"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "addr",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "claimAmount",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct IBountyManager.Contributor[]",
+              "name": "contributors",
+              "type": "tuple[]"
+            },
+            {
+              "internalType": "bytes",
+              "name": "details",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bool",
+              "name": "claimed",
+              "type": "bool"
+            }
+          ],
+          "internalType": "struct IBountyManager.Claim",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "bountyId",
+          "type": "uint256"
+        }
+      ],
+      "name": "isExistingBountyId",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "claimId",
+          "type": "uint256"
+        }
+      ],
+      "name": "isExistingClaimId",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "listBountyIds",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "listClaimIds",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "contributorAddrs",
+          "type": "address"
+        }
+      ],
+      "name": "listClaimIdsForContributorAddress",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "bountyId",
+          "type": "uint256"
+        }
+      ],
+      "name": "lockBounty",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "outstandingTokenAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "paymentOrders",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "createdAt",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "dueTo",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IERC20PaymentClient.PaymentOrder[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "bountyId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "details",
+          "type": "bytes"
+        }
+      ],
+      "name": "updateBounty",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "claimId",
+          "type": "uint256"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "addr",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "claimAmount",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IBountyManager.Contributor[]",
+          "name": "contributors",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "updateClaimContributors",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "claimId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "details",
+          "type": "bytes"
+        }
+      ],
+      "name": "updateClaimDetails",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "claimId",
+          "type": "uint256"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "addr",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "claimAmount",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IBountyManager.Contributor[]",
+          "name": "contributors",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "verifyClaim",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "addBounty(uint256,uint256,bytes)": "bd769f79",
+    "addClaim(uint256,(address,uint256)[],bytes)": "0d97d72c",
+    "amountPaid(uint256)": "13e64063",
+    "collectPaymentOrders()": "c0231ff6",
+    "getBountyInformation(uint256)": "31be580e",
+    "getClaimInformation(uint256)": "cb05296f",
+    "isExistingBountyId(uint256)": "be5a5745",
+    "isExistingClaimId(uint256)": "e2114c8c",
+    "listBountyIds()": "b5e8bc45",
+    "listClaimIds()": "3cd6b5d1",
+    "listClaimIdsForContributorAddress(address)": "9c16f525",
+    "lockBounty(uint256)": "fa4dbd03",
+    "outstandingTokenAmount()": "a44a6bb2",
+    "paymentOrders()": "75fa0b76",
+    "updateBounty(uint256,bytes)": "31de0bdb",
+    "updateClaimContributors(uint256,(address,uint256)[])": "5beaeb8c",
+    "updateClaimDetails(uint256,bytes)": "2d54a71c",
+    "verifyClaim(uint256,(address,uint256)[])": "bf1f9656"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.23+commit.f704f362\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"Module__BountyManager__AlreadyClaimed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__BountyManager__BountyLocked\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__BountyManager__ClaimExceedsGivenPayoutAmounts\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__BountyManager__ContributorsChanged\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__BountyManager__InvalidBountyId\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__BountyManager__InvalidClaimId\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__BountyManager__InvalidContributorAddress\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__BountyManager__InvalidContributorAmount\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__BountyManager__InvalidContributorsLength\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__BountyManager__InvalidPayoutAmounts\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__BountyManager__OnlyClaimContributor\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__ERC20PaymentClient__ArrayLengthMismatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__ERC20PaymentClient__CallerNotAuthorized\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__ERC20PaymentClient__InvalidAmount\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__ERC20PaymentClient__InvalidDueTo\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__ERC20PaymentClient__InvalidRecipient\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__ERC20PaymentClient__TokenTransferFailed\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"minimumPayoutAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maximumPayoutAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"details\",\"type\":\"bytes\"}],\"name\":\"BountyAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"}],\"name\":\"BountyLocked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"bytes\",\"name\":\"details\",\"type\":\"bytes\"}],\"name\":\"BountyUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"claimId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"claimAmount\",\"type\":\"uint256\"}],\"indexed\":true,\"internalType\":\"struct IBountyManager.Contributor[]\",\"name\":\"contributors\",\"type\":\"tuple[]\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"details\",\"type\":\"bytes\"}],\"name\":\"ClaimAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"claimId\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"claimAmount\",\"type\":\"uint256\"}],\"indexed\":true,\"internalType\":\"struct IBountyManager.Contributor[]\",\"name\":\"contributors\",\"type\":\"tuple[]\"}],\"name\":\"ClaimContributorsUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"claimId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"details\",\"type\":\"bytes\"}],\"name\":\"ClaimDetailsUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"claimId\",\"type\":\"uint256\"}],\"name\":\"ClaimVerified\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"PaymentOrderAdded\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"minimumPayoutAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maximumPayoutAmount\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"details\",\"type\":\"bytes\"}],\"name\":\"addBounty\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"claimAmount\",\"type\":\"uint256\"}],\"internalType\":\"struct IBountyManager.Contributor[]\",\"name\":\"contributors\",\"type\":\"tuple[]\"},{\"internalType\":\"bytes\",\"name\":\"details\",\"type\":\"bytes\"}],\"name\":\"addClaim\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"amountPaid\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"collectPaymentOrders\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"dueTo\",\"type\":\"uint256\"}],\"internalType\":\"struct IERC20PaymentClient.PaymentOrder[]\",\"name\":\"\",\"type\":\"tuple[]\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"}],\"name\":\"getBountyInformation\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"minimumPayoutAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maximumPayoutAmount\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"details\",\"type\":\"bytes\"},{\"internalType\":\"bool\",\"name\":\"locked\",\"type\":\"bool\"}],\"internalType\":\"struct IBountyManager.Bounty\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"claimId\",\"type\":\"uint256\"}],\"name\":\"getClaimInformation\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"claimAmount\",\"type\":\"uint256\"}],\"internalType\":\"struct IBountyManager.Contributor[]\",\"name\":\"contributors\",\"type\":\"tuple[]\"},{\"internalType\":\"bytes\",\"name\":\"details\",\"type\":\"bytes\"},{\"internalType\":\"bool\",\"name\":\"claimed\",\"type\":\"bool\"}],\"internalType\":\"struct IBountyManager.Claim\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"}],\"name\":\"isExistingBountyId\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"claimId\",\"type\":\"uint256\"}],\"name\":\"isExistingClaimId\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"listBountyIds\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"listClaimIds\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"contributorAddrs\",\"type\":\"address\"}],\"name\":\"listClaimIdsForContributorAddress\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"}],\"name\":\"lockBounty\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"outstandingTokenAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paymentOrders\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"dueTo\",\"type\":\"uint256\"}],\"internalType\":\"struct IERC20PaymentClient.PaymentOrder[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"bountyId\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"details\",\"type\":\"bytes\"}],\"name\":\"updateBounty\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"claimId\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"claimAmount\",\"type\":\"uint256\"}],\"internalType\":\"struct IBountyManager.Contributor[]\",\"name\":\"contributors\",\"type\":\"tuple[]\"}],\"name\":\"updateClaimContributors\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"claimId\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"details\",\"type\":\"bytes\"}],\"name\":\"updateClaimDetails\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"claimId\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"claimAmount\",\"type\":\"uint256\"}],\"internalType\":\"struct IBountyManager.Contributor[]\",\"name\":\"contributors\",\"type\":\"tuple[]\"}],\"name\":\"verifyClaim\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"custom:moduletype\":\"logicModule\",\"custom:version\":\"1.0\",\"events\":{\"BountyAdded(uint256,uint256,uint256,bytes)\":{\"params\":{\"bountyId\":\"The id of the newly added Bounty.\",\"details\":\"The Bounty's details.\",\"maximumPayoutAmount\":\"The maximum amount of tokens the Bounty will pay out upon being claimed\",\"minimumPayoutAmount\":\"The minimum amount of tokens the Bounty will pay out upon being claimed\"}},\"BountyLocked(uint256)\":{\"params\":{\"bountyId\":\"The id of the locked Bounty.\"}},\"BountyUpdated(uint256,bytes)\":{\"params\":{\"bountyId\":\"The id of the updated Bounty.\",\"details\":\"The Bounty's details.\"}},\"ClaimAdded(uint256,uint256,(address,uint256)[],bytes)\":{\"params\":{\"bountyId\":\"The id of the Bounty that got claimed.\",\"claimId\":\"The id of the newly added Claim.\",\"contributors\":\"The contributor information for the Claim.\",\"details\":\"The Claim's details.\"}},\"ClaimContributorsUpdated(uint256,(address,uint256)[])\":{\"params\":{\"claimId\":\"The id of the Claim that got updated.\",\"contributors\":\"The contributor information for the Claim.\"}},\"ClaimDetailsUpdated(uint256,bytes)\":{\"params\":{\"claimId\":\"The id of the Claim that got updated.\",\"details\":\"The Claim's details.\"}},\"ClaimVerified(uint256)\":{\"params\":{\"claimId\":\"The id of the Claim that got verified.\"}},\"PaymentOrderAdded(address,uint256)\":{\"params\":{\"amount\":\"The amount of tokens the payment consists of.\",\"recipient\":\"The address that will receive the payment.\"}}},\"kind\":\"dev\",\"methods\":{\"addBounty(uint256,uint256,bytes)\":{\"custom:tags\":\"minimumPayoutAmount:decimal maximumPayoutAmount:decimal details:any(string)\",\"details\":\"Reverts if an argument invalid.\",\"params\":{\"details\":\"The Bounty's details.\",\"maximumPayoutAmount\":\"The maximum amount of tokens the Bounty will pay out upon being claimed\",\"minimumPayoutAmount\":\"The minimum amount of tokens the Bounty will pay out upon being claimed\"},\"returns\":{\"_0\":\"bountyId The newly added Bounty's id.\"}},\"addClaim(uint256,(address,uint256)[],bytes)\":{\"custom:tags\":\"claimAmount:decimal details:any(string)\",\"details\":\"Reverts if an argument invalid.\",\"params\":{\"contributors\":\"The contributor information for the Claim\",\"details\":\"The Claim's details.\"},\"returns\":{\"_0\":\"claimId The newly added Claim's id.\"}},\"amountPaid(uint256)\":{\"custom:tags\":\"amount:decimal\",\"details\":\"Payment Client will reduce the total amount of tokens it will stock up by the given amount This has to be called by a paymentProcessor\",\"params\":{\"amount\":\"amount of tokens that have been paid out\"}},\"collectPaymentOrders()\":{\"custom:tags\":\"amount:decimal outstandingTokenAmount:decimal\",\"details\":\"Marks the orders as completed for the client.      The responsibility to fulfill the orders are now in the caller's      hand!\",\"returns\":{\"_0\":\"paymentOrders list of payment orders\",\"_1\":\"outstandingTokenAmount total amount of token to pay\"}},\"getBountyInformation(uint256)\":{\"custom:tags\":\"minimumPayoutAmount:decimal maximumPayoutAmount:decimal details:any(string)\",\"params\":{\"bountyId\":\"The id of the Bounty to return.\"},\"returns\":{\"_0\":\"Bounty with id `id`.\"}},\"getClaimInformation(uint256)\":{\"custom:tags\":\"claimAmount:decimal details:any(string)\",\"params\":{\"claimId\":\"The id of the Claim to return.\"},\"returns\":{\"_0\":\"claim Claim with id `id`.\"}},\"isExistingBountyId(uint256)\":{\"params\":{\"bountyId\":\"The id of the Bounty to test.\"},\"returns\":{\"_0\":\"isExistingBountyId True if Claim with id `id` exists, false otherwise.\"}},\"isExistingClaimId(uint256)\":{\"params\":{\"claimId\":\"The id of the Bounty to test.\"},\"returns\":{\"_0\":\"isExistingBountyId True if Claim with id `id` exists, false otherwise.\"}},\"listBountyIds()\":{\"details\":\"List is in ascending order.\",\"returns\":{\"_0\":\"bountyIds List of Bounty ids.\"}},\"listClaimIds()\":{\"details\":\"List is in ascending order.\",\"returns\":{\"_0\":\"claimIds List of Claim ids.\"}},\"listClaimIdsForContributorAddress(address)\":{\"details\":\"List is in ascending order.Returns an empty .\",\"params\":{\"contributorAddrs\":\"claim ids are filtered by the contributor address\"},\"returns\":{\"_0\":\"claimIds List of Claim ids.\"}},\"lockBounty(uint256)\":{\"details\":\"Only callable by authorized addresses.Reverts if id invalid.\",\"params\":{\"bountyId\":\"The id of the Bounty that will be locked.\"}},\"outstandingTokenAmount()\":{\"custom:tags\":\"outstandingTokenAmount:decimal\",\"returns\":{\"_0\":\"outstandingTokenAmount Total outstanding token payment amount.\"}},\"paymentOrders()\":{\"custom:tags\":\"amount:decimal\",\"returns\":{\"_0\":\"paymentOrders List of outstanding payment orders.\"}},\"updateBounty(uint256,bytes)\":{\"custom:tags\":\"details:any(string)\",\"details\":\"Reverts if an argument invalid.\",\"params\":{\"bountyId\":\"The id of the Bounty that will be updated.\",\"details\":\"The Bounty's details.\"}},\"updateClaimContributors(uint256,(address,uint256)[])\":{\"custom:tags\":\"claimAmount:decimal\",\"details\":\"Reverts if an argument invalid.\",\"params\":{\"claimId\":\"The id of the Claim that will be updated.\",\"contributors\":\"The contributor information for the Claim.\"}},\"updateClaimDetails(uint256,bytes)\":{\"custom:tags\":\"details:any(string)\",\"params\":{\"claimId\":\"The id of the Claim that will be updated.\",\"details\":\"The Claim's details.\"}},\"verifyClaim(uint256,(address,uint256)[])\":{\"custom:tags\":\"claimAmount:decimal\",\"details\":\"Only callable by authorized addresses.Reverts if id invalid.contributors should be copied out of the given Claim. The parameter is used to prevent front running.\",\"params\":{\"claimId\":\"The id of the Claim that wants to claim the Bounty.\",\"contributors\":\"The contributor information for the Claim.\"}}},\"version\":1},\"userdoc\":{\"errors\":{\"Module__BountyManager__AlreadyClaimed()\":[{\"notice\":\"Given Claim id got already claimed\"}],\"Module__BountyManager__BountyLocked()\":[{\"notice\":\"Given Bounty id is Locked\"}],\"Module__BountyManager__ClaimExceedsGivenPayoutAmounts()\":[{\"notice\":\"Given total claims of contributors exceed or are below the given payout amounts of the bounty\"}],\"Module__BountyManager__ContributorsChanged()\":[{\"notice\":\"The given Contributors are not the same as in the claim. This might be connected to a tried front run of the given transaction.\"}],\"Module__BountyManager__InvalidBountyId()\":[{\"notice\":\"Given Bounty id is not existing\"}],\"Module__BountyManager__InvalidClaimId()\":[{\"notice\":\"Given Claim id is not existing\"}],\"Module__BountyManager__InvalidContributorAddress()\":[{\"notice\":\"Given Contributor address is invalid\"}],\"Module__BountyManager__InvalidContributorAmount()\":[{\"notice\":\"Given claim Amount for contributor is zero\"}],\"Module__BountyManager__InvalidContributorsLength()\":[{\"notice\":\"Given Contributors list is empty\"}],\"Module__BountyManager__InvalidPayoutAmounts()\":[{\"notice\":\"Given payoutAmounts are either zero or maximumPayoutAmount is smaller than minimumPayoutAmount\"}],\"Module__BountyManager__OnlyClaimContributor()\":[{\"notice\":\"Access only to addresses that are listed as contributors in the according claim\"}],\"Module__ERC20PaymentClient__ArrayLengthMismatch()\":[{\"notice\":\"Given arrays' length mismatch.\"}],\"Module__ERC20PaymentClient__CallerNotAuthorized()\":[{\"notice\":\"Function is only callable by authorized address.\"}],\"Module__ERC20PaymentClient__InvalidAmount()\":[{\"notice\":\"Given amount invalid.\"}],\"Module__ERC20PaymentClient__InvalidDueTo()\":[{\"notice\":\"Given dueTo invalid.\"}],\"Module__ERC20PaymentClient__InvalidRecipient()\":[{\"notice\":\"Given recipient invalid.\"}],\"Module__ERC20PaymentClient__TokenTransferFailed()\":[{\"notice\":\"ERC20 token transfer failed.\"}]},\"events\":{\"BountyAdded(uint256,uint256,uint256,bytes)\":{\"notice\":\"Event emitted when a new Bounty is added.\"},\"BountyLocked(uint256)\":{\"notice\":\"Event emitted when a Bounty gets locked.\"},\"BountyUpdated(uint256,bytes)\":{\"notice\":\"Event emitted when a Bounty got updated.\"},\"ClaimAdded(uint256,uint256,(address,uint256)[],bytes)\":{\"notice\":\"Event emitted when a new Claim is added.\"},\"ClaimContributorsUpdated(uint256,(address,uint256)[])\":{\"notice\":\"Event emitted when Claim Contributors got updated.\"},\"ClaimDetailsUpdated(uint256,bytes)\":{\"notice\":\"Event emitted when Claim Details got updated.\"},\"ClaimVerified(uint256)\":{\"notice\":\"Event emitted when a Claim is verified.\"},\"PaymentOrderAdded(address,uint256)\":{\"notice\":\"Added a payment order.\"}},\"kind\":\"user\",\"methods\":{\"addBounty(uint256,uint256,bytes)\":{\"notice\":\"Adds a new Bounty.\"},\"addClaim(uint256,(address,uint256)[],bytes)\":{\"notice\":\"Adds a new Claim.\"},\"amountPaid(uint256)\":{\"notice\":\"Notifies the PaymentClient, that tokens have been paid out accordingly\"},\"collectPaymentOrders()\":{\"notice\":\"Collects outstanding payment orders.\"},\"getBountyInformation(uint256)\":{\"notice\":\"Returns the Bounty instance with id `id`.\"},\"getClaimInformation(uint256)\":{\"notice\":\"Returns the Claim instance with id `id`.\"},\"isExistingBountyId(uint256)\":{\"notice\":\"Returns whether Bounty with id `id` exists.\"},\"isExistingClaimId(uint256)\":{\"notice\":\"Returns whether Claim with id `id` exists.\"},\"listBountyIds()\":{\"notice\":\"Returns total list of Bounty ids.\"},\"listClaimIds()\":{\"notice\":\"Returns total list of Claim ids.\"},\"listClaimIdsForContributorAddress(address)\":{\"notice\":\"Returns a list of Claim ids in which contributor Address is used.\"},\"lockBounty(uint256)\":{\"notice\":\"Locks the Bounty so it cant be claimed.\"},\"outstandingTokenAmount()\":{\"notice\":\"Returns the total outstanding token payment amount.\"},\"paymentOrders()\":{\"notice\":\"Returns the list of outstanding payment orders.\"},\"updateBounty(uint256,bytes)\":{\"notice\":\"Updates a Bounty's informations.\"},\"updateClaimContributors(uint256,(address,uint256)[])\":{\"notice\":\"Updates a Claim's contributor informations.\"},\"updateClaimDetails(uint256,bytes)\":{\"notice\":\"Updates a Claim Details.\"},\"verifyClaim(uint256,(address,uint256)[])\":{\"notice\":\"Completes a Bounty by verifying a claim.\"}},\"notice\":\"A module for managing bounties\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/modules/logicModule/IBountyManager.sol\":\"IBountyManager\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":5000},\"remappings\":[\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@oz-up/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@oz/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c\",\"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq\"]},\"src/modules/logicModule/IBountyManager.sol\":{\"keccak256\":\"0xc028aed4034f6dbc3083302aec6c0121354f036ab14a10ca64aa2d39c9b39a61\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://fb178d1bdca124ca7cf7a73dad818a3fc9c0649e7bf68e7b238d5121e58f40f6\",\"dweb:/ipfs/QmNz8taVG5CHEsv1wREMn4gvHiKuCZYhidfpq1p8kmyLEf\"]},\"src/modules/logicModule/paymentClient/IERC20PaymentClient.sol\":{\"keccak256\":\"0x8eb2a5e323299b5ea6c0dee1805031b2e1af48fcfe48653802ac4658b49eed28\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://aa47981b5dfc0e18f4ff7b2e5a4e25a39d2d20702fc0c7ae114b07f7402c143e\",\"dweb:/ipfs/QmbtyYqQttpYKj744fZkHvy8u2Fff9t2jDrpTR3GchPcKp\"]},\"src/modules/paymentProcessor/IPaymentProcessor.sol\":{\"keccak256\":\"0x03db27327e16d429f3e906b604de641e126313e07704fddbd2bc39035b0b23a1\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://b620ed08ea5973c00e897f5e2d8cb9dfe2851f80cf37d7e4e0a7963091f6cdba\",\"dweb:/ipfs/Qmcw1c1qrd7KpHWRSiSLyiDkKx4x8cRZfvtcYU962DHLFH\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.23+commit.f704f362"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Module__BountyManager__AlreadyClaimed"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Module__BountyManager__BountyLocked"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Module__BountyManager__ClaimExceedsGivenPayoutAmounts"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Module__BountyManager__ContributorsChanged"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Module__BountyManager__InvalidBountyId"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Module__BountyManager__InvalidClaimId"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Module__BountyManager__InvalidContributorAddress"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Module__BountyManager__InvalidContributorAmount"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Module__BountyManager__InvalidContributorsLength"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Module__BountyManager__InvalidPayoutAmounts"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Module__BountyManager__OnlyClaimContributor"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Module__ERC20PaymentClient__ArrayLengthMismatch"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Module__ERC20PaymentClient__CallerNotAuthorized"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Module__ERC20PaymentClient__InvalidAmount"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Module__ERC20PaymentClient__InvalidDueTo"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Module__ERC20PaymentClient__InvalidRecipient"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Module__ERC20PaymentClient__TokenTransferFailed"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "bountyId",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "minimumPayoutAmount",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "maximumPayoutAmount",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "bytes",
+              "name": "details",
+              "type": "bytes",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "BountyAdded",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "bountyId",
+              "type": "uint256",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "BountyLocked",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "bountyId",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "bytes",
+              "name": "details",
+              "type": "bytes",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "BountyUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "claimId",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "bountyId",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "struct IBountyManager.Contributor[]",
+              "name": "contributors",
+              "type": "tuple[]",
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "addr",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "claimAmount",
+                  "type": "uint256"
+                }
+              ],
+              "indexed": true
+            },
+            {
+              "internalType": "bytes",
+              "name": "details",
+              "type": "bytes",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "ClaimAdded",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "claimId",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "struct IBountyManager.Contributor[]",
+              "name": "contributors",
+              "type": "tuple[]",
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "addr",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "claimAmount",
+                  "type": "uint256"
+                }
+              ],
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "ClaimContributorsUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "claimId",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "bytes",
+              "name": "details",
+              "type": "bytes",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "ClaimDetailsUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "claimId",
+              "type": "uint256",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "ClaimVerified",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "PaymentOrderAdded",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "minimumPayoutAmount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "maximumPayoutAmount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "details",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "addBounty",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "bountyId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "struct IBountyManager.Contributor[]",
+              "name": "contributors",
+              "type": "tuple[]",
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "addr",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "claimAmount",
+                  "type": "uint256"
+                }
+              ]
+            },
+            {
+              "internalType": "bytes",
+              "name": "details",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "addClaim",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "amountPaid"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "collectPaymentOrders",
+          "outputs": [
+            {
+              "internalType": "struct IERC20PaymentClient.PaymentOrder[]",
+              "name": "",
+              "type": "tuple[]",
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "recipient",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "amount",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "createdAt",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "dueTo",
+                  "type": "uint256"
+                }
+              ]
+            },
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "bountyId",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getBountyInformation",
+          "outputs": [
+            {
+              "internalType": "struct IBountyManager.Bounty",
+              "name": "",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "minimumPayoutAmount",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "maximumPayoutAmount",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "details",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "locked",
+                  "type": "bool"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "claimId",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getClaimInformation",
+          "outputs": [
+            {
+              "internalType": "struct IBountyManager.Claim",
+              "name": "",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "bountyId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "struct IBountyManager.Contributor[]",
+                  "name": "contributors",
+                  "type": "tuple[]",
+                  "components": [
+                    {
+                      "internalType": "address",
+                      "name": "addr",
+                      "type": "address"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "claimAmount",
+                      "type": "uint256"
+                    }
+                  ]
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "details",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "claimed",
+                  "type": "bool"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "bountyId",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "isExistingBountyId",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "claimId",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "isExistingClaimId",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "listBountyIds",
+          "outputs": [
+            {
+              "internalType": "uint256[]",
+              "name": "",
+              "type": "uint256[]"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "listClaimIds",
+          "outputs": [
+            {
+              "internalType": "uint256[]",
+              "name": "",
+              "type": "uint256[]"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "contributorAddrs",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "listClaimIdsForContributorAddress",
+          "outputs": [
+            {
+              "internalType": "uint256[]",
+              "name": "",
+              "type": "uint256[]"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "bountyId",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "lockBounty"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "outstandingTokenAmount",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "paymentOrders",
+          "outputs": [
+            {
+              "internalType": "struct IERC20PaymentClient.PaymentOrder[]",
+              "name": "",
+              "type": "tuple[]",
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "recipient",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "amount",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "createdAt",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "dueTo",
+                  "type": "uint256"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "bountyId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "details",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "updateBounty"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "claimId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "struct IBountyManager.Contributor[]",
+              "name": "contributors",
+              "type": "tuple[]",
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "addr",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "claimAmount",
+                  "type": "uint256"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "updateClaimContributors"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "claimId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "details",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "updateClaimDetails"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "claimId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "struct IBountyManager.Contributor[]",
+              "name": "contributors",
+              "type": "tuple[]",
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "addr",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "claimAmount",
+                  "type": "uint256"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "verifyClaim"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "addBounty(uint256,uint256,bytes)": {
+            "custom:tags": "minimumPayoutAmount:decimal maximumPayoutAmount:decimal details:any(string)",
+            "details": "Reverts if an argument invalid.",
+            "params": {
+              "details": "The Bounty's details.",
+              "maximumPayoutAmount": "The maximum amount of tokens the Bounty will pay out upon being claimed",
+              "minimumPayoutAmount": "The minimum amount of tokens the Bounty will pay out upon being claimed"
+            },
+            "returns": {
+              "_0": "bountyId The newly added Bounty's id."
+            }
+          },
+          "addClaim(uint256,(address,uint256)[],bytes)": {
+            "custom:tags": "claimAmount:decimal details:any(string)",
+            "details": "Reverts if an argument invalid.",
+            "params": {
+              "contributors": "The contributor information for the Claim",
+              "details": "The Claim's details."
+            },
+            "returns": {
+              "_0": "claimId The newly added Claim's id."
+            }
+          },
+          "amountPaid(uint256)": {
+            "custom:tags": "amount:decimal",
+            "details": "Payment Client will reduce the total amount of tokens it will stock up by the given amount This has to be called by a paymentProcessor",
+            "params": {
+              "amount": "amount of tokens that have been paid out"
+            }
+          },
+          "collectPaymentOrders()": {
+            "custom:tags": "amount:decimal outstandingTokenAmount:decimal",
+            "details": "Marks the orders as completed for the client.      The responsibility to fulfill the orders are now in the caller's      hand!",
+            "returns": {
+              "_0": "paymentOrders list of payment orders",
+              "_1": "outstandingTokenAmount total amount of token to pay"
+            }
+          },
+          "getBountyInformation(uint256)": {
+            "custom:tags": "minimumPayoutAmount:decimal maximumPayoutAmount:decimal details:any(string)",
+            "params": {
+              "bountyId": "The id of the Bounty to return."
+            },
+            "returns": {
+              "_0": "Bounty with id `id`."
+            }
+          },
+          "getClaimInformation(uint256)": {
+            "custom:tags": "claimAmount:decimal details:any(string)",
+            "params": {
+              "claimId": "The id of the Claim to return."
+            },
+            "returns": {
+              "_0": "claim Claim with id `id`."
+            }
+          },
+          "isExistingBountyId(uint256)": {
+            "params": {
+              "bountyId": "The id of the Bounty to test."
+            },
+            "returns": {
+              "_0": "isExistingBountyId True if Claim with id `id` exists, false otherwise."
+            }
+          },
+          "isExistingClaimId(uint256)": {
+            "params": {
+              "claimId": "The id of the Bounty to test."
+            },
+            "returns": {
+              "_0": "isExistingBountyId True if Claim with id `id` exists, false otherwise."
+            }
+          },
+          "listBountyIds()": {
+            "details": "List is in ascending order.",
+            "returns": {
+              "_0": "bountyIds List of Bounty ids."
+            }
+          },
+          "listClaimIds()": {
+            "details": "List is in ascending order.",
+            "returns": {
+              "_0": "claimIds List of Claim ids."
+            }
+          },
+          "listClaimIdsForContributorAddress(address)": {
+            "details": "List is in ascending order.Returns an empty .",
+            "params": {
+              "contributorAddrs": "claim ids are filtered by the contributor address"
+            },
+            "returns": {
+              "_0": "claimIds List of Claim ids."
+            }
+          },
+          "lockBounty(uint256)": {
+            "details": "Only callable by authorized addresses.Reverts if id invalid.",
+            "params": {
+              "bountyId": "The id of the Bounty that will be locked."
+            }
+          },
+          "outstandingTokenAmount()": {
+            "custom:tags": "outstandingTokenAmount:decimal",
+            "returns": {
+              "_0": "outstandingTokenAmount Total outstanding token payment amount."
+            }
+          },
+          "paymentOrders()": {
+            "custom:tags": "amount:decimal",
+            "returns": {
+              "_0": "paymentOrders List of outstanding payment orders."
+            }
+          },
+          "updateBounty(uint256,bytes)": {
+            "custom:tags": "details:any(string)",
+            "details": "Reverts if an argument invalid.",
+            "params": {
+              "bountyId": "The id of the Bounty that will be updated.",
+              "details": "The Bounty's details."
+            }
+          },
+          "updateClaimContributors(uint256,(address,uint256)[])": {
+            "custom:tags": "claimAmount:decimal",
+            "details": "Reverts if an argument invalid.",
+            "params": {
+              "claimId": "The id of the Claim that will be updated.",
+              "contributors": "The contributor information for the Claim."
+            }
+          },
+          "updateClaimDetails(uint256,bytes)": {
+            "custom:tags": "details:any(string)",
+            "params": {
+              "claimId": "The id of the Claim that will be updated.",
+              "details": "The Claim's details."
+            }
+          },
+          "verifyClaim(uint256,(address,uint256)[])": {
+            "custom:tags": "claimAmount:decimal",
+            "details": "Only callable by authorized addresses.Reverts if id invalid.contributors should be copied out of the given Claim. The parameter is used to prevent front running.",
+            "params": {
+              "claimId": "The id of the Claim that wants to claim the Bounty.",
+              "contributors": "The contributor information for the Claim."
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "addBounty(uint256,uint256,bytes)": {
+            "notice": "Adds a new Bounty."
+          },
+          "addClaim(uint256,(address,uint256)[],bytes)": {
+            "notice": "Adds a new Claim."
+          },
+          "amountPaid(uint256)": {
+            "notice": "Notifies the PaymentClient, that tokens have been paid out accordingly"
+          },
+          "collectPaymentOrders()": {
+            "notice": "Collects outstanding payment orders."
+          },
+          "getBountyInformation(uint256)": {
+            "notice": "Returns the Bounty instance with id `id`."
+          },
+          "getClaimInformation(uint256)": {
+            "notice": "Returns the Claim instance with id `id`."
+          },
+          "isExistingBountyId(uint256)": {
+            "notice": "Returns whether Bounty with id `id` exists."
+          },
+          "isExistingClaimId(uint256)": {
+            "notice": "Returns whether Claim with id `id` exists."
+          },
+          "listBountyIds()": {
+            "notice": "Returns total list of Bounty ids."
+          },
+          "listClaimIds()": {
+            "notice": "Returns total list of Claim ids."
+          },
+          "listClaimIdsForContributorAddress(address)": {
+            "notice": "Returns a list of Claim ids in which contributor Address is used."
+          },
+          "lockBounty(uint256)": {
+            "notice": "Locks the Bounty so it cant be claimed."
+          },
+          "outstandingTokenAmount()": {
+            "notice": "Returns the total outstanding token payment amount."
+          },
+          "paymentOrders()": {
+            "notice": "Returns the list of outstanding payment orders."
+          },
+          "updateBounty(uint256,bytes)": {
+            "notice": "Updates a Bounty's informations."
+          },
+          "updateClaimContributors(uint256,(address,uint256)[])": {
+            "notice": "Updates a Claim's contributor informations."
+          },
+          "updateClaimDetails(uint256,bytes)": {
+            "notice": "Updates a Claim Details."
+          },
+          "verifyClaim(uint256,(address,uint256)[])": {
+            "notice": "Completes a Bounty by verifying a claim."
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "@oz-up/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "@oz/=lib/openzeppelin-contracts/contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 5000
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/modules/logicModule/IBountyManager.sol": "IBountyManager"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
+        "keccak256": "0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70",
+        "urls": [
+          "bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c",
+          "dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq"
+        ],
+        "license": "MIT"
+      },
+      "src/modules/logicModule/IBountyManager.sol": {
+        "keccak256": "0xc028aed4034f6dbc3083302aec6c0121354f036ab14a10ca64aa2d39c9b39a61",
+        "urls": [
+          "bzz-raw://fb178d1bdca124ca7cf7a73dad818a3fc9c0649e7bf68e7b238d5121e58f40f6",
+          "dweb:/ipfs/QmNz8taVG5CHEsv1wREMn4gvHiKuCZYhidfpq1p8kmyLEf"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/modules/logicModule/paymentClient/IERC20PaymentClient.sol": {
+        "keccak256": "0x8eb2a5e323299b5ea6c0dee1805031b2e1af48fcfe48653802ac4658b49eed28",
+        "urls": [
+          "bzz-raw://aa47981b5dfc0e18f4ff7b2e5a4e25a39d2d20702fc0c7ae114b07f7402c143e",
+          "dweb:/ipfs/QmbtyYqQttpYKj744fZkHvy8u2Fff9t2jDrpTR3GchPcKp"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/modules/paymentProcessor/IPaymentProcessor.sol": {
+        "keccak256": "0x03db27327e16d429f3e906b604de641e126313e07704fddbd2bc39035b0b23a1",
+        "urls": [
+          "bzz-raw://b620ed08ea5973c00e897f5e2d8cb9dfe2851f80cf37d7e4e0a7963091f6cdba",
+          "dweb:/ipfs/Qmcw1c1qrd7KpHWRSiSLyiDkKx4x8cRZfvtcYU962DHLFH"
+        ],
+        "license": "LGPL-3.0-only"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/modules/logicModule/IBountyManager.sol",
+    "id": 52415,
+    "exportedSymbols": {
+      "IBountyManager": [
+        52414
+      ],
+      "IERC20PaymentClient": [
+        53656
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "42:10386:123",
+    "nodes": [
+      {
+        "id": 52159,
+        "nodeType": "PragmaDirective",
+        "src": "42:23:123",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 52161,
+        "nodeType": "ImportDirective",
+        "src": "67:102:123",
+        "nodes": [],
+        "absolutePath": "src/modules/logicModule/paymentClient/IERC20PaymentClient.sol",
+        "file": "src/modules/logicModule/paymentClient/IERC20PaymentClient.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 52415,
+        "sourceUnit": 53657,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 52160,
+              "name": "IERC20PaymentClient",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 53656,
+              "src": "75:19:123",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 52414,
+        "nodeType": "ContractDefinition",
+        "src": "273:10154:123",
+        "nodes": [
+          {
+            "id": 52177,
+            "nodeType": "StructDefinition",
+            "src": "422:495:123",
+            "nodes": [],
+            "canonicalName": "IBountyManager.Bounty",
+            "members": [
+              {
+                "constant": false,
+                "id": 52167,
+                "mutability": "mutable",
+                "name": "minimumPayoutAmount",
+                "nameLocation": "545:19:123",
+                "nodeType": "VariableDeclaration",
+                "scope": 52177,
+                "src": "540:24:123",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 52166,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "540:4:123",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 52170,
+                "mutability": "mutable",
+                "name": "maximumPayoutAmount",
+                "nameLocation": "673:19:123",
+                "nodeType": "VariableDeclaration",
+                "scope": 52177,
+                "src": "668:24:123",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 52169,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "668:4:123",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 52173,
+                "mutability": "mutable",
+                "name": "details",
+                "nameLocation": "809:7:123",
+                "nodeType": "VariableDeclaration",
+                "scope": 52177,
+                "src": "803:13:123",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes_storage_ptr",
+                  "typeString": "bytes"
+                },
+                "typeName": {
+                  "id": 52172,
+                  "name": "bytes",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "803:5:123",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_storage_ptr",
+                    "typeString": "bytes"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 52176,
+                "mutability": "mutable",
+                "name": "locked",
+                "nameLocation": "904:6:123",
+                "nodeType": "VariableDeclaration",
+                "scope": 52177,
+                "src": "899:11:123",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 52175,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "899:4:123",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Bounty",
+            "nameLocation": "429:6:123",
+            "scope": 52414,
+            "visibility": "public"
+          },
+          {
+            "id": 52184,
+            "nodeType": "StructDefinition",
+            "src": "923:201:123",
+            "nodes": [],
+            "canonicalName": "IBountyManager.Contributor",
+            "members": [
+              {
+                "constant": false,
+                "id": 52180,
+                "mutability": "mutable",
+                "name": "addr",
+                "nameLocation": "1004:4:123",
+                "nodeType": "VariableDeclaration",
+                "scope": 52184,
+                "src": "996:12:123",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 52179,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "996:7:123",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 52183,
+                "mutability": "mutable",
+                "name": "claimAmount",
+                "nameLocation": "1106:11:123",
+                "nodeType": "VariableDeclaration",
+                "scope": 52184,
+                "src": "1101:16:123",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 52182,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1101:4:123",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Contributor",
+            "nameLocation": "930:11:123",
+            "scope": 52414,
+            "visibility": "public"
+          },
+          {
+            "id": 52198,
+            "nodeType": "StructDefinition",
+            "src": "1130:363:123",
+            "nodes": [],
+            "canonicalName": "IBountyManager.Claim",
+            "members": [
+              {
+                "constant": false,
+                "id": 52186,
+                "mutability": "mutable",
+                "name": "bountyId",
+                "nameLocation": "1158:8:123",
+                "nodeType": "VariableDeclaration",
+                "scope": 52198,
+                "src": "1153:13:123",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 52185,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1153:4:123",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 52191,
+                "mutability": "mutable",
+                "name": "contributors",
+                "nameLocation": "1272:12:123",
+                "nodeType": "VariableDeclaration",
+                "scope": 52198,
+                "src": "1258:26:123",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_struct$_Contributor_$52184_storage_$dyn_storage_ptr",
+                  "typeString": "struct IBountyManager.Contributor[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 52189,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 52188,
+                      "name": "Contributor",
+                      "nameLocations": [
+                        "1258:11:123"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 52184,
+                      "src": "1258:11:123"
+                    },
+                    "referencedDeclaration": 52184,
+                    "src": "1258:11:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Contributor_$52184_storage_ptr",
+                      "typeString": "struct IBountyManager.Contributor"
+                    }
+                  },
+                  "id": 52190,
+                  "nodeType": "ArrayTypeName",
+                  "src": "1258:13:123",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Contributor_$52184_storage_$dyn_storage_ptr",
+                    "typeString": "struct IBountyManager.Contributor[]"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 52194,
+                "mutability": "mutable",
+                "name": "details",
+                "nameLocation": "1400:7:123",
+                "nodeType": "VariableDeclaration",
+                "scope": 52198,
+                "src": "1394:13:123",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes_storage_ptr",
+                  "typeString": "bytes"
+                },
+                "typeName": {
+                  "id": 52193,
+                  "name": "bytes",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1394:5:123",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_storage_ptr",
+                    "typeString": "bytes"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 52197,
+                "mutability": "mutable",
+                "name": "claimed",
+                "nameLocation": "1479:7:123",
+                "nodeType": "VariableDeclaration",
+                "scope": 52198,
+                "src": "1474:12:123",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 52196,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1474:4:123",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Claim",
+            "nameLocation": "1137:5:123",
+            "scope": 52414,
+            "visibility": "public"
+          },
+          {
+            "id": 52201,
+            "nodeType": "ErrorDefinition",
+            "src": "1691:52:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52199,
+              "nodeType": "StructuredDocumentation",
+              "src": "1595:91:123",
+              "text": "@notice Access only to addresses that are listed as contributors in the according claim"
+            },
+            "errorSelector": "0a3b4740",
+            "name": "Module__BountyManager__OnlyClaimContributor",
+            "nameLocation": "1697:43:123",
+            "parameters": {
+              "id": 52200,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1740:2:123"
+            }
+          },
+          {
+            "id": 52204,
+            "nodeType": "ErrorDefinition",
+            "src": "1860:52:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52202,
+              "nodeType": "StructuredDocumentation",
+              "src": "1749:106:123",
+              "text": "@notice Given payoutAmounts are either zero or maximumPayoutAmount is smaller than minimumPayoutAmount"
+            },
+            "errorSelector": "75339e3d",
+            "name": "Module__BountyManager__InvalidPayoutAmounts",
+            "nameLocation": "1866:43:123",
+            "parameters": {
+              "id": 52203,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1909:2:123"
+            }
+          },
+          {
+            "id": 52207,
+            "nodeType": "ErrorDefinition",
+            "src": "1966:47:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52205,
+              "nodeType": "StructuredDocumentation",
+              "src": "1918:43:123",
+              "text": "@notice Given Bounty id is not existing"
+            },
+            "errorSelector": "4511bb25",
+            "name": "Module__BountyManager__InvalidBountyId",
+            "nameLocation": "1972:38:123",
+            "parameters": {
+              "id": 52206,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2010:2:123"
+            }
+          },
+          {
+            "id": 52210,
+            "nodeType": "ErrorDefinition",
+            "src": "2066:46:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52208,
+              "nodeType": "StructuredDocumentation",
+              "src": "2019:42:123",
+              "text": "@notice Given Claim id is not existing"
+            },
+            "errorSelector": "f76e9aef",
+            "name": "Module__BountyManager__InvalidClaimId",
+            "nameLocation": "2072:37:123",
+            "parameters": {
+              "id": 52209,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2109:2:123"
+            }
+          },
+          {
+            "id": 52213,
+            "nodeType": "ErrorDefinition",
+            "src": "2167:57:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52211,
+              "nodeType": "StructuredDocumentation",
+              "src": "2118:44:123",
+              "text": "@notice Given Contributors list is empty"
+            },
+            "errorSelector": "93918c2c",
+            "name": "Module__BountyManager__InvalidContributorsLength",
+            "nameLocation": "2173:48:123",
+            "parameters": {
+              "id": 52212,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2221:2:123"
+            }
+          },
+          {
+            "id": 52216,
+            "nodeType": "ErrorDefinition",
+            "src": "2289:56:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52214,
+              "nodeType": "StructuredDocumentation",
+              "src": "2230:54:123",
+              "text": "@notice Given claim Amount for contributor is zero"
+            },
+            "errorSelector": "60638100",
+            "name": "Module__BountyManager__InvalidContributorAmount",
+            "nameLocation": "2295:47:123",
+            "parameters": {
+              "id": 52215,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2342:2:123"
+            }
+          },
+          {
+            "id": 52219,
+            "nodeType": "ErrorDefinition",
+            "src": "2404:57:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52217,
+              "nodeType": "StructuredDocumentation",
+              "src": "2351:48:123",
+              "text": "@notice Given Contributor address is invalid"
+            },
+            "errorSelector": "e7ae61ce",
+            "name": "Module__BountyManager__InvalidContributorAddress",
+            "nameLocation": "2410:48:123",
+            "parameters": {
+              "id": 52218,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2458:2:123"
+            }
+          },
+          {
+            "id": 52222,
+            "nodeType": "ErrorDefinition",
+            "src": "2577:62:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52220,
+              "nodeType": "StructuredDocumentation",
+              "src": "2467:105:123",
+              "text": "@notice Given total claims of contributors exceed or are below the given payout amounts of the bounty"
+            },
+            "errorSelector": "ae68040f",
+            "name": "Module__BountyManager__ClaimExceedsGivenPayoutAmounts",
+            "nameLocation": "2583:53:123",
+            "parameters": {
+              "id": 52221,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2636:2:123"
+            }
+          },
+          {
+            "id": 52225,
+            "nodeType": "ErrorDefinition",
+            "src": "2687:44:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52223,
+              "nodeType": "StructuredDocumentation",
+              "src": "2645:37:123",
+              "text": "@notice Given Bounty id is Locked"
+            },
+            "errorSelector": "630a60dc",
+            "name": "Module__BountyManager__BountyLocked",
+            "nameLocation": "2693:35:123",
+            "parameters": {
+              "id": 52224,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2728:2:123"
+            }
+          },
+          {
+            "id": 52228,
+            "nodeType": "ErrorDefinition",
+            "src": "2788:46:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52226,
+              "nodeType": "StructuredDocumentation",
+              "src": "2737:46:123",
+              "text": "@notice Given Claim id got already claimed"
+            },
+            "errorSelector": "d4b93ddf",
+            "name": "Module__BountyManager__AlreadyClaimed",
+            "nameLocation": "2794:37:123",
+            "parameters": {
+              "id": 52227,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2831:2:123"
+            }
+          },
+          {
+            "id": 52231,
+            "nodeType": "ErrorDefinition",
+            "src": "2984:51:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52229,
+              "nodeType": "StructuredDocumentation",
+              "src": "2840:139:123",
+              "text": "@notice The given Contributors are not the same as in the claim. This might be connected to a tried front run of the given transaction."
+            },
+            "errorSelector": "545bebd2",
+            "name": "Module__BountyManager__ContributorsChanged",
+            "nameLocation": "2990:42:123",
+            "parameters": {
+              "id": 52230,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3032:2:123"
+            }
+          },
+          {
+            "id": 52242,
+            "nodeType": "EventDefinition",
+            "src": "3512:146:123",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 52232,
+              "nodeType": "StructuredDocumentation",
+              "src": "3137:370:123",
+              "text": "@notice Event emitted when a new Bounty is added.\n @param bountyId The id of the newly added Bounty.\n @param minimumPayoutAmount The minimum amount of tokens the Bounty will pay out upon being claimed\n @param maximumPayoutAmount The maximum amount of tokens the Bounty will pay out upon being claimed\n @param details The Bounty's details."
+            },
+            "eventSelector": "16aa89bae6ad0e0b7a94b930e87a8e04b02978ed503e2698b1b6359416e1ac83",
+            "name": "BountyAdded",
+            "nameLocation": "3518:11:123",
+            "parameters": {
+              "id": 52241,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52234,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "bountyId",
+                  "nameLocation": "3552:8:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52242,
+                  "src": "3539:21:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52233,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3539:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 52236,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "minimumPayoutAmount",
+                  "nameLocation": "3575:19:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52242,
+                  "src": "3570:24:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52235,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3570:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 52238,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "maximumPayoutAmount",
+                  "nameLocation": "3609:19:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52242,
+                  "src": "3604:24:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52237,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3604:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 52240,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "details",
+                  "nameLocation": "3644:7:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52242,
+                  "src": "3638:13:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 52239,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3638:5:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3529:128:123"
+            }
+          },
+          {
+            "id": 52249,
+            "nodeType": "EventDefinition",
+            "src": "3820:66:123",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 52243,
+              "nodeType": "StructuredDocumentation",
+              "src": "3664:151:123",
+              "text": "@notice Event emitted when a Bounty got updated.\n @param bountyId The id of the updated Bounty.\n @param details The Bounty's details."
+            },
+            "eventSelector": "5b748b1bf798d437f4457fa662e95d5b99ba7c5c739e2d6342c7d06c4ad43007",
+            "name": "BountyUpdated",
+            "nameLocation": "3826:13:123",
+            "parameters": {
+              "id": 52248,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52245,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "bountyId",
+                  "nameLocation": "3853:8:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52249,
+                  "src": "3840:21:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52244,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3840:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 52247,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "details",
+                  "nameLocation": "3877:7:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52249,
+                  "src": "3863:21:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 52246,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3863:5:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3839:46:123"
+            }
+          },
+          {
+            "id": 52254,
+            "nodeType": "EventDefinition",
+            "src": "4002:42:123",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 52250,
+              "nodeType": "StructuredDocumentation",
+              "src": "3892:105:123",
+              "text": "@notice Event emitted when a Bounty gets locked.\n @param bountyId The id of the locked Bounty."
+            },
+            "eventSelector": "a0e18720f77efbbf5292a427112cd5b87106c4dd3e6b27fe1fa001090a508a40",
+            "name": "BountyLocked",
+            "nameLocation": "4008:12:123",
+            "parameters": {
+              "id": 52253,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52252,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "bountyId",
+                  "nameLocation": "4034:8:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52254,
+                  "src": "4021:21:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52251,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4021:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4020:23:123"
+            }
+          },
+          {
+            "id": 52267,
+            "nodeType": "EventDefinition",
+            "src": "4341:151:123",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 52255,
+              "nodeType": "StructuredDocumentation",
+              "src": "4050:286:123",
+              "text": "@notice Event emitted when a new Claim is added.\n @param claimId The id of the newly added Claim.\n @param bountyId The id of the Bounty that got claimed.\n @param contributors The contributor information for the Claim.\n @param details The Claim's details."
+            },
+            "eventSelector": "23ea023b108a98377fb5440ffbb7fe7a5c3827c821ef0e16fbd60af8b93cddac",
+            "name": "ClaimAdded",
+            "nameLocation": "4347:10:123",
+            "parameters": {
+              "id": 52266,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52257,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "claimId",
+                  "nameLocation": "4380:7:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52267,
+                  "src": "4367:20:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52256,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4367:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 52259,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "bountyId",
+                  "nameLocation": "4410:8:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52267,
+                  "src": "4397:21:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52258,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4397:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 52263,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "contributors",
+                  "nameLocation": "4450:12:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52267,
+                  "src": "4428:34:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Contributor_$52184_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct IBountyManager.Contributor[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 52261,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 52260,
+                        "name": "Contributor",
+                        "nameLocations": [
+                          "4428:11:123"
+                        ],
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 52184,
+                        "src": "4428:11:123"
+                      },
+                      "referencedDeclaration": 52184,
+                      "src": "4428:11:123",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Contributor_$52184_storage_ptr",
+                        "typeString": "struct IBountyManager.Contributor"
+                      }
+                    },
+                    "id": 52262,
+                    "nodeType": "ArrayTypeName",
+                    "src": "4428:13:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Contributor_$52184_storage_$dyn_storage_ptr",
+                      "typeString": "struct IBountyManager.Contributor[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 52265,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "details",
+                  "nameLocation": "4478:7:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52267,
+                  "src": "4472:13:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 52264,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4472:5:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4357:134:123"
+            }
+          },
+          {
+            "id": 52276,
+            "nodeType": "EventDefinition",
+            "src": "4697:103:123",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 52268,
+              "nodeType": "StructuredDocumentation",
+              "src": "4498:194:123",
+              "text": "@notice Event emitted when Claim Contributors got updated.\n @param claimId The id of the Claim that got updated.\n @param contributors The contributor information for the Claim."
+            },
+            "eventSelector": "1d41ce0f1e2efe8a516e804c8208a8a92b1931eb13d5c7be8847790b6eb25ec1",
+            "name": "ClaimContributorsUpdated",
+            "nameLocation": "4703:24:123",
+            "parameters": {
+              "id": 52275,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52270,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "claimId",
+                  "nameLocation": "4750:7:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52276,
+                  "src": "4737:20:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52269,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4737:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 52274,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "contributors",
+                  "nameLocation": "4781:12:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52276,
+                  "src": "4759:34:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Contributor_$52184_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct IBountyManager.Contributor[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 52272,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 52271,
+                        "name": "Contributor",
+                        "nameLocations": [
+                          "4759:11:123"
+                        ],
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 52184,
+                        "src": "4759:11:123"
+                      },
+                      "referencedDeclaration": 52184,
+                      "src": "4759:11:123",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Contributor_$52184_storage_ptr",
+                        "typeString": "struct IBountyManager.Contributor"
+                      }
+                    },
+                    "id": 52273,
+                    "nodeType": "ArrayTypeName",
+                    "src": "4759:13:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Contributor_$52184_storage_$dyn_storage_ptr",
+                      "typeString": "struct IBountyManager.Contributor[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4727:72:123"
+            }
+          },
+          {
+            "id": 52283,
+            "nodeType": "EventDefinition",
+            "src": "4973:63:123",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 52277,
+              "nodeType": "StructuredDocumentation",
+              "src": "4806:162:123",
+              "text": "@notice Event emitted when Claim Details got updated.\n @param claimId The id of the Claim that got updated.\n @param details The Claim's details."
+            },
+            "eventSelector": "4128fe4992a5cb5a9cb54a23107ba2cd9db975f7f66fd5a978927aaf54350a99",
+            "name": "ClaimDetailsUpdated",
+            "nameLocation": "4979:19:123",
+            "parameters": {
+              "id": 52282,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52279,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "claimId",
+                  "nameLocation": "5012:7:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52283,
+                  "src": "4999:20:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52278,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4999:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 52281,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "details",
+                  "nameLocation": "5027:7:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52283,
+                  "src": "5021:13:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 52280,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5021:5:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4998:37:123"
+            }
+          },
+          {
+            "id": 52288,
+            "nodeType": "EventDefinition",
+            "src": "5160:42:123",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 52284,
+              "nodeType": "StructuredDocumentation",
+              "src": "5042:113:123",
+              "text": "@notice Event emitted when a Claim is verified.\n @param claimId The id of the Claim that got verified."
+            },
+            "eventSelector": "393efda0b92bc01071b66a816d6bcddde867b8c91da505a0f309d9133a53650a",
+            "name": "ClaimVerified",
+            "nameLocation": "5166:13:123",
+            "parameters": {
+              "id": 52287,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52286,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "claimId",
+                  "nameLocation": "5193:7:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52288,
+                  "src": "5180:20:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52285,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5180:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5179:22:123"
+            }
+          },
+          {
+            "id": 52297,
+            "nodeType": "FunctionDefinition",
+            "src": "5626:107:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52289,
+              "nodeType": "StructuredDocumentation",
+              "src": "5378:243:123",
+              "text": "@notice Returns the Bounty instance with id `id`.\n @param bountyId The id of the Bounty to return.\n @return Bounty with id `id`.\n @custom:tags minimumPayoutAmount:decimal maximumPayoutAmount:decimal details:any(string)"
+            },
+            "functionSelector": "31be580e",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getBountyInformation",
+            "nameLocation": "5635:20:123",
+            "parameters": {
+              "id": 52292,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52291,
+                  "mutability": "mutable",
+                  "name": "bountyId",
+                  "nameLocation": "5661:8:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52297,
+                  "src": "5656:13:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52290,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5656:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5655:15:123"
+            },
+            "returnParameters": {
+              "id": 52296,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52295,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52297,
+                  "src": "5718:13:123",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Bounty_$52177_memory_ptr",
+                    "typeString": "struct IBountyManager.Bounty"
+                  },
+                  "typeName": {
+                    "id": 52294,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 52293,
+                      "name": "Bounty",
+                      "nameLocations": [
+                        "5718:6:123"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 52177,
+                      "src": "5718:6:123"
+                    },
+                    "referencedDeclaration": 52177,
+                    "src": "5718:6:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Bounty_$52177_storage_ptr",
+                      "typeString": "struct IBountyManager.Bounty"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5717:15:123"
+            },
+            "scope": 52414,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 52304,
+            "nodeType": "FunctionDefinition",
+            "src": "5876:63:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52298,
+              "nodeType": "StructuredDocumentation",
+              "src": "5739:132:123",
+              "text": "@notice Returns total list of Bounty ids.\n @dev List is in ascending order.\n @return bountyIds List of Bounty ids."
+            },
+            "functionSelector": "b5e8bc45",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "listBountyIds",
+            "nameLocation": "5885:13:123",
+            "parameters": {
+              "id": 52299,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "5898:2:123"
+            },
+            "returnParameters": {
+              "id": 52303,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52302,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52304,
+                  "src": "5924:13:123",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 52300,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "5924:4:123",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 52301,
+                    "nodeType": "ArrayTypeName",
+                    "src": "5924:6:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5923:15:123"
+            },
+            "scope": 52414,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 52312,
+            "nodeType": "FunctionDefinition",
+            "src": "6146:72:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52305,
+              "nodeType": "StructuredDocumentation",
+              "src": "5945:196:123",
+              "text": "@notice Returns whether Bounty with id `id` exists.\n @param bountyId The id of the Bounty to test.\n @return isExistingBountyId True if Claim with id `id` exists, false otherwise."
+            },
+            "functionSelector": "be5a5745",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isExistingBountyId",
+            "nameLocation": "6155:18:123",
+            "parameters": {
+              "id": 52308,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52307,
+                  "mutability": "mutable",
+                  "name": "bountyId",
+                  "nameLocation": "6179:8:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52312,
+                  "src": "6174:13:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52306,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6174:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6173:15:123"
+            },
+            "returnParameters": {
+              "id": 52311,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52310,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52312,
+                  "src": "6212:4:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 52309,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6212:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6211:6:123"
+            },
+            "scope": 52414,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 52321,
+            "nodeType": "FunctionDefinition",
+            "src": "6438:104:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52313,
+              "nodeType": "StructuredDocumentation",
+              "src": "6224:209:123",
+              "text": "@notice Returns the Claim instance with id `id`.\n @param claimId The id of the Claim to return.\n @return claim Claim with id `id`.\n @custom:tags claimAmount:decimal details:any(string)"
+            },
+            "functionSelector": "cb05296f",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getClaimInformation",
+            "nameLocation": "6447:19:123",
+            "parameters": {
+              "id": 52316,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52315,
+                  "mutability": "mutable",
+                  "name": "claimId",
+                  "nameLocation": "6472:7:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52321,
+                  "src": "6467:12:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52314,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6467:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6466:14:123"
+            },
+            "returnParameters": {
+              "id": 52320,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52319,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52321,
+                  "src": "6528:12:123",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Claim_$52198_memory_ptr",
+                    "typeString": "struct IBountyManager.Claim"
+                  },
+                  "typeName": {
+                    "id": 52318,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 52317,
+                      "name": "Claim",
+                      "nameLocations": [
+                        "6528:5:123"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 52198,
+                      "src": "6528:5:123"
+                    },
+                    "referencedDeclaration": 52198,
+                    "src": "6528:5:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Claim_$52198_storage_ptr",
+                      "typeString": "struct IBountyManager.Claim"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6527:14:123"
+            },
+            "scope": 52414,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 52328,
+            "nodeType": "FunctionDefinition",
+            "src": "6682:62:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52322,
+              "nodeType": "StructuredDocumentation",
+              "src": "6548:129:123",
+              "text": "@notice Returns total list of Claim ids.\n @dev List is in ascending order.\n @return claimIds List of Claim ids."
+            },
+            "functionSelector": "3cd6b5d1",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "listClaimIds",
+            "nameLocation": "6691:12:123",
+            "parameters": {
+              "id": 52323,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "6703:2:123"
+            },
+            "returnParameters": {
+              "id": 52327,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52326,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52328,
+                  "src": "6729:13:123",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 52324,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "6729:4:123",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 52325,
+                    "nodeType": "ArrayTypeName",
+                    "src": "6729:6:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6728:15:123"
+            },
+            "scope": 52414,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 52336,
+            "nodeType": "FunctionDefinition",
+            "src": "6949:70:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52329,
+              "nodeType": "StructuredDocumentation",
+              "src": "6750:194:123",
+              "text": "@notice Returns whether Claim with id `id` exists.\n @param claimId The id of the Bounty to test.\n @return isExistingBountyId True if Claim with id `id` exists, false otherwise."
+            },
+            "functionSelector": "e2114c8c",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isExistingClaimId",
+            "nameLocation": "6958:17:123",
+            "parameters": {
+              "id": 52332,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52331,
+                  "mutability": "mutable",
+                  "name": "claimId",
+                  "nameLocation": "6981:7:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52336,
+                  "src": "6976:12:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52330,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6976:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6975:14:123"
+            },
+            "returnParameters": {
+              "id": 52335,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52334,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52336,
+                  "src": "7013:4:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 52333,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "7013:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "7012:6:123"
+            },
+            "scope": 52414,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 52345,
+            "nodeType": "FunctionDefinition",
+            "src": "7306:131:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52337,
+              "nodeType": "StructuredDocumentation",
+              "src": "7025:276:123",
+              "text": "@notice Returns a list of Claim ids in which contributor Address is used.\n @dev List is in ascending order.\n @dev Returns an empty .\n @param contributorAddrs claim ids are filtered by the contributor address\n @return claimIds List of Claim ids."
+            },
+            "functionSelector": "9c16f525",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "listClaimIdsForContributorAddress",
+            "nameLocation": "7315:33:123",
+            "parameters": {
+              "id": 52340,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52339,
+                  "mutability": "mutable",
+                  "name": "contributorAddrs",
+                  "nameLocation": "7357:16:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52345,
+                  "src": "7349:24:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 52338,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "7349:7:123",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "7348:26:123"
+            },
+            "returnParameters": {
+              "id": 52344,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52343,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52345,
+                  "src": "7422:13:123",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 52341,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "7422:4:123",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 52342,
+                    "nodeType": "ArrayTypeName",
+                    "src": "7422:6:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "7421:15:123"
+            },
+            "scope": 52414,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 52357,
+            "nodeType": "FunctionDefinition",
+            "src": "8008:149:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52346,
+              "nodeType": "StructuredDocumentation",
+              "src": "7518:485:123",
+              "text": "@notice Adds a new Bounty.\n @dev Reverts if an argument invalid.\n @param minimumPayoutAmount The minimum amount of tokens the Bounty will pay out upon being claimed\n @param maximumPayoutAmount The maximum amount of tokens the Bounty will pay out upon being claimed\n @param details The Bounty's details.\n @return bountyId The newly added Bounty's id.\n @custom:tags minimumPayoutAmount:decimal maximumPayoutAmount:decimal details:any(string)"
+            },
+            "functionSelector": "bd769f79",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addBounty",
+            "nameLocation": "8017:9:123",
+            "parameters": {
+              "id": 52353,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52348,
+                  "mutability": "mutable",
+                  "name": "minimumPayoutAmount",
+                  "nameLocation": "8041:19:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52357,
+                  "src": "8036:24:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52347,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8036:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 52350,
+                  "mutability": "mutable",
+                  "name": "maximumPayoutAmount",
+                  "nameLocation": "8075:19:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52357,
+                  "src": "8070:24:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52349,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8070:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 52352,
+                  "mutability": "mutable",
+                  "name": "details",
+                  "nameLocation": "8119:7:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52357,
+                  "src": "8104:22:123",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 52351,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8104:5:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "8026:106:123"
+            },
+            "returnParameters": {
+              "id": 52356,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52355,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52357,
+                  "src": "8151:4:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52354,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8151:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "8150:6:123"
+            },
+            "scope": 52414,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 52365,
+            "nodeType": "FunctionDefinition",
+            "src": "8410:70:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52358,
+              "nodeType": "StructuredDocumentation",
+              "src": "8163:242:123",
+              "text": "@notice Updates a Bounty's informations.\n @dev Reverts if an argument invalid.\n @param bountyId The id of the Bounty that will be updated.\n @param details The Bounty's details.\n @custom:tags details:any(string)"
+            },
+            "functionSelector": "31de0bdb",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateBounty",
+            "nameLocation": "8419:12:123",
+            "parameters": {
+              "id": 52363,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52360,
+                  "mutability": "mutable",
+                  "name": "bountyId",
+                  "nameLocation": "8437:8:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52365,
+                  "src": "8432:13:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52359,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8432:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 52362,
+                  "mutability": "mutable",
+                  "name": "details",
+                  "nameLocation": "8462:7:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52365,
+                  "src": "8447:22:123",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 52361,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8447:5:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "8431:39:123"
+            },
+            "returnParameters": {
+              "id": 52364,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "8479:0:123"
+            },
+            "scope": 52414,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 52371,
+            "nodeType": "FunctionDefinition",
+            "src": "8696:44:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52366,
+              "nodeType": "StructuredDocumentation",
+              "src": "8486:205:123",
+              "text": "@notice Locks the Bounty so it cant be claimed.\n @dev Only callable by authorized addresses.\n @dev Reverts if id invalid.\n @param bountyId The id of the Bounty that will be locked."
+            },
+            "functionSelector": "fa4dbd03",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "lockBounty",
+            "nameLocation": "8705:10:123",
+            "parameters": {
+              "id": 52369,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52368,
+                  "mutability": "mutable",
+                  "name": "bountyId",
+                  "nameLocation": "8721:8:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52371,
+                  "src": "8716:13:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52367,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8716:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "8715:15:123"
+            },
+            "returnParameters": {
+              "id": 52370,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "8739:0:123"
+            },
+            "scope": 52414,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 52385,
+            "nodeType": "FunctionDefinition",
+            "src": "9052:148:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52372,
+              "nodeType": "StructuredDocumentation",
+              "src": "8746:301:123",
+              "text": "@notice Adds a new Claim.\n @dev Reverts if an argument invalid.\n @param contributors The contributor information for the Claim\n @param details The Claim's details.\n @return claimId The newly added Claim's id.\n @custom:tags claimAmount:decimal details:any(string)"
+            },
+            "functionSelector": "0d97d72c",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addClaim",
+            "nameLocation": "9061:8:123",
+            "parameters": {
+              "id": 52381,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52374,
+                  "mutability": "mutable",
+                  "name": "bountyId",
+                  "nameLocation": "9084:8:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52385,
+                  "src": "9079:13:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52373,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9079:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 52378,
+                  "mutability": "mutable",
+                  "name": "contributors",
+                  "nameLocation": "9125:12:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52385,
+                  "src": "9102:35:123",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Contributor_$52184_calldata_ptr_$dyn_calldata_ptr",
+                    "typeString": "struct IBountyManager.Contributor[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 52376,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 52375,
+                        "name": "Contributor",
+                        "nameLocations": [
+                          "9102:11:123"
+                        ],
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 52184,
+                        "src": "9102:11:123"
+                      },
+                      "referencedDeclaration": 52184,
+                      "src": "9102:11:123",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Contributor_$52184_storage_ptr",
+                        "typeString": "struct IBountyManager.Contributor"
+                      }
+                    },
+                    "id": 52377,
+                    "nodeType": "ArrayTypeName",
+                    "src": "9102:13:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Contributor_$52184_storage_$dyn_storage_ptr",
+                      "typeString": "struct IBountyManager.Contributor[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 52380,
+                  "mutability": "mutable",
+                  "name": "details",
+                  "nameLocation": "9162:7:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52385,
+                  "src": "9147:22:123",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 52379,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9147:5:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "9069:106:123"
+            },
+            "returnParameters": {
+              "id": 52384,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52383,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52385,
+                  "src": "9194:4:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52382,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9194:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "9193:6:123"
+            },
+            "scope": 52414,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 52395,
+            "nodeType": "FunctionDefinition",
+            "src": "9488:115:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52386,
+              "nodeType": "StructuredDocumentation",
+              "src": "9206:277:123",
+              "text": "@notice Updates a Claim's contributor informations.\n @dev Reverts if an argument invalid.\n @param claimId The id of the Claim that will be updated.\n @param contributors The contributor information for the Claim.\n @custom:tags claimAmount:decimal"
+            },
+            "functionSelector": "5beaeb8c",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateClaimContributors",
+            "nameLocation": "9497:23:123",
+            "parameters": {
+              "id": 52393,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52388,
+                  "mutability": "mutable",
+                  "name": "claimId",
+                  "nameLocation": "9535:7:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52395,
+                  "src": "9530:12:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52387,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9530:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 52392,
+                  "mutability": "mutable",
+                  "name": "contributors",
+                  "nameLocation": "9575:12:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52395,
+                  "src": "9552:35:123",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Contributor_$52184_calldata_ptr_$dyn_calldata_ptr",
+                    "typeString": "struct IBountyManager.Contributor[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 52390,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 52389,
+                        "name": "Contributor",
+                        "nameLocations": [
+                          "9552:11:123"
+                        ],
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 52184,
+                        "src": "9552:11:123"
+                      },
+                      "referencedDeclaration": 52184,
+                      "src": "9552:11:123",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Contributor_$52184_storage_ptr",
+                        "typeString": "struct IBountyManager.Contributor"
+                      }
+                    },
+                    "id": 52391,
+                    "nodeType": "ArrayTypeName",
+                    "src": "9552:13:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Contributor_$52184_storage_$dyn_storage_ptr",
+                      "typeString": "struct IBountyManager.Contributor[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "9520:73:123"
+            },
+            "returnParameters": {
+              "id": 52394,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "9602:0:123"
+            },
+            "scope": 52414,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 52403,
+            "nodeType": "FunctionDefinition",
+            "src": "9800:83:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52396,
+              "nodeType": "StructuredDocumentation",
+              "src": "9609:186:123",
+              "text": "@notice Updates a Claim Details.\n @param claimId The id of the Claim that will be updated.\n @param details The Claim's details.\n @custom:tags details:any(string)"
+            },
+            "functionSelector": "2d54a71c",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateClaimDetails",
+            "nameLocation": "9809:18:123",
+            "parameters": {
+              "id": 52401,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52398,
+                  "mutability": "mutable",
+                  "name": "claimId",
+                  "nameLocation": "9833:7:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52403,
+                  "src": "9828:12:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52397,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9828:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 52400,
+                  "mutability": "mutable",
+                  "name": "details",
+                  "nameLocation": "9857:7:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52403,
+                  "src": "9842:22:123",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 52399,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9842:5:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "9827:38:123"
+            },
+            "returnParameters": {
+              "id": 52402,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "9882:0:123"
+            },
+            "scope": 52414,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 52413,
+            "nodeType": "FunctionDefinition",
+            "src": "10336:89:123",
+            "nodes": [],
+            "documentation": {
+              "id": 52404,
+              "nodeType": "StructuredDocumentation",
+              "src": "9889:442:123",
+              "text": "@notice Completes a Bounty by verifying a claim.\n @dev Only callable by authorized addresses.\n @dev Reverts if id invalid.\n @dev contributors should be copied out of the given Claim. The parameter is used to prevent front running.\n @param claimId The id of the Claim that wants to claim the Bounty.\n @param contributors The contributor information for the Claim.\n @custom:tags claimAmount:decimal"
+            },
+            "functionSelector": "bf1f9656",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "verifyClaim",
+            "nameLocation": "10345:11:123",
+            "parameters": {
+              "id": 52411,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52406,
+                  "mutability": "mutable",
+                  "name": "claimId",
+                  "nameLocation": "10362:7:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52413,
+                  "src": "10357:12:123",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52405,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10357:4:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 52410,
+                  "mutability": "mutable",
+                  "name": "contributors",
+                  "nameLocation": "10394:12:123",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52413,
+                  "src": "10371:35:123",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Contributor_$52184_calldata_ptr_$dyn_calldata_ptr",
+                    "typeString": "struct IBountyManager.Contributor[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 52408,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 52407,
+                        "name": "Contributor",
+                        "nameLocations": [
+                          "10371:11:123"
+                        ],
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 52184,
+                        "src": "10371:11:123"
+                      },
+                      "referencedDeclaration": 52184,
+                      "src": "10371:11:123",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Contributor_$52184_storage_ptr",
+                        "typeString": "struct IBountyManager.Contributor"
+                      }
+                    },
+                    "id": 52409,
+                    "nodeType": "ArrayTypeName",
+                    "src": "10371:13:123",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Contributor_$52184_storage_$dyn_storage_ptr",
+                      "typeString": "struct IBountyManager.Contributor[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "10356:51:123"
+            },
+            "returnParameters": {
+              "id": 52412,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "10424:0:123"
+            },
+            "scope": 52414,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 52163,
+              "name": "IERC20PaymentClient",
+              "nameLocations": [
+                "301:19:123"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 53656,
+              "src": "301:19:123"
+            },
+            "id": 52164,
+            "nodeType": "InheritanceSpecifier",
+            "src": "301:19:123"
+          }
+        ],
+        "canonicalName": "IBountyManager",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 52162,
+          "nodeType": "StructuredDocumentation",
+          "src": "171:102:123",
+          "text": "@notice A module for managing bounties\n @custom:version 1.0\n @custom:moduletype logicModule"
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          52414,
+          53656
+        ],
+        "name": "IBountyManager",
+        "nameLocation": "283:14:123",
+        "scope": 52415,
+        "usedErrors": [
+          52201,
+          52204,
+          52207,
+          52210,
+          52213,
+          52216,
+          52219,
+          52222,
+          52225,
+          52228,
+          52231,
+          53603,
+          53606,
+          53609,
+          53612,
+          53615,
+          53618
+        ],
+        "usedEvents": [
+          52242,
+          52249,
+          52254,
+          52267,
+          52276,
+          52283,
+          52288,
+          53625
+        ]
+      }
+    ],
+    "license": "LGPL-3.0-only"
+  },
+  "id": 123
+}

@@ -1,0 +1,978 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "Module__PaymentManager__CannotCallOnOtherClientsOrders",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Module__PaymentManager__OnlyCallableByModule",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "paymentClient",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "createdAt",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "dueTo",
+          "type": "uint256"
+        }
+      ],
+      "name": "PaymentOrderProcessed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "TokensReleased",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IERC20PaymentClient",
+          "name": "client",
+          "type": "address"
+        }
+      ],
+      "name": "cancelRunningPayments",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IERC20PaymentClient",
+          "name": "client",
+          "type": "address"
+        }
+      ],
+      "name": "processPayments",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "token",
+      "outputs": [
+        {
+          "internalType": "contract IERC20",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "cancelRunningPayments(address)": "73d7764e",
+    "processPayments(address)": "e151fc61",
+    "token()": "fc0c546a"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.23+commit.f704f362\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"Module__PaymentManager__CannotCallOnOtherClientsOrders\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__PaymentManager__OnlyCallableByModule\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"paymentClient\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"createdAt\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"dueTo\",\"type\":\"uint256\"}],\"name\":\"PaymentOrderProcessed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"TokensReleased\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"contract IERC20PaymentClient\",\"name\":\"client\",\"type\":\"address\"}],\"name\":\"cancelRunningPayments\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IERC20PaymentClient\",\"name\":\"client\",\"type\":\"address\"}],\"name\":\"processPayments\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"token\",\"outputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"PaymentOrderProcessed(address,address,uint256,uint256,uint256)\":{\"params\":{\"amount\":\"The amount of tokens the payment consists of.\",\"createdAt\":\"Timestamp at which the order was created.\",\"dueTo\":\"Timestamp at which the full amount should be payed out/claimable.\",\"paymentClient\":\"The payment client that originated the order.\",\"recipient\":\"The address that will receive the payment.\"}},\"TokensReleased(address,address,uint256)\":{\"params\":{\"amount\":\"The amount of tokens the payment consists of.\",\"recipient\":\"The address that will receive the payment.\"}}},\"kind\":\"dev\",\"methods\":{\"cancelRunningPayments(address)\":{\"details\":\"It's up to the the implementation to keep up with what has been      paid out or not.\",\"params\":{\"client\":\"The {IERC20PaymentClient} instance to process its to payments.\"}},\"processPayments(address)\":{\"details\":\"It's up to the the implementation to keep up with what has been      paid out or not.\",\"params\":{\"client\":\"The {IERC20PaymentClient} instance to process its to payments.\"}}},\"version\":1},\"userdoc\":{\"errors\":{\"Module__PaymentManager__CannotCallOnOtherClientsOrders()\":[{\"notice\":\"a client can only execute on its own orders\"}],\"Module__PaymentManager__OnlyCallableByModule()\":[{\"notice\":\"invalid caller\"}]},\"events\":{\"PaymentOrderProcessed(address,address,uint256,uint256,uint256)\":{\"notice\":\"Emitted when a payment gets processed for execution.\"},\"TokensReleased(address,address,uint256)\":{\"notice\":\"Emitted when an amount of ERC20 tokens gets sent out of the contract.\"}},\"kind\":\"user\",\"methods\":{\"cancelRunningPayments(address)\":{\"notice\":\"Cancels all unfinished payments from an {IERC20PaymentClient} instance.\"},\"processPayments(address)\":{\"notice\":\"Processes all payments from an {IERC20PaymentClient} instance.\"},\"token()\":{\"notice\":\"Returns the IERC20 token the payment processor can process.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/modules/paymentProcessor/IPaymentProcessor.sol\":\"IPaymentProcessor\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":5000},\"remappings\":[\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@oz-up/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@oz/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c\",\"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq\"]},\"src/modules/logicModule/paymentClient/IERC20PaymentClient.sol\":{\"keccak256\":\"0x8eb2a5e323299b5ea6c0dee1805031b2e1af48fcfe48653802ac4658b49eed28\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://aa47981b5dfc0e18f4ff7b2e5a4e25a39d2d20702fc0c7ae114b07f7402c143e\",\"dweb:/ipfs/QmbtyYqQttpYKj744fZkHvy8u2Fff9t2jDrpTR3GchPcKp\"]},\"src/modules/paymentProcessor/IPaymentProcessor.sol\":{\"keccak256\":\"0x03db27327e16d429f3e906b604de641e126313e07704fddbd2bc39035b0b23a1\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://b620ed08ea5973c00e897f5e2d8cb9dfe2851f80cf37d7e4e0a7963091f6cdba\",\"dweb:/ipfs/Qmcw1c1qrd7KpHWRSiSLyiDkKx4x8cRZfvtcYU962DHLFH\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.23+commit.f704f362"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Module__PaymentManager__CannotCallOnOtherClientsOrders"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Module__PaymentManager__OnlyCallableByModule"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "paymentClient",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "createdAt",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "dueTo",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "PaymentOrderProcessed",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "TokensReleased",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract IERC20PaymentClient",
+              "name": "client",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "cancelRunningPayments"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract IERC20PaymentClient",
+              "name": "client",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "processPayments"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "token",
+          "outputs": [
+            {
+              "internalType": "contract IERC20",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "cancelRunningPayments(address)": {
+            "details": "It's up to the the implementation to keep up with what has been      paid out or not.",
+            "params": {
+              "client": "The {IERC20PaymentClient} instance to process its to payments."
+            }
+          },
+          "processPayments(address)": {
+            "details": "It's up to the the implementation to keep up with what has been      paid out or not.",
+            "params": {
+              "client": "The {IERC20PaymentClient} instance to process its to payments."
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "cancelRunningPayments(address)": {
+            "notice": "Cancels all unfinished payments from an {IERC20PaymentClient} instance."
+          },
+          "processPayments(address)": {
+            "notice": "Processes all payments from an {IERC20PaymentClient} instance."
+          },
+          "token()": {
+            "notice": "Returns the IERC20 token the payment processor can process."
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "@oz-up/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "@oz/=lib/openzeppelin-contracts/contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 5000
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/modules/paymentProcessor/IPaymentProcessor.sol": "IPaymentProcessor"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
+        "keccak256": "0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70",
+        "urls": [
+          "bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c",
+          "dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq"
+        ],
+        "license": "MIT"
+      },
+      "src/modules/logicModule/paymentClient/IERC20PaymentClient.sol": {
+        "keccak256": "0x8eb2a5e323299b5ea6c0dee1805031b2e1af48fcfe48653802ac4658b49eed28",
+        "urls": [
+          "bzz-raw://aa47981b5dfc0e18f4ff7b2e5a4e25a39d2d20702fc0c7ae114b07f7402c143e",
+          "dweb:/ipfs/QmbtyYqQttpYKj744fZkHvy8u2Fff9t2jDrpTR3GchPcKp"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/modules/paymentProcessor/IPaymentProcessor.sol": {
+        "keccak256": "0x03db27327e16d429f3e906b604de641e126313e07704fddbd2bc39035b0b23a1",
+        "urls": [
+          "bzz-raw://b620ed08ea5973c00e897f5e2d8cb9dfe2851f80cf37d7e4e0a7963091f6cdba",
+          "dweb:/ipfs/Qmcw1c1qrd7KpHWRSiSLyiDkKx4x8cRZfvtcYU962DHLFH"
+        ],
+        "license": "LGPL-3.0-only"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/modules/paymentProcessor/IPaymentProcessor.sol",
+    "id": 53713,
+    "exportedSymbols": {
+      "IERC20": [
+        32668
+      ],
+      "IERC20PaymentClient": [
+        53656
+      ],
+      "IPaymentProcessor": [
+        53712
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "42:2484:128",
+    "nodes": [
+      {
+        "id": 53658,
+        "nodeType": "PragmaDirective",
+        "src": "42:23:128",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 53660,
+        "nodeType": "ImportDirective",
+        "src": "67:50:128",
+        "nodes": [],
+        "absolutePath": "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+        "file": "@oz/token/ERC20/IERC20.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 53713,
+        "sourceUnit": 32669,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 53659,
+              "name": "IERC20",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 32668,
+              "src": "75:6:128",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 53662,
+        "nodeType": "ImportDirective",
+        "src": "119:102:128",
+        "nodes": [],
+        "absolutePath": "src/modules/logicModule/paymentClient/IERC20PaymentClient.sol",
+        "file": "src/modules/logicModule/paymentClient/IERC20PaymentClient.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 53713,
+        "sourceUnit": 53657,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 53661,
+              "name": "IERC20PaymentClient",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 53656,
+              "src": "127:19:128",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 53712,
+        "nodeType": "ContractDefinition",
+        "src": "223:2302:128",
+        "nodes": [
+          {
+            "id": 53665,
+            "nodeType": "ErrorDefinition",
+            "src": "384:53:128",
+            "nodes": [],
+            "documentation": {
+              "id": 53663,
+              "nodeType": "StructuredDocumentation",
+              "src": "353:26:128",
+              "text": "@notice invalid caller"
+            },
+            "errorSelector": "7dac7c9f",
+            "name": "Module__PaymentManager__OnlyCallableByModule",
+            "nameLocation": "390:44:128",
+            "parameters": {
+              "id": 53664,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "434:2:128"
+            }
+          },
+          {
+            "id": 53668,
+            "nodeType": "ErrorDefinition",
+            "src": "503:63:128",
+            "nodes": [],
+            "documentation": {
+              "id": 53666,
+              "nodeType": "StructuredDocumentation",
+              "src": "443:55:128",
+              "text": "@notice a client can only execute on its own orders"
+            },
+            "errorSelector": "3e3fdec6",
+            "name": "Module__PaymentManager__CannotCallOnOtherClientsOrders",
+            "nameLocation": "509:54:128",
+            "parameters": {
+              "id": 53667,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "563:2:128"
+            }
+          },
+          {
+            "id": 53681,
+            "nodeType": "EventDefinition",
+            "src": "1102:173:128",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 53669,
+              "nodeType": "StructuredDocumentation",
+              "src": "668:429:128",
+              "text": "@notice Emitted when a payment gets processed for execution.\n @param paymentClient The payment client that originated the order.\n @param recipient The address that will receive the payment.\n @param amount The amount of tokens the payment consists of.\n @param createdAt Timestamp at which the order was created.\n @param dueTo Timestamp at which the full amount should be payed out/claimable."
+            },
+            "eventSelector": "8670529fee08e70ca6ce752dcfe3d3de7bfda6c2354df3054c7672c60b32c812",
+            "name": "PaymentOrderProcessed",
+            "nameLocation": "1108:21:128",
+            "parameters": {
+              "id": 53680,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 53671,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "paymentClient",
+                  "nameLocation": "1155:13:128",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 53681,
+                  "src": "1139:29:128",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 53670,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1139:7:128",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 53673,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "recipient",
+                  "nameLocation": "1194:9:128",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 53681,
+                  "src": "1178:25:128",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 53672,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1178:7:128",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 53675,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "1218:6:128",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 53681,
+                  "src": "1213:11:128",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 53674,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1213:4:128",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 53677,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "createdAt",
+                  "nameLocation": "1239:9:128",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 53681,
+                  "src": "1234:14:128",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 53676,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1234:4:128",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 53679,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "dueTo",
+                  "nameLocation": "1263:5:128",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 53681,
+                  "src": "1258:10:128",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 53678,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1258:4:128",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1129:145:128"
+            }
+          },
+          {
+            "id": 53690,
+            "nodeType": "EventDefinition",
+            "src": "1503:98:128",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 53682,
+              "nodeType": "StructuredDocumentation",
+              "src": "1281:217:128",
+              "text": "@notice Emitted when an amount of ERC20 tokens gets sent out of the contract.\n @param recipient The address that will receive the payment.\n @param amount The amount of tokens the payment consists of."
+            },
+            "eventSelector": "3737f2a73c794dafe53d8aeea06810a9ebcf7167401b259406960e088e03f830",
+            "name": "TokensReleased",
+            "nameLocation": "1509:14:128",
+            "parameters": {
+              "id": 53689,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 53684,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "recipient",
+                  "nameLocation": "1549:9:128",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 53690,
+                  "src": "1533:25:128",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 53683,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1533:7:128",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 53686,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "1576:5:128",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 53690,
+                  "src": "1560:21:128",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 53685,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1560:7:128",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 53688,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "1588:6:128",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 53690,
+                  "src": "1583:11:128",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 53687,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1583:4:128",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1523:77:128"
+            }
+          },
+          {
+            "id": 53697,
+            "nodeType": "FunctionDefinition",
+            "src": "1977:62:128",
+            "nodes": [],
+            "documentation": {
+              "id": 53691,
+              "nodeType": "StructuredDocumentation",
+              "src": "1706:266:128",
+              "text": "@notice Processes all payments from an {IERC20PaymentClient} instance.\n @dev It's up to the the implementation to keep up with what has been\n      paid out or not.\n @param client The {IERC20PaymentClient} instance to process its to payments."
+            },
+            "functionSelector": "e151fc61",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "processPayments",
+            "nameLocation": "1986:15:128",
+            "parameters": {
+              "id": 53695,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 53694,
+                  "mutability": "mutable",
+                  "name": "client",
+                  "nameLocation": "2022:6:128",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 53697,
+                  "src": "2002:26:128",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IERC20PaymentClient_$53656",
+                    "typeString": "contract IERC20PaymentClient"
+                  },
+                  "typeName": {
+                    "id": 53693,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 53692,
+                      "name": "IERC20PaymentClient",
+                      "nameLocations": [
+                        "2002:19:128"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 53656,
+                      "src": "2002:19:128"
+                    },
+                    "referencedDeclaration": 53656,
+                    "src": "2002:19:128",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IERC20PaymentClient_$53656",
+                      "typeString": "contract IERC20PaymentClient"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2001:28:128"
+            },
+            "returnParameters": {
+              "id": 53696,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2038:0:128"
+            },
+            "scope": 53712,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 53704,
+            "nodeType": "FunctionDefinition",
+            "src": "2325:68:128",
+            "nodes": [],
+            "documentation": {
+              "id": 53698,
+              "nodeType": "StructuredDocumentation",
+              "src": "2045:275:128",
+              "text": "@notice Cancels all unfinished payments from an {IERC20PaymentClient} instance.\n @dev It's up to the the implementation to keep up with what has been\n      paid out or not.\n @param client The {IERC20PaymentClient} instance to process its to payments."
+            },
+            "functionSelector": "73d7764e",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "cancelRunningPayments",
+            "nameLocation": "2334:21:128",
+            "parameters": {
+              "id": 53702,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 53701,
+                  "mutability": "mutable",
+                  "name": "client",
+                  "nameLocation": "2376:6:128",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 53704,
+                  "src": "2356:26:128",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IERC20PaymentClient_$53656",
+                    "typeString": "contract IERC20PaymentClient"
+                  },
+                  "typeName": {
+                    "id": 53700,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 53699,
+                      "name": "IERC20PaymentClient",
+                      "nameLocations": [
+                        "2356:19:128"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 53656,
+                      "src": "2356:19:128"
+                    },
+                    "referencedDeclaration": 53656,
+                    "src": "2356:19:128",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IERC20PaymentClient_$53656",
+                      "typeString": "contract IERC20PaymentClient"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2355:28:128"
+            },
+            "returnParameters": {
+              "id": 53703,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2392:0:128"
+            },
+            "scope": 53712,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 53711,
+            "nodeType": "FunctionDefinition",
+            "src": "2475:48:128",
+            "nodes": [],
+            "documentation": {
+              "id": 53705,
+              "nodeType": "StructuredDocumentation",
+              "src": "2399:71:128",
+              "text": "@notice Returns the IERC20 token the payment processor can process."
+            },
+            "functionSelector": "fc0c546a",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "token",
+            "nameLocation": "2484:5:128",
+            "parameters": {
+              "id": 53706,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2489:2:128"
+            },
+            "returnParameters": {
+              "id": 53710,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 53709,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 53711,
+                  "src": "2515:6:128",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IERC20_$32668",
+                    "typeString": "contract IERC20"
+                  },
+                  "typeName": {
+                    "id": 53708,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 53707,
+                      "name": "IERC20",
+                      "nameLocations": [
+                        "2515:6:128"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 32668,
+                      "src": "2515:6:128"
+                    },
+                    "referencedDeclaration": 32668,
+                    "src": "2515:6:128",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IERC20_$32668",
+                      "typeString": "contract IERC20"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2514:8:128"
+            },
+            "scope": 53712,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IPaymentProcessor",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          53712
+        ],
+        "name": "IPaymentProcessor",
+        "nameLocation": "233:17:128",
+        "scope": 53713,
+        "usedErrors": [
+          53665,
+          53668
+        ],
+        "usedEvents": [
+          53681,
+          53690
+        ]
+      }
+    ],
+    "license": "LGPL-3.0-only"
+  },
+  "id": 128
+}
