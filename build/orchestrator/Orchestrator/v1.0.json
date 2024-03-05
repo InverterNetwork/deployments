@@ -1,0 +1,2959 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "DependencyInjection__ModuleNotUsedInOrchestrator",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "caller",
+          "type": "address"
+        }
+      ],
+      "name": "Orchestrator__CallerNotAuthorized",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Orchestrator__ExecuteTxFailed",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "module",
+          "type": "address"
+        }
+      ],
+      "name": "Orchestrator__InvalidModuleType",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Orchestrator__ModuleManager__CallerNotAuthorized",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Orchestrator__ModuleManager__InvalidModuleAddress",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Orchestrator__ModuleManager__IsModule",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Orchestrator__ModuleManager__IsNotModule",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Orchestrator__ModuleManager__ModuleAmountOverLimits",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Orchestrator__ModuleManager__ModulesNotConsecutive",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Orchestrator__ModuleManager__OnlyCallableByModule",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_address",
+          "type": "address"
+        }
+      ],
+      "name": "AuthorizerUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_address",
+          "type": "address"
+        }
+      ],
+      "name": "FundingManagerUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "module",
+          "type": "address"
+        }
+      ],
+      "name": "ModuleAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "module",
+          "type": "address"
+        }
+      ],
+      "name": "ModuleRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "orchestratorId_",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "fundingManager",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "authorizer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "paymentProcessor",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address[]",
+          "name": "modules",
+          "type": "address[]"
+        }
+      ],
+      "name": "OrchestratorInitialized",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_address",
+          "type": "address"
+        }
+      ],
+      "name": "PaymentProcessorUpdated",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "module",
+          "type": "address"
+        }
+      ],
+      "name": "addModule",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "authorizer",
+      "outputs": [
+        {
+          "internalType": "contract IAuthorizer",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "target",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "executeTx",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "executeTxFromModule",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        },
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "moduleName",
+          "type": "string"
+        }
+      ],
+      "name": "findModuleAddressInOrchestrator",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "fundingManager",
+      "outputs": [
+        {
+          "internalType": "contract IFundingManager",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "orchestratorId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address[]",
+          "name": "modules",
+          "type": "address[]"
+        },
+        {
+          "internalType": "contract IFundingManager",
+          "name": "fundingManager",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IAuthorizer",
+          "name": "authorizer",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IPaymentProcessor",
+          "name": "paymentProcessor",
+          "type": "address"
+        }
+      ],
+      "name": "init",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "module",
+          "type": "address"
+        }
+      ],
+      "name": "isModule",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "forwarder",
+          "type": "address"
+        }
+      ],
+      "name": "isTrustedForwarder",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "listModules",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "modulesSize",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "orchestratorId",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "paymentProcessor",
+      "outputs": [
+        {
+          "internalType": "contract IPaymentProcessor",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "module",
+          "type": "address"
+        }
+      ],
+      "name": "removeModule",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IAuthorizer",
+          "name": "authorizer_",
+          "type": "address"
+        }
+      ],
+      "name": "setAuthorizer",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IFundingManager",
+          "name": "fundingManager_",
+          "type": "address"
+        }
+      ],
+      "name": "setFundingManager",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IPaymentProcessor",
+          "name": "paymentProcessor_",
+          "type": "address"
+        }
+      ],
+      "name": "setPaymentProcessor",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "version",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "addModule(address)": "1ed86f19",
+    "authorizer()": "d09edf31",
+    "executeTx(address,bytes)": "fac5e981",
+    "executeTxFromModule(address,bytes)": "685dc6b1",
+    "findModuleAddressInOrchestrator(string)": "08c101b1",
+    "fundingManager()": "04baed9e",
+    "init(uint256,address[],address,address,address)": "aa0992aa",
+    "isModule(address)": "42f6e389",
+    "isTrustedForwarder(address)": "572b6c05",
+    "listModules()": "4cfa6487",
+    "modulesSize()": "2e3a22d3",
+    "orchestratorId()": "736963a7",
+    "paymentProcessor()": "f1c6bdf8",
+    "removeModule(address)": "a0632461",
+    "setAuthorizer(address)": "058a628f",
+    "setFundingManager(address)": "333dc527",
+    "setPaymentProcessor(address)": "088b0d75",
+    "version()": "54fd4d50"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.23+commit.f704f362\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"DependencyInjection__ModuleNotUsedInOrchestrator\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"Orchestrator__CallerNotAuthorized\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Orchestrator__ExecuteTxFailed\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"module\",\"type\":\"address\"}],\"name\":\"Orchestrator__InvalidModuleType\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Orchestrator__ModuleManager__CallerNotAuthorized\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Orchestrator__ModuleManager__InvalidModuleAddress\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Orchestrator__ModuleManager__IsModule\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Orchestrator__ModuleManager__IsNotModule\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Orchestrator__ModuleManager__ModuleAmountOverLimits\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Orchestrator__ModuleManager__ModulesNotConsecutive\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Orchestrator__ModuleManager__OnlyCallableByModule\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"AuthorizerUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"FundingManagerUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"module\",\"type\":\"address\"}],\"name\":\"ModuleAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"module\",\"type\":\"address\"}],\"name\":\"ModuleRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"orchestratorId_\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"fundingManager\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"authorizer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"paymentProcessor\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"modules\",\"type\":\"address[]\"}],\"name\":\"OrchestratorInitialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"PaymentProcessorUpdated\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"module\",\"type\":\"address\"}],\"name\":\"addModule\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"authorizer\",\"outputs\":[{\"internalType\":\"contract IAuthorizer\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"executeTx\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"executeTxFromModule\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"moduleName\",\"type\":\"string\"}],\"name\":\"findModuleAddressInOrchestrator\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"fundingManager\",\"outputs\":[{\"internalType\":\"contract IFundingManager\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"orchestratorId\",\"type\":\"uint256\"},{\"internalType\":\"address[]\",\"name\":\"modules\",\"type\":\"address[]\"},{\"internalType\":\"contract IFundingManager\",\"name\":\"fundingManager\",\"type\":\"address\"},{\"internalType\":\"contract IAuthorizer\",\"name\":\"authorizer\",\"type\":\"address\"},{\"internalType\":\"contract IPaymentProcessor\",\"name\":\"paymentProcessor\",\"type\":\"address\"}],\"name\":\"init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"module\",\"type\":\"address\"}],\"name\":\"isModule\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"forwarder\",\"type\":\"address\"}],\"name\":\"isTrustedForwarder\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"listModules\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"modulesSize\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"orchestratorId\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paymentProcessor\",\"outputs\":[{\"internalType\":\"contract IPaymentProcessor\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"module\",\"type\":\"address\"}],\"name\":\"removeModule\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IAuthorizer\",\"name\":\"authorizer_\",\"type\":\"address\"}],\"name\":\"setAuthorizer\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IFundingManager\",\"name\":\"fundingManager_\",\"type\":\"address\"}],\"name\":\"setFundingManager\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IPaymentProcessor\",\"name\":\"paymentProcessor_\",\"type\":\"address\"}],\"name\":\"setPaymentProcessor\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"AuthorizerUpdated(address)\":{\"params\":{\"_address\":\"The new address.\"}},\"FundingManagerUpdated(address)\":{\"params\":{\"_address\":\"The new address.\"}},\"ModuleAdded(address)\":{\"params\":{\"module\":\"The module's address.\"}},\"ModuleRemoved(address)\":{\"params\":{\"module\":\"The module's address.\"}},\"OrchestratorInitialized(uint256,address,address,address,address[])\":{\"params\":{\"authorizer\":\"The address of the authorizer module.\",\"fundingManager\":\"The address of the funding manager module.\",\"modules\":\"The addresses of the other modules used in the orchestrator.\",\"orchestratorId_\":\"The id of the orchestrator.\",\"paymentProcessor\":\"The address of the payment processor module.\"}},\"PaymentProcessorUpdated(address)\":{\"params\":{\"_address\":\"The new address.\"}}},\"kind\":\"dev\",\"methods\":{\"addModule(address)\":{\"details\":\"Only callable by authorized address.Fails if address invalid or address already added as module.\",\"params\":{\"module\":\"The module address to add.\"}},\"authorizer()\":{\"returns\":{\"_0\":\"authorizer The attached authorizer.\"}},\"executeTx(address,bytes)\":{\"details\":\"Only callable by authorized caller.\",\"params\":{\"data\":\"The call data.\",\"target\":\"The address to call.\"},\"returns\":{\"_0\":\"returnData The return data of the call.\"}},\"executeTxFromModule(address,bytes)\":{\"details\":\"Only callable by enabled modules.\",\"params\":{\"data\":\"The call data.\",\"to\":\"The address to call.\"},\"returns\":{\"_0\":\"Whether the call succeeded.\",\"_1\":\"The return data of the call.\"}},\"findModuleAddressInOrchestrator(string)\":{\"returns\":{\"_0\":\"moduleAddress The address of the module with the given name.\"}},\"fundingManager()\":{\"returns\":{\"_0\":\"fundingManager The attached funding manager.\"}},\"isModule(address)\":{\"params\":{\"module\":\"The module to check.\"},\"returns\":{\"_0\":\"True if module added, false otherwise.\"}},\"listModules()\":{\"returns\":{\"_0\":\"List of all modules.\"}},\"orchestratorId()\":{\"details\":\"Unique id set by the {OrchestratorFactory} during initialization.\",\"returns\":{\"_0\":\"orchestratorId The id of the orchestrator.\"}},\"paymentProcessor()\":{\"returns\":{\"_0\":\"paymentProcessor The attached payment processor.\"}},\"removeModule(address)\":{\"details\":\"Only callable by authorized address.Fails if address not added as module.\",\"params\":{\"module\":\"The module address to remove.\"}},\"setAuthorizer(address)\":{\"details\":\"Only callable by authorized caller.\",\"params\":{\"authorizer_\":\"The address of the new authorizer module.\"}},\"setFundingManager(address)\":{\"details\":\"Only callable by authorized caller.\",\"params\":{\"fundingManager_\":\"The address of the new funding manager module.\"}},\"setPaymentProcessor(address)\":{\"details\":\"Only callable by authorized caller.\",\"params\":{\"paymentProcessor_\":\"The address of the new payment processor module.\"}},\"version()\":{\"returns\":{\"_0\":\"version The version string of the orchestrator\"}}},\"version\":1},\"userdoc\":{\"errors\":{\"DependencyInjection__ModuleNotUsedInOrchestrator()\":[{\"notice\":\"The given module is not used in the orchestrator\"}],\"Orchestrator__CallerNotAuthorized(bytes32,address)\":[{\"notice\":\"Function is only callable by authorized caller.\"}],\"Orchestrator__ExecuteTxFailed()\":[{\"notice\":\"Execution of transaction failed.\"}],\"Orchestrator__InvalidModuleType(address)\":[{\"notice\":\"The given module is not used in the orchestrator\"}],\"Orchestrator__ModuleManager__CallerNotAuthorized()\":[{\"notice\":\"Function is only callable by authorized address.\"}],\"Orchestrator__ModuleManager__InvalidModuleAddress()\":[{\"notice\":\"Given module address invalid.\"}],\"Orchestrator__ModuleManager__IsModule()\":[{\"notice\":\"Given address is a module.\"}],\"Orchestrator__ModuleManager__IsNotModule()\":[{\"notice\":\"Given address is not a module.\"}],\"Orchestrator__ModuleManager__ModuleAmountOverLimits()\":[{\"notice\":\"The Manager has reached the maximum amount of modules.\"}],\"Orchestrator__ModuleManager__ModulesNotConsecutive()\":[{\"notice\":\"The supplied modules are not consecutive.\"}],\"Orchestrator__ModuleManager__OnlyCallableByModule()\":[{\"notice\":\"Function is only callable by modules.\"}]},\"events\":{\"AuthorizerUpdated(address)\":{\"notice\":\"Authorizer updated to new address.\"},\"FundingManagerUpdated(address)\":{\"notice\":\"FundingManager updated to new address.\"},\"ModuleAdded(address)\":{\"notice\":\"Event emitted when module added.\"},\"ModuleRemoved(address)\":{\"notice\":\"Event emitted when module removed.\"},\"OrchestratorInitialized(uint256,address,address,address,address[])\":{\"notice\":\"Orchestrator has been initialized with the corresponding modules\"},\"PaymentProcessorUpdated(address)\":{\"notice\":\"PaymentProcessor updated to new address.\"}},\"kind\":\"user\",\"methods\":{\"addModule(address)\":{\"notice\":\"Adds address `module` as module.\"},\"authorizer()\":{\"notice\":\"The {IAuthorizer} implementation used to authorize addresses.\"},\"executeTx(address,bytes)\":{\"notice\":\"Executes a call on target `target` with call data `data`.\"},\"executeTxFromModule(address,bytes)\":{\"notice\":\"Executes a call to `to` with call data `data` either via call\"},\"findModuleAddressInOrchestrator(string)\":{\"notice\":\"find the address of a given module using it's name in a orchestrator\"},\"fundingManager()\":{\"notice\":\"The {IFundingManager} implementation used to hold and distribute Funds.\"},\"init(uint256,address[],address,address,address)\":{\"notice\":\"Initialization function.\"},\"isModule(address)\":{\"notice\":\"Returns whether the address `module` is added as module.\"},\"isTrustedForwarder(address)\":{\"notice\":\"Returns the trusted forwarder for the EIP2771 Standard\"},\"listModules()\":{\"notice\":\"Returns the list of all modules.\"},\"modulesSize()\":{\"notice\":\"Returns the number of modules.\"},\"orchestratorId()\":{\"notice\":\"Returns the orchestrator's id.\"},\"paymentProcessor()\":{\"notice\":\"The {IPaymentProcessor} implementation used to process module         payments.\"},\"removeModule(address)\":{\"notice\":\"Removes address `module` as module.\"},\"setAuthorizer(address)\":{\"notice\":\"Replaces the current authorizer with `_authorizer`\"},\"setFundingManager(address)\":{\"notice\":\"Replaces the current funding manager with `fundingManager_`\"},\"setPaymentProcessor(address)\":{\"notice\":\"Replaces the current payment processor with `paymentProcessor_`\"},\"version()\":{\"notice\":\"The version of the orchestrator instance.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/orchestrator/IOrchestrator.sol\":\"IOrchestrator\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":5000},\"remappings\":[\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@oz-up/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@oz/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"lib/openzeppelin-contracts/contracts/access/IAccessControl.sol\":{\"keccak256\":\"0xb6b36edd6a2999fd243ff226d6cbf84bd71af2432bbd0dfe19392996a1d9cb41\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1fd2f35495652e57e3f99bc6c510bc5f7dd398a176ea2e72d8ed730aebc6ca26\",\"dweb:/ipfs/QmTQV6X4gkikTib49cho5iDX3JvSQbdsoEChoDwrk3CbbH\"]},\"lib/openzeppelin-contracts/contracts/access/extensions/IAccessControlEnumerable.sol\":{\"keccak256\":\"0xc1435f102633849858e75d7bed14c636f25448ceb3406d82992b0f2df52f4306\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ce1815e3a1da24f91b8e2ec24cf09d0d46e0fbeddcbe2cb0d8b2e05b91ceb7b3\",\"dweb:/ipfs/QmYTy1AQB5EV5jwuGsB49yykng2oG3x5ss4bDjFNxk3He4\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c\",\"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq\"]},\"src/external/interfaces/IERC2771Context.sol\":{\"keccak256\":\"0xfcc88fc7329ac304efe8c41871d596f0c3fe8f70917214b3a087266bf19ee86b\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://47159333bca960cfdf0bd4e9d5e114174cb047477b08ad4e40dce6f956c8980a\",\"dweb:/ipfs/QmbjnnNmXauGRjP1UcMxAYxzb5YXpveL7hQGtr1PHMH4jv\"]},\"src/modules/authorizer/IAuthorizer.sol\":{\"keccak256\":\"0xdcaf55215b3262742279364176c08499ed1cfd9b5ab3c44d87a1248d7ea80d33\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://a77570dacd5af60bbc116d60a8580daaf6f45efa0e1e77684949ddd96da07c3d\",\"dweb:/ipfs/QmPdabec8xjhESChUEjwUHNvhtSyiS1tFDVLdp5uTF8Jqr\"]},\"src/modules/fundingManager/IFundingManager.sol\":{\"keccak256\":\"0xbcc2c04ede46129d669cd55cf41a7fbe62f0497d7db26014c154c3285c69e7b9\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://eb921cdafef55ae807d45d84d53cb566cfc3a8558887f5852e8049fb4efe1551\",\"dweb:/ipfs/QmajLWRcETLesEHWtHEvTAsDA4vTw1gLXoRtA39jC6bh8C\"]},\"src/modules/logicModule/paymentClient/IERC20PaymentClient.sol\":{\"keccak256\":\"0x8eb2a5e323299b5ea6c0dee1805031b2e1af48fcfe48653802ac4658b49eed28\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://aa47981b5dfc0e18f4ff7b2e5a4e25a39d2d20702fc0c7ae114b07f7402c143e\",\"dweb:/ipfs/QmbtyYqQttpYKj744fZkHvy8u2Fff9t2jDrpTR3GchPcKp\"]},\"src/modules/paymentProcessor/IPaymentProcessor.sol\":{\"keccak256\":\"0x03db27327e16d429f3e906b604de641e126313e07704fddbd2bc39035b0b23a1\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://b620ed08ea5973c00e897f5e2d8cb9dfe2851f80cf37d7e4e0a7963091f6cdba\",\"dweb:/ipfs/Qmcw1c1qrd7KpHWRSiSLyiDkKx4x8cRZfvtcYU962DHLFH\"]},\"src/orchestrator/IOrchestrator.sol\":{\"keccak256\":\"0x20337a100298bd93d9f8c9d5f18474bb48247626938b70564e407d31c58e6f15\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://cd45ab31994e5353545118d05e4379a56aa25cceda649d614e9553a59223e0f3\",\"dweb:/ipfs/QmbTZ743e8KZJhfVa2p4AUFDuT7S3CMxQVt4KfKZEKfFTX\"]},\"src/orchestrator/base/IModuleManager.sol\":{\"keccak256\":\"0x6b2ccb9edbf8610e57e52ed5ff0f629df098c1a44ba1374b4b5db7fa7aa33c97\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://442e8f808cac95cf9a49cf0de0da39ae2b9317a1b7a3b0b02e6e8473c6b695d2\",\"dweb:/ipfs/QmQuvG7MHj5Vkv6kBNvMUdf4erkRDzVp4q21F5A3DtoSdz\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.23+commit.f704f362"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "DependencyInjection__ModuleNotUsedInOrchestrator"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "role",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            }
+          ],
+          "type": "error",
+          "name": "Orchestrator__CallerNotAuthorized"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Orchestrator__ExecuteTxFailed"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "module",
+              "type": "address"
+            }
+          ],
+          "type": "error",
+          "name": "Orchestrator__InvalidModuleType"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Orchestrator__ModuleManager__CallerNotAuthorized"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Orchestrator__ModuleManager__InvalidModuleAddress"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Orchestrator__ModuleManager__IsModule"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Orchestrator__ModuleManager__IsNotModule"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Orchestrator__ModuleManager__ModuleAmountOverLimits"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Orchestrator__ModuleManager__ModulesNotConsecutive"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Orchestrator__ModuleManager__OnlyCallableByModule"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_address",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "AuthorizerUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_address",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "FundingManagerUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "module",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "ModuleAdded",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "module",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "ModuleRemoved",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "orchestratorId_",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "fundingManager",
+              "type": "address",
+              "indexed": false
+            },
+            {
+              "internalType": "address",
+              "name": "authorizer",
+              "type": "address",
+              "indexed": false
+            },
+            {
+              "internalType": "address",
+              "name": "paymentProcessor",
+              "type": "address",
+              "indexed": false
+            },
+            {
+              "internalType": "address[]",
+              "name": "modules",
+              "type": "address[]",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "OrchestratorInitialized",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_address",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "PaymentProcessorUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "module",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "addModule"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "authorizer",
+          "outputs": [
+            {
+              "internalType": "contract IAuthorizer",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "target",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes",
+              "name": "data",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "executeTx",
+          "outputs": [
+            {
+              "internalType": "bytes",
+              "name": "",
+              "type": "bytes"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes",
+              "name": "data",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "executeTxFromModule",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "",
+              "type": "bytes"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "string",
+              "name": "moduleName",
+              "type": "string"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "findModuleAddressInOrchestrator",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "fundingManager",
+          "outputs": [
+            {
+              "internalType": "contract IFundingManager",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "orchestratorId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address[]",
+              "name": "modules",
+              "type": "address[]"
+            },
+            {
+              "internalType": "contract IFundingManager",
+              "name": "fundingManager",
+              "type": "address"
+            },
+            {
+              "internalType": "contract IAuthorizer",
+              "name": "authorizer",
+              "type": "address"
+            },
+            {
+              "internalType": "contract IPaymentProcessor",
+              "name": "paymentProcessor",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "init"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "module",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "isModule",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "forwarder",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "isTrustedForwarder",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "listModules",
+          "outputs": [
+            {
+              "internalType": "address[]",
+              "name": "",
+              "type": "address[]"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "modulesSize",
+          "outputs": [
+            {
+              "internalType": "uint8",
+              "name": "",
+              "type": "uint8"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "orchestratorId",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "paymentProcessor",
+          "outputs": [
+            {
+              "internalType": "contract IPaymentProcessor",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "module",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "removeModule"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract IAuthorizer",
+              "name": "authorizer_",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setAuthorizer"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract IFundingManager",
+              "name": "fundingManager_",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setFundingManager"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract IPaymentProcessor",
+              "name": "paymentProcessor_",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setPaymentProcessor"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "version",
+          "outputs": [
+            {
+              "internalType": "string",
+              "name": "",
+              "type": "string"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "addModule(address)": {
+            "details": "Only callable by authorized address.Fails if address invalid or address already added as module.",
+            "params": {
+              "module": "The module address to add."
+            }
+          },
+          "authorizer()": {
+            "returns": {
+              "_0": "authorizer The attached authorizer."
+            }
+          },
+          "executeTx(address,bytes)": {
+            "details": "Only callable by authorized caller.",
+            "params": {
+              "data": "The call data.",
+              "target": "The address to call."
+            },
+            "returns": {
+              "_0": "returnData The return data of the call."
+            }
+          },
+          "executeTxFromModule(address,bytes)": {
+            "details": "Only callable by enabled modules.",
+            "params": {
+              "data": "The call data.",
+              "to": "The address to call."
+            },
+            "returns": {
+              "_0": "Whether the call succeeded.",
+              "_1": "The return data of the call."
+            }
+          },
+          "findModuleAddressInOrchestrator(string)": {
+            "returns": {
+              "_0": "moduleAddress The address of the module with the given name."
+            }
+          },
+          "fundingManager()": {
+            "returns": {
+              "_0": "fundingManager The attached funding manager."
+            }
+          },
+          "isModule(address)": {
+            "params": {
+              "module": "The module to check."
+            },
+            "returns": {
+              "_0": "True if module added, false otherwise."
+            }
+          },
+          "listModules()": {
+            "returns": {
+              "_0": "List of all modules."
+            }
+          },
+          "orchestratorId()": {
+            "details": "Unique id set by the {OrchestratorFactory} during initialization.",
+            "returns": {
+              "_0": "orchestratorId The id of the orchestrator."
+            }
+          },
+          "paymentProcessor()": {
+            "returns": {
+              "_0": "paymentProcessor The attached payment processor."
+            }
+          },
+          "removeModule(address)": {
+            "details": "Only callable by authorized address.Fails if address not added as module.",
+            "params": {
+              "module": "The module address to remove."
+            }
+          },
+          "setAuthorizer(address)": {
+            "details": "Only callable by authorized caller.",
+            "params": {
+              "authorizer_": "The address of the new authorizer module."
+            }
+          },
+          "setFundingManager(address)": {
+            "details": "Only callable by authorized caller.",
+            "params": {
+              "fundingManager_": "The address of the new funding manager module."
+            }
+          },
+          "setPaymentProcessor(address)": {
+            "details": "Only callable by authorized caller.",
+            "params": {
+              "paymentProcessor_": "The address of the new payment processor module."
+            }
+          },
+          "version()": {
+            "returns": {
+              "_0": "version The version string of the orchestrator"
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "addModule(address)": {
+            "notice": "Adds address `module` as module."
+          },
+          "authorizer()": {
+            "notice": "The {IAuthorizer} implementation used to authorize addresses."
+          },
+          "executeTx(address,bytes)": {
+            "notice": "Executes a call on target `target` with call data `data`."
+          },
+          "executeTxFromModule(address,bytes)": {
+            "notice": "Executes a call to `to` with call data `data` either via call"
+          },
+          "findModuleAddressInOrchestrator(string)": {
+            "notice": "find the address of a given module using it's name in a orchestrator"
+          },
+          "fundingManager()": {
+            "notice": "The {IFundingManager} implementation used to hold and distribute Funds."
+          },
+          "init(uint256,address[],address,address,address)": {
+            "notice": "Initialization function."
+          },
+          "isModule(address)": {
+            "notice": "Returns whether the address `module` is added as module."
+          },
+          "isTrustedForwarder(address)": {
+            "notice": "Returns the trusted forwarder for the EIP2771 Standard"
+          },
+          "listModules()": {
+            "notice": "Returns the list of all modules."
+          },
+          "modulesSize()": {
+            "notice": "Returns the number of modules."
+          },
+          "orchestratorId()": {
+            "notice": "Returns the orchestrator's id."
+          },
+          "paymentProcessor()": {
+            "notice": "The {IPaymentProcessor} implementation used to process module         payments."
+          },
+          "removeModule(address)": {
+            "notice": "Removes address `module` as module."
+          },
+          "setAuthorizer(address)": {
+            "notice": "Replaces the current authorizer with `_authorizer`"
+          },
+          "setFundingManager(address)": {
+            "notice": "Replaces the current funding manager with `fundingManager_`"
+          },
+          "setPaymentProcessor(address)": {
+            "notice": "Replaces the current payment processor with `paymentProcessor_`"
+          },
+          "version()": {
+            "notice": "The version of the orchestrator instance."
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "@oz-up/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "@oz/=lib/openzeppelin-contracts/contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 5000
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/orchestrator/IOrchestrator.sol": "IOrchestrator"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/openzeppelin-contracts/contracts/access/IAccessControl.sol": {
+        "keccak256": "0xb6b36edd6a2999fd243ff226d6cbf84bd71af2432bbd0dfe19392996a1d9cb41",
+        "urls": [
+          "bzz-raw://1fd2f35495652e57e3f99bc6c510bc5f7dd398a176ea2e72d8ed730aebc6ca26",
+          "dweb:/ipfs/QmTQV6X4gkikTib49cho5iDX3JvSQbdsoEChoDwrk3CbbH"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/access/extensions/IAccessControlEnumerable.sol": {
+        "keccak256": "0xc1435f102633849858e75d7bed14c636f25448ceb3406d82992b0f2df52f4306",
+        "urls": [
+          "bzz-raw://ce1815e3a1da24f91b8e2ec24cf09d0d46e0fbeddcbe2cb0d8b2e05b91ceb7b3",
+          "dweb:/ipfs/QmYTy1AQB5EV5jwuGsB49yykng2oG3x5ss4bDjFNxk3He4"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
+        "keccak256": "0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70",
+        "urls": [
+          "bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c",
+          "dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq"
+        ],
+        "license": "MIT"
+      },
+      "src/external/interfaces/IERC2771Context.sol": {
+        "keccak256": "0xfcc88fc7329ac304efe8c41871d596f0c3fe8f70917214b3a087266bf19ee86b",
+        "urls": [
+          "bzz-raw://47159333bca960cfdf0bd4e9d5e114174cb047477b08ad4e40dce6f956c8980a",
+          "dweb:/ipfs/QmbjnnNmXauGRjP1UcMxAYxzb5YXpveL7hQGtr1PHMH4jv"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/modules/authorizer/IAuthorizer.sol": {
+        "keccak256": "0xdcaf55215b3262742279364176c08499ed1cfd9b5ab3c44d87a1248d7ea80d33",
+        "urls": [
+          "bzz-raw://a77570dacd5af60bbc116d60a8580daaf6f45efa0e1e77684949ddd96da07c3d",
+          "dweb:/ipfs/QmPdabec8xjhESChUEjwUHNvhtSyiS1tFDVLdp5uTF8Jqr"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/modules/fundingManager/IFundingManager.sol": {
+        "keccak256": "0xbcc2c04ede46129d669cd55cf41a7fbe62f0497d7db26014c154c3285c69e7b9",
+        "urls": [
+          "bzz-raw://eb921cdafef55ae807d45d84d53cb566cfc3a8558887f5852e8049fb4efe1551",
+          "dweb:/ipfs/QmajLWRcETLesEHWtHEvTAsDA4vTw1gLXoRtA39jC6bh8C"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/modules/logicModule/paymentClient/IERC20PaymentClient.sol": {
+        "keccak256": "0x8eb2a5e323299b5ea6c0dee1805031b2e1af48fcfe48653802ac4658b49eed28",
+        "urls": [
+          "bzz-raw://aa47981b5dfc0e18f4ff7b2e5a4e25a39d2d20702fc0c7ae114b07f7402c143e",
+          "dweb:/ipfs/QmbtyYqQttpYKj744fZkHvy8u2Fff9t2jDrpTR3GchPcKp"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/modules/paymentProcessor/IPaymentProcessor.sol": {
+        "keccak256": "0x03db27327e16d429f3e906b604de641e126313e07704fddbd2bc39035b0b23a1",
+        "urls": [
+          "bzz-raw://b620ed08ea5973c00e897f5e2d8cb9dfe2851f80cf37d7e4e0a7963091f6cdba",
+          "dweb:/ipfs/Qmcw1c1qrd7KpHWRSiSLyiDkKx4x8cRZfvtcYU962DHLFH"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/orchestrator/IOrchestrator.sol": {
+        "keccak256": "0x20337a100298bd93d9f8c9d5f18474bb48247626938b70564e407d31c58e6f15",
+        "urls": [
+          "bzz-raw://cd45ab31994e5353545118d05e4379a56aa25cceda649d614e9553a59223e0f3",
+          "dweb:/ipfs/QmbTZ743e8KZJhfVa2p4AUFDuT7S3CMxQVt4KfKZEKfFTX"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/orchestrator/base/IModuleManager.sol": {
+        "keccak256": "0x6b2ccb9edbf8610e57e52ed5ff0f629df098c1a44ba1374b4b5db7fa7aa33c97",
+        "urls": [
+          "bzz-raw://442e8f808cac95cf9a49cf0de0da39ae2b9317a1b7a3b0b02e6e8473c6b695d2",
+          "dweb:/ipfs/QmQuvG7MHj5Vkv6kBNvMUdf4erkRDzVp4q21F5A3DtoSdz"
+        ],
+        "license": "LGPL-3.0-only"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/orchestrator/IOrchestrator.sol",
+    "id": 57296,
+    "exportedSymbols": {
+      "IAuthorizer": [
+        42616
+      ],
+      "IERC20": [
+        32668
+      ],
+      "IFundingManager": [
+        44404
+      ],
+      "IModuleManager": [
+        58011
+      ],
+      "IOrchestrator": [
+        57295
+      ],
+      "IPaymentProcessor": [
+        53756
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "42:5191:137",
+    "nodes": [
+      {
+        "id": 57145,
+        "nodeType": "PragmaDirective",
+        "src": "42:23:137",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 57147,
+        "nodeType": "ImportDirective",
+        "src": "90:50:137",
+        "nodes": [],
+        "absolutePath": "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+        "file": "@oz/token/ERC20/IERC20.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 57296,
+        "sourceUnit": 32669,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 57146,
+              "name": "IERC20",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 32668,
+              "src": "98:6:137",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 57149,
+        "nodeType": "ImportDirective",
+        "src": "165:72:137",
+        "nodes": [],
+        "absolutePath": "src/orchestrator/base/IModuleManager.sol",
+        "file": "src/orchestrator/base/IModuleManager.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 57296,
+        "sourceUnit": 58012,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 57148,
+              "name": "IModuleManager",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 58011,
+              "src": "173:14:137",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 57151,
+        "nodeType": "ImportDirective",
+        "src": "238:79:137",
+        "nodes": [],
+        "absolutePath": "src/modules/fundingManager/IFundingManager.sol",
+        "file": "src/modules/fundingManager/IFundingManager.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 57296,
+        "sourceUnit": 44405,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 57150,
+              "name": "IFundingManager",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 44404,
+              "src": "246:15:137",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 57153,
+        "nodeType": "ImportDirective",
+        "src": "318:67:137",
+        "nodes": [],
+        "absolutePath": "src/modules/authorizer/IAuthorizer.sol",
+        "file": "src/modules/authorizer/IAuthorizer.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 57296,
+        "sourceUnit": 42617,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 57152,
+              "name": "IAuthorizer",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 42616,
+              "src": "326:11:137",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 57155,
+        "nodeType": "ImportDirective",
+        "src": "386:89:137",
+        "nodes": [],
+        "absolutePath": "src/modules/paymentProcessor/IPaymentProcessor.sol",
+        "file": "src/modules/paymentProcessor/IPaymentProcessor.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 57296,
+        "sourceUnit": 53757,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 57154,
+              "name": "IPaymentProcessor",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 53756,
+              "src": "394:17:137",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 57295,
+        "nodeType": "ContractDefinition",
+        "src": "477:4755:137",
+        "nodes": [
+          {
+            "id": 57164,
+            "nodeType": "ErrorDefinition",
+            "src": "685:70:137",
+            "nodes": [],
+            "documentation": {
+              "id": 57158,
+              "nodeType": "StructuredDocumentation",
+              "src": "621:59:137",
+              "text": "@notice Function is only callable by authorized caller."
+            },
+            "errorSelector": "25f3b927",
+            "name": "Orchestrator__CallerNotAuthorized",
+            "nameLocation": "691:33:137",
+            "parameters": {
+              "id": 57163,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57160,
+                  "mutability": "mutable",
+                  "name": "role",
+                  "nameLocation": "733:4:137",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57164,
+                  "src": "725:12:137",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 57159,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "725:7:137",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57162,
+                  "mutability": "mutable",
+                  "name": "caller",
+                  "nameLocation": "747:6:137",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57164,
+                  "src": "739:14:137",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 57161,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "739:7:137",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "724:30:137"
+            }
+          },
+          {
+            "id": 57167,
+            "nodeType": "ErrorDefinition",
+            "src": "810:38:137",
+            "nodes": [],
+            "documentation": {
+              "id": 57165,
+              "nodeType": "StructuredDocumentation",
+              "src": "761:44:137",
+              "text": "@notice Execution of transaction failed."
+            },
+            "errorSelector": "74373f0f",
+            "name": "Orchestrator__ExecuteTxFailed",
+            "nameLocation": "816:29:137",
+            "parameters": {
+              "id": 57166,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "845:2:137"
+            }
+          },
+          {
+            "id": 57172,
+            "nodeType": "ErrorDefinition",
+            "src": "919:54:137",
+            "nodes": [],
+            "documentation": {
+              "id": 57168,
+              "nodeType": "StructuredDocumentation",
+              "src": "854:60:137",
+              "text": "@notice The given module is not used in the orchestrator"
+            },
+            "errorSelector": "0f25fdb6",
+            "name": "Orchestrator__InvalidModuleType",
+            "nameLocation": "925:31:137",
+            "parameters": {
+              "id": 57171,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57170,
+                  "mutability": "mutable",
+                  "name": "module",
+                  "nameLocation": "965:6:137",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57172,
+                  "src": "957:14:137",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 57169,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "957:7:137",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "956:16:137"
+            }
+          },
+          {
+            "id": 57175,
+            "nodeType": "ErrorDefinition",
+            "src": "1044:57:137",
+            "nodes": [],
+            "documentation": {
+              "id": 57173,
+              "nodeType": "StructuredDocumentation",
+              "src": "979:60:137",
+              "text": "@notice The given module is not used in the orchestrator"
+            },
+            "errorSelector": "8b08febc",
+            "name": "DependencyInjection__ModuleNotUsedInOrchestrator",
+            "nameLocation": "1050:48:137",
+            "parameters": {
+              "id": 57174,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1098:2:137"
+            }
+          },
+          {
+            "id": 57180,
+            "nodeType": "EventDefinition",
+            "src": "1295:50:137",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 57176,
+              "nodeType": "StructuredDocumentation",
+              "src": "1203:87:137",
+              "text": "@notice Authorizer updated to new address.\n @param _address The new address."
+            },
+            "eventSelector": "f3f625a7d9e02778afdfdf1bea978d6565840d408866c70f5d25aadf77021d70",
+            "name": "AuthorizerUpdated",
+            "nameLocation": "1301:17:137",
+            "parameters": {
+              "id": 57179,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57178,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "_address",
+                  "nameLocation": "1335:8:137",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57180,
+                  "src": "1319:24:137",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 57177,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1319:7:137",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1318:26:137"
+            }
+          },
+          {
+            "id": 57185,
+            "nodeType": "EventDefinition",
+            "src": "1447:54:137",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 57181,
+              "nodeType": "StructuredDocumentation",
+              "src": "1351:91:137",
+              "text": "@notice FundingManager updated to new address.\n @param _address The new address."
+            },
+            "eventSelector": "224dfb9d0227c04cf6e5b57d4b0594d2962f550c547f4bf5e2578e09d6aa67ed",
+            "name": "FundingManagerUpdated",
+            "nameLocation": "1453:21:137",
+            "parameters": {
+              "id": 57184,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57183,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "_address",
+                  "nameLocation": "1491:8:137",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57185,
+                  "src": "1475:24:137",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 57182,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1475:7:137",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1474:26:137"
+            }
+          },
+          {
+            "id": 57190,
+            "nodeType": "EventDefinition",
+            "src": "1605:56:137",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 57186,
+              "nodeType": "StructuredDocumentation",
+              "src": "1507:93:137",
+              "text": "@notice PaymentProcessor updated to new address.\n @param _address The new address."
+            },
+            "eventSelector": "ae8716ba090b1cdfccf3851704c6dc4610f3be4f2f6badf912e74315e5280db4",
+            "name": "PaymentProcessorUpdated",
+            "nameLocation": "1611:23:137",
+            "parameters": {
+              "id": 57189,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57188,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "_address",
+                  "nameLocation": "1651:8:137",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57190,
+                  "src": "1635:24:137",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 57187,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1635:7:137",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1634:26:137"
+            }
+          },
+          {
+            "id": 57204,
+            "nodeType": "EventDefinition",
+            "src": "2105:195:137",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 57191,
+              "nodeType": "StructuredDocumentation",
+              "src": "1667:433:137",
+              "text": "@notice Orchestrator has been initialized with the corresponding modules\n @param orchestratorId_ The id of the orchestrator.\n @param fundingManager The address of the funding manager module.\n @param authorizer The address of the authorizer module.\n @param paymentProcessor The address of the payment processor module.\n @param modules The addresses of the other modules used in the orchestrator."
+            },
+            "eventSelector": "070464456e868d7463724bb8b918079d22862b221db0658876214310cc0a9330",
+            "name": "OrchestratorInitialized",
+            "nameLocation": "2111:23:137",
+            "parameters": {
+              "id": 57203,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57193,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "orchestratorId_",
+                  "nameLocation": "2157:15:137",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57204,
+                  "src": "2144:28:137",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 57192,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2144:4:137",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57195,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "fundingManager",
+                  "nameLocation": "2190:14:137",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57204,
+                  "src": "2182:22:137",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 57194,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2182:7:137",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57197,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "authorizer",
+                  "nameLocation": "2222:10:137",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57204,
+                  "src": "2214:18:137",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 57196,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2214:7:137",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57199,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "paymentProcessor",
+                  "nameLocation": "2250:16:137",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57204,
+                  "src": "2242:24:137",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 57198,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2242:7:137",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57202,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "modules",
+                  "nameLocation": "2286:7:137",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57204,
+                  "src": "2276:17:137",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 57200,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2276:7:137",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 57201,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2276:9:137",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2134:165:137"
+            }
+          },
+          {
+            "id": 57222,
+            "nodeType": "FunctionDefinition",
+            "src": "2446:210:137",
+            "nodes": [],
+            "documentation": {
+              "id": 57205,
+              "nodeType": "StructuredDocumentation",
+              "src": "2405:36:137",
+              "text": "@notice Initialization function."
+            },
+            "functionSelector": "aa0992aa",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "init",
+            "nameLocation": "2455:4:137",
+            "parameters": {
+              "id": 57220,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57207,
+                  "mutability": "mutable",
+                  "name": "orchestratorId",
+                  "nameLocation": "2474:14:137",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57222,
+                  "src": "2469:19:137",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 57206,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2469:4:137",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57210,
+                  "mutability": "mutable",
+                  "name": "modules",
+                  "nameLocation": "2517:7:137",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57222,
+                  "src": "2498:26:137",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 57208,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2498:7:137",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 57209,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2498:9:137",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57213,
+                  "mutability": "mutable",
+                  "name": "fundingManager",
+                  "nameLocation": "2550:14:137",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57222,
+                  "src": "2534:30:137",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IFundingManager_$44404",
+                    "typeString": "contract IFundingManager"
+                  },
+                  "typeName": {
+                    "id": 57212,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 57211,
+                      "name": "IFundingManager",
+                      "nameLocations": [
+                        "2534:15:137"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 44404,
+                      "src": "2534:15:137"
+                    },
+                    "referencedDeclaration": 44404,
+                    "src": "2534:15:137",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IFundingManager_$44404",
+                      "typeString": "contract IFundingManager"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57216,
+                  "mutability": "mutable",
+                  "name": "authorizer",
+                  "nameLocation": "2586:10:137",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57222,
+                  "src": "2574:22:137",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IAuthorizer_$42616",
+                    "typeString": "contract IAuthorizer"
+                  },
+                  "typeName": {
+                    "id": 57215,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 57214,
+                      "name": "IAuthorizer",
+                      "nameLocations": [
+                        "2574:11:137"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 42616,
+                      "src": "2574:11:137"
+                    },
+                    "referencedDeclaration": 42616,
+                    "src": "2574:11:137",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IAuthorizer_$42616",
+                      "typeString": "contract IAuthorizer"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57219,
+                  "mutability": "mutable",
+                  "name": "paymentProcessor",
+                  "nameLocation": "2624:16:137",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57222,
+                  "src": "2606:34:137",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IPaymentProcessor_$53756",
+                    "typeString": "contract IPaymentProcessor"
+                  },
+                  "typeName": {
+                    "id": 57218,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 57217,
+                      "name": "IPaymentProcessor",
+                      "nameLocations": [
+                        "2606:17:137"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 53756,
+                      "src": "2606:17:137"
+                    },
+                    "referencedDeclaration": 53756,
+                    "src": "2606:17:137",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IPaymentProcessor_$53756",
+                      "typeString": "contract IPaymentProcessor"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2459:187:137"
+            },
+            "returnParameters": {
+              "id": 57221,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2655:0:137"
+            },
+            "scope": 57295,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 57229,
+            "nodeType": "FunctionDefinition",
+            "src": "2847:57:137",
+            "nodes": [],
+            "documentation": {
+              "id": 57223,
+              "nodeType": "StructuredDocumentation",
+              "src": "2662:180:137",
+              "text": "@notice Replaces the current authorizer with `_authorizer`\n @dev Only callable by authorized caller.\n @param authorizer_ The address of the new authorizer module."
+            },
+            "functionSelector": "058a628f",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setAuthorizer",
+            "nameLocation": "2856:13:137",
+            "parameters": {
+              "id": 57227,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57226,
+                  "mutability": "mutable",
+                  "name": "authorizer_",
+                  "nameLocation": "2882:11:137",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57229,
+                  "src": "2870:23:137",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IAuthorizer_$42616",
+                    "typeString": "contract IAuthorizer"
+                  },
+                  "typeName": {
+                    "id": 57225,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 57224,
+                      "name": "IAuthorizer",
+                      "nameLocations": [
+                        "2870:11:137"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 42616,
+                      "src": "2870:11:137"
+                    },
+                    "referencedDeclaration": 42616,
+                    "src": "2870:11:137",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IAuthorizer_$42616",
+                      "typeString": "contract IAuthorizer"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2869:25:137"
+            },
+            "returnParameters": {
+              "id": 57228,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2903:0:137"
+            },
+            "scope": 57295,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 57236,
+            "nodeType": "FunctionDefinition",
+            "src": "3113:69:137",
+            "nodes": [],
+            "documentation": {
+              "id": 57230,
+              "nodeType": "StructuredDocumentation",
+              "src": "2910:198:137",
+              "text": "@notice Replaces the current funding manager with `fundingManager_`\n @dev Only callable by authorized caller.\n @param fundingManager_ The address of the new funding manager module."
+            },
+            "functionSelector": "333dc527",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setFundingManager",
+            "nameLocation": "3122:17:137",
+            "parameters": {
+              "id": 57234,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57233,
+                  "mutability": "mutable",
+                  "name": "fundingManager_",
+                  "nameLocation": "3156:15:137",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57236,
+                  "src": "3140:31:137",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IFundingManager_$44404",
+                    "typeString": "contract IFundingManager"
+                  },
+                  "typeName": {
+                    "id": 57232,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 57231,
+                      "name": "IFundingManager",
+                      "nameLocations": [
+                        "3140:15:137"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 44404,
+                      "src": "3140:15:137"
+                    },
+                    "referencedDeclaration": 44404,
+                    "src": "3140:15:137",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IFundingManager_$44404",
+                      "typeString": "contract IFundingManager"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3139:33:137"
+            },
+            "returnParameters": {
+              "id": 57235,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3181:0:137"
+            },
+            "scope": 57295,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 57243,
+            "nodeType": "FunctionDefinition",
+            "src": "3399:83:137",
+            "nodes": [],
+            "documentation": {
+              "id": 57237,
+              "nodeType": "StructuredDocumentation",
+              "src": "3188:206:137",
+              "text": "@notice Replaces the current payment processor with `paymentProcessor_`\n @dev Only callable by authorized caller.\n @param paymentProcessor_ The address of the new payment processor module."
+            },
+            "functionSelector": "088b0d75",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setPaymentProcessor",
+            "nameLocation": "3408:19:137",
+            "parameters": {
+              "id": 57241,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57240,
+                  "mutability": "mutable",
+                  "name": "paymentProcessor_",
+                  "nameLocation": "3446:17:137",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57243,
+                  "src": "3428:35:137",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IPaymentProcessor_$53756",
+                    "typeString": "contract IPaymentProcessor"
+                  },
+                  "typeName": {
+                    "id": 57239,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 57238,
+                      "name": "IPaymentProcessor",
+                      "nameLocations": [
+                        "3428:17:137"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 53756,
+                      "src": "3428:17:137"
+                    },
+                    "referencedDeclaration": 53756,
+                    "src": "3428:17:137",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IPaymentProcessor_$53756",
+                      "typeString": "contract IPaymentProcessor"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3427:37:137"
+            },
+            "returnParameters": {
+              "id": 57242,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3481:0:137"
+            },
+            "scope": 57295,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 57253,
+            "nodeType": "FunctionDefinition",
+            "src": "3745:102:137",
+            "nodes": [],
+            "documentation": {
+              "id": 57244,
+              "nodeType": "StructuredDocumentation",
+              "src": "3488:252:137",
+              "text": "@notice Executes a call on target `target` with call data `data`.\n @dev Only callable by authorized caller.\n @param target The address to call.\n @param data The call data.\n @return returnData The return data of the call."
+            },
+            "functionSelector": "fac5e981",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "executeTx",
+            "nameLocation": "3754:9:137",
+            "parameters": {
+              "id": 57249,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57246,
+                  "mutability": "mutable",
+                  "name": "target",
+                  "nameLocation": "3772:6:137",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57253,
+                  "src": "3764:14:137",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 57245,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3764:7:137",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57248,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nameLocation": "3793:4:137",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57253,
+                  "src": "3780:17:137",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 57247,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3780:5:137",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3763:35:137"
+            },
+            "returnParameters": {
+              "id": 57252,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57251,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57253,
+                  "src": "3833:12:137",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 57250,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3833:5:137",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3832:14:137"
+            },
+            "scope": 57295,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 57259,
+            "nodeType": "FunctionDefinition",
+            "src": "4038:55:137",
+            "nodes": [],
+            "documentation": {
+              "id": 57254,
+              "nodeType": "StructuredDocumentation",
+              "src": "3853:180:137",
+              "text": "@notice Returns the orchestrator's id.\n @dev Unique id set by the {OrchestratorFactory} during initialization.\n @return orchestratorId The id of the orchestrator."
+            },
+            "functionSelector": "736963a7",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "orchestratorId",
+            "nameLocation": "4047:14:137",
+            "parameters": {
+              "id": 57255,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4061:2:137"
+            },
+            "returnParameters": {
+              "id": 57258,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57257,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57259,
+                  "src": "4087:4:137",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 57256,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4087:4:137",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4086:6:137"
+            },
+            "scope": 57295,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 57266,
+            "nodeType": "FunctionDefinition",
+            "src": "4248:66:137",
+            "nodes": [],
+            "documentation": {
+              "id": 57260,
+              "nodeType": "StructuredDocumentation",
+              "src": "4099:144:137",
+              "text": "@notice The {IFundingManager} implementation used to hold and distribute Funds.\n @return fundingManager The attached funding manager."
+            },
+            "functionSelector": "04baed9e",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "fundingManager",
+            "nameLocation": "4257:14:137",
+            "parameters": {
+              "id": 57261,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4271:2:137"
+            },
+            "returnParameters": {
+              "id": 57265,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57264,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57266,
+                  "src": "4297:15:137",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IFundingManager_$44404",
+                    "typeString": "contract IFundingManager"
+                  },
+                  "typeName": {
+                    "id": 57263,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 57262,
+                      "name": "IFundingManager",
+                      "nameLocations": [
+                        "4297:15:137"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 44404,
+                      "src": "4297:15:137"
+                    },
+                    "referencedDeclaration": 44404,
+                    "src": "4297:15:137",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IFundingManager_$44404",
+                      "typeString": "contract IFundingManager"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4296:17:137"
+            },
+            "scope": 57295,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 57273,
+            "nodeType": "FunctionDefinition",
+            "src": "4450:58:137",
+            "nodes": [],
+            "documentation": {
+              "id": 57267,
+              "nodeType": "StructuredDocumentation",
+              "src": "4320:125:137",
+              "text": "@notice The {IAuthorizer} implementation used to authorize addresses.\n @return authorizer The attached authorizer."
+            },
+            "functionSelector": "d09edf31",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "authorizer",
+            "nameLocation": "4459:10:137",
+            "parameters": {
+              "id": 57268,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4469:2:137"
+            },
+            "returnParameters": {
+              "id": 57272,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57271,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57273,
+                  "src": "4495:11:137",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IAuthorizer_$42616",
+                    "typeString": "contract IAuthorizer"
+                  },
+                  "typeName": {
+                    "id": 57270,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 57269,
+                      "name": "IAuthorizer",
+                      "nameLocations": [
+                        "4495:11:137"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 42616,
+                      "src": "4495:11:137"
+                    },
+                    "referencedDeclaration": 42616,
+                    "src": "4495:11:137",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IAuthorizer_$42616",
+                      "typeString": "contract IAuthorizer"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4494:13:137"
+            },
+            "scope": 57295,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 57280,
+            "nodeType": "FunctionDefinition",
+            "src": "4683:70:137",
+            "nodes": [],
+            "documentation": {
+              "id": 57274,
+              "nodeType": "StructuredDocumentation",
+              "src": "4514:164:137",
+              "text": "@notice The {IPaymentProcessor} implementation used to process module\n         payments.\n @return paymentProcessor The attached payment processor."
+            },
+            "functionSelector": "f1c6bdf8",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "paymentProcessor",
+            "nameLocation": "4692:16:137",
+            "parameters": {
+              "id": 57275,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4708:2:137"
+            },
+            "returnParameters": {
+              "id": 57279,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57278,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57280,
+                  "src": "4734:17:137",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IPaymentProcessor_$53756",
+                    "typeString": "contract IPaymentProcessor"
+                  },
+                  "typeName": {
+                    "id": 57277,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 57276,
+                      "name": "IPaymentProcessor",
+                      "nameLocations": [
+                        "4734:17:137"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 53756,
+                      "src": "4734:17:137"
+                    },
+                    "referencedDeclaration": 53756,
+                    "src": "4734:17:137",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IPaymentProcessor_$53756",
+                      "typeString": "contract IPaymentProcessor"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4733:19:137"
+            },
+            "scope": 57295,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 57286,
+            "nodeType": "FunctionDefinition",
+            "src": "4880:57:137",
+            "nodes": [],
+            "documentation": {
+              "id": 57281,
+              "nodeType": "StructuredDocumentation",
+              "src": "4759:116:137",
+              "text": "@notice The version of the orchestrator instance.\n @return version The version string of the orchestrator"
+            },
+            "functionSelector": "54fd4d50",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "version",
+            "nameLocation": "4889:7:137",
+            "parameters": {
+              "id": 57282,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4896:2:137"
+            },
+            "returnParameters": {
+              "id": 57285,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57284,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57286,
+                  "src": "4922:13:137",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 57283,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4922:6:137",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4921:15:137"
+            },
+            "scope": 57295,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 57294,
+            "nodeType": "FunctionDefinition",
+            "src": "5105:125:137",
+            "nodes": [],
+            "documentation": {
+              "id": 57287,
+              "nodeType": "StructuredDocumentation",
+              "src": "4943:157:137",
+              "text": "@notice find the address of a given module using it's name in a orchestrator\n @return moduleAddress The address of the module with the given name."
+            },
+            "functionSelector": "08c101b1",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "findModuleAddressInOrchestrator",
+            "nameLocation": "5114:31:137",
+            "parameters": {
+              "id": 57290,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57289,
+                  "mutability": "mutable",
+                  "name": "moduleName",
+                  "nameLocation": "5162:10:137",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57294,
+                  "src": "5146:26:137",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 57288,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5146:6:137",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5145:28:137"
+            },
+            "returnParameters": {
+              "id": 57293,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57292,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57294,
+                  "src": "5221:7:137",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 57291,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5221:7:137",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5220:9:137"
+            },
+            "scope": 57295,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 57156,
+              "name": "IModuleManager",
+              "nameLocations": [
+                "504:14:137"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 58011,
+              "src": "504:14:137"
+            },
+            "id": 57157,
+            "nodeType": "InheritanceSpecifier",
+            "src": "504:14:137"
+          }
+        ],
+        "canonicalName": "IOrchestrator",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          57295,
+          58011,
+          41234
+        ],
+        "name": "IOrchestrator",
+        "nameLocation": "487:13:137",
+        "scope": 57296,
+        "usedErrors": [
+          57164,
+          57167,
+          57172,
+          57175,
+          57930,
+          57933,
+          57936,
+          57939,
+          57942,
+          57945,
+          57948
+        ],
+        "usedEvents": [
+          57180,
+          57185,
+          57190,
+          57204,
+          57953,
+          57958
+        ]
+      }
+    ],
+    "license": "LGPL-3.0-only"
+  },
+  "id": 137
+}
