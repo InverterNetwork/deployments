@@ -21,6 +21,31 @@
         {
           "indexed": true,
           "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Approval",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
           "name": "_from",
           "type": "address"
         },
@@ -38,6 +63,50 @@
         }
       ],
       "name": "Deposit",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "epoch",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newScalar",
+          "type": "uint256"
+        }
+      ],
+      "name": "Rebase",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
       "type": "event"
     },
     {
@@ -87,6 +156,86 @@
     {
       "inputs": [
         {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        }
+      ],
+      "name": "allowance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "approve",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "decimals",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
           "internalType": "uint256",
           "name": "amount",
           "type": "uint256"
@@ -117,6 +266,71 @@
     },
     {
       "inputs": [],
+      "name": "name",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "rebase",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "who",
+          "type": "address"
+        }
+      ],
+      "name": "scaledBalanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "scaledTotalSupply",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "symbol",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
       "name": "token",
       "outputs": [
         {
@@ -126,6 +340,115 @@
         }
       ],
       "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalSupply",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "transfer",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "transferAll",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "transferAllFrom",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferFrom",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
@@ -189,14 +512,28 @@
     "linkReferences": {}
   },
   "methodIdentifiers": {
+    "allowance(address,address)": "dd62ed3e",
+    "approve(address,uint256)": "095ea7b3",
+    "balanceOf(address)": "70a08231",
+    "decimals()": "313ce567",
     "deposit(uint256)": "b6b55f25",
     "depositFor(address,uint256)": "2f4f21e2",
+    "name()": "06fdde03",
+    "rebase()": "af14052c",
+    "scaledBalanceOf(address)": "1da24f3e",
+    "scaledTotalSupply()": "b1bf962d",
+    "symbol()": "95d89b41",
     "token()": "fc0c546a",
+    "totalSupply()": "18160ddd",
+    "transfer(address,uint256)": "a9059cbb",
+    "transferAll(address)": "a3a7e7f3",
+    "transferAllFrom(address,address)": "84d4b410",
+    "transferFrom(address,address,uint256)": "23b872dd",
     "transferOrchestratorToken(address,uint256)": "759cc4b5",
     "withdraw(uint256)": "2e1a7d4d",
     "withdrawTo(address,uint256)": "205c2878"
   },
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.23+commit.f704f362\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"Module__FundingManager__CannotSelfDeposit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__FundingManager__DepositCapReached\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__FundingManager__InvalidAddress\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_for\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"Deposit\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"TransferOrchestratorToken\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_for\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"Withdrawal\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"deposit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"depositFor\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"token\",\"outputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferOrchestratorToken\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"withdrawTo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"custom:moduletype\":\"fundingManager\",\"custom:version\":\"1.0\",\"errors\":{\"Module__FundingManager__InvalidAddress()\":[{\"details\":\"Invalid Address\"}]},\"events\":{\"Deposit(address,address,uint256)\":{\"params\":{\"_amount\":\"The amount of tokens deposited.\",\"_for\":\"The address that will receive the receipt tokens.\",\"_from\":\"The address depositing tokens.\"}},\"TransferOrchestratorToken(address,uint256)\":{\"params\":{\"_amount\":\"The amount of underlying tokens transfered.\",\"_to\":\"The address that will receive the underlying tokens.\"}},\"Withdrawal(address,address,uint256)\":{\"params\":{\"_amount\":\"The amount of underlying tokens withdrawn.\",\"_for\":\"The address that will receive the underlying tokens.\",\"_from\":\"The address supplying the receipt tokens.\"}}},\"kind\":\"dev\",\"methods\":{\"deposit(uint256)\":{\"custom:tags\":\"amount:decimal\",\"params\":{\"amount\":\"The amount that is being deposited.\"}},\"depositFor(address,uint256)\":{\"custom:tags\":\"amount:decimal\",\"params\":{\"amount\":\"The amount that is being deposited.\",\"to\":\"The address that this deposit is credit towards.\"}},\"transferOrchestratorToken(address,uint256)\":{\"custom:tags\":\"amount:decimal\",\"params\":{\"amount\":\"The amount that is being sent.\",\"to\":\"The destination address of the transfer.\"}},\"withdraw(uint256)\":{\"custom:tags\":\"amount:decimal\",\"params\":{\"amount\":\"The amount that is being withdrawn.\"}},\"withdrawTo(address,uint256)\":{\"custom:tags\":\"amount:decimal\",\"params\":{\"amount\":\"The amount that is being withdrawn.\",\"to\":\"The address that the withdrawn tokens should be sent to.\"}}},\"version\":1},\"userdoc\":{\"errors\":{\"Module__FundingManager__CannotSelfDeposit()\":[{\"notice\":\"Function is only callable by authorized address.\"}],\"Module__FundingManager__DepositCapReached()\":[{\"notice\":\"There is a cap on deposits.\"}]},\"events\":{\"Deposit(address,address,uint256)\":{\"notice\":\"Event emitted when a deposit takes place.\"},\"TransferOrchestratorToken(address,uint256)\":{\"notice\":\"Event emitted when a transferal of orchestrator tokens takes place.\"},\"Withdrawal(address,address,uint256)\":{\"notice\":\"Event emitted when a withdrawal takes place.\"}},\"kind\":\"user\",\"methods\":{\"deposit(uint256)\":{\"notice\":\"Deposits an amount of the token.\"},\"depositFor(address,uint256)\":{\"notice\":\"Deposits an amount of the token for an adddress.\"},\"token()\":{\"notice\":\"Returns the IERC20 token of the funding manager.\"},\"transferOrchestratorToken(address,uint256)\":{\"notice\":\"Transfers the orchestrator token to a specific address.\"},\"withdraw(uint256)\":{\"notice\":\"Withdraws an amount of the token.\"},\"withdrawTo(address,uint256)\":{\"notice\":\"Withdraws an amount of the token to an address.\"}},\"notice\":\"A rebasing funding manager module\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/modules/fundingManager/IRebasingFundingManager.sol\":\"IRebasingFundingManager\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":5000},\"remappings\":[\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@oz-up/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@oz/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c\",\"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq\"]},\"src/modules/fundingManager/IFundingManager.sol\":{\"keccak256\":\"0xbcc2c04ede46129d669cd55cf41a7fbe62f0497d7db26014c154c3285c69e7b9\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://eb921cdafef55ae807d45d84d53cb566cfc3a8558887f5852e8049fb4efe1551\",\"dweb:/ipfs/QmajLWRcETLesEHWtHEvTAsDA4vTw1gLXoRtA39jC6bh8C\"]},\"src/modules/fundingManager/IRebasingFundingManager.sol\":{\"keccak256\":\"0xa9017f638642e24bce1d9184957aa94a97241bc7eb6bbc05edbd7302bdec64c0\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://5a51a3aaddabe3f244fc0c74a1db7911d2b563cc00d9bb032b9af231d4eace17\",\"dweb:/ipfs/QmXAgu9U5Cs7dCpH8fEUxp2nkazezifRHxYSfF2VpCz76S\"]}},\"version\":1}",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.23+commit.f704f362\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"Module__FundingManager__CannotSelfDeposit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__FundingManager__DepositCapReached\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__FundingManager__InvalidAddress\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_for\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"Deposit\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"epoch\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newScalar\",\"type\":\"uint256\"}],\"name\":\"Rebase\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"TransferOrchestratorToken\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_for\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"Withdrawal\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"deposit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"depositFor\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rebase\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"who\",\"type\":\"address\"}],\"name\":\"scaledBalanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"scaledTotalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"token\",\"outputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"transferAll\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"transferAllFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferOrchestratorToken\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"withdrawTo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"custom:moduletype\":\"fundingManager\",\"custom:version\":\"1.0\",\"errors\":{\"Module__FundingManager__InvalidAddress()\":[{\"details\":\"Invalid Address\"}]},\"events\":{\"Approval(address,address,uint256)\":{\"details\":\"Emitted when the allowance of a `spender` for an `owner` is set by a call to {approve}. `value` is the new allowance.\"},\"Deposit(address,address,uint256)\":{\"params\":{\"_amount\":\"The amount of tokens deposited.\",\"_for\":\"The address that will receive the receipt tokens.\",\"_from\":\"The address depositing tokens.\"}},\"Rebase(uint256,uint256)\":{\"params\":{\"epoch\":\"The number of rebases since inception.\",\"newScalar\":\"The new scalar.\"}},\"Transfer(address,address,uint256)\":{\"details\":\"Emitted when `value` tokens are moved from one account (`from`) to another (`to`). Note that `value` may be zero.\"},\"TransferOrchestratorToken(address,uint256)\":{\"params\":{\"_amount\":\"The amount of underlying tokens transfered.\",\"_to\":\"The address that will receive the underlying tokens.\"}},\"Withdrawal(address,address,uint256)\":{\"params\":{\"_amount\":\"The amount of underlying tokens withdrawn.\",\"_for\":\"The address that will receive the underlying tokens.\",\"_from\":\"The address supplying the receipt tokens.\"}}},\"kind\":\"dev\",\"methods\":{\"allowance(address,address)\":{\"details\":\"Returns the remaining number of tokens that `spender` will be allowed to spend on behalf of `owner` through {transferFrom}. This is zero by default. This value changes when {approve} or {transferFrom} are called.\"},\"approve(address,uint256)\":{\"details\":\"Sets `amount` as the allowance of `spender` over the caller's tokens. Returns a boolean value indicating whether the operation succeeded. IMPORTANT: Beware that changing an allowance with this method brings the risk that someone may use both the old and the new allowance by unfortunate transaction ordering. One possible solution to mitigate this race condition is to first reduce the spender's allowance to 0 and set the desired value afterwards: https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729 Emits an {Approval} event.\"},\"balanceOf(address)\":{\"details\":\"Returns the amount of tokens owned by `account`.\"},\"decimals()\":{\"details\":\"Returns the decimals places of the token.\"},\"deposit(uint256)\":{\"custom:tags\":\"amount:decimal\",\"params\":{\"amount\":\"The amount that is being deposited.\"}},\"depositFor(address,uint256)\":{\"custom:tags\":\"amount:decimal\",\"params\":{\"amount\":\"The amount that is being deposited.\",\"to\":\"The address that this deposit is credit towards.\"}},\"name()\":{\"details\":\"Returns the name of the token.\"},\"scaledBalanceOf(address)\":{\"params\":{\"who\":\"The address to query.\"}},\"symbol()\":{\"details\":\"Returns the symbol of the token.\"},\"totalSupply()\":{\"details\":\"Returns the amount of tokens in existence.\"},\"transfer(address,uint256)\":{\"details\":\"Moves `amount` tokens from the caller's account to `to`. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event.\"},\"transferAll(address)\":{\"params\":{\"to\":\"The address to transfer to.\"},\"returns\":{\"_0\":\"True on success, false otherwise.\"}},\"transferAllFrom(address,address)\":{\"params\":{\"from\":\"The address to send tokens from.\",\"to\":\"The address to transfer to.\"}},\"transferFrom(address,address,uint256)\":{\"details\":\"Moves `amount` tokens from `from` to `to` using the allowance mechanism. `amount` is then deducted from the caller's allowance. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event.\"},\"transferOrchestratorToken(address,uint256)\":{\"custom:tags\":\"amount:decimal\",\"params\":{\"amount\":\"The amount that is being sent.\",\"to\":\"The destination address of the transfer.\"}},\"withdraw(uint256)\":{\"custom:tags\":\"amount:decimal\",\"params\":{\"amount\":\"The amount that is being withdrawn.\"}},\"withdrawTo(address,uint256)\":{\"custom:tags\":\"amount:decimal\",\"params\":{\"amount\":\"The amount that is being withdrawn.\",\"to\":\"The address that the withdrawn tokens should be sent to.\"}}},\"version\":1},\"userdoc\":{\"errors\":{\"Module__FundingManager__CannotSelfDeposit()\":[{\"notice\":\"Function is only callable by authorized address.\"}],\"Module__FundingManager__DepositCapReached()\":[{\"notice\":\"There is a cap on deposits.\"}]},\"events\":{\"Deposit(address,address,uint256)\":{\"notice\":\"Event emitted when a deposit takes place.\"},\"Rebase(uint256,uint256)\":{\"notice\":\"Event emitted when the balance scalar is updated.\"},\"TransferOrchestratorToken(address,uint256)\":{\"notice\":\"Event emitted when a transferal of orchestrator tokens takes place.\"},\"Withdrawal(address,address,uint256)\":{\"notice\":\"Event emitted when a withdrawal takes place.\"}},\"kind\":\"user\",\"methods\":{\"deposit(uint256)\":{\"notice\":\"Deposits an amount of the token.\"},\"depositFor(address,uint256)\":{\"notice\":\"Deposits an amount of the token for an adddress.\"},\"rebase()\":{\"notice\":\"Triggers the next rebase, if applicable.\"},\"scaledBalanceOf(address)\":{\"notice\":\"Returns the fixed balance of the specified address.\"},\"scaledTotalSupply()\":{\"notice\":\"Returns the total fixed supply.\"},\"token()\":{\"notice\":\"Returns the IERC20 token of the funding manager.\"},\"transferAll(address)\":{\"notice\":\"Transfer all of the sender's balance to a specified address.\"},\"transferAllFrom(address,address)\":{\"notice\":\"Transfer all balance tokens from one address to another.\"},\"transferOrchestratorToken(address,uint256)\":{\"notice\":\"Transfers the orchestrator token to a specific address.\"},\"withdraw(uint256)\":{\"notice\":\"Withdraws an amount of the token.\"},\"withdrawTo(address,uint256)\":{\"notice\":\"Withdraws an amount of the token to an address.\"}},\"notice\":\"A rebasing funding manager module\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/modules/fundingManager/IRebasingFundingManager.sol\":\"IRebasingFundingManager\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":5000},\"remappings\":[\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@oz-up/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@oz/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c\",\"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq\"]},\"src/modules/fundingManager/IFundingManager.sol\":{\"keccak256\":\"0xbcc2c04ede46129d669cd55cf41a7fbe62f0497d7db26014c154c3285c69e7b9\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://eb921cdafef55ae807d45d84d53cb566cfc3a8558887f5852e8049fb4efe1551\",\"dweb:/ipfs/QmajLWRcETLesEHWtHEvTAsDA4vTw1gLXoRtA39jC6bh8C\"]},\"src/modules/fundingManager/IRebasingFundingManager.sol\":{\"keccak256\":\"0x07c4194daa32a18501aeb1085293917a67da7bb20394da70263cb19468324a73\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://164570615b9197fd1ea0bd00205340f0b366d25c23a5ef23b39554c787e2f6fa\",\"dweb:/ipfs/QmbNBFTgqP4B1GepTkTKa3NbmbxbJt7WunPkjAfM6ZBDxY\"]},\"src/modules/fundingManager/token/IERC20.sol\":{\"keccak256\":\"0x7e3c867f24d45648d930541c88d49617be9e50c2335a9c9e487fe6614f54f664\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0513f2a877c23fb86f8a31233cf6be0de7cc85647fb8d92ae9eb0a99d494525f\",\"dweb:/ipfs/Qmbk1HnhqSKJ81P1P82f2izfX4MHVUtSXN9WaPCzGy4C8j\"]},\"src/modules/fundingManager/token/IERC20Metadata.sol\":{\"keccak256\":\"0xd5ba496e1c717cc80d2a9067e19e91d7e169ed15677f657b94a002c9fde6da6d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://34fb98553067d5ccb7eccf858d38c4971b89af59666a07cc4b12eb638b19b388\",\"dweb:/ipfs/QmUPwpSwQ1sD5eX7nEAxusWjTZtaHC5ycTeTjg6RHhYuB8\"]},\"src/modules/fundingManager/token/IRebasingERC20.sol\":{\"keccak256\":\"0x92bbfd27c8af5cbbc3636a329320c389870fc2ebd888955bcf0e39a6ab8125d5\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://7546d58a5778e7faef6cd6375d9880ff1fc7008e628905c19275da3cab3a27e7\",\"dweb:/ipfs/QmNUqhdKxXADuatYpMXevx3tbv71Nb9xwZ3n3nRrG4u1Px\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.8.23+commit.f704f362"
@@ -223,6 +560,31 @@
           "inputs": [
             {
               "internalType": "address",
+              "name": "owner",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "spender",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "Approval",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
               "name": "_from",
               "type": "address",
               "indexed": true
@@ -242,6 +604,50 @@
           ],
           "type": "event",
           "name": "Deposit",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "epoch",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "newScalar",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "Rebase",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "from",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "Transfer",
           "anonymous": false
         },
         {
@@ -291,6 +697,86 @@
         {
           "inputs": [
             {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "spender",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "allowance",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "spender",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "approve",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "balanceOf",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "decimals",
+          "outputs": [
+            {
+              "internalType": "uint8",
+              "name": "",
+              "type": "uint8"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
               "internalType": "uint256",
               "name": "amount",
               "type": "uint256"
@@ -321,12 +807,185 @@
           "inputs": [],
           "stateMutability": "view",
           "type": "function",
+          "name": "name",
+          "outputs": [
+            {
+              "internalType": "string",
+              "name": "",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "rebase"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "who",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "scaledBalanceOf",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "scaledTotalSupply",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "symbol",
+          "outputs": [
+            {
+              "internalType": "string",
+              "name": "",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
           "name": "token",
           "outputs": [
             {
               "internalType": "contract IERC20",
               "name": "",
               "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "totalSupply",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "transfer",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "transferAll",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "transferAllFrom",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "transferFrom",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
             }
           ]
         },
@@ -380,6 +1039,18 @@
       "devdoc": {
         "kind": "dev",
         "methods": {
+          "allowance(address,address)": {
+            "details": "Returns the remaining number of tokens that `spender` will be allowed to spend on behalf of `owner` through {transferFrom}. This is zero by default. This value changes when {approve} or {transferFrom} are called."
+          },
+          "approve(address,uint256)": {
+            "details": "Sets `amount` as the allowance of `spender` over the caller's tokens. Returns a boolean value indicating whether the operation succeeded. IMPORTANT: Beware that changing an allowance with this method brings the risk that someone may use both the old and the new allowance by unfortunate transaction ordering. One possible solution to mitigate this race condition is to first reduce the spender's allowance to 0 and set the desired value afterwards: https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729 Emits an {Approval} event."
+          },
+          "balanceOf(address)": {
+            "details": "Returns the amount of tokens owned by `account`."
+          },
+          "decimals()": {
+            "details": "Returns the decimals places of the token."
+          },
           "deposit(uint256)": {
             "custom:tags": "amount:decimal",
             "params": {
@@ -392,6 +1063,40 @@
               "amount": "The amount that is being deposited.",
               "to": "The address that this deposit is credit towards."
             }
+          },
+          "name()": {
+            "details": "Returns the name of the token."
+          },
+          "scaledBalanceOf(address)": {
+            "params": {
+              "who": "The address to query."
+            }
+          },
+          "symbol()": {
+            "details": "Returns the symbol of the token."
+          },
+          "totalSupply()": {
+            "details": "Returns the amount of tokens in existence."
+          },
+          "transfer(address,uint256)": {
+            "details": "Moves `amount` tokens from the caller's account to `to`. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event."
+          },
+          "transferAll(address)": {
+            "params": {
+              "to": "The address to transfer to."
+            },
+            "returns": {
+              "_0": "True on success, false otherwise."
+            }
+          },
+          "transferAllFrom(address,address)": {
+            "params": {
+              "from": "The address to send tokens from.",
+              "to": "The address to transfer to."
+            }
+          },
+          "transferFrom(address,address,uint256)": {
+            "details": "Moves `amount` tokens from `from` to `to` using the allowance mechanism. `amount` is then deducted from the caller's allowance. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event."
           },
           "transferOrchestratorToken(address,uint256)": {
             "custom:tags": "amount:decimal",
@@ -425,8 +1130,23 @@
           "depositFor(address,uint256)": {
             "notice": "Deposits an amount of the token for an adddress."
           },
+          "rebase()": {
+            "notice": "Triggers the next rebase, if applicable."
+          },
+          "scaledBalanceOf(address)": {
+            "notice": "Returns the fixed balance of the specified address."
+          },
+          "scaledTotalSupply()": {
+            "notice": "Returns the total fixed supply."
+          },
           "token()": {
             "notice": "Returns the IERC20 token of the funding manager."
+          },
+          "transferAll(address)": {
+            "notice": "Transfer all of the sender's balance to a specified address."
+          },
+          "transferAllFrom(address,address)": {
+            "notice": "Transfer all balance tokens from one address to another."
           },
           "transferOrchestratorToken(address,uint256)": {
             "notice": "Transfers the orchestrator token to a specific address."
@@ -483,29 +1203,56 @@
         "license": "LGPL-3.0-only"
       },
       "src/modules/fundingManager/IRebasingFundingManager.sol": {
-        "keccak256": "0xa9017f638642e24bce1d9184957aa94a97241bc7eb6bbc05edbd7302bdec64c0",
+        "keccak256": "0x07c4194daa32a18501aeb1085293917a67da7bb20394da70263cb19468324a73",
         "urls": [
-          "bzz-raw://5a51a3aaddabe3f244fc0c74a1db7911d2b563cc00d9bb032b9af231d4eace17",
-          "dweb:/ipfs/QmXAgu9U5Cs7dCpH8fEUxp2nkazezifRHxYSfF2VpCz76S"
+          "bzz-raw://164570615b9197fd1ea0bd00205340f0b366d25c23a5ef23b39554c787e2f6fa",
+          "dweb:/ipfs/QmbNBFTgqP4B1GepTkTKa3NbmbxbJt7WunPkjAfM6ZBDxY"
         ],
         "license": "LGPL-3.0-only"
+      },
+      "src/modules/fundingManager/token/IERC20.sol": {
+        "keccak256": "0x7e3c867f24d45648d930541c88d49617be9e50c2335a9c9e487fe6614f54f664",
+        "urls": [
+          "bzz-raw://0513f2a877c23fb86f8a31233cf6be0de7cc85647fb8d92ae9eb0a99d494525f",
+          "dweb:/ipfs/Qmbk1HnhqSKJ81P1P82f2izfX4MHVUtSXN9WaPCzGy4C8j"
+        ],
+        "license": "MIT"
+      },
+      "src/modules/fundingManager/token/IERC20Metadata.sol": {
+        "keccak256": "0xd5ba496e1c717cc80d2a9067e19e91d7e169ed15677f657b94a002c9fde6da6d",
+        "urls": [
+          "bzz-raw://34fb98553067d5ccb7eccf858d38c4971b89af59666a07cc4b12eb638b19b388",
+          "dweb:/ipfs/QmUPwpSwQ1sD5eX7nEAxusWjTZtaHC5ycTeTjg6RHhYuB8"
+        ],
+        "license": "MIT"
+      },
+      "src/modules/fundingManager/token/IRebasingERC20.sol": {
+        "keccak256": "0x92bbfd27c8af5cbbc3636a329320c389870fc2ebd888955bcf0e39a6ab8125d5",
+        "urls": [
+          "bzz-raw://7546d58a5778e7faef6cd6375d9880ff1fc7008e628905c19275da3cab3a27e7",
+          "dweb:/ipfs/QmNUqhdKxXADuatYpMXevx3tbv71Nb9xwZ3n3nRrG4u1Px"
+        ],
+        "license": "GPL-3.0-or-later"
       }
     },
     "version": 1
   },
   "ast": {
     "absolutePath": "src/modules/fundingManager/IRebasingFundingManager.sol",
-    "id": 44441,
+    "id": 44445,
     "exportedSymbols": {
       "IFundingManager": [
         44404
       ],
+      "IRebasingERC20": [
+        51084
+      ],
       "IRebasingFundingManager": [
-        44440
+        44444
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "42:1251:100",
+    "src": "42:1351:100",
     "nodes": [
       {
         "id": 44406,
@@ -527,7 +1274,7 @@
         "absolutePath": "src/modules/fundingManager/IFundingManager.sol",
         "file": "src/modules/fundingManager/IFundingManager.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 44441,
+        "scope": 44445,
         "sourceUnit": 44405,
         "symbolAliases": [
           {
@@ -546,19 +1293,45 @@
         "unitAlias": ""
       },
       {
-        "id": 44440,
+        "id": 44410,
+        "nodeType": "ImportDirective",
+        "src": "170:83:100",
+        "nodes": [],
+        "absolutePath": "src/modules/fundingManager/token/IRebasingERC20.sol",
+        "file": "src/modules/fundingManager/token/IRebasingERC20.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 44445,
+        "sourceUnit": 51085,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 44409,
+              "name": "IRebasingERC20",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 51084,
+              "src": "178:14:100",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 44444,
         "nodeType": "ContractDefinition",
-        "src": "279:1013:100",
+        "src": "363:1029:100",
         "nodes": [
           {
-            "id": 44417,
+            "id": 44421,
             "nodeType": "FunctionDefinition",
-            "src": "482:39:100",
+            "src": "582:39:100",
             "nodes": [],
             "documentation": {
-              "id": 44412,
+              "id": 44416,
               "nodeType": "StructuredDocumentation",
-              "src": "339:138:100",
+              "src": "439:138:100",
               "text": "@notice Deposits an amount of the token.\n @param amount The amount that is being deposited.\n @custom:tags amount:decimal"
             },
             "functionSelector": "b6b55f25",
@@ -566,20 +1339,20 @@
             "kind": "function",
             "modifiers": [],
             "name": "deposit",
-            "nameLocation": "491:7:100",
+            "nameLocation": "591:7:100",
             "parameters": {
-              "id": 44415,
+              "id": 44419,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 44414,
+                  "id": 44418,
                   "mutability": "mutable",
                   "name": "amount",
-                  "nameLocation": "504:6:100",
+                  "nameLocation": "604:6:100",
                   "nodeType": "VariableDeclaration",
-                  "scope": 44417,
-                  "src": "499:11:100",
+                  "scope": 44421,
+                  "src": "599:11:100",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -587,10 +1360,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 44413,
+                    "id": 44417,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "499:4:100",
+                    "src": "599:4:100",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -599,28 +1372,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "498:13:100"
+              "src": "598:13:100"
             },
             "returnParameters": {
-              "id": 44416,
+              "id": 44420,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "520:0:100"
+              "src": "620:0:100"
             },
-            "scope": 44440,
+            "scope": 44444,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 44425,
+            "id": 44429,
             "nodeType": "FunctionDefinition",
-            "src": "753:54:100",
+            "src": "853:54:100",
             "nodes": [],
             "documentation": {
-              "id": 44418,
+              "id": 44422,
               "nodeType": "StructuredDocumentation",
-              "src": "527:221:100",
+              "src": "627:221:100",
               "text": "@notice Deposits an amount of the token for an adddress.\n @param amount The amount that is being deposited.\n @param to The address that this deposit is credit towards.\n @custom:tags amount:decimal"
             },
             "functionSelector": "2f4f21e2",
@@ -628,20 +1401,20 @@
             "kind": "function",
             "modifiers": [],
             "name": "depositFor",
-            "nameLocation": "762:10:100",
+            "nameLocation": "862:10:100",
             "parameters": {
-              "id": 44423,
+              "id": 44427,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 44420,
+                  "id": 44424,
                   "mutability": "mutable",
                   "name": "to",
-                  "nameLocation": "781:2:100",
+                  "nameLocation": "881:2:100",
                   "nodeType": "VariableDeclaration",
-                  "scope": 44425,
-                  "src": "773:10:100",
+                  "scope": 44429,
+                  "src": "873:10:100",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -649,10 +1422,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 44419,
+                    "id": 44423,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "773:7:100",
+                    "src": "873:7:100",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -663,13 +1436,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 44422,
+                  "id": 44426,
                   "mutability": "mutable",
                   "name": "amount",
-                  "nameLocation": "790:6:100",
+                  "nameLocation": "890:6:100",
                   "nodeType": "VariableDeclaration",
-                  "scope": 44425,
-                  "src": "785:11:100",
+                  "scope": 44429,
+                  "src": "885:11:100",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -677,10 +1450,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 44421,
+                    "id": 44425,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "785:4:100",
+                    "src": "885:4:100",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -689,28 +1462,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "772:25:100"
+              "src": "872:25:100"
             },
             "returnParameters": {
-              "id": 44424,
+              "id": 44428,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "806:0:100"
+              "src": "906:0:100"
             },
-            "scope": 44440,
+            "scope": 44444,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 44431,
+            "id": 44435,
             "nodeType": "FunctionDefinition",
-            "src": "957:40:100",
+            "src": "1057:40:100",
             "nodes": [],
             "documentation": {
-              "id": 44426,
+              "id": 44430,
               "nodeType": "StructuredDocumentation",
-              "src": "813:139:100",
+              "src": "913:139:100",
               "text": "@notice Withdraws an amount of the token.\n @param amount The amount that is being withdrawn.\n @custom:tags amount:decimal"
             },
             "functionSelector": "2e1a7d4d",
@@ -718,20 +1491,20 @@
             "kind": "function",
             "modifiers": [],
             "name": "withdraw",
-            "nameLocation": "966:8:100",
+            "nameLocation": "1066:8:100",
             "parameters": {
-              "id": 44429,
+              "id": 44433,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 44428,
+                  "id": 44432,
                   "mutability": "mutable",
                   "name": "amount",
-                  "nameLocation": "980:6:100",
+                  "nameLocation": "1080:6:100",
                   "nodeType": "VariableDeclaration",
-                  "scope": 44431,
-                  "src": "975:11:100",
+                  "scope": 44435,
+                  "src": "1075:11:100",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -739,10 +1512,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 44427,
+                    "id": 44431,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "975:4:100",
+                    "src": "1075:4:100",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -751,28 +1524,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "974:13:100"
+              "src": "1074:13:100"
             },
             "returnParameters": {
-              "id": 44430,
+              "id": 44434,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "996:0:100"
+              "src": "1096:0:100"
             },
-            "scope": 44440,
+            "scope": 44444,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 44439,
+            "id": 44443,
             "nodeType": "FunctionDefinition",
-            "src": "1236:54:100",
+            "src": "1336:54:100",
             "nodes": [],
             "documentation": {
-              "id": 44432,
+              "id": 44436,
               "nodeType": "StructuredDocumentation",
-              "src": "1003:228:100",
+              "src": "1103:228:100",
               "text": "@notice Withdraws an amount of the token to an address.\n @param amount The amount that is being withdrawn.\n @param to The address that the withdrawn tokens should be sent to.\n @custom:tags amount:decimal"
             },
             "functionSelector": "205c2878",
@@ -780,20 +1553,20 @@
             "kind": "function",
             "modifiers": [],
             "name": "withdrawTo",
-            "nameLocation": "1245:10:100",
+            "nameLocation": "1345:10:100",
             "parameters": {
-              "id": 44437,
+              "id": 44441,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 44434,
+                  "id": 44438,
                   "mutability": "mutable",
                   "name": "to",
-                  "nameLocation": "1264:2:100",
+                  "nameLocation": "1364:2:100",
                   "nodeType": "VariableDeclaration",
-                  "scope": 44439,
-                  "src": "1256:10:100",
+                  "scope": 44443,
+                  "src": "1356:10:100",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -801,10 +1574,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 44433,
+                    "id": 44437,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1256:7:100",
+                    "src": "1356:7:100",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -815,13 +1588,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 44436,
+                  "id": 44440,
                   "mutability": "mutable",
                   "name": "amount",
-                  "nameLocation": "1273:6:100",
+                  "nameLocation": "1373:6:100",
                   "nodeType": "VariableDeclaration",
-                  "scope": 44439,
-                  "src": "1268:11:100",
+                  "scope": 44443,
+                  "src": "1368:11:100",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -829,10 +1602,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 44435,
+                    "id": 44439,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1268:4:100",
+                    "src": "1368:4:100",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -841,15 +1614,15 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1255:25:100"
+              "src": "1355:25:100"
             },
             "returnParameters": {
-              "id": 44438,
+              "id": 44442,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1289:0:100"
+              "src": "1389:0:100"
             },
-            "scope": 44440,
+            "scope": 44444,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
@@ -859,37 +1632,55 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 44410,
+              "id": 44412,
               "name": "IFundingManager",
               "nameLocations": [
-                "316:15:100"
+                "400:15:100"
               ],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 44404,
-              "src": "316:15:100"
+              "src": "400:15:100"
             },
-            "id": 44411,
+            "id": 44413,
             "nodeType": "InheritanceSpecifier",
-            "src": "316:15:100"
+            "src": "400:15:100"
+          },
+          {
+            "baseName": {
+              "id": 44414,
+              "name": "IRebasingERC20",
+              "nameLocations": [
+                "417:14:100"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 51084,
+              "src": "417:14:100"
+            },
+            "id": 44415,
+            "nodeType": "InheritanceSpecifier",
+            "src": "417:14:100"
           }
         ],
         "canonicalName": "IRebasingFundingManager",
         "contractDependencies": [],
         "contractKind": "interface",
         "documentation": {
-          "id": 44409,
+          "id": 44411,
           "nodeType": "StructuredDocumentation",
-          "src": "171:108:100",
+          "src": "255:108:100",
           "text": "@notice A rebasing funding manager module\n @custom:version 1.0\n @custom:moduletype fundingManager"
         },
         "fullyImplemented": false,
         "linearizedBaseContracts": [
-          44440,
+          44444,
+          51084,
+          51034,
+          51009,
           44404
         ],
         "name": "IRebasingFundingManager",
-        "nameLocation": "289:23:100",
-        "scope": 44441,
+        "nameLocation": "373:23:100",
+        "scope": 44445,
         "usedErrors": [
           44357,
           44360,
@@ -898,7 +1689,10 @@
         "usedEvents": [
           44372,
           44381,
-          44388
+          44388,
+          50999,
+          51008,
+          51083
         ]
       }
     ],
