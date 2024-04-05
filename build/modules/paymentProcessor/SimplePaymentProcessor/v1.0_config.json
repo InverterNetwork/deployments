@@ -1,0 +1,51 @@
+{
+  "deploymentArgs": { "configData": [], "dependencyData": [] },
+  "abiMembers": {
+    "ModuleInitialized": {
+      "tags": {
+        "parentOrchestrator": "",
+        "moduleTitle": "",
+        "majorVersion": "",
+        "minorVersion": ""
+      },
+      "returnsNames": []
+    },
+    "PaymentOrderProcessed": {
+      "tags": {
+        "paymentClient": "",
+        "recipient": "",
+        "amount": "",
+        "createdAt": "",
+        "dueTo": ""
+      },
+      "returnsNames": []
+    },
+    "TokensReleased": {
+      "tags": { "recipient": "", "token": "", "amount": "" },
+      "returnsNames": []
+    },
+    "cancelRunningPayments": { "tags": { "client": "" }, "returnsNames": [] },
+    "identifier": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
+    "init": {
+      "tags": {
+        "orchestrator_": "",
+        "majorVersion": "",
+        "minorVersion": "",
+        "url": "",
+        "title": "",
+        "metadata": ""
+      },
+      "returnsNames": []
+    },
+    "isTrustedForwarder": {
+      "tags": { "forwarder": "", "_0": "" },
+      "returnsNames": ["_0"]
+    },
+    "orchestrator": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
+    "processPayments": { "tags": { "client": "" }, "returnsNames": [] },
+    "title": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
+    "token": { "tags": {}, "returnsNames": [] },
+    "url": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
+    "version": { "tags": { "_0": "", "_1": "" }, "returnsNames": ["_0", "_1"] }
+  }
+}

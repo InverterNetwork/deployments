@@ -1,0 +1,28 @@
+{
+  "deploymentArgs": { "configData": [], "dependencyData": [] },
+  "abiMembers": {
+    "OrchestratorCreated": {
+      "tags": { "orchestratorId": "", "orchestratorAddress": "" },
+      "returnsNames": []
+    },
+    "createOrchestrator": {
+      "tags": {
+        "owner": "",
+        "token": "",
+        "orchestratorConfig": "",
+        "metadata": "",
+        "configData": "",
+        "dependencyData": "",
+        "fundingManagerConfig": "",
+        "authorizerConfig": "",
+        "paymentProcessorConfig": "",
+        "moduleConfigs": ""
+      },
+      "returnsNames": []
+    },
+    "getOrchestratorByID": { "tags": { "id": "" }, "returnsNames": [] },
+    "getOrchestratorIDCounter": { "tags": {}, "returnsNames": [] },
+    "moduleFactory": { "tags": {}, "returnsNames": [] },
+    "target": { "tags": {}, "returnsNames": [] }
+  }
+}

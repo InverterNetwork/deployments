@@ -1,0 +1,64 @@
+{
+  "deploymentArgs": { "configData": [], "dependencyData": [] },
+  "abiMembers": {
+    "AuthorizerUpdated": { "tags": { "_address": "" }, "returnsNames": [] },
+    "FundingManagerUpdated": { "tags": { "_address": "" }, "returnsNames": [] },
+    "ModuleAdded": { "tags": { "module": "" }, "returnsNames": [] },
+    "ModuleRemoved": { "tags": { "module": "" }, "returnsNames": [] },
+    "OrchestratorInitialized": {
+      "tags": {
+        "orchestratorId_": "",
+        "fundingManager": "",
+        "authorizer": "",
+        "paymentProcessor": "",
+        "modules": ""
+      },
+      "returnsNames": []
+    },
+    "PaymentProcessorUpdated": {
+      "tags": { "_address": "" },
+      "returnsNames": []
+    },
+    "addModule": { "tags": { "module": "" }, "returnsNames": [] },
+    "authorizer": { "tags": {}, "returnsNames": [] },
+    "executeTx": {
+      "tags": { "target": "", "data": "", "_0": "" },
+      "returnsNames": ["_0"]
+    },
+    "executeTxFromModule": {
+      "tags": { "to": "", "data": "", "_0": "", "_1": "" },
+      "returnsNames": ["_0", "_1"]
+    },
+    "findModuleAddressInOrchestrator": {
+      "tags": { "moduleName": "" },
+      "returnsNames": []
+    },
+    "fundingManager": { "tags": {}, "returnsNames": [] },
+    "init": {
+      "tags": {
+        "orchestratorId_": "",
+        "modules": "",
+        "fundingManager_": "",
+        "authorizer_": "",
+        "paymentProcessor_": ""
+      },
+      "returnsNames": []
+    },
+    "isModule": { "tags": { "module": "", "_0": "" }, "returnsNames": ["_0"] },
+    "listModules": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
+    "modulesSize": { "tags": {}, "returnsNames": [] },
+    "orchestratorId": { "tags": {}, "returnsNames": [] },
+    "paymentProcessor": { "tags": {}, "returnsNames": [] },
+    "removeModule": { "tags": { "module": "" }, "returnsNames": [] },
+    "setAuthorizer": { "tags": { "authorizer_": "" }, "returnsNames": [] },
+    "setFundingManager": {
+      "tags": { "fundingManager_": "" },
+      "returnsNames": []
+    },
+    "setPaymentProcessor": {
+      "tags": { "paymentProcessor_": "" },
+      "returnsNames": []
+    },
+    "version": { "tags": {}, "returnsNames": [] }
+  }
+}

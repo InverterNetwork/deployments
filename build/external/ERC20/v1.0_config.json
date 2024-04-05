@@ -1,0 +1,37 @@
+{
+  "deploymentArgs": { "configData": [], "dependencyData": [] },
+  "abiMembers": {
+    "Approval": {
+      "tags": { "owner": "", "spender": "", "amount": "" },
+      "returnsNames": []
+    },
+    "Transfer": {
+      "tags": { "from": "", "to": "", "amount": "" },
+      "returnsNames": []
+    },
+    "allowance": {
+      "tags": { "owner": "", "spender": "", "_0": "" },
+      "returnsNames": ["_0"]
+    },
+    "approve": {
+      "tags": { "spender": "", "amount": "", "_0": "" },
+      "returnsNames": ["_0"]
+    },
+    "balanceOf": {
+      "tags": { "account": "", "_0": "" },
+      "returnsNames": ["_0"]
+    },
+    "decimals": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
+    "name": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
+    "symbol": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
+    "totalSupply": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
+    "transfer": {
+      "tags": { "to": "", "amount": "", "_0": "" },
+      "returnsNames": ["_0"]
+    },
+    "transferFrom": {
+      "tags": { "from": "", "to": "", "amount": "", "_0": "" },
+      "returnsNames": ["_0"]
+    }
+  }
+}

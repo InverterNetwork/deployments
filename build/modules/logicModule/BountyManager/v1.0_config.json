@@ -1,0 +1,153 @@
+{
+  "deploymentArgs": { "configData": [], "dependencyData": [] },
+  "abiMembers": {
+    "BountyAdded": {
+      "tags": {
+        "bountyId": "",
+        "minimumPayoutAmount": "",
+        "maximumPayoutAmount": "",
+        "details": ""
+      },
+      "returnsNames": []
+    },
+    "BountyLocked": { "tags": { "bountyId": "" }, "returnsNames": [] },
+    "BountyUpdated": {
+      "tags": { "bountyId": "", "details": "" },
+      "returnsNames": []
+    },
+    "ClaimAdded": {
+      "tags": {
+        "claimId": "",
+        "bountyId": "",
+        "addr": "",
+        "claimAmount": "",
+        "contributors": "",
+        "details": ""
+      },
+      "returnsNames": []
+    },
+    "ClaimContributorsUpdated": {
+      "tags": {
+        "claimId": "",
+        "addr": "",
+        "claimAmount": "",
+        "contributors": ""
+      },
+      "returnsNames": []
+    },
+    "ClaimDetailsUpdated": {
+      "tags": { "claimId": "", "details": "" },
+      "returnsNames": []
+    },
+    "ClaimVerified": { "tags": { "claimId": "" }, "returnsNames": [] },
+    "ModuleInitialized": {
+      "tags": {
+        "parentOrchestrator": "",
+        "moduleTitle": "",
+        "majorVersion": "",
+        "minorVersion": ""
+      },
+      "returnsNames": []
+    },
+    "PaymentOrderAdded": {
+      "tags": { "recipient": "", "amount": "" },
+      "returnsNames": []
+    },
+    "addBounty": {
+      "tags": {
+        "minimumPayoutAmount": "",
+        "maximumPayoutAmount": "",
+        "details": "",
+        "id": ""
+      },
+      "returnsNames": ["id"]
+    },
+    "addClaim": {
+      "tags": {
+        "bountyId": "",
+        "addr": "",
+        "claimAmount": "",
+        "contributors": "",
+        "details": "",
+        "id": ""
+      },
+      "returnsNames": ["id"]
+    },
+    "amountPaid": { "tags": { "amount": "" }, "returnsNames": [] },
+    "collectPaymentOrders": {
+      "tags": { "_0": "", "_1": "" },
+      "returnsNames": ["_0", "_1"]
+    },
+    "getBountyInformation": {
+      "tags": { "bountyId": "", "_0": "" },
+      "returnsNames": ["_0"]
+    },
+    "getClaimInformation": {
+      "tags": { "claimId": "", "_0": "" },
+      "returnsNames": ["_0"]
+    },
+    "identifier": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
+    "init": {
+      "tags": {
+        "orchestrator_": "",
+        "majorVersion": "",
+        "minorVersion": "",
+        "url": "",
+        "title": "",
+        "metadata": ""
+      },
+      "returnsNames": []
+    },
+    "isExistingBountyId": {
+      "tags": { "bountyId": "", "_0": "" },
+      "returnsNames": ["_0"]
+    },
+    "isExistingClaimId": {
+      "tags": { "claimId": "", "_0": "" },
+      "returnsNames": ["_0"]
+    },
+    "isTrustedForwarder": {
+      "tags": { "forwarder": "", "_0": "" },
+      "returnsNames": ["_0"]
+    },
+    "listBountyIds": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
+    "listClaimIds": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
+    "listClaimIdsForContributorAddress": {
+      "tags": { "contributorAddrs": "", "_0": "" },
+      "returnsNames": ["_0"]
+    },
+    "lockBounty": { "tags": { "bountyId": "" }, "returnsNames": [] },
+    "orchestrator": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
+    "outstandingTokenAmount": { "tags": {}, "returnsNames": [] },
+    "paymentOrders": { "tags": {}, "returnsNames": [] },
+    "title": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
+    "updateBounty": {
+      "tags": { "bountyId": "", "details": "" },
+      "returnsNames": []
+    },
+    "updateClaimContributors": {
+      "tags": {
+        "claimId": "",
+        "addr": "",
+        "claimAmount": "",
+        "contributors": ""
+      },
+      "returnsNames": []
+    },
+    "updateClaimDetails": {
+      "tags": { "claimId": "", "details": "" },
+      "returnsNames": []
+    },
+    "url": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
+    "verifyClaim": {
+      "tags": {
+        "claimId": "",
+        "addr": "",
+        "claimAmount": "",
+        "contributors": ""
+      },
+      "returnsNames": []
+    },
+    "version": { "tags": { "_0": "", "_1": "" }, "returnsNames": ["_0", "_1"] }
+  }
+}

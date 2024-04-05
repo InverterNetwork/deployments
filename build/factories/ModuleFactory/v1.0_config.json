@@ -1,0 +1,55 @@
+{
+  "deploymentArgs": { "configData": [], "dependencyData": [] },
+  "abiMembers": {
+    "MetadataRegistered": {
+      "tags": {
+        "majorVersion": "",
+        "minorVersion": "",
+        "url": "",
+        "title": "",
+        "metadata": "",
+        "beacon": ""
+      },
+      "returnsNames": []
+    },
+    "ModuleCreated": {
+      "tags": { "orchestrator": "", "module": "", "identifier": "" },
+      "returnsNames": []
+    },
+    "createModule": {
+      "tags": {
+        "majorVersion": "",
+        "minorVersion": "",
+        "url": "",
+        "title": "",
+        "metadata": "",
+        "orchestrator": "",
+        "configData": ""
+      },
+      "returnsNames": []
+    },
+    "getBeaconAndId": {
+      "tags": {
+        "majorVersion": "",
+        "minorVersion": "",
+        "url": "",
+        "title": "",
+        "metadata": "",
+        "_0": "",
+        "_1": ""
+      },
+      "returnsNames": ["_0", "_1"]
+    },
+    "registerMetadata": {
+      "tags": {
+        "majorVersion": "",
+        "minorVersion": "",
+        "url": "",
+        "title": "",
+        "metadata": "",
+        "beacon": ""
+      },
+      "returnsNames": []
+    }
+  }
+}

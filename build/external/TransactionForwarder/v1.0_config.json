@@ -1,0 +1,34 @@
+{
+  "deploymentArgs": { "configData": [], "dependencyData": [] },
+  "abiMembers": {
+    "EIP712DomainChanged": { "tags": {}, "returnsNames": [] },
+    "ExecutedForwardRequest": {
+      "tags": { "signer": "", "nonce": "", "success": "" },
+      "returnsNames": []
+    },
+    "createDigest": {
+      "tags": {
+        "from": "",
+        "to": "",
+        "value": "",
+        "gas": "",
+        "deadline": "",
+        "data": "",
+        "signature": "",
+        "req": "",
+        "digest": ""
+      },
+      "returnsNames": ["digest"]
+    },
+    "executeMulticall": {
+      "tags": {
+        "target": "",
+        "allowFailure": "",
+        "callData": "",
+        "calls": "",
+        "results": ""
+      },
+      "returnsNames": ["results"]
+    }
+  }
+}

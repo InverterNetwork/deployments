@@ -1,0 +1,24 @@
+{
+  "deploymentArgs": { "configData": [], "dependencyData": [] },
+  "abiMembers": {
+    "Constructed": { "tags": { "majorVersion": "" }, "returnsNames": [] },
+    "ShutdownInitiated": { "tags": {}, "returnsNames": [] },
+    "ShutdownReversed": { "tags": {}, "returnsNames": [] },
+    "Upgraded": {
+      "tags": { "implementation": "", "newMinorVersion": "" },
+      "returnsNames": []
+    },
+    "emergencyModeActive": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
+    "restartImplementation": { "tags": {}, "returnsNames": [] },
+    "shutDownImplementation": { "tags": {}, "returnsNames": [] },
+    "upgradeTo": {
+      "tags": {
+        "newImplementation": "",
+        "newMinorVersion": "",
+        "overrideShutdown": ""
+      },
+      "returnsNames": []
+    },
+    "version": { "tags": { "_0": "", "_1": "" }, "returnsNames": ["_0", "_1"] }
+  }
+}
