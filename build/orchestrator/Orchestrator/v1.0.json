@@ -1,488 +1,566 @@
 {
   "abi": [
     {
-      "inputs": [],
-      "name": "DependencyInjection__ModuleNotUsedInOrchestrator",
-      "type": "error"
-    },
-    {
+      "type": "constructor",
       "inputs": [
         {
-          "internalType": "bytes32",
-          "name": "role",
-          "type": "bytes32"
-        },
-        {
-          "internalType": "address",
-          "name": "caller",
-          "type": "address"
+          "name": "_trustedForwarder",
+          "type": "address",
+          "internalType": "address"
         }
       ],
-      "name": "Orchestrator__CallerNotAuthorized",
-      "type": "error"
+      "stateMutability": "nonpayable"
     },
     {
-      "inputs": [],
-      "name": "Orchestrator__ExecuteTxFailed",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "module",
-          "type": "address"
-        }
-      ],
-      "name": "Orchestrator__InvalidModuleType",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "Orchestrator__ModuleManager__CallerNotAuthorized",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "Orchestrator__ModuleManager__InvalidModuleAddress",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "Orchestrator__ModuleManager__IsModule",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "Orchestrator__ModuleManager__IsNotModule",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "Orchestrator__ModuleManager__ModuleAmountOverLimits",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "Orchestrator__ModuleManager__ModulesNotConsecutive",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "Orchestrator__ModuleManager__OnlyCallableByModule",
-      "type": "error"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "_address",
-          "type": "address"
-        }
-      ],
-      "name": "AuthorizerUpdated",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "_address",
-          "type": "address"
-        }
-      ],
-      "name": "FundingManagerUpdated",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "module",
-          "type": "address"
-        }
-      ],
-      "name": "ModuleAdded",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "module",
-          "type": "address"
-        }
-      ],
-      "name": "ModuleRemoved",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "uint256",
-          "name": "orchestratorId_",
-          "type": "uint256"
-        },
-        {
-          "indexed": false,
-          "internalType": "address",
-          "name": "fundingManager",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "address",
-          "name": "authorizer",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "address",
-          "name": "paymentProcessor",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "address[]",
-          "name": "modules",
-          "type": "address[]"
-        }
-      ],
-      "name": "OrchestratorInitialized",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "_address",
-          "type": "address"
-        }
-      ],
-      "name": "PaymentProcessorUpdated",
-      "type": "event"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "module",
-          "type": "address"
-        }
-      ],
+      "type": "function",
       "name": "addModule",
+      "inputs": [
+        {
+          "name": "module",
+          "type": "address",
+          "internalType": "address"
+        }
+      ],
       "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
+      "stateMutability": "nonpayable"
     },
     {
-      "inputs": [],
+      "type": "function",
       "name": "authorizer",
+      "inputs": [],
       "outputs": [
         {
-          "internalType": "contract IAuthorizer",
           "name": "",
-          "type": "address"
+          "type": "address",
+          "internalType": "contract IAuthorizer"
         }
       ],
-      "stateMutability": "view",
-      "type": "function"
+      "stateMutability": "view"
     },
     {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "target",
-          "type": "address"
-        },
-        {
-          "internalType": "bytes",
-          "name": "data",
-          "type": "bytes"
-        }
-      ],
+      "type": "function",
       "name": "executeTx",
-      "outputs": [
-        {
-          "internalType": "bytes",
-          "name": "",
-          "type": "bytes"
-        }
-      ],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
       "inputs": [
         {
-          "internalType": "address",
-          "name": "to",
-          "type": "address"
+          "name": "target",
+          "type": "address",
+          "internalType": "address"
         },
         {
-          "internalType": "bytes",
           "name": "data",
-          "type": "bytes"
+          "type": "bytes",
+          "internalType": "bytes"
         }
       ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes",
+          "internalType": "bytes"
+        }
+      ],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
       "name": "executeTxFromModule",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        },
-        {
-          "internalType": "bytes",
-          "name": "",
-          "type": "bytes"
-        }
-      ],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
       "inputs": [
         {
-          "internalType": "string",
-          "name": "moduleName",
-          "type": "string"
+          "name": "to",
+          "type": "address",
+          "internalType": "address"
+        },
+        {
+          "name": "data",
+          "type": "bytes",
+          "internalType": "bytes"
         }
       ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool",
+          "internalType": "bool"
+        },
+        {
+          "name": "",
+          "type": "bytes",
+          "internalType": "bytes"
+        }
+      ],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
       "name": "findModuleAddressInOrchestrator",
-      "outputs": [
+      "inputs": [
         {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
+          "name": "moduleName",
+          "type": "string",
+          "internalType": "string"
         }
       ],
-      "stateMutability": "view",
-      "type": "function"
+      "outputs": [
+        {
+          "name": "",
+          "type": "address",
+          "internalType": "address"
+        }
+      ],
+      "stateMutability": "view"
     },
     {
-      "inputs": [],
+      "type": "function",
       "name": "fundingManager",
+      "inputs": [],
       "outputs": [
         {
-          "internalType": "contract IFundingManager",
           "name": "",
-          "type": "address"
+          "type": "address",
+          "internalType": "contract IFundingManager"
         }
       ],
-      "stateMutability": "view",
-      "type": "function"
+      "stateMutability": "view"
     },
     {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "orchestratorId",
-          "type": "uint256"
-        },
-        {
-          "internalType": "address[]",
-          "name": "modules",
-          "type": "address[]"
-        },
-        {
-          "internalType": "contract IFundingManager",
-          "name": "fundingManager",
-          "type": "address"
-        },
-        {
-          "internalType": "contract IAuthorizer",
-          "name": "authorizer",
-          "type": "address"
-        },
-        {
-          "internalType": "contract IPaymentProcessor",
-          "name": "paymentProcessor",
-          "type": "address"
-        }
-      ],
+      "type": "function",
       "name": "init",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
       "inputs": [
         {
-          "internalType": "address",
-          "name": "module",
-          "type": "address"
-        }
-      ],
-      "name": "isModule",
-      "outputs": [
+          "name": "orchestratorId_",
+          "type": "uint256",
+          "internalType": "uint256"
+        },
         {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
+          "name": "modules",
+          "type": "address[]",
+          "internalType": "address[]"
+        },
         {
-          "internalType": "address",
-          "name": "forwarder",
-          "type": "address"
-        }
-      ],
-      "name": "isTrustedForwarder",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "listModules",
-      "outputs": [
-        {
-          "internalType": "address[]",
-          "name": "",
-          "type": "address[]"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "modulesSize",
-      "outputs": [
-        {
-          "internalType": "uint8",
-          "name": "",
-          "type": "uint8"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "orchestratorId",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "paymentProcessor",
-      "outputs": [
-        {
-          "internalType": "contract IPaymentProcessor",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "module",
-          "type": "address"
-        }
-      ],
-      "name": "removeModule",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "contract IAuthorizer",
-          "name": "authorizer_",
-          "type": "address"
-        }
-      ],
-      "name": "setAuthorizer",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "contract IFundingManager",
           "name": "fundingManager_",
-          "type": "address"
+          "type": "address",
+          "internalType": "contract IFundingManager"
+        },
+        {
+          "name": "authorizer_",
+          "type": "address",
+          "internalType": "contract IAuthorizer"
+        },
+        {
+          "name": "paymentProcessor_",
+          "type": "address",
+          "internalType": "contract IPaymentProcessor"
         }
       ],
-      "name": "setFundingManager",
       "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
+      "stateMutability": "nonpayable"
     },
     {
+      "type": "function",
+      "name": "isModule",
       "inputs": [
         {
-          "internalType": "contract IPaymentProcessor",
-          "name": "paymentProcessor_",
-          "type": "address"
+          "name": "module",
+          "type": "address",
+          "internalType": "address"
         }
       ],
-      "name": "setPaymentProcessor",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "version",
       "outputs": [
         {
-          "internalType": "string",
           "name": "",
-          "type": "string"
+          "type": "bool",
+          "internalType": "bool"
         }
       ],
-      "stateMutability": "pure",
-      "type": "function"
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "isTrustedForwarder",
+      "inputs": [
+        {
+          "name": "forwarder",
+          "type": "address",
+          "internalType": "address"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool",
+          "internalType": "bool"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "listModules",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address[]",
+          "internalType": "address[]"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "modulesSize",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8",
+          "internalType": "uint8"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "orchestratorId",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "internalType": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "paymentProcessor",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address",
+          "internalType": "contract IPaymentProcessor"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "removeModule",
+      "inputs": [
+        {
+          "name": "module",
+          "type": "address",
+          "internalType": "address"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "setAuthorizer",
+      "inputs": [
+        {
+          "name": "authorizer_",
+          "type": "address",
+          "internalType": "contract IAuthorizer"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "setFundingManager",
+      "inputs": [
+        {
+          "name": "fundingManager_",
+          "type": "address",
+          "internalType": "contract IFundingManager"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "setPaymentProcessor",
+      "inputs": [
+        {
+          "name": "paymentProcessor_",
+          "type": "address",
+          "internalType": "contract IPaymentProcessor"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "supportsInterface",
+      "inputs": [
+        {
+          "name": "interfaceId",
+          "type": "bytes4",
+          "internalType": "bytes4"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool",
+          "internalType": "bool"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "trustedForwarder",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address",
+          "internalType": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "version",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "string",
+          "internalType": "string"
+        }
+      ],
+      "stateMutability": "pure"
+    },
+    {
+      "type": "event",
+      "name": "AuthorizerUpdated",
+      "inputs": [
+        {
+          "name": "_address",
+          "type": "address",
+          "indexed": true,
+          "internalType": "address"
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "FundingManagerUpdated",
+      "inputs": [
+        {
+          "name": "_address",
+          "type": "address",
+          "indexed": true,
+          "internalType": "address"
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "Initialized",
+      "inputs": [
+        {
+          "name": "version",
+          "type": "uint64",
+          "indexed": false,
+          "internalType": "uint64"
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "ModuleAdded",
+      "inputs": [
+        {
+          "name": "module",
+          "type": "address",
+          "indexed": true,
+          "internalType": "address"
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "ModuleRemoved",
+      "inputs": [
+        {
+          "name": "module",
+          "type": "address",
+          "indexed": true,
+          "internalType": "address"
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "OrchestratorInitialized",
+      "inputs": [
+        {
+          "name": "orchestratorId_",
+          "type": "uint256",
+          "indexed": true,
+          "internalType": "uint256"
+        },
+        {
+          "name": "fundingManager",
+          "type": "address",
+          "indexed": false,
+          "internalType": "address"
+        },
+        {
+          "name": "authorizer",
+          "type": "address",
+          "indexed": false,
+          "internalType": "address"
+        },
+        {
+          "name": "paymentProcessor",
+          "type": "address",
+          "indexed": false,
+          "internalType": "address"
+        },
+        {
+          "name": "modules",
+          "type": "address[]",
+          "indexed": false,
+          "internalType": "address[]"
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "PaymentProcessorUpdated",
+      "inputs": [
+        {
+          "name": "_address",
+          "type": "address",
+          "indexed": true,
+          "internalType": "address"
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "error",
+      "name": "DependencyInjection__ModuleNotUsedInOrchestrator",
+      "inputs": []
+    },
+    {
+      "type": "error",
+      "name": "InvalidInitialization",
+      "inputs": []
+    },
+    {
+      "type": "error",
+      "name": "NotInitializing",
+      "inputs": []
+    },
+    {
+      "type": "error",
+      "name": "Orchestrator__CallerNotAuthorized",
+      "inputs": [
+        {
+          "name": "role",
+          "type": "bytes32",
+          "internalType": "bytes32"
+        },
+        {
+          "name": "caller",
+          "type": "address",
+          "internalType": "address"
+        }
+      ]
+    },
+    {
+      "type": "error",
+      "name": "Orchestrator__ExecuteTxFailed",
+      "inputs": []
+    },
+    {
+      "type": "error",
+      "name": "Orchestrator__InvalidModuleType",
+      "inputs": [
+        {
+          "name": "module",
+          "type": "address",
+          "internalType": "address"
+        }
+      ]
+    },
+    {
+      "type": "error",
+      "name": "Orchestrator__ModuleManager__CallerNotAuthorized",
+      "inputs": []
+    },
+    {
+      "type": "error",
+      "name": "Orchestrator__ModuleManager__InvalidModuleAddress",
+      "inputs": []
+    },
+    {
+      "type": "error",
+      "name": "Orchestrator__ModuleManager__IsModule",
+      "inputs": []
+    },
+    {
+      "type": "error",
+      "name": "Orchestrator__ModuleManager__IsNotModule",
+      "inputs": []
+    },
+    {
+      "type": "error",
+      "name": "Orchestrator__ModuleManager__ModuleAmountOverLimits",
+      "inputs": []
+    },
+    {
+      "type": "error",
+      "name": "Orchestrator__ModuleManager__ModulesNotConsecutive",
+      "inputs": []
+    },
+    {
+      "type": "error",
+      "name": "Orchestrator__ModuleManager__OnlyCallableByModule",
+      "inputs": []
     }
   ],
   "bytecode": {
-    "object": "0x",
-    "sourceMap": "",
+    "object": "0x60a06040523480156200001157600080fd5b50604051620021f1380380620021f1833981016040819052620000349162000106565b6001600160a01b0381166080526200004b62000052565b5062000138565b7ff0c57e16840df040f15088dc2f81fe391c3923bec73e23a9662efc9c229c6a00805468010000000000000000900460ff1615620000a35760405163f92ee8a960e01b815260040160405180910390fd5b80546001600160401b0390811614620001035780546001600160401b0319166001600160401b0390811782556040519081527fc7f505b2f371ae2175ee4913f4499e1f2633a7b5936321eed1cdaeb6115181d29060200160405180910390a15b50565b6000602082840312156200011957600080fd5b81516001600160a01b03811681146200013157600080fd5b9392505050565b6080516120966200015b6000396000818161030a015261163c01526120966000f3fe608060405234801561001057600080fd5b506004361061016c5760003560e01c806354fd4d50116100cd578063a063246111610081578063d09edf3111610066578063d09edf3114610354578063f1c6bdf814610367578063fac5e9811461037a57600080fd5b8063a06324611461032e578063aa0992aa1461034157600080fd5b8063685dc6b1116100b2578063685dc6b1146102d0578063736963a7146102f15780637da0a8771461030857600080fd5b806354fd4d501461027b578063572b6c05146102bd57600080fd5b80631ed86f1911610124578063333dc52711610109578063333dc5271461022757806342f6e3891461023a5780634cfa64871461026657600080fd5b80631ed86f19146101ff5780632e3a22d31461021257600080fd5b8063058a628f11610155578063058a628f146101c4578063088b0d75146101d957806308c101b1146101ec57600080fd5b806301ffc9a71461017157806304baed9e14610199575b600080fd5b61018461017f366004611a7a565b61038d565b60405190151581526020015b60405180910390f35b6004546101ac906001600160a01b031681565b6040516001600160a01b039091168152602001610190565b6101d76101d2366004611ae1565b6103e9565b005b6101d76101e7366004611ae1565b610687565b6101ac6101fa366004611afe565b610898565b6101d761020d366004611ae1565b6108ee565b60005460405160ff9091168152602001610190565b6101d7610235366004611ae1565b610992565b610184610248366004611ae1565b6001600160a01b031660009081526001602052604090205460ff1690565b61026e610ba3565b6040516101909190611b70565b60408051808201909152600181527f310000000000000000000000000000000000000000000000000000000000000060208201525b6040516101909190611c0d565b6101846102cb366004611ae1565b610c05565b6102e36102de366004611ca8565b610c10565b604051610190929190611d3b565b6102fa60035481565b604051908152602001610190565b7f00000000000000000000000000000000000000000000000000000000000000006101ac565b6101d761033c366004611ae1565b610cc3565b6101d761034f366004611d56565b610d6a565b6005546101ac906001600160a01b031681565b6006546101ac906001600160a01b031681565b6102b0610388366004611ca8565b610f9a565b60007fffffffff0000000000000000000000000000000000000000000000000000000082167f644771e70000000000000000000000000000000000000000000000000000000014806103e357506103e382611171565b92915050565b600554604080517f55ff58d400000000000000000000000000000000000000000000000000000000815290516000926001600160a01b0316916355ff58d49160048083019260209291908290030181865afa15801561044c573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104709190611e06565b6005549091506001600160a01b03166391d148548261048d611208565b6040517fffffffff0000000000000000000000000000000000000000000000000000000060e085901b16815260048101929092526001600160a01b03166024820152604401602060405180830381865afa1580156104ef573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105139190611e1f565b6105695780610520611208565b6040517f25f3b92700000000000000000000000000000000000000000000000000000000815260048101929092526001600160a01b031660248201526044015b60405180910390fd5b817fd883df12000000000000000000000000000000000000000000000000000000007fc0603f09000000000000000000000000000000000000000000000000000000006105b6838361125a565b80156105c757506105c7838261125a565b15610643576105d5856108ee565b6005546105ea906001600160a01b0316610cc3565b6005805473ffffffffffffffffffffffffffffffffffffffff19166001600160a01b0387169081179091556040517ff3f625a7d9e02778afdfdf1bea978d6565840d408866c70f5d25aadf77021d7090600090a2610680565b6040517f0f25fdb60000000000000000000000000000000000000000000000000000000081526001600160a01b0386166004820152602401610560565b5050505050565b600554604080517f55ff58d400000000000000000000000000000000000000000000000000000000815290516000926001600160a01b0316916355ff58d49160048083019260209291908290030181865afa1580156106ea573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061070e9190611e06565b6005549091506001600160a01b03166391d148548261072b611208565b6040517fffffffff0000000000000000000000000000000000000000000000000000000060e085901b16815260048101929092526001600160a01b03166024820152604401602060405180830381865afa15801561078d573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906107b19190611e1f565b6107be5780610520611208565b817fd883df12000000000000000000000000000000000000000000000000000000007f6e8ade450000000000000000000000000000000000000000000000000000000061080b838361125a565b801561081c575061081c838261125a565b156106435761082a856108ee565b60065461083f906001600160a01b0316610cc3565b6006805473ffffffffffffffffffffffffffffffffffffffff19166001600160a01b0387169081179091556040517fae8716ba090b1cdfccf3851704c6dc4610f3be4f2f6badf912e74315e5280db490600090a2610680565b60008060006108a7858561127d565b9150915060001982036108e6576040517f8b08febc00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b949350505050565b6108fe6108f9611208565b6113be565b610934576040517fbc43719a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600054608011610970576040517f4b8afdce00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b8061097a816114d4565b816109848161152a565b61098d8361157f565b505050565b600554604080517f55ff58d400000000000000000000000000000000000000000000000000000000815290516000926001600160a01b0316916355ff58d49160048083019260209291908290030181865afa1580156109f5573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610a199190611e06565b6005549091506001600160a01b03166391d1485482610a36611208565b6040517fffffffff0000000000000000000000000000000000000000000000000000000060e085901b16815260048101929092526001600160a01b03166024820152604401602060405180830381865afa158015610a98573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610abc9190611e1f565b610ac95780610520611208565b817fd883df12000000000000000000000000000000000000000000000000000000007f899090df00000000000000000000000000000000000000000000000000000000610b16838361125a565b8015610b275750610b27838261125a565b1561064357610b35856108ee565b600454610b4a906001600160a01b0316610cc3565b6004805473ffffffffffffffffffffffffffffffffffffffff19166001600160a01b0387169081179091556040517f224dfb9d0227c04cf6e5b57d4b0594d2962f550c547f4bf5e2578e09d6aa67ed90600090a2610680565b60606000805480602002602001604051908101604052809291908181526020018280548015610bfb57602002820191906000526020600020905b81546001600160a01b03168152600190910190602001808311610bdd575b5050505050905090565b60006103e382611638565b60006060610c1f610248611208565b610c55576040517fd527370800000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60006060856001600160a01b031685604051610c719190611e41565b6000604051808303816000865af19150503d8060008114610cae576040519150601f19603f3d011682016040523d82523d6000602084013e610cb3565b606091505b50909450925050505b9250929050565b610cce6108f9611208565b610d04576040517fbc43719a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b80610d27816001600160a01b031660009081526001602052604090205460ff1690565b610d5d576040517ff944147c00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b610d668261166f565b5050565b7ff0c57e16840df040f15088dc2f81fe391c3923bec73e23a9662efc9c229c6a00805468010000000000000000810460ff16159067ffffffffffffffff16600081158015610db55750825b905060008267ffffffffffffffff166001148015610dd25750303b155b905081158015610de0575080155b15610e17576040517ff92ee8a900000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b84547fffffffffffffffffffffffffffffffffffffffffffffffff00000000000000001660011785558315610e785784547fffffffffffffffffffffffffffffffffffffffffffffff00ffffffffffffffff16680100000000000000001785555b610e828a8a611848565b60038b9055600480546001600160a01b03808b1673ffffffffffffffffffffffffffffffffffffffff1992831617909255600580548a84169083161790556006805492891692909116919091179055610eda88610970565b610ee387610970565b610eec86610970565b8a7f070464456e868d7463724bb8b918079d22862b221db0658876214310cc0a93308989898e8e604051610f24959493929190611e5d565b60405180910390a28315610f8d5784547fffffffffffffffffffffffffffffffffffffffffffffff00ffffffffffffffff168555604051600181527fc7f505b2f371ae2175ee4913f4499e1f2633a7b5936321eed1cdaeb6115181d29060200160405180910390a15b5050505050505050505050565b60606000600560009054906101000a90046001600160a01b03166001600160a01b03166355ff58d46040518163ffffffff1660e01b8152600401602060405180830381865afa158015610ff1573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906110159190611e06565b6005549091506001600160a01b03166391d1485482611032611208565b6040517fffffffff0000000000000000000000000000000000000000000000000000000060e085901b16815260048101929092526001600160a01b03166024820152604401602060405180830381865afa158015611094573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906110b89190611e1f565b6110c55780610520611208565b60006060856001600160a01b0316856040516110e19190611e41565b6000604051808303816000865af19150503d806000811461111e576040519150601f19603f3d011682016040523d82523d6000602084013e611123565b606091505b509092509050811561113857925061116a9050565b6040517f74373f0f00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b5092915050565b60007fffffffff0000000000000000000000000000000000000000000000000000000082167fa1fb44110000000000000000000000000000000000000000000000000000000014806103e357507f01ffc9a7000000000000000000000000000000000000000000000000000000007fffffffff000000000000000000000000000000000000000000000000000000008316146103e3565b600036601461121633610c05565b80156112225750808210155b15611252576000366112348385611ecf565b61123f928290611f09565b61124891611f33565b60601c9250505090565b339250505090565b6000611265836118dd565b801561127657506112768383611941565b9392505050565b600080600061128a610ba3565b8051909150606060005b828110156113ac578381815181106112ae576112ae611f7b565b60200260200101516001600160a01b0316634a79d50c6040518163ffffffff1660e01b8152600401600060405180830381865afa1580156112f3573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f1916820160405261131b9190810190611faa565b80519092508790036113a457878760405160200161133a929190612021565b60405160208183030381529060405280519060200120826040516020016113619190611e41565b60405160208183030381529060405280519060200120036113a4578084828151811061138f5761138f611f7b565b60200260200101519550955050505050610cbc565b600101611294565b50600019976000975095505050505050565b600554604080517f55ff58d400000000000000000000000000000000000000000000000000000000815290516000926001600160a01b0316916391d148549183916355ff58d49160048083019260209291908290030181865afa158015611429573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061144d9190611e06565b6040517fffffffff0000000000000000000000000000000000000000000000000000000060e084901b16815260048101919091526001600160a01b0385166024820152604401602060405180830381865afa1580156114b0573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103e39190611e1f565b6001600160a01b03811660009081526001602052604090205460ff1615611527576040517f4ee6adbb00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b50565b6001600160a01b038116158061154857506001600160a01b03811630145b15611527576040517f9004b22700000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60008054600180820183557f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563909101805473ffffffffffffffffffffffffffffffffffffffff19166001600160a01b0385169081179091558083526020829052604080842080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0016909317909255905190917fead6a006345da1073a106d5f32372d2d2204f46cb0b4bca8f5ebafcbbed12b8a91a250565b60007f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03908116908316146103e3565b60008054604080516020808402820181019092528281529183918301828280156116c257602002820191906000526020600020905b81546001600160a01b031681526001909101906020018083116116a4575b5050835193945060001993925060009150505b8181101561171f57846001600160a01b03168482815181106116f9576116f9611f7b565b60200260200101516001600160a01b0316036117175780925061171f565b6001016116d5565b50600061172d600183611ecf565b8154811061173d5761173d611f7b565b600091825260208220015481546001600160a01b0390911691908490811061176757611767611f7b565b60009182526020822001805473ffffffffffffffffffffffffffffffffffffffff19166001600160a01b0393909316929092179091558054806117ac576117ac612031565b600082815260208082208301600019908101805473ffffffffffffffffffffffffffffffffffffffff191690559092019092556001600160a01b0386168083526001909152604080832080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff001690555190917f0a1ee69f55c33d8467c69ca59ce2007a737a88603d75392972520bf67cb513b891a250505050565b611850611a11565b60008161185f60036080611ecf565b811115611898576040517f4b8afdce00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60005b81811015610680578484828181106118b5576118b5611f7b565b90506020020160208101906118ca9190611ae1565b92506118d583610970565b60010161189b565b6000611909827f01ffc9a700000000000000000000000000000000000000000000000000000000611941565b80156103e3575061193a827fffffffff00000000000000000000000000000000000000000000000000000000611941565b1592915050565b6040517fffffffff0000000000000000000000000000000000000000000000000000000082166024820152600090819060440160408051601f19818403018152919052602080820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff167f01ffc9a700000000000000000000000000000000000000000000000000000000178152825192935060009283928392909183918a617530fa92503d915060005190508280156119fa575060208210155b8015611a065750600081115b979650505050505050565b7ff0c57e16840df040f15088dc2f81fe391c3923bec73e23a9662efc9c229c6a005468010000000000000000900460ff16611a78576040517fd7e6bcf800000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b565b600060208284031215611a8c57600080fd5b81357fffffffff000000000000000000000000000000000000000000000000000000008116811461127657600080fd5b6001600160a01b038116811461152757600080fd5b8035611adc81611abc565b919050565b600060208284031215611af357600080fd5b813561127681611abc565b60008060208385031215611b1157600080fd5b823567ffffffffffffffff80821115611b2957600080fd5b818501915085601f830112611b3d57600080fd5b813581811115611b4c57600080fd5b866020828501011115611b5e57600080fd5b60209290920196919550909350505050565b6020808252825182820181905260009190848201906040850190845b81811015611bb15783516001600160a01b031683529284019291840191600101611b8c565b50909695505050505050565b60005b83811015611bd8578181015183820152602001611bc0565b50506000910152565b60008151808452611bf9816020860160208601611bbd565b601f01601f19169290920160200192915050565b6020815260006112766020830184611be1565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b604051601f8201601f1916810167ffffffffffffffff81118282101715611c7857611c78611c20565b604052919050565b600067ffffffffffffffff821115611c9a57611c9a611c20565b50601f01601f191660200190565b60008060408385031215611cbb57600080fd5b8235611cc681611abc565b9150602083013567ffffffffffffffff811115611ce257600080fd5b8301601f81018513611cf357600080fd5b8035611d06611d0182611c80565b611c4f565b818152866020838501011115611d1b57600080fd5b816020840160208301376000602083830101528093505050509250929050565b82151581526040602082015260006108e66040830184611be1565b60008060008060008060a08789031215611d6f57600080fd5b86359550602087013567ffffffffffffffff80821115611d8e57600080fd5b818901915089601f830112611da257600080fd5b813581811115611db157600080fd5b8a60208260051b8501011115611dc657600080fd5b602083019750809650505050611dde60408801611ad1565b9250611dec60608801611ad1565b9150611dfa60808801611ad1565b90509295509295509295565b600060208284031215611e1857600080fd5b5051919050565b600060208284031215611e3157600080fd5b8151801515811461127657600080fd5b60008251611e53818460208701611bbd565b9190910192915050565b6000608082016001600160a01b038089168452602081891660208601528188166040860152608060608601528286845260a08601905087935060005b87811015611ec0578435611eac81611abc565b841682529382019390820190600101611e99565b509a9950505050505050505050565b818103818111156103e3577f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b60008085851115611f1957600080fd5b83861115611f2657600080fd5b5050820193919092039150565b7fffffffffffffffffffffffffffffffffffffffff0000000000000000000000008135818116916014851015611f735780818660140360031b1b83161692505b505092915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b600060208284031215611fbc57600080fd5b815167ffffffffffffffff811115611fd357600080fd5b8201601f81018413611fe457600080fd5b8051611ff2611d0182611c80565b81815285602083850101111561200757600080fd5b612018826020830160208601611bbd565b95945050505050565b8183823760009101908152919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603160045260246000fdfea2646970667358221220c8c822c91869f8751a57ec2bd4853441461abce3271f530361df67febb0d1c1864736f6c63430008170033",
+    "sourceMap": "1419:9189:139:-:0;;;2827:111;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;;;;;1498:37:31;;;;2909:22:139::1;:20;:22::i;:::-;2827:111:::0;1419:9189;;7711:422:20;8870:21;7900:15;;;;;;;7896:76;;;7938:23;;-1:-1:-1;;;7938:23:20;;;;;;;;;;;7896:76;7985:14;;-1:-1:-1;;;;;7985:14:20;;;:34;7981:146;;8035:33;;-1:-1:-1;;;;;;8035:33:20;-1:-1:-1;;;;;8035:33:20;;;;;8087:29;;453:50:219;;;8087:29:20;;441:2:219;426:18;8087:29:20;;;;;;;7981:146;7760:373;7711:422::o;14:290:219:-;84:6;137:2;125:9;116:7;112:23;108:32;105:52;;;153:1;150;143:12;105:52;179:16;;-1:-1:-1;;;;;224:31:219;;214:42;;204:70;;270:1;267;260:12;204:70;293:5;14:290;-1:-1:-1;;;14:290:219:o;309:200::-;1419:9189:139;;;;;;;;;;;;;;;;;",
     "linkReferences": {}
   },
   "deployedBytecode": {
-    "object": "0x",
-    "sourceMap": "",
-    "linkReferences": {}
+    "object": "0x608060405234801561001057600080fd5b506004361061016c5760003560e01c806354fd4d50116100cd578063a063246111610081578063d09edf3111610066578063d09edf3114610354578063f1c6bdf814610367578063fac5e9811461037a57600080fd5b8063a06324611461032e578063aa0992aa1461034157600080fd5b8063685dc6b1116100b2578063685dc6b1146102d0578063736963a7146102f15780637da0a8771461030857600080fd5b806354fd4d501461027b578063572b6c05146102bd57600080fd5b80631ed86f1911610124578063333dc52711610109578063333dc5271461022757806342f6e3891461023a5780634cfa64871461026657600080fd5b80631ed86f19146101ff5780632e3a22d31461021257600080fd5b8063058a628f11610155578063058a628f146101c4578063088b0d75146101d957806308c101b1146101ec57600080fd5b806301ffc9a71461017157806304baed9e14610199575b600080fd5b61018461017f366004611a7a565b61038d565b60405190151581526020015b60405180910390f35b6004546101ac906001600160a01b031681565b6040516001600160a01b039091168152602001610190565b6101d76101d2366004611ae1565b6103e9565b005b6101d76101e7366004611ae1565b610687565b6101ac6101fa366004611afe565b610898565b6101d761020d366004611ae1565b6108ee565b60005460405160ff9091168152602001610190565b6101d7610235366004611ae1565b610992565b610184610248366004611ae1565b6001600160a01b031660009081526001602052604090205460ff1690565b61026e610ba3565b6040516101909190611b70565b60408051808201909152600181527f310000000000000000000000000000000000000000000000000000000000000060208201525b6040516101909190611c0d565b6101846102cb366004611ae1565b610c05565b6102e36102de366004611ca8565b610c10565b604051610190929190611d3b565b6102fa60035481565b604051908152602001610190565b7f00000000000000000000000000000000000000000000000000000000000000006101ac565b6101d761033c366004611ae1565b610cc3565b6101d761034f366004611d56565b610d6a565b6005546101ac906001600160a01b031681565b6006546101ac906001600160a01b031681565b6102b0610388366004611ca8565b610f9a565b60007fffffffff0000000000000000000000000000000000000000000000000000000082167f644771e70000000000000000000000000000000000000000000000000000000014806103e357506103e382611171565b92915050565b600554604080517f55ff58d400000000000000000000000000000000000000000000000000000000815290516000926001600160a01b0316916355ff58d49160048083019260209291908290030181865afa15801561044c573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104709190611e06565b6005549091506001600160a01b03166391d148548261048d611208565b6040517fffffffff0000000000000000000000000000000000000000000000000000000060e085901b16815260048101929092526001600160a01b03166024820152604401602060405180830381865afa1580156104ef573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105139190611e1f565b6105695780610520611208565b6040517f25f3b92700000000000000000000000000000000000000000000000000000000815260048101929092526001600160a01b031660248201526044015b60405180910390fd5b817fd883df12000000000000000000000000000000000000000000000000000000007fc0603f09000000000000000000000000000000000000000000000000000000006105b6838361125a565b80156105c757506105c7838261125a565b15610643576105d5856108ee565b6005546105ea906001600160a01b0316610cc3565b6005805473ffffffffffffffffffffffffffffffffffffffff19166001600160a01b0387169081179091556040517ff3f625a7d9e02778afdfdf1bea978d6565840d408866c70f5d25aadf77021d7090600090a2610680565b6040517f0f25fdb60000000000000000000000000000000000000000000000000000000081526001600160a01b0386166004820152602401610560565b5050505050565b600554604080517f55ff58d400000000000000000000000000000000000000000000000000000000815290516000926001600160a01b0316916355ff58d49160048083019260209291908290030181865afa1580156106ea573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061070e9190611e06565b6005549091506001600160a01b03166391d148548261072b611208565b6040517fffffffff0000000000000000000000000000000000000000000000000000000060e085901b16815260048101929092526001600160a01b03166024820152604401602060405180830381865afa15801561078d573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906107b19190611e1f565b6107be5780610520611208565b817fd883df12000000000000000000000000000000000000000000000000000000007f6e8ade450000000000000000000000000000000000000000000000000000000061080b838361125a565b801561081c575061081c838261125a565b156106435761082a856108ee565b60065461083f906001600160a01b0316610cc3565b6006805473ffffffffffffffffffffffffffffffffffffffff19166001600160a01b0387169081179091556040517fae8716ba090b1cdfccf3851704c6dc4610f3be4f2f6badf912e74315e5280db490600090a2610680565b60008060006108a7858561127d565b9150915060001982036108e6576040517f8b08febc00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b949350505050565b6108fe6108f9611208565b6113be565b610934576040517fbc43719a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600054608011610970576040517f4b8afdce00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b8061097a816114d4565b816109848161152a565b61098d8361157f565b505050565b600554604080517f55ff58d400000000000000000000000000000000000000000000000000000000815290516000926001600160a01b0316916355ff58d49160048083019260209291908290030181865afa1580156109f5573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610a199190611e06565b6005549091506001600160a01b03166391d1485482610a36611208565b6040517fffffffff0000000000000000000000000000000000000000000000000000000060e085901b16815260048101929092526001600160a01b03166024820152604401602060405180830381865afa158015610a98573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610abc9190611e1f565b610ac95780610520611208565b817fd883df12000000000000000000000000000000000000000000000000000000007f899090df00000000000000000000000000000000000000000000000000000000610b16838361125a565b8015610b275750610b27838261125a565b1561064357610b35856108ee565b600454610b4a906001600160a01b0316610cc3565b6004805473ffffffffffffffffffffffffffffffffffffffff19166001600160a01b0387169081179091556040517f224dfb9d0227c04cf6e5b57d4b0594d2962f550c547f4bf5e2578e09d6aa67ed90600090a2610680565b60606000805480602002602001604051908101604052809291908181526020018280548015610bfb57602002820191906000526020600020905b81546001600160a01b03168152600190910190602001808311610bdd575b5050505050905090565b60006103e382611638565b60006060610c1f610248611208565b610c55576040517fd527370800000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60006060856001600160a01b031685604051610c719190611e41565b6000604051808303816000865af19150503d8060008114610cae576040519150601f19603f3d011682016040523d82523d6000602084013e610cb3565b606091505b50909450925050505b9250929050565b610cce6108f9611208565b610d04576040517fbc43719a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b80610d27816001600160a01b031660009081526001602052604090205460ff1690565b610d5d576040517ff944147c00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b610d668261166f565b5050565b7ff0c57e16840df040f15088dc2f81fe391c3923bec73e23a9662efc9c229c6a00805468010000000000000000810460ff16159067ffffffffffffffff16600081158015610db55750825b905060008267ffffffffffffffff166001148015610dd25750303b155b905081158015610de0575080155b15610e17576040517ff92ee8a900000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b84547fffffffffffffffffffffffffffffffffffffffffffffffff00000000000000001660011785558315610e785784547fffffffffffffffffffffffffffffffffffffffffffffff00ffffffffffffffff16680100000000000000001785555b610e828a8a611848565b60038b9055600480546001600160a01b03808b1673ffffffffffffffffffffffffffffffffffffffff1992831617909255600580548a84169083161790556006805492891692909116919091179055610eda88610970565b610ee387610970565b610eec86610970565b8a7f070464456e868d7463724bb8b918079d22862b221db0658876214310cc0a93308989898e8e604051610f24959493929190611e5d565b60405180910390a28315610f8d5784547fffffffffffffffffffffffffffffffffffffffffffffff00ffffffffffffffff168555604051600181527fc7f505b2f371ae2175ee4913f4499e1f2633a7b5936321eed1cdaeb6115181d29060200160405180910390a15b5050505050505050505050565b60606000600560009054906101000a90046001600160a01b03166001600160a01b03166355ff58d46040518163ffffffff1660e01b8152600401602060405180830381865afa158015610ff1573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906110159190611e06565b6005549091506001600160a01b03166391d1485482611032611208565b6040517fffffffff0000000000000000000000000000000000000000000000000000000060e085901b16815260048101929092526001600160a01b03166024820152604401602060405180830381865afa158015611094573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906110b89190611e1f565b6110c55780610520611208565b60006060856001600160a01b0316856040516110e19190611e41565b6000604051808303816000865af19150503d806000811461111e576040519150601f19603f3d011682016040523d82523d6000602084013e611123565b606091505b509092509050811561113857925061116a9050565b6040517f74373f0f00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b5092915050565b60007fffffffff0000000000000000000000000000000000000000000000000000000082167fa1fb44110000000000000000000000000000000000000000000000000000000014806103e357507f01ffc9a7000000000000000000000000000000000000000000000000000000007fffffffff000000000000000000000000000000000000000000000000000000008316146103e3565b600036601461121633610c05565b80156112225750808210155b15611252576000366112348385611ecf565b61123f928290611f09565b61124891611f33565b60601c9250505090565b339250505090565b6000611265836118dd565b801561127657506112768383611941565b9392505050565b600080600061128a610ba3565b8051909150606060005b828110156113ac578381815181106112ae576112ae611f7b565b60200260200101516001600160a01b0316634a79d50c6040518163ffffffff1660e01b8152600401600060405180830381865afa1580156112f3573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f1916820160405261131b9190810190611faa565b80519092508790036113a457878760405160200161133a929190612021565b60405160208183030381529060405280519060200120826040516020016113619190611e41565b60405160208183030381529060405280519060200120036113a4578084828151811061138f5761138f611f7b565b60200260200101519550955050505050610cbc565b600101611294565b50600019976000975095505050505050565b600554604080517f55ff58d400000000000000000000000000000000000000000000000000000000815290516000926001600160a01b0316916391d148549183916355ff58d49160048083019260209291908290030181865afa158015611429573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061144d9190611e06565b6040517fffffffff0000000000000000000000000000000000000000000000000000000060e084901b16815260048101919091526001600160a01b0385166024820152604401602060405180830381865afa1580156114b0573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103e39190611e1f565b6001600160a01b03811660009081526001602052604090205460ff1615611527576040517f4ee6adbb00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b50565b6001600160a01b038116158061154857506001600160a01b03811630145b15611527576040517f9004b22700000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60008054600180820183557f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563909101805473ffffffffffffffffffffffffffffffffffffffff19166001600160a01b0385169081179091558083526020829052604080842080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0016909317909255905190917fead6a006345da1073a106d5f32372d2d2204f46cb0b4bca8f5ebafcbbed12b8a91a250565b60007f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03908116908316146103e3565b60008054604080516020808402820181019092528281529183918301828280156116c257602002820191906000526020600020905b81546001600160a01b031681526001909101906020018083116116a4575b5050835193945060001993925060009150505b8181101561171f57846001600160a01b03168482815181106116f9576116f9611f7b565b60200260200101516001600160a01b0316036117175780925061171f565b6001016116d5565b50600061172d600183611ecf565b8154811061173d5761173d611f7b565b600091825260208220015481546001600160a01b0390911691908490811061176757611767611f7b565b60009182526020822001805473ffffffffffffffffffffffffffffffffffffffff19166001600160a01b0393909316929092179091558054806117ac576117ac612031565b600082815260208082208301600019908101805473ffffffffffffffffffffffffffffffffffffffff191690559092019092556001600160a01b0386168083526001909152604080832080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff001690555190917f0a1ee69f55c33d8467c69ca59ce2007a737a88603d75392972520bf67cb513b891a250505050565b611850611a11565b60008161185f60036080611ecf565b811115611898576040517f4b8afdce00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60005b81811015610680578484828181106118b5576118b5611f7b565b90506020020160208101906118ca9190611ae1565b92506118d583610970565b60010161189b565b6000611909827f01ffc9a700000000000000000000000000000000000000000000000000000000611941565b80156103e3575061193a827fffffffff00000000000000000000000000000000000000000000000000000000611941565b1592915050565b6040517fffffffff0000000000000000000000000000000000000000000000000000000082166024820152600090819060440160408051601f19818403018152919052602080820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff167f01ffc9a700000000000000000000000000000000000000000000000000000000178152825192935060009283928392909183918a617530fa92503d915060005190508280156119fa575060208210155b8015611a065750600081115b979650505050505050565b7ff0c57e16840df040f15088dc2f81fe391c3923bec73e23a9662efc9c229c6a005468010000000000000000900460ff16611a78576040517fd7e6bcf800000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b565b600060208284031215611a8c57600080fd5b81357fffffffff000000000000000000000000000000000000000000000000000000008116811461127657600080fd5b6001600160a01b038116811461152757600080fd5b8035611adc81611abc565b919050565b600060208284031215611af357600080fd5b813561127681611abc565b60008060208385031215611b1157600080fd5b823567ffffffffffffffff80821115611b2957600080fd5b818501915085601f830112611b3d57600080fd5b813581811115611b4c57600080fd5b866020828501011115611b5e57600080fd5b60209290920196919550909350505050565b6020808252825182820181905260009190848201906040850190845b81811015611bb15783516001600160a01b031683529284019291840191600101611b8c565b50909695505050505050565b60005b83811015611bd8578181015183820152602001611bc0565b50506000910152565b60008151808452611bf9816020860160208601611bbd565b601f01601f19169290920160200192915050565b6020815260006112766020830184611be1565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b604051601f8201601f1916810167ffffffffffffffff81118282101715611c7857611c78611c20565b604052919050565b600067ffffffffffffffff821115611c9a57611c9a611c20565b50601f01601f191660200190565b60008060408385031215611cbb57600080fd5b8235611cc681611abc565b9150602083013567ffffffffffffffff811115611ce257600080fd5b8301601f81018513611cf357600080fd5b8035611d06611d0182611c80565b611c4f565b818152866020838501011115611d1b57600080fd5b816020840160208301376000602083830101528093505050509250929050565b82151581526040602082015260006108e66040830184611be1565b60008060008060008060a08789031215611d6f57600080fd5b86359550602087013567ffffffffffffffff80821115611d8e57600080fd5b818901915089601f830112611da257600080fd5b813581811115611db157600080fd5b8a60208260051b8501011115611dc657600080fd5b602083019750809650505050611dde60408801611ad1565b9250611dec60608801611ad1565b9150611dfa60808801611ad1565b90509295509295509295565b600060208284031215611e1857600080fd5b5051919050565b600060208284031215611e3157600080fd5b8151801515811461127657600080fd5b60008251611e53818460208701611bbd565b9190910192915050565b6000608082016001600160a01b038089168452602081891660208601528188166040860152608060608601528286845260a08601905087935060005b87811015611ec0578435611eac81611abc565b841682529382019390820190600101611e99565b509a9950505050505050505050565b818103818111156103e3577f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b60008085851115611f1957600080fd5b83861115611f2657600080fd5b5050820193919092039150565b7fffffffffffffffffffffffffffffffffffffffff0000000000000000000000008135818116916014851015611f735780818660140360031b1b83161692505b505092915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b600060208284031215611fbc57600080fd5b815167ffffffffffffffff811115611fd357600080fd5b8201601f81018413611fe457600080fd5b8051611ff2611d0182611c80565b81815285602083850101111561200757600080fd5b612018826020830160208601611bbd565b95945050505050565b8183823760009101908152919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603160045260246000fdfea2646970667358221220c8c822c91869f8751a57ec2bd4853441461abce3271f530361df67febb0d1c1864736f6c63430008170033",
+    "sourceMap": "1419:9189:139:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1479:272;;;;;;:::i;:::-;;:::i;:::-;;;516:14:219;;509:22;491:41;;479:2;464:18;1479:272:139;;;;;;;;2458:61;;;;;-1:-1:-1;;;;;2458:61:139;;;;;;-1:-1:-1;;;;;732:55:219;;;714:74;;702:2;687:18;2458:61:139;543:251:219;6642:856:139;;;;;;:::i;:::-;;:::i;:::-;;8502:958;;;;;;:::i;:::-;;:::i;5637:398::-;;;;;;:::i;:::-;;:::i;5618:221:141:-;;;;;;:::i;:::-;;:::i;5357:99::-;5403:5;5433:15;5357:99;;2979:4:219;2967:17;;;2949:36;;2937:2;2922:18;5357:99:141;2807:184:219;7538:924:139;;;;;;:::i;:::-;;:::i;5018:163:141:-;;;;;;:::i;:::-;-1:-1:-1;;;;;5157:17:141;5130:4;5157:17;;;:9;:17;;;;;;;;;5018:163;5222:94;;;:::i;:::-;;;;;;;:::i;10012:84:139:-;10079:10;;;;;;;;;;;;;;;;;10012:84;;;;;;;:::i;10381:225::-;;;;;;:::i;:::-;;:::i;6197:287:141:-;;;;;;:::i;:::-;;:::i;:::-;;;;;;;;:::i;2367:50:139:-;;;;;;;;;6839:25:219;;;6827:2;6812:18;2367:50:139;6693:177:219;1622:107:31;1705:17;1622:107;;5880:166:141;;;;;;:::i;:::-;;:::i;2978:1083:139:-;;;;;;:::i;:::-;;:::i;2560:53::-;;;;;-1:-1:-1;;;;;2560:53:139;;;2654:65;;;;;-1:-1:-1;;;;;2654:65:139;;;9500:368;;;;;;:::i;:::-;;:::i;1479:272::-;1619:4;1646:46;;;1661:31;1646:46;;:98;;;1708:36;1732:11;1708:23;:36::i;:::-;1639:105;1479:272;-1:-1:-1;;1479:272:139:o;6642:856::-;2037:10;;:25;;;;;;;;2017:17;;-1:-1:-1;;;;;2037:10:139;;:23;;:25;;;;;;;;;;;;;;:10;:25;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;2078:10;;2017:45;;-1:-1:-1;;;;;;2078:10:139;:18;2017:45;2108:12;:10;:12::i;:::-;2078:43;;;;;;;;;;;;;8995:25:219;;;;-1:-1:-1;;;;;9056:55:219;9036:18;;;9029:83;8968:18;;2078:43:139;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;2073:140;;2178:9;2189:12;:10;:12::i;:::-;2144:58;;;;;;;;8995:25:219;;;;-1:-1:-1;;;;;9056:55:219;9036:18;;;9029:83;8968:18;;2144:58:139;;;;;;;;2073:140;6788:11;6837:25:::1;6903:29;6959:100;6788:11:::0;6837:25;6959:31:::1;:100::i;:::-;:232;;;;;7079:112;7132:18;7152:21;7079:31;:112::i;:::-;6942:550;;;7216:31;7234:11;7216:9;:31::i;:::-;7282:10;::::0;7261:33:::1;::::0;-1:-1:-1;;;;;7282:10:139::1;7261:12;:33::i;:::-;7308:10;:24:::0;;-1:-1:-1;;7308:24:139::1;-1:-1:-1::0;;;;;7308:24:139;::::1;::::0;;::::1;::::0;;;7351:39:::1;::::0;::::1;::::0;-1:-1:-1;;7351:39:139::1;6942:550;;;7428:53;::::0;::::1;::::0;;-1:-1:-1;;;;;732:55:219;;7428:53:139::1;::::0;::::1;714:74:219::0;687:18;;7428:53:139::1;543:251:219::0;6942:550:139::1;6741:757;;;2007:223:::0;6642:856;:::o;8502:958::-;2037:10;;:25;;;;;;;;2017:17;;-1:-1:-1;;;;;2037:10:139;;:23;;:25;;;;;;;;;;;;;;:10;:25;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;2078:10;;2017:45;;-1:-1:-1;;;;;;2078:10:139;:18;2017:45;2108:12;:10;:12::i;:::-;2078:43;;;;;;;;;;;;;8995:25:219;;;;-1:-1:-1;;;;;9056:55:219;9036:18;;;9029:83;8968:18;;2078:43:139;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;2073:140;;2178:9;2189:12;:10;:12::i;2073:140::-;8672:17;8727:25:::1;8799:35;8861:106;8672:17:::0;8727:25;8861:31:::1;:106::i;:::-;:250;;;;;8987:124;9040:24;9066:27;8987:31;:124::i;:::-;8844:610;;;9136:37;9154:17;9136:9;:37::i;:::-;9208:16;::::0;9187:39:::1;::::0;-1:-1:-1;;;;;9208:16:139::1;9187:12;:39::i;:::-;9240:16;:36:::0;;-1:-1:-1;;9240:36:139::1;-1:-1:-1::0;;;;;9240:36:139;::::1;::::0;;::::1;::::0;;;9295:51:::1;::::0;::::1;::::0;-1:-1:-1;;9295:51:139::1;8844:610;;5637:398:::0;5753:7;5777:16;5795:21;5832:39;5860:10;;5832:27;:39::i;:::-;5776:95;;;;-1:-1:-1;;5885:11:139;:29;5881:117;;5937:50;;;;;;;;;;;;;;5881:117;6015:13;5637:398;-1:-1:-1;;;;5637:398:139:o;5618:221:141:-;1561:42;1590:12;:10;:12::i;:::-;1561:28;:42::i;:::-;1556:131;;1626:50;;;;;;;;;;;;;;1556:131;2282:8:::1;:15:::0;2668:3:::1;-1:-1:-1::0;2278:127:141::1;;2341:53;;;;;;;;;;;;;;2278:127;5758:6:::2;2186:24;2203:6;2186:16;:24::i;:::-;5786:6:::3;1924:26;1943:6;1924:18;:26::i;:::-;5808:24:::4;5825:6;5808:16;:24::i;:::-;2220:1:::3;2414::::2;5618:221:::0;:::o;7538:924:139:-;2037:10;;:25;;;;;;;;2017:17;;-1:-1:-1;;;;;2037:10:139;;:23;;:25;;;;;;;;;;;;;;:10;:25;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;2078:10;;2017:45;;-1:-1:-1;;;;;;2078:10:139;:18;2017:45;2108:12;:10;:12::i;:::-;2078:43;;;;;;;;;;;;;8995:25:219;;;;-1:-1:-1;;;;;9056:55:219;9036:18;;;9029:83;8968:18;;2078:43:139;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;2073:140;;2178:9;2189:12;:10;:12::i;2073:140::-;7700:15;7753:25:::1;7823:33;7883:104;7700:15:::0;7753:25;7883:31:::1;:104::i;:::-;:244;;;;;8007:120;8060:22;8084:25;8007:31;:120::i;:::-;7866:590;;;8152:35;8170:15;8152:9;:35::i;:::-;8222:14;::::0;8201:37:::1;::::0;-1:-1:-1;;;;;8222:14:139::1;8201:12;:37::i;:::-;8252:14;:32:::0;;-1:-1:-1;;8252:32:139::1;-1:-1:-1::0;;;;;8252:32:139;::::1;::::0;;::::1;::::0;;;8303:47:::1;::::0;::::1;::::0;-1:-1:-1;;8303:47:139::1;7866:590;;5222:94:141::0;5266:16;5301:8;5294:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;5294:15:141;;;;;;;;;;;;;;;;;;;;;;;5222:94;:::o;10381:225:139:-;10537:4;10564:35;10589:9;10564:24;:35::i;6197:287:141:-;6326:4;6332:12;1747:22;1756:12;:10;:12::i;1747:22::-;1742:112;;1792:51;;;;;;;;;;;;;;1742:112;6360:7:::1;6377:23;6430:2;-1:-1:-1::0;;;;;6430:7:141::1;6438:4;6430:13;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1::0;6411:32:141;;-1:-1:-1;6411:32:141;-1:-1:-1;;;1863:1:141::1;6197:287:::0;;;;;:::o;5880:166::-;1561:42;1590:12;:10;:12::i;1561:42::-;1556:131;;1626:50;;;;;;;;;;;;;;1556:131;5990:6:::1;2024:16;2033:6;-1:-1:-1::0;;;;;5157:17:141;5130:4;5157:17;;;:9;:17;;;;;;;;;5018:163;2024:16:::1;2019:97;;2063:42;;;;;;;;;;;;;;2019:97;6012:27:::2;6032:6;6012:19;:27::i;:::-;1696:1:::1;5880:166:::0;:::o;2978:1083:139:-;8870:21:20;4302:15;;;;;;;4301:16;;4348:14;;4158:30;4726:16;;:34;;;;;4746:14;4726:34;4706:54;;4770:17;4790:11;:16;;4805:1;4790:16;:50;;;;-1:-1:-1;4818:4:20;4810:25;:30;4790:50;4770:70;;4856:12;4855:13;:30;;;;;4873:12;4872:13;4855:30;4851:91;;;4908:23;;;;;;;;;;;;;;4851:91;4951:18;;;;4968:1;4951:18;;;4979:67;;;;5013:22;;;;;;;;4979:67;3280:29:139::1;3301:7;;3280:20;:29::i;:::-;3354:14;:32:::0;;;3397:14:::1;:32:::0;;-1:-1:-1;;;;;3397:32:139;;::::1;-1:-1:-1::0;;3397:32:139;;::::1;;::::0;;;3439:10:::1;:24:::0;;;;::::1;::::0;;::::1;;::::0;;3473:16:::1;:36:::0;;;;::::1;::::0;;;::::1;::::0;;;::::1;::::0;;3672:51:::1;3414:15:::0;3672:25:::1;:51::i;:::-;3733:47;3767:11;3733:25;:47::i;:::-;3790:53;3824:17;3790:25;:53::i;:::-;3896:15;3859:195;3933:15;3971:11;4005:17;4037:7;;3859:195;;;;;;;;;;:::i;:::-;;;;;;;;5070:14:20::0;5066:101;;;5100:23;;;;;;5142:14;;-1:-1:-1;10860:50:219;;5142:14:20;;10848:2:219;10833:18;5142:14:20;;;;;;;5066:101;4092:1081;;;;;2978:1083:139;;;;;;:::o;9500:368::-;9618:12;2017:17;2037:10;;;;;;;;;-1:-1:-1;;;;;2037:10:139;-1:-1:-1;;;;;2037:23:139;;:25;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;2078:10;;2017:45;;-1:-1:-1;;;;;;2078:10:139;:18;2017:45;2108:12;:10;:12::i;:::-;2078:43;;;;;;;;;;;;;8995:25:219;;;;-1:-1:-1;;;;;9056:55:219;9036:18;;;9029:83;8968:18;;2078:43:139;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;2073:140;;2178:9;2189:12;:10;:12::i;2073:140::-;9646:7:::1;9663:23;9715:6;-1:-1:-1::0;;;;;9715:11:139::1;9727:4;9715:17;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1::0;9696:36:139;;-1:-1:-1;9696:36:139;-1:-1:-1;9743:119:139;::::1;;;9772:10:::0;-1:-1:-1;9765:17:139::1;::::0;-1:-1:-1;9765:17:139::1;9743:119;9820:31;;;;;;;;;;;;;;2222:1;2007:223:::0;9500:368;;;;:::o;1133:266:141:-;1266:4;1293:47;;;1308:32;1293:47;;:99;;-1:-1:-1;876:25:55;861:40;;;;1356:36:141;762:146:55;2204:429:31;2266:7;2310:8;3481:2;2401:30;2420:10;2401:18;:30::i;:::-;:71;;;;;2453:19;2435:14;:37;;2401:71;2397:230;;;2511:8;;2520:36;2537:19;2520:14;:36;:::i;:::-;2511:47;;;;;:::i;:::-;2503:56;;;:::i;:::-;2495:65;;2488:72;;;;2204:429;:::o;2397:230::-;735:10:47;2591:25:31;;;;2204:429;:::o;1363:282:56:-;1450:4;1557:23;1572:7;1557:14;:23::i;:::-;:81;;;;;1584:54;1617:7;1626:11;1584:32;:54::i;:::-;1550:88;1363:282;-1:-1:-1;;;1363:282:56:o;4690:907:139:-;4801:4;4807:7;4830:32;4865:13;:11;:13::i;:::-;4917:22;;4830:48;;-1:-1:-1;4949:31:139;4888:26;5011:534;5026:21;5018:5;:29;5011:534;;;5092:15;5108:5;5092:22;;;;;;;;:::i;:::-;;;;;;;-1:-1:-1;;;;;5084:37:139;;:39;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;5084:39:139;;;;;;;;;;;;:::i;:::-;5142:31;;5064:59;;-1:-1:-1;5142:59:139;;;5138:333;;5347:10;;5330:28;;;;;;;;;:::i;:::-;;;;;;;;;;;;;5320:39;;;;;;5273:17;5256:35;;;;;;;;:::i;:::-;;;;;;;;;;;;;5246:46;;;;;;:113;5221:236;;5408:5;5415:15;5431:5;5415:22;;;;;;;;:::i;:::-;;;;;;;5400:38;;;;;;;;;;5221:236;5513:7;;5011:534;;;-1:-1:-1;;;5563:14:139;5587:1;;-1:-1:-1;4690:907:139;-1:-1:-1;;;;;;4690:907:139:o;6267:214::-;6424:10;;6443:25;;;;;;;;6397:4;;-1:-1:-1;;;;;6424:10:139;;:18;;:10;;6443:23;;:25;;;;;;;;;;;;;;6424:10;6443:25;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;6424:50;;;;;;;;;;;;;8995:25:219;;;;-1:-1:-1;;;;;9056:55:219;;9036:18;;;9029:83;8968:18;;6424:50:139;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;8204:164:141:-;-1:-1:-1;;;;;5157:17:141;;5130:4;5157:17;;;:9;:17;;;;;;;;8269:93;;;8312:39;;;;;;;;;;;;;;8269:93;8204:164;:::o;7989:209::-;-1:-1:-1;;;;;8060:20:141;;;;:47;;-1:-1:-1;;;;;;8084:23:141;;8102:4;8084:23;8060:47;8056:136;;;8130:51;;;;;;;;;;;;;;6711:197;6812:8;:21;;;;;;;;;;;;;;-1:-1:-1;;6812:21:141;-1:-1:-1;;;;;6812:21:141;;;;;;;;6843:17;;;6812:21;6843:17;;;;;;;:24;;;;;;;;;;6882:19;;6812:21;;6882:19;;;6711:197;:::o;8653:226::-;8810:4;1705:17:31;-1:-1:-1;;;;;1929:31:31;;;;;;;8837:35:141;1830:137:31;7052:931:141;7420:35;:46;;;;;;;;;;;;;;;;;;;;:35;;:46;;:35;:46;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;7420:46:141;;;;;;;;;;;;;;;;-1:-1:-1;;7535:25:141;;7420:46;;-1:-1:-1;;;7496:14:141;7535:25;-1:-1:-1;7477:16:141;;-1:-1:-1;;7570:162:141;7587:6;7583:1;:10;7570:162;;;7643:6;-1:-1:-1;;;;;7618:31:141;:18;7637:1;7618:21;;;;;;;;:::i;:::-;;;;;;;-1:-1:-1;;;;;7618:31:141;;7614:108;;7683:1;7669:15;;7702:5;;7614:108;7595:3;;7570:162;;;-1:-1:-1;7824:8:141;7833:10;7842:1;7833:6;:10;:::i;:::-;7824:20;;;;;;;;:::i;:::-;;;;;;;;;;7800:21;;-1:-1:-1;;;;;7824:20:141;;;;;7809:11;;7800:21;;;;;;:::i;:::-;;;;;;;;;:44;;-1:-1:-1;;7800:44:141;-1:-1:-1;;;;;7800:44:141;;;;;;;;;;;7889:14;;;;;;;:::i;:::-;;;;;;;;;;;-1:-1:-1;;7889:14:141;;;;;-1:-1:-1;;7889:14:141;;;;;;;;;-1:-1:-1;;;;;7914:17:141;;;;;7889:14;7914:17;;;;;;;:25;;;;;;7955:21;7914:17;;7955:21;;;7105:878;;;7052:931;:::o;3620:643::-;6931:20:20;:18;:20::i;:::-;3734:14:141::1;3769:7:::0;4019:21:::1;4039:1;2668:3;4019:21;:::i;:::-;4012:3;:29;4008:120;;;4064:53;;;;;;;;;;;;;;4008:120;4143:6;4138:119;4155:3;4151:1;:7;4138:119;;;4188:7;;4196:1;4188:10;;;;;;;:::i;:::-;;;;;;;;;;;;;;:::i;:::-;4179:19;;4213:33;4239:6;4213:25;:33::i;:::-;4160:3;;4138:119;;719:426:56::0;783:4;990:68;1023:7;1032:25;990:32;:68::i;:::-;:148;;;;-1:-1:-1;1075:63:56;1108:7;1117:20;1075:32;:63::i;:::-;1074:64;971:167;719:426;-1:-1:-1;;719:426:56:o;4397:632::-;4568:56;;13698:66:219;13686:79;;4568:56:56;;;13668:98:219;4499:4:56;;;;13641:18:219;;4568:56:56;;;-1:-1:-1;;4568:56:56;;;;;;;;;;;;;;;;;;;;;4832:20;;4568:56;;-1:-1:-1;;;;;;;4568:56:56;;-1:-1:-1;;4797:7:56;4790:5;4779:86;4768:97;;4892:16;4878:30;;4942:4;4936:11;4921:26;;4974:7;:29;;;;;4999:4;4985:10;:18;;4974:29;:48;;;;;5021:1;5007:11;:15;4974:48;4967:55;4397:632;-1:-1:-1;;;;;;;4397:632:56:o;7084:141:20:-;8870:21;8560:40;;;;;;7146:73;;7191:17;;;;;;;;;;;;;;7146:73;7084:141::o;14:332:219:-;72:6;125:2;113:9;104:7;100:23;96:32;93:52;;;141:1;138;131:12;93:52;180:9;167:23;230:66;223:5;219:78;212:5;209:89;199:117;;312:1;309;302:12;799:167;-1:-1:-1;;;;;891:5:219;887:54;880:5;877:65;867:93;;956:1;953;946:12;971:160;1052:20;;1081:44;1052:20;1081:44;:::i;:::-;971:160;;;:::o;1136:281::-;1216:6;1269:2;1257:9;1248:7;1244:23;1240:32;1237:52;;;1285:1;1282;1275:12;1237:52;1324:9;1311:23;1343:44;1381:5;1343:44;:::i;1714:592::-;1785:6;1793;1846:2;1834:9;1825:7;1821:23;1817:32;1814:52;;;1862:1;1859;1852:12;1814:52;1902:9;1889:23;1931:18;1972:2;1964:6;1961:14;1958:34;;;1988:1;1985;1978:12;1958:34;2026:6;2015:9;2011:22;2001:32;;2071:7;2064:4;2060:2;2056:13;2052:27;2042:55;;2093:1;2090;2083:12;2042:55;2133:2;2120:16;2159:2;2151:6;2148:14;2145:34;;;2175:1;2172;2165:12;2145:34;2220:7;2215:2;2206:6;2202:2;2198:15;2194:24;2191:37;2188:57;;;2241:1;2238;2231:12;2188:57;2272:2;2264:11;;;;;2294:6;;-1:-1:-1;1714:592:219;;-1:-1:-1;;;;1714:592:219:o;3286:681::-;3457:2;3509:21;;;3579:13;;3482:18;;;3601:22;;;3428:4;;3457:2;3680:15;;;;3654:2;3639:18;;;3428:4;3723:218;3737:6;3734:1;3731:13;3723:218;;;3802:13;;-1:-1:-1;;;;;3798:62:219;3786:75;;3916:15;;;;3881:12;;;;3759:1;3752:9;3723:218;;;-1:-1:-1;3958:3:219;;3286:681;-1:-1:-1;;;;;;3286:681:219:o;3972:250::-;4057:1;4067:113;4081:6;4078:1;4075:13;4067:113;;;4157:11;;;4151:18;4138:11;;;4131:39;4103:2;4096:10;4067:113;;;-1:-1:-1;;4214:1:219;4196:16;;4189:27;3972:250::o;4227:330::-;4269:3;4307:5;4301:12;4334:6;4329:3;4322:19;4350:76;4419:6;4412:4;4407:3;4403:14;4396:4;4389:5;4385:16;4350:76;:::i;:::-;4471:2;4459:15;-1:-1:-1;;4455:88:219;4446:98;;;;4546:4;4442:109;;4227:330;-1:-1:-1;;4227:330:219:o;4562:220::-;4711:2;4700:9;4693:21;4674:4;4731:45;4772:2;4761:9;4757:18;4749:6;4731:45;:::i;4787:184::-;4839:77;4836:1;4829:88;4936:4;4933:1;4926:15;4960:4;4957:1;4950:15;4976:334;5047:2;5041:9;5103:2;5093:13;;-1:-1:-1;;5089:86:219;5077:99;;5206:18;5191:34;;5227:22;;;5188:62;5185:88;;;5253:18;;:::i;:::-;5289:2;5282:22;4976:334;;-1:-1:-1;4976:334:219:o;5315:245::-;5363:4;5396:18;5388:6;5385:30;5382:56;;;5418:18;;:::i;:::-;-1:-1:-1;5475:2:219;5463:15;-1:-1:-1;;5459:88:219;5549:4;5455:99;;5315:245::o;5565:819::-;5642:6;5650;5703:2;5691:9;5682:7;5678:23;5674:32;5671:52;;;5719:1;5716;5709:12;5671:52;5758:9;5745:23;5777:44;5815:5;5777:44;:::i;:::-;5840:5;-1:-1:-1;5896:2:219;5881:18;;5868:32;5923:18;5912:30;;5909:50;;;5955:1;5952;5945:12;5909:50;5978:22;;6031:4;6023:13;;6019:27;-1:-1:-1;6009:55:219;;6060:1;6057;6050:12;6009:55;6096:2;6083:16;6121:48;6137:31;6165:2;6137:31;:::i;:::-;6121:48;:::i;:::-;6192:2;6185:5;6178:17;6232:7;6227:2;6222;6218;6214:11;6210:20;6207:33;6204:53;;;6253:1;6250;6243:12;6204:53;6308:2;6303;6299;6295:11;6290:2;6283:5;6279:14;6266:45;6352:1;6347:2;6342;6335:5;6331:14;6327:23;6320:34;6373:5;6363:15;;;;;5565:819;;;;;:::o;6389:299::-;6572:6;6565:14;6558:22;6547:9;6540:41;6617:2;6612;6601:9;6597:18;6590:30;6521:4;6637:45;6678:2;6667:9;6663:18;6655:6;6637:45;:::i;6875:1019::-;7070:6;7078;7086;7094;7102;7110;7163:3;7151:9;7142:7;7138:23;7134:33;7131:53;;;7180:1;7177;7170:12;7131:53;7216:9;7203:23;7193:33;;7277:2;7266:9;7262:18;7249:32;7300:18;7341:2;7333:6;7330:14;7327:34;;;7357:1;7354;7347:12;7327:34;7395:6;7384:9;7380:22;7370:32;;7440:7;7433:4;7429:2;7425:13;7421:27;7411:55;;7462:1;7459;7452:12;7411:55;7502:2;7489:16;7528:2;7520:6;7517:14;7514:34;;;7544:1;7541;7534:12;7514:34;7597:7;7592:2;7582:6;7579:1;7575:14;7571:2;7567:23;7563:32;7560:45;7557:65;;;7618:1;7615;7608:12;7557:65;7649:2;7645;7641:11;7631:21;;7671:6;7661:16;;;;;7696:51;7743:2;7732:9;7728:18;7696:51;:::i;:::-;7686:61;;7766:51;7813:2;7802:9;7798:18;7766:51;:::i;:::-;7756:61;;7836:52;7883:3;7872:9;7868:19;7836:52;:::i;:::-;7826:62;;6875:1019;;;;;;;;:::o;8632:184::-;8702:6;8755:2;8743:9;8734:7;8730:23;8726:32;8723:52;;;8771:1;8768;8761:12;8723:52;-1:-1:-1;8794:16:219;;8632:184;-1:-1:-1;8632:184:219:o;9123:277::-;9190:6;9243:2;9231:9;9222:7;9218:23;9214:32;9211:52;;;9259:1;9256;9249:12;9211:52;9291:9;9285:16;9344:5;9337:13;9330:21;9323:5;9320:32;9310:60;;9366:1;9363;9356:12;9405:287;9534:3;9572:6;9566:13;9588:66;9647:6;9642:3;9635:4;9627:6;9623:17;9588:66;:::i;:::-;9670:16;;;;;9405:287;-1:-1:-1;;9405:287:219:o;9697:1005::-;9933:4;9981:3;9970:9;9966:19;-1:-1:-1;;;;;10085:2:219;10077:6;10073:15;10062:9;10055:34;10108:2;10158;10150:6;10146:15;10141:2;10130:9;10126:18;10119:43;10210:2;10202:6;10198:15;10193:2;10182:9;10178:18;10171:43;10250:3;10245:2;10234:9;10230:18;10223:31;10274:6;10304;10296;10289:22;10342:3;10331:9;10327:19;10320:26;;10369:6;10355:20;;10393:1;10403:273;10417:6;10414:1;10411:13;10403:273;;;10492:6;10479:20;10512:44;10550:5;10512:44;:::i;:::-;10581:14;;10569:27;;10651:15;;;;10616:12;;;;10439:1;10432:9;10403:273;;;-1:-1:-1;10693:3:219;9697:1005;-1:-1:-1;;;;;;;;;;9697:1005:219:o;10921:282::-;10988:9;;;11009:11;;;11006:191;;;11053:77;11050:1;11043:88;11154:4;11151:1;11144:15;11182:4;11179:1;11172:15;11208:331;11313:9;11324;11366:8;11354:10;11351:24;11348:44;;;11388:1;11385;11378:12;11348:44;11417:6;11407:8;11404:20;11401:40;;;11437:1;11434;11427:12;11401:40;-1:-1:-1;;11463:23:219;;;11508:25;;;;;-1:-1:-1;11208:331:219:o;11544:372::-;11703:66;11665:19;;11787:11;;;;11818:2;11810:11;;11807:103;;;11897:2;11891;11884:3;11880:2;11876:12;11873:1;11869:20;11865:29;11861:2;11857:38;11853:47;11844:56;;11807:103;;;11544:372;;;;:::o;11921:184::-;11973:77;11970:1;11963:88;12070:4;12067:1;12060:15;12094:4;12091:1;12084:15;12110:648;12190:6;12243:2;12231:9;12222:7;12218:23;12214:32;12211:52;;;12259:1;12256;12249:12;12211:52;12292:9;12286:16;12325:18;12317:6;12314:30;12311:50;;;12357:1;12354;12347:12;12311:50;12380:22;;12433:4;12425:13;;12421:27;-1:-1:-1;12411:55:219;;12462:1;12459;12452:12;12411:55;12491:2;12485:9;12516:48;12532:31;12560:2;12532:31;:::i;12516:48::-;12587:2;12580:5;12573:17;12627:7;12622:2;12617;12613;12609:11;12605:20;12602:33;12599:53;;;12648:1;12645;12638:12;12599:53;12661:67;12725:2;12720;12713:5;12709:14;12704:2;12700;12696:11;12661:67;:::i;:::-;12747:5;12110:648;-1:-1:-1;;;;;12110:648:219:o;12763:273::-;12948:6;12940;12935:3;12922:33;12904:3;12974:16;;12999:13;;;12974:16;12763:273;-1:-1:-1;12763:273:219:o;13335:184::-;13387:77;13384:1;13377:88;13484:4;13481:1;13474:15;13508:4;13505:1;13498:15",
+    "linkReferences": {},
+    "immutableReferences": {
+      "31050": [
+        {
+          "start": 778,
+          "length": 32
+        },
+        {
+          "start": 5692,
+          "length": 32
+        }
+      ]
+    }
   },
   "methodIdentifiers": {
     "addModule(address)": "1ed86f19",
@@ -502,9 +580,11 @@
     "setAuthorizer(address)": "058a628f",
     "setFundingManager(address)": "333dc527",
     "setPaymentProcessor(address)": "088b0d75",
+    "supportsInterface(bytes4)": "01ffc9a7",
+    "trustedForwarder()": "7da0a877",
     "version()": "54fd4d50"
   },
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.23+commit.f704f362\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"DependencyInjection__ModuleNotUsedInOrchestrator\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"Orchestrator__CallerNotAuthorized\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Orchestrator__ExecuteTxFailed\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"module\",\"type\":\"address\"}],\"name\":\"Orchestrator__InvalidModuleType\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Orchestrator__ModuleManager__CallerNotAuthorized\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Orchestrator__ModuleManager__InvalidModuleAddress\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Orchestrator__ModuleManager__IsModule\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Orchestrator__ModuleManager__IsNotModule\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Orchestrator__ModuleManager__ModuleAmountOverLimits\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Orchestrator__ModuleManager__ModulesNotConsecutive\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Orchestrator__ModuleManager__OnlyCallableByModule\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"AuthorizerUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"FundingManagerUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"module\",\"type\":\"address\"}],\"name\":\"ModuleAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"module\",\"type\":\"address\"}],\"name\":\"ModuleRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"orchestratorId_\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"fundingManager\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"authorizer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"paymentProcessor\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"modules\",\"type\":\"address[]\"}],\"name\":\"OrchestratorInitialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"PaymentProcessorUpdated\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"module\",\"type\":\"address\"}],\"name\":\"addModule\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"authorizer\",\"outputs\":[{\"internalType\":\"contract IAuthorizer\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"executeTx\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"executeTxFromModule\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"moduleName\",\"type\":\"string\"}],\"name\":\"findModuleAddressInOrchestrator\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"fundingManager\",\"outputs\":[{\"internalType\":\"contract IFundingManager\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"orchestratorId\",\"type\":\"uint256\"},{\"internalType\":\"address[]\",\"name\":\"modules\",\"type\":\"address[]\"},{\"internalType\":\"contract IFundingManager\",\"name\":\"fundingManager\",\"type\":\"address\"},{\"internalType\":\"contract IAuthorizer\",\"name\":\"authorizer\",\"type\":\"address\"},{\"internalType\":\"contract IPaymentProcessor\",\"name\":\"paymentProcessor\",\"type\":\"address\"}],\"name\":\"init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"module\",\"type\":\"address\"}],\"name\":\"isModule\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"forwarder\",\"type\":\"address\"}],\"name\":\"isTrustedForwarder\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"listModules\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"modulesSize\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"orchestratorId\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paymentProcessor\",\"outputs\":[{\"internalType\":\"contract IPaymentProcessor\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"module\",\"type\":\"address\"}],\"name\":\"removeModule\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IAuthorizer\",\"name\":\"authorizer_\",\"type\":\"address\"}],\"name\":\"setAuthorizer\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IFundingManager\",\"name\":\"fundingManager_\",\"type\":\"address\"}],\"name\":\"setFundingManager\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IPaymentProcessor\",\"name\":\"paymentProcessor_\",\"type\":\"address\"}],\"name\":\"setPaymentProcessor\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"AuthorizerUpdated(address)\":{\"params\":{\"_address\":\"The new address.\"}},\"FundingManagerUpdated(address)\":{\"params\":{\"_address\":\"The new address.\"}},\"ModuleAdded(address)\":{\"params\":{\"module\":\"The module's address.\"}},\"ModuleRemoved(address)\":{\"params\":{\"module\":\"The module's address.\"}},\"OrchestratorInitialized(uint256,address,address,address,address[])\":{\"params\":{\"authorizer\":\"The address of the authorizer module.\",\"fundingManager\":\"The address of the funding manager module.\",\"modules\":\"The addresses of the other modules used in the orchestrator.\",\"orchestratorId_\":\"The id of the orchestrator.\",\"paymentProcessor\":\"The address of the payment processor module.\"}},\"PaymentProcessorUpdated(address)\":{\"params\":{\"_address\":\"The new address.\"}}},\"kind\":\"dev\",\"methods\":{\"addModule(address)\":{\"details\":\"Only callable by authorized address.Fails if address invalid or address already added as module.\",\"params\":{\"module\":\"The module address to add.\"}},\"authorizer()\":{\"returns\":{\"_0\":\"authorizer The attached authorizer.\"}},\"executeTx(address,bytes)\":{\"details\":\"Only callable by authorized caller.\",\"params\":{\"data\":\"The call data.\",\"target\":\"The address to call.\"},\"returns\":{\"_0\":\"returnData The return data of the call.\"}},\"executeTxFromModule(address,bytes)\":{\"details\":\"Only callable by enabled modules.\",\"params\":{\"data\":\"The call data.\",\"to\":\"The address to call.\"},\"returns\":{\"_0\":\"Whether the call succeeded.\",\"_1\":\"The return data of the call.\"}},\"findModuleAddressInOrchestrator(string)\":{\"returns\":{\"_0\":\"moduleAddress The address of the module with the given name.\"}},\"fundingManager()\":{\"returns\":{\"_0\":\"fundingManager The attached funding manager.\"}},\"isModule(address)\":{\"params\":{\"module\":\"The module to check.\"},\"returns\":{\"_0\":\"True if module added, false otherwise.\"}},\"listModules()\":{\"returns\":{\"_0\":\"List of all modules.\"}},\"orchestratorId()\":{\"details\":\"Unique id set by the {OrchestratorFactory} during initialization.\",\"returns\":{\"_0\":\"orchestratorId The id of the orchestrator.\"}},\"paymentProcessor()\":{\"returns\":{\"_0\":\"paymentProcessor The attached payment processor.\"}},\"removeModule(address)\":{\"details\":\"Only callable by authorized address.Fails if address not added as module.\",\"params\":{\"module\":\"The module address to remove.\"}},\"setAuthorizer(address)\":{\"details\":\"Only callable by authorized caller.\",\"params\":{\"authorizer_\":\"The address of the new authorizer module.\"}},\"setFundingManager(address)\":{\"details\":\"Only callable by authorized caller.\",\"params\":{\"fundingManager_\":\"The address of the new funding manager module.\"}},\"setPaymentProcessor(address)\":{\"details\":\"Only callable by authorized caller.\",\"params\":{\"paymentProcessor_\":\"The address of the new payment processor module.\"}},\"version()\":{\"returns\":{\"_0\":\"version The version string of the orchestrator\"}}},\"version\":1},\"userdoc\":{\"errors\":{\"DependencyInjection__ModuleNotUsedInOrchestrator()\":[{\"notice\":\"The given module is not used in the orchestrator\"}],\"Orchestrator__CallerNotAuthorized(bytes32,address)\":[{\"notice\":\"Function is only callable by authorized caller.\"}],\"Orchestrator__ExecuteTxFailed()\":[{\"notice\":\"Execution of transaction failed.\"}],\"Orchestrator__InvalidModuleType(address)\":[{\"notice\":\"The given module is not used in the orchestrator\"}],\"Orchestrator__ModuleManager__CallerNotAuthorized()\":[{\"notice\":\"Function is only callable by authorized address.\"}],\"Orchestrator__ModuleManager__InvalidModuleAddress()\":[{\"notice\":\"Given module address invalid.\"}],\"Orchestrator__ModuleManager__IsModule()\":[{\"notice\":\"Given address is a module.\"}],\"Orchestrator__ModuleManager__IsNotModule()\":[{\"notice\":\"Given address is not a module.\"}],\"Orchestrator__ModuleManager__ModuleAmountOverLimits()\":[{\"notice\":\"The Manager has reached the maximum amount of modules.\"}],\"Orchestrator__ModuleManager__ModulesNotConsecutive()\":[{\"notice\":\"The supplied modules are not consecutive.\"}],\"Orchestrator__ModuleManager__OnlyCallableByModule()\":[{\"notice\":\"Function is only callable by modules.\"}]},\"events\":{\"AuthorizerUpdated(address)\":{\"notice\":\"Authorizer updated to new address.\"},\"FundingManagerUpdated(address)\":{\"notice\":\"FundingManager updated to new address.\"},\"ModuleAdded(address)\":{\"notice\":\"Event emitted when module added.\"},\"ModuleRemoved(address)\":{\"notice\":\"Event emitted when module removed.\"},\"OrchestratorInitialized(uint256,address,address,address,address[])\":{\"notice\":\"Orchestrator has been initialized with the corresponding modules\"},\"PaymentProcessorUpdated(address)\":{\"notice\":\"PaymentProcessor updated to new address.\"}},\"kind\":\"user\",\"methods\":{\"addModule(address)\":{\"notice\":\"Adds address `module` as module.\"},\"authorizer()\":{\"notice\":\"The {IAuthorizer} implementation used to authorize addresses.\"},\"executeTx(address,bytes)\":{\"notice\":\"Executes a call on target `target` with call data `data`.\"},\"executeTxFromModule(address,bytes)\":{\"notice\":\"Executes a call to `to` with call data `data` either via call\"},\"findModuleAddressInOrchestrator(string)\":{\"notice\":\"find the address of a given module using it's name in a orchestrator\"},\"fundingManager()\":{\"notice\":\"The {IFundingManager} implementation used to hold and distribute Funds.\"},\"init(uint256,address[],address,address,address)\":{\"notice\":\"Initialization function.\"},\"isModule(address)\":{\"notice\":\"Returns whether the address `module` is added as module.\"},\"isTrustedForwarder(address)\":{\"notice\":\"Returns the trusted forwarder for the EIP2771 Standard\"},\"listModules()\":{\"notice\":\"Returns the list of all modules.\"},\"modulesSize()\":{\"notice\":\"Returns the number of modules.\"},\"orchestratorId()\":{\"notice\":\"Returns the orchestrator's id.\"},\"paymentProcessor()\":{\"notice\":\"The {IPaymentProcessor} implementation used to process module         payments.\"},\"removeModule(address)\":{\"notice\":\"Removes address `module` as module.\"},\"setAuthorizer(address)\":{\"notice\":\"Replaces the current authorizer with `_authorizer`\"},\"setFundingManager(address)\":{\"notice\":\"Replaces the current funding manager with `fundingManager_`\"},\"setPaymentProcessor(address)\":{\"notice\":\"Replaces the current payment processor with `paymentProcessor_`\"},\"version()\":{\"notice\":\"The version of the orchestrator instance.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/orchestrator/IOrchestrator.sol\":\"IOrchestrator\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":5000},\"remappings\":[\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@oz-up/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@oz/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"lib/openzeppelin-contracts/contracts/access/IAccessControl.sol\":{\"keccak256\":\"0xb6b36edd6a2999fd243ff226d6cbf84bd71af2432bbd0dfe19392996a1d9cb41\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1fd2f35495652e57e3f99bc6c510bc5f7dd398a176ea2e72d8ed730aebc6ca26\",\"dweb:/ipfs/QmTQV6X4gkikTib49cho5iDX3JvSQbdsoEChoDwrk3CbbH\"]},\"lib/openzeppelin-contracts/contracts/access/extensions/IAccessControlEnumerable.sol\":{\"keccak256\":\"0xc1435f102633849858e75d7bed14c636f25448ceb3406d82992b0f2df52f4306\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ce1815e3a1da24f91b8e2ec24cf09d0d46e0fbeddcbe2cb0d8b2e05b91ceb7b3\",\"dweb:/ipfs/QmYTy1AQB5EV5jwuGsB49yykng2oG3x5ss4bDjFNxk3He4\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c\",\"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq\"]},\"src/external/interfaces/IERC2771Context.sol\":{\"keccak256\":\"0xfcc88fc7329ac304efe8c41871d596f0c3fe8f70917214b3a087266bf19ee86b\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://47159333bca960cfdf0bd4e9d5e114174cb047477b08ad4e40dce6f956c8980a\",\"dweb:/ipfs/QmbjnnNmXauGRjP1UcMxAYxzb5YXpveL7hQGtr1PHMH4jv\"]},\"src/modules/authorizer/IAuthorizer.sol\":{\"keccak256\":\"0xdcaf55215b3262742279364176c08499ed1cfd9b5ab3c44d87a1248d7ea80d33\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://a77570dacd5af60bbc116d60a8580daaf6f45efa0e1e77684949ddd96da07c3d\",\"dweb:/ipfs/QmPdabec8xjhESChUEjwUHNvhtSyiS1tFDVLdp5uTF8Jqr\"]},\"src/modules/fundingManager/IFundingManager.sol\":{\"keccak256\":\"0xbcc2c04ede46129d669cd55cf41a7fbe62f0497d7db26014c154c3285c69e7b9\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://eb921cdafef55ae807d45d84d53cb566cfc3a8558887f5852e8049fb4efe1551\",\"dweb:/ipfs/QmajLWRcETLesEHWtHEvTAsDA4vTw1gLXoRtA39jC6bh8C\"]},\"src/modules/logicModule/paymentClient/IERC20PaymentClient.sol\":{\"keccak256\":\"0x8eb2a5e323299b5ea6c0dee1805031b2e1af48fcfe48653802ac4658b49eed28\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://aa47981b5dfc0e18f4ff7b2e5a4e25a39d2d20702fc0c7ae114b07f7402c143e\",\"dweb:/ipfs/QmbtyYqQttpYKj744fZkHvy8u2Fff9t2jDrpTR3GchPcKp\"]},\"src/modules/paymentProcessor/IPaymentProcessor.sol\":{\"keccak256\":\"0x03db27327e16d429f3e906b604de641e126313e07704fddbd2bc39035b0b23a1\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://b620ed08ea5973c00e897f5e2d8cb9dfe2851f80cf37d7e4e0a7963091f6cdba\",\"dweb:/ipfs/Qmcw1c1qrd7KpHWRSiSLyiDkKx4x8cRZfvtcYU962DHLFH\"]},\"src/orchestrator/IOrchestrator.sol\":{\"keccak256\":\"0x20337a100298bd93d9f8c9d5f18474bb48247626938b70564e407d31c58e6f15\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://cd45ab31994e5353545118d05e4379a56aa25cceda649d614e9553a59223e0f3\",\"dweb:/ipfs/QmbTZ743e8KZJhfVa2p4AUFDuT7S3CMxQVt4KfKZEKfFTX\"]},\"src/orchestrator/base/IModuleManager.sol\":{\"keccak256\":\"0x6b2ccb9edbf8610e57e52ed5ff0f629df098c1a44ba1374b4b5db7fa7aa33c97\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://442e8f808cac95cf9a49cf0de0da39ae2b9317a1b7a3b0b02e6e8473c6b695d2\",\"dweb:/ipfs/QmQuvG7MHj5Vkv6kBNvMUdf4erkRDzVp4q21F5A3DtoSdz\"]}},\"version\":1}",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.23+commit.f704f362\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_trustedForwarder\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"DependencyInjection__ModuleNotUsedInOrchestrator\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidInitialization\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotInitializing\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"Orchestrator__CallerNotAuthorized\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Orchestrator__ExecuteTxFailed\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"module\",\"type\":\"address\"}],\"name\":\"Orchestrator__InvalidModuleType\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Orchestrator__ModuleManager__CallerNotAuthorized\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Orchestrator__ModuleManager__InvalidModuleAddress\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Orchestrator__ModuleManager__IsModule\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Orchestrator__ModuleManager__IsNotModule\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Orchestrator__ModuleManager__ModuleAmountOverLimits\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Orchestrator__ModuleManager__ModulesNotConsecutive\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Orchestrator__ModuleManager__OnlyCallableByModule\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"AuthorizerUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"FundingManagerUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint64\",\"name\":\"version\",\"type\":\"uint64\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"module\",\"type\":\"address\"}],\"name\":\"ModuleAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"module\",\"type\":\"address\"}],\"name\":\"ModuleRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"orchestratorId_\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"fundingManager\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"authorizer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"paymentProcessor\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"modules\",\"type\":\"address[]\"}],\"name\":\"OrchestratorInitialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"PaymentProcessorUpdated\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"module\",\"type\":\"address\"}],\"name\":\"addModule\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"authorizer\",\"outputs\":[{\"internalType\":\"contract IAuthorizer\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"executeTx\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"executeTxFromModule\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"moduleName\",\"type\":\"string\"}],\"name\":\"findModuleAddressInOrchestrator\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"fundingManager\",\"outputs\":[{\"internalType\":\"contract IFundingManager\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"orchestratorId_\",\"type\":\"uint256\"},{\"internalType\":\"address[]\",\"name\":\"modules\",\"type\":\"address[]\"},{\"internalType\":\"contract IFundingManager\",\"name\":\"fundingManager_\",\"type\":\"address\"},{\"internalType\":\"contract IAuthorizer\",\"name\":\"authorizer_\",\"type\":\"address\"},{\"internalType\":\"contract IPaymentProcessor\",\"name\":\"paymentProcessor_\",\"type\":\"address\"}],\"name\":\"init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"module\",\"type\":\"address\"}],\"name\":\"isModule\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"forwarder\",\"type\":\"address\"}],\"name\":\"isTrustedForwarder\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"listModules\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"modulesSize\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"orchestratorId\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paymentProcessor\",\"outputs\":[{\"internalType\":\"contract IPaymentProcessor\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"module\",\"type\":\"address\"}],\"name\":\"removeModule\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IAuthorizer\",\"name\":\"authorizer_\",\"type\":\"address\"}],\"name\":\"setAuthorizer\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IFundingManager\",\"name\":\"fundingManager_\",\"type\":\"address\"}],\"name\":\"setFundingManager\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IPaymentProcessor\",\"name\":\"paymentProcessor_\",\"type\":\"address\"}],\"name\":\"setPaymentProcessor\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"trustedForwarder\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Inverter Network\",\"details\":\"A new funding primitive to enable multiple actors within a decentralized      network to collaborate on orchestrators.      A orchestrator is composed of a [funding mechanism](./base/FundingVault) *      and a set of [modules](./base/ModuleManager).      The token being accepted for funding is non-changeable and set during      initialization. Authorization is performed via calling a non-changeable      {IAuthorizer} instance. Payments, initiated by modules, are processed      via a non-changeable {IPaymentProcessor} instance.      Each orchestrator has a unique id set during initialization.\",\"errors\":{\"InvalidInitialization()\":[{\"details\":\"The contract is already initialized.\"}],\"NotInitializing()\":[{\"details\":\"The contract is not initializing.\"}]},\"events\":{\"AuthorizerUpdated(address)\":{\"params\":{\"_address\":\"The new address.\"}},\"FundingManagerUpdated(address)\":{\"params\":{\"_address\":\"The new address.\"}},\"Initialized(uint64)\":{\"details\":\"Triggered when the contract has been initialized or reinitialized.\"},\"ModuleAdded(address)\":{\"params\":{\"module\":\"The module's address.\"}},\"ModuleRemoved(address)\":{\"params\":{\"module\":\"The module's address.\"}},\"OrchestratorInitialized(uint256,address,address,address,address[])\":{\"params\":{\"authorizer\":\"The address of the authorizer module.\",\"fundingManager\":\"The address of the funding manager module.\",\"modules\":\"The addresses of the other modules used in the orchestrator.\",\"orchestratorId_\":\"The id of the orchestrator.\",\"paymentProcessor\":\"The address of the payment processor module.\"}},\"PaymentProcessorUpdated(address)\":{\"params\":{\"_address\":\"The new address.\"}}},\"kind\":\"dev\",\"methods\":{\"addModule(address)\":{\"details\":\"Only callable by authorized address.Fails if address invalid or address already added as module.\",\"params\":{\"module\":\"The module address to add.\"}},\"executeTx(address,bytes)\":{\"details\":\"Only callable by authorized caller.\",\"params\":{\"data\":\"The call data.\",\"target\":\"The address to call.\"},\"returns\":{\"_0\":\"The return data of the call.\"}},\"executeTxFromModule(address,bytes)\":{\"details\":\"Only callable by enabled modules.\",\"params\":{\"data\":\"The call data.\",\"to\":\"The address to call.\"},\"returns\":{\"_0\":\"Whether the call succeeded.\",\"_1\":\"The return data of the call.\"}},\"isModule(address)\":{\"params\":{\"module\":\"The module to check.\"},\"returns\":{\"_0\":\"True if module added, false otherwise.\"}},\"listModules()\":{\"returns\":{\"_0\":\"List of all modules.\"}},\"removeModule(address)\":{\"details\":\"Only callable by authorized address.Fails if address not added as module.\",\"params\":{\"module\":\"The module address to remove.\"}},\"setAuthorizer(address)\":{\"details\":\"Only callable by authorized caller.\",\"params\":{\"authorizer_\":\"The address of the new authorizer module.\"}},\"setFundingManager(address)\":{\"details\":\"Only callable by authorized caller.\",\"params\":{\"fundingManager_\":\"The address of the new funding manager module.\"}},\"setPaymentProcessor(address)\":{\"details\":\"Only callable by authorized caller.\",\"params\":{\"paymentProcessor_\":\"The address of the new payment processor module.\"}},\"supportsInterface(bytes4)\":{\"details\":\"See {IERC165-supportsInterface}.\"},\"trustedForwarder()\":{\"details\":\"Returns the address of the trusted forwarder.\"}},\"stateVariables\":{\"orchestratorId\":{\"details\":\"Unique id set by the {OrchestratorFactory} during initialization.\"}},\"title\":\"Orchestrator\",\"version\":1},\"userdoc\":{\"errors\":{\"DependencyInjection__ModuleNotUsedInOrchestrator()\":[{\"notice\":\"The given module is not used in the orchestrator\"}],\"Orchestrator__CallerNotAuthorized(bytes32,address)\":[{\"notice\":\"Function is only callable by authorized caller.\"}],\"Orchestrator__ExecuteTxFailed()\":[{\"notice\":\"Execution of transaction failed.\"}],\"Orchestrator__InvalidModuleType(address)\":[{\"notice\":\"The given module is not used in the orchestrator\"}],\"Orchestrator__ModuleManager__CallerNotAuthorized()\":[{\"notice\":\"Function is only callable by authorized address.\"}],\"Orchestrator__ModuleManager__InvalidModuleAddress()\":[{\"notice\":\"Given module address invalid.\"}],\"Orchestrator__ModuleManager__IsModule()\":[{\"notice\":\"Given address is a module.\"}],\"Orchestrator__ModuleManager__IsNotModule()\":[{\"notice\":\"Given address is not a module.\"}],\"Orchestrator__ModuleManager__ModuleAmountOverLimits()\":[{\"notice\":\"The Manager has reached the maximum amount of modules.\"}],\"Orchestrator__ModuleManager__ModulesNotConsecutive()\":[{\"notice\":\"The supplied modules are not consecutive.\"}],\"Orchestrator__ModuleManager__OnlyCallableByModule()\":[{\"notice\":\"Function is only callable by modules.\"}]},\"events\":{\"AuthorizerUpdated(address)\":{\"notice\":\"Authorizer updated to new address.\"},\"FundingManagerUpdated(address)\":{\"notice\":\"FundingManager updated to new address.\"},\"ModuleAdded(address)\":{\"notice\":\"Event emitted when module added.\"},\"ModuleRemoved(address)\":{\"notice\":\"Event emitted when module removed.\"},\"OrchestratorInitialized(uint256,address,address,address,address[])\":{\"notice\":\"Orchestrator has been initialized with the corresponding modules\"},\"PaymentProcessorUpdated(address)\":{\"notice\":\"PaymentProcessor updated to new address.\"}},\"kind\":\"user\",\"methods\":{\"addModule(address)\":{\"notice\":\"Adds address `module` as module.\"},\"authorizer()\":{\"notice\":\"The {IAuthorizer} implementation used to authorize addresses.\"},\"executeTx(address,bytes)\":{\"notice\":\"Executes a call on target `target` with call data `data`.\"},\"executeTxFromModule(address,bytes)\":{\"notice\":\"Executes a call to `to` with call data `data` either via call\"},\"findModuleAddressInOrchestrator(string)\":{\"notice\":\"find the address of a given module using it's name in a orchestrator\"},\"fundingManager()\":{\"notice\":\"The {IFundingManager} implementation used to hold and distribute Funds.\"},\"init(uint256,address[],address,address,address)\":{\"notice\":\"Initialization function.\"},\"isModule(address)\":{\"notice\":\"Returns whether the address `module` is added as module.\"},\"listModules()\":{\"notice\":\"Returns the list of all modules.\"},\"modulesSize()\":{\"notice\":\"Returns the number of modules.\"},\"orchestratorId()\":{\"notice\":\"Returns the orchestrator's id.\"},\"paymentProcessor()\":{\"notice\":\"The {IPaymentProcessor} implementation used to process module         payments.\"},\"removeModule(address)\":{\"notice\":\"Removes address `module` as module.\"},\"setAuthorizer(address)\":{\"notice\":\"Replaces the current authorizer with `_authorizer`\"},\"setFundingManager(address)\":{\"notice\":\"Replaces the current funding manager with `fundingManager_`\"},\"setPaymentProcessor(address)\":{\"notice\":\"Replaces the current payment processor with `paymentProcessor_`\"},\"version()\":{\"notice\":\"The version of the orchestrator instance.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/orchestrator/Orchestrator.sol\":\"Orchestrator\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":5000},\"remappings\":[\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@oz-up/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@oz/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"lib/openzeppelin-contracts-upgradeable/contracts/proxy/utils/Initializable.sol\":{\"keccak256\":\"0x631188737069917d2f909d29ce62c4d48611d326686ba6683e26b72a23bfac0b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7a61054ae84cd6c4d04c0c4450ba1d6de41e27e0a2c4f1bcdf58f796b401c609\",\"dweb:/ipfs/QmUvtdp7X1mRVyC3CsHrtPbgoqWaXHp3S1ZR24tpAQYJWM\"]},\"lib/openzeppelin-contracts-upgradeable/contracts/utils/ContextUpgradeable.sol\":{\"keccak256\":\"0xdbef5f0c787055227243a7318ef74c8a5a1108ca3a07f2b3a00ef67769e1e397\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://08e39f23d5b4692f9a40803e53a8156b72b4c1f9902a88cd65ba964db103dab9\",\"dweb:/ipfs/QmPKn6EYDgpga7KtpkA8wV2yJCYGMtc9K4LkJfhKX2RVSV\"]},\"lib/openzeppelin-contracts/contracts/access/IAccessControl.sol\":{\"keccak256\":\"0xb6b36edd6a2999fd243ff226d6cbf84bd71af2432bbd0dfe19392996a1d9cb41\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1fd2f35495652e57e3f99bc6c510bc5f7dd398a176ea2e72d8ed730aebc6ca26\",\"dweb:/ipfs/QmTQV6X4gkikTib49cho5iDX3JvSQbdsoEChoDwrk3CbbH\"]},\"lib/openzeppelin-contracts/contracts/access/extensions/IAccessControlEnumerable.sol\":{\"keccak256\":\"0xc1435f102633849858e75d7bed14c636f25448ceb3406d82992b0f2df52f4306\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ce1815e3a1da24f91b8e2ec24cf09d0d46e0fbeddcbe2cb0d8b2e05b91ceb7b3\",\"dweb:/ipfs/QmYTy1AQB5EV5jwuGsB49yykng2oG3x5ss4bDjFNxk3He4\"]},\"lib/openzeppelin-contracts/contracts/metatx/ERC2771Context.sol\":{\"keccak256\":\"0x98256cf37b71a69b2f5a8a6fe975ea03590dff703102bd141a830f94e8adebf6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6251fe1f6a1e45e6d619d150c123afc88b8646b38ee26a136efa9a6988a31d3f\",\"dweb:/ipfs/QmeXDT85wSZdP31wkz3ah3KhponCiksJLP5o2LR5e1JxcK\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c\",\"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol\":{\"keccak256\":\"0x6008dabfe393240d73d7dd7688033f72740d570aa422254d29a7dce8568f3aff\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f5196ec75139918c6c7bb4251b36395e668f1fa6d206beba7e7520e74913940d\",\"dweb:/ipfs/QmSyqjksXxmm2mCG6qRd1yuwLykypkSVBbnBnGqJRcuJMi\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol\":{\"keccak256\":\"0x37bb49513c49c87c4642a891b13b63571bc87013dde806617aa1efb54605f386\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b3036b3a83b7c48f96641f2a9002b9f2dcb6a5958dd670894ada21ae8229b3d0\",\"dweb:/ipfs/QmUNfSBdoVtjhETaUJCYcaC7pTMgbhht926tJ2uXJbiVd3\"]},\"lib/openzeppelin-contracts/contracts/utils/Address.sol\":{\"keccak256\":\"0xaf28a975a78550e45f65e559a3ad6a5ad43b9b8a37366999abd1b7084eb70721\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b7bd24e224f67f65bfadf85dc2929fa965456bb2415478bd0125471b5ce35245\",\"dweb:/ipfs/QmRaydGr8BTHs1kvaZfsNU69pKzUAGFrvABn1KiRSbE51y\"]},\"lib/openzeppelin-contracts/contracts/utils/Context.sol\":{\"keccak256\":\"0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12\",\"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF\"]},\"lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol\":{\"keccak256\":\"0x9e8778b14317ba9e256c30a76fd6c32b960af621987f56069e1e819c77c6a133\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1777404f1dcd0fac188e55a288724ec3c67b45288e49cc64723e95e702b49ab8\",\"dweb:/ipfs/QmZFdC626GButBApwDUvvTnUzdinevC3B24d7yyh57XkiA\"]},\"lib/openzeppelin-contracts/contracts/utils/introspection/ERC165Checker.sol\":{\"keccak256\":\"0xac3d50e321a48a40b4496970ce725900f13aeb2255b7c1203f5adbe98c4a911a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1d7b235b578347dce2d831a76f122e820a7db7e73fd2e47f13bafdcd61c5b066\",\"dweb:/ipfs/QmVAELwambfJa55HfiCoz1kFFh7iYwRYeW5x8si6AFM4iX\"]},\"lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0x4296879f55019b23e135000eb36896057e7101fb7fb859c5ef690cf14643757b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://87b3541437c8c443ccd36795e56a338ed12855eec17f8da624511b8d1a7e14df\",\"dweb:/ipfs/QmeJQCtZrQjtJLr6u7ZHWeH3pBnjtLWzvRrKViAi7UZqxL\"]},\"src/common/LinkedIdList.sol\":{\"keccak256\":\"0xd62c232f6476fb86d770c79943fe9859c374e48333340f866a1139c500ef41c7\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://a9e6d252e986145a64fafae789afbfbd508059bedd5d8fb129cd89cf6aabff60\",\"dweb:/ipfs/QmcDjhnPg5XYXrzs4EutFVqwcjkJbSr6Nv6NKRyHJxCnN9\"]},\"src/external/interfaces/IERC2771Context.sol\":{\"keccak256\":\"0xfcc88fc7329ac304efe8c41871d596f0c3fe8f70917214b3a087266bf19ee86b\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://47159333bca960cfdf0bd4e9d5e114174cb047477b08ad4e40dce6f956c8980a\",\"dweb:/ipfs/QmbjnnNmXauGRjP1UcMxAYxzb5YXpveL7hQGtr1PHMH4jv\"]},\"src/modules/authorizer/IAuthorizer.sol\":{\"keccak256\":\"0xb03c066cb4403754cec3df39b777947b64917a7ee4e963d19a182dfd70942f6c\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://ed26b43b9776a866d77e61961da962d5a1a1a9052e89f6f7f75f0428ac2c4c1d\",\"dweb:/ipfs/QmccknoSFQebHuATPhYaGh74HJYwHSJoZFkSFmcYoP5RP1\"]},\"src/modules/base/IModule.sol\":{\"keccak256\":\"0xdea54b9959e18faaa8eec1ec4ee2b5473b17c48f6e26d8feab30ea8033cf166f\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://afae8818684323362b4ea4bc1322040bcc29eef01aae5ebab125906485fd9c11\",\"dweb:/ipfs/QmZy8QyGAMQmpNmpthkkVp86F8qyEaYC9YsYiqfTp9GjKa\"]},\"src/modules/base/Module.sol\":{\"keccak256\":\"0x898908cc806b0b9f07189abc192d5190451062a891edc4f3d7d4217fb19875db\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://1ea7c55573df7ecc346e507f1a14102fe521a8af7e68d5b66e092ed2dfb995d7\",\"dweb:/ipfs/Qmbd6gCUfPjyQ176APAg7wdfw5LrVYRjKq3WdsakobHjHX\"]},\"src/modules/fundingManager/IFundingManager.sol\":{\"keccak256\":\"0xde895906a7c8164844f24e054f8ea9af902764d8a6fa7a6064992279c4e3fe21\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://99f67a2d1806640a5fb028986d65d5feac5e93911104994f91ca191a97ebb10c\",\"dweb:/ipfs/QmYhFK2xV2JzRUn2xCAkERAWCkisG6XdaLUHkC9UsMm2L7\"]},\"src/modules/lib/LibMetadata.sol\":{\"keccak256\":\"0x94f6fe40e7d4fae98c13a57dbc87b7f6ee07eec3b2a2377907da05be0bf622e2\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://e1ceef62d008f3df5ca5658e23d6cb028946fdaedd89644c375cf6f0a5af1dc7\",\"dweb:/ipfs/QmbRxEt7XyoqUfjm9N1KoCGE5yDMt4QCiRYzgFA9EEcDEM\"]},\"src/modules/logicModule/IRecurringPaymentManager.sol\":{\"keccak256\":\"0xa02869571c28e2d05b7c07583367705d08f41bab7fce050676eed447deabceb3\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://ac13c22d0f1ab1c06a7138cc8ecf733f60f5a8062dddd3716966329415c62350\",\"dweb:/ipfs/QmRYMRoTdnXVCHNBRMUyAs74yNRVzNxLcBnjvvrUbBTeDF\"]},\"src/modules/logicModule/RecurringPaymentManager.sol\":{\"keccak256\":\"0x6566320846ca5f4241446e598e3ba1408684f6065524e11b13e340b59273ab11\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://b2264f53aa90094dbaad2674787662cd55776a8a0a24af1087fc9d646a4a72e2\",\"dweb:/ipfs/QmbnpQgf1kcSHhKL5w6K2V9wCogtqQNJjbnUJ8KLo4D9U3\"]},\"src/modules/logicModule/paymentClient/ERC20PaymentClient.sol\":{\"keccak256\":\"0x09b8147e734f6d45721bfec5f4ee600ac96f259e67935b382597e694ed52830c\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://caaad7ae26927074fa5b07967fc73656332e1699c5fc9f375b1ec558f162d69f\",\"dweb:/ipfs/QmaXH8dMAQ8JCEi83CU1SymDfwD46Ei4d5jzW2uconwfzr\"]},\"src/modules/logicModule/paymentClient/IERC20PaymentClient.sol\":{\"keccak256\":\"0xad239b82a55c74de69b9d52675265750df5d98ab4de22bbf8fbd846891725e33\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://3fea86977f0aac1047182e51d567910a0fcec6533a37f9eac985057fee322bf3\",\"dweb:/ipfs/QmQPGppKK6fnepNYaPpeaUcFqoACDxd44ZgpjPjssEXeen\"]},\"src/modules/paymentProcessor/IPaymentProcessor.sol\":{\"keccak256\":\"0x03db27327e16d429f3e906b604de641e126313e07704fddbd2bc39035b0b23a1\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://b620ed08ea5973c00e897f5e2d8cb9dfe2851f80cf37d7e4e0a7963091f6cdba\",\"dweb:/ipfs/Qmcw1c1qrd7KpHWRSiSLyiDkKx4x8cRZfvtcYU962DHLFH\"]},\"src/orchestrator/IOrchestrator.sol\":{\"keccak256\":\"0xc5e90b9d4c2abc611620a1cda075c621dec1fde3342d41ddd3f67c7cd6a3e19a\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://79519d0302b89008250ccbf7dce75ed3da7a26b770f5aa0eb5ef76bbd3cac0e3\",\"dweb:/ipfs/QmPw4kwjjJvbAPPxNaEzE7NNNQheddGmFxEJwnkDnYJHsa\"]},\"src/orchestrator/Orchestrator.sol\":{\"keccak256\":\"0x7f639a9de548cc62c40954f2b813fb549eabec410d4e19e79b26e107334428d4\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://8088b2dc8475e4ab0a1e92ae5e12cfe5758f38b8d1f5d199ef85c6066a34be3e\",\"dweb:/ipfs/QmauurYEJQkbQsQt5jXCYx4eLzXcNYvy24TQRh52fqYEA6\"]},\"src/orchestrator/base/IModuleManager.sol\":{\"keccak256\":\"0x6b2ccb9edbf8610e57e52ed5ff0f629df098c1a44ba1374b4b5db7fa7aa33c97\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://442e8f808cac95cf9a49cf0de0da39ae2b9317a1b7a3b0b02e6e8473c6b695d2\",\"dweb:/ipfs/QmQuvG7MHj5Vkv6kBNvMUdf4erkRDzVp4q21F5A3DtoSdz\"]},\"src/orchestrator/base/ModuleManager.sol\":{\"keccak256\":\"0x9adeffe7dc23a7b8da2e148a617f7da98cb9556e1991ea40d79dd7b86e0a530a\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://bc9e2515c3a8527bdd02218f14f8e3204e19a74ac24533521f44025851dbd908\",\"dweb:/ipfs/Qmdtn3x6boeVx31XPnEnLQZFQ6k6dNZ3EVZRvKkzFYcjN6\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.8.23+commit.f704f362"
@@ -513,9 +593,30 @@
     "output": {
       "abi": [
         {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_trustedForwarder",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
           "inputs": [],
           "type": "error",
           "name": "DependencyInjection__ModuleNotUsedInOrchestrator"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "InvalidInitialization"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "NotInitializing"
         },
         {
           "inputs": [
@@ -608,6 +709,19 @@
           ],
           "type": "event",
           "name": "FundingManagerUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint64",
+              "name": "version",
+              "type": "uint64",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "Initialized",
           "anonymous": false
         },
         {
@@ -800,7 +914,7 @@
           "inputs": [
             {
               "internalType": "uint256",
-              "name": "orchestratorId",
+              "name": "orchestratorId_",
               "type": "uint256"
             },
             {
@@ -810,17 +924,17 @@
             },
             {
               "internalType": "contract IFundingManager",
-              "name": "fundingManager",
+              "name": "fundingManager_",
               "type": "address"
             },
             {
               "internalType": "contract IAuthorizer",
-              "name": "authorizer",
+              "name": "authorizer_",
               "type": "address"
             },
             {
               "internalType": "contract IPaymentProcessor",
-              "name": "paymentProcessor",
+              "name": "paymentProcessor_",
               "type": "address"
             }
           ],
@@ -836,7 +950,7 @@
               "type": "address"
             }
           ],
-          "stateMutability": "nonpayable",
+          "stateMutability": "view",
           "type": "function",
           "name": "isModule",
           "outputs": [
@@ -967,6 +1081,38 @@
           "name": "setPaymentProcessor"
         },
         {
+          "inputs": [
+            {
+              "internalType": "bytes4",
+              "name": "interfaceId",
+              "type": "bytes4"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "supportsInterface",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "trustedForwarder",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
           "inputs": [],
           "stateMutability": "pure",
           "type": "function",
@@ -989,11 +1135,6 @@
               "module": "The module address to add."
             }
           },
-          "authorizer()": {
-            "returns": {
-              "_0": "authorizer The attached authorizer."
-            }
-          },
           "executeTx(address,bytes)": {
             "details": "Only callable by authorized caller.",
             "params": {
@@ -1001,7 +1142,7 @@
               "target": "The address to call."
             },
             "returns": {
-              "_0": "returnData The return data of the call."
+              "_0": "The return data of the call."
             }
           },
           "executeTxFromModule(address,bytes)": {
@@ -1015,16 +1156,6 @@
               "_1": "The return data of the call."
             }
           },
-          "findModuleAddressInOrchestrator(string)": {
-            "returns": {
-              "_0": "moduleAddress The address of the module with the given name."
-            }
-          },
-          "fundingManager()": {
-            "returns": {
-              "_0": "fundingManager The attached funding manager."
-            }
-          },
           "isModule(address)": {
             "params": {
               "module": "The module to check."
@@ -1036,17 +1167,6 @@
           "listModules()": {
             "returns": {
               "_0": "List of all modules."
-            }
-          },
-          "orchestratorId()": {
-            "details": "Unique id set by the {OrchestratorFactory} during initialization.",
-            "returns": {
-              "_0": "orchestratorId The id of the orchestrator."
-            }
-          },
-          "paymentProcessor()": {
-            "returns": {
-              "_0": "paymentProcessor The attached payment processor."
             }
           },
           "removeModule(address)": {
@@ -1073,10 +1193,11 @@
               "paymentProcessor_": "The address of the new payment processor module."
             }
           },
-          "version()": {
-            "returns": {
-              "_0": "version The version string of the orchestrator"
-            }
+          "supportsInterface(bytes4)": {
+            "details": "See {IERC165-supportsInterface}."
+          },
+          "trustedForwarder()": {
+            "details": "Returns the address of the trusted forwarder."
           }
         },
         "version": 1
@@ -1107,9 +1228,6 @@
           },
           "isModule(address)": {
             "notice": "Returns whether the address `module` is added as module."
-          },
-          "isTrustedForwarder(address)": {
-            "notice": "Returns the trusted forwarder for the EIP2771 Standard"
           },
           "listModules()": {
             "notice": "Returns the list of all modules."
@@ -1162,11 +1280,28 @@
         "bytecodeHash": "ipfs"
       },
       "compilationTarget": {
-        "src/orchestrator/IOrchestrator.sol": "IOrchestrator"
+        "src/orchestrator/Orchestrator.sol": "Orchestrator"
       },
+      "evmVersion": "paris",
       "libraries": {}
     },
     "sources": {
+      "lib/openzeppelin-contracts-upgradeable/contracts/proxy/utils/Initializable.sol": {
+        "keccak256": "0x631188737069917d2f909d29ce62c4d48611d326686ba6683e26b72a23bfac0b",
+        "urls": [
+          "bzz-raw://7a61054ae84cd6c4d04c0c4450ba1d6de41e27e0a2c4f1bcdf58f796b401c609",
+          "dweb:/ipfs/QmUvtdp7X1mRVyC3CsHrtPbgoqWaXHp3S1ZR24tpAQYJWM"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts-upgradeable/contracts/utils/ContextUpgradeable.sol": {
+        "keccak256": "0xdbef5f0c787055227243a7318ef74c8a5a1108ca3a07f2b3a00ef67769e1e397",
+        "urls": [
+          "bzz-raw://08e39f23d5b4692f9a40803e53a8156b72b4c1f9902a88cd65ba964db103dab9",
+          "dweb:/ipfs/QmPKn6EYDgpga7KtpkA8wV2yJCYGMtc9K4LkJfhKX2RVSV"
+        ],
+        "license": "MIT"
+      },
       "lib/openzeppelin-contracts/contracts/access/IAccessControl.sol": {
         "keccak256": "0xb6b36edd6a2999fd243ff226d6cbf84bd71af2432bbd0dfe19392996a1d9cb41",
         "urls": [
@@ -1183,6 +1318,14 @@
         ],
         "license": "MIT"
       },
+      "lib/openzeppelin-contracts/contracts/metatx/ERC2771Context.sol": {
+        "keccak256": "0x98256cf37b71a69b2f5a8a6fe975ea03590dff703102bd141a830f94e8adebf6",
+        "urls": [
+          "bzz-raw://6251fe1f6a1e45e6d619d150c123afc88b8646b38ee26a136efa9a6988a31d3f",
+          "dweb:/ipfs/QmeXDT85wSZdP31wkz3ah3KhponCiksJLP5o2LR5e1JxcK"
+        ],
+        "license": "MIT"
+      },
       "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
         "keccak256": "0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70",
         "urls": [
@@ -1190,6 +1333,70 @@
           "dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq"
         ],
         "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol": {
+        "keccak256": "0x6008dabfe393240d73d7dd7688033f72740d570aa422254d29a7dce8568f3aff",
+        "urls": [
+          "bzz-raw://f5196ec75139918c6c7bb4251b36395e668f1fa6d206beba7e7520e74913940d",
+          "dweb:/ipfs/QmSyqjksXxmm2mCG6qRd1yuwLykypkSVBbnBnGqJRcuJMi"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol": {
+        "keccak256": "0x37bb49513c49c87c4642a891b13b63571bc87013dde806617aa1efb54605f386",
+        "urls": [
+          "bzz-raw://b3036b3a83b7c48f96641f2a9002b9f2dcb6a5958dd670894ada21ae8229b3d0",
+          "dweb:/ipfs/QmUNfSBdoVtjhETaUJCYcaC7pTMgbhht926tJ2uXJbiVd3"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/utils/Address.sol": {
+        "keccak256": "0xaf28a975a78550e45f65e559a3ad6a5ad43b9b8a37366999abd1b7084eb70721",
+        "urls": [
+          "bzz-raw://b7bd24e224f67f65bfadf85dc2929fa965456bb2415478bd0125471b5ce35245",
+          "dweb:/ipfs/QmRaydGr8BTHs1kvaZfsNU69pKzUAGFrvABn1KiRSbE51y"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/utils/Context.sol": {
+        "keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+        "urls": [
+          "bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+          "dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol": {
+        "keccak256": "0x9e8778b14317ba9e256c30a76fd6c32b960af621987f56069e1e819c77c6a133",
+        "urls": [
+          "bzz-raw://1777404f1dcd0fac188e55a288724ec3c67b45288e49cc64723e95e702b49ab8",
+          "dweb:/ipfs/QmZFdC626GButBApwDUvvTnUzdinevC3B24d7yyh57XkiA"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165Checker.sol": {
+        "keccak256": "0xac3d50e321a48a40b4496970ce725900f13aeb2255b7c1203f5adbe98c4a911a",
+        "urls": [
+          "bzz-raw://1d7b235b578347dce2d831a76f122e820a7db7e73fd2e47f13bafdcd61c5b066",
+          "dweb:/ipfs/QmVAELwambfJa55HfiCoz1kFFh7iYwRYeW5x8si6AFM4iX"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol": {
+        "keccak256": "0x4296879f55019b23e135000eb36896057e7101fb7fb859c5ef690cf14643757b",
+        "urls": [
+          "bzz-raw://87b3541437c8c443ccd36795e56a338ed12855eec17f8da624511b8d1a7e14df",
+          "dweb:/ipfs/QmeJQCtZrQjtJLr6u7ZHWeH3pBnjtLWzvRrKViAi7UZqxL"
+        ],
+        "license": "MIT"
+      },
+      "src/common/LinkedIdList.sol": {
+        "keccak256": "0xd62c232f6476fb86d770c79943fe9859c374e48333340f866a1139c500ef41c7",
+        "urls": [
+          "bzz-raw://a9e6d252e986145a64fafae789afbfbd508059bedd5d8fb129cd89cf6aabff60",
+          "dweb:/ipfs/QmcDjhnPg5XYXrzs4EutFVqwcjkJbSr6Nv6NKRyHJxCnN9"
+        ],
+        "license": "LGPL-3.0-only"
       },
       "src/external/interfaces/IERC2771Context.sol": {
         "keccak256": "0xfcc88fc7329ac304efe8c41871d596f0c3fe8f70917214b3a087266bf19ee86b",
@@ -1200,26 +1407,74 @@
         "license": "LGPL-3.0-only"
       },
       "src/modules/authorizer/IAuthorizer.sol": {
-        "keccak256": "0xdcaf55215b3262742279364176c08499ed1cfd9b5ab3c44d87a1248d7ea80d33",
+        "keccak256": "0xb03c066cb4403754cec3df39b777947b64917a7ee4e963d19a182dfd70942f6c",
         "urls": [
-          "bzz-raw://a77570dacd5af60bbc116d60a8580daaf6f45efa0e1e77684949ddd96da07c3d",
-          "dweb:/ipfs/QmPdabec8xjhESChUEjwUHNvhtSyiS1tFDVLdp5uTF8Jqr"
+          "bzz-raw://ed26b43b9776a866d77e61961da962d5a1a1a9052e89f6f7f75f0428ac2c4c1d",
+          "dweb:/ipfs/QmccknoSFQebHuATPhYaGh74HJYwHSJoZFkSFmcYoP5RP1"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/modules/base/IModule.sol": {
+        "keccak256": "0xdea54b9959e18faaa8eec1ec4ee2b5473b17c48f6e26d8feab30ea8033cf166f",
+        "urls": [
+          "bzz-raw://afae8818684323362b4ea4bc1322040bcc29eef01aae5ebab125906485fd9c11",
+          "dweb:/ipfs/QmZy8QyGAMQmpNmpthkkVp86F8qyEaYC9YsYiqfTp9GjKa"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/modules/base/Module.sol": {
+        "keccak256": "0x898908cc806b0b9f07189abc192d5190451062a891edc4f3d7d4217fb19875db",
+        "urls": [
+          "bzz-raw://1ea7c55573df7ecc346e507f1a14102fe521a8af7e68d5b66e092ed2dfb995d7",
+          "dweb:/ipfs/Qmbd6gCUfPjyQ176APAg7wdfw5LrVYRjKq3WdsakobHjHX"
         ],
         "license": "LGPL-3.0-only"
       },
       "src/modules/fundingManager/IFundingManager.sol": {
-        "keccak256": "0xbcc2c04ede46129d669cd55cf41a7fbe62f0497d7db26014c154c3285c69e7b9",
+        "keccak256": "0xde895906a7c8164844f24e054f8ea9af902764d8a6fa7a6064992279c4e3fe21",
         "urls": [
-          "bzz-raw://eb921cdafef55ae807d45d84d53cb566cfc3a8558887f5852e8049fb4efe1551",
-          "dweb:/ipfs/QmajLWRcETLesEHWtHEvTAsDA4vTw1gLXoRtA39jC6bh8C"
+          "bzz-raw://99f67a2d1806640a5fb028986d65d5feac5e93911104994f91ca191a97ebb10c",
+          "dweb:/ipfs/QmYhFK2xV2JzRUn2xCAkERAWCkisG6XdaLUHkC9UsMm2L7"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/modules/lib/LibMetadata.sol": {
+        "keccak256": "0x94f6fe40e7d4fae98c13a57dbc87b7f6ee07eec3b2a2377907da05be0bf622e2",
+        "urls": [
+          "bzz-raw://e1ceef62d008f3df5ca5658e23d6cb028946fdaedd89644c375cf6f0a5af1dc7",
+          "dweb:/ipfs/QmbRxEt7XyoqUfjm9N1KoCGE5yDMt4QCiRYzgFA9EEcDEM"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/modules/logicModule/IRecurringPaymentManager.sol": {
+        "keccak256": "0xa02869571c28e2d05b7c07583367705d08f41bab7fce050676eed447deabceb3",
+        "urls": [
+          "bzz-raw://ac13c22d0f1ab1c06a7138cc8ecf733f60f5a8062dddd3716966329415c62350",
+          "dweb:/ipfs/QmRYMRoTdnXVCHNBRMUyAs74yNRVzNxLcBnjvvrUbBTeDF"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/modules/logicModule/RecurringPaymentManager.sol": {
+        "keccak256": "0x6566320846ca5f4241446e598e3ba1408684f6065524e11b13e340b59273ab11",
+        "urls": [
+          "bzz-raw://b2264f53aa90094dbaad2674787662cd55776a8a0a24af1087fc9d646a4a72e2",
+          "dweb:/ipfs/QmbnpQgf1kcSHhKL5w6K2V9wCogtqQNJjbnUJ8KLo4D9U3"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/modules/logicModule/paymentClient/ERC20PaymentClient.sol": {
+        "keccak256": "0x09b8147e734f6d45721bfec5f4ee600ac96f259e67935b382597e694ed52830c",
+        "urls": [
+          "bzz-raw://caaad7ae26927074fa5b07967fc73656332e1699c5fc9f375b1ec558f162d69f",
+          "dweb:/ipfs/QmaXH8dMAQ8JCEi83CU1SymDfwD46Ei4d5jzW2uconwfzr"
         ],
         "license": "LGPL-3.0-only"
       },
       "src/modules/logicModule/paymentClient/IERC20PaymentClient.sol": {
-        "keccak256": "0x8eb2a5e323299b5ea6c0dee1805031b2e1af48fcfe48653802ac4658b49eed28",
+        "keccak256": "0xad239b82a55c74de69b9d52675265750df5d98ab4de22bbf8fbd846891725e33",
         "urls": [
-          "bzz-raw://aa47981b5dfc0e18f4ff7b2e5a4e25a39d2d20702fc0c7ae114b07f7402c143e",
-          "dweb:/ipfs/QmbtyYqQttpYKj744fZkHvy8u2Fff9t2jDrpTR3GchPcKp"
+          "bzz-raw://3fea86977f0aac1047182e51d567910a0fcec6533a37f9eac985057fee322bf3",
+          "dweb:/ipfs/QmQPGppKK6fnepNYaPpeaUcFqoACDxd44ZgpjPjssEXeen"
         ],
         "license": "LGPL-3.0-only"
       },
@@ -1232,10 +1487,18 @@
         "license": "LGPL-3.0-only"
       },
       "src/orchestrator/IOrchestrator.sol": {
-        "keccak256": "0x20337a100298bd93d9f8c9d5f18474bb48247626938b70564e407d31c58e6f15",
+        "keccak256": "0xc5e90b9d4c2abc611620a1cda075c621dec1fde3342d41ddd3f67c7cd6a3e19a",
         "urls": [
-          "bzz-raw://cd45ab31994e5353545118d05e4379a56aa25cceda649d614e9553a59223e0f3",
-          "dweb:/ipfs/QmbTZ743e8KZJhfVa2p4AUFDuT7S3CMxQVt4KfKZEKfFTX"
+          "bzz-raw://79519d0302b89008250ccbf7dce75ed3da7a26b770f5aa0eb5ef76bbd3cac0e3",
+          "dweb:/ipfs/QmPw4kwjjJvbAPPxNaEzE7NNNQheddGmFxEJwnkDnYJHsa"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/orchestrator/Orchestrator.sol": {
+        "keccak256": "0x7f639a9de548cc62c40954f2b813fb549eabec410d4e19e79b26e107334428d4",
+        "urls": [
+          "bzz-raw://8088b2dc8475e4ab0a1e92ae5e12cfe5758f38b8d1f5d199ef85c6066a34be3e",
+          "dweb:/ipfs/QmauurYEJQkbQsQt5jXCYx4eLzXcNYvy24TQRh52fqYEA6"
         ],
         "license": "LGPL-3.0-only"
       },
@@ -1246,1714 +1509,17 @@
           "dweb:/ipfs/QmQuvG7MHj5Vkv6kBNvMUdf4erkRDzVp4q21F5A3DtoSdz"
         ],
         "license": "LGPL-3.0-only"
+      },
+      "src/orchestrator/base/ModuleManager.sol": {
+        "keccak256": "0x9adeffe7dc23a7b8da2e148a617f7da98cb9556e1991ea40d79dd7b86e0a530a",
+        "urls": [
+          "bzz-raw://bc9e2515c3a8527bdd02218f14f8e3204e19a74ac24533521f44025851dbd908",
+          "dweb:/ipfs/Qmdtn3x6boeVx31XPnEnLQZFQ6k6dNZ3EVZRvKkzFYcjN6"
+        ],
+        "license": "LGPL-3.0-only"
       }
     },
     "version": 1
   },
-  "ast": {
-    "absolutePath": "src/orchestrator/IOrchestrator.sol",
-    "id": 57296,
-    "exportedSymbols": {
-      "IAuthorizer": [
-        42616
-      ],
-      "IERC20": [
-        32668
-      ],
-      "IFundingManager": [
-        44404
-      ],
-      "IModuleManager": [
-        58011
-      ],
-      "IOrchestrator": [
-        57295
-      ],
-      "IPaymentProcessor": [
-        53756
-      ]
-    },
-    "nodeType": "SourceUnit",
-    "src": "42:5191:137",
-    "nodes": [
-      {
-        "id": 57145,
-        "nodeType": "PragmaDirective",
-        "src": "42:23:137",
-        "nodes": [],
-        "literals": [
-          "solidity",
-          "^",
-          "0.8",
-          ".0"
-        ]
-      },
-      {
-        "id": 57147,
-        "nodeType": "ImportDirective",
-        "src": "90:50:137",
-        "nodes": [],
-        "absolutePath": "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
-        "file": "@oz/token/ERC20/IERC20.sol",
-        "nameLocation": "-1:-1:-1",
-        "scope": 57296,
-        "sourceUnit": 32669,
-        "symbolAliases": [
-          {
-            "foreign": {
-              "id": 57146,
-              "name": "IERC20",
-              "nodeType": "Identifier",
-              "overloadedDeclarations": [],
-              "referencedDeclaration": 32668,
-              "src": "98:6:137",
-              "typeDescriptions": {}
-            },
-            "nameLocation": "-1:-1:-1"
-          }
-        ],
-        "unitAlias": ""
-      },
-      {
-        "id": 57149,
-        "nodeType": "ImportDirective",
-        "src": "165:72:137",
-        "nodes": [],
-        "absolutePath": "src/orchestrator/base/IModuleManager.sol",
-        "file": "src/orchestrator/base/IModuleManager.sol",
-        "nameLocation": "-1:-1:-1",
-        "scope": 57296,
-        "sourceUnit": 58012,
-        "symbolAliases": [
-          {
-            "foreign": {
-              "id": 57148,
-              "name": "IModuleManager",
-              "nodeType": "Identifier",
-              "overloadedDeclarations": [],
-              "referencedDeclaration": 58011,
-              "src": "173:14:137",
-              "typeDescriptions": {}
-            },
-            "nameLocation": "-1:-1:-1"
-          }
-        ],
-        "unitAlias": ""
-      },
-      {
-        "id": 57151,
-        "nodeType": "ImportDirective",
-        "src": "238:79:137",
-        "nodes": [],
-        "absolutePath": "src/modules/fundingManager/IFundingManager.sol",
-        "file": "src/modules/fundingManager/IFundingManager.sol",
-        "nameLocation": "-1:-1:-1",
-        "scope": 57296,
-        "sourceUnit": 44405,
-        "symbolAliases": [
-          {
-            "foreign": {
-              "id": 57150,
-              "name": "IFundingManager",
-              "nodeType": "Identifier",
-              "overloadedDeclarations": [],
-              "referencedDeclaration": 44404,
-              "src": "246:15:137",
-              "typeDescriptions": {}
-            },
-            "nameLocation": "-1:-1:-1"
-          }
-        ],
-        "unitAlias": ""
-      },
-      {
-        "id": 57153,
-        "nodeType": "ImportDirective",
-        "src": "318:67:137",
-        "nodes": [],
-        "absolutePath": "src/modules/authorizer/IAuthorizer.sol",
-        "file": "src/modules/authorizer/IAuthorizer.sol",
-        "nameLocation": "-1:-1:-1",
-        "scope": 57296,
-        "sourceUnit": 42617,
-        "symbolAliases": [
-          {
-            "foreign": {
-              "id": 57152,
-              "name": "IAuthorizer",
-              "nodeType": "Identifier",
-              "overloadedDeclarations": [],
-              "referencedDeclaration": 42616,
-              "src": "326:11:137",
-              "typeDescriptions": {}
-            },
-            "nameLocation": "-1:-1:-1"
-          }
-        ],
-        "unitAlias": ""
-      },
-      {
-        "id": 57155,
-        "nodeType": "ImportDirective",
-        "src": "386:89:137",
-        "nodes": [],
-        "absolutePath": "src/modules/paymentProcessor/IPaymentProcessor.sol",
-        "file": "src/modules/paymentProcessor/IPaymentProcessor.sol",
-        "nameLocation": "-1:-1:-1",
-        "scope": 57296,
-        "sourceUnit": 53757,
-        "symbolAliases": [
-          {
-            "foreign": {
-              "id": 57154,
-              "name": "IPaymentProcessor",
-              "nodeType": "Identifier",
-              "overloadedDeclarations": [],
-              "referencedDeclaration": 53756,
-              "src": "394:17:137",
-              "typeDescriptions": {}
-            },
-            "nameLocation": "-1:-1:-1"
-          }
-        ],
-        "unitAlias": ""
-      },
-      {
-        "id": 57295,
-        "nodeType": "ContractDefinition",
-        "src": "477:4755:137",
-        "nodes": [
-          {
-            "id": 57164,
-            "nodeType": "ErrorDefinition",
-            "src": "685:70:137",
-            "nodes": [],
-            "documentation": {
-              "id": 57158,
-              "nodeType": "StructuredDocumentation",
-              "src": "621:59:137",
-              "text": "@notice Function is only callable by authorized caller."
-            },
-            "errorSelector": "25f3b927",
-            "name": "Orchestrator__CallerNotAuthorized",
-            "nameLocation": "691:33:137",
-            "parameters": {
-              "id": 57163,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 57160,
-                  "mutability": "mutable",
-                  "name": "role",
-                  "nameLocation": "733:4:137",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57164,
-                  "src": "725:12:137",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bytes32",
-                    "typeString": "bytes32"
-                  },
-                  "typeName": {
-                    "id": 57159,
-                    "name": "bytes32",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "725:7:137",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
-                    }
-                  },
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 57162,
-                  "mutability": "mutable",
-                  "name": "caller",
-                  "nameLocation": "747:6:137",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57164,
-                  "src": "739:14:137",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 57161,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "739:7:137",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "visibility": "internal"
-                }
-              ],
-              "src": "724:30:137"
-            }
-          },
-          {
-            "id": 57167,
-            "nodeType": "ErrorDefinition",
-            "src": "810:38:137",
-            "nodes": [],
-            "documentation": {
-              "id": 57165,
-              "nodeType": "StructuredDocumentation",
-              "src": "761:44:137",
-              "text": "@notice Execution of transaction failed."
-            },
-            "errorSelector": "74373f0f",
-            "name": "Orchestrator__ExecuteTxFailed",
-            "nameLocation": "816:29:137",
-            "parameters": {
-              "id": 57166,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "845:2:137"
-            }
-          },
-          {
-            "id": 57172,
-            "nodeType": "ErrorDefinition",
-            "src": "919:54:137",
-            "nodes": [],
-            "documentation": {
-              "id": 57168,
-              "nodeType": "StructuredDocumentation",
-              "src": "854:60:137",
-              "text": "@notice The given module is not used in the orchestrator"
-            },
-            "errorSelector": "0f25fdb6",
-            "name": "Orchestrator__InvalidModuleType",
-            "nameLocation": "925:31:137",
-            "parameters": {
-              "id": 57171,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 57170,
-                  "mutability": "mutable",
-                  "name": "module",
-                  "nameLocation": "965:6:137",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57172,
-                  "src": "957:14:137",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 57169,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "957:7:137",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "visibility": "internal"
-                }
-              ],
-              "src": "956:16:137"
-            }
-          },
-          {
-            "id": 57175,
-            "nodeType": "ErrorDefinition",
-            "src": "1044:57:137",
-            "nodes": [],
-            "documentation": {
-              "id": 57173,
-              "nodeType": "StructuredDocumentation",
-              "src": "979:60:137",
-              "text": "@notice The given module is not used in the orchestrator"
-            },
-            "errorSelector": "8b08febc",
-            "name": "DependencyInjection__ModuleNotUsedInOrchestrator",
-            "nameLocation": "1050:48:137",
-            "parameters": {
-              "id": 57174,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "1098:2:137"
-            }
-          },
-          {
-            "id": 57180,
-            "nodeType": "EventDefinition",
-            "src": "1295:50:137",
-            "nodes": [],
-            "anonymous": false,
-            "documentation": {
-              "id": 57176,
-              "nodeType": "StructuredDocumentation",
-              "src": "1203:87:137",
-              "text": "@notice Authorizer updated to new address.\n @param _address The new address."
-            },
-            "eventSelector": "f3f625a7d9e02778afdfdf1bea978d6565840d408866c70f5d25aadf77021d70",
-            "name": "AuthorizerUpdated",
-            "nameLocation": "1301:17:137",
-            "parameters": {
-              "id": 57179,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 57178,
-                  "indexed": true,
-                  "mutability": "mutable",
-                  "name": "_address",
-                  "nameLocation": "1335:8:137",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57180,
-                  "src": "1319:24:137",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 57177,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1319:7:137",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "visibility": "internal"
-                }
-              ],
-              "src": "1318:26:137"
-            }
-          },
-          {
-            "id": 57185,
-            "nodeType": "EventDefinition",
-            "src": "1447:54:137",
-            "nodes": [],
-            "anonymous": false,
-            "documentation": {
-              "id": 57181,
-              "nodeType": "StructuredDocumentation",
-              "src": "1351:91:137",
-              "text": "@notice FundingManager updated to new address.\n @param _address The new address."
-            },
-            "eventSelector": "224dfb9d0227c04cf6e5b57d4b0594d2962f550c547f4bf5e2578e09d6aa67ed",
-            "name": "FundingManagerUpdated",
-            "nameLocation": "1453:21:137",
-            "parameters": {
-              "id": 57184,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 57183,
-                  "indexed": true,
-                  "mutability": "mutable",
-                  "name": "_address",
-                  "nameLocation": "1491:8:137",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57185,
-                  "src": "1475:24:137",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 57182,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1475:7:137",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "visibility": "internal"
-                }
-              ],
-              "src": "1474:26:137"
-            }
-          },
-          {
-            "id": 57190,
-            "nodeType": "EventDefinition",
-            "src": "1605:56:137",
-            "nodes": [],
-            "anonymous": false,
-            "documentation": {
-              "id": 57186,
-              "nodeType": "StructuredDocumentation",
-              "src": "1507:93:137",
-              "text": "@notice PaymentProcessor updated to new address.\n @param _address The new address."
-            },
-            "eventSelector": "ae8716ba090b1cdfccf3851704c6dc4610f3be4f2f6badf912e74315e5280db4",
-            "name": "PaymentProcessorUpdated",
-            "nameLocation": "1611:23:137",
-            "parameters": {
-              "id": 57189,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 57188,
-                  "indexed": true,
-                  "mutability": "mutable",
-                  "name": "_address",
-                  "nameLocation": "1651:8:137",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57190,
-                  "src": "1635:24:137",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 57187,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1635:7:137",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "visibility": "internal"
-                }
-              ],
-              "src": "1634:26:137"
-            }
-          },
-          {
-            "id": 57204,
-            "nodeType": "EventDefinition",
-            "src": "2105:195:137",
-            "nodes": [],
-            "anonymous": false,
-            "documentation": {
-              "id": 57191,
-              "nodeType": "StructuredDocumentation",
-              "src": "1667:433:137",
-              "text": "@notice Orchestrator has been initialized with the corresponding modules\n @param orchestratorId_ The id of the orchestrator.\n @param fundingManager The address of the funding manager module.\n @param authorizer The address of the authorizer module.\n @param paymentProcessor The address of the payment processor module.\n @param modules The addresses of the other modules used in the orchestrator."
-            },
-            "eventSelector": "070464456e868d7463724bb8b918079d22862b221db0658876214310cc0a9330",
-            "name": "OrchestratorInitialized",
-            "nameLocation": "2111:23:137",
-            "parameters": {
-              "id": 57203,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 57193,
-                  "indexed": true,
-                  "mutability": "mutable",
-                  "name": "orchestratorId_",
-                  "nameLocation": "2157:15:137",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57204,
-                  "src": "2144:28:137",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 57192,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "2144:4:137",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 57195,
-                  "indexed": false,
-                  "mutability": "mutable",
-                  "name": "fundingManager",
-                  "nameLocation": "2190:14:137",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57204,
-                  "src": "2182:22:137",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 57194,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "2182:7:137",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 57197,
-                  "indexed": false,
-                  "mutability": "mutable",
-                  "name": "authorizer",
-                  "nameLocation": "2222:10:137",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57204,
-                  "src": "2214:18:137",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 57196,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "2214:7:137",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 57199,
-                  "indexed": false,
-                  "mutability": "mutable",
-                  "name": "paymentProcessor",
-                  "nameLocation": "2250:16:137",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57204,
-                  "src": "2242:24:137",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 57198,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "2242:7:137",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 57202,
-                  "indexed": false,
-                  "mutability": "mutable",
-                  "name": "modules",
-                  "nameLocation": "2286:7:137",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57204,
-                  "src": "2276:17:137",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
-                    "typeString": "address[]"
-                  },
-                  "typeName": {
-                    "baseType": {
-                      "id": 57200,
-                      "name": "address",
-                      "nodeType": "ElementaryTypeName",
-                      "src": "2276:7:137",
-                      "stateMutability": "nonpayable",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_address",
-                        "typeString": "address"
-                      }
-                    },
-                    "id": 57201,
-                    "nodeType": "ArrayTypeName",
-                    "src": "2276:9:137",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
-                      "typeString": "address[]"
-                    }
-                  },
-                  "visibility": "internal"
-                }
-              ],
-              "src": "2134:165:137"
-            }
-          },
-          {
-            "id": 57222,
-            "nodeType": "FunctionDefinition",
-            "src": "2446:210:137",
-            "nodes": [],
-            "documentation": {
-              "id": 57205,
-              "nodeType": "StructuredDocumentation",
-              "src": "2405:36:137",
-              "text": "@notice Initialization function."
-            },
-            "functionSelector": "aa0992aa",
-            "implemented": false,
-            "kind": "function",
-            "modifiers": [],
-            "name": "init",
-            "nameLocation": "2455:4:137",
-            "parameters": {
-              "id": 57220,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 57207,
-                  "mutability": "mutable",
-                  "name": "orchestratorId",
-                  "nameLocation": "2474:14:137",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57222,
-                  "src": "2469:19:137",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 57206,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "2469:4:137",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 57210,
-                  "mutability": "mutable",
-                  "name": "modules",
-                  "nameLocation": "2517:7:137",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57222,
-                  "src": "2498:26:137",
-                  "stateVariable": false,
-                  "storageLocation": "calldata",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
-                    "typeString": "address[]"
-                  },
-                  "typeName": {
-                    "baseType": {
-                      "id": 57208,
-                      "name": "address",
-                      "nodeType": "ElementaryTypeName",
-                      "src": "2498:7:137",
-                      "stateMutability": "nonpayable",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_address",
-                        "typeString": "address"
-                      }
-                    },
-                    "id": 57209,
-                    "nodeType": "ArrayTypeName",
-                    "src": "2498:9:137",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
-                      "typeString": "address[]"
-                    }
-                  },
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 57213,
-                  "mutability": "mutable",
-                  "name": "fundingManager",
-                  "nameLocation": "2550:14:137",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57222,
-                  "src": "2534:30:137",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IFundingManager_$44404",
-                    "typeString": "contract IFundingManager"
-                  },
-                  "typeName": {
-                    "id": 57212,
-                    "nodeType": "UserDefinedTypeName",
-                    "pathNode": {
-                      "id": 57211,
-                      "name": "IFundingManager",
-                      "nameLocations": [
-                        "2534:15:137"
-                      ],
-                      "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 44404,
-                      "src": "2534:15:137"
-                    },
-                    "referencedDeclaration": 44404,
-                    "src": "2534:15:137",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IFundingManager_$44404",
-                      "typeString": "contract IFundingManager"
-                    }
-                  },
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 57216,
-                  "mutability": "mutable",
-                  "name": "authorizer",
-                  "nameLocation": "2586:10:137",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57222,
-                  "src": "2574:22:137",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IAuthorizer_$42616",
-                    "typeString": "contract IAuthorizer"
-                  },
-                  "typeName": {
-                    "id": 57215,
-                    "nodeType": "UserDefinedTypeName",
-                    "pathNode": {
-                      "id": 57214,
-                      "name": "IAuthorizer",
-                      "nameLocations": [
-                        "2574:11:137"
-                      ],
-                      "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 42616,
-                      "src": "2574:11:137"
-                    },
-                    "referencedDeclaration": 42616,
-                    "src": "2574:11:137",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IAuthorizer_$42616",
-                      "typeString": "contract IAuthorizer"
-                    }
-                  },
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 57219,
-                  "mutability": "mutable",
-                  "name": "paymentProcessor",
-                  "nameLocation": "2624:16:137",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57222,
-                  "src": "2606:34:137",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IPaymentProcessor_$53756",
-                    "typeString": "contract IPaymentProcessor"
-                  },
-                  "typeName": {
-                    "id": 57218,
-                    "nodeType": "UserDefinedTypeName",
-                    "pathNode": {
-                      "id": 57217,
-                      "name": "IPaymentProcessor",
-                      "nameLocations": [
-                        "2606:17:137"
-                      ],
-                      "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 53756,
-                      "src": "2606:17:137"
-                    },
-                    "referencedDeclaration": 53756,
-                    "src": "2606:17:137",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IPaymentProcessor_$53756",
-                      "typeString": "contract IPaymentProcessor"
-                    }
-                  },
-                  "visibility": "internal"
-                }
-              ],
-              "src": "2459:187:137"
-            },
-            "returnParameters": {
-              "id": 57221,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "2655:0:137"
-            },
-            "scope": 57295,
-            "stateMutability": "nonpayable",
-            "virtual": false,
-            "visibility": "external"
-          },
-          {
-            "id": 57229,
-            "nodeType": "FunctionDefinition",
-            "src": "2847:57:137",
-            "nodes": [],
-            "documentation": {
-              "id": 57223,
-              "nodeType": "StructuredDocumentation",
-              "src": "2662:180:137",
-              "text": "@notice Replaces the current authorizer with `_authorizer`\n @dev Only callable by authorized caller.\n @param authorizer_ The address of the new authorizer module."
-            },
-            "functionSelector": "058a628f",
-            "implemented": false,
-            "kind": "function",
-            "modifiers": [],
-            "name": "setAuthorizer",
-            "nameLocation": "2856:13:137",
-            "parameters": {
-              "id": 57227,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 57226,
-                  "mutability": "mutable",
-                  "name": "authorizer_",
-                  "nameLocation": "2882:11:137",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57229,
-                  "src": "2870:23:137",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IAuthorizer_$42616",
-                    "typeString": "contract IAuthorizer"
-                  },
-                  "typeName": {
-                    "id": 57225,
-                    "nodeType": "UserDefinedTypeName",
-                    "pathNode": {
-                      "id": 57224,
-                      "name": "IAuthorizer",
-                      "nameLocations": [
-                        "2870:11:137"
-                      ],
-                      "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 42616,
-                      "src": "2870:11:137"
-                    },
-                    "referencedDeclaration": 42616,
-                    "src": "2870:11:137",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IAuthorizer_$42616",
-                      "typeString": "contract IAuthorizer"
-                    }
-                  },
-                  "visibility": "internal"
-                }
-              ],
-              "src": "2869:25:137"
-            },
-            "returnParameters": {
-              "id": 57228,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "2903:0:137"
-            },
-            "scope": 57295,
-            "stateMutability": "nonpayable",
-            "virtual": false,
-            "visibility": "external"
-          },
-          {
-            "id": 57236,
-            "nodeType": "FunctionDefinition",
-            "src": "3113:69:137",
-            "nodes": [],
-            "documentation": {
-              "id": 57230,
-              "nodeType": "StructuredDocumentation",
-              "src": "2910:198:137",
-              "text": "@notice Replaces the current funding manager with `fundingManager_`\n @dev Only callable by authorized caller.\n @param fundingManager_ The address of the new funding manager module."
-            },
-            "functionSelector": "333dc527",
-            "implemented": false,
-            "kind": "function",
-            "modifiers": [],
-            "name": "setFundingManager",
-            "nameLocation": "3122:17:137",
-            "parameters": {
-              "id": 57234,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 57233,
-                  "mutability": "mutable",
-                  "name": "fundingManager_",
-                  "nameLocation": "3156:15:137",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57236,
-                  "src": "3140:31:137",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IFundingManager_$44404",
-                    "typeString": "contract IFundingManager"
-                  },
-                  "typeName": {
-                    "id": 57232,
-                    "nodeType": "UserDefinedTypeName",
-                    "pathNode": {
-                      "id": 57231,
-                      "name": "IFundingManager",
-                      "nameLocations": [
-                        "3140:15:137"
-                      ],
-                      "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 44404,
-                      "src": "3140:15:137"
-                    },
-                    "referencedDeclaration": 44404,
-                    "src": "3140:15:137",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IFundingManager_$44404",
-                      "typeString": "contract IFundingManager"
-                    }
-                  },
-                  "visibility": "internal"
-                }
-              ],
-              "src": "3139:33:137"
-            },
-            "returnParameters": {
-              "id": 57235,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "3181:0:137"
-            },
-            "scope": 57295,
-            "stateMutability": "nonpayable",
-            "virtual": false,
-            "visibility": "external"
-          },
-          {
-            "id": 57243,
-            "nodeType": "FunctionDefinition",
-            "src": "3399:83:137",
-            "nodes": [],
-            "documentation": {
-              "id": 57237,
-              "nodeType": "StructuredDocumentation",
-              "src": "3188:206:137",
-              "text": "@notice Replaces the current payment processor with `paymentProcessor_`\n @dev Only callable by authorized caller.\n @param paymentProcessor_ The address of the new payment processor module."
-            },
-            "functionSelector": "088b0d75",
-            "implemented": false,
-            "kind": "function",
-            "modifiers": [],
-            "name": "setPaymentProcessor",
-            "nameLocation": "3408:19:137",
-            "parameters": {
-              "id": 57241,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 57240,
-                  "mutability": "mutable",
-                  "name": "paymentProcessor_",
-                  "nameLocation": "3446:17:137",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57243,
-                  "src": "3428:35:137",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IPaymentProcessor_$53756",
-                    "typeString": "contract IPaymentProcessor"
-                  },
-                  "typeName": {
-                    "id": 57239,
-                    "nodeType": "UserDefinedTypeName",
-                    "pathNode": {
-                      "id": 57238,
-                      "name": "IPaymentProcessor",
-                      "nameLocations": [
-                        "3428:17:137"
-                      ],
-                      "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 53756,
-                      "src": "3428:17:137"
-                    },
-                    "referencedDeclaration": 53756,
-                    "src": "3428:17:137",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IPaymentProcessor_$53756",
-                      "typeString": "contract IPaymentProcessor"
-                    }
-                  },
-                  "visibility": "internal"
-                }
-              ],
-              "src": "3427:37:137"
-            },
-            "returnParameters": {
-              "id": 57242,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "3481:0:137"
-            },
-            "scope": 57295,
-            "stateMutability": "nonpayable",
-            "virtual": false,
-            "visibility": "external"
-          },
-          {
-            "id": 57253,
-            "nodeType": "FunctionDefinition",
-            "src": "3745:102:137",
-            "nodes": [],
-            "documentation": {
-              "id": 57244,
-              "nodeType": "StructuredDocumentation",
-              "src": "3488:252:137",
-              "text": "@notice Executes a call on target `target` with call data `data`.\n @dev Only callable by authorized caller.\n @param target The address to call.\n @param data The call data.\n @return returnData The return data of the call."
-            },
-            "functionSelector": "fac5e981",
-            "implemented": false,
-            "kind": "function",
-            "modifiers": [],
-            "name": "executeTx",
-            "nameLocation": "3754:9:137",
-            "parameters": {
-              "id": 57249,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 57246,
-                  "mutability": "mutable",
-                  "name": "target",
-                  "nameLocation": "3772:6:137",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57253,
-                  "src": "3764:14:137",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 57245,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "3764:7:137",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 57248,
-                  "mutability": "mutable",
-                  "name": "data",
-                  "nameLocation": "3793:4:137",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57253,
-                  "src": "3780:17:137",
-                  "stateVariable": false,
-                  "storageLocation": "memory",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bytes_memory_ptr",
-                    "typeString": "bytes"
-                  },
-                  "typeName": {
-                    "id": 57247,
-                    "name": "bytes",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "3780:5:137",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bytes_storage_ptr",
-                      "typeString": "bytes"
-                    }
-                  },
-                  "visibility": "internal"
-                }
-              ],
-              "src": "3763:35:137"
-            },
-            "returnParameters": {
-              "id": 57252,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 57251,
-                  "mutability": "mutable",
-                  "name": "",
-                  "nameLocation": "-1:-1:-1",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57253,
-                  "src": "3833:12:137",
-                  "stateVariable": false,
-                  "storageLocation": "memory",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bytes_memory_ptr",
-                    "typeString": "bytes"
-                  },
-                  "typeName": {
-                    "id": 57250,
-                    "name": "bytes",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "3833:5:137",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bytes_storage_ptr",
-                      "typeString": "bytes"
-                    }
-                  },
-                  "visibility": "internal"
-                }
-              ],
-              "src": "3832:14:137"
-            },
-            "scope": 57295,
-            "stateMutability": "nonpayable",
-            "virtual": false,
-            "visibility": "external"
-          },
-          {
-            "id": 57259,
-            "nodeType": "FunctionDefinition",
-            "src": "4038:55:137",
-            "nodes": [],
-            "documentation": {
-              "id": 57254,
-              "nodeType": "StructuredDocumentation",
-              "src": "3853:180:137",
-              "text": "@notice Returns the orchestrator's id.\n @dev Unique id set by the {OrchestratorFactory} during initialization.\n @return orchestratorId The id of the orchestrator."
-            },
-            "functionSelector": "736963a7",
-            "implemented": false,
-            "kind": "function",
-            "modifiers": [],
-            "name": "orchestratorId",
-            "nameLocation": "4047:14:137",
-            "parameters": {
-              "id": 57255,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "4061:2:137"
-            },
-            "returnParameters": {
-              "id": 57258,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 57257,
-                  "mutability": "mutable",
-                  "name": "",
-                  "nameLocation": "-1:-1:-1",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57259,
-                  "src": "4087:4:137",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 57256,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "4087:4:137",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "visibility": "internal"
-                }
-              ],
-              "src": "4086:6:137"
-            },
-            "scope": 57295,
-            "stateMutability": "view",
-            "virtual": false,
-            "visibility": "external"
-          },
-          {
-            "id": 57266,
-            "nodeType": "FunctionDefinition",
-            "src": "4248:66:137",
-            "nodes": [],
-            "documentation": {
-              "id": 57260,
-              "nodeType": "StructuredDocumentation",
-              "src": "4099:144:137",
-              "text": "@notice The {IFundingManager} implementation used to hold and distribute Funds.\n @return fundingManager The attached funding manager."
-            },
-            "functionSelector": "04baed9e",
-            "implemented": false,
-            "kind": "function",
-            "modifiers": [],
-            "name": "fundingManager",
-            "nameLocation": "4257:14:137",
-            "parameters": {
-              "id": 57261,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "4271:2:137"
-            },
-            "returnParameters": {
-              "id": 57265,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 57264,
-                  "mutability": "mutable",
-                  "name": "",
-                  "nameLocation": "-1:-1:-1",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57266,
-                  "src": "4297:15:137",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IFundingManager_$44404",
-                    "typeString": "contract IFundingManager"
-                  },
-                  "typeName": {
-                    "id": 57263,
-                    "nodeType": "UserDefinedTypeName",
-                    "pathNode": {
-                      "id": 57262,
-                      "name": "IFundingManager",
-                      "nameLocations": [
-                        "4297:15:137"
-                      ],
-                      "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 44404,
-                      "src": "4297:15:137"
-                    },
-                    "referencedDeclaration": 44404,
-                    "src": "4297:15:137",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IFundingManager_$44404",
-                      "typeString": "contract IFundingManager"
-                    }
-                  },
-                  "visibility": "internal"
-                }
-              ],
-              "src": "4296:17:137"
-            },
-            "scope": 57295,
-            "stateMutability": "view",
-            "virtual": false,
-            "visibility": "external"
-          },
-          {
-            "id": 57273,
-            "nodeType": "FunctionDefinition",
-            "src": "4450:58:137",
-            "nodes": [],
-            "documentation": {
-              "id": 57267,
-              "nodeType": "StructuredDocumentation",
-              "src": "4320:125:137",
-              "text": "@notice The {IAuthorizer} implementation used to authorize addresses.\n @return authorizer The attached authorizer."
-            },
-            "functionSelector": "d09edf31",
-            "implemented": false,
-            "kind": "function",
-            "modifiers": [],
-            "name": "authorizer",
-            "nameLocation": "4459:10:137",
-            "parameters": {
-              "id": 57268,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "4469:2:137"
-            },
-            "returnParameters": {
-              "id": 57272,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 57271,
-                  "mutability": "mutable",
-                  "name": "",
-                  "nameLocation": "-1:-1:-1",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57273,
-                  "src": "4495:11:137",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IAuthorizer_$42616",
-                    "typeString": "contract IAuthorizer"
-                  },
-                  "typeName": {
-                    "id": 57270,
-                    "nodeType": "UserDefinedTypeName",
-                    "pathNode": {
-                      "id": 57269,
-                      "name": "IAuthorizer",
-                      "nameLocations": [
-                        "4495:11:137"
-                      ],
-                      "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 42616,
-                      "src": "4495:11:137"
-                    },
-                    "referencedDeclaration": 42616,
-                    "src": "4495:11:137",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IAuthorizer_$42616",
-                      "typeString": "contract IAuthorizer"
-                    }
-                  },
-                  "visibility": "internal"
-                }
-              ],
-              "src": "4494:13:137"
-            },
-            "scope": 57295,
-            "stateMutability": "view",
-            "virtual": false,
-            "visibility": "external"
-          },
-          {
-            "id": 57280,
-            "nodeType": "FunctionDefinition",
-            "src": "4683:70:137",
-            "nodes": [],
-            "documentation": {
-              "id": 57274,
-              "nodeType": "StructuredDocumentation",
-              "src": "4514:164:137",
-              "text": "@notice The {IPaymentProcessor} implementation used to process module\n         payments.\n @return paymentProcessor The attached payment processor."
-            },
-            "functionSelector": "f1c6bdf8",
-            "implemented": false,
-            "kind": "function",
-            "modifiers": [],
-            "name": "paymentProcessor",
-            "nameLocation": "4692:16:137",
-            "parameters": {
-              "id": 57275,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "4708:2:137"
-            },
-            "returnParameters": {
-              "id": 57279,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 57278,
-                  "mutability": "mutable",
-                  "name": "",
-                  "nameLocation": "-1:-1:-1",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57280,
-                  "src": "4734:17:137",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IPaymentProcessor_$53756",
-                    "typeString": "contract IPaymentProcessor"
-                  },
-                  "typeName": {
-                    "id": 57277,
-                    "nodeType": "UserDefinedTypeName",
-                    "pathNode": {
-                      "id": 57276,
-                      "name": "IPaymentProcessor",
-                      "nameLocations": [
-                        "4734:17:137"
-                      ],
-                      "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 53756,
-                      "src": "4734:17:137"
-                    },
-                    "referencedDeclaration": 53756,
-                    "src": "4734:17:137",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IPaymentProcessor_$53756",
-                      "typeString": "contract IPaymentProcessor"
-                    }
-                  },
-                  "visibility": "internal"
-                }
-              ],
-              "src": "4733:19:137"
-            },
-            "scope": 57295,
-            "stateMutability": "view",
-            "virtual": false,
-            "visibility": "external"
-          },
-          {
-            "id": 57286,
-            "nodeType": "FunctionDefinition",
-            "src": "4880:57:137",
-            "nodes": [],
-            "documentation": {
-              "id": 57281,
-              "nodeType": "StructuredDocumentation",
-              "src": "4759:116:137",
-              "text": "@notice The version of the orchestrator instance.\n @return version The version string of the orchestrator"
-            },
-            "functionSelector": "54fd4d50",
-            "implemented": false,
-            "kind": "function",
-            "modifiers": [],
-            "name": "version",
-            "nameLocation": "4889:7:137",
-            "parameters": {
-              "id": 57282,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "4896:2:137"
-            },
-            "returnParameters": {
-              "id": 57285,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 57284,
-                  "mutability": "mutable",
-                  "name": "",
-                  "nameLocation": "-1:-1:-1",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57286,
-                  "src": "4922:13:137",
-                  "stateVariable": false,
-                  "storageLocation": "memory",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_string_memory_ptr",
-                    "typeString": "string"
-                  },
-                  "typeName": {
-                    "id": 57283,
-                    "name": "string",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "4922:6:137",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_string_storage_ptr",
-                      "typeString": "string"
-                    }
-                  },
-                  "visibility": "internal"
-                }
-              ],
-              "src": "4921:15:137"
-            },
-            "scope": 57295,
-            "stateMutability": "pure",
-            "virtual": false,
-            "visibility": "external"
-          },
-          {
-            "id": 57294,
-            "nodeType": "FunctionDefinition",
-            "src": "5105:125:137",
-            "nodes": [],
-            "documentation": {
-              "id": 57287,
-              "nodeType": "StructuredDocumentation",
-              "src": "4943:157:137",
-              "text": "@notice find the address of a given module using it's name in a orchestrator\n @return moduleAddress The address of the module with the given name."
-            },
-            "functionSelector": "08c101b1",
-            "implemented": false,
-            "kind": "function",
-            "modifiers": [],
-            "name": "findModuleAddressInOrchestrator",
-            "nameLocation": "5114:31:137",
-            "parameters": {
-              "id": 57290,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 57289,
-                  "mutability": "mutable",
-                  "name": "moduleName",
-                  "nameLocation": "5162:10:137",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57294,
-                  "src": "5146:26:137",
-                  "stateVariable": false,
-                  "storageLocation": "calldata",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_string_calldata_ptr",
-                    "typeString": "string"
-                  },
-                  "typeName": {
-                    "id": 57288,
-                    "name": "string",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "5146:6:137",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_string_storage_ptr",
-                      "typeString": "string"
-                    }
-                  },
-                  "visibility": "internal"
-                }
-              ],
-              "src": "5145:28:137"
-            },
-            "returnParameters": {
-              "id": 57293,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 57292,
-                  "mutability": "mutable",
-                  "name": "",
-                  "nameLocation": "-1:-1:-1",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 57294,
-                  "src": "5221:7:137",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 57291,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "5221:7:137",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "visibility": "internal"
-                }
-              ],
-              "src": "5220:9:137"
-            },
-            "scope": 57295,
-            "stateMutability": "view",
-            "virtual": false,
-            "visibility": "external"
-          }
-        ],
-        "abstract": false,
-        "baseContracts": [
-          {
-            "baseName": {
-              "id": 57156,
-              "name": "IModuleManager",
-              "nameLocations": [
-                "504:14:137"
-              ],
-              "nodeType": "IdentifierPath",
-              "referencedDeclaration": 58011,
-              "src": "504:14:137"
-            },
-            "id": 57157,
-            "nodeType": "InheritanceSpecifier",
-            "src": "504:14:137"
-          }
-        ],
-        "canonicalName": "IOrchestrator",
-        "contractDependencies": [],
-        "contractKind": "interface",
-        "fullyImplemented": false,
-        "linearizedBaseContracts": [
-          57295,
-          58011,
-          41234
-        ],
-        "name": "IOrchestrator",
-        "nameLocation": "487:13:137",
-        "scope": 57296,
-        "usedErrors": [
-          57164,
-          57167,
-          57172,
-          57175,
-          57930,
-          57933,
-          57936,
-          57939,
-          57942,
-          57945,
-          57948
-        ],
-        "usedEvents": [
-          57180,
-          57185,
-          57190,
-          57204,
-          57953,
-          57958
-        ]
-      }
-    ],
-    "license": "LGPL-3.0-only"
-  },
-  "id": 137
+  "id": 139
 }
