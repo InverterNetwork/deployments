@@ -109,6 +109,8 @@
         "claimId": "",
         "_0": "",
         "bountyId": "",
+        "addr": "",
+        "claimAmount": "",
         "contributors": "",
         "details": "",
         "claimed": ""
