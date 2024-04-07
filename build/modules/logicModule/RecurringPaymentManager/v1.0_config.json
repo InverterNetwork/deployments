@@ -39,7 +39,14 @@
     },
     "amountPaid": { "tags": { "amount": "" }, "returnNames": [] },
     "collectPaymentOrders": {
-      "tags": { "_0": "", "_1": "" },
+      "tags": {
+        "_0": "",
+        "_1": "",
+        "recipient": "",
+        "amount": "",
+        "createdAt": "",
+        "dueTo": ""
+      },
       "returnNames": ["_0", "_1"]
     },
     "decoder": {
@@ -61,7 +68,14 @@
       "returnNames": ["_0"]
     },
     "getRecurringPaymentInformation": {
-      "tags": { "id": "", "_0": "" },
+      "tags": {
+        "id": "",
+        "_0": "",
+        "amount": "",
+        "startEpoch": "",
+        "lastTriggeredEpoch": "",
+        "recipient": ""
+      },
       "returnNames": ["_0"]
     },
     "grantModuleRole": {
@@ -96,7 +110,16 @@
     "listRecurringPaymentIds": { "tags": { "_0": "" }, "returnNames": ["_0"] },
     "orchestrator": { "tags": { "_0": "" }, "returnNames": ["_0"] },
     "outstandingTokenAmount": { "tags": { "_0": "" }, "returnNames": ["_0"] },
-    "paymentOrders": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "paymentOrders": {
+      "tags": {
+        "_0": "",
+        "recipient": "",
+        "amount": "",
+        "createdAt": "",
+        "dueTo": ""
+      },
+      "returnNames": ["_0"]
+    },
     "removeRecurringPayment": {
       "tags": { "prevId": "", "id": "" },
       "returnNames": []

@@ -33,9 +33,25 @@
       "tags": { "data": "", "requirement": "" },
       "returnNames": ["requirement"]
     },
-    "getManagerMetadata": { "tags": { "_0": "" }, "returnNames": ["_0"] },
-    "getOrchestratorMetadata": { "tags": { "_0": "" }, "returnNames": ["_0"] },
-    "getTeamMetadata": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "getManagerMetadata": {
+      "tags": { "_0": "", "name": "", "account": "", "twitterHandle": "" },
+      "returnNames": ["_0"]
+    },
+    "getOrchestratorMetadata": {
+      "tags": {
+        "_0": "",
+        "title": "",
+        "descriptionShort": "",
+        "descriptionLong": "",
+        "externalMedias": "",
+        "categories": ""
+      },
+      "returnNames": ["_0"]
+    },
+    "getTeamMetadata": {
+      "tags": { "_0": "", "name": "", "account": "", "url": "" },
+      "returnNames": ["_0"]
+    },
     "grantModuleRole": {
       "tags": { "role": "", "addr": "" },
       "returnNames": []

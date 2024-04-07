@@ -146,7 +146,16 @@
       "returnNames": ["_0"]
     },
     "viewAllPaymentOrders": {
-      "tags": { "client": "", "paymentReceiver": "", "_0": "" },
+      "tags": {
+        "client": "",
+        "paymentReceiver": "",
+        "_0": "",
+        "_salary": "",
+        "_released": "",
+        "_start": "",
+        "_dueTo": "",
+        "_vestingWalletID": ""
+      },
       "returnNames": ["_0"]
     }
   }

@@ -40,7 +40,13 @@
     },
     "executeMotion": { "tags": { "motionId": "" }, "returnNames": [] },
     "getReceipt": {
-      "tags": { "_ID": "", "voter": "", "_0": "" },
+      "tags": {
+        "_ID": "",
+        "voter": "",
+        "_0": "",
+        "hasVoted": "",
+        "support": ""
+      },
       "returnNames": ["_0"]
     },
     "grantModuleRole": {

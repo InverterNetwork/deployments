@@ -79,7 +79,14 @@
     },
     "amountPaid": { "tags": { "amount": "" }, "returnNames": [] },
     "collectPaymentOrders": {
-      "tags": { "_0": "", "_1": "" },
+      "tags": {
+        "_0": "",
+        "_1": "",
+        "recipient": "",
+        "amount": "",
+        "createdAt": "",
+        "dueTo": ""
+      },
       "returnNames": ["_0", "_1"]
     },
     "decoder": {
@@ -87,11 +94,25 @@
       "returnNames": ["requirement"]
     },
     "getBountyInformation": {
-      "tags": { "bountyId": "", "_0": "" },
+      "tags": {
+        "bountyId": "",
+        "_0": "",
+        "minimumPayoutAmount": "",
+        "maximumPayoutAmount": "",
+        "details": "",
+        "locked": ""
+      },
       "returnNames": ["_0"]
     },
     "getClaimInformation": {
-      "tags": { "claimId": "", "_0": "" },
+      "tags": {
+        "claimId": "",
+        "_0": "",
+        "bountyId": "",
+        "contributors": "",
+        "details": "",
+        "claimed": ""
+      },
       "returnNames": ["_0"]
     },
     "grantModuleRole": {
@@ -132,7 +153,16 @@
     "lockBounty": { "tags": { "bountyId": "" }, "returnNames": [] },
     "orchestrator": { "tags": { "_0": "" }, "returnNames": ["_0"] },
     "outstandingTokenAmount": { "tags": { "_0": "" }, "returnNames": ["_0"] },
-    "paymentOrders": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "paymentOrders": {
+      "tags": {
+        "_0": "",
+        "recipient": "",
+        "amount": "",
+        "createdAt": "",
+        "dueTo": ""
+      },
+      "returnNames": ["_0"]
+    },
     "revokeModuleRole": {
       "tags": { "role": "", "addr": "" },
       "returnNames": []
