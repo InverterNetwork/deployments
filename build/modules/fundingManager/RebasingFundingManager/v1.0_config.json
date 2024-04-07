@@ -2,11 +2,11 @@
   "deploymentArgs": { "configData": [], "dependencyData": [] },
   "abiMembers": {
     "Approval": {
-      "tags": { "owner": "", "spender": "", "value": "" },
+      "tags": { "owner": "", "spender": "", "value": "decimals" },
       "returnNames": []
     },
     "Deposit": {
-      "tags": { "_from": "", "_for": "", "_amount": "" },
+      "tags": { "_from": "", "_for": "", "_amount": "decimals" },
       "returnNames": []
     },
     "Initialized": { "tags": { "version": "" }, "returnNames": [] },
@@ -21,15 +21,15 @@
     },
     "Rebase": { "tags": { "epoch": "", "newScalar": "" }, "returnNames": [] },
     "Transfer": {
-      "tags": { "from": "", "to": "", "value": "" },
+      "tags": { "from": "", "to": "", "value": "decimals" },
       "returnNames": []
     },
     "TransferOrchestratorToken": {
-      "tags": { "_to": "", "_amount": "" },
+      "tags": { "_to": "", "_amount": "decimals" },
       "returnNames": []
     },
     "Withdrawal": {
-      "tags": { "_from": "", "_for": "", "_amount": "" },
+      "tags": { "_from": "", "_for": "", "_amount": "decimals" },
       "returnNames": []
     },
     "DOMAIN_SEPARATOR": { "tags": { "_0": "" }, "returnNames": ["_0"] },
@@ -37,32 +37,38 @@
     "EIP712_REVISION": { "tags": { "_0": "" }, "returnNames": ["_0"] },
     "PERMIT_TYPEHASH": { "tags": { "_0": "" }, "returnNames": ["_0"] },
     "allowance": {
-      "tags": { "owner_": "", "spender": "", "_0": "" },
-      "returnNames": ["_0"]
+      "tags": { "owner_": "", "spender": "", "amount": "decimals" },
+      "returnNames": ["amount"]
     },
     "approve": {
-      "tags": { "spender": "", "tokens": "", "_0": "" },
+      "tags": { "spender": "", "tokens": "decimals", "_0": "" },
       "returnNames": ["_0"]
     },
-    "balanceOf": { "tags": { "who": "", "_0": "" }, "returnNames": ["_0"] },
+    "balanceOf": {
+      "tags": { "who": "", "amount": "decimals" },
+      "returnNames": ["amount"]
+    },
     "decimals": { "tags": { "_0": "" }, "returnNames": ["_0"] },
     "decoder": {
       "tags": { "data": "", "requirement": "" },
       "returnNames": ["requirement"]
     },
     "decreaseAllowance": {
-      "tags": { "spender": "", "tokens": "", "_0": "" },
+      "tags": { "spender": "", "tokens": "decimals", "_0": "" },
       "returnNames": ["_0"]
     },
-    "deposit": { "tags": { "amount": "" }, "returnNames": [] },
-    "depositFor": { "tags": { "to": "", "amount": "" }, "returnNames": [] },
+    "deposit": { "tags": { "amount": "decimals" }, "returnNames": [] },
+    "depositFor": {
+      "tags": { "to": "", "amount": "decimals" },
+      "returnNames": []
+    },
     "grantModuleRole": {
       "tags": { "role": "", "addr": "" },
       "returnNames": []
     },
     "identifier": { "tags": { "_0": "" }, "returnNames": ["_0"] },
     "increaseAllowance": {
-      "tags": { "spender": "", "tokens": "", "_0": "" },
+      "tags": { "spender": "", "tokens": "decimals", "_0": "" },
       "returnNames": ["_0"]
     },
     "init": {
@@ -92,7 +98,7 @@
       "tags": {
         "owner": "",
         "spender": "",
-        "value": "",
+        "value": "decimals",
         "deadline": "",
         "v": "",
         "r": "",
@@ -106,10 +112,13 @@
       "returnNames": []
     },
     "scaledBalanceOf": {
-      "tags": { "who": "", "_0": "" },
-      "returnNames": ["_0"]
+      "tags": { "who": "", "amount": "decimals" },
+      "returnNames": ["amount"]
     },
-    "scaledTotalSupply": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "scaledTotalSupply": {
+      "tags": { "amount": "decimals" },
+      "returnNames": ["amount"]
+    },
     "supportsInterface": {
       "tags": { "interfaceId": "", "_0": "" },
       "returnNames": ["_0"]
@@ -117,9 +126,12 @@
     "symbol": { "tags": { "_0": "" }, "returnNames": ["_0"] },
     "title": { "tags": { "_0": "" }, "returnNames": ["_0"] },
     "token": { "tags": { "_0": "" }, "returnNames": ["_0"] },
-    "totalSupply": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "totalSupply": {
+      "tags": { "amount": "decimals" },
+      "returnNames": ["amount"]
+    },
     "transfer": {
-      "tags": { "to": "", "tokens": "", "_0": "" },
+      "tags": { "to": "", "tokens": "decimals", "_0": "" },
       "returnNames": ["_0"]
     },
     "transferAll": { "tags": { "to": "", "_0": "" }, "returnNames": ["_0"] },
@@ -128,16 +140,19 @@
       "returnNames": ["_0"]
     },
     "transferFrom": {
-      "tags": { "from": "", "to": "", "tokens": "", "_0": "" },
+      "tags": { "from": "", "to": "", "tokens": "decimals", "_0": "" },
       "returnNames": ["_0"]
     },
     "transferOrchestratorToken": {
-      "tags": { "to": "", "amount": "" },
+      "tags": { "to": "", "amount": "decimals" },
       "returnNames": []
     },
     "url": { "tags": { "_0": "" }, "returnNames": ["_0"] },
     "version": { "tags": { "_0": "", "_1": "" }, "returnNames": ["_0", "_1"] },
-    "withdraw": { "tags": { "amount": "" }, "returnNames": [] },
-    "withdrawTo": { "tags": { "to": "", "amount": "" }, "returnNames": [] }
+    "withdraw": { "tags": { "amount": "decimals" }, "returnNames": [] },
+    "withdrawTo": {
+      "tags": { "to": "", "amount": "decimals" },
+      "returnNames": []
+    }
   }
 }

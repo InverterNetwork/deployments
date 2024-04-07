@@ -15,14 +15,14 @@
       "tags": {
         "paymentClient": "",
         "recipient": "",
-        "amount": "",
+        "amount": "decimals",
         "createdAt": "",
         "dueTo": ""
       },
       "returnNames": []
     },
     "TokensReleased": {
-      "tags": { "recipient": "", "token": "", "amount": "" },
+      "tags": { "recipient": "", "token": "", "amount": "decimals" },
       "returnNames": []
     },
     "cancelRunningPayments": { "tags": { "client": "" }, "returnNames": [] },

@@ -4,15 +4,15 @@
     "BountyAdded": {
       "tags": {
         "bountyId": "",
-        "minimumPayoutAmount": "",
-        "maximumPayoutAmount": "",
-        "details": ""
+        "minimumPayoutAmount": "decimals",
+        "maximumPayoutAmount": "decimals",
+        "details": "any"
       },
       "returnNames": []
     },
     "BountyLocked": { "tags": { "bountyId": "" }, "returnNames": [] },
     "BountyUpdated": {
-      "tags": { "bountyId": "", "details": "" },
+      "tags": { "bountyId": "", "details": "any" },
       "returnNames": []
     },
     "ClaimAdded": {
@@ -20,9 +20,9 @@
         "claimId": "",
         "bountyId": "",
         "addr": "",
-        "claimAmount": "",
+        "claimAmount": "decimals",
         "contributors": "",
-        "details": ""
+        "details": "any"
       },
       "returnNames": []
     },
@@ -30,13 +30,13 @@
       "tags": {
         "claimId": "",
         "addr": "",
-        "claimAmount": "",
+        "claimAmount": "decimals",
         "contributors": ""
       },
       "returnNames": []
     },
     "ClaimDetailsUpdated": {
-      "tags": { "claimId": "", "details": "" },
+      "tags": { "claimId": "", "details": "any" },
       "returnNames": []
     },
     "ClaimVerified": { "tags": { "claimId": "" }, "returnNames": [] },
@@ -51,7 +51,7 @@
       "returnNames": []
     },
     "PaymentOrderAdded": {
-      "tags": { "recipient": "", "amount": "" },
+      "tags": { "recipient": "", "amount": "decimals" },
       "returnNames": []
     },
     "BOUNTY_ISSUER_ROLE": { "tags": { "_0": "" }, "returnNames": ["_0"] },
@@ -59,9 +59,9 @@
     "VERIFIER_ROLE": { "tags": { "_0": "" }, "returnNames": ["_0"] },
     "addBounty": {
       "tags": {
-        "minimumPayoutAmount": "",
-        "maximumPayoutAmount": "",
-        "details": "",
+        "minimumPayoutAmount": "decimals",
+        "maximumPayoutAmount": "decimals",
+        "details": "any",
         "id": ""
       },
       "returnNames": ["id"]
@@ -70,20 +70,20 @@
       "tags": {
         "bountyId": "",
         "addr": "",
-        "claimAmount": "",
+        "claimAmount": "decimals",
         "contributors": "",
-        "details": "",
+        "details": "any",
         "id": ""
       },
       "returnNames": ["id"]
     },
-    "amountPaid": { "tags": { "amount": "" }, "returnNames": [] },
+    "amountPaid": { "tags": { "amount": "decimals" }, "returnNames": [] },
     "collectPaymentOrders": {
       "tags": {
         "_0": "",
         "_1": "",
         "recipient": "",
-        "amount": "",
+        "amount": "decimals",
         "createdAt": "",
         "dueTo": ""
       },
@@ -97,9 +97,9 @@
       "tags": {
         "bountyId": "",
         "_0": "",
-        "minimumPayoutAmount": "",
-        "maximumPayoutAmount": "",
-        "details": "",
+        "minimumPayoutAmount": "decimals",
+        "maximumPayoutAmount": "decimals",
+        "details": "any",
         "locked": ""
       },
       "returnNames": ["_0"]
@@ -110,9 +110,9 @@
         "_0": "",
         "bountyId": "",
         "addr": "",
-        "claimAmount": "",
+        "claimAmount": "decimals",
         "contributors": "",
-        "details": "",
+        "details": "any",
         "claimed": ""
       },
       "returnNames": ["_0"]
@@ -154,12 +154,15 @@
     },
     "lockBounty": { "tags": { "bountyId": "" }, "returnNames": [] },
     "orchestrator": { "tags": { "_0": "" }, "returnNames": ["_0"] },
-    "outstandingTokenAmount": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "outstandingTokenAmount": {
+      "tags": { "amount": "decimals" },
+      "returnNames": ["amount"]
+    },
     "paymentOrders": {
       "tags": {
         "_0": "",
         "recipient": "",
-        "amount": "",
+        "amount": "decimals",
         "createdAt": "",
         "dueTo": ""
       },
@@ -175,20 +178,20 @@
     },
     "title": { "tags": { "_0": "" }, "returnNames": ["_0"] },
     "updateBounty": {
-      "tags": { "bountyId": "", "details": "" },
+      "tags": { "bountyId": "", "details": "any" },
       "returnNames": []
     },
     "updateClaimContributors": {
       "tags": {
         "claimId": "",
         "addr": "",
-        "claimAmount": "",
+        "claimAmount": "decimals",
         "contributors": ""
       },
       "returnNames": []
     },
     "updateClaimDetails": {
-      "tags": { "claimId": "", "details": "" },
+      "tags": { "claimId": "", "details": "any" },
       "returnNames": []
     },
     "url": { "tags": { "_0": "" }, "returnNames": ["_0"] },
@@ -196,7 +199,7 @@
       "tags": {
         "claimId": "",
         "addr": "",
-        "claimAmount": "",
+        "claimAmount": "decimals",
         "contributors": ""
       },
       "returnNames": []
