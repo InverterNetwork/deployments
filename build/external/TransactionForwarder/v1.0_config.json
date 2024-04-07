@@ -1,10 +1,10 @@
 {
   "deploymentArgs": { "configData": [], "dependencyData": [] },
   "abiMembers": {
-    "EIP712DomainChanged": { "tags": {}, "returnsNames": [] },
+    "EIP712DomainChanged": { "tags": {}, "returnNames": [] },
     "ExecutedForwardRequest": {
       "tags": { "signer": "", "nonce": "", "success": "" },
-      "returnsNames": []
+      "returnNames": []
     },
     "createDigest": {
       "tags": {
@@ -18,7 +18,54 @@
         "req": "",
         "digest": ""
       },
-      "returnsNames": ["digest"]
+      "returnNames": ["digest"]
+    },
+    "eip712Domain": {
+      "tags": {
+        "fields": "",
+        "name": "",
+        "version": "",
+        "chainId": "",
+        "verifyingContract": "",
+        "salt": "",
+        "extensions": ""
+      },
+      "returnNames": [
+        "fields",
+        "name",
+        "version",
+        "chainId",
+        "verifyingContract",
+        "salt",
+        "extensions"
+      ]
+    },
+    "execute": {
+      "tags": {
+        "from": "",
+        "to": "",
+        "value": "",
+        "gas": "",
+        "deadline": "",
+        "data": "",
+        "signature": "",
+        "request": ""
+      },
+      "returnNames": []
+    },
+    "executeBatch": {
+      "tags": {
+        "from": "",
+        "to": "",
+        "value": "",
+        "gas": "",
+        "deadline": "",
+        "data": "",
+        "signature": "",
+        "requests": "",
+        "refundReceiver": ""
+      },
+      "returnNames": []
     },
     "executeMulticall": {
       "tags": {
@@ -28,7 +75,22 @@
         "calls": "",
         "results": ""
       },
-      "returnsNames": ["results"]
+      "returnNames": ["results"]
+    },
+    "nonces": { "tags": { "owner": "", "_0": "" }, "returnNames": ["_0"] },
+    "verify": {
+      "tags": {
+        "from": "",
+        "to": "",
+        "value": "",
+        "gas": "",
+        "deadline": "",
+        "data": "",
+        "signature": "",
+        "request": "",
+        "_0": ""
+      },
+      "returnNames": ["_0"]
     }
   }
 }

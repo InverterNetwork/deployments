@@ -3,35 +3,32 @@
   "abiMembers": {
     "Approval": {
       "tags": { "owner": "", "spender": "", "amount": "" },
-      "returnsNames": []
+      "returnNames": []
     },
     "Transfer": {
       "tags": { "from": "", "to": "", "amount": "" },
-      "returnsNames": []
+      "returnNames": []
     },
     "allowance": {
       "tags": { "owner": "", "spender": "", "_0": "" },
-      "returnsNames": ["_0"]
+      "returnNames": ["_0"]
     },
     "approve": {
       "tags": { "spender": "", "amount": "", "_0": "" },
-      "returnsNames": ["_0"]
+      "returnNames": ["_0"]
     },
-    "balanceOf": {
-      "tags": { "account": "", "_0": "" },
-      "returnsNames": ["_0"]
-    },
-    "decimals": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
-    "name": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
-    "symbol": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
-    "totalSupply": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
+    "balanceOf": { "tags": { "account": "", "_0": "" }, "returnNames": ["_0"] },
+    "decimals": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "name": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "symbol": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "totalSupply": { "tags": { "_0": "" }, "returnNames": ["_0"] },
     "transfer": {
       "tags": { "to": "", "amount": "", "_0": "" },
-      "returnsNames": ["_0"]
+      "returnNames": ["_0"]
     },
     "transferFrom": {
       "tags": { "from": "", "to": "", "amount": "", "_0": "" },
-      "returnsNames": ["_0"]
+      "returnNames": ["_0"]
     }
   }
 }

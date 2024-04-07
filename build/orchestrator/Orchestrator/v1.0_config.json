@@ -1,10 +1,11 @@
 {
   "deploymentArgs": { "configData": [], "dependencyData": [] },
   "abiMembers": {
-    "AuthorizerUpdated": { "tags": { "_address": "" }, "returnsNames": [] },
-    "FundingManagerUpdated": { "tags": { "_address": "" }, "returnsNames": [] },
-    "ModuleAdded": { "tags": { "module": "" }, "returnsNames": [] },
-    "ModuleRemoved": { "tags": { "module": "" }, "returnsNames": [] },
+    "AuthorizerUpdated": { "tags": { "_address": "" }, "returnNames": [] },
+    "FundingManagerUpdated": { "tags": { "_address": "" }, "returnNames": [] },
+    "Initialized": { "tags": { "version": "" }, "returnNames": [] },
+    "ModuleAdded": { "tags": { "module": "" }, "returnNames": [] },
+    "ModuleRemoved": { "tags": { "module": "" }, "returnNames": [] },
     "OrchestratorInitialized": {
       "tags": {
         "orchestratorId_": "",
@@ -13,27 +14,27 @@
         "paymentProcessor": "",
         "modules": ""
       },
-      "returnsNames": []
+      "returnNames": []
     },
     "PaymentProcessorUpdated": {
       "tags": { "_address": "" },
-      "returnsNames": []
+      "returnNames": []
     },
-    "addModule": { "tags": { "module": "" }, "returnsNames": [] },
-    "authorizer": { "tags": {}, "returnsNames": [] },
+    "addModule": { "tags": { "module": "" }, "returnNames": [] },
+    "authorizer": { "tags": { "_0": "" }, "returnNames": ["_0"] },
     "executeTx": {
       "tags": { "target": "", "data": "", "_0": "" },
-      "returnsNames": ["_0"]
+      "returnNames": ["_0"]
     },
     "executeTxFromModule": {
       "tags": { "to": "", "data": "", "_0": "", "_1": "" },
-      "returnsNames": ["_0", "_1"]
+      "returnNames": ["_0", "_1"]
     },
     "findModuleAddressInOrchestrator": {
-      "tags": { "moduleName": "" },
-      "returnsNames": []
+      "tags": { "moduleName": "", "_0": "" },
+      "returnNames": ["_0"]
     },
-    "fundingManager": { "tags": {}, "returnsNames": [] },
+    "fundingManager": { "tags": { "_0": "" }, "returnNames": ["_0"] },
     "init": {
       "tags": {
         "orchestratorId_": "",
@@ -42,23 +43,32 @@
         "authorizer_": "",
         "paymentProcessor_": ""
       },
-      "returnsNames": []
+      "returnNames": []
     },
-    "isModule": { "tags": { "module": "", "_0": "" }, "returnsNames": ["_0"] },
-    "listModules": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
-    "modulesSize": { "tags": {}, "returnsNames": [] },
-    "orchestratorId": { "tags": {}, "returnsNames": [] },
-    "paymentProcessor": { "tags": {}, "returnsNames": [] },
-    "removeModule": { "tags": { "module": "" }, "returnsNames": [] },
-    "setAuthorizer": { "tags": { "authorizer_": "" }, "returnsNames": [] },
+    "isModule": { "tags": { "module": "", "_0": "" }, "returnNames": ["_0"] },
+    "isTrustedForwarder": {
+      "tags": { "forwarder": "", "_0": "" },
+      "returnNames": ["_0"]
+    },
+    "listModules": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "modulesSize": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "orchestratorId": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "paymentProcessor": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "removeModule": { "tags": { "module": "" }, "returnNames": [] },
+    "setAuthorizer": { "tags": { "authorizer_": "" }, "returnNames": [] },
     "setFundingManager": {
       "tags": { "fundingManager_": "" },
-      "returnsNames": []
+      "returnNames": []
     },
     "setPaymentProcessor": {
       "tags": { "paymentProcessor_": "" },
-      "returnsNames": []
+      "returnNames": []
     },
-    "version": { "tags": {}, "returnsNames": [] }
+    "supportsInterface": {
+      "tags": { "interfaceId": "", "_0": "" },
+      "returnNames": ["_0"]
+    },
+    "trustedForwarder": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "version": { "tags": { "_0": "" }, "returnNames": ["_0"] }
   }
 }

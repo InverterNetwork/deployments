@@ -3,7 +3,7 @@
   "abiMembers": {
     "OrchestratorCreated": {
       "tags": { "orchestratorId": "", "orchestratorAddress": "" },
-      "returnsNames": []
+      "returnNames": []
     },
     "createOrchestrator": {
       "tags": {
@@ -16,13 +16,30 @@
         "fundingManagerConfig": "",
         "authorizerConfig": "",
         "paymentProcessorConfig": "",
-        "moduleConfigs": ""
+        "moduleConfigs": "",
+        "_0": ""
       },
-      "returnsNames": []
+      "returnNames": ["_0"]
     },
-    "getOrchestratorByID": { "tags": { "id": "" }, "returnsNames": [] },
-    "getOrchestratorIDCounter": { "tags": {}, "returnsNames": [] },
-    "moduleFactory": { "tags": {}, "returnsNames": [] },
-    "target": { "tags": {}, "returnsNames": [] }
+    "decoder": {
+      "tags": { "data": "", "requirement": "" },
+      "returnNames": ["requirement"]
+    },
+    "getOrchestratorByID": {
+      "tags": { "id": "", "_0": "" },
+      "returnNames": ["_0"]
+    },
+    "getOrchestratorIDCounter": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "isTrustedForwarder": {
+      "tags": { "forwarder": "", "_0": "" },
+      "returnNames": ["_0"]
+    },
+    "moduleFactory": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "supportsInterface": {
+      "tags": { "interfaceId": "", "_0": "" },
+      "returnNames": ["_0"]
+    },
+    "target": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "trustedForwarder": { "tags": { "_0": "" }, "returnNames": ["_0"] }
   }
 }

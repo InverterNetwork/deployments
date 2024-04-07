@@ -1,6 +1,7 @@
 {
   "deploymentArgs": { "configData": [], "dependencyData": [] },
   "abiMembers": {
+    "Initialized": { "tags": { "version": "" }, "returnNames": [] },
     "ModuleInitialized": {
       "tags": {
         "parentOrchestrator": "",
@@ -8,25 +9,69 @@
         "majorVersion": "",
         "minorVersion": ""
       },
-      "returnsNames": []
+      "returnNames": []
     },
-    "burnAdminFromModuleRole": { "tags": { "role": "" }, "returnsNames": [] },
+    "RoleAdminChanged": {
+      "tags": { "role": "", "previousAdminRole": "", "newAdminRole": "" },
+      "returnNames": []
+    },
+    "RoleGranted": {
+      "tags": { "role": "", "account": "", "sender": "" },
+      "returnNames": []
+    },
+    "RoleRevoked": {
+      "tags": { "role": "", "account": "", "sender": "" },
+      "returnNames": []
+    },
+    "BURN_ADMIN_ROLE": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "DEFAULT_ADMIN_ROLE": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "ORCHESTRATOR_MANAGER_ROLE": {
+      "tags": { "_0": "" },
+      "returnNames": ["_0"]
+    },
+    "ORCHESTRATOR_OWNER_ROLE": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "burnAdminFromModuleRole": { "tags": { "role": "" }, "returnNames": [] },
+    "decoder": {
+      "tags": { "data": "", "requirement": "" },
+      "returnNames": ["requirement"]
+    },
     "generateRoleId": {
-      "tags": { "module": "", "role": "" },
-      "returnsNames": []
+      "tags": { "module": "", "role": "", "_0": "" },
+      "returnNames": ["_0"]
     },
-    "getManagerRole": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
-    "getOwnerRole": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
+    "getManagerRole": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "getOwnerRole": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "getRoleAdmin": { "tags": { "role": "", "_0": "" }, "returnNames": ["_0"] },
+    "getRoleMember": {
+      "tags": { "role": "", "index": "", "_0": "" },
+      "returnNames": ["_0"]
+    },
+    "getRoleMemberCount": {
+      "tags": { "role": "", "_0": "" },
+      "returnNames": ["_0"]
+    },
     "grantGlobalRole": {
       "tags": { "role": "", "target": "" },
-      "returnsNames": []
+      "returnNames": []
     },
+    "grantModuleRole": {
+      "tags": { "role": "", "addr": "" },
+      "returnNames": []
+    },
+    "grantRole": { "tags": { "role": "", "account": "" }, "returnNames": [] },
     "grantRoleFromModule": {
       "tags": { "role": "", "target": "" },
-      "returnsNames": []
+      "returnNames": []
     },
-    "hasModuleRole": { "tags": { "role": "", "who": "" }, "returnsNames": [] },
-    "identifier": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
+    "hasModuleRole": {
+      "tags": { "role": "", "who": "", "_0": "" },
+      "returnNames": ["_0"]
+    },
+    "hasRole": {
+      "tags": { "role": "", "account": "", "_0": "" },
+      "returnNames": ["_0"]
+    },
+    "identifier": { "tags": { "_0": "" }, "returnNames": ["_0"] },
     "init": {
       "tags": {
         "orchestrator_": "",
@@ -37,27 +82,44 @@
         "metadata": "",
         "configData": ""
       },
-      "returnsNames": []
+      "returnNames": []
+    },
+    "init2": {
+      "tags": { "orchestrator_": "", "dependencyData": "" },
+      "returnNames": []
     },
     "isTrustedForwarder": {
       "tags": { "forwarder": "", "_0": "" },
-      "returnsNames": ["_0"]
+      "returnNames": ["_0"]
     },
-    "orchestrator": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
+    "orchestrator": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "renounceRole": {
+      "tags": { "role": "", "callerConfirmation": "" },
+      "returnNames": []
+    },
     "revokeGlobalRole": {
       "tags": { "role": "", "target": "" },
-      "returnsNames": []
+      "returnNames": []
     },
+    "revokeModuleRole": {
+      "tags": { "role": "", "addr": "" },
+      "returnNames": []
+    },
+    "revokeRole": { "tags": { "role": "", "account": "" }, "returnNames": [] },
     "revokeRoleFromModule": {
       "tags": { "role": "", "target": "" },
-      "returnsNames": []
+      "returnNames": []
     },
-    "title": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
+    "supportsInterface": {
+      "tags": { "interfaceId": "", "_0": "" },
+      "returnNames": ["_0"]
+    },
+    "title": { "tags": { "_0": "" }, "returnNames": ["_0"] },
     "transferAdminRole": {
       "tags": { "roleId": "", "newAdmin": "" },
-      "returnsNames": []
+      "returnNames": []
     },
-    "url": { "tags": { "_0": "" }, "returnsNames": ["_0"] },
-    "version": { "tags": { "_0": "", "_1": "" }, "returnsNames": ["_0", "_1"] }
+    "url": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "version": { "tags": { "_0": "", "_1": "" }, "returnNames": ["_0", "_1"] }
   }
 }

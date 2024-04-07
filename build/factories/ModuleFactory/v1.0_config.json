@@ -10,12 +10,21 @@
         "metadata": "",
         "beacon": ""
       },
-      "returnsNames": []
+      "returnNames": []
     },
     "ModuleCreated": {
       "tags": { "orchestrator": "", "module": "", "identifier": "" },
-      "returnsNames": []
+      "returnNames": []
     },
+    "OwnershipTransferStarted": {
+      "tags": { "previousOwner": "", "newOwner": "" },
+      "returnNames": []
+    },
+    "OwnershipTransferred": {
+      "tags": { "previousOwner": "", "newOwner": "" },
+      "returnNames": []
+    },
+    "acceptOwnership": { "tags": {}, "returnNames": [] },
     "createModule": {
       "tags": {
         "majorVersion": "",
@@ -24,9 +33,10 @@
         "title": "",
         "metadata": "",
         "orchestrator": "",
-        "configData": ""
+        "configData": "",
+        "_0": ""
       },
-      "returnsNames": []
+      "returnNames": ["_0"]
     },
     "getBeaconAndId": {
       "tags": {
@@ -38,8 +48,14 @@
         "_0": "",
         "_1": ""
       },
-      "returnsNames": ["_0", "_1"]
+      "returnNames": ["_0", "_1"]
     },
+    "isTrustedForwarder": {
+      "tags": { "forwarder": "", "_0": "" },
+      "returnNames": ["_0"]
+    },
+    "owner": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "pendingOwner": { "tags": { "_0": "" }, "returnNames": ["_0"] },
     "registerMetadata": {
       "tags": {
         "majorVersion": "",
@@ -49,7 +65,14 @@
         "metadata": "",
         "beacon": ""
       },
-      "returnsNames": []
-    }
+      "returnNames": []
+    },
+    "renounceOwnership": { "tags": {}, "returnNames": [] },
+    "supportsInterface": {
+      "tags": { "interfaceId": "", "_0": "" },
+      "returnNames": ["_0"]
+    },
+    "transferOwnership": { "tags": { "newOwner": "" }, "returnNames": [] },
+    "trustedForwarder": { "tags": { "_0": "" }, "returnNames": ["_0"] }
   }
 }
