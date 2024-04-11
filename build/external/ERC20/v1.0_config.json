@@ -11,7 +11,7 @@
     },
     "allowance": {
       "tags": { "owner": "", "spender": "", "amount": "decimals" },
-      "returnNames": ["decimals"]
+      "returnNames": ["amount"]
     },
     "approve": {
       "tags": { "spender": "", "amount": "decimals", "_0": "" },
