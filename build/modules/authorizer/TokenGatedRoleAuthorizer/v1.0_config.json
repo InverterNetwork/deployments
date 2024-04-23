@@ -1,8 +1,16 @@
 {
   "deploymentArgs": {
     "configData": [
-      { "name": "", "type": "", "description": "" },
-      { "name": "", "type": "", "description": "" }
+      {
+        "name": "initialOwner",
+        "type": "address",
+        "description": "The initial owner of the workflow"
+      },
+      {
+        "name": "initialManager",
+        "type": "address",
+        "description": "The initial manager of the workflow"
+      }
     ],
     "dependencyData": []
   },
