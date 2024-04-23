@@ -1,5 +1,11 @@
 {
-  "deploymentArgs": { "configData": [], "dependencyData": [] },
+  "deploymentArgs": {
+    "configData": [
+      { "name": "", "type": "", "description": "" },
+      { "name": "", "type": "", "description": "" }
+    ],
+    "dependencyData": []
+  },
   "abiMembers": {
     "ChangedTokenGating": {
       "tags": { "role": "", "newValue": "" },

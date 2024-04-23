@@ -1,5 +1,19 @@
 {
-  "deploymentArgs": { "configData": [], "dependencyData": [] },
+  "deploymentArgs": {
+    "configData": [
+      {
+        "name": "initialOwner",
+        "type": "adress",
+        "description": "The initial owner of the workflow"
+      },
+      {
+        "name": "initialManager",
+        "type": "address",
+        "description": "The initial manager of the workflow"
+      }
+    ],
+    "dependencyData": []
+  },
   "abiMembers": {
     "Initialized": { "tags": { "version": "" }, "returnNames": [] },
     "ModuleInitialized": {

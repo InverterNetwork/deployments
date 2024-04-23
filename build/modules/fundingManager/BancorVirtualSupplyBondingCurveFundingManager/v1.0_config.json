@@ -1,5 +1,75 @@
 {
-  "deploymentArgs": { "configData": [], "dependencyData": [] },
+  "deploymentArgs": {
+    "configData": [
+      {
+        "name": "name",
+        "type": "bytes32",
+        "description": "The name of the issuance token"
+      },
+      {
+        "name": "symbol",
+        "type": "bytes32",
+        "description": "The symbol of the issuance token"
+      },
+      {
+        "name": "decimals",
+        "type": "uint8",
+        "description": "The decimals used within the issuance token"
+      },
+      {
+        "name": "formula",
+        "type": "address",
+        "description": "The formula contract used to calculate the issucance and redemption rate"
+      },
+      {
+        "name": "reserveRatioForBuying",
+        "type": "uint32",
+        "description": "The reserve ratio, expressed in PPM, used for issuance on the bonding curve"
+      },
+      {
+        "name": "reserveRatioForSelling",
+        "type": "uint32",
+        "description": "The reserve ratio, expressed in PPM, used for redeeming on the bonding curve"
+      },
+      {
+        "name": "buyFee",
+        "type": "uint256",
+        "description": "The buy fee expressed in base points"
+      },
+      {
+        "name": "sellFee",
+        "type": "uint256",
+        "description": "The sell fee expressed in base points"
+      },
+      {
+        "name": "buyIsOpen",
+        "type": "bool",
+        "description": "The indicator used for enabling/disabling the buying functionalities on deployment"
+      },
+      {
+        "name": "sellIsOpen",
+        "type": "bool",
+        "description": "The indicator used for enabling/disabling the selling functionalties on deployment"
+      },
+      {
+        "name": "initialTokenSupply",
+        "type": "uint256",
+        "description": "The initial virtual issuance token supply"
+      },
+      {
+        "name": "initialCollateralSupply",
+        "type": "uint256",
+        "description": "The initial virtual collateral token supply"
+      }
+      },
+      {
+        "name": "acceptedToken",
+        "type": "address",
+        "description": "The address of the token that will be deposited to the funding manager"
+      }
+    ],
+    "dependencyData": []
+  },
   "abiMembers": {
     "Approval": {
       "tags": { "owner": "", "spender": "", "value": "" },

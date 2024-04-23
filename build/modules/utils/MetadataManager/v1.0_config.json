@@ -1,5 +1,60 @@
 {
-  "deploymentArgs": { "configData": [], "dependencyData": [] },
+  "deploymentArgs": {
+    "configData": [
+      {
+        "name": "name",
+        "type": "string",
+        "description": "The (user-) name of the manager"
+      },
+      {
+        "name": "account",
+        "type": "address",
+        "description": "The address of the manager"
+      },
+      {
+        "name": "twitterHandle",
+        "type": "address",
+        "description": "The twitter handle of the manager"
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "description": "The name of the workflow/orchestrator"
+      },
+      {
+        "name": "descriptionShort",
+        "type": "string",
+        "description": "The short description of the workflow/orchestrator"
+      },
+      {
+        "name": "descriptionLong",
+        "type": "string",
+        "description": "The long description of the workflow/orchestrator"
+      },
+      {
+        "name": "externalMedias",
+        "type": "string[]",
+        "description": "An array of links to external medias"
+      },
+      {
+        "name": "categories",
+        "type": "string[]",
+        "description": "An array of categories of the workflow/orchestator"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "description": "The (user-) name of the member"
+      },
+      {
+        "name": "account",
+        "type": "address",
+        "description": "The address of the member"
+      },
+      { "name": "url", "type": "string", "description": "A url of the member" }
+    ],
+    "dependencyData": []
+  },
   "abiMembers": {
     "Initialized": { "tags": { "version": "" }, "returnNames": [] },
     "ManagerMetadataUpdated": {

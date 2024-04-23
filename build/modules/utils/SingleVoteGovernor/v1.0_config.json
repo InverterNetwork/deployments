@@ -1,5 +1,24 @@
 {
-  "deploymentArgs": { "configData": [], "dependencyData": [] },
+  "deploymentArgs": {
+    "configData": [
+      {
+        "name": "voters",
+        "type": "address[]",
+        "description": "An array of addresses which are the eligible voters."
+      },
+      {
+        "name": "threshold",
+        "type": "uint256",
+        "description": "The amount of voters that are needed for a vote to pass."
+      },
+      {
+        "name": "voteDuration",
+        "type": "uint256",
+        "description": "The duration of a vote. Needs to be more than 1 day but less than 2 weeks."
+      }
+    ],
+    "dependencyData": []
+  },
   "abiMembers": {
     "Initialized": { "tags": { "version": "" }, "returnNames": [] },
     "ModuleInitialized": {
