@@ -60,7 +60,6 @@
         "name": "initialCollateralSupply",
         "type": "uint256",
         "description": "The initial virtual collateral token supply"
-      }
       },
       {
         "name": "acceptedToken",
