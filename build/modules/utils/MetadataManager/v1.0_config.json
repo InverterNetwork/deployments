@@ -2,17 +2,17 @@
   "deploymentArgs": {
     "configData": [
       {
-        "name": "name",
+        "name": "managerName",
         "type": "string",
         "description": "The (user-) name of the manager"
       },
       {
-        "name": "account",
+        "name": "managerAccount",
         "type": "address",
         "description": "The address of the manager"
       },
       {
-        "name": "twitterHandle",
+        "name": "managerTwitterHandle",
         "type": "string",
         "description": "The twitter handle of the manager"
       },
@@ -42,16 +42,16 @@
         "description": "An array of categories of the workflow/orchestator"
       },
       {
-        "name": "name",
+        "name": "memberName",
         "type": "string",
         "description": "The (user-) name of the member"
       },
       {
-        "name": "account",
+        "name": "memberAccount",
         "type": "address",
         "description": "The address of the member"
       },
-      { "name": "url", "type": "string", "description": "A url of the member" }
+      { "name": "memberUrl", "type": "string", "description": "A url of the member" }
     ],
     "dependencyData": []
   },
