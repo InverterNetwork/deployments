@@ -64,7 +64,8 @@
       {
         "name": "acceptedToken",
         "type": "address",
-        "description": "The address of the token that will be deposited to the funding manager"
+        "description": "The address of the token that will be deposited to the funding manager",
+        "tags": "decimals"
       }
     ],
     "dependencyData": []
