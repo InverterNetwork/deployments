@@ -1,42 +1,45 @@
 {
   "deploymentArgs": { "configData": [], "dependencyData": [] },
   "abiMembers": {
-    "Constructed": { "tags": { "majorVersion": "" }, "returnNames": [] },
+    "Constructed": { "tags": { "majorVersion": [""] }, "returnNames": [] },
     "OwnershipTransferStarted": {
-      "tags": { "previousOwner": "", "newOwner": "" },
+      "tags": { "previousOwner": [""], "newOwner": [""] },
       "returnNames": []
     },
     "OwnershipTransferred": {
-      "tags": { "previousOwner": "", "newOwner": "" },
+      "tags": { "previousOwner": [""], "newOwner": [""] },
       "returnNames": []
     },
     "ShutdownInitiated": { "tags": {}, "returnNames": [] },
     "ShutdownReversed": { "tags": {}, "returnNames": [] },
     "Upgraded": {
-      "tags": { "implementation": "", "newMinorVersion": "" },
+      "tags": { "implementation": [""], "newMinorVersion": [""] },
       "returnNames": []
     },
     "acceptOwnership": { "tags": {}, "returnNames": [] },
-    "emergencyModeActive": { "tags": { "_0": "" }, "returnNames": ["_0"] },
-    "implementation": { "tags": { "_0": "" }, "returnNames": ["_0"] },
-    "owner": { "tags": { "_0": "" }, "returnNames": ["_0"] },
-    "pendingOwner": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "emergencyModeActive": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "implementation": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "owner": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "pendingOwner": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "renounceOwnership": { "tags": {}, "returnNames": [] },
     "restartImplementation": { "tags": {}, "returnNames": [] },
     "shutDownImplementation": { "tags": {}, "returnNames": [] },
     "supportsInterface": {
-      "tags": { "interfaceId": "", "_0": "" },
+      "tags": { "interfaceId": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
-    "transferOwnership": { "tags": { "newOwner": "" }, "returnNames": [] },
+    "transferOwnership": { "tags": { "newOwner": [""] }, "returnNames": [] },
     "upgradeTo": {
       "tags": {
-        "newImplementation": "",
-        "newMinorVersion": "",
-        "overrideShutdown": ""
+        "newImplementation": [""],
+        "newMinorVersion": [""],
+        "overrideShutdown": [""]
       },
       "returnNames": []
     },
-    "version": { "tags": { "_0": "", "_1": "" }, "returnNames": ["_0", "_1"] }
+    "version": {
+      "tags": { "_0": [""], "_1": [""] },
+      "returnNames": ["_0", "_1"]
+    }
   }
 }

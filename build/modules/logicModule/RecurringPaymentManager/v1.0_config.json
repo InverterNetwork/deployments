@@ -10,141 +10,155 @@
     "dependencyData": []
   },
   "abiMembers": {
-    "Initialized": { "tags": { "version": "" }, "returnNames": [] },
+    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
     "ModuleInitialized": {
       "tags": {
-        "parentOrchestrator": "",
-        "moduleTitle": "",
-        "majorVersion": "",
-        "minorVersion": ""
+        "parentOrchestrator": [""],
+        "moduleTitle": [""],
+        "majorVersion": [""],
+        "minorVersion": [""]
       },
       "returnNames": []
     },
     "PaymentOrderAdded": {
-      "tags": { "recipient": "", "amount": "" },
+      "tags": { "recipient": [""], "amount": [""] },
       "returnNames": []
     },
     "RecurringPaymentAdded": {
       "tags": {
-        "recurringPaymentId": "",
-        "amount": "",
-        "startEpoch": "",
-        "lastTriggeredEpoch": "",
-        "recipient": ""
+        "recurringPaymentId": [""],
+        "amount": [""],
+        "startEpoch": [""],
+        "lastTriggeredEpoch": [""],
+        "recipient": [""]
       },
       "returnNames": []
     },
     "RecurringPaymentRemoved": {
-      "tags": { "recurringPaymentId": "" },
+      "tags": { "recurringPaymentId": [""] },
       "returnNames": []
     },
     "RecurringPaymentsTriggered": {
-      "tags": { "currentEpoch": "" },
+      "tags": { "currentEpoch": [""] },
       "returnNames": []
     },
     "addRecurringPayment": {
-      "tags": { "amount": "", "startEpoch": "", "recipient": "", "id": "" },
+      "tags": {
+        "amount": [""],
+        "startEpoch": [""],
+        "recipient": [""],
+        "id": [""]
+      },
       "returnNames": ["id"]
     },
-    "amountPaid": { "tags": { "amount": "" }, "returnNames": [] },
+    "amountPaid": { "tags": { "amount": [""] }, "returnNames": [] },
     "collectPaymentOrders": {
       "tags": {
-        "_0": "",
-        "_1": "",
-        "recipient": "",
-        "amount": "",
-        "createdAt": "",
-        "dueTo": ""
+        "_0": [""],
+        "_1": [""],
+        "recipient": [""],
+        "amount": [""],
+        "createdAt": [""],
+        "dueTo": [""]
       },
       "returnNames": ["_0", "_1"]
     },
     "decoder": {
-      "tags": { "data": "", "requirement": "" },
+      "tags": { "data": [""], "requirement": [""] },
       "returnNames": ["requirement"]
     },
-    "getCurrentEpoch": { "tags": { "epoch": "" }, "returnNames": ["epoch"] },
+    "getCurrentEpoch": { "tags": { "epoch": [""] }, "returnNames": ["epoch"] },
     "getEpochFromTimestamp": {
-      "tags": { "timestamp": "", "epoch": "" },
+      "tags": { "timestamp": [""], "epoch": [""] },
       "returnNames": ["epoch"]
     },
-    "getEpochLength": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "getEpochLength": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "getFutureEpoch": {
-      "tags": { "xEpochsInTheFuture": "", "futureEpoch": "" },
+      "tags": { "xEpochsInTheFuture": [""], "futureEpoch": [""] },
       "returnNames": ["futureEpoch"]
     },
     "getPreviousPaymentId": {
-      "tags": { "id": "", "_0": "" },
+      "tags": { "id": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
     "getRecurringPaymentInformation": {
       "tags": {
-        "id": "",
-        "_0": "",
-        "amount": "",
-        "startEpoch": "",
-        "lastTriggeredEpoch": "",
-        "recipient": ""
+        "id": [""],
+        "_0": [""],
+        "amount": [""],
+        "startEpoch": [""],
+        "lastTriggeredEpoch": [""],
+        "recipient": [""]
       },
       "returnNames": ["_0"]
     },
     "grantModuleRole": {
-      "tags": { "role": "", "addr": "" },
+      "tags": { "role": [""], "addr": [""] },
       "returnNames": []
     },
-    "identifier": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "identifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "init": {
       "tags": {
-        "orchestrator_": "",
-        "majorVersion": "",
-        "minorVersion": "",
-        "url": "",
-        "title": "",
-        "metadata": "",
-        "configData": ""
+        "orchestrator_": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "configData": [""]
       },
       "returnNames": []
     },
     "init2": {
-      "tags": { "orchestrator_": "", "dependencyData": "" },
+      "tags": { "orchestrator_": [""], "dependencyData": [""] },
       "returnNames": []
     },
     "isExistingRecurringPaymentId": {
-      "tags": { "id": "", "_0": "" },
+      "tags": { "id": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
     "isTrustedForwarder": {
-      "tags": { "forwarder": "", "_0": "" },
+      "tags": { "forwarder": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
-    "listRecurringPaymentIds": { "tags": { "_0": "" }, "returnNames": ["_0"] },
-    "orchestrator": { "tags": { "_0": "" }, "returnNames": ["_0"] },
-    "outstandingTokenAmount": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "listRecurringPaymentIds": {
+      "tags": { "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "outstandingTokenAmount": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "paymentOrders": {
       "tags": {
-        "_0": "",
-        "recipient": "",
-        "amount": "",
-        "createdAt": "",
-        "dueTo": ""
+        "_0": [""],
+        "recipient": [""],
+        "amount": [""],
+        "createdAt": [""],
+        "dueTo": [""]
       },
       "returnNames": ["_0"]
     },
     "removeRecurringPayment": {
-      "tags": { "prevId": "", "id": "" },
+      "tags": { "prevId": [""], "id": [""] },
       "returnNames": []
     },
     "revokeModuleRole": {
-      "tags": { "role": "", "addr": "" },
+      "tags": { "role": [""], "addr": [""] },
       "returnNames": []
     },
     "supportsInterface": {
-      "tags": { "interfaceId": "", "_0": "" },
+      "tags": { "interfaceId": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
-    "title": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "trigger": { "tags": {}, "returnNames": [] },
-    "triggerFor": { "tags": { "startId": "", "endId": "" }, "returnNames": [] },
-    "url": { "tags": { "_0": "" }, "returnNames": ["_0"] },
-    "version": { "tags": { "_0": "", "_1": "" }, "returnNames": ["_0", "_1"] }
+    "triggerFor": {
+      "tags": { "startId": [""], "endId": [""] },
+      "returnNames": []
+    },
+    "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "version": {
+      "tags": { "_0": [""], "_1": [""] },
+      "returnNames": ["_0", "_1"]
+    }
   }
 }

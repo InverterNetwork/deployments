@@ -3,207 +3,210 @@
   "abiMembers": {
     "BountyAdded": {
       "tags": {
-        "bountyId": "",
-        "minimumPayoutAmount": "decimals",
-        "maximumPayoutAmount": "decimals",
-        "details": "any"
+        "bountyId": [""],
+        "minimumPayoutAmount": ["decimals"],
+        "maximumPayoutAmount": ["decimals"],
+        "details": ["any"]
       },
       "returnNames": []
     },
-    "BountyLocked": { "tags": { "bountyId": "" }, "returnNames": [] },
+    "BountyLocked": { "tags": { "bountyId": [""] }, "returnNames": [] },
     "BountyUpdated": {
-      "tags": { "bountyId": "", "details": "any" },
+      "tags": { "bountyId": [""], "details": ["any"] },
       "returnNames": []
     },
     "ClaimAdded": {
       "tags": {
-        "claimId": "",
-        "bountyId": "",
-        "addr": "",
-        "claimAmount": "decimals",
-        "contributors": "",
-        "details": "any"
+        "claimId": [""],
+        "bountyId": [""],
+        "addr": [""],
+        "claimAmount": ["decimals"],
+        "contributors": [""],
+        "details": ["any"]
       },
       "returnNames": []
     },
     "ClaimContributorsUpdated": {
       "tags": {
-        "claimId": "",
-        "addr": "",
-        "claimAmount": "decimals",
-        "contributors": ""
+        "claimId": [""],
+        "addr": [""],
+        "claimAmount": ["decimals"],
+        "contributors": [""]
       },
       "returnNames": []
     },
     "ClaimDetailsUpdated": {
-      "tags": { "claimId": "", "details": "any" },
+      "tags": { "claimId": [""], "details": ["any"] },
       "returnNames": []
     },
-    "ClaimVerified": { "tags": { "claimId": "" }, "returnNames": [] },
-    "Initialized": { "tags": { "version": "" }, "returnNames": [] },
+    "ClaimVerified": { "tags": { "claimId": [""] }, "returnNames": [] },
+    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
     "ModuleInitialized": {
       "tags": {
-        "parentOrchestrator": "",
-        "moduleTitle": "",
-        "majorVersion": "",
-        "minorVersion": ""
+        "parentOrchestrator": [""],
+        "moduleTitle": [""],
+        "majorVersion": [""],
+        "minorVersion": [""]
       },
       "returnNames": []
     },
     "PaymentOrderAdded": {
-      "tags": { "recipient": "", "amount": "decimals" },
+      "tags": { "recipient": [""], "amount": ["decimals"] },
       "returnNames": []
     },
-    "BOUNTY_ISSUER_ROLE": { "tags": { "_0": "" }, "returnNames": ["_0"] },
-    "CLAIMANT_ROLE": { "tags": { "_0": "" }, "returnNames": ["_0"] },
-    "VERIFIER_ROLE": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "BOUNTY_ISSUER_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "CLAIMANT_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "VERIFIER_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "addBounty": {
       "tags": {
-        "minimumPayoutAmount": "decimals",
-        "maximumPayoutAmount": "decimals",
-        "details": "any",
-        "id": ""
+        "minimumPayoutAmount": ["decimals"],
+        "maximumPayoutAmount": ["decimals"],
+        "details": ["any"],
+        "id": [""]
       },
       "returnNames": ["id"]
     },
     "addClaim": {
       "tags": {
-        "bountyId": "",
-        "addr": "",
-        "claimAmount": "decimals",
-        "contributors": "",
-        "details": "any",
-        "id": ""
+        "bountyId": [""],
+        "addr": [""],
+        "claimAmount": ["decimals"],
+        "contributors": [""],
+        "details": ["any"],
+        "id": [""]
       },
       "returnNames": ["id"]
     },
-    "amountPaid": { "tags": { "amount": "decimals" }, "returnNames": [] },
+    "amountPaid": { "tags": { "amount": ["decimals"] }, "returnNames": [] },
     "collectPaymentOrders": {
       "tags": {
-        "_0": "",
-        "_1": "",
-        "recipient": "",
-        "amount": "decimals",
-        "createdAt": "",
-        "dueTo": ""
+        "_0": [""],
+        "_1": [""],
+        "recipient": [""],
+        "amount": ["decimals"],
+        "createdAt": [""],
+        "dueTo": [""]
       },
       "returnNames": ["_0", "_1"]
     },
     "decoder": {
-      "tags": { "data": "", "requirement": "" },
+      "tags": { "data": [""], "requirement": [""] },
       "returnNames": ["requirement"]
     },
     "getBountyInformation": {
       "tags": {
-        "bountyId": "",
-        "_0": "",
-        "minimumPayoutAmount": "decimals",
-        "maximumPayoutAmount": "decimals",
-        "details": "any",
-        "locked": ""
+        "bountyId": [""],
+        "_0": [""],
+        "minimumPayoutAmount": ["decimals"],
+        "maximumPayoutAmount": ["decimals"],
+        "details": ["any"],
+        "locked": [""]
       },
       "returnNames": ["_0"]
     },
     "getClaimInformation": {
       "tags": {
-        "claimId": "",
-        "_0": "",
-        "bountyId": "",
-        "addr": "",
-        "claimAmount": "decimals",
-        "contributors": "",
-        "details": "any",
-        "claimed": ""
+        "claimId": [""],
+        "_0": [""],
+        "bountyId": [""],
+        "addr": [""],
+        "claimAmount": ["decimals"],
+        "contributors": [""],
+        "details": ["any"],
+        "claimed": [""]
       },
       "returnNames": ["_0"]
     },
     "grantModuleRole": {
-      "tags": { "role": "", "addr": "" },
+      "tags": { "role": [""], "addr": [""] },
       "returnNames": []
     },
-    "identifier": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "identifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "init": {
       "tags": {
-        "orchestrator_": "",
-        "majorVersion": "",
-        "minorVersion": "",
-        "url": "",
-        "title": "",
-        "metadata": ""
+        "orchestrator_": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""]
       },
       "returnNames": []
     },
     "init2": { "tags": {}, "returnNames": [] },
     "isExistingBountyId": {
-      "tags": { "bountyId": "", "_0": "" },
+      "tags": { "bountyId": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
     "isExistingClaimId": {
-      "tags": { "claimId": "", "_0": "" },
+      "tags": { "claimId": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
     "isTrustedForwarder": {
-      "tags": { "forwarder": "", "_0": "" },
+      "tags": { "forwarder": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
-    "listBountyIds": { "tags": { "_0": "" }, "returnNames": ["_0"] },
-    "listClaimIds": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "listBountyIds": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "listClaimIds": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "listClaimIdsForContributorAddress": {
-      "tags": { "contributorAddrs": "", "_0": "" },
+      "tags": { "contributorAddrs": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
-    "lockBounty": { "tags": { "bountyId": "" }, "returnNames": [] },
-    "orchestrator": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "lockBounty": { "tags": { "bountyId": [""] }, "returnNames": [] },
+    "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "outstandingTokenAmount": {
-      "tags": { "amount": "decimals" },
+      "tags": { "amount": ["decimals"] },
       "returnNames": ["amount"]
     },
     "paymentOrders": {
       "tags": {
-        "_0": "",
-        "recipient": "",
-        "amount": "decimals",
-        "createdAt": "",
-        "dueTo": ""
+        "_0": [""],
+        "recipient": [""],
+        "amount": ["decimals"],
+        "createdAt": [""],
+        "dueTo": [""]
       },
       "returnNames": ["_0"]
     },
     "revokeModuleRole": {
-      "tags": { "role": "", "addr": "" },
+      "tags": { "role": [""], "addr": [""] },
       "returnNames": []
     },
     "supportsInterface": {
-      "tags": { "interfaceId": "", "_0": "" },
+      "tags": { "interfaceId": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
-    "title": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "updateBounty": {
-      "tags": { "bountyId": "", "details": "any" },
+      "tags": { "bountyId": [""], "details": ["any"] },
       "returnNames": []
     },
     "updateClaimContributors": {
       "tags": {
-        "claimId": "",
-        "addr": "",
-        "claimAmount": "decimals",
-        "contributors": ""
+        "claimId": [""],
+        "addr": [""],
+        "claimAmount": ["decimals"],
+        "contributors": [""]
       },
       "returnNames": []
     },
     "updateClaimDetails": {
-      "tags": { "claimId": "", "details": "any" },
+      "tags": { "claimId": [""], "details": ["any"] },
       "returnNames": []
     },
-    "url": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "verifyClaim": {
       "tags": {
-        "claimId": "",
-        "addr": "",
-        "claimAmount": "decimals",
-        "contributors": ""
+        "claimId": [""],
+        "addr": [""],
+        "claimAmount": ["decimals"],
+        "contributors": [""]
       },
       "returnNames": []
     },
-    "version": { "tags": { "_0": "", "_1": "" }, "returnNames": ["_0", "_1"] }
+    "version": {
+      "tags": { "_0": [""], "_1": [""] },
+      "returnNames": ["_0", "_1"]
+    }
   }
 }

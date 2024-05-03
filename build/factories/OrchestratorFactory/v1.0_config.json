@@ -2,48 +2,51 @@
   "deploymentArgs": { "configData": [], "dependencyData": [] },
   "abiMembers": {
     "OrchestratorCreated": {
-      "tags": { "orchestratorId": "", "orchestratorAddress": "" },
+      "tags": { "orchestratorId": [""], "orchestratorAddress": [""] },
       "returnNames": []
     },
     "createOrchestrator": {
       "tags": {
-        "owner": "",
-        "token": "",
-        "orchestratorConfig": "",
-        "majorVersion": "",
-        "minorVersion": "",
-        "url": "",
-        "title": "",
-        "metadata": "",
-        "configData": "",
-        "dependencyData": "",
-        "fundingManagerConfig": "",
-        "authorizerConfig": "",
-        "paymentProcessorConfig": "",
-        "moduleConfigs": "",
-        "_0": ""
+        "owner": [""],
+        "token": [""],
+        "orchestratorConfig": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "configData": [""],
+        "dependencyData": [""],
+        "fundingManagerConfig": [""],
+        "authorizerConfig": [""],
+        "paymentProcessorConfig": [""],
+        "moduleConfigs": [""],
+        "_0": [""]
       },
       "returnNames": ["_0"]
     },
     "decoder": {
-      "tags": { "data": "", "requirement": "" },
+      "tags": { "data": [""], "requirement": [""] },
       "returnNames": ["requirement"]
     },
     "getOrchestratorByID": {
-      "tags": { "id": "", "_0": "" },
+      "tags": { "id": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
-    "getOrchestratorIDCounter": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "getOrchestratorIDCounter": {
+      "tags": { "_0": [""] },
+      "returnNames": ["_0"]
+    },
     "isTrustedForwarder": {
-      "tags": { "forwarder": "", "_0": "" },
+      "tags": { "forwarder": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
-    "moduleFactory": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "moduleFactory": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "supportsInterface": {
-      "tags": { "interfaceId": "", "_0": "" },
+      "tags": { "interfaceId": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
-    "target": { "tags": { "_0": "" }, "returnNames": ["_0"] },
-    "trustedForwarder": { "tags": { "_0": "" }, "returnNames": ["_0"] }
+    "target": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] }
   }
 }

@@ -51,122 +51,139 @@
         "type": "address",
         "description": "The address of the member"
       },
-      { "name": "memberUrl", "type": "string", "description": "A url of the member" }
+      {
+        "name": "memberUrl",
+        "type": "string",
+        "description": "A url of the member"
+      }
     ],
     "dependencyData": []
   },
   "abiMembers": {
-    "Initialized": { "tags": { "version": "" }, "returnNames": [] },
+    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
     "ManagerMetadataUpdated": {
-      "tags": { "name": "", "account": "", "twitterHandle": "" },
+      "tags": { "name": [""], "account": [""], "twitterHandle": [""] },
       "returnNames": []
     },
     "ModuleInitialized": {
       "tags": {
-        "parentOrchestrator": "",
-        "moduleTitle": "",
-        "majorVersion": "",
-        "minorVersion": ""
+        "parentOrchestrator": [""],
+        "moduleTitle": [""],
+        "majorVersion": [""],
+        "minorVersion": [""]
       },
       "returnNames": []
     },
     "OrchestratorMetadataUpdated": {
       "tags": {
-        "title": "",
-        "descriptionShort": "",
-        "descriptionLong": "",
-        "externalMedias": "",
-        "categories": ""
+        "title": [""],
+        "descriptionShort": [""],
+        "descriptionLong": [""],
+        "externalMedias": [""],
+        "categories": [""]
       },
       "returnNames": []
     },
     "TeamMetadataUpdated": {
-      "tags": { "name": "", "account": "", "url": "", "members": "" },
+      "tags": { "name": [""], "account": [""], "url": [""], "members": [""] },
       "returnNames": []
     },
     "decoder": {
-      "tags": { "data": "", "requirement": "" },
+      "tags": { "data": [""], "requirement": [""] },
       "returnNames": ["requirement"]
     },
     "getManagerMetadata": {
-      "tags": { "_0": "", "name": "", "account": "", "twitterHandle": "" },
+      "tags": {
+        "_0": [""],
+        "name": [""],
+        "account": [""],
+        "twitterHandle": [""]
+      },
       "returnNames": ["_0"]
     },
     "getOrchestratorMetadata": {
       "tags": {
-        "_0": "",
-        "title": "",
-        "descriptionShort": "",
-        "descriptionLong": "",
-        "externalMedias": "",
-        "categories": ""
+        "_0": [""],
+        "title": [""],
+        "descriptionShort": [""],
+        "descriptionLong": [""],
+        "externalMedias": [""],
+        "categories": [""]
       },
       "returnNames": ["_0"]
     },
     "getTeamMetadata": {
-      "tags": { "_0": "", "name": "", "account": "", "url": "" },
+      "tags": { "_0": [""], "name": [""], "account": [""], "url": [""] },
       "returnNames": ["_0"]
     },
     "grantModuleRole": {
-      "tags": { "role": "", "addr": "" },
+      "tags": { "role": [""], "addr": [""] },
       "returnNames": []
     },
-    "identifier": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "identifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "init": {
       "tags": {
-        "orchestrator_": "",
-        "majorVersion": "",
-        "minorVersion": "",
-        "url": "",
-        "title": "",
-        "metadata": "",
-        "configData": ""
+        "orchestrator_": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "configData": [""]
       },
       "returnNames": []
     },
     "init2": {
-      "tags": { "orchestrator_": "", "dependencyData": "" },
+      "tags": { "orchestrator_": [""], "dependencyData": [""] },
       "returnNames": []
     },
     "isTrustedForwarder": {
-      "tags": { "forwarder": "", "_0": "" },
+      "tags": { "forwarder": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
-    "orchestrator": { "tags": { "_0": "" }, "returnNames": ["_0"] },
+    "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "revokeModuleRole": {
-      "tags": { "role": "", "addr": "" },
+      "tags": { "role": [""], "addr": [""] },
       "returnNames": []
     },
     "setManagerMetadata": {
       "tags": {
-        "name": "",
-        "account": "",
-        "twitterHandle": "",
-        "managerMetadata_": ""
+        "name": [""],
+        "account": [""],
+        "twitterHandle": [""],
+        "managerMetadata_": [""]
       },
       "returnNames": []
     },
     "setOrchestratorMetadata": {
       "tags": {
-        "title": "",
-        "descriptionShort": "",
-        "descriptionLong": "",
-        "externalMedias": "",
-        "categories": "",
-        "orchestratorMetadata_": ""
+        "title": [""],
+        "descriptionShort": [""],
+        "descriptionLong": [""],
+        "externalMedias": [""],
+        "categories": [""],
+        "orchestratorMetadata_": [""]
       },
       "returnNames": []
     },
     "setTeamMetadata": {
-      "tags": { "name": "", "account": "", "url": "", "teamMetadata_": "" },
+      "tags": {
+        "name": [""],
+        "account": [""],
+        "url": [""],
+        "teamMetadata_": [""]
+      },
       "returnNames": []
     },
     "supportsInterface": {
-      "tags": { "interfaceId": "", "_0": "" },
+      "tags": { "interfaceId": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
-    "title": { "tags": { "_0": "" }, "returnNames": ["_0"] },
-    "url": { "tags": { "_0": "" }, "returnNames": ["_0"] },
-    "version": { "tags": { "_0": "", "_1": "" }, "returnNames": ["_0", "_1"] }
+    "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "version": {
+      "tags": { "_0": [""], "_1": [""] },
+      "returnNames": ["_0", "_1"]
+    }
   }
 }
