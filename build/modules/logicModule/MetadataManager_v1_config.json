@@ -1,5 +1,5 @@
 {
-  "deploymentArgs": {
+  "deploymentInputs": {
     "configData": [
       {
         "name": "managerName",

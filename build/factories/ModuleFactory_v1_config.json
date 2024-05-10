@@ -1,6 +1,7 @@
 {
-  "deploymentArgs": { "configData": [], "dependencyData": [] },
+  "deploymentInputs": { "configData": [], "dependencyData": [] },
   "abiMembers": {
+    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
     "MetadataRegistered": {
       "tags": {
         "majorVersion": [""],
@@ -50,6 +51,8 @@
       },
       "returnNames": ["_0", "_1"]
     },
+    "governor": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "init": { "tags": { "_governor": [""] }, "returnNames": [] },
     "isTrustedForwarder": {
       "tags": { "forwarder": [""], "_0": [""] },
       "returnNames": ["_0"]

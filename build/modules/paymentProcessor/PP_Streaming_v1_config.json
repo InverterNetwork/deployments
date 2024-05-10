@@ -1,11 +1,11 @@
 {
-  "deploymentArgs": { "configData": [], "dependencyData": [] },
+  "deploymentInputs": { "configData": [], "dependencyData": [] },
   "abiMembers": {
     "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
     "InvalidStreamingOrderDiscarded": {
       "tags": {
         "recipient": [""],
-        "amount": [""],
+        "amount": ["decimals"],
         "start": [""],
         "dueTo": [""]
       },
@@ -24,7 +24,7 @@
       "tags": {
         "paymentClient": [""],
         "recipient": [""],
-        "amount": [""],
+        "amount": ["decimals"],
         "createdAt": [""],
         "dueTo": [""],
         "walletId": [""]
@@ -35,7 +35,7 @@
       "tags": {
         "paymentClient": [""],
         "recipient": [""],
-        "amount": [""],
+        "amount": ["decimals"],
         "start": [""],
         "dueTo": [""],
         "walletId": [""]
@@ -47,17 +47,26 @@
       "returnNames": []
     },
     "TokensReleased": {
-      "tags": { "recipient": [""], "token": [""], "amount": [""] },
+      "tags": { "recipient": [""], "token": [""], "amount": ["decimals"] },
+      "returnNames": []
+    },
+    "UnclaimableAmountAdded": {
+      "tags": {
+        "paymentClient": [""],
+        "recipient": [""],
+        "walletId": [""],
+        "amount": ["decimals"]
+      },
       "returnNames": []
     },
     "cancelRunningPayments": { "tags": { "client": [""] }, "returnNames": [] },
     "claimAll": { "tags": { "client": [""] }, "returnNames": [] },
     "claimForSpecificWalletId": {
-      "tags": {
-        "client": [""],
-        "walletId": [""],
-        "retryForUnclaimableAmounts": [""]
-      },
+      "tags": { "client": [""], "walletId": [""] },
+      "returnNames": []
+    },
+    "claimPreviouslyUnclaimable": {
+      "tags": { "client": [""], "receiver": [""] },
       "returnNames": []
     },
     "decoder": {
@@ -74,7 +83,11 @@
       "returnNames": ["_0"]
     },
     "grantModuleRole": {
-      "tags": { "role": [""], "addr": [""] },
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "grantModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
       "returnNames": []
     },
     "identifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
@@ -127,16 +140,15 @@
       "returnNames": []
     },
     "removePaymentForSpecificWalletId": {
-      "tags": {
-        "client": [""],
-        "paymentReceiver": [""],
-        "walletId": [""],
-        "retryForUnclaimableAmounts": [""]
-      },
+      "tags": { "client": [""], "paymentReceiver": [""], "walletId": [""] },
       "returnNames": []
     },
     "revokeModuleRole": {
-      "tags": { "role": [""], "addr": [""] },
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "revokeModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
       "returnNames": []
     },
     "startForSpecificWalletId": {
@@ -154,9 +166,14 @@
     },
     "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "token": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "unclaimable": {
-      "tags": { "client": [""], "paymentReceiver": [""], "_0": [""] },
-      "returnNames": ["_0"]
+      "tags": {
+        "client": [""],
+        "paymentReceiver": [""],
+        "amount": ["decimals"]
+      },
+      "returnNames": ["amount"]
     },
     "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "version": {

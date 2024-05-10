@@ -1,39 +1,36 @@
 {
-  "deploymentArgs": { "configData": [], "dependencyData": [] },
+  "deploymentInputs": { "configData": [], "dependencyData": [] },
   "abiMembers": {
     "Approval": {
-      "tags": { "owner": [""], "spender": [""], "amount": ["decimals"] },
+      "tags": { "owner": [""], "spender": [""], "value": ["decimals"] },
       "returnNames": []
     },
     "Transfer": {
-      "tags": { "from": [""], "to": [""], "amount": ["decimals"] },
+      "tags": { "from": [""], "to": [""], "value": ["decimals"] },
       "returnNames": []
     },
     "allowance": {
-      "tags": { "owner": [""], "spender": [""], "amount": ["decimals"] },
-      "returnNames": ["amount"]
+      "tags": { "owner": [""], "spender": [""], "_0": ["decimals"] },
+      "returnNames": ["_0"]
     },
     "approve": {
-      "tags": { "spender": [""], "amount": ["decimals"], "_0": [""] },
+      "tags": { "spender": [""], "value": ["decimals"], "_0": [""] },
       "returnNames": ["_0"]
     },
     "balanceOf": {
-      "tags": { "account": [""], "amount": ["decimals"] },
-      "returnNames": ["amount"]
+      "tags": { "account": [""], "_0": ["decimals"] },
+      "returnNames": ["_0"]
     },
     "decimals": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "name": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "symbol": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "totalSupply": {
-      "tags": { "amount": ["decimals"] },
-      "returnNames": ["amount"]
-    },
+    "totalSupply": { "tags": { "_0": ["decimals"] }, "returnNames": ["_0"] },
     "transfer": {
-      "tags": { "to": [""], "amount": ["decimals"], "_0": [""] },
+      "tags": { "to": [""], "value": ["decimals"], "_0": [""] },
       "returnNames": ["_0"]
     },
     "transferFrom": {
-      "tags": { "from": [""], "to": [""], "amount": ["decimals"], "_0": [""] },
+      "tags": { "from": [""], "to": [""], "value": ["decimals"], "_0": [""] },
       "returnNames": ["_0"]
     }
   }

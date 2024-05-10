@@ -1,5 +1,5 @@
 {
-  "deploymentArgs": {
+  "deploymentInputs": {
     "configData": [
       {
         "name": "epochLength",
@@ -27,7 +27,7 @@
     "RecurringPaymentAdded": {
       "tags": {
         "recurringPaymentId": [""],
-        "amount": [""],
+        "amount": ["decimals"],
         "startEpoch": [""],
         "lastTriggeredEpoch": [""],
         "recipient": [""]
@@ -44,20 +44,20 @@
     },
     "addRecurringPayment": {
       "tags": {
-        "amount": [""],
+        "amount": ["decimals"],
         "startEpoch": [""],
         "recipient": [""],
         "id": [""]
       },
       "returnNames": ["id"]
     },
-    "amountPaid": { "tags": { "amount": [""] }, "returnNames": [] },
+    "amountPaid": { "tags": { "amount": ["decimals"] }, "returnNames": [] },
     "collectPaymentOrders": {
       "tags": {
         "_0": [""],
         "_1": [""],
         "recipient": [""],
-        "amount": [""],
+        "amount": ["decimals"],
         "createdAt": [""],
         "dueTo": [""]
       },
@@ -85,7 +85,7 @@
       "tags": {
         "id": [""],
         "_0": [""],
-        "amount": [""],
+        "amount": ["decimals"],
         "startEpoch": [""],
         "lastTriggeredEpoch": [""],
         "recipient": [""]
@@ -93,7 +93,11 @@
       "returnNames": ["_0"]
     },
     "grantModuleRole": {
-      "tags": { "role": [""], "addr": [""] },
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "grantModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
       "returnNames": []
     },
     "identifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
@@ -131,7 +135,7 @@
       "tags": {
         "_0": [""],
         "recipient": [""],
-        "amount": [""],
+        "amount": ["decimals"],
         "createdAt": [""],
         "dueTo": [""]
       },
@@ -142,7 +146,11 @@
       "returnNames": []
     },
     "revokeModuleRole": {
-      "tags": { "role": [""], "addr": [""] },
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "revokeModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
       "returnNames": []
     },
     "supportsInterface": {
@@ -155,6 +163,7 @@
       "tags": { "startId": [""], "endId": [""] },
       "returnNames": []
     },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "version": {
       "tags": { "_0": [""], "_1": [""] },

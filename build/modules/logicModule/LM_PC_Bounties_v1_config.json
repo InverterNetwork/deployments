@@ -1,5 +1,5 @@
 {
-  "deploymentArgs": { "configData": [], "dependencyData": [] },
+  "deploymentInputs": { "configData": [], "dependencyData": [] },
   "abiMembers": {
     "BountyAdded": {
       "tags": {
@@ -118,7 +118,11 @@
       "returnNames": ["_0"]
     },
     "grantModuleRole": {
-      "tags": { "role": [""], "addr": [""] },
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "grantModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
       "returnNames": []
     },
     "identifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
@@ -155,8 +159,8 @@
     "lockBounty": { "tags": { "bountyId": [""] }, "returnNames": [] },
     "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "outstandingTokenAmount": {
-      "tags": { "amount": ["decimals"] },
-      "returnNames": ["amount"]
+      "tags": { "_0": ["decimals"] },
+      "returnNames": ["_0"]
     },
     "paymentOrders": {
       "tags": {
@@ -169,7 +173,11 @@
       "returnNames": ["_0"]
     },
     "revokeModuleRole": {
-      "tags": { "role": [""], "addr": [""] },
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "revokeModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
       "returnNames": []
     },
     "supportsInterface": {
@@ -177,6 +185,7 @@
       "returnNames": ["_0"]
     },
     "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "updateBounty": {
       "tags": { "bountyId": [""], "details": ["any"] },
       "returnNames": []

@@ -3,3 +3,5 @@
 
 # Macos Files
 .DS_Store
+
+**/bak/*

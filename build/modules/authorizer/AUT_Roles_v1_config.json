@@ -1,5 +1,5 @@
 {
-  "deploymentArgs": {
+  "deploymentInputs": {
     "configData": [
       {
         "name": "initialOwner",
@@ -74,8 +74,16 @@
       "tags": { "role": [""], "target": [""] },
       "returnNames": []
     },
+    "grantGlobalRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
     "grantModuleRole": {
-      "tags": { "role": [""], "addr": [""] },
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "grantModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
       "returnNames": []
     },
     "grantRole": {
@@ -84,6 +92,10 @@
     },
     "grantRoleFromModule": {
       "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "grantRoleFromModuleBatched": {
+      "tags": { "role": [""], "targets": [""] },
       "returnNames": []
     },
     "hasModuleRole": {
@@ -124,8 +136,16 @@
       "tags": { "role": [""], "target": [""] },
       "returnNames": []
     },
+    "revokeGlobalRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
     "revokeModuleRole": {
-      "tags": { "role": [""], "addr": [""] },
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "revokeModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
       "returnNames": []
     },
     "revokeRole": {
@@ -134,6 +154,10 @@
     },
     "revokeRoleFromModule": {
       "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "revokeRoleFromModuleBatched": {
+      "tags": { "role": [""], "targets": [""] },
       "returnNames": []
     },
     "supportsInterface": {
@@ -145,6 +169,7 @@
       "tags": { "roleId": [""], "newAdmin": [""] },
       "returnNames": []
     },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "version": {
       "tags": { "_0": [""], "_1": [""] },

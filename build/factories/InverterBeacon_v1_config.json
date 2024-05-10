@@ -1,5 +1,5 @@
 {
-  "deploymentArgs": { "configData": [], "dependencyData": [] },
+  "deploymentInputs": { "configData": [], "dependencyData": [] },
   "abiMembers": {
     "Constructed": { "tags": { "majorVersion": [""] }, "returnNames": [] },
     "OwnershipTransferStarted": {

@@ -1,5 +1,5 @@
 {
-  "deploymentArgs": { "configData": [], "dependencyData": [] },
+  "deploymentInputs": { "configData": [], "dependencyData": [] },
   "abiMembers": {
     "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
     "ModuleInitialized": {
@@ -16,7 +16,11 @@
       "returnNames": ["requirement"]
     },
     "grantModuleRole": {
-      "tags": { "role": [""], "addr": [""] },
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "grantModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
       "returnNames": []
     },
     "identifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
@@ -41,7 +45,11 @@
     },
     "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "revokeModuleRole": {
-      "tags": { "role": [""], "addr": [""] },
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "revokeModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
       "returnNames": []
     },
     "supportsInterface": {
@@ -49,6 +57,7 @@
       "returnNames": ["_0"]
     },
     "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "version": {
       "tags": { "_0": [""], "_1": [""] },
