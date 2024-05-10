@@ -1,1 +1,799 @@
-{"abi":[{"type":"function","name":"decoder","inputs":[{"name":"data","type":"bytes","internalType":"bytes"}],"outputs":[{"name":"requirement","type":"bool","internalType":"bool"}],"stateMutability":"pure"},{"type":"function","name":"grantModuleRole","inputs":[{"name":"role","type":"bytes32","internalType":"bytes32"},{"name":"target","type":"address","internalType":"address"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"grantModuleRoleBatched","inputs":[{"name":"role","type":"bytes32","internalType":"bytes32"},{"name":"targets","type":"address[]","internalType":"address[]"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"identifier","inputs":[],"outputs":[{"name":"","type":"bytes32","internalType":"bytes32"}],"stateMutability":"view"},{"type":"function","name":"init","inputs":[{"name":"orchestrator_","type":"address","internalType":"contract IOrchestrator_v1"},{"name":"metadata","type":"tuple","internalType":"struct IModule_v1.Metadata","components":[{"name":"majorVersion","type":"uint256","internalType":"uint256"},{"name":"minorVersion","type":"uint256","internalType":"uint256"},{"name":"url","type":"string","internalType":"string"},{"name":"title","type":"string","internalType":"string"}]},{"name":"","type":"bytes","internalType":"bytes"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"init2","inputs":[{"name":"orchestrator_","type":"address","internalType":"contract IOrchestrator_v1"},{"name":"dependencyData","type":"bytes","internalType":"bytes"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"isTrustedForwarder","inputs":[{"name":"forwarder","type":"address","internalType":"address"}],"outputs":[{"name":"","type":"bool","internalType":"bool"}],"stateMutability":"view"},{"type":"function","name":"orchestrator","inputs":[],"outputs":[{"name":"","type":"address","internalType":"contract IOrchestrator_v1"}],"stateMutability":"view"},{"type":"function","name":"revokeModuleRole","inputs":[{"name":"role","type":"bytes32","internalType":"bytes32"},{"name":"target","type":"address","internalType":"address"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"revokeModuleRoleBatched","inputs":[{"name":"role","type":"bytes32","internalType":"bytes32"},{"name":"targets","type":"address[]","internalType":"address[]"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"supportsInterface","inputs":[{"name":"interfaceId","type":"bytes4","internalType":"bytes4"}],"outputs":[{"name":"","type":"bool","internalType":"bool"}],"stateMutability":"view"},{"type":"function","name":"title","inputs":[],"outputs":[{"name":"","type":"string","internalType":"string"}],"stateMutability":"view"},{"type":"function","name":"trustedForwarder","inputs":[],"outputs":[{"name":"","type":"address","internalType":"address"}],"stateMutability":"view"},{"type":"function","name":"url","inputs":[],"outputs":[{"name":"","type":"string","internalType":"string"}],"stateMutability":"view"},{"type":"function","name":"version","inputs":[],"outputs":[{"name":"","type":"uint256","internalType":"uint256"},{"name":"","type":"uint256","internalType":"uint256"}],"stateMutability":"view"},{"type":"event","name":"Initialized","inputs":[{"name":"version","type":"uint64","indexed":false,"internalType":"uint64"}],"anonymous":false},{"type":"event","name":"ModuleInitialized","inputs":[{"name":"parentOrchestrator","type":"address","indexed":true,"internalType":"address"},{"name":"moduleTitle","type":"string","indexed":true,"internalType":"string"},{"name":"majorVersion","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"minorVersion","type":"uint256","indexed":false,"internalType":"uint256"}],"anonymous":false},{"type":"error","name":"InvalidInitialization","inputs":[]},{"type":"error","name":"Module_OrchestratorCallbackFailed","inputs":[{"name":"funcSig","type":"string","internalType":"string"}]},{"type":"error","name":"Module__CallerNotAuthorized","inputs":[{"name":"role","type":"bytes32","internalType":"bytes32"},{"name":"caller","type":"address","internalType":"address"}]},{"type":"error","name":"Module__CannotCallInit2Again","inputs":[]},{"type":"error","name":"Module__InvalidMetadata","inputs":[]},{"type":"error","name":"Module__InvalidOrchestratorAddress","inputs":[]},{"type":"error","name":"Module__NoDependencyOrMalformedDependencyData","inputs":[]},{"type":"error","name":"Module__OnlyCallableByOrchestrator","inputs":[]},{"type":"error","name":"NotInitializing","inputs":[]}],"bytecode":{"object":"0x","sourceMap":"","linkReferences":{}},"deployedBytecode":{"object":"0x","sourceMap":"","linkReferences":{}},"methodIdentifiers":{"decoder(bytes)":"9e978575","grantModuleRole(bytes32,address)":"6c67e807","grantModuleRoleBatched(bytes32,address[])":"272bbd44","identifier()":"7998a1c4","init(address,(uint256,uint256,string,string),bytes)":"42dfe958","init2(address,bytes)":"9bfdf766","isTrustedForwarder(address)":"572b6c05","orchestrator()":"b74795d9","revokeModuleRole(bytes32,address)":"bcb61920","revokeModuleRoleBatched(bytes32,address[])":"24e30270","supportsInterface(bytes4)":"01ffc9a7","title()":"4a79d50c","trustedForwarder()":"7da0a877","url()":"5600f04f","version()":"54fd4d50"},"rawMetadata":"{\"compiler\":{\"version\":\"0.8.23+commit.f704f362\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"InvalidInitialization\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"funcSig\",\"type\":\"string\"}],\"name\":\"Module_OrchestratorCallbackFailed\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"Module__CallerNotAuthorized\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__CannotCallInit2Again\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__InvalidMetadata\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__InvalidOrchestratorAddress\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__NoDependencyOrMalformedDependencyData\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__OnlyCallableByOrchestrator\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotInitializing\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint64\",\"name\":\"version\",\"type\":\"uint64\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"parentOrchestrator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"string\",\"name\":\"moduleTitle\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"majorVersion\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"minorVersion\",\"type\":\"uint256\"}],\"name\":\"ModuleInitialized\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"decoder\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"requirement\",\"type\":\"bool\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"name\":\"grantModuleRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address[]\",\"name\":\"targets\",\"type\":\"address[]\"}],\"name\":\"grantModuleRoleBatched\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"identifier\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IOrchestrator_v1\",\"name\":\"orchestrator_\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"majorVersion\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minorVersion\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"url\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"title\",\"type\":\"string\"}],\"internalType\":\"struct IModule_v1.Metadata\",\"name\":\"metadata\",\"type\":\"tuple\"},{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IOrchestrator_v1\",\"name\":\"orchestrator_\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"dependencyData\",\"type\":\"bytes\"}],\"name\":\"init2\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"forwarder\",\"type\":\"address\"}],\"name\":\"isTrustedForwarder\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"orchestrator\",\"outputs\":[{\"internalType\":\"contract IOrchestrator_v1\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"name\":\"revokeModuleRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address[]\",\"name\":\"targets\",\"type\":\"address[]\"}],\"name\":\"revokeModuleRoleBatched\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"title\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"trustedForwarder\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"url\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Inverter Network\",\"details\":\"This Contract is the basic building block for all Modules in the Inverter Network.          It contains references to other contracts, modifier for access restriction,          metadata to identify the module type as well as utility functions for general          module interactions.          This contract provides a framework for triggering and receiving orchestrator          callbacks (via `call`) and a modifier to authenticate          callers via the module's orchestrator.          Each module is identified via a unique identifier based on its major          version, title, and url given in the metadata.\",\"errors\":{\"InvalidInitialization()\":[{\"details\":\"The contract is already initialized.\"}],\"Module_OrchestratorCallbackFailed(string)\":[{\"params\":{\"funcSig\":\"The signature of the function called.\"}}],\"NotInitializing()\":[{\"details\":\"The contract is not initializing.\"}]},\"events\":{\"Initialized(uint64)\":{\"details\":\"Triggered when the contract has been initialized or reinitialized.\"},\"ModuleInitialized(address,string,uint256,uint256)\":{\"params\":{\"majorVersion\":\"The major version of the module.\",\"minorVersion\":\"The minor version of the module.\",\"moduleTitle\":\"The title of the module.\",\"parentOrchestrator\":\"The address of the orchestrator the module is linked to.\"}}},\"kind\":\"dev\",\"methods\":{\"identifier()\":{\"details\":\"The identifier is defined as the keccak256 hash of the module's      abi packed encoded major version, url and title.\",\"returns\":{\"_0\":\"The module's identifier.\"}},\"init(address,(uint256,uint256,string,string),bytes)\":{\"details\":\"CAN be overriden by downstream contract.MUST call `__Module_init()`.\",\"params\":{\"configData\":\"Variable config data for specific module                   implementations.\",\"metadata\":\"The module's metadata.\",\"orchestrator\":\"The module's orchestrator instance.\"}},\"isTrustedForwarder(address)\":{\"details\":\"We imitate here the EIP2771 Standard to enable metatransactions As it currently stands we dont want to feed the forwarder address to each module individually and we decided to move this to the orchestrator\",\"params\":{\"forwarder\":\"The contract address to be verified.\"},\"returns\":{\"_0\":\"bool Is the given address the trusted forwarder\"}},\"orchestrator()\":{\"returns\":{\"_0\":\"The module's orchestrator.\"}},\"supportsInterface(bytes4)\":{\"details\":\"See {IERC165-supportsInterface}.\"},\"title()\":{\"returns\":{\"_0\":\"The module's title.\"}},\"trustedForwarder()\":{\"details\":\"We imitate here the EIP2771 Standard to enable metatransactions As it currently stands we dont want to feed the forwarder address to each module individually and we decided to move this to the orchestrator\",\"returns\":{\"_0\":\"address The trusted forwarder\"}},\"url()\":{\"returns\":{\"_0\":\"The module's URL.\"}},\"version()\":{\"returns\":{\"_0\":\"The module's major version.\",\"_1\":\"The module's minor version.\"}}},\"stateVariables\":{\"__Module_initialization\":{\"custom:invariant\":\"Not mutated after the init2 call\",\"details\":\"same thing as the initializer modifier but for the init2 function\"},\"__Module_metadata\":{\"custom:invariant\":\"Not mutated after initialization.\",\"details\":\"The module's metadata.\"},\"__Module_orchestrator\":{\"custom:invariant\":\"Not mutated after initialization.\",\"details\":\"The module's orchestrator instance.\"}},\"title\":\"Module\",\"version\":1},\"userdoc\":{\"errors\":{\"Module_OrchestratorCallbackFailed(string)\":[{\"notice\":\"Orchestrator_v1 callback triggered failed.\"}],\"Module__CallerNotAuthorized(bytes32,address)\":[{\"notice\":\"Function is only callable by authorized caller.\"}],\"Module__CannotCallInit2Again()\":[{\"notice\":\"init2 was called again for a module\"}],\"Module__InvalidMetadata()\":[{\"notice\":\"Given metadata invalid.\"}],\"Module__InvalidOrchestratorAddress()\":[{\"notice\":\"Given orchestrator address invalid.\"}],\"Module__NoDependencyOrMalformedDependencyData()\":[{\"notice\":\"the dependency data passed to init2 was not in the correct format         or there was no dependency for the particular module\"}],\"Module__OnlyCallableByOrchestrator()\":[{\"notice\":\"Function is only callable by the orchestrator.\"}]},\"events\":{\"ModuleInitialized(address,string,uint256,uint256)\":{\"notice\":\"Module has been initialized.\"}},\"kind\":\"user\",\"methods\":{\"identifier()\":{\"notice\":\"Returns the module's identifier.\"},\"init(address,(uint256,uint256,string,string),bytes)\":{\"notice\":\"The module's initializer function.\"},\"isTrustedForwarder(address)\":{\"notice\":\"Checks if the provided address is the trusted forwarder\"},\"orchestrator()\":{\"notice\":\"Returns the module's {IOrchestrator_v1} orchestrator instance.\"},\"title()\":{\"notice\":\"Returns the module's title.\"},\"trustedForwarder()\":{\"notice\":\"Returns the trusted forwarder\"},\"url()\":{\"notice\":\"Returns the module's URL.\"},\"version()\":{\"notice\":\"Returns the module's version.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/modules/base/Module_v1.sol\":\"Module_v1\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":5000},\"remappings\":[\":@aut/=src/modules/authorizer/\",\":@ex/=src/external/\",\":@fm/=src/modules/fundingManager/\",\":@lm/=src/modules/logicModule/\",\":@lm_pc/=src/modules/logicModule/paymentClient/\",\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@oz-up/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@oz/=lib/openzeppelin-contracts/contracts/\",\":@pp/=src/modules/paymentProcessor/\",\":@uma/=lib/protocol/packages/core/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":protocol/=lib/protocol/\"]},\"sources\":{\"lib/openzeppelin-contracts-upgradeable/contracts/metatx/ERC2771ContextUpgradeable.sol\":{\"keccak256\":\"0x14b59e8cd5720c9cd31616450874b462f575bb52b387df2a54dbd26f9a07adf8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://082df479035347a88472f330b089b421d798e4bb016f36b46ed80182e188b9ac\",\"dweb:/ipfs/QmZMCdVxCB3Lb5bf98YSF4HZFNShDkyyFg9Mg1s9oeM5ov\"]},\"lib/openzeppelin-contracts-upgradeable/contracts/proxy/utils/Initializable.sol\":{\"keccak256\":\"0x631188737069917d2f909d29ce62c4d48611d326686ba6683e26b72a23bfac0b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7a61054ae84cd6c4d04c0c4450ba1d6de41e27e0a2c4f1bcdf58f796b401c609\",\"dweb:/ipfs/QmUvtdp7X1mRVyC3CsHrtPbgoqWaXHp3S1ZR24tpAQYJWM\"]},\"lib/openzeppelin-contracts-upgradeable/contracts/utils/ContextUpgradeable.sol\":{\"keccak256\":\"0xdbef5f0c787055227243a7318ef74c8a5a1108ca3a07f2b3a00ef67769e1e397\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://08e39f23d5b4692f9a40803e53a8156b72b4c1f9902a88cd65ba964db103dab9\",\"dweb:/ipfs/QmPKn6EYDgpga7KtpkA8wV2yJCYGMtc9K4LkJfhKX2RVSV\"]},\"lib/openzeppelin-contracts/contracts/access/IAccessControl.sol\":{\"keccak256\":\"0xb6b36edd6a2999fd243ff226d6cbf84bd71af2432bbd0dfe19392996a1d9cb41\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1fd2f35495652e57e3f99bc6c510bc5f7dd398a176ea2e72d8ed730aebc6ca26\",\"dweb:/ipfs/QmTQV6X4gkikTib49cho5iDX3JvSQbdsoEChoDwrk3CbbH\"]},\"lib/openzeppelin-contracts/contracts/access/extensions/IAccessControlEnumerable.sol\":{\"keccak256\":\"0xc1435f102633849858e75d7bed14c636f25448ceb3406d82992b0f2df52f4306\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ce1815e3a1da24f91b8e2ec24cf09d0d46e0fbeddcbe2cb0d8b2e05b91ceb7b3\",\"dweb:/ipfs/QmYTy1AQB5EV5jwuGsB49yykng2oG3x5ss4bDjFNxk3He4\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c\",\"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq\"]},\"lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol\":{\"keccak256\":\"0x9e8778b14317ba9e256c30a76fd6c32b960af621987f56069e1e819c77c6a133\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1777404f1dcd0fac188e55a288724ec3c67b45288e49cc64723e95e702b49ab8\",\"dweb:/ipfs/QmZFdC626GButBApwDUvvTnUzdinevC3B24d7yyh57XkiA\"]},\"lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0x4296879f55019b23e135000eb36896057e7101fb7fb859c5ef690cf14643757b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://87b3541437c8c443ccd36795e56a338ed12855eec17f8da624511b8d1a7e14df\",\"dweb:/ipfs/QmeJQCtZrQjtJLr6u7ZHWeH3pBnjtLWzvRrKViAi7UZqxL\"]},\"src/external/fees/interfaces/IFeeManager_v1.sol\":{\"keccak256\":\"0x50f6853c19e5cd34ea9845db1f8289405e004f56d1503768fb6db12db6074b8d\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://1db2b561fd07c99780a6e2c5c59387ea2ade621409f66c75836af2446475576f\",\"dweb:/ipfs/QmbwKaxeQAwaSRKBggojJVLAbHJNpax5Q54YJueSETvorq\"]},\"src/external/governance/interfaces/IGovernor_v1.sol\":{\"keccak256\":\"0x68d70c65175c651c9079326465d50c972b1c469713450fa1764c640b1f407f9a\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://3cdba38e288f82810e7ac03ecfaa5415ede27f83e56c9d4f1009035833b3d3eb\",\"dweb:/ipfs/QmbAQWnVujTx7AWboWypXCLSQtE5uYgk2cGX7tYj7Ebe3H\"]},\"src/external/interfaces/IERC2771Context.sol\":{\"keccak256\":\"0xfcc88fc7329ac304efe8c41871d596f0c3fe8f70917214b3a087266bf19ee86b\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://47159333bca960cfdf0bd4e9d5e114174cb047477b08ad4e40dce6f956c8980a\",\"dweb:/ipfs/QmbjnnNmXauGRjP1UcMxAYxzb5YXpveL7hQGtr1PHMH4jv\"]},\"src/modules/authorizer/IAuthorizer_v1.sol\":{\"keccak256\":\"0xf737c335625a6f46348a7704e43ac062599bc9617e8aee5318eb836c54a17d1c\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://fcce6d425474c2c2eefc8a5a88f361f7d52d6d2e072fc860baf999bde30ac03d\",\"dweb:/ipfs/QmXTrYJxACyiCQeLLVCZkNLmsd9uz1A14F86hhrkpSB7hE\"]},\"src/modules/base/IModule_v1.sol\":{\"keccak256\":\"0x85dafb6a8f739e8fea9dc354461ebd5e6fe34f4895625dadc8a75e85478e1767\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://5878e4aa116dc1854a09a49eabb439ff9172837e9040534b2c371b3805024509\",\"dweb:/ipfs/QmXoM3LA2BVaG35moie2suMvpe2iYYcwGqeieRAMjjUvWw\"]},\"src/modules/base/Module_v1.sol\":{\"keccak256\":\"0xb6f0c8615add95a248f1c9a21af992da236dd0dd59ba6288e0ae3505209d7fe1\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://7b4cf1b4819869ed654249d60e4aad31f958d5bd8fb6ad969b2df653d9320c7a\",\"dweb:/ipfs/QmTh5S3pSY66gMoGpiejajnGtxmzZbV2s8ME8Tb5f5va3f\"]},\"src/modules/fundingManager/IFundingManager_v1.sol\":{\"keccak256\":\"0xa75256877ff3e13a2469738c7c0b975ff8c704496898375c5b0c37b9eb002ebf\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://4040550365cf9ccebd3b5a4ca25593051fb3e347f4af4829264d3acf3c0c5ca1\",\"dweb:/ipfs/QmVwacoM3xPKonJdEb8aYwN7GYxtypsphCvwQGUwYPHdX3\"]},\"src/modules/lib/LibMetadata.sol\":{\"keccak256\":\"0xb8e8b5f2eb8b5841f646a7b34bf0760752fd9a3caa289f8f16ec2fdbae4d5f9f\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://fd89ca9cf4c67bba665152a1ade17580ffcc71b3189c7a0bfdb1006fd047ceb5\",\"dweb:/ipfs/QmS4rwXh9CcQhGMTZejoHtFARRvswu6qN2xRzN19HDAHB1\"]},\"src/modules/logicModule/interfaces/IERC20PaymentClientBase_v1.sol\":{\"keccak256\":\"0x50ae50b3cd2489267d77cd5f783e61fdac36d65746eeffdc5bc75b7384ff0aed\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://601237d543c454df610cf8cd12623fac06c57f6a24f446ca5b72124205477331\",\"dweb:/ipfs/QmRoC2CEY4Wm1gLNUKBdDTk8gCStUAFTSguvv4iLkUuaRs\"]},\"src/modules/paymentProcessor/IPaymentProcessor_v1.sol\":{\"keccak256\":\"0x5758fed150ad44921724c177a7200e1c8125a372e241b085b9bfef6c297a37ae\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://6b859dbf3c6782f232f2635722acc7e004e5620464512232f24e170011287aa5\",\"dweb:/ipfs/QmcTYMuviYdJkbA9V9hLiVfHrvjLudL9cg3NN8bgWrdcv6\"]},\"src/orchestrator/interfaces/IModuleManagerBase_v1.sol\":{\"keccak256\":\"0x5f14c8320221c0bd7aaa009d5f4b7c248f0019940fd2bcd4faaca3b6077c163b\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://9e8f48b8d3d35e7ccaac22e2863c99d9a201ae228b585b6747d03e13565f2f9b\",\"dweb:/ipfs/QmSo3EMXPrCvhvMzHw78DsN5A6cCDnwPjo1WiF514toen5\"]},\"src/orchestrator/interfaces/IOrchestrator_v1.sol\":{\"keccak256\":\"0x203bf9060f4e944c4059a082a698a886ef744817ff147c0bf8167fa9d7810f99\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://8232c2bdd42706e7f5680a9b7b6868f36f29fa8aa36bcce8994658e93a9ea49b\",\"dweb:/ipfs/QmfKQggqafe2jRNFA5Z8vz51nvMsxwLceABGoX2dnEs16J\"]}},\"version\":1}","metadata":{"compiler":{"version":"0.8.23+commit.f704f362"},"language":"Solidity","output":{"abi":[{"inputs":[],"type":"error","name":"InvalidInitialization"},{"inputs":[{"internalType":"string","name":"funcSig","type":"string"}],"type":"error","name":"Module_OrchestratorCallbackFailed"},{"inputs":[{"internalType":"bytes32","name":"role","type":"bytes32"},{"internalType":"address","name":"caller","type":"address"}],"type":"error","name":"Module__CallerNotAuthorized"},{"inputs":[],"type":"error","name":"Module__CannotCallInit2Again"},{"inputs":[],"type":"error","name":"Module__InvalidMetadata"},{"inputs":[],"type":"error","name":"Module__InvalidOrchestratorAddress"},{"inputs":[],"type":"error","name":"Module__NoDependencyOrMalformedDependencyData"},{"inputs":[],"type":"error","name":"Module__OnlyCallableByOrchestrator"},{"inputs":[],"type":"error","name":"NotInitializing"},{"inputs":[{"internalType":"uint64","name":"version","type":"uint64","indexed":false}],"type":"event","name":"Initialized","anonymous":false},{"inputs":[{"internalType":"address","name":"parentOrchestrator","type":"address","indexed":true},{"internalType":"string","name":"moduleTitle","type":"string","indexed":true},{"internalType":"uint256","name":"majorVersion","type":"uint256","indexed":false},{"internalType":"uint256","name":"minorVersion","type":"uint256","indexed":false}],"type":"event","name":"ModuleInitialized","anonymous":false},{"inputs":[{"internalType":"bytes","name":"data","type":"bytes"}],"stateMutability":"pure","type":"function","name":"decoder","outputs":[{"internalType":"bool","name":"requirement","type":"bool"}]},{"inputs":[{"internalType":"bytes32","name":"role","type":"bytes32"},{"internalType":"address","name":"target","type":"address"}],"stateMutability":"nonpayable","type":"function","name":"grantModuleRole"},{"inputs":[{"internalType":"bytes32","name":"role","type":"bytes32"},{"internalType":"address[]","name":"targets","type":"address[]"}],"stateMutability":"nonpayable","type":"function","name":"grantModuleRoleBatched"},{"inputs":[],"stateMutability":"view","type":"function","name":"identifier","outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}]},{"inputs":[{"internalType":"contract IOrchestrator_v1","name":"orchestrator_","type":"address"},{"internalType":"struct IModule_v1.Metadata","name":"metadata","type":"tuple","components":[{"internalType":"uint256","name":"majorVersion","type":"uint256"},{"internalType":"uint256","name":"minorVersion","type":"uint256"},{"internalType":"string","name":"url","type":"string"},{"internalType":"string","name":"title","type":"string"}]},{"internalType":"bytes","name":"","type":"bytes"}],"stateMutability":"nonpayable","type":"function","name":"init"},{"inputs":[{"internalType":"contract IOrchestrator_v1","name":"orchestrator_","type":"address"},{"internalType":"bytes","name":"dependencyData","type":"bytes"}],"stateMutability":"nonpayable","type":"function","name":"init2"},{"inputs":[{"internalType":"address","name":"forwarder","type":"address"}],"stateMutability":"view","type":"function","name":"isTrustedForwarder","outputs":[{"internalType":"bool","name":"","type":"bool"}]},{"inputs":[],"stateMutability":"view","type":"function","name":"orchestrator","outputs":[{"internalType":"contract IOrchestrator_v1","name":"","type":"address"}]},{"inputs":[{"internalType":"bytes32","name":"role","type":"bytes32"},{"internalType":"address","name":"target","type":"address"}],"stateMutability":"nonpayable","type":"function","name":"revokeModuleRole"},{"inputs":[{"internalType":"bytes32","name":"role","type":"bytes32"},{"internalType":"address[]","name":"targets","type":"address[]"}],"stateMutability":"nonpayable","type":"function","name":"revokeModuleRoleBatched"},{"inputs":[{"internalType":"bytes4","name":"interfaceId","type":"bytes4"}],"stateMutability":"view","type":"function","name":"supportsInterface","outputs":[{"internalType":"bool","name":"","type":"bool"}]},{"inputs":[],"stateMutability":"view","type":"function","name":"title","outputs":[{"internalType":"string","name":"","type":"string"}]},{"inputs":[],"stateMutability":"view","type":"function","name":"trustedForwarder","outputs":[{"internalType":"address","name":"","type":"address"}]},{"inputs":[],"stateMutability":"view","type":"function","name":"url","outputs":[{"internalType":"string","name":"","type":"string"}]},{"inputs":[],"stateMutability":"view","type":"function","name":"version","outputs":[{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"uint256","name":"","type":"uint256"}]}],"devdoc":{"kind":"dev","methods":{"identifier()":{"details":"The identifier is defined as the keccak256 hash of the module's      abi packed encoded major version, url and title.","returns":{"_0":"The module's identifier."}},"init(address,(uint256,uint256,string,string),bytes)":{"details":"CAN be overriden by downstream contract.MUST call `__Module_init()`.","params":{"configData":"Variable config data for specific module                   implementations.","metadata":"The module's metadata.","orchestrator":"The module's orchestrator instance."}},"isTrustedForwarder(address)":{"details":"We imitate here the EIP2771 Standard to enable metatransactions As it currently stands we dont want to feed the forwarder address to each module individually and we decided to move this to the orchestrator","params":{"forwarder":"The contract address to be verified."},"returns":{"_0":"bool Is the given address the trusted forwarder"}},"orchestrator()":{"returns":{"_0":"The module's orchestrator."}},"supportsInterface(bytes4)":{"details":"See {IERC165-supportsInterface}."},"title()":{"returns":{"_0":"The module's title."}},"trustedForwarder()":{"details":"We imitate here the EIP2771 Standard to enable metatransactions As it currently stands we dont want to feed the forwarder address to each module individually and we decided to move this to the orchestrator","returns":{"_0":"address The trusted forwarder"}},"url()":{"returns":{"_0":"The module's URL."}},"version()":{"returns":{"_0":"The module's major version.","_1":"The module's minor version."}}},"version":1},"userdoc":{"kind":"user","methods":{"identifier()":{"notice":"Returns the module's identifier."},"init(address,(uint256,uint256,string,string),bytes)":{"notice":"The module's initializer function."},"isTrustedForwarder(address)":{"notice":"Checks if the provided address is the trusted forwarder"},"orchestrator()":{"notice":"Returns the module's {IOrchestrator_v1} orchestrator instance."},"title()":{"notice":"Returns the module's title."},"trustedForwarder()":{"notice":"Returns the trusted forwarder"},"url()":{"notice":"Returns the module's URL."},"version()":{"notice":"Returns the module's version."}},"version":1}},"settings":{"remappings":["@aut/=src/modules/authorizer/","@ex/=src/external/","@fm/=src/modules/fundingManager/","@lm/=src/modules/logicModule/","@lm_pc/=src/modules/logicModule/paymentClient/","@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/","@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/","@oz-up/=lib/openzeppelin-contracts-upgradeable/contracts/","@oz/=lib/openzeppelin-contracts/contracts/","@pp/=src/modules/paymentProcessor/","@uma/=lib/protocol/packages/core/contracts/","ds-test/=lib/forge-std/lib/ds-test/src/","erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/","forge-std/=lib/forge-std/src/","openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/","openzeppelin-contracts/=lib/openzeppelin-contracts/","protocol/=lib/protocol/"],"optimizer":{"enabled":true,"runs":5000},"metadata":{"bytecodeHash":"ipfs"},"compilationTarget":{"src/modules/base/Module_v1.sol":"Module_v1"},"evmVersion":"paris","libraries":{}},"sources":{"lib/openzeppelin-contracts-upgradeable/contracts/metatx/ERC2771ContextUpgradeable.sol":{"keccak256":"0x14b59e8cd5720c9cd31616450874b462f575bb52b387df2a54dbd26f9a07adf8","urls":["bzz-raw://082df479035347a88472f330b089b421d798e4bb016f36b46ed80182e188b9ac","dweb:/ipfs/QmZMCdVxCB3Lb5bf98YSF4HZFNShDkyyFg9Mg1s9oeM5ov"],"license":"MIT"},"lib/openzeppelin-contracts-upgradeable/contracts/proxy/utils/Initializable.sol":{"keccak256":"0x631188737069917d2f909d29ce62c4d48611d326686ba6683e26b72a23bfac0b","urls":["bzz-raw://7a61054ae84cd6c4d04c0c4450ba1d6de41e27e0a2c4f1bcdf58f796b401c609","dweb:/ipfs/QmUvtdp7X1mRVyC3CsHrtPbgoqWaXHp3S1ZR24tpAQYJWM"],"license":"MIT"},"lib/openzeppelin-contracts-upgradeable/contracts/utils/ContextUpgradeable.sol":{"keccak256":"0xdbef5f0c787055227243a7318ef74c8a5a1108ca3a07f2b3a00ef67769e1e397","urls":["bzz-raw://08e39f23d5b4692f9a40803e53a8156b72b4c1f9902a88cd65ba964db103dab9","dweb:/ipfs/QmPKn6EYDgpga7KtpkA8wV2yJCYGMtc9K4LkJfhKX2RVSV"],"license":"MIT"},"lib/openzeppelin-contracts/contracts/access/IAccessControl.sol":{"keccak256":"0xb6b36edd6a2999fd243ff226d6cbf84bd71af2432bbd0dfe19392996a1d9cb41","urls":["bzz-raw://1fd2f35495652e57e3f99bc6c510bc5f7dd398a176ea2e72d8ed730aebc6ca26","dweb:/ipfs/QmTQV6X4gkikTib49cho5iDX3JvSQbdsoEChoDwrk3CbbH"],"license":"MIT"},"lib/openzeppelin-contracts/contracts/access/extensions/IAccessControlEnumerable.sol":{"keccak256":"0xc1435f102633849858e75d7bed14c636f25448ceb3406d82992b0f2df52f4306","urls":["bzz-raw://ce1815e3a1da24f91b8e2ec24cf09d0d46e0fbeddcbe2cb0d8b2e05b91ceb7b3","dweb:/ipfs/QmYTy1AQB5EV5jwuGsB49yykng2oG3x5ss4bDjFNxk3He4"],"license":"MIT"},"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol":{"keccak256":"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70","urls":["bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c","dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq"],"license":"MIT"},"lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol":{"keccak256":"0x9e8778b14317ba9e256c30a76fd6c32b960af621987f56069e1e819c77c6a133","urls":["bzz-raw://1777404f1dcd0fac188e55a288724ec3c67b45288e49cc64723e95e702b49ab8","dweb:/ipfs/QmZFdC626GButBApwDUvvTnUzdinevC3B24d7yyh57XkiA"],"license":"MIT"},"lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol":{"keccak256":"0x4296879f55019b23e135000eb36896057e7101fb7fb859c5ef690cf14643757b","urls":["bzz-raw://87b3541437c8c443ccd36795e56a338ed12855eec17f8da624511b8d1a7e14df","dweb:/ipfs/QmeJQCtZrQjtJLr6u7ZHWeH3pBnjtLWzvRrKViAi7UZqxL"],"license":"MIT"},"src/external/fees/interfaces/IFeeManager_v1.sol":{"keccak256":"0x50f6853c19e5cd34ea9845db1f8289405e004f56d1503768fb6db12db6074b8d","urls":["bzz-raw://1db2b561fd07c99780a6e2c5c59387ea2ade621409f66c75836af2446475576f","dweb:/ipfs/QmbwKaxeQAwaSRKBggojJVLAbHJNpax5Q54YJueSETvorq"],"license":"LGPL-3.0-only"},"src/external/governance/interfaces/IGovernor_v1.sol":{"keccak256":"0x68d70c65175c651c9079326465d50c972b1c469713450fa1764c640b1f407f9a","urls":["bzz-raw://3cdba38e288f82810e7ac03ecfaa5415ede27f83e56c9d4f1009035833b3d3eb","dweb:/ipfs/QmbAQWnVujTx7AWboWypXCLSQtE5uYgk2cGX7tYj7Ebe3H"],"license":"LGPL-3.0-only"},"src/external/interfaces/IERC2771Context.sol":{"keccak256":"0xfcc88fc7329ac304efe8c41871d596f0c3fe8f70917214b3a087266bf19ee86b","urls":["bzz-raw://47159333bca960cfdf0bd4e9d5e114174cb047477b08ad4e40dce6f956c8980a","dweb:/ipfs/QmbjnnNmXauGRjP1UcMxAYxzb5YXpveL7hQGtr1PHMH4jv"],"license":"LGPL-3.0-only"},"src/modules/authorizer/IAuthorizer_v1.sol":{"keccak256":"0xf737c335625a6f46348a7704e43ac062599bc9617e8aee5318eb836c54a17d1c","urls":["bzz-raw://fcce6d425474c2c2eefc8a5a88f361f7d52d6d2e072fc860baf999bde30ac03d","dweb:/ipfs/QmXTrYJxACyiCQeLLVCZkNLmsd9uz1A14F86hhrkpSB7hE"],"license":"LGPL-3.0-only"},"src/modules/base/IModule_v1.sol":{"keccak256":"0x85dafb6a8f739e8fea9dc354461ebd5e6fe34f4895625dadc8a75e85478e1767","urls":["bzz-raw://5878e4aa116dc1854a09a49eabb439ff9172837e9040534b2c371b3805024509","dweb:/ipfs/QmXoM3LA2BVaG35moie2suMvpe2iYYcwGqeieRAMjjUvWw"],"license":"LGPL-3.0-only"},"src/modules/base/Module_v1.sol":{"keccak256":"0xb6f0c8615add95a248f1c9a21af992da236dd0dd59ba6288e0ae3505209d7fe1","urls":["bzz-raw://7b4cf1b4819869ed654249d60e4aad31f958d5bd8fb6ad969b2df653d9320c7a","dweb:/ipfs/QmTh5S3pSY66gMoGpiejajnGtxmzZbV2s8ME8Tb5f5va3f"],"license":"LGPL-3.0-only"},"src/modules/fundingManager/IFundingManager_v1.sol":{"keccak256":"0xa75256877ff3e13a2469738c7c0b975ff8c704496898375c5b0c37b9eb002ebf","urls":["bzz-raw://4040550365cf9ccebd3b5a4ca25593051fb3e347f4af4829264d3acf3c0c5ca1","dweb:/ipfs/QmVwacoM3xPKonJdEb8aYwN7GYxtypsphCvwQGUwYPHdX3"],"license":"LGPL-3.0-only"},"src/modules/lib/LibMetadata.sol":{"keccak256":"0xb8e8b5f2eb8b5841f646a7b34bf0760752fd9a3caa289f8f16ec2fdbae4d5f9f","urls":["bzz-raw://fd89ca9cf4c67bba665152a1ade17580ffcc71b3189c7a0bfdb1006fd047ceb5","dweb:/ipfs/QmS4rwXh9CcQhGMTZejoHtFARRvswu6qN2xRzN19HDAHB1"],"license":"LGPL-3.0-only"},"src/modules/logicModule/interfaces/IERC20PaymentClientBase_v1.sol":{"keccak256":"0x50ae50b3cd2489267d77cd5f783e61fdac36d65746eeffdc5bc75b7384ff0aed","urls":["bzz-raw://601237d543c454df610cf8cd12623fac06c57f6a24f446ca5b72124205477331","dweb:/ipfs/QmRoC2CEY4Wm1gLNUKBdDTk8gCStUAFTSguvv4iLkUuaRs"],"license":"LGPL-3.0-only"},"src/modules/paymentProcessor/IPaymentProcessor_v1.sol":{"keccak256":"0x5758fed150ad44921724c177a7200e1c8125a372e241b085b9bfef6c297a37ae","urls":["bzz-raw://6b859dbf3c6782f232f2635722acc7e004e5620464512232f24e170011287aa5","dweb:/ipfs/QmcTYMuviYdJkbA9V9hLiVfHrvjLudL9cg3NN8bgWrdcv6"],"license":"LGPL-3.0-only"},"src/orchestrator/interfaces/IModuleManagerBase_v1.sol":{"keccak256":"0x5f14c8320221c0bd7aaa009d5f4b7c248f0019940fd2bcd4faaca3b6077c163b","urls":["bzz-raw://9e8f48b8d3d35e7ccaac22e2863c99d9a201ae228b585b6747d03e13565f2f9b","dweb:/ipfs/QmSo3EMXPrCvhvMzHw78DsN5A6cCDnwPjo1WiF514toen5"],"license":"LGPL-3.0-only"},"src/orchestrator/interfaces/IOrchestrator_v1.sol":{"keccak256":"0x203bf9060f4e944c4059a082a698a886ef744817ff147c0bf8167fa9d7810f99","urls":["bzz-raw://8232c2bdd42706e7f5680a9b7b6868f36f29fa8aa36bcce8994658e93a9ea49b","dweb:/ipfs/QmfKQggqafe2jRNFA5Z8vz51nvMsxwLceABGoX2dnEs16J"],"license":"LGPL-3.0-only"}},"version":1},"id":116}
+{
+  "abi": [
+    {
+      "type": "function",
+      "name": "decoder",
+      "inputs": [{ "name": "data", "type": "bytes", "internalType": "bytes" }],
+      "outputs": [
+        { "name": "requirement", "type": "bool", "internalType": "bool" }
+      ],
+      "stateMutability": "pure"
+    },
+    {
+      "type": "function",
+      "name": "grantModuleRole",
+      "inputs": [
+        { "name": "role", "type": "bytes32", "internalType": "bytes32" },
+        { "name": "target", "type": "address", "internalType": "address" }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "grantModuleRoleBatched",
+      "inputs": [
+        { "name": "role", "type": "bytes32", "internalType": "bytes32" },
+        { "name": "targets", "type": "address[]", "internalType": "address[]" }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "identifier",
+      "inputs": [],
+      "outputs": [{ "name": "", "type": "bytes32", "internalType": "bytes32" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "init",
+      "inputs": [
+        {
+          "name": "orchestrator_",
+          "type": "address",
+          "internalType": "contract IOrchestrator_v1"
+        },
+        {
+          "name": "metadata",
+          "type": "tuple",
+          "internalType": "struct IModule_v1.Metadata",
+          "components": [
+            {
+              "name": "majorVersion",
+              "type": "uint256",
+              "internalType": "uint256"
+            },
+            {
+              "name": "minorVersion",
+              "type": "uint256",
+              "internalType": "uint256"
+            },
+            { "name": "url", "type": "string", "internalType": "string" },
+            { "name": "title", "type": "string", "internalType": "string" }
+          ]
+        },
+        { "name": "", "type": "bytes", "internalType": "bytes" }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "init2",
+      "inputs": [
+        {
+          "name": "orchestrator_",
+          "type": "address",
+          "internalType": "contract IOrchestrator_v1"
+        },
+        { "name": "dependencyData", "type": "bytes", "internalType": "bytes" }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "isTrustedForwarder",
+      "inputs": [
+        { "name": "forwarder", "type": "address", "internalType": "address" }
+      ],
+      "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "orchestrator",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address",
+          "internalType": "contract IOrchestrator_v1"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "revokeModuleRole",
+      "inputs": [
+        { "name": "role", "type": "bytes32", "internalType": "bytes32" },
+        { "name": "target", "type": "address", "internalType": "address" }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "revokeModuleRoleBatched",
+      "inputs": [
+        { "name": "role", "type": "bytes32", "internalType": "bytes32" },
+        { "name": "targets", "type": "address[]", "internalType": "address[]" }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "supportsInterface",
+      "inputs": [
+        { "name": "interfaceId", "type": "bytes4", "internalType": "bytes4" }
+      ],
+      "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "title",
+      "inputs": [],
+      "outputs": [{ "name": "", "type": "string", "internalType": "string" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "trustedForwarder",
+      "inputs": [],
+      "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "url",
+      "inputs": [],
+      "outputs": [{ "name": "", "type": "string", "internalType": "string" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "version",
+      "inputs": [],
+      "outputs": [
+        { "name": "", "type": "uint256", "internalType": "uint256" },
+        { "name": "", "type": "uint256", "internalType": "uint256" }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "event",
+      "name": "Initialized",
+      "inputs": [
+        {
+          "name": "version",
+          "type": "uint64",
+          "indexed": false,
+          "internalType": "uint64"
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "ModuleInitialized",
+      "inputs": [
+        {
+          "name": "parentOrchestrator",
+          "type": "address",
+          "indexed": true,
+          "internalType": "address"
+        },
+        {
+          "name": "moduleTitle",
+          "type": "string",
+          "indexed": true,
+          "internalType": "string"
+        },
+        {
+          "name": "majorVersion",
+          "type": "uint256",
+          "indexed": false,
+          "internalType": "uint256"
+        },
+        {
+          "name": "minorVersion",
+          "type": "uint256",
+          "indexed": false,
+          "internalType": "uint256"
+        }
+      ],
+      "anonymous": false
+    },
+    { "type": "error", "name": "InvalidInitialization", "inputs": [] },
+    {
+      "type": "error",
+      "name": "Module_OrchestratorCallbackFailed",
+      "inputs": [
+        { "name": "funcSig", "type": "string", "internalType": "string" }
+      ]
+    },
+    {
+      "type": "error",
+      "name": "Module__CallerNotAuthorized",
+      "inputs": [
+        { "name": "role", "type": "bytes32", "internalType": "bytes32" },
+        { "name": "caller", "type": "address", "internalType": "address" }
+      ]
+    },
+    { "type": "error", "name": "Module__CannotCallInit2Again", "inputs": [] },
+    { "type": "error", "name": "Module__InvalidMetadata", "inputs": [] },
+    {
+      "type": "error",
+      "name": "Module__InvalidOrchestratorAddress",
+      "inputs": []
+    },
+    {
+      "type": "error",
+      "name": "Module__NoDependencyOrMalformedDependencyData",
+      "inputs": []
+    },
+    {
+      "type": "error",
+      "name": "Module__OnlyCallableByOrchestrator",
+      "inputs": []
+    },
+    { "type": "error", "name": "NotInitializing", "inputs": [] }
+  ],
+  "bytecode": { "object": "0x", "sourceMap": "", "linkReferences": {} },
+  "deployedBytecode": { "object": "0x", "sourceMap": "", "linkReferences": {} },
+  "methodIdentifiers": {
+    "decoder(bytes)": "9e978575",
+    "grantModuleRole(bytes32,address)": "6c67e807",
+    "grantModuleRoleBatched(bytes32,address[])": "272bbd44",
+    "identifier()": "7998a1c4",
+    "init(address,(uint256,uint256,string,string),bytes)": "42dfe958",
+    "init2(address,bytes)": "9bfdf766",
+    "isTrustedForwarder(address)": "572b6c05",
+    "orchestrator()": "b74795d9",
+    "revokeModuleRole(bytes32,address)": "bcb61920",
+    "revokeModuleRoleBatched(bytes32,address[])": "24e30270",
+    "supportsInterface(bytes4)": "01ffc9a7",
+    "title()": "4a79d50c",
+    "trustedForwarder()": "7da0a877",
+    "url()": "5600f04f",
+    "version()": "54fd4d50"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.23+commit.f704f362\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"InvalidInitialization\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"funcSig\",\"type\":\"string\"}],\"name\":\"Module_OrchestratorCallbackFailed\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"Module__CallerNotAuthorized\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__CannotCallInit2Again\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__InvalidMetadata\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__InvalidOrchestratorAddress\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__NoDependencyOrMalformedDependencyData\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__OnlyCallableByOrchestrator\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotInitializing\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint64\",\"name\":\"version\",\"type\":\"uint64\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"parentOrchestrator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"string\",\"name\":\"moduleTitle\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"majorVersion\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"minorVersion\",\"type\":\"uint256\"}],\"name\":\"ModuleInitialized\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"decoder\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"requirement\",\"type\":\"bool\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"name\":\"grantModuleRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address[]\",\"name\":\"targets\",\"type\":\"address[]\"}],\"name\":\"grantModuleRoleBatched\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"identifier\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IOrchestrator_v1\",\"name\":\"orchestrator_\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"majorVersion\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minorVersion\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"url\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"title\",\"type\":\"string\"}],\"internalType\":\"struct IModule_v1.Metadata\",\"name\":\"metadata\",\"type\":\"tuple\"},{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IOrchestrator_v1\",\"name\":\"orchestrator_\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"dependencyData\",\"type\":\"bytes\"}],\"name\":\"init2\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"forwarder\",\"type\":\"address\"}],\"name\":\"isTrustedForwarder\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"orchestrator\",\"outputs\":[{\"internalType\":\"contract IOrchestrator_v1\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"name\":\"revokeModuleRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address[]\",\"name\":\"targets\",\"type\":\"address[]\"}],\"name\":\"revokeModuleRoleBatched\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"title\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"trustedForwarder\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"url\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Inverter Network\",\"details\":\"This Contract is the basic building block for all Modules in the Inverter Network.          It contains references to other contracts, modifier for access restriction,          metadata to identify the module type as well as utility functions for general          module interactions.          This contract provides a framework for triggering and receiving orchestrator          callbacks (via `call`) and a modifier to authenticate          callers via the module's orchestrator.          Each module is identified via a unique identifier based on its major          version, title, and url given in the metadata.\",\"errors\":{\"InvalidInitialization()\":[{\"details\":\"The contract is already initialized.\"}],\"Module_OrchestratorCallbackFailed(string)\":[{\"params\":{\"funcSig\":\"The signature of the function called.\"}}],\"NotInitializing()\":[{\"details\":\"The contract is not initializing.\"}]},\"events\":{\"Initialized(uint64)\":{\"details\":\"Triggered when the contract has been initialized or reinitialized.\"},\"ModuleInitialized(address,string,uint256,uint256)\":{\"params\":{\"majorVersion\":\"The major version of the module.\",\"minorVersion\":\"The minor version of the module.\",\"moduleTitle\":\"The title of the module.\",\"parentOrchestrator\":\"The address of the orchestrator the module is linked to.\"}}},\"kind\":\"dev\",\"methods\":{\"identifier()\":{\"details\":\"The identifier is defined as the keccak256 hash of the module's      abi packed encoded major version, url and title.\",\"returns\":{\"_0\":\"The module's identifier.\"}},\"init(address,(uint256,uint256,string,string),bytes)\":{\"details\":\"CAN be overriden by downstream contract.MUST call `__Module_init()`.\",\"params\":{\"configData\":\"Variable config data for specific module                   implementations.\",\"metadata\":\"The module's metadata.\",\"orchestrator\":\"The module's orchestrator instance.\"}},\"isTrustedForwarder(address)\":{\"details\":\"We imitate here the EIP2771 Standard to enable metatransactions As it currently stands we dont want to feed the forwarder address to each module individually and we decided to move this to the orchestrator\",\"params\":{\"forwarder\":\"The contract address to be verified.\"},\"returns\":{\"_0\":\"bool Is the given address the trusted forwarder\"}},\"orchestrator()\":{\"returns\":{\"_0\":\"The module's orchestrator.\"}},\"supportsInterface(bytes4)\":{\"details\":\"See {IERC165-supportsInterface}.\"},\"title()\":{\"returns\":{\"_0\":\"The module's title.\"}},\"trustedForwarder()\":{\"details\":\"We imitate here the EIP2771 Standard to enable metatransactions As it currently stands we dont want to feed the forwarder address to each module individually and we decided to move this to the orchestrator\",\"returns\":{\"_0\":\"address The trusted forwarder\"}},\"url()\":{\"returns\":{\"_0\":\"The module's URL.\"}},\"version()\":{\"returns\":{\"_0\":\"The module's major version.\",\"_1\":\"The module's minor version.\"}}},\"stateVariables\":{\"__Module_initialization\":{\"custom:invariant\":\"Not mutated after the init2 call\",\"details\":\"same thing as the initializer modifier but for the init2 function\"},\"__Module_metadata\":{\"custom:invariant\":\"Not mutated after initialization.\",\"details\":\"The module's metadata.\"},\"__Module_orchestrator\":{\"custom:invariant\":\"Not mutated after initialization.\",\"details\":\"The module's orchestrator instance.\"}},\"title\":\"Module\",\"version\":1},\"userdoc\":{\"errors\":{\"Module_OrchestratorCallbackFailed(string)\":[{\"notice\":\"Orchestrator_v1 callback triggered failed.\"}],\"Module__CallerNotAuthorized(bytes32,address)\":[{\"notice\":\"Function is only callable by authorized caller.\"}],\"Module__CannotCallInit2Again()\":[{\"notice\":\"init2 was called again for a module\"}],\"Module__InvalidMetadata()\":[{\"notice\":\"Given metadata invalid.\"}],\"Module__InvalidOrchestratorAddress()\":[{\"notice\":\"Given orchestrator address invalid.\"}],\"Module__NoDependencyOrMalformedDependencyData()\":[{\"notice\":\"the dependency data passed to init2 was not in the correct format         or there was no dependency for the particular module\"}],\"Module__OnlyCallableByOrchestrator()\":[{\"notice\":\"Function is only callable by the orchestrator.\"}]},\"events\":{\"ModuleInitialized(address,string,uint256,uint256)\":{\"notice\":\"Module has been initialized.\"}},\"kind\":\"user\",\"methods\":{\"identifier()\":{\"notice\":\"Returns the module's identifier.\"},\"init(address,(uint256,uint256,string,string),bytes)\":{\"notice\":\"The module's initializer function.\"},\"isTrustedForwarder(address)\":{\"notice\":\"Checks if the provided address is the trusted forwarder\"},\"orchestrator()\":{\"notice\":\"Returns the module's {IOrchestrator_v1} orchestrator instance.\"},\"title()\":{\"notice\":\"Returns the module's title.\"},\"trustedForwarder()\":{\"notice\":\"Returns the trusted forwarder\"},\"url()\":{\"notice\":\"Returns the module's URL.\"},\"version()\":{\"notice\":\"Returns the module's version.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/modules/base/Module_v1.sol\":\"Module_v1\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":5000},\"remappings\":[\":@aut/=src/modules/authorizer/\",\":@ex/=src/external/\",\":@fm/=src/modules/fundingManager/\",\":@lm/=src/modules/logicModule/\",\":@lm_pc/=src/modules/logicModule/paymentClient/\",\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@oz-up/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@oz/=lib/openzeppelin-contracts/contracts/\",\":@pp/=src/modules/paymentProcessor/\",\":@uma/=lib/protocol/packages/core/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":protocol/=lib/protocol/\"]},\"sources\":{\"lib/openzeppelin-contracts-upgradeable/contracts/metatx/ERC2771ContextUpgradeable.sol\":{\"keccak256\":\"0x14b59e8cd5720c9cd31616450874b462f575bb52b387df2a54dbd26f9a07adf8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://082df479035347a88472f330b089b421d798e4bb016f36b46ed80182e188b9ac\",\"dweb:/ipfs/QmZMCdVxCB3Lb5bf98YSF4HZFNShDkyyFg9Mg1s9oeM5ov\"]},\"lib/openzeppelin-contracts-upgradeable/contracts/proxy/utils/Initializable.sol\":{\"keccak256\":\"0x631188737069917d2f909d29ce62c4d48611d326686ba6683e26b72a23bfac0b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7a61054ae84cd6c4d04c0c4450ba1d6de41e27e0a2c4f1bcdf58f796b401c609\",\"dweb:/ipfs/QmUvtdp7X1mRVyC3CsHrtPbgoqWaXHp3S1ZR24tpAQYJWM\"]},\"lib/openzeppelin-contracts-upgradeable/contracts/utils/ContextUpgradeable.sol\":{\"keccak256\":\"0xdbef5f0c787055227243a7318ef74c8a5a1108ca3a07f2b3a00ef67769e1e397\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://08e39f23d5b4692f9a40803e53a8156b72b4c1f9902a88cd65ba964db103dab9\",\"dweb:/ipfs/QmPKn6EYDgpga7KtpkA8wV2yJCYGMtc9K4LkJfhKX2RVSV\"]},\"lib/openzeppelin-contracts/contracts/access/IAccessControl.sol\":{\"keccak256\":\"0xb6b36edd6a2999fd243ff226d6cbf84bd71af2432bbd0dfe19392996a1d9cb41\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1fd2f35495652e57e3f99bc6c510bc5f7dd398a176ea2e72d8ed730aebc6ca26\",\"dweb:/ipfs/QmTQV6X4gkikTib49cho5iDX3JvSQbdsoEChoDwrk3CbbH\"]},\"lib/openzeppelin-contracts/contracts/access/extensions/IAccessControlEnumerable.sol\":{\"keccak256\":\"0xc1435f102633849858e75d7bed14c636f25448ceb3406d82992b0f2df52f4306\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ce1815e3a1da24f91b8e2ec24cf09d0d46e0fbeddcbe2cb0d8b2e05b91ceb7b3\",\"dweb:/ipfs/QmYTy1AQB5EV5jwuGsB49yykng2oG3x5ss4bDjFNxk3He4\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c\",\"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq\"]},\"lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol\":{\"keccak256\":\"0x9e8778b14317ba9e256c30a76fd6c32b960af621987f56069e1e819c77c6a133\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1777404f1dcd0fac188e55a288724ec3c67b45288e49cc64723e95e702b49ab8\",\"dweb:/ipfs/QmZFdC626GButBApwDUvvTnUzdinevC3B24d7yyh57XkiA\"]},\"lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0x4296879f55019b23e135000eb36896057e7101fb7fb859c5ef690cf14643757b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://87b3541437c8c443ccd36795e56a338ed12855eec17f8da624511b8d1a7e14df\",\"dweb:/ipfs/QmeJQCtZrQjtJLr6u7ZHWeH3pBnjtLWzvRrKViAi7UZqxL\"]},\"src/external/fees/interfaces/IFeeManager_v1.sol\":{\"keccak256\":\"0x50f6853c19e5cd34ea9845db1f8289405e004f56d1503768fb6db12db6074b8d\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://1db2b561fd07c99780a6e2c5c59387ea2ade621409f66c75836af2446475576f\",\"dweb:/ipfs/QmbwKaxeQAwaSRKBggojJVLAbHJNpax5Q54YJueSETvorq\"]},\"src/external/governance/interfaces/IGovernor_v1.sol\":{\"keccak256\":\"0x68d70c65175c651c9079326465d50c972b1c469713450fa1764c640b1f407f9a\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://3cdba38e288f82810e7ac03ecfaa5415ede27f83e56c9d4f1009035833b3d3eb\",\"dweb:/ipfs/QmbAQWnVujTx7AWboWypXCLSQtE5uYgk2cGX7tYj7Ebe3H\"]},\"src/external/interfaces/IERC2771Context.sol\":{\"keccak256\":\"0xfcc88fc7329ac304efe8c41871d596f0c3fe8f70917214b3a087266bf19ee86b\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://47159333bca960cfdf0bd4e9d5e114174cb047477b08ad4e40dce6f956c8980a\",\"dweb:/ipfs/QmbjnnNmXauGRjP1UcMxAYxzb5YXpveL7hQGtr1PHMH4jv\"]},\"src/modules/authorizer/IAuthorizer_v1.sol\":{\"keccak256\":\"0xf737c335625a6f46348a7704e43ac062599bc9617e8aee5318eb836c54a17d1c\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://fcce6d425474c2c2eefc8a5a88f361f7d52d6d2e072fc860baf999bde30ac03d\",\"dweb:/ipfs/QmXTrYJxACyiCQeLLVCZkNLmsd9uz1A14F86hhrkpSB7hE\"]},\"src/modules/base/IModule_v1.sol\":{\"keccak256\":\"0x85dafb6a8f739e8fea9dc354461ebd5e6fe34f4895625dadc8a75e85478e1767\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://5878e4aa116dc1854a09a49eabb439ff9172837e9040534b2c371b3805024509\",\"dweb:/ipfs/QmXoM3LA2BVaG35moie2suMvpe2iYYcwGqeieRAMjjUvWw\"]},\"src/modules/base/Module_v1.sol\":{\"keccak256\":\"0xb6f0c8615add95a248f1c9a21af992da236dd0dd59ba6288e0ae3505209d7fe1\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://7b4cf1b4819869ed654249d60e4aad31f958d5bd8fb6ad969b2df653d9320c7a\",\"dweb:/ipfs/QmTh5S3pSY66gMoGpiejajnGtxmzZbV2s8ME8Tb5f5va3f\"]},\"src/modules/fundingManager/IFundingManager_v1.sol\":{\"keccak256\":\"0xa75256877ff3e13a2469738c7c0b975ff8c704496898375c5b0c37b9eb002ebf\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://4040550365cf9ccebd3b5a4ca25593051fb3e347f4af4829264d3acf3c0c5ca1\",\"dweb:/ipfs/QmVwacoM3xPKonJdEb8aYwN7GYxtypsphCvwQGUwYPHdX3\"]},\"src/modules/lib/LibMetadata.sol\":{\"keccak256\":\"0xb8e8b5f2eb8b5841f646a7b34bf0760752fd9a3caa289f8f16ec2fdbae4d5f9f\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://fd89ca9cf4c67bba665152a1ade17580ffcc71b3189c7a0bfdb1006fd047ceb5\",\"dweb:/ipfs/QmS4rwXh9CcQhGMTZejoHtFARRvswu6qN2xRzN19HDAHB1\"]},\"src/modules/logicModule/interfaces/IERC20PaymentClientBase_v1.sol\":{\"keccak256\":\"0x50ae50b3cd2489267d77cd5f783e61fdac36d65746eeffdc5bc75b7384ff0aed\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://601237d543c454df610cf8cd12623fac06c57f6a24f446ca5b72124205477331\",\"dweb:/ipfs/QmRoC2CEY4Wm1gLNUKBdDTk8gCStUAFTSguvv4iLkUuaRs\"]},\"src/modules/paymentProcessor/IPaymentProcessor_v1.sol\":{\"keccak256\":\"0x5758fed150ad44921724c177a7200e1c8125a372e241b085b9bfef6c297a37ae\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://6b859dbf3c6782f232f2635722acc7e004e5620464512232f24e170011287aa5\",\"dweb:/ipfs/QmcTYMuviYdJkbA9V9hLiVfHrvjLudL9cg3NN8bgWrdcv6\"]},\"src/orchestrator/interfaces/IModuleManagerBase_v1.sol\":{\"keccak256\":\"0x5f14c8320221c0bd7aaa009d5f4b7c248f0019940fd2bcd4faaca3b6077c163b\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://9e8f48b8d3d35e7ccaac22e2863c99d9a201ae228b585b6747d03e13565f2f9b\",\"dweb:/ipfs/QmSo3EMXPrCvhvMzHw78DsN5A6cCDnwPjo1WiF514toen5\"]},\"src/orchestrator/interfaces/IOrchestrator_v1.sol\":{\"keccak256\":\"0x203bf9060f4e944c4059a082a698a886ef744817ff147c0bf8167fa9d7810f99\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://8232c2bdd42706e7f5680a9b7b6868f36f29fa8aa36bcce8994658e93a9ea49b\",\"dweb:/ipfs/QmfKQggqafe2jRNFA5Z8vz51nvMsxwLceABGoX2dnEs16J\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": { "version": "0.8.23+commit.f704f362" },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        { "inputs": [], "type": "error", "name": "InvalidInitialization" },
+        {
+          "inputs": [
+            { "internalType": "string", "name": "funcSig", "type": "string" }
+          ],
+          "type": "error",
+          "name": "Module_OrchestratorCallbackFailed"
+        },
+        {
+          "inputs": [
+            { "internalType": "bytes32", "name": "role", "type": "bytes32" },
+            { "internalType": "address", "name": "caller", "type": "address" }
+          ],
+          "type": "error",
+          "name": "Module__CallerNotAuthorized"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Module__CannotCallInit2Again"
+        },
+        { "inputs": [], "type": "error", "name": "Module__InvalidMetadata" },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Module__InvalidOrchestratorAddress"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Module__NoDependencyOrMalformedDependencyData"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Module__OnlyCallableByOrchestrator"
+        },
+        { "inputs": [], "type": "error", "name": "NotInitializing" },
+        {
+          "inputs": [
+            {
+              "internalType": "uint64",
+              "name": "version",
+              "type": "uint64",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "Initialized",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "parentOrchestrator",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "string",
+              "name": "moduleTitle",
+              "type": "string",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "majorVersion",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "minorVersion",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "ModuleInitialized",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            { "internalType": "bytes", "name": "data", "type": "bytes" }
+          ],
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "decoder",
+          "outputs": [
+            { "internalType": "bool", "name": "requirement", "type": "bool" }
+          ]
+        },
+        {
+          "inputs": [
+            { "internalType": "bytes32", "name": "role", "type": "bytes32" },
+            { "internalType": "address", "name": "target", "type": "address" }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "grantModuleRole"
+        },
+        {
+          "inputs": [
+            { "internalType": "bytes32", "name": "role", "type": "bytes32" },
+            {
+              "internalType": "address[]",
+              "name": "targets",
+              "type": "address[]"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "grantModuleRoleBatched"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "identifier",
+          "outputs": [
+            { "internalType": "bytes32", "name": "", "type": "bytes32" }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract IOrchestrator_v1",
+              "name": "orchestrator_",
+              "type": "address"
+            },
+            {
+              "internalType": "struct IModule_v1.Metadata",
+              "name": "metadata",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "majorVersion",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "minorVersion",
+                  "type": "uint256"
+                },
+                { "internalType": "string", "name": "url", "type": "string" },
+                { "internalType": "string", "name": "title", "type": "string" }
+              ]
+            },
+            { "internalType": "bytes", "name": "", "type": "bytes" }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "init"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract IOrchestrator_v1",
+              "name": "orchestrator_",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes",
+              "name": "dependencyData",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "init2"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "forwarder",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "isTrustedForwarder",
+          "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "orchestrator",
+          "outputs": [
+            {
+              "internalType": "contract IOrchestrator_v1",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            { "internalType": "bytes32", "name": "role", "type": "bytes32" },
+            { "internalType": "address", "name": "target", "type": "address" }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "revokeModuleRole"
+        },
+        {
+          "inputs": [
+            { "internalType": "bytes32", "name": "role", "type": "bytes32" },
+            {
+              "internalType": "address[]",
+              "name": "targets",
+              "type": "address[]"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "revokeModuleRoleBatched"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes4",
+              "name": "interfaceId",
+              "type": "bytes4"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "supportsInterface",
+          "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "title",
+          "outputs": [
+            { "internalType": "string", "name": "", "type": "string" }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "trustedForwarder",
+          "outputs": [
+            { "internalType": "address", "name": "", "type": "address" }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "url",
+          "outputs": [
+            { "internalType": "string", "name": "", "type": "string" }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "version",
+          "outputs": [
+            { "internalType": "uint256", "name": "", "type": "uint256" },
+            { "internalType": "uint256", "name": "", "type": "uint256" }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "identifier()": {
+            "details": "The identifier is defined as the keccak256 hash of the module's      abi packed encoded major version, url and title.",
+            "returns": { "_0": "The module's identifier." }
+          },
+          "init(address,(uint256,uint256,string,string),bytes)": {
+            "details": "CAN be overriden by downstream contract.MUST call `__Module_init()`.",
+            "params": {
+              "configData": "Variable config data for specific module                   implementations.",
+              "metadata": "The module's metadata.",
+              "orchestrator": "The module's orchestrator instance."
+            }
+          },
+          "isTrustedForwarder(address)": {
+            "details": "We imitate here the EIP2771 Standard to enable metatransactions As it currently stands we dont want to feed the forwarder address to each module individually and we decided to move this to the orchestrator",
+            "params": { "forwarder": "The contract address to be verified." },
+            "returns": {
+              "_0": "bool Is the given address the trusted forwarder"
+            }
+          },
+          "orchestrator()": {
+            "returns": { "_0": "The module's orchestrator." }
+          },
+          "supportsInterface(bytes4)": {
+            "details": "See {IERC165-supportsInterface}."
+          },
+          "title()": { "returns": { "_0": "The module's title." } },
+          "trustedForwarder()": {
+            "details": "We imitate here the EIP2771 Standard to enable metatransactions As it currently stands we dont want to feed the forwarder address to each module individually and we decided to move this to the orchestrator",
+            "returns": { "_0": "address The trusted forwarder" }
+          },
+          "url()": { "returns": { "_0": "The module's URL." } },
+          "version()": {
+            "returns": {
+              "_0": "The module's major version.",
+              "_1": "The module's minor version."
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "identifier()": { "notice": "Returns the module's identifier." },
+          "init(address,(uint256,uint256,string,string),bytes)": {
+            "notice": "The module's initializer function."
+          },
+          "isTrustedForwarder(address)": {
+            "notice": "Checks if the provided address is the trusted forwarder"
+          },
+          "orchestrator()": {
+            "notice": "Returns the module's {IOrchestrator_v1} orchestrator instance."
+          },
+          "title()": { "notice": "Returns the module's title." },
+          "trustedForwarder()": { "notice": "Returns the trusted forwarder" },
+          "url()": { "notice": "Returns the module's URL." },
+          "version()": { "notice": "Returns the module's version." }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@aut/=src/modules/authorizer/",
+        "@ex/=src/external/",
+        "@fm/=src/modules/fundingManager/",
+        "@lm/=src/modules/logicModule/",
+        "@lm_pc/=src/modules/logicModule/paymentClient/",
+        "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "@oz-up/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "@oz/=lib/openzeppelin-contracts/contracts/",
+        "@pp/=src/modules/paymentProcessor/",
+        "@uma/=lib/protocol/packages/core/contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "protocol/=lib/protocol/"
+      ],
+      "optimizer": { "enabled": true, "runs": 5000 },
+      "metadata": { "bytecodeHash": "ipfs" },
+      "compilationTarget": { "src/modules/base/Module_v1.sol": "Module_v1" },
+      "evmVersion": "paris",
+      "libraries": {}
+    },
+    "sources": {
+      "lib/openzeppelin-contracts-upgradeable/contracts/metatx/ERC2771ContextUpgradeable.sol": {
+        "keccak256": "0x14b59e8cd5720c9cd31616450874b462f575bb52b387df2a54dbd26f9a07adf8",
+        "urls": [
+          "bzz-raw://082df479035347a88472f330b089b421d798e4bb016f36b46ed80182e188b9ac",
+          "dweb:/ipfs/QmZMCdVxCB3Lb5bf98YSF4HZFNShDkyyFg9Mg1s9oeM5ov"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts-upgradeable/contracts/proxy/utils/Initializable.sol": {
+        "keccak256": "0x631188737069917d2f909d29ce62c4d48611d326686ba6683e26b72a23bfac0b",
+        "urls": [
+          "bzz-raw://7a61054ae84cd6c4d04c0c4450ba1d6de41e27e0a2c4f1bcdf58f796b401c609",
+          "dweb:/ipfs/QmUvtdp7X1mRVyC3CsHrtPbgoqWaXHp3S1ZR24tpAQYJWM"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts-upgradeable/contracts/utils/ContextUpgradeable.sol": {
+        "keccak256": "0xdbef5f0c787055227243a7318ef74c8a5a1108ca3a07f2b3a00ef67769e1e397",
+        "urls": [
+          "bzz-raw://08e39f23d5b4692f9a40803e53a8156b72b4c1f9902a88cd65ba964db103dab9",
+          "dweb:/ipfs/QmPKn6EYDgpga7KtpkA8wV2yJCYGMtc9K4LkJfhKX2RVSV"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/access/IAccessControl.sol": {
+        "keccak256": "0xb6b36edd6a2999fd243ff226d6cbf84bd71af2432bbd0dfe19392996a1d9cb41",
+        "urls": [
+          "bzz-raw://1fd2f35495652e57e3f99bc6c510bc5f7dd398a176ea2e72d8ed730aebc6ca26",
+          "dweb:/ipfs/QmTQV6X4gkikTib49cho5iDX3JvSQbdsoEChoDwrk3CbbH"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/access/extensions/IAccessControlEnumerable.sol": {
+        "keccak256": "0xc1435f102633849858e75d7bed14c636f25448ceb3406d82992b0f2df52f4306",
+        "urls": [
+          "bzz-raw://ce1815e3a1da24f91b8e2ec24cf09d0d46e0fbeddcbe2cb0d8b2e05b91ceb7b3",
+          "dweb:/ipfs/QmYTy1AQB5EV5jwuGsB49yykng2oG3x5ss4bDjFNxk3He4"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
+        "keccak256": "0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70",
+        "urls": [
+          "bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c",
+          "dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol": {
+        "keccak256": "0x9e8778b14317ba9e256c30a76fd6c32b960af621987f56069e1e819c77c6a133",
+        "urls": [
+          "bzz-raw://1777404f1dcd0fac188e55a288724ec3c67b45288e49cc64723e95e702b49ab8",
+          "dweb:/ipfs/QmZFdC626GButBApwDUvvTnUzdinevC3B24d7yyh57XkiA"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol": {
+        "keccak256": "0x4296879f55019b23e135000eb36896057e7101fb7fb859c5ef690cf14643757b",
+        "urls": [
+          "bzz-raw://87b3541437c8c443ccd36795e56a338ed12855eec17f8da624511b8d1a7e14df",
+          "dweb:/ipfs/QmeJQCtZrQjtJLr6u7ZHWeH3pBnjtLWzvRrKViAi7UZqxL"
+        ],
+        "license": "MIT"
+      },
+      "src/external/fees/interfaces/IFeeManager_v1.sol": {
+        "keccak256": "0x50f6853c19e5cd34ea9845db1f8289405e004f56d1503768fb6db12db6074b8d",
+        "urls": [
+          "bzz-raw://1db2b561fd07c99780a6e2c5c59387ea2ade621409f66c75836af2446475576f",
+          "dweb:/ipfs/QmbwKaxeQAwaSRKBggojJVLAbHJNpax5Q54YJueSETvorq"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/external/governance/interfaces/IGovernor_v1.sol": {
+        "keccak256": "0x68d70c65175c651c9079326465d50c972b1c469713450fa1764c640b1f407f9a",
+        "urls": [
+          "bzz-raw://3cdba38e288f82810e7ac03ecfaa5415ede27f83e56c9d4f1009035833b3d3eb",
+          "dweb:/ipfs/QmbAQWnVujTx7AWboWypXCLSQtE5uYgk2cGX7tYj7Ebe3H"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/external/interfaces/IERC2771Context.sol": {
+        "keccak256": "0xfcc88fc7329ac304efe8c41871d596f0c3fe8f70917214b3a087266bf19ee86b",
+        "urls": [
+          "bzz-raw://47159333bca960cfdf0bd4e9d5e114174cb047477b08ad4e40dce6f956c8980a",
+          "dweb:/ipfs/QmbjnnNmXauGRjP1UcMxAYxzb5YXpveL7hQGtr1PHMH4jv"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/modules/authorizer/IAuthorizer_v1.sol": {
+        "keccak256": "0xf737c335625a6f46348a7704e43ac062599bc9617e8aee5318eb836c54a17d1c",
+        "urls": [
+          "bzz-raw://fcce6d425474c2c2eefc8a5a88f361f7d52d6d2e072fc860baf999bde30ac03d",
+          "dweb:/ipfs/QmXTrYJxACyiCQeLLVCZkNLmsd9uz1A14F86hhrkpSB7hE"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/modules/base/IModule_v1.sol": {
+        "keccak256": "0x85dafb6a8f739e8fea9dc354461ebd5e6fe34f4895625dadc8a75e85478e1767",
+        "urls": [
+          "bzz-raw://5878e4aa116dc1854a09a49eabb439ff9172837e9040534b2c371b3805024509",
+          "dweb:/ipfs/QmXoM3LA2BVaG35moie2suMvpe2iYYcwGqeieRAMjjUvWw"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/modules/base/Module_v1.sol": {
+        "keccak256": "0xb6f0c8615add95a248f1c9a21af992da236dd0dd59ba6288e0ae3505209d7fe1",
+        "urls": [
+          "bzz-raw://7b4cf1b4819869ed654249d60e4aad31f958d5bd8fb6ad969b2df653d9320c7a",
+          "dweb:/ipfs/QmTh5S3pSY66gMoGpiejajnGtxmzZbV2s8ME8Tb5f5va3f"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/modules/fundingManager/IFundingManager_v1.sol": {
+        "keccak256": "0xa75256877ff3e13a2469738c7c0b975ff8c704496898375c5b0c37b9eb002ebf",
+        "urls": [
+          "bzz-raw://4040550365cf9ccebd3b5a4ca25593051fb3e347f4af4829264d3acf3c0c5ca1",
+          "dweb:/ipfs/QmVwacoM3xPKonJdEb8aYwN7GYxtypsphCvwQGUwYPHdX3"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/modules/lib/LibMetadata.sol": {
+        "keccak256": "0xb8e8b5f2eb8b5841f646a7b34bf0760752fd9a3caa289f8f16ec2fdbae4d5f9f",
+        "urls": [
+          "bzz-raw://fd89ca9cf4c67bba665152a1ade17580ffcc71b3189c7a0bfdb1006fd047ceb5",
+          "dweb:/ipfs/QmS4rwXh9CcQhGMTZejoHtFARRvswu6qN2xRzN19HDAHB1"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/modules/logicModule/interfaces/IERC20PaymentClientBase_v1.sol": {
+        "keccak256": "0x50ae50b3cd2489267d77cd5f783e61fdac36d65746eeffdc5bc75b7384ff0aed",
+        "urls": [
+          "bzz-raw://601237d543c454df610cf8cd12623fac06c57f6a24f446ca5b72124205477331",
+          "dweb:/ipfs/QmRoC2CEY4Wm1gLNUKBdDTk8gCStUAFTSguvv4iLkUuaRs"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/modules/paymentProcessor/IPaymentProcessor_v1.sol": {
+        "keccak256": "0x5758fed150ad44921724c177a7200e1c8125a372e241b085b9bfef6c297a37ae",
+        "urls": [
+          "bzz-raw://6b859dbf3c6782f232f2635722acc7e004e5620464512232f24e170011287aa5",
+          "dweb:/ipfs/QmcTYMuviYdJkbA9V9hLiVfHrvjLudL9cg3NN8bgWrdcv6"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/orchestrator/interfaces/IModuleManagerBase_v1.sol": {
+        "keccak256": "0x5f14c8320221c0bd7aaa009d5f4b7c248f0019940fd2bcd4faaca3b6077c163b",
+        "urls": [
+          "bzz-raw://9e8f48b8d3d35e7ccaac22e2863c99d9a201ae228b585b6747d03e13565f2f9b",
+          "dweb:/ipfs/QmSo3EMXPrCvhvMzHw78DsN5A6cCDnwPjo1WiF514toen5"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/orchestrator/interfaces/IOrchestrator_v1.sol": {
+        "keccak256": "0x203bf9060f4e944c4059a082a698a886ef744817ff147c0bf8167fa9d7810f99",
+        "urls": [
+          "bzz-raw://8232c2bdd42706e7f5680a9b7b6868f36f29fa8aa36bcce8994658e93a9ea49b",
+          "dweb:/ipfs/QmfKQggqafe2jRNFA5Z8vz51nvMsxwLceABGoX2dnEs16J"
+        ],
+        "license": "LGPL-3.0-only"
+      }
+    },
+    "version": 1
+  },
+  "id": 116
+}
