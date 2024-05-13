@@ -1,0 +1,151 @@
+{
+  "deploymentInputs": {
+    "configData": [
+      {
+        "name": "voters",
+        "type": "address[]",
+        "description": "An array of addresses which are the eligible voters."
+      },
+      {
+        "name": "threshold",
+        "type": "uint256",
+        "description": "The amount of voters that are needed for a vote to pass."
+      },
+      {
+        "name": "voteDuration",
+        "type": "uint256",
+        "description": "The duration of a vote. Needs to be more than 1 day but less than 2 weeks."
+      }
+    ],
+    "dependencyData": []
+  },
+  "abiMembers": {
+    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
+    "ModuleInitialized": {
+      "tags": {
+        "parentOrchestrator": [""],
+        "moduleTitle": [""],
+        "majorVersion": [""],
+        "minorVersion": [""]
+      },
+      "returnNames": []
+    },
+    "MotionCreated": { "tags": { "motionId": [""] }, "returnNames": [] },
+    "MotionExecuted": { "tags": { "motionId": [""] }, "returnNames": [] },
+    "ThresholdUpdated": {
+      "tags": { "oldThreshold": [""], "newThreshold": [""] },
+      "returnNames": []
+    },
+    "VoteDurationUpdated": {
+      "tags": { "oldVotingDuration": [""], "newVotingDuration": [""] },
+      "returnNames": []
+    },
+    "VoterAdded": { "tags": { "who": [""] }, "returnNames": [] },
+    "VoterRemoved": { "tags": { "who": [""] }, "returnNames": [] },
+    "MAX_VOTING_DURATION": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "MIN_VOTING_DURATION": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "addVoter": { "tags": { "who": [""] }, "returnNames": [] },
+    "castVote": {
+      "tags": { "motionId": [""], "support": [""] },
+      "returnNames": []
+    },
+    "createMotion": {
+      "tags": { "target": [""], "action": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "decoder": {
+      "tags": { "data": [""], "requirement": [""] },
+      "returnNames": ["requirement"]
+    },
+    "executeMotion": { "tags": { "motionId": [""] }, "returnNames": [] },
+    "getReceipt": {
+      "tags": {
+        "_ID": [""],
+        "voter": [""],
+        "_0": [""],
+        "hasVoted": [""],
+        "support": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "grantModuleRole": {
+      "tags": { "role": [""], "addr": [""] },
+      "returnNames": []
+    },
+    "identifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "init": {
+      "tags": {
+        "orchestrator_": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "configData": [""]
+      },
+      "returnNames": []
+    },
+    "init2": {
+      "tags": { "orchestrator_": [""], "dependencyData": [""] },
+      "returnNames": []
+    },
+    "isTrustedForwarder": {
+      "tags": { "forwarder": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "isVoter": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "motionCount": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "motions": {
+      "tags": {
+        "target": [""],
+        "action": [""],
+        "startTimestamp": [""],
+        "endTimestamp": [""],
+        "requiredThreshold": [""],
+        "forVotes": [""],
+        "againstVotes": [""],
+        "abstainVotes": [""],
+        "executedAt": [""],
+        "executionResult": [""],
+        "executionReturnData": [""]
+      },
+      "returnNames": [
+        "target",
+        "action",
+        "startTimestamp",
+        "endTimestamp",
+        "requiredThreshold",
+        "forVotes",
+        "againstVotes",
+        "abstainVotes",
+        "executedAt",
+        "executionResult",
+        "executionReturnData"
+      ]
+    },
+    "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "removeVoter": { "tags": { "who": [""] }, "returnNames": [] },
+    "revokeModuleRole": {
+      "tags": { "role": [""], "addr": [""] },
+      "returnNames": []
+    },
+    "setThreshold": { "tags": { "newThreshold": [""] }, "returnNames": [] },
+    "setVotingDuration": {
+      "tags": { "newVoteDuration": [""] },
+      "returnNames": []
+    },
+    "supportsInterface": {
+      "tags": { "interfaceId": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "threshold": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "version": {
+      "tags": { "_0": [""], "_1": [""] },
+      "returnNames": ["_0", "_1"]
+    },
+    "voteDuration": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "voterCount": { "tags": { "_0": [""] }, "returnNames": ["_0"] }
+  }
+}

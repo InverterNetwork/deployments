@@ -1,0 +1,81 @@
+{
+  "deploymentInputs": { "configData": [], "dependencyData": [] },
+  "abiMembers": {
+    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
+    "MetadataRegistered": {
+      "tags": {
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "beacon": [""]
+      },
+      "returnNames": []
+    },
+    "ModuleCreated": {
+      "tags": { "orchestrator": [""], "module": [""], "identifier": [""] },
+      "returnNames": []
+    },
+    "OwnershipTransferStarted": {
+      "tags": { "previousOwner": [""], "newOwner": [""] },
+      "returnNames": []
+    },
+    "OwnershipTransferred": {
+      "tags": { "previousOwner": [""], "newOwner": [""] },
+      "returnNames": []
+    },
+    "acceptOwnership": { "tags": {}, "returnNames": [] },
+    "createModule": {
+      "tags": {
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "orchestrator": [""],
+        "configData": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "getBeaconAndId": {
+      "tags": {
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "_0": [""],
+        "_1": [""]
+      },
+      "returnNames": ["_0", "_1"]
+    },
+    "governor": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "init": { "tags": { "_governor": [""] }, "returnNames": [] },
+    "isTrustedForwarder": {
+      "tags": { "forwarder": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "owner": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "pendingOwner": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "registerMetadata": {
+      "tags": {
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "beacon": [""]
+      },
+      "returnNames": []
+    },
+    "renounceOwnership": { "tags": {}, "returnNames": [] },
+    "supportsInterface": {
+      "tags": { "interfaceId": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "transferOwnership": { "tags": { "newOwner": [""] }, "returnNames": [] },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] }
+  }
+}

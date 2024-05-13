@@ -1,0 +1,217 @@
+{
+  "deploymentInputs": {
+    "configData": [
+      {
+        "name": "initialOwner",
+        "type": "address",
+        "description": "The initial owner of the workflow"
+      },
+      {
+        "name": "initialManager",
+        "type": "address",
+        "description": "The initial manager of the workflow"
+      }
+    ],
+    "dependencyData": []
+  },
+  "abiMembers": {
+    "ChangedTokenGating": {
+      "tags": { "role": [""], "newValue": [""] },
+      "returnNames": []
+    },
+    "ChangedTokenThreshold": {
+      "tags": { "role": [""], "token": [""], "newValue": [""] },
+      "returnNames": []
+    },
+    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
+    "ModuleInitialized": {
+      "tags": {
+        "parentOrchestrator": [""],
+        "moduleTitle": [""],
+        "majorVersion": [""],
+        "minorVersion": [""]
+      },
+      "returnNames": []
+    },
+    "RoleAdminChanged": {
+      "tags": { "role": [""], "previousAdminRole": [""], "newAdminRole": [""] },
+      "returnNames": []
+    },
+    "RoleGranted": {
+      "tags": { "role": [""], "account": [""], "sender": [""] },
+      "returnNames": []
+    },
+    "RoleRevoked": {
+      "tags": { "role": [""], "account": [""], "sender": [""] },
+      "returnNames": []
+    },
+    "BURN_ADMIN_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "DEFAULT_ADMIN_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "ORCHESTRATOR_MANAGER_ROLE": {
+      "tags": { "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "ORCHESTRATOR_OWNER_ROLE": {
+      "tags": { "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "burnAdminFromModuleRole": { "tags": { "role": [""] }, "returnNames": [] },
+    "decoder": {
+      "tags": { "data": [""], "requirement": [""] },
+      "returnNames": ["requirement"]
+    },
+    "generateRoleId": {
+      "tags": { "module": [""], "role": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "getManagerRole": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "getOwnerRole": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "getRoleAdmin": {
+      "tags": { "role": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "getRoleMember": {
+      "tags": { "role": [""], "index": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "getRoleMemberCount": {
+      "tags": { "role": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "getThresholdValue": {
+      "tags": { "roleId": [""], "token": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "grantGlobalRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "grantGlobalRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "grantModuleRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "grantModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "grantRole": {
+      "tags": { "role": [""], "account": [""] },
+      "returnNames": []
+    },
+    "grantRoleFromModule": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "grantRoleFromModuleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "grantTokenRoleFromModule": {
+      "tags": { "role": [""], "token": [""], "threshold": [""] },
+      "returnNames": []
+    },
+    "hasModuleRole": {
+      "tags": { "role": [""], "who": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "hasRole": {
+      "tags": { "roleId": [""], "account": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "hasTokenRole": {
+      "tags": { "role": [""], "who": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "identifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "init": {
+      "tags": {
+        "orchestrator_": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "configData": [""]
+      },
+      "returnNames": []
+    },
+    "init2": {
+      "tags": { "orchestrator_": [""], "dependencyData": [""] },
+      "returnNames": []
+    },
+    "isTokenGated": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "isTrustedForwarder": {
+      "tags": { "forwarder": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "makeRoleTokenGatedFromModule": {
+      "tags": { "role": [""] },
+      "returnNames": []
+    },
+    "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "renounceRole": {
+      "tags": { "role": [""], "callerConfirmation": [""] },
+      "returnNames": []
+    },
+    "revokeGlobalRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "revokeGlobalRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "revokeModuleRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "revokeModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "revokeRole": {
+      "tags": { "role": [""], "account": [""] },
+      "returnNames": []
+    },
+    "revokeRoleFromModule": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "revokeRoleFromModuleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "setThreshold": {
+      "tags": { "roleId": [""], "token": [""], "threshold": [""] },
+      "returnNames": []
+    },
+    "setThresholdFromModule": {
+      "tags": { "role": [""], "token": [""], "threshold": [""] },
+      "returnNames": []
+    },
+    "setTokenGated": {
+      "tags": { "role": [""], "to": [""] },
+      "returnNames": []
+    },
+    "supportsInterface": {
+      "tags": { "interfaceId": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "thresholdMap": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "transferAdminRole": {
+      "tags": { "roleId": [""], "newAdmin": [""] },
+      "returnNames": []
+    },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "version": {
+      "tags": { "_0": [""], "_1": [""] },
+      "returnNames": ["_0", "_1"]
+    }
+  }
+}

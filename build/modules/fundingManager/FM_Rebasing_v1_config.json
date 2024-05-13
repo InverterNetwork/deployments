@@ -1,0 +1,182 @@
+{
+  "deploymentInputs": {
+    "configData": [
+      {
+        "name": "orchestratorTokenAddress",
+        "description": "The address of the token that will be deposited to the funding manager",
+        "type": "address"
+      }
+    ],
+    "dependencyData": []
+  },
+  "abiMembers": {
+    "Approval": {
+      "tags": { "owner": [""], "spender": [""], "value": ["decimals"] },
+      "returnNames": []
+    },
+    "Deposit": {
+      "tags": { "_from": [""], "_for": [""], "_amount": ["decimals"] },
+      "returnNames": []
+    },
+    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
+    "ModuleInitialized": {
+      "tags": {
+        "parentOrchestrator": [""],
+        "moduleTitle": [""],
+        "majorVersion": [""],
+        "minorVersion": [""]
+      },
+      "returnNames": []
+    },
+    "Rebase": {
+      "tags": { "epoch": [""], "newScalar": [""] },
+      "returnNames": []
+    },
+    "Transfer": {
+      "tags": { "from": [""], "to": [""], "value": ["decimals"] },
+      "returnNames": []
+    },
+    "TransferOrchestratorToken": {
+      "tags": { "_to": [""], "_amount": ["decimals"] },
+      "returnNames": []
+    },
+    "Withdrawal": {
+      "tags": { "_from": [""], "_for": [""], "_amount": ["decimals"] },
+      "returnNames": []
+    },
+    "DOMAIN_SEPARATOR": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "EIP712_DOMAIN": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "EIP712_REVISION": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "PERMIT_TYPEHASH": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "allowance": {
+      "tags": { "owner_": [""], "spender": [""], "_0": ["decimals"] },
+      "returnNames": ["_0"]
+    },
+    "approve": {
+      "tags": { "spender": [""], "tokens": ["decimals"], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "balanceOf": {
+      "tags": { "who": [""], "_0": ["decimals"] },
+      "returnNames": ["_0"]
+    },
+    "decimals": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "decoder": {
+      "tags": { "data": [""], "requirement": [""] },
+      "returnNames": ["requirement"]
+    },
+    "decreaseAllowance": {
+      "tags": { "spender": [""], "tokens": ["decimals"], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "deposit": { "tags": { "amount": ["decimals"] }, "returnNames": [] },
+    "depositFor": {
+      "tags": { "to": [""], "amount": ["decimals"] },
+      "returnNames": []
+    },
+    "grantModuleRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "grantModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "identifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "increaseAllowance": {
+      "tags": { "spender": [""], "tokens": ["decimals"], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "init": {
+      "tags": {
+        "orchestrator_": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "configData": [""]
+      },
+      "returnNames": []
+    },
+    "init2": {
+      "tags": { "orchestrator_": [""], "dependencyData": [""] },
+      "returnNames": []
+    },
+    "isTrustedForwarder": {
+      "tags": { "forwarder": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "name": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "nonces": { "tags": { "who": [""], "_0": [""] }, "returnNames": ["_0"] },
+    "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "permit": {
+      "tags": {
+        "owner": [""],
+        "spender": [""],
+        "value": ["decimals"],
+        "deadline": [""],
+        "v": [""],
+        "r": [""],
+        "s": [""]
+      },
+      "returnNames": []
+    },
+    "rebase": { "tags": {}, "returnNames": [] },
+    "revokeModuleRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "revokeModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "scaledBalanceOf": {
+      "tags": { "who": [""], "_0": ["decimals"] },
+      "returnNames": ["_0"]
+    },
+    "scaledTotalSupply": {
+      "tags": { "_0": ["decimals"] },
+      "returnNames": ["_0"]
+    },
+    "supportsInterface": {
+      "tags": { "interfaceId": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "symbol": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "token": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "totalSupply": { "tags": { "_0": ["decimals"] }, "returnNames": ["_0"] },
+    "transfer": {
+      "tags": { "to": [""], "tokens": ["decimals"], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "transferAll": {
+      "tags": { "to": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "transferAllFrom": {
+      "tags": { "from": [""], "to": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "transferFrom": {
+      "tags": { "from": [""], "to": [""], "tokens": ["decimals"], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "transferOrchestratorToken": {
+      "tags": { "to": [""], "amount": ["decimals"] },
+      "returnNames": []
+    },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "version": {
+      "tags": { "_0": [""], "_1": [""] },
+      "returnNames": ["_0", "_1"]
+    },
+    "withdraw": { "tags": { "amount": ["decimals"] }, "returnNames": [] },
+    "withdrawTo": {
+      "tags": { "to": [""], "amount": ["decimals"] },
+      "returnNames": []
+    }
+  }
+}

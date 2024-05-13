@@ -1,0 +1,207 @@
+{
+  "deploymentInputs": { "configData": [], "dependencyData": [] },
+  "abiMembers": {
+    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
+    "InvalidStreamingOrderDiscarded": {
+      "tags": {
+        "recipient": [""],
+        "amount": ["decimals"],
+        "start": [""],
+        "dueTo": [""]
+      },
+      "returnNames": []
+    },
+    "ModuleInitialized": {
+      "tags": {
+        "parentOrchestrator": [""],
+        "moduleTitle": [""],
+        "majorVersion": [""],
+        "minorVersion": [""]
+      },
+      "returnNames": []
+    },
+    "PaymentOrderProcessed": {
+      "tags": {
+        "paymentClient": [""],
+        "recipient": [""],
+        "amount": ["decimals"],
+        "createdAt": [""],
+        "dueTo": [""],
+        "walletId": [""]
+      },
+      "returnNames": []
+    },
+    "StreamingPaymentAdded": {
+      "tags": {
+        "paymentClient": [""],
+        "recipient": [""],
+        "amount": ["decimals"],
+        "start": [""],
+        "dueTo": [""],
+        "walletId": [""]
+      },
+      "returnNames": []
+    },
+    "StreamingPaymentRemoved": {
+      "tags": { "paymentClient": [""], "recipient": [""], "walletId": [""] },
+      "returnNames": []
+    },
+    "TokensReleased": {
+      "tags": { "recipient": [""], "token": [""], "amount": ["decimals"] },
+      "returnNames": []
+    },
+    "UnclaimableAmountAdded": {
+      "tags": {
+        "paymentClient": [""],
+        "recipient": [""],
+        "walletId": [""],
+        "amount": ["decimals"]
+      },
+      "returnNames": []
+    },
+    "cancelRunningPayments": { "tags": { "client": [""] }, "returnNames": [] },
+    "claimAll": { "tags": { "client": [""] }, "returnNames": [] },
+    "claimForSpecificWalletId": {
+      "tags": { "client": [""], "walletId": [""] },
+      "returnNames": []
+    },
+    "claimPreviouslyUnclaimable": {
+      "tags": { "client": [""], "receiver": [""] },
+      "returnNames": []
+    },
+    "decoder": {
+      "tags": { "data": [""], "requirement": [""] },
+      "returnNames": ["requirement"]
+    },
+    "dueToForSpecificWalletId": {
+      "tags": {
+        "client": [""],
+        "paymentReceiver": [""],
+        "walletId": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "grantModuleRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "grantModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "identifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "init": {
+      "tags": {
+        "orchestrator_": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""]
+      },
+      "returnNames": []
+    },
+    "init2": {
+      "tags": { "orchestrator_": [""], "dependencyData": [""] },
+      "returnNames": []
+    },
+    "isActivePaymentReceiver": {
+      "tags": { "client": [""], "paymentReceiver": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "isTrustedForwarder": {
+      "tags": { "forwarder": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "numVestingWallets": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "processPayments": { "tags": { "client": [""] }, "returnNames": [] },
+    "releasableForSpecificWalletId": {
+      "tags": {
+        "client": [""],
+        "paymentReceiver": [""],
+        "walletId": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "releasedForSpecificWalletId": {
+      "tags": {
+        "client": [""],
+        "paymentReceiver": [""],
+        "walletId": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "removeAllPaymentReceiverPayments": {
+      "tags": { "client": [""], "paymentReceiver": [""] },
+      "returnNames": []
+    },
+    "removePaymentForSpecificWalletId": {
+      "tags": { "client": [""], "paymentReceiver": [""], "walletId": [""] },
+      "returnNames": []
+    },
+    "revokeModuleRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "revokeModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "startForSpecificWalletId": {
+      "tags": {
+        "client": [""],
+        "paymentReceiver": [""],
+        "walletId": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "supportsInterface": {
+      "tags": { "interfaceId": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "token": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "unclaimable": {
+      "tags": {
+        "client": [""],
+        "paymentReceiver": [""],
+        "amount": ["decimals"]
+      },
+      "returnNames": ["amount"]
+    },
+    "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "version": {
+      "tags": { "_0": [""], "_1": [""] },
+      "returnNames": ["_0", "_1"]
+    },
+    "vestedAmountForSpecificWalletId": {
+      "tags": {
+        "client": [""],
+        "paymentReceiver": [""],
+        "timestamp": [""],
+        "walletId": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "viewAllPaymentOrders": {
+      "tags": {
+        "client": [""],
+        "paymentReceiver": [""],
+        "_0": [""],
+        "_salary": [""],
+        "_released": [""],
+        "_start": [""],
+        "_dueTo": [""],
+        "_vestingWalletID": [""]
+      },
+      "returnNames": ["_0"]
+    }
+  }
+}

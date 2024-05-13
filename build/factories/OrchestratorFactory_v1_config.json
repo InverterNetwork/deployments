@@ -1,0 +1,70 @@
+{
+  "deploymentInputs": { "configData": [], "dependencyData": [] },
+  "abiMembers": {
+    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
+    "OrchestratorCreated": {
+      "tags": { "orchestratorId": [""], "orchestratorAddress": [""] },
+      "returnNames": []
+    },
+    "OwnershipTransferStarted": {
+      "tags": { "previousOwner": [""], "newOwner": [""] },
+      "returnNames": []
+    },
+    "OwnershipTransferred": {
+      "tags": { "previousOwner": [""], "newOwner": [""] },
+      "returnNames": []
+    },
+    "acceptOwnership": { "tags": {}, "returnNames": [] },
+    "createOrchestrator": {
+      "tags": {
+        "owner": [""],
+        "token": [""],
+        "orchestratorConfig": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "configData": [""],
+        "dependencyData": [""],
+        "fundingManagerConfig": [""],
+        "authorizerConfig": [""],
+        "paymentProcessorConfig": [""],
+        "moduleConfigs": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "decoder": {
+      "tags": { "data": [""], "requirement": [""] },
+      "returnNames": ["requirement"]
+    },
+    "getOrchestratorByID": {
+      "tags": { "id": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "getOrchestratorIDCounter": {
+      "tags": { "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "init": {
+      "tags": { "governor_": [""], "target_": [""], "moduleFactory_": [""] },
+      "returnNames": []
+    },
+    "isTrustedForwarder": {
+      "tags": { "forwarder": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "moduleFactory": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "owner": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "pendingOwner": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "renounceOwnership": { "tags": {}, "returnNames": [] },
+    "supportsInterface": {
+      "tags": { "interfaceId": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "target": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "transferOwnership": { "tags": { "newOwner": [""] }, "returnNames": [] },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] }
+  }
+}

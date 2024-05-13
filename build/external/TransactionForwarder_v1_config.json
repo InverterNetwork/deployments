@@ -1,0 +1,98 @@
+{
+  "deploymentInputs": { "configData": [], "dependencyData": [] },
+  "abiMembers": {
+    "EIP712DomainChanged": { "tags": {}, "returnNames": [] },
+    "ExecutedForwardRequest": {
+      "tags": { "signer": [""], "nonce": [""], "success": [""] },
+      "returnNames": []
+    },
+    "createDigest": {
+      "tags": {
+        "from": [""],
+        "to": [""],
+        "value": [""],
+        "gas": [""],
+        "deadline": [""],
+        "data": [""],
+        "signature": [""],
+        "req": [""],
+        "digest": [""]
+      },
+      "returnNames": ["digest"]
+    },
+    "eip712Domain": {
+      "tags": {
+        "fields": [""],
+        "name": [""],
+        "version": [""],
+        "chainId": [""],
+        "verifyingContract": [""],
+        "salt": [""],
+        "extensions": [""]
+      },
+      "returnNames": [
+        "fields",
+        "name",
+        "version",
+        "chainId",
+        "verifyingContract",
+        "salt",
+        "extensions"
+      ]
+    },
+    "execute": {
+      "tags": {
+        "from": [""],
+        "to": [""],
+        "value": [""],
+        "gas": [""],
+        "deadline": [""],
+        "data": [""],
+        "signature": [""],
+        "request": [""]
+      },
+      "returnNames": []
+    },
+    "executeBatch": {
+      "tags": {
+        "from": [""],
+        "to": [""],
+        "value": [""],
+        "gas": [""],
+        "deadline": [""],
+        "data": [""],
+        "signature": [""],
+        "requests": [""],
+        "refundReceiver": [""]
+      },
+      "returnNames": []
+    },
+    "executeMulticall": {
+      "tags": {
+        "target": [""],
+        "allowFailure": [""],
+        "callData": [""],
+        "calls": [""],
+        "results": [""],
+        "success": [""],
+        "returnData": [""]
+      },
+      "returnNames": ["results"]
+    },
+    "nonces": { "tags": { "owner": [""], "_0": [""] }, "returnNames": ["_0"] },
+    "verify": {
+      "tags": {
+        "from": [""],
+        "to": [""],
+        "value": [""],
+        "gas": [""],
+        "deadline": [""],
+        "data": [""],
+        "signature": [""],
+        "request": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    }
+  }
+}
