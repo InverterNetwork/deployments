@@ -79,7 +79,11 @@
       "returnNames": ["_0"]
     },
     "getThresholdValue": {
-      "tags": { "roleId": [""], "token": ["decimals:internal:indirect:token"], "_0": [""] },
+      "tags": {
+        "roleId": [""],
+        "token": ["decimals:internal:indirect:token"],
+        "_0": [""]
+      },
       "returnNames": ["_0"]
     },
     "grantGlobalRole": {
@@ -111,7 +115,11 @@
       "returnNames": []
     },
     "grantTokenRoleFromModule": {
-      "tags": { "role": [""], "token": [""], "threshold": ["decimals:internal:indirect:token"] },
+      "tags": {
+        "role": [""],
+        "token": [""],
+        "threshold": ["decimals:internal:indirect:token"]
+      },
       "returnNames": []
     },
     "hasModuleRole": {
@@ -186,11 +194,19 @@
       "returnNames": []
     },
     "setThreshold": {
-      "tags": { "roleId": [""], "token": [""], "threshold": ["decimals:internal:indirect:token"] },
+      "tags": {
+        "roleId": [""],
+        "token": [""],
+        "threshold": ["decimals:internal:indirect:token"]
+      },
       "returnNames": []
     },
     "setThresholdFromModule": {
-      "tags": { "role": [""], "token": [""], "threshold": ["decimals:internal:indirect:token"] },
+      "tags": {
+        "role": [""],
+        "token": [""],
+        "threshold": ["decimals:internal:indirect:token"]
+      },
       "returnNames": []
     },
     "setTokenGated": {
