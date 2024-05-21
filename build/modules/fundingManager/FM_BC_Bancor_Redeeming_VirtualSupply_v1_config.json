@@ -183,7 +183,7 @@
       "returnNames": []
     },
     "buy": {
-      "tags": { "_depositAmount": ["decimals"], "_minAmountOut": ["decimals"] },
+      "tags": { "_depositAmount": ["decimals"], "_minAmountOut": ["decimals:external:indirect:issuanceToken"] },
       "returnNames": []
     },
     "buyFee": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
@@ -191,13 +191,13 @@
       "tags": {
         "_receiver": [""],
         "_depositAmount": ["decimals"],
-        "_minAmountOut": ["decimals"]
+        "_minAmountOut": ["decimals:external:indirect:issuanceToken"]
       },
       "returnNames": []
     },
     "buyIsOpen": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "calculatePurchaseReturn": {
-      "tags": { "_depositAmount": [""], "mintAmount": ["decimals"] },
+      "tags": { "_depositAmount": [""], "mintAmount": ["decimals:external:indirect:issuanceToken"] },
       "returnNames": ["mintAmount"]
     },
     "calculateSaleReturn": {
