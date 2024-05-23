@@ -17,9 +17,9 @@
         "description": "The decimals used within the issuance token"
       },
       {
-        "name": "MAX_SUPPLY",
+        "name": "maxSupply",
         "type": "uint256",
-        "description": "The maximal total supply of the token",
+        "description": "The max total supply of the token",
         "tags": ["decimals:internal:exact:decimals"]
       },
       {
@@ -183,7 +183,10 @@
       "returnNames": []
     },
     "buy": {
-      "tags": { "_depositAmount": ["decimals"], "_minAmountOut": ["decimals:external:indirect:issuanceToken"] },
+      "tags": {
+        "_depositAmount": ["decimals"],
+        "_minAmountOut": ["decimals:external:indirect:issuanceToken"]
+      },
       "returnNames": []
     },
     "buyFee": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
@@ -197,7 +200,10 @@
     },
     "buyIsOpen": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "calculatePurchaseReturn": {
-      "tags": { "_depositAmount": [""], "mintAmount": ["decimals:external:indirect:issuanceToken"] },
+      "tags": {
+        "_depositAmount": [""],
+        "mintAmount": ["decimals:external:indirect:issuanceToken"]
+      },
       "returnNames": ["mintAmount"]
     },
     "calculateSaleReturn": {
