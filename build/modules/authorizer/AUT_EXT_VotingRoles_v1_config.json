@@ -52,10 +52,6 @@
       "tags": { "target": [""], "action": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
-    "decoder": {
-      "tags": { "data": [""], "requirement": [""] },
-      "returnNames": ["requirement"]
-    },
     "executeMotion": { "tags": { "motionId": [""] }, "returnNames": [] },
     "getReceipt": {
       "tags": {
@@ -68,7 +64,11 @@
       "returnNames": ["_0"]
     },
     "grantModuleRole": {
-      "tags": { "role": [""], "addr": [""] },
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "grantModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
       "returnNames": []
     },
     "identifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
@@ -121,7 +121,11 @@
     "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "removeVoter": { "tags": { "who": [""] }, "returnNames": [] },
     "revokeModuleRole": {
-      "tags": { "role": [""], "addr": [""] },
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "revokeModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
       "returnNames": []
     },
     "setThreshold": { "tags": { "newThreshold": [""] }, "returnNames": [] },
@@ -135,12 +139,17 @@
     },
     "threshold": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "version": {
       "tags": { "_0": [""], "_1": [""] },
       "returnNames": ["_0", "_1"]
     },
     "voteDuration": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "voterCount": { "tags": { "_0": [""] }, "returnNames": ["_0"] }
+    "voterCount": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "decoder": {
+      "tags": { "data": [""], "requirement": [""] },
+      "returnNames": ["requirement"]
+    }
   }
 }

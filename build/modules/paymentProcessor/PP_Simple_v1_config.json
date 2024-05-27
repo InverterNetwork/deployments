@@ -15,9 +15,11 @@
       "tags": {
         "paymentClient": [""],
         "recipient": [""],
+        "paymentToken": [""],
         "amount": ["decimals"],
-        "createdAt": [""],
-        "dueTo": [""]
+        "start": [""],
+        "cliff": [""],
+        "end": [""]
       },
       "returnNames": []
     },
@@ -26,10 +28,6 @@
       "returnNames": []
     },
     "cancelRunningPayments": { "tags": { "client": [""] }, "returnNames": [] },
-    "decoder": {
-      "tags": { "data": [""], "requirement": [""] },
-      "returnNames": ["requirement"]
-    },
     "grantModuleRole": {
       "tags": { "role": [""], "target": [""] },
       "returnNames": []
@@ -50,7 +48,6 @@
       },
       "returnNames": []
     },
-
     "isTrustedForwarder": {
       "tags": { "forwarder": [""], "_0": [""] },
       "returnNames": ["_0"]
@@ -70,12 +67,16 @@
       "returnNames": ["_0"]
     },
     "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "token": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "version": {
       "tags": { "_0": [""], "_1": [""] },
       "returnNames": ["_0", "_1"]
-    }
+    },
+    "decoder": {
+      "tags": { "data": [""], "requirement": [""] },
+      "returnNames": ["requirement"]
+    },
+    "token": { "tags": { "_0": [""] }, "returnNames": ["_0"] }
   }
 }

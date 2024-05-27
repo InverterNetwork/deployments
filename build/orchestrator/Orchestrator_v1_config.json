@@ -9,13 +9,19 @@
     "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
     "ModuleAdded": { "tags": { "module": [""] }, "returnNames": [] },
     "ModuleRemoved": { "tags": { "module": [""] }, "returnNames": [] },
+    "ModuleTimelockStarted": {
+      "tags": { "module": [""], "timelockUntil": [""] },
+      "returnNames": []
+    },
+    "ModuleUpdateCanceled": { "tags": { "module": [""] }, "returnNames": [] },
     "OrchestratorInitialized": {
       "tags": {
         "orchestratorId_": [""],
         "fundingManager": [""],
         "authorizer": [""],
         "paymentProcessor": [""],
-        "modules": [""]
+        "modules": [""],
+        "governor": [""]
       },
       "returnNames": []
     },
@@ -23,8 +29,35 @@
       "tags": { "_address": [""] },
       "returnNames": []
     },
-    "addModule": { "tags": { "module": [""] }, "returnNames": [] },
+    "MODULE_UPDATE_TIMELOCK": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "authorizer": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "cancelAuthorizerUpdate": {
+      "tags": { "authorizer_": [""] },
+      "returnNames": []
+    },
+    "cancelFundingManagerUpdate": {
+      "tags": { "fundingManager_": [""] },
+      "returnNames": []
+    },
+    "cancelModuleUpdate": { "tags": { "module_": [""] }, "returnNames": [] },
+    "cancelPaymentProcessorUpdate": {
+      "tags": { "paymentProcessor_": [""] },
+      "returnNames": []
+    },
+    "executeAddModule": { "tags": { "module_": [""] }, "returnNames": [] },
+    "executeRemoveModule": { "tags": { "module_": [""] }, "returnNames": [] },
+    "executeSetAuthorizer": {
+      "tags": { "authorizer_": [""] },
+      "returnNames": []
+    },
+    "executeSetFundingManager": {
+      "tags": { "fundingManager_": [""] },
+      "returnNames": []
+    },
+    "executeSetPaymentProcessor": {
+      "tags": { "paymentProcessor_": [""] },
+      "returnNames": []
+    },
     "executeTx": {
       "tags": { "target": [""], "data": [""], "_0": [""] },
       "returnNames": ["_0"]
@@ -38,14 +71,36 @@
       "returnNames": ["_0"]
     },
     "fundingManager": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "governor": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "init": {
       "tags": {
         "orchestratorId_": [""],
         "modules": [""],
         "fundingManager_": [""],
         "authorizer_": [""],
-        "paymentProcessor_": [""]
+        "paymentProcessor_": [""],
+        "governor_": [""]
       },
+      "returnNames": []
+    },
+    "initiateAddModuleWithTimelock": {
+      "tags": { "module_": [""] },
+      "returnNames": []
+    },
+    "initiateRemoveModuleWithTimelock": {
+      "tags": { "module_": [""] },
+      "returnNames": []
+    },
+    "initiateSetAuthorizerWithTimelock": {
+      "tags": { "authorizer_": [""] },
+      "returnNames": []
+    },
+    "initiateSetFundingManagerWithTimelock": {
+      "tags": { "fundingManager_": [""] },
+      "returnNames": []
+    },
+    "initiateSetPaymentProcessorWithTimelock": {
+      "tags": { "paymentProcessor_": [""] },
       "returnNames": []
     },
     "isModule": {
@@ -57,9 +112,20 @@
       "returnNames": ["_0"]
     },
     "listModules": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "moduleAddressToTimelock": {
+      "tags": { "module": [""], "timelockActive": [""], "timelockUntil": [""] },
+      "returnNames": ["timelockActive", "timelockUntil"]
+    },
     "modulesSize": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "orchestratorId": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "paymentProcessor": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "supportsInterface": {
+      "tags": { "interfaceId": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "version": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "addModule": { "tags": { "module": [""] }, "returnNames": [] },
     "removeModule": { "tags": { "module": [""] }, "returnNames": [] },
     "setAuthorizer": { "tags": { "authorizer_": [""] }, "returnNames": [] },
     "setFundingManager": {
@@ -69,12 +135,6 @@
     "setPaymentProcessor": {
       "tags": { "paymentProcessor_": [""] },
       "returnNames": []
-    },
-    "supportsInterface": {
-      "tags": { "interfaceId": [""], "_0": [""] },
-      "returnNames": ["_0"]
-    },
-    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "version": { "tags": { "_0": [""] }, "returnNames": ["_0"] }
+    }
   }
 }

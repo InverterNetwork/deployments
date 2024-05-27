@@ -5,9 +5,11 @@
     "InvalidStreamingOrderDiscarded": {
       "tags": {
         "recipient": [""],
+        "paymentToken": [""],
         "amount": ["decimals"],
         "start": [""],
-        "dueTo": [""]
+        "cliff": [""],
+        "end": [""]
       },
       "returnNames": []
     },
@@ -24,10 +26,12 @@
       "tags": {
         "paymentClient": [""],
         "recipient": [""],
+        "paymentToken": [""],
         "amount": ["decimals"],
-        "createdAt": [""],
-        "dueTo": [""],
-        "walletId": [""]
+        "streamId": [""],
+        "start": [""],
+        "cliff": [""],
+        "end": [""]
       },
       "returnNames": []
     },
@@ -35,15 +39,21 @@
       "tags": {
         "paymentClient": [""],
         "recipient": [""],
+        "paymentToken": [""],
+        "streamId": [""],
         "amount": ["decimals"],
         "start": [""],
-        "dueTo": [""],
-        "walletId": [""]
+        "cliff": [""],
+        "end": [""]
       },
       "returnNames": []
     },
     "StreamingPaymentRemoved": {
-      "tags": { "paymentClient": [""], "recipient": [""], "walletId": [""] },
+      "tags": {
+        "paymentClient": [""],
+        "recipient": [""],
+        "streamId": [""]
+      },
       "returnNames": []
     },
     "TokensReleased": {
@@ -54,30 +64,36 @@
       "tags": {
         "paymentClient": [""],
         "recipient": [""],
-        "walletId": [""],
+        "paymentToken": [""],
+        "streamId": [""],
         "amount": ["decimals"]
       },
       "returnNames": []
     },
     "cancelRunningPayments": { "tags": { "client": [""] }, "returnNames": [] },
     "claimAll": { "tags": { "client": [""] }, "returnNames": [] },
-    "claimForSpecificWalletId": {
-      "tags": { "client": [""], "walletId": [""] },
+    "claimForSpecificStream": {
+      "tags": { "client": [""], "streamId": [""] },
       "returnNames": []
     },
     "claimPreviouslyUnclaimable": {
       "tags": { "client": [""], "receiver": [""] },
       "returnNames": []
     },
-    "decoder": {
-      "tags": { "data": [""], "requirement": [""] },
-      "returnNames": ["requirement"]
-    },
-    "dueToForSpecificWalletId": {
+    "cliffForSpecificStream": {
       "tags": {
         "client": [""],
         "paymentReceiver": [""],
-        "walletId": [""],
+        "streamId": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "endForSpecificStream": {
+      "tags": {
+        "client": [""],
+        "paymentReceiver": [""],
+        "streamId": [""],
         "_0": [""]
       },
       "returnNames": ["_0"]
@@ -110,9 +126,117 @@
       "tags": { "forwarder": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
-    "numVestingWallets": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "numStreams": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "processPayments": { "tags": { "client": [""] }, "returnNames": [] },
+    "releasableForSpecificStream": {
+      "tags": {
+        "client": [""],
+        "paymentReceiver": [""],
+        "streamId": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "releasedForSpecificStream": {
+      "tags": {
+        "client": [""],
+        "paymentReceiver": [""],
+        "streamId": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "removeAllPaymentReceiverPayments": {
+      "tags": { "client": [""], "paymentReceiver": [""] },
+      "returnNames": []
+    },
+    "removePaymentForSpecificStream": {
+      "tags": { "client": [""], "paymentReceiver": [""], "streamId": [""] },
+      "returnNames": []
+    },
+    "revokeModuleRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "revokeModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "startForSpecificStream": {
+      "tags": {
+        "client": [""],
+        "paymentReceiver": [""],
+        "streamId": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "streamedAmountForSpecificStream": {
+      "tags": {
+        "client": [""],
+        "paymentReceiver": [""],
+        "streamId": [""],
+        "timestamp": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "supportsInterface": {
+      "tags": { "interfaceId": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "unclaimable": {
+      "tags": {
+        "client": [""],
+        "paymentReceiver": [""],
+        "amount": ["decimals"]
+      },
+      "returnNames": ["amount"]
+    },
+    "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "version": {
+      "tags": { "_0": [""], "_1": [""] },
+      "returnNames": ["_0", "_1"]
+    },
+    "viewAllPaymentOrders": {
+      "tags": {
+        "client": [""],
+        "paymentReceiver": [""],
+        "_0": [""],
+        "_paymentToken": [""],
+        "_streamId": [""],
+        "_total": [""],
+        "_released": [""],
+        "_start": [""],
+        "_cliff": [""],
+        "_end": [""],
+        "_salary": [""],
+        "_dueTo": [""],
+        "_vestingWalletID": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "claimForSpecificWalletId": {
+      "tags": { "client": [""], "walletId": [""] },
+      "returnNames": []
+    },
+    "decoder": {
+      "tags": { "data": [""], "requirement": [""] },
+      "returnNames": ["requirement"]
+    },
+    "dueToForSpecificWalletId": {
+      "tags": {
+        "client": [""],
+        "paymentReceiver": [""],
+        "walletId": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "numVestingWallets": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "releasableForSpecificWalletId": {
       "tags": {
         "client": [""],
@@ -131,20 +255,8 @@
       },
       "returnNames": ["_0"]
     },
-    "removeAllPaymentReceiverPayments": {
-      "tags": { "client": [""], "paymentReceiver": [""] },
-      "returnNames": []
-    },
     "removePaymentForSpecificWalletId": {
       "tags": { "client": [""], "paymentReceiver": [""], "walletId": [""] },
-      "returnNames": []
-    },
-    "revokeModuleRole": {
-      "tags": { "role": [""], "target": [""] },
-      "returnNames": []
-    },
-    "revokeModuleRoleBatched": {
-      "tags": { "role": [""], "targets": [""] },
       "returnNames": []
     },
     "startForSpecificWalletId": {
@@ -156,26 +268,7 @@
       },
       "returnNames": ["_0"]
     },
-    "supportsInterface": {
-      "tags": { "interfaceId": [""], "_0": [""] },
-      "returnNames": ["_0"]
-    },
-    "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "token": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "unclaimable": {
-      "tags": {
-        "client": [""],
-        "paymentReceiver": [""],
-        "amount": ["decimals"]
-      },
-      "returnNames": ["amount"]
-    },
-    "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "version": {
-      "tags": { "_0": [""], "_1": [""] },
-      "returnNames": ["_0", "_1"]
-    },
     "vestedAmountForSpecificWalletId": {
       "tags": {
         "client": [""],
@@ -183,19 +276,6 @@
         "timestamp": [""],
         "walletId": [""],
         "_0": [""]
-      },
-      "returnNames": ["_0"]
-    },
-    "viewAllPaymentOrders": {
-      "tags": {
-        "client": [""],
-        "paymentReceiver": [""],
-        "_0": [""],
-        "_salary": [""],
-        "_released": [""],
-        "_start": [""],
-        "_dueTo": [""],
-        "_vestingWalletID": [""]
       },
       "returnNames": ["_0"]
     }
