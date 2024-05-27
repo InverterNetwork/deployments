@@ -146,10 +146,6 @@
       },
       "returnNames": []
     },
-    "init2": {
-      "tags": { "orchestrator_": [""], "dependencyData": [""] },
-      "returnNames": []
-    },
     "isTokenGated": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "isTrustedForwarder": {
       "tags": { "forwarder": [""], "_0": [""] },

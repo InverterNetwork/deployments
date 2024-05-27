@@ -112,10 +112,6 @@
       },
       "returnNames": []
     },
-    "init2": {
-      "tags": { "orchestrator_": [""], "dependencyData": [""] },
-      "returnNames": []
-    },
     "isExistingRecurringPaymentId": {
       "tags": { "id": [""], "_0": [""] },
       "returnNames": ["_0"]

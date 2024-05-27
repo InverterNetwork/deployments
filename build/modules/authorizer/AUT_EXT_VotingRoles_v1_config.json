@@ -84,10 +84,6 @@
       },
       "returnNames": []
     },
-    "init2": {
-      "tags": { "orchestrator_": [""], "dependencyData": [""] },
-      "returnNames": []
-    },
     "isTrustedForwarder": {
       "tags": { "forwarder": [""], "_0": [""] },
       "returnNames": ["_0"]
