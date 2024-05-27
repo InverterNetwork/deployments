@@ -184,7 +184,7 @@
     "buy": {
       "tags": {
         "_depositAmount": ["decimals"],
-        "_minAmountOut": ["decimals:external:indirect:issuanceToken"]
+        "_minAmountOut": ["decimals:external:indirect:getIssuanceToken"]
       },
       "returnNames": []
     },
@@ -193,7 +193,7 @@
       "tags": {
         "_receiver": [""],
         "_depositAmount": ["decimals"],
-        "_minAmountOut": ["decimals:external:indirect:issuanceToken"]
+        "_minAmountOut": ["decimals:external:indirect:getIssuanceToken"]
       },
       "returnNames": []
     },
@@ -201,7 +201,7 @@
     "calculatePurchaseReturn": {
       "tags": {
         "_depositAmount": [""],
-        "mintAmount": ["decimals:external:indirect:issuanceToken"]
+        "mintAmount": ["decimals:external:indirect:getIssuanceToken"]
       },
       "returnNames": ["mintAmount"]
     },
