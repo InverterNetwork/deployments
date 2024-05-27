@@ -1,5 +1,5 @@
 {
-  "deploymentInputs": { "configData": [], "dependencyData": [] },
+  "deploymentInputs": { "configData": [] },
   "abiMembers": {
     "EIP712DomainChanged": { "tags": {}, "returnNames": [] },
     "ExecutedForwardRequest": {

@@ -11,8 +11,7 @@
         "type": "address",
         "description": "The initial manager of the workflow"
       }
-    ],
-    "dependencyData": []
+    ]
   },
   "abiMembers": {
     "ChangedTokenGating": {
@@ -145,10 +144,6 @@
         "metadata": [""],
         "configData": [""]
       },
-      "returnNames": []
-    },
-    "init2": {
-      "tags": { "orchestrator_": [""], "dependencyData": [""] },
       "returnNames": []
     },
     "isTokenGated": { "tags": { "_0": [""] }, "returnNames": ["_0"] },

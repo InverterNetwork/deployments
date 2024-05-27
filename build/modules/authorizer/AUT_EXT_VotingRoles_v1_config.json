@@ -16,8 +16,7 @@
         "type": "uint256",
         "description": "The duration of a vote. Needs to be more than 1 day but less than 2 weeks."
       }
-    ],
-    "dependencyData": []
+    ]
   },
   "abiMembers": {
     "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
@@ -83,10 +82,6 @@
         "metadata": [""],
         "configData": [""]
       },
-      "returnNames": []
-    },
-    "init2": {
-      "tags": { "orchestrator_": [""], "dependencyData": [""] },
       "returnNames": []
     },
     "isTrustedForwarder": {

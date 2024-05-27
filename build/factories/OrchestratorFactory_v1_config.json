@@ -1,5 +1,5 @@
 {
-  "deploymentInputs": { "configData": [], "dependencyData": [] },
+  "deploymentInputs": { "configData": [] },
   "abiMembers": {
     "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
     "OrchestratorCreated": {
@@ -26,7 +26,6 @@
         "title": [""],
         "metadata": [""],
         "configData": [""],
-        "dependencyData": [""],
         "fundingManagerConfig": [""],
         "authorizerConfig": [""],
         "paymentProcessorConfig": [""],

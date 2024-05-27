@@ -11,8 +11,7 @@
         "type": "address",
         "description": "The initial manager of the workflow"
       }
-    ],
-    "dependencyData": []
+    ]
   },
   "abiMembers": {
     "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
@@ -117,10 +116,6 @@
         "metadata": [""],
         "configData": [""]
       },
-      "returnNames": []
-    },
-    "init2": {
-      "tags": { "orchestrator_": [""], "dependencyData": [""] },
       "returnNames": []
     },
     "isTrustedForwarder": {

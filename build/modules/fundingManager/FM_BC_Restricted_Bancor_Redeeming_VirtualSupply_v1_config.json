@@ -181,6 +181,7 @@
       "tags": { "_from": [""], "_for": [""], "_amount": ["decimals"] },
       "returnNames": []
     },
+    "CURVE_INTERACTION_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "buy": {
       "tags": {
         "_depositAmount": ["decimals"],
@@ -262,10 +263,7 @@
       "tags": { "forwarder": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
-    "mintIssuanceTokenTo": {
-      "tags": { "_receiver": [""], "_amount": [""] },
-      "returnNames": []
-    },
+    "mintIssuanceTokenTo": { "tags": {}, "returnNames": [] },
     "openBuy": { "tags": {}, "returnNames": [] },
     "openSell": { "tags": {}, "returnNames": [] },
     "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },

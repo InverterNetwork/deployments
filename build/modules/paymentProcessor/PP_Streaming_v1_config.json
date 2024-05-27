@@ -1,5 +1,5 @@
 {
-  "deploymentInputs": { "configData": [], "dependencyData": [] },
+  "deploymentInputs": { "configData": [] },
   "abiMembers": {
     "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
     "InvalidStreamingOrderDiscarded": {
@@ -100,10 +100,6 @@
         "title": [""],
         "metadata": [""]
       },
-      "returnNames": []
-    },
-    "init2": {
-      "tags": { "orchestrator_": [""], "dependencyData": [""] },
       "returnNames": []
     },
     "isActivePaymentReceiver": {

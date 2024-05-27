@@ -11,24 +11,28 @@
       },
       "returnNames": []
     },
-    "PaymentOrderProcessed": {
+    "PaymentOrderAdded": {
+      "tags": { "recipient": [""], "token": [""], "amount": [""] },
+      "returnNames": []
+    },
+    "PAYMENT_PUSHER_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "amountPaid": {
+      "tags": { "token": [""], "amount": [""] },
+      "returnNames": []
+    },
+    "collectPaymentOrders": {
       "tags": {
-        "paymentClient": [""],
+        "_0": [""],
+        "_1": [""],
+        "_2": [""],
         "recipient": [""],
-        "amount": ["decimals"],
-        "createdAt": [""],
-        "dueTo": [""]
+        "paymentToken": [""],
+        "amount": [""],
+        "start": [""],
+        "cliff": [""],
+        "end": [""]
       },
-      "returnNames": []
-    },
-    "TokensReleased": {
-      "tags": { "recipient": [""], "token": [""], "amount": ["decimals"] },
-      "returnNames": []
-    },
-    "cancelRunningPayments": { "tags": { "client": [""] }, "returnNames": [] },
-    "decoder": {
-      "tags": { "data": [""], "requirement": [""] },
-      "returnNames": ["requirement"]
+      "returnNames": ["_0", "_1", "_2"]
     },
     "grantModuleRole": {
       "tags": { "role": [""], "target": [""] },
@@ -50,13 +54,50 @@
       },
       "returnNames": []
     },
-
     "isTrustedForwarder": {
       "tags": { "forwarder": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
     "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "processPayments": { "tags": { "client": [""] }, "returnNames": [] },
+    "outstandingTokenAmount": {
+      "tags": { "_token": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "paymentOrders": {
+      "tags": {
+        "_0": [""],
+        "recipient": [""],
+        "paymentToken": [""],
+        "amount": [""],
+        "start": [""],
+        "cliff": [""],
+        "end": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "pushPayment": {
+      "tags": {
+        "recipient": [""],
+        "paymentToken": [""],
+        "amount": [""],
+        "start": [""],
+        "cliff": [""],
+        "end": [""]
+      },
+      "returnNames": []
+    },
+    "pushPaymentBatched": {
+      "tags": {
+        "numOfOrders": [""],
+        "recipients": [""],
+        "paymentTokens": [""],
+        "amounts": [""],
+        "start": [""],
+        "cliff": [""],
+        "end": [""]
+      },
+      "returnNames": []
+    },
     "revokeModuleRole": {
       "tags": { "role": [""], "target": [""] },
       "returnNames": []
@@ -70,7 +111,6 @@
       "returnNames": ["_0"]
     },
     "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "token": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "version": {
