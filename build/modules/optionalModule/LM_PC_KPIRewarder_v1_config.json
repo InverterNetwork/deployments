@@ -150,7 +150,7 @@
     "balanceOf": {
       "tags": {
         "user": [""],
-        "_0": ["decimals:external:indirect:stakingToken"]
+        "_0": ["decimals:contract:indirect:stakingToken"]
       },
       "returnNames": ["_0"]
     },
@@ -181,7 +181,7 @@
     "defaultCurrency": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "defaultIdentifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "depositFeeFunds": {
-      "tags": { "amount": ["decimals:external:indirect:defaultCurrency"] },
+      "tags": { "amount": ["decimals:contract:indirect:defaultCurrency"] },
       "returnNames": []
     },
     "dequeueStake": { "tags": {}, "returnNames": [] },

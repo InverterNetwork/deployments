@@ -22,7 +22,7 @@
             "name": "maxSupply",
             "type": "uint256",
             "description": "The max total supply of the token",
-            "tags": ["decimals:internal:exact:decimals"]
+            "tags": ["decimals:params:exact:decimals"]
           }
         ],
         "name": "issuanceToken",
@@ -74,13 +74,13 @@
             "name": "initialTokenSupply",
             "type": "uint256",
             "description": "The initial virtual issuance token supply",
-            "tags": ["decimals:internal:exact:decimals"]
+            "tags": ["decimals:params:exact:decimals"]
           },
           {
             "name": "initialCollateralSupply",
             "type": "uint256",
             "description": "The initial virtual collateral token supply",
-            "tags": ["decimals:internal:indirect:acceptedToken"]
+            "tags": ["decimals:params:indirect:acceptedToken"]
           }
         ],
         "name": "bondingCurveParams",
@@ -202,7 +202,7 @@
     "buy": {
       "tags": {
         "_depositAmount": ["decimals"],
-        "_minAmountOut": ["decimals:external:indirect:getIssuanceToken"]
+        "_minAmountOut": ["decimals:contract:indirect:getIssuanceToken"]
       },
       "returnNames": []
     },
@@ -211,7 +211,7 @@
       "tags": {
         "_receiver": [""],
         "_depositAmount": ["decimals"],
-        "_minAmountOut": ["decimals:external:indirect:getIssuanceToken"]
+        "_minAmountOut": ["decimals:contract:indirect:getIssuanceToken"]
       },
       "returnNames": []
     },
@@ -219,7 +219,7 @@
     "calculatePurchaseReturn": {
       "tags": {
         "_depositAmount": [""],
-        "mintAmount": ["decimals:external:indirect:getIssuanceToken"]
+        "mintAmount": ["decimals:contract:indirect:getIssuanceToken"]
       },
       "returnNames": ["mintAmount"]
     },

@@ -127,7 +127,7 @@
       "returnNames": []
     },
     "stake": {
-      "tags": { "amount": ["decimals:external:indirect:stakingToken"] },
+      "tags": { "amount": ["decimals:contract:indirect:stakingToken"] },
       "returnNames": []
     },
     "stakingToken": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
@@ -139,7 +139,7 @@
     "totalSupply": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "unstake": {
-      "tags": { "amount": ["decimals:external:indirect:stakingToken"] },
+      "tags": { "amount": ["decimals:contract:indirect:stakingToken"] },
       "returnNames": []
     },
     "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
