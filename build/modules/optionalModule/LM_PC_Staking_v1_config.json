@@ -43,11 +43,14 @@
     "Staked": { "tags": { "user": [""], "amount": [""] }, "returnNames": [] },
     "Unstaked": { "tags": { "user": [""], "amount": [""] }, "returnNames": [] },
     "amountPaid": {
-      "tags": { "token": [""], "amount": [""] },
+      "tags": { "token": [""], "amount": ["decimals:internal:indirect:token"] },
       "returnNames": []
     },
     "balanceOf": {
-      "tags": { "user": [""], "_0": [""] },
+      "tags": {
+        "user": [""],
+        "_0": ["decimals:external:indirect:stakingToken"]
+      },
       "returnNames": ["_0"]
     },
     "claimRewards": { "tags": {}, "returnNames": [] },
@@ -58,16 +61,19 @@
         "_2": [""],
         "recipient": [""],
         "paymentToken": [""],
-        "amount": [""],
+        "amount": ["decimals:internal:indirect:paymentToken"],
         "start": [""],
         "cliff": [""],
         "end": [""]
       },
       "returnNames": ["_0", "_1", "_2"]
     },
-    "earned": { "tags": { "user": [""], "_0": [""] }, "returnNames": ["_0"] },
+    "earned": {
+      "tags": { "user": [""], "_0": ["decimals"] },
+      "returnNames": ["_0"]
+    },
     "estimateReward": {
-      "tags": { "amount": [""], "duration": [""], "_0": [""] },
+      "tags": { "amount": ["decimals"], "duration": [""], "_0": ["decimals"] },
       "returnNames": ["_0"]
     },
     "grantModuleRole": {
@@ -97,7 +103,7 @@
     },
     "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "outstandingTokenAmount": {
-      "tags": { "_token": [""], "_0": [""] },
+      "tags": { "_token": [""], "_0": ["decimals:internal:indirect:_token"] },
       "returnNames": ["_0"]
     },
     "paymentOrders": {
@@ -105,7 +111,7 @@
         "_0": [""],
         "recipient": [""],
         "paymentToken": [""],
-        "amount": [""],
+        "amount": ["decimals:internal:indirect:paymentToken"],
         "start": [""],
         "cliff": [""],
         "end": [""]
@@ -123,7 +129,7 @@
     "rewardRate": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "rewardsEnd": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "setRewards": {
-      "tags": { "amount": [""], "duration": [""] },
+      "tags": { "amount": ["decimals"], "duration": [""] },
       "returnNames": []
     },
     "stake": {
@@ -136,7 +142,10 @@
       "returnNames": ["_0"]
     },
     "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "totalSupply": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "totalSupply": {
+      "tags": { "_0": ["decimals:external:indirect:stakingToken"] },
+      "returnNames": ["_0"]
+    },
     "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "unstake": {
       "tags": { "amount": ["decimals:external:indirect:stakingToken"] },
