@@ -1,5 +1,28 @@
 {
-  "deploymentInputs": { "configData": [] },
+  "deploymentInputs": {
+    "configData": [
+      {
+        "name": "stakingTokenAddr",
+        "type": "address",
+        "description": "The token users stake to earn rewards."
+      },
+      {
+        "name": "currencyAddr",
+        "type": "address",
+        "description": "The token the Optimistic Oracle will charge its fee in."
+      },
+      {
+        "name": "ooAddr",
+        "type": "address",
+        "description": "The address of the optimisitic oracle."
+      },
+      {
+        "name": "liveness",
+        "type": "uint64",
+        "description": "How long (in seconds) a query to the oracle will be open for dispute."
+      }
+    ]
+  },
   "abiMembers": {
     "DataAsserted": {
       "tags": {
@@ -125,7 +148,10 @@
       "returnNames": []
     },
     "balanceOf": {
-      "tags": { "user": [""], "_0": [""] },
+      "tags": {
+        "user": [""],
+        "_0": ["decimals:external:indirect:stakingToken"]
+      },
       "returnNames": ["_0"]
     },
     "claimRewards": { "tags": {}, "returnNames": [] },
@@ -154,11 +180,14 @@
     },
     "defaultCurrency": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "defaultIdentifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "depositFeeFunds": { "tags": { "amount": [""] }, "returnNames": [] },
+    "depositFeeFunds": {
+      "tags": { "amount": ["decimals:external:indirect:defaultCurrency"] },
+      "returnNames": []
+    },
     "dequeueStake": { "tags": {}, "returnNames": [] },
     "earned": { "tags": { "user": [""], "_0": [""] }, "returnNames": ["_0"] },
     "estimateReward": {
-      "tags": { "amount": [""], "duration": [""], "_0": [""] },
+      "tags": { "amount": [""], "duration": ["decimals"], "_0": [""] },
       "returnNames": ["_0"]
     },
     "getAssertion": {
