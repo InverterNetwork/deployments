@@ -133,7 +133,9 @@
       "returnNames": []
     },
     "stake": {
-      "tags": { "amount": ["decimals:external:indirect:stakingToken"] },
+      "tags": {
+        "amount": ["decimals:external:indirect:stakingToken", "approval"]
+      },
       "returnNames": []
     },
     "stakingToken": { "tags": { "_0": [""] }, "returnNames": ["_0"] },

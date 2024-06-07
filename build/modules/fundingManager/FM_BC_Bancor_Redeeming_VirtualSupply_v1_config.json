@@ -201,7 +201,10 @@
     "buy": {
       "tags": {
         "_depositAmount": ["decimals"],
-        "_minAmountOut": ["decimals:external:indirect:getIssuanceToken"]
+        "_minAmountOut": [
+          "decimals:external:indirect:getIssuanceToken",
+          "approval"
+        ]
       },
       "returnNames": []
     },
@@ -210,7 +213,10 @@
       "tags": {
         "_receiver": [""],
         "_depositAmount": ["decimals"],
-        "_minAmountOut": ["decimals:external:indirect:getIssuanceToken"]
+        "_minAmountOut": [
+          "decimals:external:indirect:getIssuanceToken",
+          "approval"
+        ]
       },
       "returnNames": []
     },
@@ -299,15 +305,24 @@
       "returnNames": []
     },
     "sell": {
-      "tags": { "_depositAmount": [""], "_minAmountOut": [""] },
+      "tags": {
+        "_depositAmount": [
+          "decimals:contract:indirect:getIssuanceToken",
+          "approval"
+        ],
+        "_minAmountOut": ["decimals"]
+      },
       "returnNames": []
     },
     "sellFee": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "sellFor": {
       "tags": {
         "_receiver": [""],
-        "_depositAmount": [""],
-        "_minAmountOut": [""]
+        "_depositAmount": [
+          "decimals:contract:indirect:getIssuanceToken",
+          "approval"
+        ],
+        "_minAmountOut": ["decimals"]
       },
       "returnNames": []
     },
