@@ -43,13 +43,13 @@
     "Staked": { "tags": { "user": [""], "amount": [""] }, "returnNames": [] },
     "Unstaked": { "tags": { "user": [""], "amount": [""] }, "returnNames": [] },
     "amountPaid": {
-      "tags": { "token": [""], "amount": ["decimals:internal:indirect:token"] },
+      "tags": { "token": [""], "amount": ["decimals:params:indirect:token"] },
       "returnNames": []
     },
     "balanceOf": {
       "tags": {
         "user": [""],
-        "_0": ["decimals:external:indirect:stakingToken"]
+        "_0": ["decimals:contract:indirect:stakingToken"]
       },
       "returnNames": ["_0"]
     },
@@ -61,7 +61,7 @@
         "_2": [""],
         "recipient": [""],
         "paymentToken": [""],
-        "amount": ["decimals:internal:indirect:paymentToken"],
+        "amount": ["decimals:params:indirect:paymentToken"],
         "start": [""],
         "cliff": [""],
         "end": [""]
@@ -103,7 +103,7 @@
     },
     "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "outstandingTokenAmount": {
-      "tags": { "_token": [""], "_0": ["decimals:internal:indirect:_token"] },
+      "tags": { "_token": [""], "_0": ["decimals:params:indirect:_token"] },
       "returnNames": ["_0"]
     },
     "paymentOrders": {
@@ -111,7 +111,7 @@
         "_0": [""],
         "recipient": [""],
         "paymentToken": [""],
-        "amount": ["decimals:internal:indirect:paymentToken"],
+        "amount": ["decimals:params:indirect:paymentToken"],
         "start": [""],
         "cliff": [""],
         "end": [""]
@@ -134,7 +134,7 @@
     },
     "stake": {
       "tags": {
-        "amount": ["decimals:external:indirect:stakingToken", "approval"]
+        "amount": ["decimals:contract:indirect:stakingToken", "approval"]
       },
       "returnNames": []
     },
@@ -145,12 +145,12 @@
     },
     "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "totalSupply": {
-      "tags": { "_0": ["decimals:external:indirect:stakingToken"] },
+      "tags": { "_0": ["decimals:contract:indirect:stakingToken"] },
       "returnNames": ["_0"]
     },
     "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "unstake": {
-      "tags": { "amount": ["decimals:external:indirect:stakingToken"] },
+      "tags": { "amount": ["decimals:contract:indirect:stakingToken"] },
       "returnNames": []
     },
     "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },

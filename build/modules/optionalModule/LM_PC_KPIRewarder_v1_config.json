@@ -103,7 +103,7 @@
     "KPICounter": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "MAX_QUEUE_LENGTH": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "amountPaid": {
-      "tags": { "token": [""], "amount": ["decimals:internal:indirect:token"] },
+      "tags": { "token": [""], "amount": ["decimals:params:indirect:token"] },
       "returnNames": []
     },
     "assertDataFor": {
@@ -150,7 +150,7 @@
     "balanceOf": {
       "tags": {
         "user": [""],
-        "_0": ["decimals:external:indirect:stakingToken"]
+        "_0": ["decimals:contract:indirect:stakingToken"]
       },
       "returnNames": ["_0"]
     },
@@ -162,7 +162,7 @@
         "_2": [""],
         "recipient": [""],
         "paymentToken": [""],
-        "amount": ["decimals:internal:indirect:paymentToken"],
+        "amount": ["decimals:params:indirect:paymentToken"],
         "start": [""],
         "cliff": [""],
         "end": [""]
@@ -182,7 +182,7 @@
     "defaultIdentifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "depositFeeFunds": {
       "tags": {
-        "amount": ["decimals:external:indirect:defaultCurrency", "approval"]
+        "amount": ["decimals:contract:indirect:defaultCurrency", "approval"]
       },
       "returnNames": []
     },
@@ -270,7 +270,7 @@
         "_0": [""],
         "recipient": [""],
         "paymentToken": [""],
-        "amount": ["decimals:internal:indirect:paymentToken"],
+        "amount": ["decimals:params:indirect:paymentToken"],
         "start": [""],
         "cliff": [""],
         "end": [""]
@@ -321,13 +321,13 @@
     },
     "stake": {
       "tags": {
-        "amount": ["decimals:external:indirect:stakingToken", "approval"]
+        "amount": ["decimals:contract:indirect:stakingToken", "approval"]
       },
       "returnNames": []
     },
     "stakingQueue": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "stakingQueueAmounts": {
-      "tags": { "_0": ["decimals:external:indirect:stakingToken"] },
+      "tags": { "_0": ["decimals:contract:indirect:stakingToken"] },
       "returnNames": ["_0"]
     },
     "stakingToken": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
@@ -338,12 +338,12 @@
     "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "totalQueuedFunds": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "totalSupply": {
-      "tags": { "_0": ["decimals:external:indirect:stakingToken"] },
+      "tags": { "_0": ["decimals:contract:indirect:stakingToken"] },
       "returnNames": ["_0"]
     },
     "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "unstake": {
-      "tags": { "amount": ["decimals:external:indirect:stakingToken"] },
+      "tags": { "amount": ["decimals:contract:indirect:stakingToken"] },
       "returnNames": []
     },
     "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
