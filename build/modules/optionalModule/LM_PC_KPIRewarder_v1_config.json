@@ -181,7 +181,9 @@
     "defaultCurrency": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "defaultIdentifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "depositFeeFunds": {
-      "tags": { "amount": ["decimals:external:indirect:defaultCurrency"] },
+      "tags": {
+        "amount": ["decimals:external:indirect:defaultCurrency", "approval"]
+      },
       "returnNames": []
     },
     "dequeueStake": { "tags": {}, "returnNames": [] },
@@ -318,7 +320,9 @@
       "returnNames": []
     },
     "stake": {
-      "tags": { "amount": ["decimals:external:indirect:stakingToken"] },
+      "tags": {
+        "amount": ["decimals:external:indirect:stakingToken", "approval"]
+      },
       "returnNames": []
     },
     "stakingQueue": { "tags": { "_0": [""] }, "returnNames": ["_0"] },

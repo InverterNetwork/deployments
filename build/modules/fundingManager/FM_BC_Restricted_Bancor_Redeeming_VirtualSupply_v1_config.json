@@ -201,7 +201,7 @@
     "CURVE_INTERACTION_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "buy": {
       "tags": {
-        "_depositAmount": ["decimals"],
+        "_depositAmount": ["decimals", "approval"],
         "_minAmountOut": ["decimals:external:indirect:getIssuanceToken"]
       },
       "returnNames": []
@@ -210,7 +210,7 @@
     "buyFor": {
       "tags": {
         "_receiver": [""],
-        "_depositAmount": ["decimals"],
+        "_depositAmount": ["decimals", "approval"],
         "_minAmountOut": ["decimals:external:indirect:getIssuanceToken"]
       },
       "returnNames": []
@@ -297,14 +297,23 @@
       "returnNames": []
     },
     "sell": {
-      "tags": { "_depositAmount": [""], "_minAmountOut": [""] },
+      "tags": {
+        "_depositAmount": [
+          "decimals:contract:indirect:getIssuanceToken",
+          "approval"
+        ],
+        "_minAmountOut": ["decimals"]
+      },
       "returnNames": []
     },
     "sellFee": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "sellFor": {
       "tags": {
         "_receiver": [""],
-        "_depositAmount": [""],
+        "_depositAmount": [
+          "decimals:contract:indirect:getIssuanceToken",
+          "approval"
+        ],
         "_minAmountOut": [""]
       },
       "returnNames": []
