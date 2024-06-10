@@ -72,6 +72,15 @@
       "tags": { "recipient": [""], "token": [""], "amount": [""] },
       "returnNames": []
     },
+    "RewardRoundConfigured": {
+      "tags": {
+        "assertionId": [""],
+        "creationTime": [""],
+        "assertedValue": [""],
+        "KpiToUse": [""]
+      },
+      "returnNames": []
+    },
     "RewardSet": {
       "tags": {
         "rewardAmount": [""],
@@ -83,10 +92,6 @@
     },
     "RewardsDistributed": {
       "tags": { "user": [""], "amount": [""] },
-      "returnNames": []
-    },
-    "RewardsDurationUpdated": {
-      "tags": { "newDuration": [""] },
       "returnNames": []
     },
     "StakeDequeued": {
@@ -143,6 +148,7 @@
       "returnNames": []
     },
     "assertionLiveness": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "assertionPending": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "assertionResolvedCallback": {
       "tags": { "assertionId": [""], "assertedTruthfully": [""] },
       "returnNames": []
@@ -178,6 +184,7 @@
       },
       "returnNames": ["_0"]
     },
+    "defaultBond": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "defaultCurrency": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "defaultIdentifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "depositFeeFunds": {
@@ -280,11 +287,11 @@
     "postAssertion": {
       "tags": {
         "dataId": [""],
-        "data": [""],
-        "asserter": [""],
         "assertedValue": [""],
+        "asserter": [""],
         "targetKPI": [""],
-        "assertionId": [""]
+        "assertionId": [""],
+        "data": [""]
       },
       "returnNames": ["assertionId"]
     },
@@ -310,10 +317,11 @@
       "tags": { "_newLiveness": [""] },
       "returnNames": []
     },
-    "setDefaultCurrency": {
-      "tags": { "_newCurrency": [""] },
+    "setDefaultCurrencyAndBond": {
+      "tags": { "_newCurrency": [""], "_newBond": [""] },
       "returnNames": []
     },
+    "setMinimumStake": { "tags": { "_minimumStake": [""] }, "returnNames": [] },
     "setOptimisticOracle": { "tags": { "_newOO": [""] }, "returnNames": [] },
     "setRewards": {
       "tags": { "amount": ["decimals"], "duration": [""] },
@@ -350,6 +358,14 @@
     "version": {
       "tags": { "_0": [""], "_1": [""] },
       "returnNames": ["_0", "_1"]
+    },
+    "RewardsDurationUpdated": {
+      "tags": { "newDuration": [""] },
+      "returnNames": []
+    },
+    "setDefaultCurrency": {
+      "tags": { "_newCurrency": [""] },
+      "returnNames": []
     }
   }
 }

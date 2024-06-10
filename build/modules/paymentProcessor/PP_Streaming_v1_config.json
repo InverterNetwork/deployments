@@ -27,8 +27,8 @@
         "paymentClient": [""],
         "recipient": [""],
         "paymentToken": [""],
-        "amount": ["decimals"],
         "streamId": [""],
+        "amount": ["decimals"],
         "start": [""],
         "cliff": [""],
         "end": [""]
@@ -49,11 +49,7 @@
       "returnNames": []
     },
     "StreamingPaymentRemoved": {
-      "tags": {
-        "paymentClient": [""],
-        "recipient": [""],
-        "streamId": [""]
-      },
+      "tags": { "paymentClient": [""], "recipient": [""], "streamId": [""] },
       "returnNames": []
     },
     "TokensReleased": {
@@ -77,7 +73,7 @@
       "returnNames": []
     },
     "claimPreviouslyUnclaimable": {
-      "tags": { "client": [""], "receiver": [""] },
+      "tags": { "client": [""], "token": [""], "receiver": [""] },
       "returnNames": []
     },
     "cliffForSpecificStream": {
@@ -191,6 +187,7 @@
     "unclaimable": {
       "tags": {
         "client": [""],
+        "token": [""],
         "paymentReceiver": [""],
         "amount": ["decimals"]
       },
