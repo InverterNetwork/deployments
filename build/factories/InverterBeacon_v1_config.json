@@ -18,6 +18,10 @@
     },
     "acceptOwnership": { "tags": {}, "returnNames": [] },
     "emergencyModeActive": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "getImplementationAddress": {
+      "tags": { "_0": [""] },
+      "returnNames": ["_0"]
+    },
     "implementation": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "owner": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "pendingOwner": { "tags": { "_0": [""] }, "returnNames": ["_0"] },

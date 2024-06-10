@@ -35,6 +35,9 @@
         "metadata": [""],
         "orchestrator": [""],
         "configData": [""],
+        "independentUpdates": [""],
+        "independentUpdateAdmin": [""],
+        "workflowConfig": [""],
         "_0": [""]
       },
       "returnNames": ["_0"]
@@ -51,8 +54,23 @@
       },
       "returnNames": ["_0", "_1"]
     },
+    "getOrchestratorOfProxy": {
+      "tags": { "proxy": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
     "governor": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "init": { "tags": { "_governor": [""] }, "returnNames": [] },
+    "init": {
+      "tags": {
+        "_governor": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "url": [""],
+        "title": [""],
+        "initialMetadataRegistration": [""],
+        "initialBeaconRegistration": [""]
+      },
+      "returnNames": []
+    },
     "isTrustedForwarder": {
       "tags": { "forwarder": [""], "_0": [""] },
       "returnNames": ["_0"]

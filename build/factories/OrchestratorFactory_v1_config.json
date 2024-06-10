@@ -15,11 +15,12 @@
       "returnNames": []
     },
     "acceptOwnership": { "tags": {}, "returnNames": [] },
+    "beacon": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "createOrchestrator": {
       "tags": {
-        "owner": [""],
-        "token": [""],
-        "orchestratorConfig": [""],
+        "independentUpdates": [""],
+        "independentUpdateAdmin": [""],
+        "workflowConfig": [""],
         "majorVersion": [""],
         "minorVersion": [""],
         "url": [""],
@@ -30,13 +31,12 @@
         "authorizerConfig": [""],
         "paymentProcessorConfig": [""],
         "moduleConfigs": [""],
-        "_0": [""]
+        "_0": [""],
+        "owner": [""],
+        "token": [""],
+        "orchestratorConfig": [""]
       },
       "returnNames": ["_0"]
-    },
-    "decoder": {
-      "tags": { "data": [""], "requirement": [""] },
-      "returnNames": ["requirement"]
     },
     "getOrchestratorByID": {
       "tags": { "id": [""], "_0": [""] },
@@ -47,7 +47,12 @@
       "returnNames": ["_0"]
     },
     "init": {
-      "tags": { "governor_": [""], "target_": [""], "moduleFactory_": [""] },
+      "tags": {
+        "governor_": [""],
+        "beacon_": [""],
+        "moduleFactory_": [""],
+        "target_": [""]
+      },
       "returnNames": []
     },
     "isTrustedForwarder": {
@@ -62,8 +67,12 @@
       "tags": { "interfaceId": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
-    "target": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "transferOwnership": { "tags": { "newOwner": [""] }, "returnNames": [] },
-    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] }
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "decoder": {
+      "tags": { "data": [""], "requirement": [""] },
+      "returnNames": ["requirement"]
+    },
+    "target": { "tags": { "_0": [""] }, "returnNames": ["_0"] }
   }
 }

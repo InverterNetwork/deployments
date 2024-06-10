@@ -2,14 +2,9 @@
   "deploymentInputs": {
     "configData": [
       {
-        "name": "initialOwner",
+        "name": "initialAdmin",
         "type": "address",
-        "description": "The initial owner of the workflow"
-      },
-      {
-        "name": "initialManager",
-        "type": "address",
-        "description": "The initial manager of the workflow"
+        "description": "The initial admin of the workflow"
       }
     ]
   },
@@ -38,25 +33,12 @@
     },
     "BURN_ADMIN_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "DEFAULT_ADMIN_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "ORCHESTRATOR_MANAGER_ROLE": {
-      "tags": { "_0": [""] },
-      "returnNames": ["_0"]
-    },
-    "ORCHESTRATOR_OWNER_ROLE": {
-      "tags": { "_0": [""] },
-      "returnNames": ["_0"]
-    },
     "burnAdminFromModuleRole": { "tags": { "role": [""] }, "returnNames": [] },
-    "decoder": {
-      "tags": { "data": [""], "requirement": [""] },
-      "returnNames": ["requirement"]
-    },
     "generateRoleId": {
       "tags": { "module": [""], "role": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
-    "getManagerRole": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "getOwnerRole": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "getAdminRole": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "getRoleAdmin": {
       "tags": { "role": [""], "_0": [""] },
       "returnNames": ["_0"]
@@ -169,6 +151,20 @@
     "version": {
       "tags": { "_0": [""], "_1": [""] },
       "returnNames": ["_0", "_1"]
-    }
+    },
+    "ORCHESTRATOR_MANAGER_ROLE": {
+      "tags": { "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "ORCHESTRATOR_OWNER_ROLE": {
+      "tags": { "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "decoder": {
+      "tags": { "data": [""], "requirement": [""] },
+      "returnNames": ["requirement"]
+    },
+    "getManagerRole": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "getOwnerRole": { "tags": { "_0": [""] }, "returnNames": ["_0"] }
   }
 }

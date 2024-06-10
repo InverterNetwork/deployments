@@ -27,7 +27,20 @@
       "tags": { "recipient": [""], "token": [""], "amount": ["decimals"] },
       "returnNames": []
     },
+    "UnclaimableAmountAdded": {
+      "tags": {
+        "paymentClient": [""],
+        "token": [""],
+        "recipient": [""],
+        "amount": [""]
+      },
+      "returnNames": []
+    },
     "cancelRunningPayments": { "tags": { "client": [""] }, "returnNames": [] },
+    "claimPreviouslyUnclaimable": {
+      "tags": { "client": [""], "token": [""], "receiver": [""] },
+      "returnNames": []
+    },
     "grantModuleRole": {
       "tags": { "role": [""], "target": [""] },
       "returnNames": []
@@ -68,6 +81,15 @@
     },
     "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "unclaimable": {
+      "tags": {
+        "client": [""],
+        "token": [""],
+        "paymentReceiver": [""],
+        "amount": [""]
+      },
+      "returnNames": ["amount"]
+    },
     "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "version": {
       "tags": { "_0": [""], "_1": [""] },

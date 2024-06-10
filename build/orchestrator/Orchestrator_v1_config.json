@@ -75,6 +75,7 @@
     "init": {
       "tags": {
         "orchestratorId_": [""],
+        "moduleFactory_": [""],
         "modules": [""],
         "fundingManager_": [""],
         "authorizer_": [""],
@@ -116,6 +117,7 @@
       "tags": { "module": [""], "timelockActive": [""], "timelockUntil": [""] },
       "returnNames": ["timelockActive", "timelockUntil"]
     },
+    "moduleFactory": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "modulesSize": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "orchestratorId": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "paymentProcessor": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
