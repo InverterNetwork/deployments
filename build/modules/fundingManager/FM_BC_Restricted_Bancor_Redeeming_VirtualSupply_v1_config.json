@@ -71,23 +71,21 @@
             "description": "The indicator used for enabling/disabling the selling functionalties on deployment"
           },
           {
-            "name": "initialTokenSupply",
+            "name": "initialIssuanceSupply",
             "type": "uint256",
-            "description": "The initial virtual issuance token supply",
-            "tags": ["decimals:params:exact:decimals"]
+            "description": "The initial virtual issuance token supply"
           },
           {
             "name": "initialCollateralSupply",
             "type": "uint256",
-            "description": "The initial virtual collateral token supply",
-            "tags": ["decimals:params:indirect:acceptedToken"]
+            "description": "The initial virtual collateral token supply"
           }
         ],
         "name": "bondingCurveParams",
         "type": "tuple"
       },
       {
-        "name": "acceptedToken",
+        "name": "collateralToken",
         "type": "address",
         "description": "The address of the token that will be deposited to the funding manager"
       }
