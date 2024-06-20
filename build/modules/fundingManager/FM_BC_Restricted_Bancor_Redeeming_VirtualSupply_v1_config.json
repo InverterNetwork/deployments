@@ -16,7 +16,7 @@
           {
             "name": "decimals",
             "type": "uint8",
-            "description": "The decimals used within the issuance token"
+            "description": "The decimals used within the issuance token ( should be bigger or equal to 7 and bigger or equel to the collateral token decimals )"
           },
           {
             "name": "maxSupply",
