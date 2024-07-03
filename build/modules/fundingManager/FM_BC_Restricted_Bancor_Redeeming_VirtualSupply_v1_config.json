@@ -216,13 +216,16 @@
     "buyIsOpen": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "calculatePurchaseReturn": {
       "tags": {
-        "_depositAmount": [""],
+        "_depositAmount": ["decimals"],
         "mintAmount": ["decimals:contract:indirect:getIssuanceToken"]
       },
       "returnNames": ["mintAmount"]
     },
     "calculateSaleReturn": {
-      "tags": { "_depositAmount": [""], "redeemAmount": ["decimals"] },
+      "tags": {
+        "_depositAmount": ["decimals:contract:indirect:getIssuanceToken"],
+        "redeemAmount": ["decimals"]
+      },
       "returnNames": ["redeemAmount"]
     },
     "closeBuy": { "tags": {}, "returnNames": [] },
