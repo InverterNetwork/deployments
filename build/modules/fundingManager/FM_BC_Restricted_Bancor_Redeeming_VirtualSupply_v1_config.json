@@ -241,11 +241,11 @@
       "returnNames": ["_0"]
     },
     "getStaticPriceForBuying": {
-      "tags": { "_0": [""] },
+      "tags": { "_0": ["decimals"] },
       "returnNames": ["_0"]
     },
     "getStaticPriceForSelling": {
-      "tags": { "_0": [""] },
+      "tags": { "_0": ["decimals:contract:indirect:getIssuanceToken"] },
       "returnNames": ["_0"]
     },
     "getVirtualCollateralSupply": {
@@ -286,7 +286,7 @@
     "openSell": { "tags": {}, "returnNames": [] },
     "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "projectCollateralFeeCollected": {
-      "tags": { "_0": [""] },
+      "tags": { "_0": ["decimals"] },
       "returnNames": ["_0"]
     },
     "revokeModuleRole": {
