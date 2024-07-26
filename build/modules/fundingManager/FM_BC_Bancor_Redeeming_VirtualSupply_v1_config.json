@@ -240,11 +240,11 @@
       "returnNames": ["_0"]
     },
     "getStaticPriceForBuying": {
-      "tags": { "_0": ["decimals"] },
+      "tags": { "_0": [""] },
       "returnNames": ["_0"]
     },
     "getStaticPriceForSelling": {
-      "tags": { "_0": ["decimals:contract:indirect:getIssuanceToken"] },
+      "tags": { "_0": [""] },
       "returnNames": ["_0"]
     },
     "getVirtualCollateralSupply": {
