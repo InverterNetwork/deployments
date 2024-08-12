@@ -102,22 +102,26 @@
     },
     "BuyingDisabled": { "tags": {}, "returnNames": [] },
     "BuyingEnabled": { "tags": {}, "returnNames": [] },
-    "Deposit": {
-      "tags": { "_from": [""], "_for": [""], "_amount": ["decimals"] },
-      "returnNames": []
-    },
     "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
-    "IssuanceTokenUpdated": {
-      "tags": { "oldToken": [""], "issuanceToken": [""] },
+    "IssuanceTokenSet": {
+      "tags": { "issuanceToken": [""], "decimals": [""] },
       "returnNames": []
     },
     "ModuleInitialized": {
       "tags": {
         "parentOrchestrator": [""],
-        "moduleTitle": [""],
         "majorVersion": [""],
-        "minorVersion": [""]
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "moduleTitle": [""]
       },
+      "returnNames": []
+    },
+    "OrchestratorTokenSet": {
+      "tags": { "token": [""], "decimals": [""] },
       "returnNames": []
     },
     "ProjectCollateralFeeWithdrawn": {
@@ -190,10 +194,6 @@
     },
     "VirtualIssuanceSupplySet": {
       "tags": { "newSupply": ["decimals"], "oldSupply": ["decimals"] },
-      "returnNames": []
-    },
-    "Withdrawal": {
-      "tags": { "_from": [""], "_for": [""], "_amount": ["decimals"] },
       "returnNames": []
     },
     "buy": {
@@ -269,6 +269,7 @@
         "orchestrator_": [""],
         "majorVersion": [""],
         "minorVersion": [""],
+        "patchVersion": [""],
         "url": [""],
         "title": [""],
         "metadata": [""],
@@ -279,10 +280,6 @@
     "isTrustedForwarder": {
       "tags": { "forwarder": [""], "_0": [""] },
       "returnNames": ["_0"]
-    },
-    "mintIssuanceTokenTo": {
-      "tags": { "_receiver": [""], "_amount": [""] },
-      "returnNames": []
     },
     "openBuy": { "tags": {}, "returnNames": [] },
     "openSell": { "tags": {}, "returnNames": [] },
@@ -310,17 +307,6 @@
       "returnNames": []
     },
     "sellFee": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "sellFor": {
-      "tags": {
-        "_receiver": [""],
-        "_depositAmount": [
-          "decimals:contract:indirect:getIssuanceToken",
-          "approval"
-        ],
-        "_minAmountOut": ["decimals"]
-      },
-      "returnNames": []
-    },
     "sellIsOpen": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "setBuyFee": { "tags": { "_fee": [""] }, "returnNames": [] },
     "setReserveRatioForBuying": {
@@ -353,11 +339,34 @@
     "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "version": {
-      "tags": { "_0": [""], "_1": [""] },
-      "returnNames": ["_0", "_1"]
+      "tags": { "_0": [""], "_1": [""], "_2": [""] },
+      "returnNames": ["_0", "_1", "_2"]
     },
     "withdrawProjectCollateralFee": {
       "tags": { "_receiver": [""], "_amount": ["decimals"] },
+      "returnNames": []
+    },
+    "Deposit": {
+      "tags": { "_from": [""], "_for": [""], "_amount": ["decimals"] },
+      "returnNames": []
+    },
+    "IssuanceTokenUpdated": {
+      "tags": { "oldToken": [""], "issuanceToken": [""] },
+      "returnNames": []
+    },
+    "Withdrawal": {
+      "tags": { "_from": [""], "_for": [""], "_amount": ["decimals"] },
+      "returnNames": []
+    },
+    "sellTo": {
+      "tags": {
+        "_receiver": [""],
+        "_depositAmount": [
+          "decimals:contract:indirect:getIssuanceToken",
+          "approval"
+        ],
+        "_minAmountOut": ["decimals"]
+      },
       "returnNames": []
     }
   }
