@@ -1,8 +1,0 @@
-{
-  "orchestratorFactory": {
-    "11155420": "0x64d8ff1fe876c26d22830be934a3ea6d75c02ecc"
-  },
-  "restrictedPimFactory": {
-    "11155420": "0xC76864f4779d5FC7F601fb5b1e82d39E54dEB80A"
-  }
-}

@@ -1,0 +1,16 @@
+{
+  "name": "deployments",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "lint-staged": "^15",
+    "prettier": "^3"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,json}": [
+      "bunx prettier --write"
+    ]
+  }
+}
