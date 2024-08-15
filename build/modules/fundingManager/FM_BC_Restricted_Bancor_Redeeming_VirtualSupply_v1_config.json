@@ -327,17 +327,6 @@
     "withdrawProjectCollateralFee": {
       "tags": { "_receiver": [""], "_amount": ["decimals"] },
       "returnNames": []
-    },
-    "sellFor": {
-      "tags": {
-        "_receiver": [""],
-        "_depositAmount": [
-          "decimals:contract:indirect:getIssuanceToken",
-          "approval"
-        ],
-        "_minAmountOut": [""]
-      },
-      "returnNames": []
     }
   }
 }
