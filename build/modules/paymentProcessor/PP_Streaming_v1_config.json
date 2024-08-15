@@ -16,9 +16,13 @@
     "ModuleInitialized": {
       "tags": {
         "parentOrchestrator": [""],
-        "moduleTitle": [""],
         "majorVersion": [""],
-        "minorVersion": [""]
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "moduleTitle": [""]
       },
       "returnNames": []
     },
@@ -33,6 +37,10 @@
         "cliff": [""],
         "end": [""]
       },
+      "returnNames": []
+    },
+    "PaymentReceiverRemoved": {
+      "tags": { "paymentClient": [""], "paymentReceiver": [""] },
       "returnNames": []
     },
     "StreamingPaymentAdded": {
@@ -108,6 +116,7 @@
         "orchestrator_": [""],
         "majorVersion": [""],
         "minorVersion": [""],
+        "patchVersion": [""],
         "url": [""],
         "title": [""],
         "metadata": [""]
@@ -194,9 +203,22 @@
       "returnNames": ["amount"]
     },
     "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "validPaymentOrder": {
+      "tags": {
+        "recipient": [""],
+        "paymentToken": [""],
+        "amount": [""],
+        "start": [""],
+        "cliff": [""],
+        "end": [""],
+        "order": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    },
     "version": {
-      "tags": { "_0": [""], "_1": [""] },
-      "returnNames": ["_0", "_1"]
+      "tags": { "_0": [""], "_1": [""], "_2": [""] },
+      "returnNames": ["_0", "_1", "_2"]
     },
     "viewAllPaymentOrders": {
       "tags": {

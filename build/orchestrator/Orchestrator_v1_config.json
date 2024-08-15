@@ -47,28 +47,16 @@
     "executeAddModule": { "tags": { "module_": [""] }, "returnNames": [] },
     "executeRemoveModule": { "tags": { "module_": [""] }, "returnNames": [] },
     "executeSetAuthorizer": {
-      "tags": { "authorizer_": [""] },
+      "tags": { "newAuthorizer": [""], "authorizer_": [""] },
       "returnNames": []
     },
     "executeSetFundingManager": {
-      "tags": { "fundingManager_": [""] },
+      "tags": { "newFundingManager": [""], "fundingManager_": [""] },
       "returnNames": []
     },
     "executeSetPaymentProcessor": {
-      "tags": { "paymentProcessor_": [""] },
+      "tags": { "newPaymentProcessor": [""], "paymentProcessor_": [""] },
       "returnNames": []
-    },
-    "executeTx": {
-      "tags": { "target": [""], "data": [""], "_0": [""] },
-      "returnNames": ["_0"]
-    },
-    "executeTxFromModule": {
-      "tags": { "to": [""], "data": [""], "_0": [""], "_1": [""] },
-      "returnNames": ["_0", "_1"]
-    },
-    "findModuleAddressInOrchestrator": {
-      "tags": { "moduleName": [""], "_0": [""] },
-      "returnNames": ["_0"]
     },
     "fundingManager": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "governor": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
@@ -93,15 +81,15 @@
       "returnNames": []
     },
     "initiateSetAuthorizerWithTimelock": {
-      "tags": { "authorizer_": [""] },
+      "tags": { "newAuthorizer": [""], "authorizer_": [""] },
       "returnNames": []
     },
     "initiateSetFundingManagerWithTimelock": {
-      "tags": { "fundingManager_": [""] },
+      "tags": { "newFundingManager": [""], "fundingManager_": [""] },
       "returnNames": []
     },
     "initiateSetPaymentProcessorWithTimelock": {
-      "tags": { "paymentProcessor_": [""] },
+      "tags": { "newPaymentProcessor": [""], "paymentProcessor_": [""] },
       "returnNames": []
     },
     "isModule": {
@@ -126,6 +114,18 @@
       "returnNames": ["_0"]
     },
     "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "executeTx": {
+      "tags": { "target": [""], "data": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "executeTxFromModule": {
+      "tags": { "to": [""], "data": [""], "_0": [""], "_1": [""] },
+      "returnNames": ["_0", "_1"]
+    },
+    "findModuleAddressInOrchestrator": {
+      "tags": { "moduleName": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
     "version": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "addModule": { "tags": { "module": [""] }, "returnNames": [] },
     "removeModule": { "tags": { "module": [""] }, "returnNames": [] },

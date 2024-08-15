@@ -21,9 +21,13 @@
     "ModuleInitialized": {
       "tags": {
         "parentOrchestrator": [""],
-        "moduleTitle": [""],
         "majorVersion": [""],
-        "minorVersion": [""]
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "moduleTitle": [""]
       },
       "returnNames": []
     },
@@ -42,6 +46,10 @@
     "BURN_ADMIN_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "DEFAULT_ADMIN_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "burnAdminFromModuleRole": { "tags": { "role": [""] }, "returnNames": [] },
+    "checkForRole": {
+      "tags": { "role": [""], "who": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
     "generateRoleId": {
       "tags": { "module": [""], "role": [""], "_0": [""] },
       "returnNames": ["_0"]
@@ -103,12 +111,14 @@
       },
       "returnNames": []
     },
-    "hasModuleRole": {
-      "tags": { "role": [""], "who": [""], "_0": [""] },
-      "returnNames": ["_0"]
-    },
     "hasRole": {
-      "tags": { "roleId": [""], "who": [""], "_0": [""], "account": [""] },
+      "tags": {
+        "role": [""],
+        "account": [""],
+        "_0": [""],
+        "roleId": [""],
+        "who": [""]
+      },
       "returnNames": ["_0"]
     },
     "hasTokenRole": {
@@ -121,6 +131,7 @@
         "orchestrator_": [""],
         "majorVersion": [""],
         "minorVersion": [""],
+        "patchVersion": [""],
         "url": [""],
         "title": [""],
         "metadata": [""],
@@ -203,8 +214,12 @@
     "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "version": {
-      "tags": { "_0": [""], "_1": [""] },
-      "returnNames": ["_0", "_1"]
+      "tags": { "_0": [""], "_1": [""], "_2": [""] },
+      "returnNames": ["_0", "_1", "_2"]
+    },
+    "hasModuleRole": {
+      "tags": { "role": [""], "who": [""], "_0": [""] },
+      "returnNames": ["_0"]
     },
     "ORCHESTRATOR_MANAGER_ROLE": {
       "tags": { "_0": [""] },

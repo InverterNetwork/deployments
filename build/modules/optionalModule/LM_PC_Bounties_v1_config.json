@@ -44,9 +44,13 @@
     "ModuleInitialized": {
       "tags": {
         "parentOrchestrator": [""],
-        "moduleTitle": [""],
         "majorVersion": [""],
-        "minorVersion": [""]
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "moduleTitle": [""]
       },
       "returnNames": []
     },
@@ -65,6 +69,15 @@
         "id": [""]
       },
       "returnNames": ["id"]
+    },
+    "addBountyBatch": {
+      "tags": {
+        "minimumPayoutAmounts": [""],
+        "maximumPayoutAmounts": [""],
+        "detailArray": [""],
+        "ids": [""]
+      },
+      "returnNames": ["ids"]
     },
     "addClaim": {
       "tags": {
@@ -133,6 +146,7 @@
         "orchestrator_": [""],
         "majorVersion": [""],
         "minorVersion": [""],
+        "patchVersion": [""],
         "url": [""],
         "title": [""],
         "metadata": [""]
@@ -217,8 +231,8 @@
       "returnNames": []
     },
     "version": {
-      "tags": { "_0": [""], "_1": [""] },
-      "returnNames": ["_0", "_1"]
+      "tags": { "_0": [""], "_1": [""], "_2": [""] },
+      "returnNames": ["_0", "_1", "_2"]
     },
     "decoder": {
       "tags": { "data": [""], "requirement": [""] },

@@ -9,13 +9,18 @@
     ]
   },
   "abiMembers": {
+    "EpochLengthSet": { "tags": { "epochLength": [""] }, "returnNames": [] },
     "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
     "ModuleInitialized": {
       "tags": {
         "parentOrchestrator": [""],
-        "moduleTitle": [""],
         "majorVersion": [""],
-        "minorVersion": [""]
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "moduleTitle": [""]
       },
       "returnNames": []
     },
@@ -107,6 +112,7 @@
         "orchestrator_": [""],
         "majorVersion": [""],
         "minorVersion": [""],
+        "patchVersion": [""],
         "url": [""],
         "title": [""],
         "metadata": [""],
@@ -168,8 +174,8 @@
     "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "version": {
-      "tags": { "_0": [""], "_1": [""] },
-      "returnNames": ["_0", "_1"]
+      "tags": { "_0": [""], "_1": [""], "_2": [""] },
+      "returnNames": ["_0", "_1", "_2"]
     },
     "decoder": {
       "tags": { "data": [""], "requirement": [""] },

@@ -12,6 +12,11 @@
         "description": "The token the Optimistic Oracle will charge its fee in."
       },
       {
+        "name": "defaultBond",
+        "type": "uint256",
+        "description": "The default bond amount for assertions."
+      },
+      {
         "name": "ooAddr",
         "type": "address",
         "description": "The address of the optimisitic oracle."
@@ -43,6 +48,10 @@
       },
       "returnNames": []
     },
+    "DeletedStuckAssertion": {
+      "tags": { "assertionId": [""] },
+      "returnNames": []
+    },
     "FeeFundsDeposited": {
       "tags": { "token": [""], "amount": [""] },
       "returnNames": []
@@ -62,9 +71,13 @@
     "ModuleInitialized": {
       "tags": {
         "parentOrchestrator": [""],
-        "moduleTitle": [""],
         "majorVersion": [""],
-        "minorVersion": [""]
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "moduleTitle": [""]
       },
       "returnNames": []
     },
@@ -94,19 +107,20 @@
       "tags": { "user": [""], "amount": [""] },
       "returnNames": []
     },
-    "StakeDequeued": {
-      "tags": { "user": [""], "amount": [""] },
-      "returnNames": []
-    },
-    "StakeEnqueued": {
-      "tags": { "user": [""], "amount": [""] },
-      "returnNames": []
-    },
     "Staked": { "tags": { "user": [""], "amount": [""] }, "returnNames": [] },
+    "StakingTokenSet": { "tags": { "token": [""] }, "returnNames": [] },
     "Unstaked": { "tags": { "user": [""], "amount": [""] }, "returnNames": [] },
+    "Updated": {
+      "tags": {
+        "triggerAddress": [""],
+        "rewardValue": [""],
+        "lastUpdate": [""],
+        "earnedRewards": [""]
+      },
+      "returnNames": []
+    },
     "ASSERTER_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "KPICounter": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "MAX_QUEUE_LENGTH": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "amountPaid": {
       "tags": { "token": [""], "amount": ["decimals:params:indirect:token"] },
       "returnNames": []
@@ -114,9 +128,10 @@
     "assertDataFor": {
       "tags": {
         "dataId": [""],
-        "data": [""],
+        "data_": [""],
         "asserter": [""],
-        "assertionId": [""]
+        "assertionId": [""],
+        "data": [""]
       },
       "returnNames": ["assertionId"]
     },
@@ -187,13 +202,16 @@
     "defaultBond": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "defaultCurrency": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "defaultIdentifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "deleteStuckAssertion": {
+      "tags": { "assertionId": [""] },
+      "returnNames": []
+    },
     "depositFeeFunds": {
       "tags": {
         "amount": ["decimals:contract:indirect:defaultCurrency", "approval"]
       },
       "returnNames": []
     },
-    "dequeueStake": { "tags": {}, "returnNames": [] },
     "earned": {
       "tags": { "user": [""], "_0": ["decimals"] },
       "returnNames": ["_0"]
@@ -240,7 +258,6 @@
       },
       "returnNames": ["_0"]
     },
-    "getStakingQueue": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "grantModuleRole": {
       "tags": { "role": [""], "target": [""] },
       "returnNames": []
@@ -255,6 +272,7 @@
         "orchestrator_": [""],
         "majorVersion": [""],
         "minorVersion": [""],
+        "patchVersion": [""],
         "url": [""],
         "title": [""],
         "metadata": [""],
@@ -321,7 +339,6 @@
       "tags": { "_newCurrency": [""], "_newBond": [""] },
       "returnNames": []
     },
-    "setMinimumStake": { "tags": { "_minimumStake": [""] }, "returnNames": [] },
     "setOptimisticOracle": { "tags": { "_newOO": [""] }, "returnNames": [] },
     "setRewards": {
       "tags": { "amount": ["decimals"], "duration": [""] },
@@ -333,18 +350,12 @@
       },
       "returnNames": []
     },
-    "stakingQueue": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "stakingQueueAmounts": {
-      "tags": { "_0": ["decimals:contract:indirect:stakingToken"] },
-      "returnNames": ["_0"]
-    },
     "stakingToken": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "supportsInterface": {
       "tags": { "interfaceId": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
     "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "totalQueuedFunds": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "totalSupply": {
       "tags": { "_0": ["decimals:contract:indirect:stakingToken"] },
       "returnNames": ["_0"]
@@ -356,9 +367,27 @@
     },
     "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "version": {
-      "tags": { "_0": [""], "_1": [""] },
-      "returnNames": ["_0", "_1"]
+      "tags": { "_0": [""], "_1": [""], "_2": [""] },
+      "returnNames": ["_0", "_1", "_2"]
     },
+    "StakeDequeued": {
+      "tags": { "user": [""], "amount": [""] },
+      "returnNames": []
+    },
+    "StakeEnqueued": {
+      "tags": { "user": [""], "amount": [""] },
+      "returnNames": []
+    },
+    "MAX_QUEUE_LENGTH": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "dequeueStake": { "tags": {}, "returnNames": [] },
+    "getStakingQueue": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "setMinimumStake": { "tags": { "_minimumStake": [""] }, "returnNames": [] },
+    "stakingQueue": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "stakingQueueAmounts": {
+      "tags": { "_0": ["decimals:contract:indirect:stakingToken"] },
+      "returnNames": ["_0"]
+    },
+    "totalQueuedFunds": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "RewardsDurationUpdated": {
       "tags": { "newDuration": [""] },
       "returnNames": []
