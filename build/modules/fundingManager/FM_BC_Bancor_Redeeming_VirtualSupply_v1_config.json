@@ -330,16 +330,8 @@
       "tags": { "_from": [""], "_for": [""], "_amount": ["decimals"] },
       "returnNames": []
     },
-    "IssuanceTokenUpdated": {
-      "tags": { "oldToken": [""], "issuanceToken": [""] },
-      "returnNames": []
-    },
     "Withdrawal": {
       "tags": { "_from": [""], "_for": [""], "_amount": ["decimals"] },
-      "returnNames": []
-    },
-    "mintIssuanceTokenTo": {
-      "tags": { "_receiver": [""], "_amount": [""] },
       "returnNames": []
     },
     "sellFor": {

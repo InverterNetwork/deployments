@@ -370,31 +370,9 @@
       "tags": { "_0": [""], "_1": [""], "_2": [""] },
       "returnNames": ["_0", "_1", "_2"]
     },
-    "StakeDequeued": {
-      "tags": { "user": [""], "amount": [""] },
-      "returnNames": []
-    },
-    "StakeEnqueued": {
-      "tags": { "user": [""], "amount": [""] },
-      "returnNames": []
-    },
-    "MAX_QUEUE_LENGTH": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "dequeueStake": { "tags": {}, "returnNames": [] },
-    "getStakingQueue": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "setMinimumStake": { "tags": { "_minimumStake": [""] }, "returnNames": [] },
-    "stakingQueue": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "stakingQueueAmounts": {
       "tags": { "_0": ["decimals:contract:indirect:stakingToken"] },
       "returnNames": ["_0"]
-    },
-    "totalQueuedFunds": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "RewardsDurationUpdated": {
-      "tags": { "newDuration": [""] },
-      "returnNames": []
-    },
-    "setDefaultCurrency": {
-      "tags": { "_newCurrency": [""] },
-      "returnNames": []
     }
   }
 }

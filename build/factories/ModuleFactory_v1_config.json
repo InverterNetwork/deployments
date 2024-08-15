@@ -127,22 +127,6 @@
       "returnNames": ["_0"]
     },
     "transferOwnership": { "tags": { "newOwner": [""] }, "returnNames": [] },
-    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "createModule": {
-      "tags": {
-        "majorVersion": [""],
-        "minorVersion": [""],
-        "url": [""],
-        "title": [""],
-        "metadata": [""],
-        "orchestrator": [""],
-        "configData": [""],
-        "independentUpdates": [""],
-        "independentUpdateAdmin": [""],
-        "workflowConfig": [""],
-        "_0": [""]
-      },
-      "returnNames": ["_0"]
-    }
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] }
   }
 }

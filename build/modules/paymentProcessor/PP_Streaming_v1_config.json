@@ -237,66 +237,6 @@
         "_vestingWalletID": [""]
       },
       "returnNames": ["_0"]
-    },
-    "claimForSpecificWalletId": {
-      "tags": { "client": [""], "walletId": [""] },
-      "returnNames": []
-    },
-    "decoder": {
-      "tags": { "data": [""], "requirement": [""] },
-      "returnNames": ["requirement"]
-    },
-    "dueToForSpecificWalletId": {
-      "tags": {
-        "client": [""],
-        "paymentReceiver": [""],
-        "walletId": [""],
-        "_0": [""]
-      },
-      "returnNames": ["_0"]
-    },
-    "numVestingWallets": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "releasableForSpecificWalletId": {
-      "tags": {
-        "client": [""],
-        "paymentReceiver": [""],
-        "walletId": [""],
-        "_0": [""]
-      },
-      "returnNames": ["_0"]
-    },
-    "releasedForSpecificWalletId": {
-      "tags": {
-        "client": [""],
-        "paymentReceiver": [""],
-        "walletId": [""],
-        "_0": [""]
-      },
-      "returnNames": ["_0"]
-    },
-    "removePaymentForSpecificWalletId": {
-      "tags": { "client": [""], "paymentReceiver": [""], "walletId": [""] },
-      "returnNames": []
-    },
-    "startForSpecificWalletId": {
-      "tags": {
-        "client": [""],
-        "paymentReceiver": [""],
-        "walletId": [""],
-        "_0": [""]
-      },
-      "returnNames": ["_0"]
-    },
-    "token": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "vestedAmountForSpecificWalletId": {
-      "tags": {
-        "client": [""],
-        "paymentReceiver": [""],
-        "timestamp": [""],
-        "walletId": [""],
-        "_0": [""]
-      },
-      "returnNames": ["_0"]
     }
   }
 }

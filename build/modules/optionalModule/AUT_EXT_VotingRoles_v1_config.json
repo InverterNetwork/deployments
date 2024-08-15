@@ -163,10 +163,6 @@
       "returnNames": ["_0", "_1", "_2"]
     },
     "voteDuration": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "voterCount": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "decoder": {
-      "tags": { "data": [""], "requirement": [""] },
-      "returnNames": ["requirement"]
-    }
+    "voterCount": { "tags": { "_0": [""] }, "returnNames": ["_0"] }
   }
 }

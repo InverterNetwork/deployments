@@ -233,10 +233,6 @@
     "version": {
       "tags": { "_0": [""], "_1": [""], "_2": [""] },
       "returnNames": ["_0", "_1", "_2"]
-    },
-    "decoder": {
-      "tags": { "data": [""], "requirement": [""] },
-      "returnNames": ["requirement"]
     }
   }
 }

@@ -155,24 +155,6 @@
     "version": {
       "tags": { "_0": [""], "_1": [""], "_2": [""] },
       "returnNames": ["_0", "_1", "_2"]
-    },
-    "hasModuleRole": {
-      "tags": { "role": [""], "who": [""], "_0": [""] },
-      "returnNames": ["_0"]
-    },
-    "ORCHESTRATOR_MANAGER_ROLE": {
-      "tags": { "_0": [""] },
-      "returnNames": ["_0"]
-    },
-    "ORCHESTRATOR_OWNER_ROLE": {
-      "tags": { "_0": [""] },
-      "returnNames": ["_0"]
-    },
-    "decoder": {
-      "tags": { "data": [""], "requirement": [""] },
-      "returnNames": ["requirement"]
-    },
-    "getManagerRole": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "getOwnerRole": { "tags": { "_0": [""] }, "returnNames": ["_0"] }
+    }
   }
 }

@@ -73,11 +73,6 @@
       "returnNames": ["_0"]
     },
     "transferOwnership": { "tags": { "newOwner": [""] }, "returnNames": [] },
-    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "decoder": {
-      "tags": { "data": [""], "requirement": [""] },
-      "returnNames": ["requirement"]
-    },
-    "target": { "tags": { "_0": [""] }, "returnNames": ["_0"] }
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] }
   }
 }

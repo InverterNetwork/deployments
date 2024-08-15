@@ -328,19 +328,6 @@
       "tags": { "_receiver": [""], "_amount": ["decimals"] },
       "returnNames": []
     },
-    "Deposit": {
-      "tags": { "_from": [""], "_for": [""], "_amount": ["decimals"] },
-      "returnNames": []
-    },
-    "IssuanceTokenUpdated": {
-      "tags": { "oldToken": [""], "issuanceToken": [""] },
-      "returnNames": []
-    },
-    "Withdrawal": {
-      "tags": { "_from": [""], "_for": [""], "_amount": ["decimals"] },
-      "returnNames": []
-    },
-    "mintIssuanceTokenTo": { "tags": {}, "returnNames": [] },
     "sellFor": {
       "tags": {
         "_receiver": [""],
