@@ -74,6 +74,11 @@
               "internalType": "uint256"
             },
             {
+              "name": "patchVersion",
+              "type": "uint256",
+              "internalType": "uint256"
+            },
+            {
               "name": "url",
               "type": "string",
               "internalType": "string"
@@ -234,6 +239,11 @@
           "name": "",
           "type": "uint256",
           "internalType": "uint256"
+        },
+        {
+          "name": "",
+          "type": "uint256",
+          "internalType": "uint256"
         }
       ],
       "stateMutability": "view"
@@ -262,22 +272,37 @@
           "internalType": "address"
         },
         {
-          "name": "moduleTitle",
-          "type": "string",
-          "indexed": true,
-          "internalType": "string"
-        },
-        {
-          "name": "majorVersion",
-          "type": "uint256",
+          "name": "metadata",
+          "type": "tuple",
           "indexed": false,
-          "internalType": "uint256"
-        },
-        {
-          "name": "minorVersion",
-          "type": "uint256",
-          "indexed": false,
-          "internalType": "uint256"
+          "internalType": "struct IModule_v1.Metadata",
+          "components": [
+            {
+              "name": "majorVersion",
+              "type": "uint256",
+              "internalType": "uint256"
+            },
+            {
+              "name": "minorVersion",
+              "type": "uint256",
+              "internalType": "uint256"
+            },
+            {
+              "name": "patchVersion",
+              "type": "uint256",
+              "internalType": "uint256"
+            },
+            {
+              "name": "url",
+              "type": "string",
+              "internalType": "string"
+            },
+            {
+              "name": "title",
+              "type": "string",
+              "internalType": "string"
+            }
+          ]
         }
       ],
       "anonymous": false
@@ -316,6 +341,11 @@
     },
     {
       "type": "error",
+      "name": "Module__InvalidAddress",
+      "inputs": []
+    },
+    {
+      "type": "error",
       "name": "Module__InvalidMetadata",
       "inputs": []
     },
@@ -327,6 +357,11 @@
     {
       "type": "error",
       "name": "Module__OnlyCallableByOrchestrator",
+      "inputs": []
+    },
+    {
+      "type": "error",
+      "name": "Module__OnlyCallableByPaymentClient",
       "inputs": []
     },
     {
@@ -349,7 +384,7 @@
     "grantModuleRole(bytes32,address)": "6c67e807",
     "grantModuleRoleBatched(bytes32,address[])": "272bbd44",
     "identifier()": "7998a1c4",
-    "init(address,(uint256,uint256,string,string),bytes)": "42dfe958",
+    "init(address,(uint256,uint256,uint256,string,string),bytes)": "b66a870c",
     "isTrustedForwarder(address)": "572b6c05",
     "orchestrator()": "b74795d9",
     "revokeModuleRole(bytes32,address)": "bcb61920",
@@ -360,7 +395,7 @@
     "url()": "5600f04f",
     "version()": "54fd4d50"
   },
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.23+commit.f704f362\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"InvalidInitialization\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"funcSig\",\"type\":\"string\"}],\"name\":\"Module_OrchestratorCallbackFailed\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"Module__CallerNotAuthorized\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__InvalidMetadata\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__InvalidOrchestratorAddress\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__OnlyCallableByOrchestrator\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotInitializing\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint64\",\"name\":\"version\",\"type\":\"uint64\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"parentOrchestrator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"string\",\"name\":\"moduleTitle\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"majorVersion\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"minorVersion\",\"type\":\"uint256\"}],\"name\":\"ModuleInitialized\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"name\":\"grantModuleRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address[]\",\"name\":\"targets\",\"type\":\"address[]\"}],\"name\":\"grantModuleRoleBatched\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"identifier\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IOrchestrator_v1\",\"name\":\"orchestrator_\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"majorVersion\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minorVersion\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"url\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"title\",\"type\":\"string\"}],\"internalType\":\"struct IModule_v1.Metadata\",\"name\":\"metadata\",\"type\":\"tuple\"},{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"forwarder\",\"type\":\"address\"}],\"name\":\"isTrustedForwarder\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"orchestrator\",\"outputs\":[{\"internalType\":\"contract IOrchestrator_v1\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"name\":\"revokeModuleRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address[]\",\"name\":\"targets\",\"type\":\"address[]\"}],\"name\":\"revokeModuleRoleBatched\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"title\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"trustedForwarder\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"url\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Inverter Network\",\"custom:security-contact\":\"security@inverter.network                          In case of any concerns or findings, please refer to our Security Policy                          at security.inverter.network or email us directly!\",\"details\":\"This Contract is the basic building block for all Modules in the Inverter Network.          It contains references to other contracts, modifier for access restriction,          metadata to identify the module type as well as utility functions for general          module interactions.          This contract provides a framework for triggering and receiving orchestrator          callbacks (via `call`) and a modifier to authenticate          callers via the module's orchestrator.          Each module is identified via a unique identifier based on its major          version, title, and url given in the metadata.\",\"errors\":{\"InvalidInitialization()\":[{\"details\":\"The contract is already initialized.\"}],\"Module_OrchestratorCallbackFailed(string)\":[{\"params\":{\"funcSig\":\"The signature of the function called.\"}}],\"NotInitializing()\":[{\"details\":\"The contract is not initializing.\"}]},\"events\":{\"Initialized(uint64)\":{\"details\":\"Triggered when the contract has been initialized or reinitialized.\"},\"ModuleInitialized(address,string,uint256,uint256)\":{\"params\":{\"majorVersion\":\"The major version of the module.\",\"minorVersion\":\"The minor version of the module.\",\"moduleTitle\":\"The title of the module.\",\"parentOrchestrator\":\"The address of the orchestrator the module is linked to.\"}}},\"kind\":\"dev\",\"methods\":{\"identifier()\":{\"details\":\"The identifier is defined as the keccak256 hash of the module's      abi packed encoded major version, url and title.\",\"returns\":{\"_0\":\"The module's identifier.\"}},\"init(address,(uint256,uint256,string,string),bytes)\":{\"details\":\"CAN be overriden by downstream contract.MUST call `__Module_init()`.\",\"params\":{\"configData\":\"Variable config data for specific module                   implementations.\",\"metadata\":\"The module's metadata.\",\"orchestrator\":\"The module's orchestrator instance.\"}},\"isTrustedForwarder(address)\":{\"details\":\"We imitate here the EIP2771 Standard to enable metatransactions As it currently stands we dont want to feed the forwarder address to each module individually and we decided to move this to the orchestrator\",\"params\":{\"forwarder\":\"The contract address to be verified.\"},\"returns\":{\"_0\":\"bool Is the given address the trusted forwarder\"}},\"orchestrator()\":{\"returns\":{\"_0\":\"The module's orchestrator.\"}},\"supportsInterface(bytes4)\":{\"details\":\"See {IERC165-supportsInterface}.\"},\"title()\":{\"returns\":{\"_0\":\"The module's title.\"}},\"trustedForwarder()\":{\"details\":\"We imitate here the EIP2771 Standard to enable metatransactions As it currently stands we dont want to feed the forwarder address to each module individually and we decided to move this to the orchestrator\",\"returns\":{\"_0\":\"address The trusted forwarder\"}},\"url()\":{\"returns\":{\"_0\":\"The module's URL.\"}},\"version()\":{\"returns\":{\"_0\":\"The module's major version.\",\"_1\":\"The module's minor version.\"}}},\"stateVariables\":{\"__Module_metadata\":{\"custom:invariant\":\"Not mutated after initialization.\",\"details\":\"The module's metadata.\"},\"__Module_orchestrator\":{\"custom:invariant\":\"Not mutated after initialization.\",\"details\":\"The module's orchestrator instance.\"}},\"title\":\"Module\",\"version\":1},\"userdoc\":{\"errors\":{\"Module_OrchestratorCallbackFailed(string)\":[{\"notice\":\"Orchestrator_v1 callback triggered failed.\"}],\"Module__CallerNotAuthorized(bytes32,address)\":[{\"notice\":\"Function is only callable by authorized caller.\"}],\"Module__InvalidMetadata()\":[{\"notice\":\"Given metadata invalid.\"}],\"Module__InvalidOrchestratorAddress()\":[{\"notice\":\"Given orchestrator address invalid.\"}],\"Module__OnlyCallableByOrchestrator()\":[{\"notice\":\"Function is only callable by the orchestrator.\"}]},\"events\":{\"ModuleInitialized(address,string,uint256,uint256)\":{\"notice\":\"Module has been initialized.\"}},\"kind\":\"user\",\"methods\":{\"identifier()\":{\"notice\":\"Returns the module's identifier.\"},\"init(address,(uint256,uint256,string,string),bytes)\":{\"notice\":\"The module's initializer function.\"},\"isTrustedForwarder(address)\":{\"notice\":\"Checks if the provided address is the trusted forwarder\"},\"orchestrator()\":{\"notice\":\"Returns the module's {IOrchestrator_v1} orchestrator instance.\"},\"title()\":{\"notice\":\"Returns the module's title.\"},\"trustedForwarder()\":{\"notice\":\"Returns the trusted forwarder\"},\"url()\":{\"notice\":\"Returns the module's URL.\"},\"version()\":{\"notice\":\"Returns the module's version.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/modules/base/Module_v1.sol\":\"Module_v1\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":500},\"remappings\":[\":@aut/=src/modules/authorizer/\",\":@ex/=src/external/\",\":@fm/=src/modules/fundingManager/\",\":@lm/=src/modules/logicModule/\",\":@lm_pc/=src/modules/logicModule/paymentClient/\",\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@oz-up/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@oz/=lib/openzeppelin-contracts/contracts/\",\":@pp/=src/modules/paymentProcessor/\",\":@uma/=lib/protocol/packages/core/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":protocol/=lib/protocol/\"]},\"sources\":{\"lib/openzeppelin-contracts-upgradeable/contracts/metatx/ERC2771ContextUpgradeable.sol\":{\"keccak256\":\"0x14b59e8cd5720c9cd31616450874b462f575bb52b387df2a54dbd26f9a07adf8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://082df479035347a88472f330b089b421d798e4bb016f36b46ed80182e188b9ac\",\"dweb:/ipfs/QmZMCdVxCB3Lb5bf98YSF4HZFNShDkyyFg9Mg1s9oeM5ov\"]},\"lib/openzeppelin-contracts-upgradeable/contracts/proxy/utils/Initializable.sol\":{\"keccak256\":\"0x631188737069917d2f909d29ce62c4d48611d326686ba6683e26b72a23bfac0b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7a61054ae84cd6c4d04c0c4450ba1d6de41e27e0a2c4f1bcdf58f796b401c609\",\"dweb:/ipfs/QmUvtdp7X1mRVyC3CsHrtPbgoqWaXHp3S1ZR24tpAQYJWM\"]},\"lib/openzeppelin-contracts-upgradeable/contracts/utils/ContextUpgradeable.sol\":{\"keccak256\":\"0xdbef5f0c787055227243a7318ef74c8a5a1108ca3a07f2b3a00ef67769e1e397\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://08e39f23d5b4692f9a40803e53a8156b72b4c1f9902a88cd65ba964db103dab9\",\"dweb:/ipfs/QmPKn6EYDgpga7KtpkA8wV2yJCYGMtc9K4LkJfhKX2RVSV\"]},\"lib/openzeppelin-contracts/contracts/access/IAccessControl.sol\":{\"keccak256\":\"0xb6b36edd6a2999fd243ff226d6cbf84bd71af2432bbd0dfe19392996a1d9cb41\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1fd2f35495652e57e3f99bc6c510bc5f7dd398a176ea2e72d8ed730aebc6ca26\",\"dweb:/ipfs/QmTQV6X4gkikTib49cho5iDX3JvSQbdsoEChoDwrk3CbbH\"]},\"lib/openzeppelin-contracts/contracts/access/extensions/IAccessControlEnumerable.sol\":{\"keccak256\":\"0xc1435f102633849858e75d7bed14c636f25448ceb3406d82992b0f2df52f4306\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ce1815e3a1da24f91b8e2ec24cf09d0d46e0fbeddcbe2cb0d8b2e05b91ceb7b3\",\"dweb:/ipfs/QmYTy1AQB5EV5jwuGsB49yykng2oG3x5ss4bDjFNxk3He4\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c\",\"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq\"]},\"lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol\":{\"keccak256\":\"0x9e8778b14317ba9e256c30a76fd6c32b960af621987f56069e1e819c77c6a133\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1777404f1dcd0fac188e55a288724ec3c67b45288e49cc64723e95e702b49ab8\",\"dweb:/ipfs/QmZFdC626GButBApwDUvvTnUzdinevC3B24d7yyh57XkiA\"]},\"lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0x4296879f55019b23e135000eb36896057e7101fb7fb859c5ef690cf14643757b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://87b3541437c8c443ccd36795e56a338ed12855eec17f8da624511b8d1a7e14df\",\"dweb:/ipfs/QmeJQCtZrQjtJLr6u7ZHWeH3pBnjtLWzvRrKViAi7UZqxL\"]},\"src/external/fees/interfaces/IFeeManager_v1.sol\":{\"keccak256\":\"0x8b796688609a4d609dc8e68047d4bb5c5195d5bffbb4e599aa2246b6bc10b150\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://6c1586ebea82bfe3842072bdb9e05b4a53aac6f6cf87231afebdf08812d1b4ed\",\"dweb:/ipfs/QmRcNwv9uc7f3VQu4H2VBJqVdfDBYbKr7EsS4NzdzKyiif\"]},\"src/external/governance/interfaces/IGovernor_v1.sol\":{\"keccak256\":\"0xef35502692dd70ad27721c630016283e45ab5a9dceeff8937affa3ad5b4d31ee\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://01af25ec4741a71243c8be80793d6f8a68489621b2eadfb626d84194a759bb4e\",\"dweb:/ipfs/QmNPZyJTP8u1kBerLLWBgJa2rtBH1p8vuPQTTs8MrDkQaP\"]},\"src/external/interfaces/IERC2771Context.sol\":{\"keccak256\":\"0xfcc88fc7329ac304efe8c41871d596f0c3fe8f70917214b3a087266bf19ee86b\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://47159333bca960cfdf0bd4e9d5e114174cb047477b08ad4e40dce6f956c8980a\",\"dweb:/ipfs/QmbjnnNmXauGRjP1UcMxAYxzb5YXpveL7hQGtr1PHMH4jv\"]},\"src/modules/authorizer/IAuthorizer_v1.sol\":{\"keccak256\":\"0xd15293834879f770e696e68b1f595032f4d1067456fdd3788b7631ee5ebc7e64\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://ecd44790587ba3324ba42495dc3900850739f8fba141bbddc71fcc5e1898abab\",\"dweb:/ipfs/Qme7z5gQQiK6i9d8BFSYk7QzHaRnPbXPKDjzfUQTLWDPMG\"]},\"src/modules/base/IModule_v1.sol\":{\"keccak256\":\"0x6b552aed3184961eee51a1e6fde64c6e731400baffde78bbcbb2fee6b8a75e24\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://2df69251ca41b7b9159f083f1e33de73e925b9031206a30d11076c5f6ebe9cf5\",\"dweb:/ipfs/QmWXNZQM42MaBCXEQANyHAS299zK3jfkXwxHjwEDPTJd85\"]},\"src/modules/base/Module_v1.sol\":{\"keccak256\":\"0x039fc19f543ad5ebd43026a767b1a04fa5570f3215300e73448a5402d5fa75e7\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://8393f8bdf7827f6d46b09fc688049a453ce3d88f23ba14be4d76e2e4f86be978\",\"dweb:/ipfs/QmPt8uXYUAVPPXnBjYJcGKPLUJmjnDV39UYn8eirHwW7Tz\"]},\"src/modules/fundingManager/IFundingManager_v1.sol\":{\"keccak256\":\"0x3eeb41edee9eebfc09b30af9ed67cb84573eb37597b7ad262e4ce2d9e5c2464d\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://1fbce868b4a5f53a38a3859c8d9299e15bd84cf01e156ba72e91792cebb785cf\",\"dweb:/ipfs/QmRZAejdu6EG7D38vyJF5RH2zCa35B5afoY1XdQmdem9bK\"]},\"src/modules/lib/LibMetadata.sol\":{\"keccak256\":\"0x881141311eb65c4578ab2ad47322ae8fb25b05f8d01e6b8e84571b19f5ee5dd7\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://c17840e517341910d4d01024dfca4ed0d583b6208202cf1c61bf418c62041817\",\"dweb:/ipfs/QmeHkyuQ2nimJBHFAfpv7T8Zm1maZWiP64uF7AQRZmQwP3\"]},\"src/modules/logicModule/interfaces/IERC20PaymentClientBase_v1.sol\":{\"keccak256\":\"0x99c48a9556b87a730cddec1f341da11ed36fa618b0e3810deaab8045dc266725\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://a313b92e9e8100cd3e9c36b29018954570ff413a61e6d5b2984b0a315a0d1d42\",\"dweb:/ipfs/QmP6uGk6TE4Gm3jEs5iscrbZf4xEjk1ka2jcUCxs9wnWPF\"]},\"src/modules/paymentProcessor/IPaymentProcessor_v1.sol\":{\"keccak256\":\"0x30292faef68798aebd70684b1fe29c8ec326687b1f5718878c0c14599b34a852\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://838ed480aafdc1cdd6afae69e98d1b40cf960446411d143576932aa43b455790\",\"dweb:/ipfs/QmcGWZhAuuuFHmhv6GDedWnkbWiBoBFn5NMhD6eQAg89Hg\"]},\"src/orchestrator/interfaces/IModuleManagerBase_v1.sol\":{\"keccak256\":\"0x8fbb094d7c1de91ec9b277253fc4ead5b39b504eca4ca72a197b68d765e77300\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://79c5d48d683418e66195a99065659e01df38e37a94f4656e2f782cec5eedd511\",\"dweb:/ipfs/Qmcbz5ZKyLqmVLqbSJSuugVXx2vfPmM5xsatdo7EeFLw3s\"]},\"src/orchestrator/interfaces/IOrchestrator_v1.sol\":{\"keccak256\":\"0xd2ad3095a78cebfb6a00898b4e5f46905b0baa1d6251df7b8e485299fca52aba\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://cbb15c4f6566ad79f26e55f37b06f93d7a67f99c848f95b88ed9736bf2999437\",\"dweb:/ipfs/QmW9f22rHGSzUYutMRvPimhBTWSV4qxLZAqdfqUQxh5KcR\"]}},\"version\":1}",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.23+commit.f704f362\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"InvalidInitialization\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"funcSig\",\"type\":\"string\"}],\"name\":\"Module_OrchestratorCallbackFailed\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"Module__CallerNotAuthorized\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__InvalidAddress\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__InvalidMetadata\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__InvalidOrchestratorAddress\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__OnlyCallableByOrchestrator\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__OnlyCallableByPaymentClient\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotInitializing\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint64\",\"name\":\"version\",\"type\":\"uint64\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"parentOrchestrator\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"majorVersion\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minorVersion\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"patchVersion\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"url\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"title\",\"type\":\"string\"}],\"indexed\":false,\"internalType\":\"struct IModule_v1.Metadata\",\"name\":\"metadata\",\"type\":\"tuple\"}],\"name\":\"ModuleInitialized\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"name\":\"grantModuleRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address[]\",\"name\":\"targets\",\"type\":\"address[]\"}],\"name\":\"grantModuleRoleBatched\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"identifier\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IOrchestrator_v1\",\"name\":\"orchestrator_\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"majorVersion\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minorVersion\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"patchVersion\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"url\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"title\",\"type\":\"string\"}],\"internalType\":\"struct IModule_v1.Metadata\",\"name\":\"metadata\",\"type\":\"tuple\"},{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"forwarder\",\"type\":\"address\"}],\"name\":\"isTrustedForwarder\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"orchestrator\",\"outputs\":[{\"internalType\":\"contract IOrchestrator_v1\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"name\":\"revokeModuleRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address[]\",\"name\":\"targets\",\"type\":\"address[]\"}],\"name\":\"revokeModuleRoleBatched\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"title\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"trustedForwarder\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"url\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Inverter Network\",\"custom:security-contact\":\"security@inverter.network                          In case of any concerns or findings, please refer to our Security Policy                          at security.inverter.network or email us directly!\",\"details\":\"This Contract is the basic building block for all Modules in the Inverter Network.          It contains references to other contracts, modifier for access restriction,          metadata to identify the module type as well as utility functions for general          module interactions.          This contract provides a framework for triggering and receiving {Orchestrator_v1}          callbacks (via `call`) and a modifier to authenticate          callers via the module's {Orchestrator_v1}.          Each module is identified via a unique identifier based on its major          version, title, and url given in the metadata.\",\"errors\":{\"InvalidInitialization()\":[{\"details\":\"The contract is already initialized.\"}],\"Module_OrchestratorCallbackFailed(string)\":[{\"params\":{\"funcSig\":\"The signature of the function called.\"}}],\"Module__CallerNotAuthorized(bytes32,address)\":[{\"params\":{\"caller\":\"The address that is required to have the role.\",\"role\":\"The role that is required.\"}}],\"Module__InvalidAddress()\":[{\"details\":\"Invalid Address.\"}],\"NotInitializing()\":[{\"details\":\"The contract is not initializing.\"}]},\"events\":{\"Initialized(uint64)\":{\"details\":\"Triggered when the contract has been initialized or reinitialized.\"},\"ModuleInitialized(address,(uint256,uint256,uint256,string,string))\":{\"params\":{\"metadata\":\"The metadata of the module.\",\"parentOrchestrator\":\"The address of the {Orchestrator_v1} the module is linked to.\"}}},\"kind\":\"dev\",\"methods\":{\"grantModuleRole(bytes32,address)\":{\"params\":{\"role\":\"The role to grant.\",\"target\":\"The target address to grant the role to.\"}},\"grantModuleRoleBatched(bytes32,address[])\":{\"params\":{\"role\":\"The role to grant.\",\"targets\":\"The target addresses to grant the role to.\"}},\"identifier()\":{\"details\":\"The identifier is defined as the keccak256 hash of the module's         abi packed encoded major version, url and title.\",\"returns\":{\"_0\":\"The module's identifier.\"}},\"init(address,(uint256,uint256,uint256,string,string),bytes)\":{\"details\":\"CAN be overridden by downstream contract.MUST call `__Module_init()`.\",\"params\":{\"configData\":\"Variable config data for specific module                   implementations.\",\"metadata\":\"The module's metadata.\",\"orchestrator\":\"The module's {Orchestrator_v1} instance.\"}},\"isTrustedForwarder(address)\":{\"details\":\"We imitate here the EIP2771 Standard to enable metatransactions         As it currently stands we dont want to feed the forwarder address to each module individually and we decided to         move this to the orchestrator.\",\"params\":{\"forwarder\":\"The contract address to be verified.\"},\"returns\":{\"_0\":\"bool Is the given address the trusted forwarder.\"}},\"orchestrator()\":{\"returns\":{\"_0\":\"The module's {Orchestrator_1}.\"}},\"revokeModuleRole(bytes32,address)\":{\"params\":{\"role\":\"The role to revoke.\",\"target\":\"The target address to revoke the role from.\"}},\"revokeModuleRoleBatched(bytes32,address[])\":{\"params\":{\"role\":\"The role to revoke.\",\"targets\":\"The target addresses to revoke the role from.\"}},\"supportsInterface(bytes4)\":{\"details\":\"See {IERC165-supportsInterface}.\"},\"title()\":{\"returns\":{\"_0\":\"The module's title.\"}},\"trustedForwarder()\":{\"details\":\"We imitate here the EIP2771 Standard to enable metatransactions.         As it currently stands we dont want to feed the forwarder address to each module individually and we decided to         move this to the orchestrator.\",\"returns\":{\"_0\":\"address The trusted forwarder.\"}},\"url()\":{\"returns\":{\"_0\":\"The module's URL.\"}},\"version()\":{\"returns\":{\"_0\":\"The module's major version.\",\"_1\":\"The module's minor version.\",\"_2\":\"The module's patch version.\"}}},\"stateVariables\":{\"__Module_metadata\":{\"custom:invariant\":\"Not mutated after initialization.\",\"details\":\"The module's metadata.\"},\"__Module_orchestrator\":{\"custom:invariant\":\"Not mutated after initialization.\",\"details\":\"The module's orchestrator instance.\"},\"__gap\":{\"details\":\"Storage gap for future upgrades.\"}},\"title\":\"Inverter Module\",\"version\":1},\"userdoc\":{\"errors\":{\"Module_OrchestratorCallbackFailed(string)\":[{\"notice\":\"{Orchestrator_v1} callback triggered failed.\"}],\"Module__CallerNotAuthorized(bytes32,address)\":[{\"notice\":\"Function is only callable by authorized caller.\"}],\"Module__InvalidMetadata()\":[{\"notice\":\"Given metadata invalid.\"}],\"Module__InvalidOrchestratorAddress()\":[{\"notice\":\"Given {Orchestrator_v1} address invalid.\"}],\"Module__OnlyCallableByOrchestrator()\":[{\"notice\":\"Function is only callable by the {Orchestrator_v1}.\"}],\"Module__OnlyCallableByPaymentClient()\":[{\"notice\":\"Function is only callable by a {IERC20PaymentClientBase_v1}.\"}]},\"events\":{\"ModuleInitialized(address,(uint256,uint256,uint256,string,string))\":{\"notice\":\"Module has been initialized.\"}},\"kind\":\"user\",\"methods\":{\"grantModuleRole(bytes32,address)\":{\"notice\":\"Grants a module role to a target address.\"},\"grantModuleRoleBatched(bytes32,address[])\":{\"notice\":\"Grants a module role to multiple target addresses.\"},\"identifier()\":{\"notice\":\"Returns the module's identifier.\"},\"init(address,(uint256,uint256,uint256,string,string),bytes)\":{\"notice\":\"The module's initializer function.\"},\"isTrustedForwarder(address)\":{\"notice\":\"Checks if the provided address is the trusted forwarder.\"},\"orchestrator()\":{\"notice\":\"Returns the module's {Orchestrator_v1} interface, {IOrchestrator_v1}.\"},\"revokeModuleRole(bytes32,address)\":{\"notice\":\"Revokes a module role from a target address.\"},\"revokeModuleRoleBatched(bytes32,address[])\":{\"notice\":\"Revokes a module role from multiple target addresses.\"},\"title()\":{\"notice\":\"Returns the module's title.\"},\"trustedForwarder()\":{\"notice\":\"Returns the trusted forwarder.\"},\"url()\":{\"notice\":\"Returns the module's URL.\"},\"version()\":{\"notice\":\"Returns the module's version.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/modules/base/Module_v1.sol\":\"Module_v1\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":750},\"remappings\":[\":@aut/=src/modules/authorizer/\",\":@df/=lib/deterministic-factory/src/\",\":@ex/=src/external/\",\":@fm/=src/modules/fundingManager/\",\":@lm/=src/modules/logicModule/\",\":@lm_pc/=src/modules/logicModule/paymentClient/\",\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@oz-up/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@oz/=lib/openzeppelin-contracts/contracts/\",\":@pp/=src/modules/paymentProcessor/\",\":@uma/=lib/uma-protocol/packages/core/contracts/\",\":deterministic-factory/=lib/deterministic-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":halmos-cheatcodes/=lib/deterministic-factory/lib/openzeppelin-contracts/lib/halmos-cheatcodes/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":uma-protocol/=lib/uma-protocol/\"]},\"sources\":{\"lib/openzeppelin-contracts-upgradeable/contracts/metatx/ERC2771ContextUpgradeable.sol\":{\"keccak256\":\"0x14b59e8cd5720c9cd31616450874b462f575bb52b387df2a54dbd26f9a07adf8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://082df479035347a88472f330b089b421d798e4bb016f36b46ed80182e188b9ac\",\"dweb:/ipfs/QmZMCdVxCB3Lb5bf98YSF4HZFNShDkyyFg9Mg1s9oeM5ov\"]},\"lib/openzeppelin-contracts-upgradeable/contracts/proxy/utils/Initializable.sol\":{\"keccak256\":\"0x631188737069917d2f909d29ce62c4d48611d326686ba6683e26b72a23bfac0b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7a61054ae84cd6c4d04c0c4450ba1d6de41e27e0a2c4f1bcdf58f796b401c609\",\"dweb:/ipfs/QmUvtdp7X1mRVyC3CsHrtPbgoqWaXHp3S1ZR24tpAQYJWM\"]},\"lib/openzeppelin-contracts-upgradeable/contracts/utils/ContextUpgradeable.sol\":{\"keccak256\":\"0xdbef5f0c787055227243a7318ef74c8a5a1108ca3a07f2b3a00ef67769e1e397\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://08e39f23d5b4692f9a40803e53a8156b72b4c1f9902a88cd65ba964db103dab9\",\"dweb:/ipfs/QmPKn6EYDgpga7KtpkA8wV2yJCYGMtc9K4LkJfhKX2RVSV\"]},\"lib/openzeppelin-contracts-upgradeable/contracts/utils/introspection/ERC165Upgradeable.sol\":{\"keccak256\":\"0xdaba3f7c42c55b2896353f32bd27d4d5f8bae741b3b05d4c53f67abc4dc47ce8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1fa2e61141c602510bcd2cd936ed9561922ac8772a9b9c9a9db091a74e354a45\",\"dweb:/ipfs/QmcHQDDoEBwJmwUbzoVkytvJsBx3KVHYFFnDkvRGWh9Wmh\"]},\"lib/openzeppelin-contracts/contracts/access/IAccessControl.sol\":{\"keccak256\":\"0xb6b36edd6a2999fd243ff226d6cbf84bd71af2432bbd0dfe19392996a1d9cb41\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1fd2f35495652e57e3f99bc6c510bc5f7dd398a176ea2e72d8ed730aebc6ca26\",\"dweb:/ipfs/QmTQV6X4gkikTib49cho5iDX3JvSQbdsoEChoDwrk3CbbH\"]},\"lib/openzeppelin-contracts/contracts/access/extensions/IAccessControlEnumerable.sol\":{\"keccak256\":\"0xc1435f102633849858e75d7bed14c636f25448ceb3406d82992b0f2df52f4306\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ce1815e3a1da24f91b8e2ec24cf09d0d46e0fbeddcbe2cb0d8b2e05b91ceb7b3\",\"dweb:/ipfs/QmYTy1AQB5EV5jwuGsB49yykng2oG3x5ss4bDjFNxk3He4\"]},\"lib/openzeppelin-contracts/contracts/proxy/beacon/IBeacon.sol\":{\"keccak256\":\"0xc59a78b07b44b2cf2e8ab4175fca91e8eca1eee2df7357b8d2a8833e5ea1f64c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5aa4f07e65444784c29cd7bfcc2341b34381e4e5b5da9f0c5bd00d7f430e66fa\",\"dweb:/ipfs/QmWRMh4Q9DpaU9GvsiXmDdoNYMyyece9if7hnfLz7uqzWM\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c\",\"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq\"]},\"lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0x4296879f55019b23e135000eb36896057e7101fb7fb859c5ef690cf14643757b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://87b3541437c8c443ccd36795e56a338ed12855eec17f8da624511b8d1a7e14df\",\"dweb:/ipfs/QmeJQCtZrQjtJLr6u7ZHWeH3pBnjtLWzvRrKViAi7UZqxL\"]},\"src/external/fees/interfaces/IFeeManager_v1.sol\":{\"keccak256\":\"0x655d93b595c66254f5432c3142c114da5479c75d4d67b59f9e221d58bf04ae7e\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://54f7a5771189d06997dddc37b53082d3d8b747bd7fcb5efbeb8b4ee921d3e705\",\"dweb:/ipfs/QmQQvoJsRQbSg6od3P1Z7f83gyKVBjoM4PsaEPRAVW2icQ\"]},\"src/external/governance/interfaces/IGovernor_v1.sol\":{\"keccak256\":\"0xed0154b2d4ef44e49db7085bce8d62da37b66aa673884ca1c6e738695073c448\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://c1dfbabb342fb17c6c2212aee81588e14305152e65018780ae603d680c37494c\",\"dweb:/ipfs/QmeE1BPqF7GsD2hzuE2ckmNdz3ZVUQ2eN7WsDVMEWZpuW6\"]},\"src/external/interfaces/IERC2771Context.sol\":{\"keccak256\":\"0xdb0580aaaba4ae2c0d9e10412ff83f3c7efe99949e241a07ccfa1cb92a2ba0db\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://82fc191e17b3221d8965ed5da2560f29b1c25216be3515a73134da5761a6e421\",\"dweb:/ipfs/QmRUHmePb4mbtYnG69D2TX3Y7USfz97SCffFn9DR3jWruZ\"]},\"src/factories/interfaces/IModuleFactory_v1.sol\":{\"keccak256\":\"0x242182fa6fb04f642848a9b9ac7259df0109d7e6c872320f2f237d293c2e0b6d\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://a0e09c61a9c4d69f493e12c7c0f7376055a70cd8cde738ca64920706ad3495c9\",\"dweb:/ipfs/QmeQ1Pdtv5xkb37yXX8sGbUe7AGKEjGZar6H7jc5TxK3uf\"]},\"src/factories/interfaces/IOrchestratorFactory_v1.sol\":{\"keccak256\":\"0xfb9d598f8dae48593c457d36520414dd5f6ee5bbc2978c4413a561c03a8037b9\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://677d9acc88f389fb3323b77bf0b0679a9461546d7c1dd30b7d44d3756dfe0d80\",\"dweb:/ipfs/QmW6CojPhFAu9WpmyJAVdNht5ZnF43Zu54zsVTcJzxuXYu\"]},\"src/modules/authorizer/IAuthorizer_v1.sol\":{\"keccak256\":\"0x07cda177f585d2dd94f54c4952e6dda485031ce4f68419eaf2f20a008d1a0888\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://1b6434ad6f00da437a16e279cf3ac531d6d678df7978cb36e79a7011ff3f429e\",\"dweb:/ipfs/QmUuhJcpJfShLvhacrppPu4bKpjfXCvbvpCLNX6apwWGtW\"]},\"src/modules/base/IModule_v1.sol\":{\"keccak256\":\"0x25b693726deaca560b6d251473488cb7e613e660390f20729ff85f9b16061c2c\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://13dde2116ec823fb5c5852c0477d15cb4f9e5e73414b3a1694d56c46222a189a\",\"dweb:/ipfs/QmWspKVFWY5NFKMVsZAqHYBieZE6jmCt16nFRZg8F4WPpA\"]},\"src/modules/base/Module_v1.sol\":{\"keccak256\":\"0x3ad11bad71251f91e4ca01d45415e17d780bf1b9081885dbb94b7b0d9991949c\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://7cb6c1a044a35d1625a0c44341f4f039eb465b7389aae58c5cdbe94c3764527a\",\"dweb:/ipfs/QmSc4BoAZkmPNVLpYbRTwzNiZkTFr7hH8A33vG7pmLanFS\"]},\"src/modules/fundingManager/IFundingManager_v1.sol\":{\"keccak256\":\"0xd134329084248cb2b5fe04ea32af7fb481d29288dec52cb9ce8e03f56148d2c9\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://c796afe7e30e751165d9167692e2426b472ae0203d094a9afa28929e501abab7\",\"dweb:/ipfs/QmeUspckKVaK5vR2Jyo2MT2gBCiM7UoXA4o6NGS6SFi98D\"]},\"src/modules/lib/LibMetadata.sol\":{\"keccak256\":\"0x9a524b8697167b605c0b980b3e81688d448922ab38cd040f2b1c664946666c4a\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://5dd325f05f6812218a7f808af5afc1ec6cf95f1250c33d4dd1ad01ec4b041d50\",\"dweb:/ipfs/Qmem29JZSEpYLDqJn4cBxawGokbzo3taqHtb3UyyDvmB8G\"]},\"src/modules/logicModule/interfaces/IERC20PaymentClientBase_v1.sol\":{\"keccak256\":\"0x29f538a416c5a71a54eebef838b6c4dece020d3be178980d98b2334417ffc16b\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://6a24f4196f863ee2fb2c5dbe299efcd5b7c5ffaf65048cf5a14bb06245fb1cc3\",\"dweb:/ipfs/QmREdsJYZaQkhtDTJ5mbKZbdiMjSSmDsdWFSu2YPhVcLZQ\"]},\"src/modules/paymentProcessor/IPaymentProcessor_v1.sol\":{\"keccak256\":\"0xb0c2db0028d7de4c201b75449b6c959478f965a2d342c9880dad026ef9da8905\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://194f9317a8e2ebe26f8422d19cf0a89869b1867a48c63f06481dea6aeb4c347d\",\"dweb:/ipfs/QmRYhWwaZaYXBBzN9yLpXGjbP6whYanJJhM9jDjJ4ZCftK\"]},\"src/orchestrator/interfaces/IModuleManagerBase_v1.sol\":{\"keccak256\":\"0x2abd1abb278da305c6a47d11ef31ef7a7de2aebf017957b0013497de8e2aa2eb\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://5d49aac1e351f80bce5c27fb0934577d64551c25fcbad6dd172b6eee7b8bf57a\",\"dweb:/ipfs/QmRdR4Ut7gV9Zp295ciYnwYqjdXKxZAAegVhtsGpetiwsC\"]},\"src/orchestrator/interfaces/IOrchestrator_v1.sol\":{\"keccak256\":\"0xed08e392f5b321609173e95333e94f57bb83b42fda8a98c7af77e035d2d53c0f\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://003498e95d4be3ea4f9eb13ec87c450eaf437f03a69d0d7c681e2f723240d2f9\",\"dweb:/ipfs/QmcTiDEK7UytSy8c2gHVpjMHoSqtf4CswmLP4LYeRn7aFb\"]},\"src/proxies/interfaces/IInverterBeacon_v1.sol\":{\"keccak256\":\"0x23cd7a4ada497ebd9834d521843673881427d563906662156e748366a6a03fb5\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://49cbce7e794b38126494ee0c4a26f9807fc284e0e5c59ad8a1a229e60f196e66\",\"dweb:/ipfs/Qma3hZfASQ6Gaa4anDhTmhNA1HPiYSD6eJ9Gnn817rP8VJ\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.8.23+commit.f704f362"
@@ -403,6 +438,11 @@
         {
           "inputs": [],
           "type": "error",
+          "name": "Module__InvalidAddress"
+        },
+        {
+          "inputs": [],
+          "type": "error",
           "name": "Module__InvalidMetadata"
         },
         {
@@ -414,6 +454,11 @@
           "inputs": [],
           "type": "error",
           "name": "Module__OnlyCallableByOrchestrator"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Module__OnlyCallableByPaymentClient"
         },
         {
           "inputs": [],
@@ -442,21 +487,36 @@
               "indexed": true
             },
             {
-              "internalType": "string",
-              "name": "moduleTitle",
-              "type": "string",
-              "indexed": true
-            },
-            {
-              "internalType": "uint256",
-              "name": "majorVersion",
-              "type": "uint256",
-              "indexed": false
-            },
-            {
-              "internalType": "uint256",
-              "name": "minorVersion",
-              "type": "uint256",
+              "internalType": "struct IModule_v1.Metadata",
+              "name": "metadata",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "majorVersion",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "minorVersion",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "patchVersion",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "string",
+                  "name": "url",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "title",
+                  "type": "string"
+                }
+              ],
               "indexed": false
             }
           ],
@@ -531,6 +591,11 @@
                 {
                   "internalType": "uint256",
                   "name": "minorVersion",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "patchVersion",
                   "type": "uint256"
                 },
                 {
@@ -694,6 +759,11 @@
               "internalType": "uint256",
               "name": "",
               "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
             }
           ]
         }
@@ -701,32 +771,56 @@
       "devdoc": {
         "kind": "dev",
         "methods": {
+          "grantModuleRole(bytes32,address)": {
+            "params": {
+              "role": "The role to grant.",
+              "target": "The target address to grant the role to."
+            }
+          },
+          "grantModuleRoleBatched(bytes32,address[])": {
+            "params": {
+              "role": "The role to grant.",
+              "targets": "The target addresses to grant the role to."
+            }
+          },
           "identifier()": {
-            "details": "The identifier is defined as the keccak256 hash of the module's      abi packed encoded major version, url and title.",
+            "details": "The identifier is defined as the keccak256 hash of the module's         abi packed encoded major version, url and title.",
             "returns": {
               "_0": "The module's identifier."
             }
           },
-          "init(address,(uint256,uint256,string,string),bytes)": {
-            "details": "CAN be overriden by downstream contract.MUST call `__Module_init()`.",
+          "init(address,(uint256,uint256,uint256,string,string),bytes)": {
+            "details": "CAN be overridden by downstream contract.MUST call `__Module_init()`.",
             "params": {
               "configData": "Variable config data for specific module                   implementations.",
               "metadata": "The module's metadata.",
-              "orchestrator": "The module's orchestrator instance."
+              "orchestrator": "The module's {Orchestrator_v1} instance."
             }
           },
           "isTrustedForwarder(address)": {
-            "details": "We imitate here the EIP2771 Standard to enable metatransactions As it currently stands we dont want to feed the forwarder address to each module individually and we decided to move this to the orchestrator",
+            "details": "We imitate here the EIP2771 Standard to enable metatransactions         As it currently stands we dont want to feed the forwarder address to each module individually and we decided to         move this to the orchestrator.",
             "params": {
               "forwarder": "The contract address to be verified."
             },
             "returns": {
-              "_0": "bool Is the given address the trusted forwarder"
+              "_0": "bool Is the given address the trusted forwarder."
             }
           },
           "orchestrator()": {
             "returns": {
-              "_0": "The module's orchestrator."
+              "_0": "The module's {Orchestrator_1}."
+            }
+          },
+          "revokeModuleRole(bytes32,address)": {
+            "params": {
+              "role": "The role to revoke.",
+              "target": "The target address to revoke the role from."
+            }
+          },
+          "revokeModuleRoleBatched(bytes32,address[])": {
+            "params": {
+              "role": "The role to revoke.",
+              "targets": "The target addresses to revoke the role from."
             }
           },
           "supportsInterface(bytes4)": {
@@ -738,9 +832,9 @@
             }
           },
           "trustedForwarder()": {
-            "details": "We imitate here the EIP2771 Standard to enable metatransactions As it currently stands we dont want to feed the forwarder address to each module individually and we decided to move this to the orchestrator",
+            "details": "We imitate here the EIP2771 Standard to enable metatransactions.         As it currently stands we dont want to feed the forwarder address to each module individually and we decided to         move this to the orchestrator.",
             "returns": {
-              "_0": "address The trusted forwarder"
+              "_0": "address The trusted forwarder."
             }
           },
           "url()": {
@@ -751,7 +845,8 @@
           "version()": {
             "returns": {
               "_0": "The module's major version.",
-              "_1": "The module's minor version."
+              "_1": "The module's minor version.",
+              "_2": "The module's patch version."
             }
           }
         },
@@ -760,23 +855,35 @@
       "userdoc": {
         "kind": "user",
         "methods": {
+          "grantModuleRole(bytes32,address)": {
+            "notice": "Grants a module role to a target address."
+          },
+          "grantModuleRoleBatched(bytes32,address[])": {
+            "notice": "Grants a module role to multiple target addresses."
+          },
           "identifier()": {
             "notice": "Returns the module's identifier."
           },
-          "init(address,(uint256,uint256,string,string),bytes)": {
+          "init(address,(uint256,uint256,uint256,string,string),bytes)": {
             "notice": "The module's initializer function."
           },
           "isTrustedForwarder(address)": {
-            "notice": "Checks if the provided address is the trusted forwarder"
+            "notice": "Checks if the provided address is the trusted forwarder."
           },
           "orchestrator()": {
-            "notice": "Returns the module's {IOrchestrator_v1} orchestrator instance."
+            "notice": "Returns the module's {Orchestrator_v1} interface, {IOrchestrator_v1}."
+          },
+          "revokeModuleRole(bytes32,address)": {
+            "notice": "Revokes a module role from a target address."
+          },
+          "revokeModuleRoleBatched(bytes32,address[])": {
+            "notice": "Revokes a module role from multiple target addresses."
           },
           "title()": {
             "notice": "Returns the module's title."
           },
           "trustedForwarder()": {
-            "notice": "Returns the trusted forwarder"
+            "notice": "Returns the trusted forwarder."
           },
           "url()": {
             "notice": "Returns the module's URL."
@@ -791,6 +898,7 @@
     "settings": {
       "remappings": [
         "@aut/=src/modules/authorizer/",
+        "@df/=lib/deterministic-factory/src/",
         "@ex/=src/external/",
         "@fm/=src/modules/fundingManager/",
         "@lm/=src/modules/logicModule/",
@@ -800,17 +908,19 @@
         "@oz-up/=lib/openzeppelin-contracts-upgradeable/contracts/",
         "@oz/=lib/openzeppelin-contracts/contracts/",
         "@pp/=src/modules/paymentProcessor/",
-        "@uma/=lib/protocol/packages/core/contracts/",
+        "@uma/=lib/uma-protocol/packages/core/contracts/",
+        "deterministic-factory/=lib/deterministic-factory/",
         "ds-test/=lib/forge-std/lib/ds-test/src/",
         "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
         "forge-std/=lib/forge-std/src/",
+        "halmos-cheatcodes/=lib/deterministic-factory/lib/openzeppelin-contracts/lib/halmos-cheatcodes/src/",
         "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
         "openzeppelin-contracts/=lib/openzeppelin-contracts/",
-        "protocol/=lib/protocol/"
+        "uma-protocol/=lib/uma-protocol/"
       ],
       "optimizer": {
         "enabled": true,
-        "runs": 500
+        "runs": 750
       },
       "metadata": {
         "bytecodeHash": "ipfs"
@@ -846,6 +956,14 @@
         ],
         "license": "MIT"
       },
+      "lib/openzeppelin-contracts-upgradeable/contracts/utils/introspection/ERC165Upgradeable.sol": {
+        "keccak256": "0xdaba3f7c42c55b2896353f32bd27d4d5f8bae741b3b05d4c53f67abc4dc47ce8",
+        "urls": [
+          "bzz-raw://1fa2e61141c602510bcd2cd936ed9561922ac8772a9b9c9a9db091a74e354a45",
+          "dweb:/ipfs/QmcHQDDoEBwJmwUbzoVkytvJsBx3KVHYFFnDkvRGWh9Wmh"
+        ],
+        "license": "MIT"
+      },
       "lib/openzeppelin-contracts/contracts/access/IAccessControl.sol": {
         "keccak256": "0xb6b36edd6a2999fd243ff226d6cbf84bd71af2432bbd0dfe19392996a1d9cb41",
         "urls": [
@@ -862,19 +980,19 @@
         ],
         "license": "MIT"
       },
+      "lib/openzeppelin-contracts/contracts/proxy/beacon/IBeacon.sol": {
+        "keccak256": "0xc59a78b07b44b2cf2e8ab4175fca91e8eca1eee2df7357b8d2a8833e5ea1f64c",
+        "urls": [
+          "bzz-raw://5aa4f07e65444784c29cd7bfcc2341b34381e4e5b5da9f0c5bd00d7f430e66fa",
+          "dweb:/ipfs/QmWRMh4Q9DpaU9GvsiXmDdoNYMyyece9if7hnfLz7uqzWM"
+        ],
+        "license": "MIT"
+      },
       "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
         "keccak256": "0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70",
         "urls": [
           "bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c",
           "dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq"
-        ],
-        "license": "MIT"
-      },
-      "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol": {
-        "keccak256": "0x9e8778b14317ba9e256c30a76fd6c32b960af621987f56069e1e819c77c6a133",
-        "urls": [
-          "bzz-raw://1777404f1dcd0fac188e55a288724ec3c67b45288e49cc64723e95e702b49ab8",
-          "dweb:/ipfs/QmZFdC626GButBApwDUvvTnUzdinevC3B24d7yyh57XkiA"
         ],
         "license": "MIT"
       },
@@ -887,103 +1005,127 @@
         "license": "MIT"
       },
       "src/external/fees/interfaces/IFeeManager_v1.sol": {
-        "keccak256": "0x8b796688609a4d609dc8e68047d4bb5c5195d5bffbb4e599aa2246b6bc10b150",
+        "keccak256": "0x655d93b595c66254f5432c3142c114da5479c75d4d67b59f9e221d58bf04ae7e",
         "urls": [
-          "bzz-raw://6c1586ebea82bfe3842072bdb9e05b4a53aac6f6cf87231afebdf08812d1b4ed",
-          "dweb:/ipfs/QmRcNwv9uc7f3VQu4H2VBJqVdfDBYbKr7EsS4NzdzKyiif"
+          "bzz-raw://54f7a5771189d06997dddc37b53082d3d8b747bd7fcb5efbeb8b4ee921d3e705",
+          "dweb:/ipfs/QmQQvoJsRQbSg6od3P1Z7f83gyKVBjoM4PsaEPRAVW2icQ"
         ],
         "license": "LGPL-3.0-only"
       },
       "src/external/governance/interfaces/IGovernor_v1.sol": {
-        "keccak256": "0xef35502692dd70ad27721c630016283e45ab5a9dceeff8937affa3ad5b4d31ee",
+        "keccak256": "0xed0154b2d4ef44e49db7085bce8d62da37b66aa673884ca1c6e738695073c448",
         "urls": [
-          "bzz-raw://01af25ec4741a71243c8be80793d6f8a68489621b2eadfb626d84194a759bb4e",
-          "dweb:/ipfs/QmNPZyJTP8u1kBerLLWBgJa2rtBH1p8vuPQTTs8MrDkQaP"
+          "bzz-raw://c1dfbabb342fb17c6c2212aee81588e14305152e65018780ae603d680c37494c",
+          "dweb:/ipfs/QmeE1BPqF7GsD2hzuE2ckmNdz3ZVUQ2eN7WsDVMEWZpuW6"
         ],
         "license": "LGPL-3.0-only"
       },
       "src/external/interfaces/IERC2771Context.sol": {
-        "keccak256": "0xfcc88fc7329ac304efe8c41871d596f0c3fe8f70917214b3a087266bf19ee86b",
+        "keccak256": "0xdb0580aaaba4ae2c0d9e10412ff83f3c7efe99949e241a07ccfa1cb92a2ba0db",
         "urls": [
-          "bzz-raw://47159333bca960cfdf0bd4e9d5e114174cb047477b08ad4e40dce6f956c8980a",
-          "dweb:/ipfs/QmbjnnNmXauGRjP1UcMxAYxzb5YXpveL7hQGtr1PHMH4jv"
+          "bzz-raw://82fc191e17b3221d8965ed5da2560f29b1c25216be3515a73134da5761a6e421",
+          "dweb:/ipfs/QmRUHmePb4mbtYnG69D2TX3Y7USfz97SCffFn9DR3jWruZ"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/factories/interfaces/IModuleFactory_v1.sol": {
+        "keccak256": "0x242182fa6fb04f642848a9b9ac7259df0109d7e6c872320f2f237d293c2e0b6d",
+        "urls": [
+          "bzz-raw://a0e09c61a9c4d69f493e12c7c0f7376055a70cd8cde738ca64920706ad3495c9",
+          "dweb:/ipfs/QmeQ1Pdtv5xkb37yXX8sGbUe7AGKEjGZar6H7jc5TxK3uf"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/factories/interfaces/IOrchestratorFactory_v1.sol": {
+        "keccak256": "0xfb9d598f8dae48593c457d36520414dd5f6ee5bbc2978c4413a561c03a8037b9",
+        "urls": [
+          "bzz-raw://677d9acc88f389fb3323b77bf0b0679a9461546d7c1dd30b7d44d3756dfe0d80",
+          "dweb:/ipfs/QmW6CojPhFAu9WpmyJAVdNht5ZnF43Zu54zsVTcJzxuXYu"
         ],
         "license": "LGPL-3.0-only"
       },
       "src/modules/authorizer/IAuthorizer_v1.sol": {
-        "keccak256": "0xd15293834879f770e696e68b1f595032f4d1067456fdd3788b7631ee5ebc7e64",
+        "keccak256": "0x07cda177f585d2dd94f54c4952e6dda485031ce4f68419eaf2f20a008d1a0888",
         "urls": [
-          "bzz-raw://ecd44790587ba3324ba42495dc3900850739f8fba141bbddc71fcc5e1898abab",
-          "dweb:/ipfs/Qme7z5gQQiK6i9d8BFSYk7QzHaRnPbXPKDjzfUQTLWDPMG"
+          "bzz-raw://1b6434ad6f00da437a16e279cf3ac531d6d678df7978cb36e79a7011ff3f429e",
+          "dweb:/ipfs/QmUuhJcpJfShLvhacrppPu4bKpjfXCvbvpCLNX6apwWGtW"
         ],
         "license": "LGPL-3.0-only"
       },
       "src/modules/base/IModule_v1.sol": {
-        "keccak256": "0x6b552aed3184961eee51a1e6fde64c6e731400baffde78bbcbb2fee6b8a75e24",
+        "keccak256": "0x25b693726deaca560b6d251473488cb7e613e660390f20729ff85f9b16061c2c",
         "urls": [
-          "bzz-raw://2df69251ca41b7b9159f083f1e33de73e925b9031206a30d11076c5f6ebe9cf5",
-          "dweb:/ipfs/QmWXNZQM42MaBCXEQANyHAS299zK3jfkXwxHjwEDPTJd85"
+          "bzz-raw://13dde2116ec823fb5c5852c0477d15cb4f9e5e73414b3a1694d56c46222a189a",
+          "dweb:/ipfs/QmWspKVFWY5NFKMVsZAqHYBieZE6jmCt16nFRZg8F4WPpA"
         ],
         "license": "LGPL-3.0-only"
       },
       "src/modules/base/Module_v1.sol": {
-        "keccak256": "0x039fc19f543ad5ebd43026a767b1a04fa5570f3215300e73448a5402d5fa75e7",
+        "keccak256": "0x3ad11bad71251f91e4ca01d45415e17d780bf1b9081885dbb94b7b0d9991949c",
         "urls": [
-          "bzz-raw://8393f8bdf7827f6d46b09fc688049a453ce3d88f23ba14be4d76e2e4f86be978",
-          "dweb:/ipfs/QmPt8uXYUAVPPXnBjYJcGKPLUJmjnDV39UYn8eirHwW7Tz"
+          "bzz-raw://7cb6c1a044a35d1625a0c44341f4f039eb465b7389aae58c5cdbe94c3764527a",
+          "dweb:/ipfs/QmSc4BoAZkmPNVLpYbRTwzNiZkTFr7hH8A33vG7pmLanFS"
         ],
         "license": "LGPL-3.0-only"
       },
       "src/modules/fundingManager/IFundingManager_v1.sol": {
-        "keccak256": "0x3eeb41edee9eebfc09b30af9ed67cb84573eb37597b7ad262e4ce2d9e5c2464d",
+        "keccak256": "0xd134329084248cb2b5fe04ea32af7fb481d29288dec52cb9ce8e03f56148d2c9",
         "urls": [
-          "bzz-raw://1fbce868b4a5f53a38a3859c8d9299e15bd84cf01e156ba72e91792cebb785cf",
-          "dweb:/ipfs/QmRZAejdu6EG7D38vyJF5RH2zCa35B5afoY1XdQmdem9bK"
+          "bzz-raw://c796afe7e30e751165d9167692e2426b472ae0203d094a9afa28929e501abab7",
+          "dweb:/ipfs/QmeUspckKVaK5vR2Jyo2MT2gBCiM7UoXA4o6NGS6SFi98D"
         ],
         "license": "LGPL-3.0-only"
       },
       "src/modules/lib/LibMetadata.sol": {
-        "keccak256": "0x881141311eb65c4578ab2ad47322ae8fb25b05f8d01e6b8e84571b19f5ee5dd7",
+        "keccak256": "0x9a524b8697167b605c0b980b3e81688d448922ab38cd040f2b1c664946666c4a",
         "urls": [
-          "bzz-raw://c17840e517341910d4d01024dfca4ed0d583b6208202cf1c61bf418c62041817",
-          "dweb:/ipfs/QmeHkyuQ2nimJBHFAfpv7T8Zm1maZWiP64uF7AQRZmQwP3"
+          "bzz-raw://5dd325f05f6812218a7f808af5afc1ec6cf95f1250c33d4dd1ad01ec4b041d50",
+          "dweb:/ipfs/Qmem29JZSEpYLDqJn4cBxawGokbzo3taqHtb3UyyDvmB8G"
         ],
         "license": "LGPL-3.0-only"
       },
       "src/modules/logicModule/interfaces/IERC20PaymentClientBase_v1.sol": {
-        "keccak256": "0x99c48a9556b87a730cddec1f341da11ed36fa618b0e3810deaab8045dc266725",
+        "keccak256": "0x29f538a416c5a71a54eebef838b6c4dece020d3be178980d98b2334417ffc16b",
         "urls": [
-          "bzz-raw://a313b92e9e8100cd3e9c36b29018954570ff413a61e6d5b2984b0a315a0d1d42",
-          "dweb:/ipfs/QmP6uGk6TE4Gm3jEs5iscrbZf4xEjk1ka2jcUCxs9wnWPF"
+          "bzz-raw://6a24f4196f863ee2fb2c5dbe299efcd5b7c5ffaf65048cf5a14bb06245fb1cc3",
+          "dweb:/ipfs/QmREdsJYZaQkhtDTJ5mbKZbdiMjSSmDsdWFSu2YPhVcLZQ"
         ],
         "license": "LGPL-3.0-only"
       },
       "src/modules/paymentProcessor/IPaymentProcessor_v1.sol": {
-        "keccak256": "0x30292faef68798aebd70684b1fe29c8ec326687b1f5718878c0c14599b34a852",
+        "keccak256": "0xb0c2db0028d7de4c201b75449b6c959478f965a2d342c9880dad026ef9da8905",
         "urls": [
-          "bzz-raw://838ed480aafdc1cdd6afae69e98d1b40cf960446411d143576932aa43b455790",
-          "dweb:/ipfs/QmcGWZhAuuuFHmhv6GDedWnkbWiBoBFn5NMhD6eQAg89Hg"
+          "bzz-raw://194f9317a8e2ebe26f8422d19cf0a89869b1867a48c63f06481dea6aeb4c347d",
+          "dweb:/ipfs/QmRYhWwaZaYXBBzN9yLpXGjbP6whYanJJhM9jDjJ4ZCftK"
         ],
         "license": "LGPL-3.0-only"
       },
       "src/orchestrator/interfaces/IModuleManagerBase_v1.sol": {
-        "keccak256": "0x8fbb094d7c1de91ec9b277253fc4ead5b39b504eca4ca72a197b68d765e77300",
+        "keccak256": "0x2abd1abb278da305c6a47d11ef31ef7a7de2aebf017957b0013497de8e2aa2eb",
         "urls": [
-          "bzz-raw://79c5d48d683418e66195a99065659e01df38e37a94f4656e2f782cec5eedd511",
-          "dweb:/ipfs/Qmcbz5ZKyLqmVLqbSJSuugVXx2vfPmM5xsatdo7EeFLw3s"
+          "bzz-raw://5d49aac1e351f80bce5c27fb0934577d64551c25fcbad6dd172b6eee7b8bf57a",
+          "dweb:/ipfs/QmRdR4Ut7gV9Zp295ciYnwYqjdXKxZAAegVhtsGpetiwsC"
         ],
         "license": "LGPL-3.0-only"
       },
       "src/orchestrator/interfaces/IOrchestrator_v1.sol": {
-        "keccak256": "0xd2ad3095a78cebfb6a00898b4e5f46905b0baa1d6251df7b8e485299fca52aba",
+        "keccak256": "0xed08e392f5b321609173e95333e94f57bb83b42fda8a98c7af77e035d2d53c0f",
         "urls": [
-          "bzz-raw://cbb15c4f6566ad79f26e55f37b06f93d7a67f99c848f95b88ed9736bf2999437",
-          "dweb:/ipfs/QmW9f22rHGSzUYutMRvPimhBTWSV4qxLZAqdfqUQxh5KcR"
+          "bzz-raw://003498e95d4be3ea4f9eb13ec87c450eaf437f03a69d0d7c681e2f723240d2f9",
+          "dweb:/ipfs/QmcTiDEK7UytSy8c2gHVpjMHoSqtf4CswmLP4LYeRn7aFb"
+        ],
+        "license": "LGPL-3.0-only"
+      },
+      "src/proxies/interfaces/IInverterBeacon_v1.sol": {
+        "keccak256": "0x23cd7a4ada497ebd9834d521843673881427d563906662156e748366a6a03fb5",
+        "urls": [
+          "bzz-raw://49cbce7e794b38126494ee0c4a26f9807fc284e0e5c59ad8a1a229e60f196e66",
+          "dweb:/ipfs/Qma3hZfASQ6Gaa4anDhTmhNA1HPiYSD6eJ9Gnn817rP8VJ"
         ],
         "license": "LGPL-3.0-only"
       }
     },
     "version": 1
   },
-  "id": 116
+  "id": 106
 }
