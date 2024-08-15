@@ -1,11 +1,13 @@
 {
   "deploymentInputs": { "configData": [] },
   "abiMembers": {
+    "GovernorSet": { "tags": { "governor": [""] }, "returnNames": [] },
     "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
     "MetadataRegistered": {
       "tags": {
         "majorVersion": [""],
         "minorVersion": [""],
+        "patchVersion": [""],
         "url": [""],
         "title": [""],
         "metadata": [""],
@@ -14,7 +16,17 @@
       "returnNames": []
     },
     "ModuleCreated": {
-      "tags": { "orchestrator": [""], "module": [""], "identifier": [""] },
+      "tags": {
+        "orchestrator": [""],
+        "module": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "identifier": [""]
+      },
       "returnNames": []
     },
     "OwnershipTransferStarted": {
@@ -26,10 +38,11 @@
       "returnNames": []
     },
     "acceptOwnership": { "tags": {}, "returnNames": [] },
-    "createModule": {
+    "createAndInitModule": {
       "tags": {
         "majorVersion": [""],
         "minorVersion": [""],
+        "patchVersion": [""],
         "url": [""],
         "title": [""],
         "metadata": [""],
@@ -42,10 +55,27 @@
       },
       "returnNames": ["_0"]
     },
+    "createModuleProxy": {
+      "tags": {
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "orchestrator": [""],
+        "independentUpdates": [""],
+        "independentUpdateAdmin": [""],
+        "workflowConfig": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    },
     "getBeaconAndId": {
       "tags": {
         "majorVersion": [""],
         "minorVersion": [""],
+        "patchVersion": [""],
         "url": [""],
         "title": [""],
         "metadata": [""],
@@ -64,6 +94,7 @@
         "_governor": [""],
         "majorVersion": [""],
         "minorVersion": [""],
+        "patchVersion": [""],
         "url": [""],
         "title": [""],
         "initialMetadataRegistration": [""],
@@ -81,6 +112,7 @@
       "tags": {
         "majorVersion": [""],
         "minorVersion": [""],
+        "patchVersion": [""],
         "url": [""],
         "title": [""],
         "metadata": [""],
@@ -89,11 +121,28 @@
       "returnNames": []
     },
     "renounceOwnership": { "tags": {}, "returnNames": [] },
+    "reverter": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "supportsInterface": {
       "tags": { "interfaceId": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
     "transferOwnership": { "tags": { "newOwner": [""] }, "returnNames": [] },
-    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] }
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "createModule": {
+      "tags": {
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "orchestrator": [""],
+        "configData": [""],
+        "independentUpdates": [""],
+        "independentUpdateAdmin": [""],
+        "workflowConfig": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    }
   }
 }

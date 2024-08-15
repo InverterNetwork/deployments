@@ -13,7 +13,11 @@
     "ShutdownInitiated": { "tags": {}, "returnNames": [] },
     "ShutdownReversed": { "tags": {}, "returnNames": [] },
     "Upgraded": {
-      "tags": { "implementation": [""], "newMinorVersion": [""] },
+      "tags": {
+        "implementation": [""],
+        "newMinorVersion": [""],
+        "newPatchVersion": [""]
+      },
       "returnNames": []
     },
     "acceptOwnership": { "tags": {}, "returnNames": [] },
@@ -22,6 +26,7 @@
       "tags": { "_0": [""] },
       "returnNames": ["_0"]
     },
+    "getReverterAddress": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "implementation": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "owner": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "pendingOwner": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
@@ -37,13 +42,14 @@
       "tags": {
         "newImplementation": [""],
         "newMinorVersion": [""],
+        "newPatchVersion": [""],
         "overrideShutdown": [""]
       },
       "returnNames": []
     },
     "version": {
-      "tags": { "_0": [""], "_1": [""] },
-      "returnNames": ["_0", "_1"]
+      "tags": { "_0": [""], "_1": [""], "_2": [""] },
+      "returnNames": ["_0", "_1", "_2"]
     }
   }
 }
