@@ -2,11 +2,16 @@
   "name": "deployments",
   "devDependencies": {
     "@types/bun": "latest",
+    "husky": "^9",
     "lint-staged": "^15",
     "prettier": "^3"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "postinstall": "husky || true",
+    "pre-commit": "lint-staged"
   },
   "lint-staged": {
     "**/*.{ts,tsx,json}": [
