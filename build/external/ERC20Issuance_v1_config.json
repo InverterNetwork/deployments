@@ -1,0 +1,62 @@
+{
+  "deploymentInputs": { "configData": [] },
+  "abiMembers": {
+    "Approval": {
+      "tags": { "owner": [""], "spender": [""], "value": ["decimals"] },
+      "returnNames": []
+    },
+    "MinterSet": {
+      "tags": { "minter": [""], "allowed": ["decimals"] },
+      "returnNames": []
+    },
+    "OwnershipTransferred": {
+      "tags": { "previousOwner": [""], "newOwner": [""] },
+      "returnNames": []
+    },
+    "Transfer": {
+      "tags": { "from": [""], "to": [""], "value": ["decimals"] },
+      "returnNames": []
+    },
+    "allowance": {
+      "tags": { "owner": [""], "spender": [""], "_0": ["decimals"] },
+      "returnNames": ["_0"]
+    },
+    "allowedMinters": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "approve": {
+      "tags": { "spender": [""], "value": ["decimals"], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "balanceOf": {
+      "tags": { "account": [""], "_0": ["decimals"] },
+      "returnNames": ["_0"]
+    },
+    "burn": {
+      "tags": { "_from": [""], "_amount": ["decimals"] },
+      "returnNames": []
+    },
+    "cap": { "tags": { "_0": ["decimals"] }, "returnNames": ["_0"] },
+    "decimals": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "mint": {
+      "tags": { "_to": [""], "_amount": ["decimals"] },
+      "returnNames": []
+    },
+    "name": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "owner": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "renounceOwnership": { "tags": {}, "returnNames": [] },
+    "setMinter": {
+      "tags": { "_minter": [""], "_allowed": ["decimals"] },
+      "returnNames": []
+    },
+    "symbol": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "totalSupply": { "tags": { "_0": ["decimals"] }, "returnNames": ["_0"] },
+    "transfer": {
+      "tags": { "to": [""], "value": ["decimals"], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "transferFrom": {
+      "tags": { "from": [""], "to": [""], "value": ["decimals"], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "transferOwnership": { "tags": { "newOwner": [""] }, "returnNames": [] }
+  }
+}
