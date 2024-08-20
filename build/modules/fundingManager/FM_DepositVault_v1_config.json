@@ -10,7 +10,7 @@
   },
   "abiMembers": {
     "Deposit": {
-      "tags": { "_from": [""], "_amount": [""] },
+      "tags": { "_from": [""], "_amount": ["decimals"] },
       "returnNames": []
     },
     "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
@@ -31,10 +31,10 @@
       "returnNames": []
     },
     "TransferOrchestratorToken": {
-      "tags": { "_to": [""], "_amount": [""] },
+      "tags": { "_to": [""], "_amount": ["decimals"] },
       "returnNames": []
     },
-    "deposit": { "tags": { "amount": [""] }, "returnNames": [] },
+    "deposit": { "tags": { "amount": ["decimals"] }, "returnNames": [] },
     "grantModuleRole": {
       "tags": { "role": [""], "target": [""] },
       "returnNames": []
@@ -77,7 +77,7 @@
     "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "token": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "transferOrchestratorToken": {
-      "tags": { "to": [""], "amount": [""] },
+      "tags": { "to": [""], "amount": ["decimals"] },
       "returnNames": []
     },
     "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
