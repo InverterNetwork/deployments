@@ -47,13 +47,13 @@
             "name": "initialIssuanceSupply",
             "type": "uint256",
             "description": "The initial virtual issuance token supply",
-            "tags:": ["decimals:params:indirect:issuanceToken"]
+            "tags": ["decimals:params:indirect:issuanceToken"]
           },
           {
             "name": "initialCollateralSupply",
             "type": "uint256",
             "description": "The initial virtual collateral token supply",
-            "tags:": ["decimals:params:indirect:collateralToken"]
+            "tags": ["decimals:params:indirect:collateralToken"]
           }
         ],
         "name": "bondingCurveParams",
