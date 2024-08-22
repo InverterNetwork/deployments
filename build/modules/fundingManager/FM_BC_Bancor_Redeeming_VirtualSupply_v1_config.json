@@ -222,11 +222,11 @@
       "returnNames": ["_0"]
     },
     "getVirtualCollateralSupply": {
-      "tags": { "_0": [""] },
+      "tags": { "_0": ["decimals"] },
       "returnNames": ["_0"]
     },
     "getVirtualIssuanceSupply": {
-      "tags": { "_0": [""] },
+      "tags": { "_0": ["decimals:contract:indirect:getIssuanceToken"] },
       "returnNames": ["_0"]
     },
     "grantModuleRole": {
