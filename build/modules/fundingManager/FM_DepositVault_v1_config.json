@@ -34,7 +34,10 @@
       "tags": { "_to": [""], "_amount": ["decimals"] },
       "returnNames": []
     },
-    "deposit": { "tags": { "amount": ["decimals"] }, "returnNames": [] },
+    "deposit": {
+      "tags": { "amount": ["decimals", "approval"] },
+      "returnNames": []
+    },
     "grantModuleRole": {
       "tags": { "role": [""], "target": [""] },
       "returnNames": []
