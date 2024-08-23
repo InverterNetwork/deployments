@@ -1,0 +1,80 @@
+{
+  "deploymentInputs": {
+    "configData": [
+      {
+        "name": "initialPurchaseAmount",
+        "type": "uint256",
+        "jsType": "numberString",
+        "description": "The amount of issuance tokens to purchase initially",
+        "tags": ["decimals:params:exact:issuanceToken.decimals"]
+      }
+    ]
+  },
+  "abiMembers": {
+    "PIMWorkflowCreated": {
+      "tags": {
+        "fundingManager": [""],
+        "issuanceToken": [""],
+        "deployer": [""]
+      },
+      "returnNames": []
+    },
+    "PimFeeClaimed": {
+      "tags": {
+        "fundingManager": [""],
+        "claimer": [""],
+        "to": [""],
+        "amount": [""]
+      },
+      "returnNames": []
+    },
+    "PimFeeRecipientUpdated": {
+      "tags": {
+        "fundingManager": [""],
+        "oldRecipient": [""],
+        "newRecipient": [""]
+      },
+      "returnNames": []
+    },
+    "createPIMWorkflow": {
+      "tags": {
+        "independentUpdates": [""],
+        "independentUpdateAdmin": [""],
+        "workflowConfig": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "configData": [""],
+        "fundingManagerConfig": [""],
+        "authorizerConfig": [""],
+        "paymentProcessorConfig": [""],
+        "moduleConfigs": [""],
+        "name": [""],
+        "symbol": [""],
+        "decimals": [""],
+        "maxSupply": [""],
+        "issuanceTokenParams": [""],
+        "initialPurchaseAmount": [""],
+        "orchestrator": [""]
+      },
+      "returnNames": ["orchestrator"]
+    },
+    "isTrustedForwarder": {
+      "tags": { "forwarder": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "orchestratorFactory": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "transferPimFeeEligibility": {
+      "tags": { "fundingManager": [""], "to": [""] },
+      "returnNames": []
+    },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "withdrawPimFee": {
+      "tags": { "fundingManager": [""], "to": [""] },
+      "returnNames": []
+    }
+  }
+}

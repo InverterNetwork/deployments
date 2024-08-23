@@ -1,5 +1,20 @@
 {
-  "deploymentInputs": { "configData": [] },
+  "deploymentInputs": {
+    "configData": [
+      {
+        "name": "independentUpdates",
+        "type": "bool",
+        "jsType": "boolean",
+        "description": "Default is false - Whether this workflow’s updates to Orchestrator and Modules shall be self-governed."
+      },
+      {
+        "name": "independentUpdateAdmin",
+        "type": "address",
+        "jsType": "0xstring",
+        "description": "Should only be set if independentUpdates is true  - The address that will be responsible for updates to Orchestrator and Modules of the workflow."
+      }
+    ]
+  },
   "abiMembers": {
     "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
     "OrchestratorCreated": {
