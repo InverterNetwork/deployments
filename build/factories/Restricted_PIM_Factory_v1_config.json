@@ -61,7 +61,7 @@
         "orchestrator": [""],
         "issuanceToken": [""]
       },
-      "returnNames": ["orchestrator", "issuanceToken"]
+      "returnNames": ["orchestrator"]
     },
     "isTrustedForwarder": {
       "tags": { "forwarder": [""], "_0": [""] },
