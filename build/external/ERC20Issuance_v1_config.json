@@ -44,7 +44,7 @@
     "owner": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "renounceOwnership": { "tags": {}, "returnNames": [] },
     "setMinter": {
-      "tags": { "_minter": [""], "_allowed": ["decimals"] },
+      "tags": { "_minter": [""], "_allowed": [""] },
       "returnNames": []
     },
     "symbol": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
