@@ -29,6 +29,11 @@
         ],
         "name": "issuanceToken",
         "type": "tuple"
+      },
+      {
+        "name": "beneficiary",
+        "type": "address",
+        "description": "Receives the initial issuance supply and minting rights."
       }
     ]
   },
