@@ -137,7 +137,7 @@
       "tags": { "role": [""], "targets": [""] },
       "returnNames": []
     },
-    "rewardRate": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "rewardRate": { "tags": { "_0": ["decimals"] }, "returnNames": ["_0"] },
     "rewardsEnd": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "setRewards": {
       "tags": { "amount": ["decimals"], "duration": [""] },
