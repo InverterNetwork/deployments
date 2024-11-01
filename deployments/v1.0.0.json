@@ -30,6 +30,7 @@
     "84532": "0x1dF39e3A03FE64a3d55E34e80086864b123c9f1f"
   },
   "immutablePimFactory": {
+    "11155111": "0x3924f880ccEAd9FaC51fA8C498d9e7DA06108DeF",
     "11155420": "0x8b71B18a7b86bbB0cb1191c0e81756ca53E6CeBE"
   },
   "envioUrl": "https://indexer.bigdevenergy.link/a414bf3/v1/graphql"
