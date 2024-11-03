@@ -1,0 +1,181 @@
+{
+  "deploymentInputs": {
+    "configData": [
+      {
+        "components": [
+          {
+            "name": "collateralMigrationAmount",
+            "type": "uint256",
+            "description": "The amount of collateral to migrate.",
+            "tags": ["decimals"]
+          },
+          {
+            "name": "collateralMigrateThreshold",
+            "type": "uint256",
+            "description": "The threshold for the collateral migration. ( i.e. 100,000 )",
+            "tags": ["decimals"]
+          },
+          {
+            "name": "dexRouterAddress",
+            "type": "address",
+            "description": "The address of the DEX router."
+          },
+          {
+            "name": "lpTokenRecipientAddress",
+            "type": "address",
+            "description": "The address of the recipient of the LP tokens."
+          }
+        ],
+        "name": "liquidityMigrationConfig",
+        "type": "tuple",
+        "description": "The configuration data for the liquidity migration module."
+      }
+    ]
+  },
+  "abiMembers": {
+    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
+    "MigrationConfigured": {
+      "tags": {
+        "collateralMigrationAmount": ["decimals"],
+        "collateralMigrateThreshold": ["decimals"]
+      },
+      "returnNames": []
+    },
+    "MigrationExecuted": {
+      "tags": {
+        "lpTokenAddress": [""],
+        "lpTokenAmount": [""],
+        "token0": [""],
+        "token1": [""],
+        "amount0": ["decimals"],
+        "amount1": ["decimals:extras:issuanceToken"],
+        "result": [""]
+      },
+      "returnNames": []
+    },
+    "ModuleInitialized": {
+      "tags": {
+        "parentOrchestrator": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""]
+      },
+      "returnNames": []
+    },
+    "PaymentOrderAdded": {
+      "tags": { "recipient": [""], "token": [""], "amount": [""] },
+      "returnNames": []
+    },
+    "ProtocolFeeTransferred": {
+      "tags": { "token": [""], "treasury": [""], "feeAmount": [""] },
+      "returnNames": []
+    },
+    "amountPaid": {
+      "tags": { "token": [""], "amount": [""] },
+      "returnNames": []
+    },
+    "collectPaymentOrders": {
+      "tags": {
+        "_0": [""],
+        "_1": [""],
+        "_2": [""],
+        "recipient": [""],
+        "paymentToken": [""],
+        "amount": [""],
+        "start": [""],
+        "cliff": [""],
+        "end": [""]
+      },
+      "returnNames": ["_0", "_1", "_2"]
+    },
+    "executeMigration": {
+      "tags": {
+        "_0": [""],
+        "lpTokenAddress": [""],
+        "lpTokenAmount": [""],
+        "token0": [""],
+        "token1": [""],
+        "amount0": ["decimals"],
+        "amount1": ["decimals:extras:issuanceToken"]
+      },
+      "returnNames": ["_0"]
+    },
+    "getExecuted": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "getMigrationConfig": {
+      "tags": {
+        "_0": [""],
+        "collateralMigrationAmount": ["decimals"],
+        "collateralMigrateThreshold": ["decimals"],
+        "dexRouterAddress": [""],
+        "lpTokenRecipientAddress": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "grantModuleRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "grantModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "identifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "init": {
+      "tags": {
+        "orchestrator_": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "configData": [""]
+      },
+      "returnNames": []
+    },
+    "isMigrationReady": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "isTrustedForwarder": {
+      "tags": { "forwarder": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "outstandingTokenAmount": {
+      "tags": { "_token": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "paymentOrders": {
+      "tags": {
+        "_0": [""],
+        "recipient": [""],
+        "paymentToken": [""],
+        "amount": [""],
+        "start": [""],
+        "cliff": [""],
+        "end": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "revokeModuleRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "revokeModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "supportsInterface": {
+      "tags": { "interfaceId": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "version": {
+      "tags": { "_0": [""], "_1": [""], "_2": [""] },
+      "returnNames": ["_0", "_1", "_2"]
+    }
+  }
+}
