@@ -48,10 +48,26 @@
         "jsType": "numberString",
         "description": "The amount of issuance tokens to purchase initially",
         "tags": ["decimals:params:exact:issuanceToken.decimals"]
+      },
+      {
+        "name": "isImmutable",
+        "type": "bool",
+        "jsType": "boolean",
+        "description": "Whether the workflow is immutable"
       }
     ]
   },
   "abiMembers": {
+    "Graduation": {
+      "tags": {
+        "issuanceToken": [""],
+        "collateralToken": [""],
+        "pool": [""],
+        "issuanceTokenAmount": ["decimals:extras:issuanceToken"],
+        "collateralTokenAmount": ["decimals"]
+      },
+      "returnNames": []
+    },
     "PIMWorkflowCreated": {
       "tags": {
         "fundingManager": [""],
@@ -77,6 +93,15 @@
       },
       "returnNames": []
     },
+    "buyForUpTo": {
+      "tags": {
+        "issuanceToken": [""],
+        "recipient": [""],
+        "amountIn": ["decimals", "approval"],
+        "minAmountOut": ["decimals:extras:issuanceToken"]
+      },
+      "returnNames": []
+    },
     "createPIMWorkflow": {
       "tags": {
         "independentUpdates": [""],
@@ -99,20 +124,45 @@
         "maxSupply": [""],
         "issuanceTokenParams": [""],
         "initialPurchaseAmount": [""],
+        "isImmutable": [""],
+        "_0": [""],
         "orchestrator": [""]
       },
       "returnNames": ["orchestrator"]
     },
+    "dexAdapter": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "isTrustedForwarder": {
       "tags": { "forwarder": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
     "orchestratorFactory": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "pims": {
+      "tags": {
+        "issuanceToken": [""],
+        "orchestrator": [""],
+        "initialVirtualIssuanceSupply": [""],
+        "initialVirtualCollateralSupply": [""]
+      },
+      "returnNames": [
+        "orchestrator",
+        "initialVirtualIssuanceSupply",
+        "initialVirtualCollateralSupply"
+      ]
+    },
+    "sellTo": {
+      "tags": {
+        "issuanceToken": [""],
+        "recipient": [""],
+        "amountIn": ["decimals:extras:issuanceToken", "approval"],
+        "minAmountOut": ["decimals"]
+      },
+      "returnNames": []
+    },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "transferPimFeeEligibility": {
       "tags": { "fundingManager": [""], "to": [""] },
       "returnNames": []
     },
-    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "withdrawPimFee": {
       "tags": { "fundingManager": [""], "to": [""] },
       "returnNames": []
