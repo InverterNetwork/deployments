@@ -1,1 +1,348 @@
-{}
+{
+  "deploymentInputs": {
+    "configData": [
+      {
+        "name": "oracleAddress_",
+        "type": "address",
+        "description": "The address of the oracle contract"
+      },
+      {
+        "name": "projectTreasury_",
+        "type": "address",
+        "description": "The address of the project treasury"
+      },
+      {
+        "name": "issuanceToken_",
+        "type": "address",
+        "description": "The token that will be issued"
+      },
+      {
+        "name": "acceptedToken_",
+        "type": "address",
+        "description": "The token that will be accepted for purchases"
+      },
+      {
+        "name": "buyFee_",
+        "type": "uint256",
+        "description": "The fee charged on buy operations in PPM"
+      },
+      {
+        "name": "sellFee_",
+        "type": "uint256",
+        "description": "The fee charged on sell operations in PPM"
+      },
+      {
+        "name": "maxSellFee_",
+        "type": "uint256",
+        "description": "The maximum allowed sell fee in PPM"
+      },
+      {
+        "name": "maxBuyFee_",
+        "type": "uint256",
+        "description": "The maximum allowed buy fee in PPM"
+      },
+      {
+        "name": "isDirectOperationsOnly_",
+        "type": "bool",
+        "description": "Whether only direct operations are allowed"
+      }
+    ]
+  },
+  "abiMembers": {
+    "BuyFeeUpdated": {
+      "tags": { "newBuyFee": [""], "oldBuyFee": [""] },
+      "returnNames": []
+    },
+    "BuyingDisabled": { "tags": {}, "returnNames": [] },
+    "BuyingEnabled": { "tags": {}, "returnNames": [] },
+    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
+    "IssuanceTokenSet": {
+      "tags": { "issuanceToken": [""], "decimals": [""] },
+      "returnNames": []
+    },
+    "ModuleInitialized": {
+      "tags": {
+        "parentOrchestrator": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""]
+      },
+      "returnNames": []
+    },
+    "OrchestratorTokenSet": {
+      "tags": { "token": [""], "decimals": [""] },
+      "returnNames": []
+    },
+    "PaymentOrderAdded": {
+      "tags": { "recipient": [""], "token": [""], "amount": [""] },
+      "returnNames": []
+    },
+    "ProjectCollateralFeeAdded": {
+      "tags": { "amount": [""] },
+      "returnNames": []
+    },
+    "ProjectCollateralFeeWithdrawn": {
+      "tags": { "receiver": [""], "amount": [""] },
+      "returnNames": []
+    },
+    "ProtocolFeeMinted": {
+      "tags": { "token": [""], "treasury": [""], "feeAmount": [""] },
+      "returnNames": []
+    },
+    "ProtocolFeeTransferred": {
+      "tags": { "token": [""], "treasury": [""], "feeAmount": [""] },
+      "returnNames": []
+    },
+    "RedemptionOrderCreated": {
+      "tags": {
+        "orderId": [""],
+        "seller": [""],
+        "receiver": [""],
+        "sellAmount": [""],
+        "exchangeRate": [""],
+        "collateralAmount": [""],
+        "feePercentage": [""],
+        "feeAmount": [""],
+        "redemptionAmount": [""],
+        "collateralToken": [""],
+        "redemptionTime": [""],
+        "state": [""]
+      },
+      "returnNames": []
+    },
+    "ReserveDeposited": {
+      "tags": { "depositor": [""], "amount": [""] },
+      "returnNames": []
+    },
+    "SellFeeUpdated": {
+      "tags": { "newSellFee": [""], "oldSellFee": [""] },
+      "returnNames": []
+    },
+    "SellingDisabled": { "tags": {}, "returnNames": [] },
+    "SellingEnabled": { "tags": {}, "returnNames": [] },
+    "TokenDecimalsUpdated": {
+      "tags": { "oldDecimals": [""], "newDecimals": [""] },
+      "returnNames": []
+    },
+    "TokensBought": {
+      "tags": {
+        "receiver": [""],
+        "depositAmount": [""],
+        "receivedAmount": [""],
+        "buyer": [""]
+      },
+      "returnNames": []
+    },
+    "TokensSold": {
+      "tags": {
+        "receiver": [""],
+        "depositAmount": [""],
+        "receivedAmount": [""],
+        "seller": [""]
+      },
+      "returnNames": []
+    },
+    "TransferOrchestratorToken": {
+      "tags": { "_to": [""], "_amount": [""] },
+      "returnNames": []
+    },
+    "QUEUE_MANAGER_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "WHITELIST_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "amountPaid": {
+      "tags": { "token": [""], "amount": ["decimals"] },
+      "returnNames": []
+    },
+    "buy": {
+      "tags": {
+        "collateralAmount_": ["decimals"],
+        "minAmountOut_": ["decimals:extras:issuanceToken"]
+      },
+      "returnNames": []
+    },
+    "buyFee": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "buyFor": {
+      "tags": {
+        "receiver_": [""],
+        "depositAmount_": ["decimals"],
+        "minAmountOut_": ["decimals:extras:issuanceToken"]
+      },
+      "returnNames": []
+    },
+    "buyIsOpen": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "calculatePurchaseReturn": {
+      "tags": {
+        "_depositAmount": ["decimals"],
+        "mintAmount": ["decimals:extras:issuanceToken"]
+      },
+      "returnNames": ["mintAmount"]
+    },
+    "calculateSaleReturn": {
+      "tags": {
+        "_depositAmount": ["decimals:extras:issuanceToken"],
+        "redeemAmount": ["decimals"]
+      },
+      "returnNames": ["redeemAmount"]
+    },
+    "closeBuy": { "tags": {}, "returnNames": [] },
+    "closeSell": { "tags": {}, "returnNames": [] },
+    "collectPaymentOrders": {
+      "tags": {
+        "_0": [""],
+        "_1": [""],
+        "_2": [""],
+        "recipient": [""],
+        "paymentToken": [""],
+        "amount": ["decimals"],
+        "start": [""],
+        "cliff": [""],
+        "end": [""]
+      },
+      "returnNames": ["_0", "_1", "_2"]
+    },
+    "depositReserve": {
+      "tags": { "amount_": ["decimals"] },
+      "returnNames": []
+    },
+    "executeRedemptionQueue": { "tags": {}, "returnNames": [] },
+    "getBuyFee": { "tags": { "buyFee_": [""] }, "returnNames": ["buyFee_"] },
+    "getIssuanceToken": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "getMaxBuyFee": {
+      "tags": { "maxBuyFee_": [""] },
+      "returnNames": ["maxBuyFee_"]
+    },
+    "getMaxSellFee": {
+      "tags": { "maxSellFee_": [""] },
+      "returnNames": ["maxSellFee_"]
+    },
+    "getNextOrderId": {
+      "tags": { "orderId_": [""] },
+      "returnNames": ["orderId_"]
+    },
+    "getOpenRedemptionAmount": {
+      "tags": { "amount_": ["decimals"] },
+      "returnNames": ["amount_"]
+    },
+    "getOrderId": { "tags": { "orderId_": [""] }, "returnNames": ["orderId_"] },
+    "getProjectTreasury": {
+      "tags": { "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "getSellFee": { "tags": { "sellFee_": [""] }, "returnNames": ["sellFee_"] },
+    "getStaticPriceForBuying": {
+      "tags": { "_0": ["extras:issuanceToken:decimals"] },
+      "returnNames": ["_0"]
+    },
+    "getStaticPriceForSelling": {
+      "tags": { "_0": ["decimals"] },
+      "returnNames": ["_0"]
+    },
+    "grantModuleRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "grantModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "identifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "init": {
+      "tags": {
+        "orchestrator_": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata_": [""],
+        "configData_": [""]
+      },
+      "returnNames": []
+    },
+    "isDirectOperationsOnly": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "isTrustedForwarder": {
+      "tags": { "forwarder": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "openBuy": { "tags": {}, "returnNames": [] },
+    "openSell": { "tags": {}, "returnNames": [] },
+    "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "outstandingTokenAmount": {
+      "tags": { "_token": [""], "_0": ["decimals"] },
+      "returnNames": ["_0"]
+    },
+    "paymentOrders": {
+      "tags": {
+        "_0": [""],
+        "recipient": [""],
+        "paymentToken": [""],
+        "amount": ["decimals"],
+        "start": [""],
+        "cliff": [""],
+        "end": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "projectCollateralFeeCollected": {
+      "tags": { "_0": ["decimals"] },
+      "returnNames": ["_0"]
+    },
+    "revokeModuleRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "revokeModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "sell": {
+      "tags": {
+        "depositAmount_": ["decimals:extras:issuanceToken"],
+        "minAmountOut_": ["decimals"]
+      },
+      "returnNames": []
+    },
+    "sellFee": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "sellIsOpen": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "sellTo": {
+      "tags": {
+        "receiver_": [""],
+        "depositAmount_": ["decimals:extras:issuanceToken"],
+        "minAmountOut_": ["decimals"]
+      },
+      "returnNames": []
+    },
+    "setBuyFee": { "tags": { "fee_": [""] }, "returnNames": [] },
+    "setIsDirectOperationsOnly": {
+      "tags": { "isDirectOperationsOnly_": [""] },
+      "returnNames": []
+    },
+    "setProjectTreasury": {
+      "tags": { "projectTreasury_": [""] },
+      "returnNames": []
+    },
+    "setSellFee": { "tags": { "fee_": [""] }, "returnNames": [] },
+    "supportsInterface": {
+      "tags": { "interfaceId_": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "token": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "transferOrchestratorToken": {
+      "tags": { "to_": [""], "amount_": ["decimals"] },
+      "returnNames": []
+    },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "version": {
+      "tags": { "_0": [""], "_1": [""], "_2": [""] },
+      "returnNames": ["_0", "_1", "_2"]
+    },
+    "withdrawProjectCollateralFee": {
+      "tags": { "_receiver": [""], "_amount": ["decimals"] },
+      "returnNames": []
+    }
+  }
+}
