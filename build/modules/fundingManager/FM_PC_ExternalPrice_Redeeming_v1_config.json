@@ -232,7 +232,7 @@
     },
     "getSellFee": { "tags": { "sellFee_": [""] }, "returnNames": ["sellFee_"] },
     "getStaticPriceForBuying": {
-      "tags": { "_0": ["extras:issuanceToken:decimals"] },
+      "tags": { "_0": ["decimals:extras:issuanceToken"] },
       "returnNames": ["_0"]
     },
     "getStaticPriceForSelling": {

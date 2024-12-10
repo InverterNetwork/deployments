@@ -45,7 +45,7 @@
       "returnNames": ["_0"]
     },
     "getPriceForRedemption": {
-      "tags": { "_0": ["extras:issuanceToken:decimals"] },
+      "tags": { "_0": ["decimals:extras:issuanceToken"] },
       "returnNames": ["_0"]
     },
     "grantModuleRole": {
@@ -88,7 +88,7 @@
       "returnNames": []
     },
     "setRedemptionPrice": {
-      "tags": { "price_": ["extras:issuanceToken:decimals"] },
+      "tags": { "price_": ["decimals:extras:issuanceToken"] },
       "returnNames": []
     },
     "supportsInterface": {
