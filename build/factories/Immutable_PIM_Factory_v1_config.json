@@ -58,19 +58,9 @@
     ]
   },
   "abiMembers": {
-    "Graduation": {
-      "tags": {
-        "issuanceToken": [""],
-        "collateralToken": [""],
-        "pool": [""],
-        "issuanceTokenAmount": ["decimals:extras:issuanceToken"],
-        "collateralTokenAmount": ["decimals"]
-      },
-      "returnNames": []
-    },
     "PIMWorkflowCreated": {
       "tags": {
-        "fundingManager": [""],
+        "orchestrator": [""],
         "issuanceToken": [""],
         "deployer": [""]
       },
@@ -90,15 +80,6 @@
         "fundingManager": [""],
         "oldRecipient": [""],
         "newRecipient": [""]
-      },
-      "returnNames": []
-    },
-    "buyForUpTo": {
-      "tags": {
-        "issuanceToken": [""],
-        "recipient": [""],
-        "amountIn": ["decimals", "approval"],
-        "minAmountOut": ["decimals:extras:issuanceToken"]
       },
       "returnNames": []
     },
@@ -124,13 +105,11 @@
         "maxSupply": [""],
         "issuanceTokenParams": [""],
         "initialPurchaseAmount": [""],
-        "isImmutable": [""],
-        "_0": [""],
-        "orchestrator": [""]
+        "orchestrator": [""],
+        "_0": [""]
       },
       "returnNames": ["orchestrator"]
     },
-    "dexAdapter": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "isTrustedForwarder": {
       "tags": { "forwarder": [""], "_0": [""] },
       "returnNames": ["_0"]
@@ -140,23 +119,14 @@
       "tags": {
         "issuanceToken": [""],
         "orchestrator": [""],
-        "initialVirtualIssuanceSupply": [""],
-        "initialVirtualCollateralSupply": [""]
+        "initialVirtualIssuanceSupply": ["decimals:extras:issuanceToken"],
+        "initialVirtualCollateralSupply": ["decimals"]
       },
       "returnNames": [
         "orchestrator",
         "initialVirtualIssuanceSupply",
         "initialVirtualCollateralSupply"
       ]
-    },
-    "sellTo": {
-      "tags": {
-        "issuanceToken": [""],
-        "recipient": [""],
-        "amountIn": ["decimals:extras:issuanceToken", "approval"],
-        "minAmountOut": ["decimals"]
-      },
-      "returnNames": []
     },
     "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "transferPimFeeEligibility": {

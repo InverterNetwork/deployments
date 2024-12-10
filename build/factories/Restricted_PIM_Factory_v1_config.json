@@ -50,8 +50,34 @@
     ]
   },
   "abiMembers": {
+    "FundingAdded": {
+      "tags": {
+        "sponsor": [""],
+        "actor": [""],
+        "token": [""],
+        "amount": ["decimals"]
+      },
+      "returnNames": []
+    },
+    "FundingRemoved": {
+      "tags": {
+        "sponsor": [""],
+        "actor": [""],
+        "token": [""],
+        "amount": ["decimals"]
+      },
+      "returnNames": []
+    },
     "PIMWorkflowCreated": {
-      "tags": { "orchestrator": [""], "issuanceToken": [""], "deployer": [""] },
+      "tags": {
+        "orchestrator": [""],
+        "issuanceToken": [""],
+        "beneficiary": [""]
+      },
+      "returnNames": []
+    },
+    "addFunding": {
+      "tags": { "actor": [""], "token": [""], "amount": ["decimals"] },
       "returnNames": []
     },
     "createPIMWorkflow": {
@@ -75,16 +101,31 @@
         "decimals": [""],
         "maxSupply": [""],
         "issuanceTokenParams": [""],
+        "beneficiary": [""],
+        "_0": [""],
         "orchestrator": [""],
         "issuanceToken": [""]
       },
       "returnNames": ["orchestrator"]
+    },
+    "fundings": {
+      "tags": {
+        "sponsor": [""],
+        "actor": [""],
+        "token": [""],
+        "amount": ["decimals"]
+      },
+      "returnNames": ["amount"]
     },
     "isTrustedForwarder": {
       "tags": { "forwarder": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
     "orchestratorFactory": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] }
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "withdrawFunding": {
+      "tags": { "actor": [""], "token": [""], "amount": ["decimals"] },
+      "returnNames": []
+    }
   }
 }
