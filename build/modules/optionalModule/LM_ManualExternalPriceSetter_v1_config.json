@@ -16,7 +16,7 @@
   "abiMembers": {
     "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
     "IssuancePriceSet": {
-      "tags": { "price": [""], "timestamp": [""] },
+      "tags": { "price_": [""], "timestamp_": [""] },
       "returnNames": []
     },
     "ModuleInitialized": {
@@ -36,7 +36,7 @@
       "returnNames": []
     },
     "RedemptionPriceSet": {
-      "tags": { "price": [""], "timestamp": [""] },
+      "tags": { "price_": [""], "timestamp_": [""] },
       "returnNames": []
     },
     "PRICE_SETTER_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },

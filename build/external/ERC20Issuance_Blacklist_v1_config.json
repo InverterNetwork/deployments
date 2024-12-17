@@ -60,7 +60,7 @@
     },
     "BATCH_LIMIT": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "addToBlacklist": { "tags": { "account_": [""] }, "returnNames": [] },
-    "addToBlacklistBatchAddresses": {
+    "addToBlacklistBatched": {
       "tags": { "accounts_": [""] },
       "returnNames": []
     },
@@ -98,7 +98,7 @@
     "name": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "owner": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "removeFromBlacklist": { "tags": { "account_": [""] }, "returnNames": [] },
-    "removeFromBlacklistBatchAddresses": {
+    "removeFromBlacklistBatched": {
       "tags": { "accounts_": [""] },
       "returnNames": []
     },
