@@ -319,11 +319,11 @@
     },
     "setOracleAddress": {
       "tags": { "oracle_": [""] },
-      "returnNames": ["oracle_"]
+      "returnNames": []
     },
     "setProjectTreasury": {
       "tags": { "projectTreasury_": [""] },
-      "returnNames": ["projectTreasury_"]
+      "returnNames": []
     },
     "setSellFee": { "tags": { "fee_": [""] }, "returnNames": [] },
     "supportsInterface": {
