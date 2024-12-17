@@ -2,11 +2,6 @@
   "deploymentInputs": {
     "configData": [
       {
-        "name": "oracleAddress_",
-        "type": "address",
-        "description": "The address of the oracle contract"
-      },
-      {
         "name": "projectTreasury_",
         "type": "address",
         "description": "The address of the project treasury"
