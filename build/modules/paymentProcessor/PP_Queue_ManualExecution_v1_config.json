@@ -1,0 +1,201 @@
+{
+  "deploymentInputs": { "configData": [] },
+  "abiMembers": {
+    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
+    "ModuleInitialized": {
+      "tags": {
+        "parentOrchestrator": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""]
+      },
+      "returnNames": []
+    },
+    "PaymentOrderProcessed": {
+      "tags": {
+        "paymentClient": [""],
+        "recipient": [""],
+        "paymentToken": [""],
+        "amount": ["decimals:params:indirect:paymentToken"],
+        "originChainId": [""],
+        "targetChainId": [""],
+        "flags": [""],
+        "data": [""]
+      },
+      "returnNames": []
+    },
+    "PaymentOrderQueued": {
+      "tags": {
+        "orderId_": [""],
+        "recipient_": [""],
+        "token_": [""],
+        "client_": [""],
+        "amount_": ["decimals:params:indirect:token_"],
+        "flags_": [""]
+      },
+      "returnNames": []
+    },
+    "PaymentOrderStateChanged": {
+      "tags": {
+        "orderId_": [""],
+        "state_": [""],
+        "client_": [""],
+        "executedBy_": [""]
+      },
+      "returnNames": []
+    },
+    "PaymentOrderTimingSkip": {
+      "tags": {
+        "orderId_": [""],
+        "client_": [""],
+        "reason_": [""],
+        "currentTime_": [""]
+      },
+      "returnNames": []
+    },
+    "PaymentQueueExecuted": {
+      "tags": { "executor_": [""], "client_": [""], "count_": [""] },
+      "returnNames": []
+    },
+    "ProtocolFeeTransferred": {
+      "tags": { "token": [""], "treasury": [""], "feeAmount": [""] },
+      "returnNames": []
+    },
+    "TokensReleased": {
+      "tags": { "recipient": [""], "token": [""], "amount": [""] },
+      "returnNames": []
+    },
+    "UnclaimableAmountAdded": {
+      "tags": {
+        "paymentClient": [""],
+        "token": [""],
+        "recipient": [""],
+        "amount": [""]
+      },
+      "returnNames": []
+    },
+    "cancelPaymentOrderThroughQueueId": {
+      "tags": { "orderId_": [""], "client_": [""], "success_": [""] },
+      "returnNames": ["success_"]
+    },
+    "cancelRunningPayments": { "tags": { "client_": [""] }, "returnNames": [] },
+    "claimPreviouslyUnclaimable": {
+      "tags": { "client_": [""], "token_": [""], "receiver_": [""] },
+      "returnNames": []
+    },
+    "executePaymentQueue": { "tags": { "client_": [""] }, "returnNames": [] },
+    "getOrder": {
+      "tags": {
+        "orderId_": [""],
+        "client_": [""],
+        "order_": [""],
+        "recipient": [""],
+        "paymentToken": [""],
+        "amount": ["decimals:params:indirect:paymentToken"],
+        "originChainId": [""],
+        "targetChainId": [""],
+        "flags": [""],
+        "data": [""],
+        "state_": [""],
+        "timestamp_": [""]
+      },
+      "returnNames": ["order_"]
+    },
+    "getOrderQueue": {
+      "tags": { "client_": [""], "queue_": [""] },
+      "returnNames": ["queue_"]
+    },
+    "getQueueHead": {
+      "tags": { "client_": [""], "head_": [""] },
+      "returnNames": ["head_"]
+    },
+    "getQueueOperatorAdminRole": {
+      "tags": { "role_": [""] },
+      "returnNames": ["role_"]
+    },
+    "getQueueOperatorRole": {
+      "tags": { "role_": [""] },
+      "returnNames": ["role_"]
+    },
+    "getQueueSizeForClient": {
+      "tags": { "client_": [""], "size_": [""] },
+      "returnNames": ["size_"]
+    },
+    "getQueueTail": {
+      "tags": { "client_": [""], "tail_": [""] },
+      "returnNames": ["tail_"]
+    },
+    "grantModuleRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "grantModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "identifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "init": {
+      "tags": {
+        "orchestrator_": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata_": [""]
+      },
+      "returnNames": []
+    },
+    "isTrustedForwarder": {
+      "tags": { "forwarder": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "processPayments": { "tags": { "client_": [""] }, "returnNames": [] },
+    "revokeModuleRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "revokeModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "supportsInterface": {
+      "tags": { "interfaceId_": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "unclaimable": {
+      "tags": {
+        "client_": [""],
+        "token_": [""],
+        "paymentReceiver_": [""],
+        "amount_": ["decimals:params:indirect:token_"]
+      },
+      "returnNames": ["amount_"]
+    },
+    "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "validPaymentOrder": {
+      "tags": {
+        "recipient": [""],
+        "paymentToken": [""],
+        "amount": ["decimals:params:indirect:paymentToken"],
+        "originChainId": [""],
+        "targetChainId": [""],
+        "flags": [""],
+        "data": [""],
+        "order_": [""],
+        "isValid_": [""]
+      },
+      "returnNames": ["isValid_"]
+    },
+    "version": {
+      "tags": { "_0": [""], "_1": [""], "_2": [""] },
+      "returnNames": ["_0", "_1", "_2"]
+    }
+  }
+}

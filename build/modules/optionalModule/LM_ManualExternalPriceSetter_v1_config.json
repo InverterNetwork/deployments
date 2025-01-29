@@ -16,7 +16,7 @@
   "abiMembers": {
     "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
     "IssuancePriceSet": {
-      "tags": { "price_": [""], "timestamp_": [""] },
+      "tags": { "price_": [""], "caller_": [""], "timestamp_": [""] },
       "returnNames": []
     },
     "ModuleInitialized": {
@@ -36,16 +36,24 @@
       "returnNames": []
     },
     "RedemptionPriceSet": {
-      "tags": { "price_": [""], "timestamp_": [""] },
+      "tags": { "price_": [""], "caller_": [""], "timestamp_": [""] },
       "returnNames": []
     },
-    "PRICE_SETTER_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "getCollateralTokenDecimals": {
+      "tags": { "_0": [""] },
+      "returnNames": ["_0"]
+    },
     "getPriceForIssuance": {
       "tags": { "_0": ["decimals"] },
       "returnNames": ["_0"]
     },
     "getPriceForRedemption": {
       "tags": { "_0": ["decimals:extras:issuanceToken"] },
+      "returnNames": ["_0"]
+    },
+    "getPriceSetterRole": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "getPriceSetterRoleAdmin": {
+      "tags": { "_0": [""] },
       "returnNames": ["_0"]
     },
     "grantModuleRole": {
@@ -83,6 +91,13 @@
       "tags": { "role": [""], "targets": [""] },
       "returnNames": []
     },
+    "setIssuanceAndRedemptionPrice": {
+      "tags": {
+        "issuancePrice_": ["decimals"],
+        "redemptionPrice_": ["decimals:extras:issuanceToken"]
+      },
+      "returnNames": []
+    },
     "setIssuancePrice": {
       "tags": { "price_": ["decimals"] },
       "returnNames": []
@@ -101,6 +116,7 @@
     "version": {
       "tags": { "_0": [""], "_1": [""], "_2": [""] },
       "returnNames": ["_0", "_1", "_2"]
-    }
+    },
+    "PRICE_SETTER_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] }
   }
 }
