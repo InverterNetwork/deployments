@@ -2,14 +2,9 @@
   "deploymentInputs": {
     "configData": [
       {
-        "name": "collateralToken_",
+        "name": "collateralToken",
         "type": "address",
         "description": "The address of the collateral token"
-      },
-      {
-        "name": "issuanceToken_",
-        "type": "address",
-        "description": "The address of the issuance token"
       }
     ]
   },

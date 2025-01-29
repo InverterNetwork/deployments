@@ -183,7 +183,7 @@
     },
     "buy": {
       "tags": {
-        "collateralAmount_": ["decimals"],
+        "collateralAmount_": ["decimals", "approval"],
         "minAmountOut_": ["decimals:extras:issuanceToken"]
       },
       "returnNames": []
@@ -192,7 +192,7 @@
     "buyFor": {
       "tags": {
         "receiver_": [""],
-        "depositAmount_": ["decimals"],
+        "depositAmount_": ["decimals", "approval"],
         "minAmountOut_": ["decimals:extras:issuanceToken"]
       },
       "returnNames": []
@@ -347,7 +347,7 @@
     },
     "sell": {
       "tags": {
-        "depositAmount_": ["decimals:extras:issuanceToken"],
+        "depositAmount_": ["decimals:extras:issuanceToken", "approval"],
         "minAmountOut_": ["decimals"]
       },
       "returnNames": []
@@ -357,7 +357,7 @@
     "sellTo": {
       "tags": {
         "receiver_": [""],
-        "depositAmount_": ["decimals:extras:issuanceToken"],
+        "depositAmount_": ["decimals:extras:issuanceToken", "approval"],
         "minAmountOut_": ["decimals"]
       },
       "returnNames": []
