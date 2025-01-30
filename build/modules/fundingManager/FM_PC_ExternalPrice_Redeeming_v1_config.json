@@ -184,7 +184,7 @@
     "buy": {
       "tags": {
         "collateralAmount_": ["decimals", "approval"],
-        "minAmountOut_": ["decimals:extras:issuanceToken"]
+        "minAmountOut_": ["decimals:contract:indirect:getIssuanceToken"]
       },
       "returnNames": []
     },
@@ -193,7 +193,7 @@
       "tags": {
         "receiver_": [""],
         "depositAmount_": ["decimals", "approval"],
-        "minAmountOut_": ["decimals:extras:issuanceToken"]
+        "minAmountOut_": ["decimals:contract:indirect:getIssuanceToken"]
       },
       "returnNames": []
     },
@@ -201,13 +201,13 @@
     "calculatePurchaseReturn": {
       "tags": {
         "_depositAmount": ["decimals"],
-        "mintAmount": ["decimals:extras:issuanceToken"]
+        "mintAmount": ["decimals:contract:indirect:getIssuanceToken"]
       },
       "returnNames": ["mintAmount"]
     },
     "calculateSaleReturn": {
       "tags": {
-        "_depositAmount": ["decimals:extras:issuanceToken"],
+        "_depositAmount": ["decimals:contract:indirect:getIssuanceToken"],
         "redeemAmount": ["decimals"]
       },
       "returnNames": ["redeemAmount"]
@@ -347,7 +347,10 @@
     },
     "sell": {
       "tags": {
-        "depositAmount_": ["decimals:extras:issuanceToken", "approval"],
+        "depositAmount_": [
+          "decimals:contract:indirect:getIssuanceToken",
+          "approval"
+        ],
         "minAmountOut_": ["decimals"]
       },
       "returnNames": []

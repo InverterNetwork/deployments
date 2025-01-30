@@ -285,8 +285,8 @@
     "sellTo": {
       "tags": {
         "_receiver": [""],
-        "_depositAmount": [""],
-        "_minAmountOut": [""]
+        "_depositAmount": ["decimals:contract:indirect:getIssuanceToken"],
+        "_minAmountOut": ["decimals"]
       },
       "returnNames": []
     },
