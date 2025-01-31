@@ -1,5 +1,18 @@
 {
-  "deploymentInputs": { "configData": [] },
+  "deploymentInputs": {
+    "configData": [
+      {
+        "name": "canceledOrdersTreasury",
+        "type": "address",
+        "description": "The address of the treasury that will receive the canceled orders"
+      },
+      {
+        "name": "failedOrdersTreasury",
+        "type": "address",
+        "description": "The address of the treasury that will receive the failed orders"
+      }
+    ]
+  },
   "abiMembers": {
     "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
     "ModuleInitialized": {
