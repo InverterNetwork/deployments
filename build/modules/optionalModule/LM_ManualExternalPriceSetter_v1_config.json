@@ -89,7 +89,7 @@
     "setIssuanceAndRedemptionPrice": {
       "tags": {
         "issuancePrice_": ["decimals"],
-        "redemptionPrice_": ["decimals:extras:issuanceToken"]
+        "redemptionPrice_": ["decimals"]
       },
       "returnNames": []
     },
@@ -98,7 +98,7 @@
       "returnNames": []
     },
     "setRedemptionPrice": {
-      "tags": { "price_": ["decimals:extras:issuanceToken"] },
+      "tags": { "price_": ["decimals"] },
       "returnNames": []
     },
     "supportsInterface": {

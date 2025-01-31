@@ -77,6 +77,15 @@
       },
       "returnNames": []
     },
+    "UnclaimableAmountClaimedToTreasury": {
+      "tags": {
+        "originalReceiver_": [""],
+        "treasury_": [""],
+        "amount_": [""],
+        "queueOperator_": [""]
+      },
+      "returnNames": []
+    },
     "cancelPaymentOrderThroughQueueId": {
       "tags": { "orderId_": [""], "client_": [""], "success_": [""] },
       "returnNames": ["success_"]
@@ -85,6 +94,18 @@
     "claimPreviouslyUnclaimable": {
       "tags": { "client_": [""], "token_": [""], "receiver_": [""] },
       "returnNames": []
+    },
+    "claimPreviouslyUnclaimableToTreasury": {
+      "tags": { "client_": [""], "token_": [""], "receiver_": [""] },
+      "returnNames": []
+    },
+    "getCanceledOrdersTreasury": {
+      "tags": { "treasury_": [""] },
+      "returnNames": ["treasury_"]
+    },
+    "getFailedOrdersTreasury": {
+      "tags": { "treasury_": [""] },
+      "returnNames": ["treasury_"]
     },
     "getOrder": {
       "tags": {
@@ -111,11 +132,11 @@
       "tags": { "client_": [""], "head_": [""] },
       "returnNames": ["head_"]
     },
-    "getQueueOperatorAdminRole": {
+    "getQueueOperatorRole": {
       "tags": { "role_": [""] },
       "returnNames": ["role_"]
     },
-    "getQueueOperatorRole": {
+    "getQueueOperatorRoleAdmin": {
       "tags": { "role_": [""] },
       "returnNames": ["role_"]
     },
@@ -144,7 +165,8 @@
         "patchVersion": [""],
         "url": [""],
         "title": [""],
-        "metadata_": [""]
+        "metadata_": [""],
+        "configData_": [""]
       },
       "returnNames": []
     },
@@ -160,6 +182,14 @@
     },
     "revokeModuleRoleBatched": {
       "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "setCanceledOrdersTreasury": {
+      "tags": { "treasury_": [""] },
+      "returnNames": []
+    },
+    "setFailedOrdersTreasury": {
+      "tags": { "treasury_": [""] },
       "returnNames": []
     },
     "supportsInterface": {
