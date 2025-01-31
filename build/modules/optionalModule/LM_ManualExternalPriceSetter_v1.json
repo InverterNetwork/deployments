@@ -4,81 +4,43 @@
       "type": "function",
       "name": "getCollateralTokenDecimals",
       "inputs": [],
-      "outputs": [
-        {
-          "name": "",
-          "type": "uint8",
-          "internalType": "uint8"
-        }
-      ],
+      "outputs": [{ "name": "", "type": "uint8", "internalType": "uint8" }],
       "stateMutability": "view"
     },
     {
       "type": "function",
       "name": "getPriceForIssuance",
       "inputs": [],
-      "outputs": [
-        {
-          "name": "",
-          "type": "uint256",
-          "internalType": "uint256"
-        }
-      ],
+      "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
       "stateMutability": "view"
     },
     {
       "type": "function",
       "name": "getPriceForRedemption",
       "inputs": [],
-      "outputs": [
-        {
-          "name": "",
-          "type": "uint256",
-          "internalType": "uint256"
-        }
-      ],
+      "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
       "stateMutability": "view"
     },
     {
       "type": "function",
       "name": "getPriceSetterRole",
       "inputs": [],
-      "outputs": [
-        {
-          "name": "",
-          "type": "bytes32",
-          "internalType": "bytes32"
-        }
-      ],
+      "outputs": [{ "name": "", "type": "bytes32", "internalType": "bytes32" }],
       "stateMutability": "pure"
     },
     {
       "type": "function",
       "name": "getPriceSetterRoleAdmin",
       "inputs": [],
-      "outputs": [
-        {
-          "name": "",
-          "type": "bytes32",
-          "internalType": "bytes32"
-        }
-      ],
+      "outputs": [{ "name": "", "type": "bytes32", "internalType": "bytes32" }],
       "stateMutability": "pure"
     },
     {
       "type": "function",
       "name": "grantModuleRole",
       "inputs": [
-        {
-          "name": "role",
-          "type": "bytes32",
-          "internalType": "bytes32"
-        },
-        {
-          "name": "target",
-          "type": "address",
-          "internalType": "address"
-        }
+        { "name": "role", "type": "bytes32", "internalType": "bytes32" },
+        { "name": "target", "type": "address", "internalType": "address" }
       ],
       "outputs": [],
       "stateMutability": "nonpayable"
@@ -87,16 +49,8 @@
       "type": "function",
       "name": "grantModuleRoleBatched",
       "inputs": [
-        {
-          "name": "role",
-          "type": "bytes32",
-          "internalType": "bytes32"
-        },
-        {
-          "name": "targets",
-          "type": "address[]",
-          "internalType": "address[]"
-        }
+        { "name": "role", "type": "bytes32", "internalType": "bytes32" },
+        { "name": "targets", "type": "address[]", "internalType": "address[]" }
       ],
       "outputs": [],
       "stateMutability": "nonpayable"
@@ -105,13 +59,7 @@
       "type": "function",
       "name": "identifier",
       "inputs": [],
-      "outputs": [
-        {
-          "name": "",
-          "type": "bytes32",
-          "internalType": "bytes32"
-        }
-      ],
+      "outputs": [{ "name": "", "type": "bytes32", "internalType": "bytes32" }],
       "stateMutability": "view"
     },
     {
@@ -143,23 +91,11 @@
               "type": "uint256",
               "internalType": "uint256"
             },
-            {
-              "name": "url",
-              "type": "string",
-              "internalType": "string"
-            },
-            {
-              "name": "title",
-              "type": "string",
-              "internalType": "string"
-            }
+            { "name": "url", "type": "string", "internalType": "string" },
+            { "name": "title", "type": "string", "internalType": "string" }
           ]
         },
-        {
-          "name": "configData_",
-          "type": "bytes",
-          "internalType": "bytes"
-        }
+        { "name": "configData_", "type": "bytes", "internalType": "bytes" }
       ],
       "outputs": [],
       "stateMutability": "nonpayable"
@@ -168,19 +104,9 @@
       "type": "function",
       "name": "isTrustedForwarder",
       "inputs": [
-        {
-          "name": "forwarder",
-          "type": "address",
-          "internalType": "address"
-        }
+        { "name": "forwarder", "type": "address", "internalType": "address" }
       ],
-      "outputs": [
-        {
-          "name": "",
-          "type": "bool",
-          "internalType": "bool"
-        }
-      ],
+      "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
       "stateMutability": "view"
     },
     {
@@ -200,16 +126,8 @@
       "type": "function",
       "name": "revokeModuleRole",
       "inputs": [
-        {
-          "name": "role",
-          "type": "bytes32",
-          "internalType": "bytes32"
-        },
-        {
-          "name": "target",
-          "type": "address",
-          "internalType": "address"
-        }
+        { "name": "role", "type": "bytes32", "internalType": "bytes32" },
+        { "name": "target", "type": "address", "internalType": "address" }
       ],
       "outputs": [],
       "stateMutability": "nonpayable"
@@ -218,16 +136,8 @@
       "type": "function",
       "name": "revokeModuleRoleBatched",
       "inputs": [
-        {
-          "name": "role",
-          "type": "bytes32",
-          "internalType": "bytes32"
-        },
-        {
-          "name": "targets",
-          "type": "address[]",
-          "internalType": "address[]"
-        }
+        { "name": "role", "type": "bytes32", "internalType": "bytes32" },
+        { "name": "targets", "type": "address[]", "internalType": "address[]" }
       ],
       "outputs": [],
       "stateMutability": "nonpayable"
@@ -254,11 +164,7 @@
       "type": "function",
       "name": "setIssuancePrice",
       "inputs": [
-        {
-          "name": "price_",
-          "type": "uint256",
-          "internalType": "uint256"
-        }
+        { "name": "price_", "type": "uint256", "internalType": "uint256" }
       ],
       "outputs": [],
       "stateMutability": "nonpayable"
@@ -267,11 +173,7 @@
       "type": "function",
       "name": "setRedemptionPrice",
       "inputs": [
-        {
-          "name": "price_",
-          "type": "uint256",
-          "internalType": "uint256"
-        }
+        { "name": "price_", "type": "uint256", "internalType": "uint256" }
       ],
       "outputs": [],
       "stateMutability": "nonpayable"
@@ -280,58 +182,30 @@
       "type": "function",
       "name": "supportsInterface",
       "inputs": [
-        {
-          "name": "interfaceId",
-          "type": "bytes4",
-          "internalType": "bytes4"
-        }
+        { "name": "interfaceId", "type": "bytes4", "internalType": "bytes4" }
       ],
-      "outputs": [
-        {
-          "name": "",
-          "type": "bool",
-          "internalType": "bool"
-        }
-      ],
+      "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
       "stateMutability": "view"
     },
     {
       "type": "function",
       "name": "title",
       "inputs": [],
-      "outputs": [
-        {
-          "name": "",
-          "type": "string",
-          "internalType": "string"
-        }
-      ],
+      "outputs": [{ "name": "", "type": "string", "internalType": "string" }],
       "stateMutability": "view"
     },
     {
       "type": "function",
       "name": "trustedForwarder",
       "inputs": [],
-      "outputs": [
-        {
-          "name": "",
-          "type": "address",
-          "internalType": "address"
-        }
-      ],
+      "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
       "stateMutability": "view"
     },
     {
       "type": "function",
       "name": "url",
       "inputs": [],
-      "outputs": [
-        {
-          "name": "",
-          "type": "string",
-          "internalType": "string"
-        }
-      ],
+      "outputs": [{ "name": "", "type": "string", "internalType": "string" }],
       "stateMutability": "view"
     },
     {
@@ -339,21 +213,9 @@
       "name": "version",
       "inputs": [],
       "outputs": [
-        {
-          "name": "",
-          "type": "uint256",
-          "internalType": "uint256"
-        },
-        {
-          "name": "",
-          "type": "uint256",
-          "internalType": "uint256"
-        },
-        {
-          "name": "",
-          "type": "uint256",
-          "internalType": "uint256"
-        }
+        { "name": "", "type": "uint256", "internalType": "uint256" },
+        { "name": "", "type": "uint256", "internalType": "uint256" },
+        { "name": "", "type": "uint256", "internalType": "uint256" }
       ],
       "stateMutability": "view"
     },
@@ -420,16 +282,8 @@
               "type": "uint256",
               "internalType": "uint256"
             },
-            {
-              "name": "url",
-              "type": "string",
-              "internalType": "string"
-            },
-            {
-              "name": "title",
-              "type": "string",
-              "internalType": "string"
-            }
+            { "name": "url", "type": "string", "internalType": "string" },
+            { "name": "title", "type": "string", "internalType": "string" }
           ]
         }
       ],
@@ -479,48 +333,24 @@
       ],
       "anonymous": false
     },
-    {
-      "type": "error",
-      "name": "InvalidInitialization",
-      "inputs": []
-    },
+    { "type": "error", "name": "InvalidInitialization", "inputs": [] },
     {
       "type": "error",
       "name": "Module_OrchestratorCallbackFailed",
       "inputs": [
-        {
-          "name": "funcSig",
-          "type": "string",
-          "internalType": "string"
-        }
+        { "name": "funcSig", "type": "string", "internalType": "string" }
       ]
     },
     {
       "type": "error",
       "name": "Module__CallerNotAuthorized",
       "inputs": [
-        {
-          "name": "role",
-          "type": "bytes32",
-          "internalType": "bytes32"
-        },
-        {
-          "name": "caller",
-          "type": "address",
-          "internalType": "address"
-        }
+        { "name": "role", "type": "bytes32", "internalType": "bytes32" },
+        { "name": "caller", "type": "address", "internalType": "address" }
       ]
     },
-    {
-      "type": "error",
-      "name": "Module__InvalidAddress",
-      "inputs": []
-    },
-    {
-      "type": "error",
-      "name": "Module__InvalidMetadata",
-      "inputs": []
-    },
+    { "type": "error", "name": "Module__InvalidAddress", "inputs": [] },
+    { "type": "error", "name": "Module__InvalidMetadata", "inputs": [] },
     {
       "type": "error",
       "name": "Module__InvalidOrchestratorAddress",
@@ -541,16 +371,8 @@
       "name": "Module__OnlyCallableByPaymentClient",
       "inputs": []
     },
-    {
-      "type": "error",
-      "name": "NotInitializing",
-      "inputs": []
-    },
-    {
-      "type": "error",
-      "name": "OraclePrice__ZeroPrice",
-      "inputs": []
-    }
+    { "type": "error", "name": "NotInitializing", "inputs": [] },
+    { "type": "error", "name": "OraclePrice__ZeroPrice", "inputs": [] }
   ],
   "bytecode": {
     "object": "0x60a060405234801561000f575f80fd5b505f60805261001c610021565b6100d3565b7ff0c57e16840df040f15088dc2f81fe391c3923bec73e23a9662efc9c229c6a00805468010000000000000000900460ff16156100715760405163f92ee8a960e01b815260040160405180910390fd5b80546001600160401b03908116146100d05780546001600160401b0319166001600160401b0390811782556040519081527fc7f505b2f371ae2175ee4913f4499e1f2633a7b5936321eed1cdaeb6115181d29060200160405180910390a15b50565b608051611ce96100e85f395f5050611ce95ff3fe608060405234801561000f575f80fd5b506004361061016e575f3560e01c8063572b6c05116100d2578063b66a870c11610088578063bcb6192011610063578063bcb61920146102ef578063cbcf2d4614610302578063df07b1051461031c575f80fd5b8063b66a870c146102b7578063b74795d9146102ca578063ba388ee7146102da575f80fd5b80636c67e807116100b85780636c67e8071461027c5780637998a1c41461028f5780637da0a87714610297575f80fd5b8063572b6c05146102615780636650c9c514610274575f80fd5b806328c87cdb116101275780634a79d50c1161010d5780634a79d50c1461022057806354fd4d50146102355780635600f04f14610259575f80fd5b806328c87cdb146101fa57806341e795ff1461020d575f80fd5b806313d8560f1161015757806313d8560f146101ac57806324e30270146101d2578063272bbd44146101e7575f80fd5b806301ffc9a714610172578063098f5a201461019a575b5f80fd5b610185610180366004611664565b61032f565b60405190151581526020015b60405180910390f35b6039545b604051908152602001610191565b7f50524943455f5345545445525f524f4c455f41444d494e00000000000000000061019e565b6101e56101e0366004611692565b610374565b005b6101e56101f5366004611692565b610614565b6101e561020836600461170a565b6107e3565b6101e561021b36600461170a565b6108af565b61022861091e565b6040516101919190611764565b60015460025460035460408051938452602084019290925290820152606001610191565b6102286109b1565b61018561026f36600461178d565b6109c3565b60385461019e565b6101e561028a3660046117a8565b610a2f565b61019e610c35565b61029f610d8d565b6040516001600160a01b039091168152602001610191565b6101e56102c536600461189c565b610e01565b5f546001600160a01b031661029f565b603a5460405160ff9091168152602001610191565b6101e56102fd3660046117a8565b610fb1565b7050524943455f5345545445525f524f4c4560781b61019e565b6101e561032a36600461197a565b611188565b5f6001600160e01b03198216635dec1f3560e11b148061035f57506001600160e01b03198216636fdf93e560e01b145b8061036e575061036e82611205565b92915050565b5f80546040805163d09edf3160e01b815290518693926001600160a01b03169163d09edf319160048083019260209291908290030181865afa1580156103bc573d5f803e3d5ffd5b505050506040513d601f19601f820116820180604052508101906103e0919061199a565b60405163fdd5205f60e01b8152306004820152602481018490526001600160a01b03919091169063fdd5205f90604401602060405180830381865afa15801561042b573d5f803e3d5ffd5b505050506040513d601f19601f8201168201806040525081019061044f91906119b5565b905061053f5f8054906101000a90046001600160a01b03166001600160a01b031663d09edf316040518163ffffffff1660e01b8152600401602060405180830381865afa1580156104a2573d5f803e3d5ffd5b505050506040513d601f19601f820116820180604052508101906104c6919061199a565b6001600160a01b031663248a9ca3836040518263ffffffff1660e01b81526004016104f391815260200190565b602060405180830381865afa15801561050e573d5f803e3d5ffd5b505050506040513d601f19601f8201168201806040525081019061053291906119b5565b61053a611239565b611289565b5f8054906101000a90046001600160a01b03166001600160a01b031663d09edf316040518163ffffffff1660e01b8152600401602060405180830381865afa15801561058d573d5f803e3d5ffd5b505050506040513d601f19601f820116820180604052508101906105b1919061199a565b6001600160a01b0316637d540a648686866040518463ffffffff1660e01b81526004016105e0939291906119cc565b5f604051808303815f87803b1580156105f7575f80fd5b505af1158015610609573d5f803e3d5ffd5b505050505050505050565b5f80546040805163d09edf3160e01b815290518693926001600160a01b03169163d09edf319160048083019260209291908290030181865afa15801561065c573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610680919061199a565b60405163fdd5205f60e01b8152306004820152602481018490526001600160a01b03919091169063fdd5205f90604401602060405180830381865afa1580156106cb573d5f803e3d5ffd5b505050506040513d601f19601f820116820180604052508101906106ef91906119b5565b90506107425f8054906101000a90046001600160a01b03166001600160a01b031663d09edf316040518163ffffffff1660e01b8152600401602060405180830381865afa1580156104a2573d5f803e3d5ffd5b5f8054906101000a90046001600160a01b03166001600160a01b031663d09edf316040518163ffffffff1660e01b8152600401602060405180830381865afa158015610790573d5f803e3d5ffd5b505050506040513d601f19601f820116820180604052508101906107b4919061199a565b6001600160a01b031663648154538686866040518463ffffffff1660e01b81526004016105e0939291906119cc565b7050524943455f5345545445525f524f4c4560781b6108a25f8054906101000a90046001600160a01b03166001600160a01b031663d09edf316040518163ffffffff1660e01b8152600401602060405180830381865afa158015610849573d5f803e3d5ffd5b505050506040513d601f19601f8201168201806040525081019061086d919061199a565b60405163fdd5205f60e01b8152306004820152602481018490526001600160a01b03919091169063fdd5205f906044016104f3565b6108ab8261139f565b5050565b7050524943455f5345545445525f524f4c4560781b6109155f8054906101000a90046001600160a01b03166001600160a01b031663d09edf316040518163ffffffff1660e01b8152600401602060405180830381865afa158015610849573d5f803e3d5ffd5b6108ab82611405565b60606001600401805461093090611a23565b80601f016020809104026020016040519081016040528092919081815260200182805461095c90611a23565b80156109a75780601f1061097e576101008083540402835291602001916109a7565b820191905f5260205f20905b81548152906001019060200180831161098a57829003601f168201915b5050505050905090565b60606001600301805461093090611a23565b5f805460405163572b6c0560e01b81526001600160a01b0384811660048301529091169063572b6c0590602401602060405180830381865afa158015610a0b573d5f803e3d5ffd5b505050506040513d601f19601f8201168201806040525081019061036e9190611a5b565b5f80546040805163d09edf3160e01b815290518593926001600160a01b03169163d09edf319160048083019260209291908290030181865afa158015610a77573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610a9b919061199a565b60405163fdd5205f60e01b8152306004820152602481018490526001600160a01b03919091169063fdd5205f90604401602060405180830381865afa158015610ae6573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610b0a91906119b5565b9050610b5d5f8054906101000a90046001600160a01b03166001600160a01b031663d09edf316040518163ffffffff1660e01b8152600401602060405180830381865afa1580156104a2573d5f803e3d5ffd5b5f8054906101000a90046001600160a01b03166001600160a01b031663d09edf316040518163ffffffff1660e01b8152600401602060405180830381865afa158015610bab573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610bcf919061199a565b60405163385e205560e21b8152600481018690526001600160a01b038581166024830152919091169063e1788154906044015b5f604051808303815f87803b158015610c19575f80fd5b505af1158015610c2b573d5f803e3d5ffd5b5050505050505050565b5f610d8860016040518060a00160405290815f82015481526020016001820154815260200160028201548152602001600382018054610c7390611a23565b80601f0160208091040260200160405190810160405280929190818152602001828054610c9f90611a23565b8015610cea5780601f10610cc157610100808354040283529160200191610cea565b820191905f5260205f20905b815481529060010190602001808311610ccd57829003601f168201915b50505050508152602001600482018054610d0390611a23565b80601f0160208091040260200160405190810160405280929190818152602001828054610d2f90611a23565b8015610d7a5780601f10610d5157610100808354040283529160200191610d7a565b820191905f5260205f20905b815481529060010190602001808311610d5d57829003601f168201915b50505050508152505061146b565b905090565b5f805f9054906101000a90046001600160a01b03166001600160a01b0316637da0a8776040518163ffffffff1660e01b8152600401602060405180830381865afa158015610ddd573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610d88919061199a565b7ff0c57e16840df040f15088dc2f81fe391c3923bec73e23a9662efc9c229c6a00805468010000000000000000810460ff16159067ffffffffffffffff165f81158015610e4b5750825b90505f8267ffffffffffffffff166001148015610e675750303b155b905081158015610e75575080155b15610e935760405163f92ee8a960e01b815260040160405180910390fd5b845467ffffffffffffffff191660011785558315610ec757845468ff00000000000000001916680100000000000000001785555b610ed188886114a9565b5f86806020019051810190610ee6919061199a565b9050806001600160a01b031663313ce5676040518163ffffffff1660e01b8152600401602060405180830381865afa158015610f24573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610f489190611a7a565b603a805460ff191660ff92909216919091179055508315610c2b57845468ff000000000000000019168555604051600181527fc7f505b2f371ae2175ee4913f4499e1f2633a7b5936321eed1cdaeb6115181d29060200160405180910390a15050505050505050565b5f80546040805163d09edf3160e01b815290518593926001600160a01b03169163d09edf319160048083019260209291908290030181865afa158015610ff9573d5f803e3d5ffd5b505050506040513d601f19601f8201168201806040525081019061101d919061199a565b60405163fdd5205f60e01b8152306004820152602481018490526001600160a01b03919091169063fdd5205f90604401602060405180830381865afa158015611068573d5f803e3d5ffd5b505050506040513d601f19601f8201168201806040525081019061108c91906119b5565b90506110df5f8054906101000a90046001600160a01b03166001600160a01b031663d09edf316040518163ffffffff1660e01b8152600401602060405180830381865afa1580156104a2573d5f803e3d5ffd5b5f8054906101000a90046001600160a01b03166001600160a01b031663d09edf316040518163ffffffff1660e01b8152600401602060405180830381865afa15801561112d573d5f803e3d5ffd5b505050506040513d601f19601f82011682018060405250810190611151919061199a565b604051632e99be7f60e21b8152600481018690526001600160a01b038581166024830152919091169063ba66f9fc90604401610c02565b7050524943455f5345545445525f524f4c4560781b6111ee5f8054906101000a90046001600160a01b03166001600160a01b031663d09edf316040518163ffffffff1660e01b8152600401602060405180830381865afa158015610849573d5f803e3d5ffd5b6111f78361139f565b61120082611405565b505050565b5f6001600160e01b0319821663e328951160e01b148061036e57506301ffc9a760e01b6001600160e01b031983161461036e565b5f366014611246336109c3565b80156112525750808210155b15611281575f366112638385611a9a565b61126e928290611ab9565b61127791611ae0565b60601c9250505090565b339250505090565b5f8054906101000a90046001600160a01b03166001600160a01b031663d09edf316040518163ffffffff1660e01b8152600401602060405180830381865afa1580156112d7573d5f803e3d5ffd5b505050506040513d601f19601f820116820180604052508101906112fb919061199a565b60405163a883867d60e01b8152600481018490526001600160a01b038381166024830152919091169063a883867d90604401602060405180830381865afa158015611348573d5f803e3d5ffd5b505050506040513d601f19601f8201168201806040525081019061136c9190611a5b565b6108ab576040516342abbb7760e01b8152600481018390526001600160a01b038216602482015260440160405180910390fd5b805f036113bf57604051634f3bcaef60e11b815260040160405180910390fd5b60388190556113cc611239565b6001600160a01b0316817f9f68d4c76c4c629400400e26c9c01bf616908e26dbc07b388e4e5732f37e199660405160405180910390a350565b805f0361142557604051634f3bcaef60e11b815260040160405180910390fd5b6039819055611432611239565b6001600160a01b0316817fe930044efce1f10e161dbde8e8a1cde1469649ebb9f4a226c1228f620a47928c60405160405180910390a350565b5f815f01518260600151836080015160405160200161148c93929190611b15565b604051602081830303815290604052805190602001209050919050565b6114b16115ba565b6001600160a01b0382166114d857604051637280679360e01b815260040160405180910390fd5b5f80547fffffffffffffffffffffffff0000000000000000000000000000000000000000166001600160a01b0384161790556115138161160a565b61153057604051637511254160e01b815260040160405180910390fd5b8051600190815560208201516002556040820151600355606082015182919060049061155c9082611b94565b50608082015160048201906115719082611b94565b50905050816001600160a01b03167fd5f3f84c2e1816ce290af84d002663800b02f2985d770cdd335de76fd723b730826040516115ae9190611c54565b60405180910390a25050565b7ff0c57e16840df040f15088dc2f81fe391c3923bec73e23a9662efc9c229c6a005468010000000000000000900460ff1661160857604051631afcd79f60e31b815260040160405180910390fd5b565b5f8160600151515f0361161e57505f919050565b8160800151515f0361163157505f919050565b815115801561164257506020820151155b801561165057506040820151155b1561165c57505f919050565b506001919050565b5f60208284031215611674575f80fd5b81356001600160e01b03198116811461168b575f80fd5b9392505050565b5f805f604084860312156116a4575f80fd5b83359250602084013567ffffffffffffffff808211156116c2575f80fd5b818601915086601f8301126116d5575f80fd5b8135818111156116e3575f80fd5b8760208260051b85010111156116f7575f80fd5b6020830194508093505050509250925092565b5f6020828403121561171a575f80fd5b5035919050565b5f81518084525f5b8181101561174557602081850181015186830182015201611729565b505f602082860101526020601f19601f83011685010191505092915050565b602081525f61168b6020830184611721565b6001600160a01b038116811461178a575f80fd5b50565b5f6020828403121561179d575f80fd5b813561168b81611776565b5f80604083850312156117b9575f80fd5b8235915060208301356117cb81611776565b809150509250929050565b634e487b7160e01b5f52604160045260245ffd5b60405160a0810167ffffffffffffffff8111828210171561180d5761180d6117d6565b60405290565b5f82601f830112611822575f80fd5b813567ffffffffffffffff8082111561183d5761183d6117d6565b604051601f8301601f19908116603f01168101908282118183101715611865576118656117d6565b8160405283815286602085880101111561187d575f80fd5b836020870160208301375f602085830101528094505050505092915050565b5f805f606084860312156118ae575f80fd5b83356118b981611776565b9250602084013567ffffffffffffffff808211156118d5575f80fd5b9085019060a082880312156118e8575f80fd5b6118f06117ea565b823581526020830135602082015260408301356040820152606083013582811115611919575f80fd5b61192589828601611813565b60608301525060808301358281111561193c575f80fd5b61194889828601611813565b60808301525093506040860135915080821115611963575f80fd5b5061197086828701611813565b9150509250925092565b5f806040838503121561198b575f80fd5b50508035926020909101359150565b5f602082840312156119aa575f80fd5b815161168b81611776565b5f602082840312156119c5575f80fd5b5051919050565b838152604060208083018290529082018390525f90849060608401835b86811015611a175783356119fc81611776565b6001600160a01b0316825292820192908201906001016119e9565b50979650505050505050565b600181811c90821680611a3757607f821691505b602082108103611a5557634e487b7160e01b5f52602260045260245ffd5b50919050565b5f60208284031215611a6b575f80fd5b8151801515811461168b575f80fd5b5f60208284031215611a8a575f80fd5b815160ff8116811461168b575f80fd5b8181038181111561036e57634e487b7160e01b5f52601160045260245ffd5b5f8085851115611ac7575f80fd5b83861115611ad3575f80fd5b5050820193919092039150565b6bffffffffffffffffffffffff198135818116916014851015611b0d5780818660140360031b1b83161692505b505092915050565b838152606060208201525f611b2d6060830185611721565b8281036040840152611b3f8185611721565b9695505050505050565b601f82111561120057805f5260205f20601f840160051c81016020851015611b6e5750805b601f840160051c820191505b81811015611b8d575f8155600101611b7a565b5050505050565b815167ffffffffffffffff811115611bae57611bae6117d6565b611bc281611bbc8454611a23565b84611b49565b602080601f831160018114611bf5575f8415611bde5750858301515b5f19600386901b1c1916600185901b178555611c4c565b5f85815260208120601f198616915b82811015611c2357888601518255948401946001909101908401611c04565b5085821015611c4057878501515f19600388901b60f8161c191681555b505060018460011b0185555b505050505050565b602081528151602082015260208201516040820152604082015160608201525f606083015160a06080840152611c8d60c0840182611721565b90506080840151601f198483030160a0850152611caa8282611721565b9594505050505056fea26469706673582212203abb102cba5da5c83bb54fff8a525555c433aa91956597fb6819a7102699f9b064736f6c63430008170033",
@@ -587,54 +409,28 @@
   },
   "rawMetadata": "{\"compiler\":{\"version\":\"0.8.23+commit.f704f362\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"InvalidInitialization\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"funcSig\",\"type\":\"string\"}],\"name\":\"Module_OrchestratorCallbackFailed\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"Module__CallerNotAuthorized\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__InvalidAddress\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__InvalidMetadata\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__InvalidOrchestratorAddress\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__LM_ExternalPriceSetter__InvalidPrice\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__OnlyCallableByOrchestrator\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Module__OnlyCallableByPaymentClient\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotInitializing\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"OraclePrice__ZeroPrice\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint64\",\"name\":\"version\",\"type\":\"uint64\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"price_\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"caller_\",\"type\":\"address\"}],\"name\":\"IssuancePriceSet\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"parentOrchestrator\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"majorVersion\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minorVersion\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"patchVersion\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"url\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"title\",\"type\":\"string\"}],\"indexed\":false,\"internalType\":\"struct IModule_v1.Metadata\",\"name\":\"metadata\",\"type\":\"tuple\"}],\"name\":\"ModuleInitialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"treasury\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"feeAmount\",\"type\":\"uint256\"}],\"name\":\"ProtocolFeeTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"price_\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"caller_\",\"type\":\"address\"}],\"name\":\"RedemptionPriceSet\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"getCollateralTokenDecimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getPriceForIssuance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getPriceForRedemption\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getPriceSetterRole\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getPriceSetterRoleAdmin\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"name\":\"grantModuleRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address[]\",\"name\":\"targets\",\"type\":\"address[]\"}],\"name\":\"grantModuleRoleBatched\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"identifier\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IOrchestrator_v1\",\"name\":\"orchestrator_\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"majorVersion\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minorVersion\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"patchVersion\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"url\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"title\",\"type\":\"string\"}],\"internalType\":\"struct IModule_v1.Metadata\",\"name\":\"metadata_\",\"type\":\"tuple\"},{\"internalType\":\"bytes\",\"name\":\"configData_\",\"type\":\"bytes\"}],\"name\":\"init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"forwarder\",\"type\":\"address\"}],\"name\":\"isTrustedForwarder\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"orchestrator\",\"outputs\":[{\"internalType\":\"contract IOrchestrator_v1\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"name\":\"revokeModuleRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address[]\",\"name\":\"targets\",\"type\":\"address[]\"}],\"name\":\"revokeModuleRoleBatched\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"issuancePrice_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"redemptionPrice_\",\"type\":\"uint256\"}],\"name\":\"setIssuanceAndRedemptionPrice\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"price_\",\"type\":\"uint256\"}],\"name\":\"setIssuancePrice\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"price_\",\"type\":\"uint256\"}],\"name\":\"setRedemptionPrice\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"title\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"trustedForwarder\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"url\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Zealynx Security\",\"custom:security-contact\":\"security@inverter.network                          In case of any concerns or findings, please refer                          to our Security Policy at security.inverter.network                          or email us directly!\",\"custom:standard-version\":\"v1.0.0\",\"custom:version\":\"v1.0.0\",\"details\":\"This contract inherits functionalities from:              - Module_v1          The contract maintains two separate price feeds:              1. Issuance price for token minting/buying.              2. Redemption price for token burning/selling.          Both prices are manually set by the contract owner and must be          non-zero values.          Price Context:              - Prices are stored internally with 18 decimals for consistent                math.              - When setting prices: Input values should be in collateral                token decimals.              - When getting prices: Output values will be in issuance                token decimals.\",\"errors\":{\"InvalidInitialization()\":[{\"details\":\"The contract is already initialized.\"}],\"Module_OrchestratorCallbackFailed(string)\":[{\"params\":{\"funcSig\":\"The signature of the function called.\"}}],\"Module__CallerNotAuthorized(bytes32,address)\":[{\"params\":{\"caller\":\"The address that is required to have the role.\",\"role\":\"The role that is required.\"}}],\"Module__InvalidAddress()\":[{\"details\":\"Invalid Address.\"}],\"NotInitializing()\":[{\"details\":\"The contract is not initializing.\"}]},\"events\":{\"Initialized(uint64)\":{\"details\":\"Triggered when the contract has been initialized or reinitialized.\"},\"IssuancePriceSet(uint256,address)\":{\"params\":{\"caller_\":\"The address that set the price.\",\"price_\":\"The price that was set.\"}},\"ModuleInitialized(address,(uint256,uint256,uint256,string,string))\":{\"params\":{\"metadata\":\"The metadata of the module.\",\"parentOrchestrator\":\"The address of the {Orchestrator_v1} the module is linked to.\"}},\"ProtocolFeeTransferred(address,address,uint256)\":{\"params\":{\"feeAmount\":\"The fee amount transferred to the treasury.\",\"token\":\"The token received as protocol fee.\",\"treasury\":\"The protocol treasury address receiving the token fee amount.\"}},\"RedemptionPriceSet(uint256,address)\":{\"params\":{\"caller_\":\"The address that set the price.\",\"price_\":\"The price that was set.\"}}},\"kind\":\"dev\",\"methods\":{\"getCollateralTokenDecimals()\":{\"details\":\"Decimals in which the issuance and redemption prices         are denominated.\",\"returns\":{\"_0\":\"decimals_ The decimals of the collateral token.\"}},\"getPriceForIssuance()\":{\"details\":\"The price is denominated in the collateral token decimals. For         example, if the collateral token has 6 decimals and the issuance         price is 1.5, returns 1500000.\",\"returns\":{\"_0\":\"price_ Current price denominated in the collateral token decimals.\"}},\"getPriceForRedemption()\":{\"details\":\"The price is denominated in the collateral token decimals. For         example, if the collateral token has 6 decimals and the redemption         price is 0.5, the price_ parameter should be 500000.\",\"returns\":{\"_0\":\"price_ Current price denominated in the collateral token decimals.\"}},\"getPriceSetterRole()\":{\"returns\":{\"_0\":\"bytes32 The PRICE_SETTER_ROLE identifier\"}},\"getPriceSetterRoleAdmin()\":{\"returns\":{\"_0\":\"bytes32 The PRICE_SETTER_ROLE_ADMIN identifier\"}},\"grantModuleRole(bytes32,address)\":{\"params\":{\"role\":\"The role to grant.\",\"target\":\"The target address to grant the role to.\"}},\"grantModuleRoleBatched(bytes32,address[])\":{\"params\":{\"role\":\"The role to grant.\",\"targets\":\"The target addresses to grant the role to.\"}},\"identifier()\":{\"details\":\"The identifier is defined as the keccak256 hash of the module's         abi packed encoded major version, url and title.\",\"returns\":{\"_0\":\"The module's identifier.\"}},\"init(address,(uint256,uint256,uint256,string,string),bytes)\":{\"details\":\"CAN be overridden by downstream contract.MUST call `__Module_init()`.\",\"params\":{\"configData\":\"Variable config data for specific module                   implementations.\",\"metadata\":\"The module's metadata.\",\"orchestrator\":\"The module's {Orchestrator_v1} instance.\"}},\"isTrustedForwarder(address)\":{\"details\":\"We imitate here the EIP2771 Standard to enable metatransactions         As it currently stands we dont want to feed the forwarder address to each module individually and we decided to         move this to the orchestrator.\",\"params\":{\"forwarder\":\"The contract address to be verified.\"},\"returns\":{\"_0\":\"bool Is the given address the trusted forwarder.\"}},\"orchestrator()\":{\"returns\":{\"_0\":\"The module's {Orchestrator_1}.\"}},\"revokeModuleRole(bytes32,address)\":{\"params\":{\"role\":\"The role to revoke.\",\"target\":\"The target address to revoke the role from.\"}},\"revokeModuleRoleBatched(bytes32,address[])\":{\"params\":{\"role\":\"The role to revoke.\",\"targets\":\"The target addresses to revoke the role from.\"}},\"setIssuanceAndRedemptionPrice(uint256,uint256)\":{\"details\":\"Both prices must be non-zero. Both the issuance and redemption         prices should be denominated in the collateral token decimals.         For example, if the collateral token has 6 decimals and the         issuance and redemption price are both 1.5, the issuancePrice_         and redemptionPrice_ parameters should be 1500000.\",\"params\":{\"issuancePrice_\":\"The issuance price to set, denominated in the         collateral token decimals.\",\"redemptionPrice_\":\"The redemption price to set, denominated in         the collateral token decimals.\"}},\"setIssuancePrice(uint256)\":{\"details\":\"The price_ parameter should be provided with the same number         of decimals as the collateral token. For example, if the         collateral token has 6 decimals and the issuance price is 1.5,         the price_ parameter should be 1500000.\",\"params\":{\"price_\":\"The issuance price to set, denominated in the collateral         token decimals.\"}},\"setRedemptionPrice(uint256)\":{\"details\":\"The price_ parameter should be provided with the same number of         of decimals as the collateral token. For example, if the         collateral token has 6 decimals and the redemption price is 0.5,         the price_ parameter should be 500000.\",\"params\":{\"price_\":\"The redemption price to set, denominated in the collateral         token decimals.\"}},\"supportsInterface(bytes4)\":{\"details\":\"See {IERC165-supportsInterface}.\"},\"title()\":{\"returns\":{\"_0\":\"The module's title.\"}},\"trustedForwarder()\":{\"details\":\"We imitate here the EIP2771 Standard to enable metatransactions.         As it currently stands we dont want to feed the forwarder address to each module individually and we decided to         move this to the orchestrator.\",\"returns\":{\"_0\":\"address The trusted forwarder.\"}},\"url()\":{\"returns\":{\"_0\":\"The module's URL.\"}},\"version()\":{\"returns\":{\"_0\":\"The module's major version.\",\"_1\":\"The module's minor version.\",\"_2\":\"The module's patch version.\"}}},\"stateVariables\":{\"PRICE_SETTER_ROLE\":{\"details\":\"This role should be granted to trusted price feeders only.\"},\"PRICE_SETTER_ROLE_ADMIN\":{\"details\":\"This role should be set as the role admin within the Authorizer         module.\"},\"__gap\":{\"details\":\"Storage gap for upgradeable contracts.\"},\"_collateralTokenDecimals\":{\"details\":\"This is the token used to pay/buy with.\"}},\"title\":\"Manual External Price Oracle Implementation\",\"version\":1},\"userdoc\":{\"errors\":{\"Module_OrchestratorCallbackFailed(string)\":[{\"notice\":\"{Orchestrator_v1} callback triggered failed.\"}],\"Module__CallerNotAuthorized(bytes32,address)\":[{\"notice\":\"Function is only callable by authorized caller.\"}],\"Module__InvalidMetadata()\":[{\"notice\":\"Given metadata invalid.\"}],\"Module__InvalidOrchestratorAddress()\":[{\"notice\":\"Given {Orchestrator_v1} address invalid.\"}],\"Module__LM_ExternalPriceSetter__InvalidPrice()\":[{\"notice\":\"Thrown when attempting to set a price to zero.\"}],\"Module__OnlyCallableByOrchestrator()\":[{\"notice\":\"Function is only callable by the {Orchestrator_v1}.\"}],\"Module__OnlyCallableByPaymentClient()\":[{\"notice\":\"Function is only callable by a {IERC20PaymentClientBase_v1}.\"}],\"OraclePrice__ZeroPrice()\":[{\"notice\":\"Thrown when price returned is zero.\"}]},\"events\":{\"IssuancePriceSet(uint256,address)\":{\"notice\":\"Emitted when an issuance price is set.\"},\"ModuleInitialized(address,(uint256,uint256,uint256,string,string))\":{\"notice\":\"Module has been initialized.\"},\"ProtocolFeeTransferred(address,address,uint256)\":{\"notice\":\"Event emitted when protocol fee has been transferred to the treasury.\"},\"RedemptionPriceSet(uint256,address)\":{\"notice\":\"Emitted when a redemption price is set.\"}},\"kind\":\"user\",\"methods\":{\"getCollateralTokenDecimals()\":{\"notice\":\"Gets the decimals of the collateral token.\"},\"getPriceForIssuance()\":{\"notice\":\"Gets current price for token issuance (buying tokens).\"},\"getPriceForRedemption()\":{\"notice\":\"Gets current price for token redemption (selling tokens).\"},\"getPriceSetterRole()\":{\"notice\":\"Gets the price setter role identifier.\"},\"getPriceSetterRoleAdmin()\":{\"notice\":\"Gets the price setter role admin identifier.\"},\"grantModuleRole(bytes32,address)\":{\"notice\":\"Grants a module role to a target address.\"},\"grantModuleRoleBatched(bytes32,address[])\":{\"notice\":\"Grants a module role to multiple target addresses.\"},\"identifier()\":{\"notice\":\"Returns the module's identifier.\"},\"init(address,(uint256,uint256,uint256,string,string),bytes)\":{\"notice\":\"The module's initializer function.\"},\"isTrustedForwarder(address)\":{\"notice\":\"Checks if the provided address is the trusted forwarder.\"},\"orchestrator()\":{\"notice\":\"Returns the module's {Orchestrator_v1} interface, {IOrchestrator_v1}.\"},\"revokeModuleRole(bytes32,address)\":{\"notice\":\"Revokes a module role from a target address.\"},\"revokeModuleRoleBatched(bytes32,address[])\":{\"notice\":\"Revokes a module role from multiple target addresses.\"},\"setIssuanceAndRedemptionPrice(uint256,uint256)\":{\"notice\":\"Sets both issuance and redemption prices atomically, denominated         in the collateral token decimals.\"},\"setIssuancePrice(uint256)\":{\"notice\":\"Sets the issuance price.\"},\"setRedemptionPrice(uint256)\":{\"notice\":\"Sets the redemption price.\"},\"title()\":{\"notice\":\"Returns the module's title.\"},\"trustedForwarder()\":{\"notice\":\"Returns the trusted forwarder.\"},\"url()\":{\"notice\":\"Returns the module's URL.\"},\"version()\":{\"notice\":\"Returns the module's version.\"}},\"notice\":\"This contract provides a manual price feed mechanism for token          operations, allowing authorized users to set and update prices          for both issuance (buying) and redemption (selling) operations.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/modules/logicModule/LM_ManualExternalPriceSetter_v1.sol\":\"LM_ManualExternalPriceSetter_v1\"},\"evmVersion\":\"shanghai\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":750},\"remappings\":[\":@aut/=src/modules/authorizer/\",\":@df/=lib/deterministic-factory/src/\",\":@ex/=src/external/\",\":@fm/=src/modules/fundingManager/\",\":@lm/=src/modules/logicModule/\",\":@lm_pc/=src/modules/logicModule/paymentClient/\",\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@oz-up/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@oz/=lib/openzeppelin-contracts/contracts/\",\":@pp/=src/modules/paymentProcessor/\",\":@uma/=lib/uma-protocol/packages/core/contracts/\",\":deterministic-factory/=lib/deterministic-factory/src/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":uma-protocol/=lib/uma-protocol/\"]},\"sources\":{\"lib/openzeppelin-contracts-upgradeable/contracts/metatx/ERC2771ContextUpgradeable.sol\":{\"keccak256\":\"0x14b59e8cd5720c9cd31616450874b462f575bb52b387df2a54dbd26f9a07adf8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://082df479035347a88472f330b089b421d798e4bb016f36b46ed80182e188b9ac\",\"dweb:/ipfs/QmZMCdVxCB3Lb5bf98YSF4HZFNShDkyyFg9Mg1s9oeM5ov\"]},\"lib/openzeppelin-contracts-upgradeable/contracts/proxy/utils/Initializable.sol\":{\"keccak256\":\"0x631188737069917d2f909d29ce62c4d48611d326686ba6683e26b72a23bfac0b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7a61054ae84cd6c4d04c0c4450ba1d6de41e27e0a2c4f1bcdf58f796b401c609\",\"dweb:/ipfs/QmUvtdp7X1mRVyC3CsHrtPbgoqWaXHp3S1ZR24tpAQYJWM\"]},\"lib/openzeppelin-contracts-upgradeable/contracts/utils/ContextUpgradeable.sol\":{\"keccak256\":\"0xdbef5f0c787055227243a7318ef74c8a5a1108ca3a07f2b3a00ef67769e1e397\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://08e39f23d5b4692f9a40803e53a8156b72b4c1f9902a88cd65ba964db103dab9\",\"dweb:/ipfs/QmPKn6EYDgpga7KtpkA8wV2yJCYGMtc9K4LkJfhKX2RVSV\"]},\"lib/openzeppelin-contracts-upgradeable/contracts/utils/introspection/ERC165Upgradeable.sol\":{\"keccak256\":\"0xdaba3f7c42c55b2896353f32bd27d4d5f8bae741b3b05d4c53f67abc4dc47ce8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1fa2e61141c602510bcd2cd936ed9561922ac8772a9b9c9a9db091a74e354a45\",\"dweb:/ipfs/QmcHQDDoEBwJmwUbzoVkytvJsBx3KVHYFFnDkvRGWh9Wmh\"]},\"lib/openzeppelin-contracts/contracts/access/IAccessControl.sol\":{\"keccak256\":\"0xb6b36edd6a2999fd243ff226d6cbf84bd71af2432bbd0dfe19392996a1d9cb41\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1fd2f35495652e57e3f99bc6c510bc5f7dd398a176ea2e72d8ed730aebc6ca26\",\"dweb:/ipfs/QmTQV6X4gkikTib49cho5iDX3JvSQbdsoEChoDwrk3CbbH\"]},\"lib/openzeppelin-contracts/contracts/access/extensions/IAccessControlEnumerable.sol\":{\"keccak256\":\"0xc1435f102633849858e75d7bed14c636f25448ceb3406d82992b0f2df52f4306\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ce1815e3a1da24f91b8e2ec24cf09d0d46e0fbeddcbe2cb0d8b2e05b91ceb7b3\",\"dweb:/ipfs/QmYTy1AQB5EV5jwuGsB49yykng2oG3x5ss4bDjFNxk3He4\"]},\"lib/openzeppelin-contracts/contracts/proxy/beacon/IBeacon.sol\":{\"keccak256\":\"0xc59a78b07b44b2cf2e8ab4175fca91e8eca1eee2df7357b8d2a8833e5ea1f64c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5aa4f07e65444784c29cd7bfcc2341b34381e4e5b5da9f0c5bd00d7f430e66fa\",\"dweb:/ipfs/QmWRMh4Q9DpaU9GvsiXmDdoNYMyyece9if7hnfLz7uqzWM\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c\",\"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0xaa761817f6cd7892fcf158b3c776b34551cde36f48ff9703d53898bc45a94ea2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ad7c8d4d08938c8dfc43d75a148863fb324b80cf53e0a36f7e5a4ac29008850\",\"dweb:/ipfs/QmcrhfPgVNf5mkdhQvy1pMv51TFokD3Y4Wa5WZhFqVh8UV\"]},\"lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0x4296879f55019b23e135000eb36896057e7101fb7fb859c5ef690cf14643757b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://87b3541437c8c443ccd36795e56a338ed12855eec17f8da624511b8d1a7e14df\",\"dweb:/ipfs/QmeJQCtZrQjtJLr6u7ZHWeH3pBnjtLWzvRrKViAi7UZqxL\"]},\"src/external/fees/interfaces/IFeeManager_v1.sol\":{\"keccak256\":\"0x655d93b595c66254f5432c3142c114da5479c75d4d67b59f9e221d58bf04ae7e\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://54f7a5771189d06997dddc37b53082d3d8b747bd7fcb5efbeb8b4ee921d3e705\",\"dweb:/ipfs/QmQQvoJsRQbSg6od3P1Z7f83gyKVBjoM4PsaEPRAVW2icQ\"]},\"src/external/governance/interfaces/IGovernor_v1.sol\":{\"keccak256\":\"0xa81ca9425e5029ec50fb4ae8810cdb308afe038094946ba9b093739d9919e73e\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://9e8ad2de7f26bdcfb2fde7d1ca5aa3553dd78f48540515f69a9a53ca12192e91\",\"dweb:/ipfs/QmTJNvwLBrWp25av97EeLVkxKbYVXvECEB1GDJqZXuVFK2\"]},\"src/external/interfaces/IERC2771Context.sol\":{\"keccak256\":\"0xdb0580aaaba4ae2c0d9e10412ff83f3c7efe99949e241a07ccfa1cb92a2ba0db\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://82fc191e17b3221d8965ed5da2560f29b1c25216be3515a73134da5761a6e421\",\"dweb:/ipfs/QmRUHmePb4mbtYnG69D2TX3Y7USfz97SCffFn9DR3jWruZ\"]},\"src/factories/interfaces/IModuleFactory_v1.sol\":{\"keccak256\":\"0x242182fa6fb04f642848a9b9ac7259df0109d7e6c872320f2f237d293c2e0b6d\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://a0e09c61a9c4d69f493e12c7c0f7376055a70cd8cde738ca64920706ad3495c9\",\"dweb:/ipfs/QmeQ1Pdtv5xkb37yXX8sGbUe7AGKEjGZar6H7jc5TxK3uf\"]},\"src/factories/interfaces/IOrchestratorFactory_v1.sol\":{\"keccak256\":\"0xfb9d598f8dae48593c457d36520414dd5f6ee5bbc2978c4413a561c03a8037b9\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://677d9acc88f389fb3323b77bf0b0679a9461546d7c1dd30b7d44d3756dfe0d80\",\"dweb:/ipfs/QmW6CojPhFAu9WpmyJAVdNht5ZnF43Zu54zsVTcJzxuXYu\"]},\"src/modules/authorizer/IAuthorizer_v1.sol\":{\"keccak256\":\"0x07cda177f585d2dd94f54c4952e6dda485031ce4f68419eaf2f20a008d1a0888\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://1b6434ad6f00da437a16e279cf3ac531d6d678df7978cb36e79a7011ff3f429e\",\"dweb:/ipfs/QmUuhJcpJfShLvhacrppPu4bKpjfXCvbvpCLNX6apwWGtW\"]},\"src/modules/base/IModule_v1.sol\":{\"keccak256\":\"0xc6ac3dbbb063e56d4b7e7b49512ce1ab9201498492b9708d276174c858e52ca0\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://d61fa02b53d9460a0c758a84a940a9349b0ba218784f4f5359baf15ef3c8a778\",\"dweb:/ipfs/QmSW59B2zFHYCMpiqLH3t4xay5hzmnCzGtLzxAywuAHiJJ\"]},\"src/modules/base/Module_v1.sol\":{\"keccak256\":\"0x3ad11bad71251f91e4ca01d45415e17d780bf1b9081885dbb94b7b0d9991949c\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://7cb6c1a044a35d1625a0c44341f4f039eb465b7389aae58c5cdbe94c3764527a\",\"dweb:/ipfs/QmSc4BoAZkmPNVLpYbRTwzNiZkTFr7hH8A33vG7pmLanFS\"]},\"src/modules/fundingManager/IFundingManager_v1.sol\":{\"keccak256\":\"0xd134329084248cb2b5fe04ea32af7fb481d29288dec52cb9ce8e03f56148d2c9\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://c796afe7e30e751165d9167692e2426b472ae0203d094a9afa28929e501abab7\",\"dweb:/ipfs/QmeUspckKVaK5vR2Jyo2MT2gBCiM7UoXA4o6NGS6SFi98D\"]},\"src/modules/lib/LibMetadata.sol\":{\"keccak256\":\"0x9a524b8697167b605c0b980b3e81688d448922ab38cd040f2b1c664946666c4a\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://5dd325f05f6812218a7f808af5afc1ec6cf95f1250c33d4dd1ad01ec4b041d50\",\"dweb:/ipfs/Qmem29JZSEpYLDqJn4cBxawGokbzo3taqHtb3UyyDvmB8G\"]},\"src/modules/logicModule/LM_ManualExternalPriceSetter_v1.sol\":{\"keccak256\":\"0x40c224a8ec811edb781224ae06a9f9efea9ba950985480db7302799e9d5090bf\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://42cb2cd71e98b4eb31221cff2181af9acbbe3f4ef936b9b41a6b4d225158db75\",\"dweb:/ipfs/QmQJXXAixNYT7y3pyhQhU9zYXJbPuFd3KgpdHNLrLNa7hH\"]},\"src/modules/logicModule/interfaces/IERC20PaymentClientBase_v1.sol\":{\"keccak256\":\"0xe3a2f6fd8ad6b79d74174a07422a4e455f21a4dbd4b1adbff379e1b5374bef00\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://88b49ae256b7f0c455b4915187c7fd42906ac817c571599d6e66052a9c5517b1\",\"dweb:/ipfs/QmcHBtkPEK5i55K6wdSiGyci9v1NULhZ3E4HKhaLtJGHFr\"]},\"src/modules/logicModule/interfaces/ILM_ManualExternalPriceSetter_v1.sol\":{\"keccak256\":\"0x226241102eded43469856234abd4b814d01d5996b3bd25d597039e3d30a88303\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://047942ec4110d659e2d4e5abfd514531d07555963def38f1f1c29b9077650416\",\"dweb:/ipfs/QmPUryMz4VfdgeCGjXkc5tnF4cEmLzDNvWEkiR8SZxKNss\"]},\"src/modules/logicModule/interfaces/IOraclePrice_v1.sol\":{\"keccak256\":\"0x545b91c20f5a3d6a5ee3bb7beb1ccc2123b6f9d2a678e0d2c5d5da84a6bcc1ce\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://5d3ddceb63e550116526b0a9247ffcaf2ebf96835080c338e3002521f5441e44\",\"dweb:/ipfs/QmZCWHGLFwxtUeURKUbmHNAYAoL7oFdquuLoDqW55NsPhf\"]},\"src/modules/paymentProcessor/IPaymentProcessor_v1.sol\":{\"keccak256\":\"0xbe30278dcc494faf27c106a7fc89a25d40ad8d7fbc1b4af8d6a524f62286320e\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://65d9bcbc6bafcf1388b43f46f57ac54fa20dc270a178dccefa364b15c786c7d0\",\"dweb:/ipfs/QmZchyENTGcCDiVUFKs1tY9BfRmaWgaMzxM5uM5LDHVPuc\"]},\"src/orchestrator/interfaces/IModuleManagerBase_v1.sol\":{\"keccak256\":\"0x2abd1abb278da305c6a47d11ef31ef7a7de2aebf017957b0013497de8e2aa2eb\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://5d49aac1e351f80bce5c27fb0934577d64551c25fcbad6dd172b6eee7b8bf57a\",\"dweb:/ipfs/QmRdR4Ut7gV9Zp295ciYnwYqjdXKxZAAegVhtsGpetiwsC\"]},\"src/orchestrator/interfaces/IOrchestrator_v1.sol\":{\"keccak256\":\"0xed08e392f5b321609173e95333e94f57bb83b42fda8a98c7af77e035d2d53c0f\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://003498e95d4be3ea4f9eb13ec87c450eaf437f03a69d0d7c681e2f723240d2f9\",\"dweb:/ipfs/QmcTiDEK7UytSy8c2gHVpjMHoSqtf4CswmLP4LYeRn7aFb\"]},\"src/proxies/interfaces/IInverterBeacon_v1.sol\":{\"keccak256\":\"0x23cd7a4ada497ebd9834d521843673881427d563906662156e748366a6a03fb5\",\"license\":\"LGPL-3.0-only\",\"urls\":[\"bzz-raw://49cbce7e794b38126494ee0c4a26f9807fc284e0e5c59ad8a1a229e60f196e66\",\"dweb:/ipfs/Qma3hZfASQ6Gaa4anDhTmhNA1HPiYSD6eJ9Gnn817rP8VJ\"]}},\"version\":1}",
   "metadata": {
-    "compiler": {
-      "version": "0.8.23+commit.f704f362"
-    },
+    "compiler": { "version": "0.8.23+commit.f704f362" },
     "language": "Solidity",
     "output": {
       "abi": [
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "InvalidInitialization"
-        },
+        { "inputs": [], "type": "error", "name": "InvalidInitialization" },
         {
           "inputs": [
-            {
-              "internalType": "string",
-              "name": "funcSig",
-              "type": "string"
-            }
+            { "internalType": "string", "name": "funcSig", "type": "string" }
           ],
           "type": "error",
           "name": "Module_OrchestratorCallbackFailed"
         },
         {
           "inputs": [
-            {
-              "internalType": "bytes32",
-              "name": "role",
-              "type": "bytes32"
-            },
-            {
-              "internalType": "address",
-              "name": "caller",
-              "type": "address"
-            }
+            { "internalType": "bytes32", "name": "role", "type": "bytes32" },
+            { "internalType": "address", "name": "caller", "type": "address" }
           ],
           "type": "error",
           "name": "Module__CallerNotAuthorized"
         },
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "Module__InvalidAddress"
-        },
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "Module__InvalidMetadata"
-        },
+        { "inputs": [], "type": "error", "name": "Module__InvalidAddress" },
+        { "inputs": [], "type": "error", "name": "Module__InvalidMetadata" },
         {
           "inputs": [],
           "type": "error",
@@ -655,16 +451,8 @@
           "type": "error",
           "name": "Module__OnlyCallableByPaymentClient"
         },
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "NotInitializing"
-        },
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "OraclePrice__ZeroPrice"
-        },
+        { "inputs": [], "type": "error", "name": "NotInitializing" },
+        { "inputs": [], "type": "error", "name": "OraclePrice__ZeroPrice" },
         {
           "inputs": [
             {
@@ -725,16 +513,8 @@
                   "name": "patchVersion",
                   "type": "uint256"
                 },
-                {
-                  "internalType": "string",
-                  "name": "url",
-                  "type": "string"
-                },
-                {
-                  "internalType": "string",
-                  "name": "title",
-                  "type": "string"
-                }
+                { "internalType": "string", "name": "url", "type": "string" },
+                { "internalType": "string", "name": "title", "type": "string" }
               ],
               "indexed": false
             }
@@ -792,13 +572,7 @@
           "stateMutability": "view",
           "type": "function",
           "name": "getCollateralTokenDecimals",
-          "outputs": [
-            {
-              "internalType": "uint8",
-              "name": "",
-              "type": "uint8"
-            }
-          ]
+          "outputs": [{ "internalType": "uint8", "name": "", "type": "uint8" }]
         },
         {
           "inputs": [],
@@ -806,11 +580,7 @@
           "type": "function",
           "name": "getPriceForIssuance",
           "outputs": [
-            {
-              "internalType": "uint256",
-              "name": "",
-              "type": "uint256"
-            }
+            { "internalType": "uint256", "name": "", "type": "uint256" }
           ]
         },
         {
@@ -819,11 +589,7 @@
           "type": "function",
           "name": "getPriceForRedemption",
           "outputs": [
-            {
-              "internalType": "uint256",
-              "name": "",
-              "type": "uint256"
-            }
+            { "internalType": "uint256", "name": "", "type": "uint256" }
           ]
         },
         {
@@ -832,11 +598,7 @@
           "type": "function",
           "name": "getPriceSetterRole",
           "outputs": [
-            {
-              "internalType": "bytes32",
-              "name": "",
-              "type": "bytes32"
-            }
+            { "internalType": "bytes32", "name": "", "type": "bytes32" }
           ]
         },
         {
@@ -845,25 +607,13 @@
           "type": "function",
           "name": "getPriceSetterRoleAdmin",
           "outputs": [
-            {
-              "internalType": "bytes32",
-              "name": "",
-              "type": "bytes32"
-            }
+            { "internalType": "bytes32", "name": "", "type": "bytes32" }
           ]
         },
         {
           "inputs": [
-            {
-              "internalType": "bytes32",
-              "name": "role",
-              "type": "bytes32"
-            },
-            {
-              "internalType": "address",
-              "name": "target",
-              "type": "address"
-            }
+            { "internalType": "bytes32", "name": "role", "type": "bytes32" },
+            { "internalType": "address", "name": "target", "type": "address" }
           ],
           "stateMutability": "nonpayable",
           "type": "function",
@@ -871,11 +621,7 @@
         },
         {
           "inputs": [
-            {
-              "internalType": "bytes32",
-              "name": "role",
-              "type": "bytes32"
-            },
+            { "internalType": "bytes32", "name": "role", "type": "bytes32" },
             {
               "internalType": "address[]",
               "name": "targets",
@@ -892,11 +638,7 @@
           "type": "function",
           "name": "identifier",
           "outputs": [
-            {
-              "internalType": "bytes32",
-              "name": "",
-              "type": "bytes32"
-            }
+            { "internalType": "bytes32", "name": "", "type": "bytes32" }
           ]
         },
         {
@@ -926,23 +668,11 @@
                   "name": "patchVersion",
                   "type": "uint256"
                 },
-                {
-                  "internalType": "string",
-                  "name": "url",
-                  "type": "string"
-                },
-                {
-                  "internalType": "string",
-                  "name": "title",
-                  "type": "string"
-                }
+                { "internalType": "string", "name": "url", "type": "string" },
+                { "internalType": "string", "name": "title", "type": "string" }
               ]
             },
-            {
-              "internalType": "bytes",
-              "name": "configData_",
-              "type": "bytes"
-            }
+            { "internalType": "bytes", "name": "configData_", "type": "bytes" }
           ],
           "stateMutability": "nonpayable",
           "type": "function",
@@ -959,13 +689,7 @@
           "stateMutability": "view",
           "type": "function",
           "name": "isTrustedForwarder",
-          "outputs": [
-            {
-              "internalType": "bool",
-              "name": "",
-              "type": "bool"
-            }
-          ]
+          "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }]
         },
         {
           "inputs": [],
@@ -982,16 +706,8 @@
         },
         {
           "inputs": [
-            {
-              "internalType": "bytes32",
-              "name": "role",
-              "type": "bytes32"
-            },
-            {
-              "internalType": "address",
-              "name": "target",
-              "type": "address"
-            }
+            { "internalType": "bytes32", "name": "role", "type": "bytes32" },
+            { "internalType": "address", "name": "target", "type": "address" }
           ],
           "stateMutability": "nonpayable",
           "type": "function",
@@ -999,11 +715,7 @@
         },
         {
           "inputs": [
-            {
-              "internalType": "bytes32",
-              "name": "role",
-              "type": "bytes32"
-            },
+            { "internalType": "bytes32", "name": "role", "type": "bytes32" },
             {
               "internalType": "address[]",
               "name": "targets",
@@ -1033,11 +745,7 @@
         },
         {
           "inputs": [
-            {
-              "internalType": "uint256",
-              "name": "price_",
-              "type": "uint256"
-            }
+            { "internalType": "uint256", "name": "price_", "type": "uint256" }
           ],
           "stateMutability": "nonpayable",
           "type": "function",
@@ -1045,11 +753,7 @@
         },
         {
           "inputs": [
-            {
-              "internalType": "uint256",
-              "name": "price_",
-              "type": "uint256"
-            }
+            { "internalType": "uint256", "name": "price_", "type": "uint256" }
           ],
           "stateMutability": "nonpayable",
           "type": "function",
@@ -1066,13 +770,7 @@
           "stateMutability": "view",
           "type": "function",
           "name": "supportsInterface",
-          "outputs": [
-            {
-              "internalType": "bool",
-              "name": "",
-              "type": "bool"
-            }
-          ]
+          "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }]
         },
         {
           "inputs": [],
@@ -1080,11 +778,7 @@
           "type": "function",
           "name": "title",
           "outputs": [
-            {
-              "internalType": "string",
-              "name": "",
-              "type": "string"
-            }
+            { "internalType": "string", "name": "", "type": "string" }
           ]
         },
         {
@@ -1093,11 +787,7 @@
           "type": "function",
           "name": "trustedForwarder",
           "outputs": [
-            {
-              "internalType": "address",
-              "name": "",
-              "type": "address"
-            }
+            { "internalType": "address", "name": "", "type": "address" }
           ]
         },
         {
@@ -1106,11 +796,7 @@
           "type": "function",
           "name": "url",
           "outputs": [
-            {
-              "internalType": "string",
-              "name": "",
-              "type": "string"
-            }
+            { "internalType": "string", "name": "", "type": "string" }
           ]
         },
         {
@@ -1119,21 +805,9 @@
           "type": "function",
           "name": "version",
           "outputs": [
-            {
-              "internalType": "uint256",
-              "name": "",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "",
-              "type": "uint256"
-            }
+            { "internalType": "uint256", "name": "", "type": "uint256" },
+            { "internalType": "uint256", "name": "", "type": "uint256" },
+            { "internalType": "uint256", "name": "", "type": "uint256" }
           ]
         }
       ],
@@ -1159,9 +833,7 @@
             }
           },
           "getPriceSetterRole()": {
-            "returns": {
-              "_0": "bytes32 The PRICE_SETTER_ROLE identifier"
-            }
+            "returns": { "_0": "bytes32 The PRICE_SETTER_ROLE identifier" }
           },
           "getPriceSetterRoleAdmin()": {
             "returns": {
@@ -1182,9 +854,7 @@
           },
           "identifier()": {
             "details": "The identifier is defined as the keccak256 hash of the module's         abi packed encoded major version, url and title.",
-            "returns": {
-              "_0": "The module's identifier."
-            }
+            "returns": { "_0": "The module's identifier." }
           },
           "init(address,(uint256,uint256,uint256,string,string),bytes)": {
             "details": "CAN be overridden by downstream contract.MUST call `__Module_init()`.",
@@ -1196,17 +866,13 @@
           },
           "isTrustedForwarder(address)": {
             "details": "We imitate here the EIP2771 Standard to enable metatransactions         As it currently stands we dont want to feed the forwarder address to each module individually and we decided to         move this to the orchestrator.",
-            "params": {
-              "forwarder": "The contract address to be verified."
-            },
+            "params": { "forwarder": "The contract address to be verified." },
             "returns": {
               "_0": "bool Is the given address the trusted forwarder."
             }
           },
           "orchestrator()": {
-            "returns": {
-              "_0": "The module's {Orchestrator_1}."
-            }
+            "returns": { "_0": "The module's {Orchestrator_1}." }
           },
           "revokeModuleRole(bytes32,address)": {
             "params": {
@@ -1242,22 +908,12 @@
           "supportsInterface(bytes4)": {
             "details": "See {IERC165-supportsInterface}."
           },
-          "title()": {
-            "returns": {
-              "_0": "The module's title."
-            }
-          },
+          "title()": { "returns": { "_0": "The module's title." } },
           "trustedForwarder()": {
             "details": "We imitate here the EIP2771 Standard to enable metatransactions.         As it currently stands we dont want to feed the forwarder address to each module individually and we decided to         move this to the orchestrator.",
-            "returns": {
-              "_0": "address The trusted forwarder."
-            }
+            "returns": { "_0": "address The trusted forwarder." }
           },
-          "url()": {
-            "returns": {
-              "_0": "The module's URL."
-            }
-          },
+          "url()": { "returns": { "_0": "The module's URL." } },
           "version()": {
             "returns": {
               "_0": "The module's major version.",
@@ -1292,9 +948,7 @@
           "grantModuleRoleBatched(bytes32,address[])": {
             "notice": "Grants a module role to multiple target addresses."
           },
-          "identifier()": {
-            "notice": "Returns the module's identifier."
-          },
+          "identifier()": { "notice": "Returns the module's identifier." },
           "init(address,(uint256,uint256,uint256,string,string),bytes)": {
             "notice": "The module's initializer function."
           },
@@ -1313,24 +967,14 @@
           "setIssuanceAndRedemptionPrice(uint256,uint256)": {
             "notice": "Sets both issuance and redemption prices atomically, denominated         in the collateral token decimals."
           },
-          "setIssuancePrice(uint256)": {
-            "notice": "Sets the issuance price."
-          },
+          "setIssuancePrice(uint256)": { "notice": "Sets the issuance price." },
           "setRedemptionPrice(uint256)": {
             "notice": "Sets the redemption price."
           },
-          "title()": {
-            "notice": "Returns the module's title."
-          },
-          "trustedForwarder()": {
-            "notice": "Returns the trusted forwarder."
-          },
-          "url()": {
-            "notice": "Returns the module's URL."
-          },
-          "version()": {
-            "notice": "Returns the module's version."
-          }
+          "title()": { "notice": "Returns the module's title." },
+          "trustedForwarder()": { "notice": "Returns the trusted forwarder." },
+          "url()": { "notice": "Returns the module's URL." },
+          "version()": { "notice": "Returns the module's version." }
         },
         "version": 1
       }
@@ -1357,13 +1001,8 @@
         "openzeppelin-contracts/=lib/openzeppelin-contracts/",
         "uma-protocol/=lib/uma-protocol/"
       ],
-      "optimizer": {
-        "enabled": true,
-        "runs": 750
-      },
-      "metadata": {
-        "bytecodeHash": "ipfs"
-      },
+      "optimizer": { "enabled": true, "runs": 750 },
+      "metadata": { "bytecodeHash": "ipfs" },
       "compilationTarget": {
         "src/modules/logicModule/LM_ManualExternalPriceSetter_v1.sol": "LM_ManualExternalPriceSetter_v1"
       },
