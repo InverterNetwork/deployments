@@ -230,7 +230,7 @@
       "returnNames": ["paymentOrders_", "tokens_", "totalAmounts_"]
     },
     "depositReserve": {
-      "tags": { "amount_": ["decimals"] },
+      "tags": { "amount_": ["decimals", "approval"] },
       "returnNames": []
     },
     "executeRedemptionQueue": { "tags": {}, "returnNames": [] },
