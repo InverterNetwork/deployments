@@ -22,17 +22,11 @@
             "description": "Whether the migration configuration can be changed after deployment"
           },
           {
-            "name": "collateralToken",
-            "type": "address",
-            "jsType": "0xstring",
-            "description": "The address of the collateral token"
-          },
-          {
             "name": "migrationThreshold",
             "type": "uint256",
             "jsType": "numberString",
             "description": "The collateral amount threshold that triggers migration to DEX",
-            "tags": ["decimals:params:indirect:migrationConfig.collateralToken"]
+            "tags": ["decimals"]
           },
           {
             "name": "dexAdapter",
@@ -95,7 +89,7 @@
       "tags": {
         "issuanceToken": [""],
         "recipient": [""],
-        "amountIn": ["decimals"],
+        "amountIn": ["decimals", "approval"],
         "minAmountOut": ["decimals:params:indirect:issuanceToken"]
       },
       "returnNames": []
@@ -122,7 +116,6 @@
         "maxSupply": [""],
         "issuanceTokenParams": [""],
         "initialPurchaseAmount": [""],
-        "collateralToken": [""],
         "isImmutable": [""],
         "migrationThreshold": [""],
         "dexAdapter": [""],
@@ -162,7 +155,7 @@
       "tags": {
         "issuanceToken": [""],
         "recipient": [""],
-        "amountIn": ["decimals:params:indirect:issuanceToken"],
+        "amountIn": ["decimals:params:indirect:issuanceToken", "approval"],
         "minAmountOut": ["decimals"]
       },
       "returnNames": []
