@@ -1,0 +1,172 @@
+{
+  "deploymentInputs": {
+    "configData": [
+      {
+        "name": "independentUpdates",
+        "type": "bool",
+        "jsType": "boolean",
+        "description": "Default is false - Whether this workflow’s updates to Orchestrator and Modules shall be self-governed."
+      },
+      {
+        "name": "independentUpdateAdmin",
+        "type": "address",
+        "jsType": "0xstring",
+        "description": "Should only be set if independentUpdates is true  - The address that will be responsible for updates to Orchestrator and Modules of the workflow."
+      },
+      {
+        "components": [
+          {
+            "name": "isImmutable",
+            "type": "bool",
+            "jsType": "boolean",
+            "description": "Whether the migration configuration can be changed after deployment"
+          },
+          {
+            "name": "collateralToken",
+            "type": "address",
+            "jsType": "0xstring",
+            "description": "The address of the collateral token"
+          },
+          {
+            "name": "migrationThreshold",
+            "type": "uint256",
+            "jsType": "numberString",
+            "description": "The collateral amount threshold that triggers migration to DEX",
+            "tags": ["decimals:params:indirect:migrationConfig.collateralToken"]
+          },
+          {
+            "name": "dexAdapter",
+            "type": "address",
+            "jsType": "0xstring",
+            "description": "The address of the DEX adapter contract"
+          },
+          {
+            "name": "lpTokenRecipient",
+            "type": "address",
+            "jsType": "0xstring",
+            "description": "The address that will receive LP tokens after migration"
+          }
+        ],
+        "name": "migrationConfig",
+        "type": "tuple"
+      }
+    ]
+  },
+  "abiMembers": {
+    "Graduation": {
+      "tags": {
+        "issuanceToken": [""],
+        "collateralToken": [""],
+        "pool": [""],
+        "issuanceTokenAmount": [""],
+        "collateralTokenAmount": [""]
+      },
+      "returnNames": []
+    },
+    "PIMWorkflowCreated": {
+      "tags": {
+        "fundingManager": [""],
+        "issuanceToken": [""],
+        "deployer": [""],
+        "isImmutable": [""],
+        "migrationThreshold": [""],
+        "lpTokenRecipient": [""]
+      },
+      "returnNames": []
+    },
+    "PimFeeClaimed": {
+      "tags": {
+        "fundingManager": [""],
+        "claimer": [""],
+        "to": [""],
+        "amount": [""]
+      },
+      "returnNames": []
+    },
+    "PimFeeRecipientUpdated": {
+      "tags": {
+        "fundingManager": [""],
+        "oldRecipient": [""],
+        "newRecipient": [""]
+      },
+      "returnNames": []
+    },
+    "buyForUpTo": {
+      "tags": {
+        "issuanceToken": [""],
+        "recipient": [""],
+        "amountIn": ["decimals"],
+        "minAmountOut": ["decimals:params:indirect:issuanceToken"]
+      },
+      "returnNames": []
+    },
+    "createPIMWorkflow": {
+      "tags": {
+        "independentUpdates": [""],
+        "independentUpdateAdmin": [""],
+        "workflowConfig": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "configData": [""],
+        "fundingManagerConfig": [""],
+        "authorizerConfig": [""],
+        "paymentProcessorConfig": [""],
+        "moduleConfigs": [""],
+        "name": [""],
+        "symbol": [""],
+        "decimals": [""],
+        "maxSupply": [""],
+        "issuanceTokenParams": [""],
+        "initialPurchaseAmount": [""],
+        "collateralToken": [""],
+        "isImmutable": [""],
+        "migrationThreshold": [""],
+        "dexAdapter": [""],
+        "lpTokenRecipient": [""],
+        "migrationConfig_": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "dexAdapter": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "isGraduated": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "isImmutable": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "isTrustedForwarder": {
+      "tags": { "forwarder": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "lpTokenRecipient": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "migrationThreshold": {
+      "tags": { "_0": ["decimals"] },
+      "returnNames": ["_0"]
+    },
+    "orchestratorFactory": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "pims": {
+      "tags": {
+        "issuanceToken": [""],
+        "orchestrator": [""],
+        "initialVirtualIssuanceSupply": [""],
+        "initialVirtualCollateralSupply": [""]
+      },
+      "returnNames": [
+        "orchestrator",
+        "initialVirtualIssuanceSupply",
+        "initialVirtualCollateralSupply"
+      ]
+    },
+    "sellTo": {
+      "tags": {
+        "issuanceToken": [""],
+        "recipient": [""],
+        "amountIn": ["decimals:params:indirect:issuanceToken"],
+        "minAmountOut": ["decimals"]
+      },
+      "returnNames": []
+    },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] }
+  }
+}

@@ -66,6 +66,14 @@
       "tags": { "issuanceToken": [""], "decimals": [""] },
       "returnNames": []
     },
+    "MaxProjectBuyFeeSet": {
+      "tags": { "maxProjectBuyFee_": [""] },
+      "returnNames": []
+    },
+    "MaxProjectSellFeeSet": {
+      "tags": { "maxProjectSellFee_": [""] },
+      "returnNames": []
+    },
     "ModuleInitialized": {
       "tags": {
         "parentOrchestrator": [""],
@@ -175,10 +183,7 @@
       "returnNames": []
     },
     "amountPaid": {
-      "tags": {
-        "token_": [""],
-        "amount_": ["decimals"]
-      },
+      "tags": { "token_": [""], "amount_": ["decimals"] },
       "returnNames": []
     },
     "buy": {
@@ -257,6 +262,7 @@
       "tags": { "amount_": ["decimals"] },
       "returnNames": ["amount_"]
     },
+    "getOracle": { "tags": { "oracle_": [""] }, "returnNames": ["oracle_"] },
     "getOrderId": { "tags": { "orderId_": [""] }, "returnNames": ["orderId_"] },
     "getProjectTreasury": {
       "tags": { "treasury_": [""] },
@@ -314,10 +320,7 @@
     "openSell": { "tags": {}, "returnNames": [] },
     "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "outstandingTokenAmount": {
-      "tags": {
-        "token_": [""],
-        "total_": ["decimals:params:indirect:token_"]
-      },
+      "tags": { "token_": [""], "total_": ["decimals:params:indirect:token_"] },
       "returnNames": ["total_"]
     },
     "paymentOrders": {
