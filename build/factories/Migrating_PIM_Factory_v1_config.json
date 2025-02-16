@@ -49,7 +49,7 @@
   "abiMembers": {
     "Graduation": {
       "tags": {
-        "issuanceToken": [""],
+        "fundingManager": [""],
         "collateralToken": [""],
         "pool": [""],
         "issuanceTokenAmount": [""],
@@ -85,12 +85,12 @@
       },
       "returnNames": []
     },
-    "buyForUpTo": {
+    "buyFor": {
       "tags": {
-        "issuanceToken": [""],
+        "fundingManager": [""],
         "recipient": [""],
         "amountIn": ["decimals", "approval"],
-        "minAmountOut": ["decimals:params:indirect:issuanceToken"]
+        "minAmountOut": ["decimals:extras:issuanceToken"]
       },
       "returnNames": []
     },
@@ -126,7 +126,10 @@
       "returnNames": ["_0"]
     },
     "dexAdapter": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "isGraduated": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "getIsGraduated": {
+      "tags": { "fundingManager": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
     "isImmutable": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "isTrustedForwarder": {
       "tags": { "forwarder": [""], "_0": [""] },
@@ -140,7 +143,8 @@
     "orchestratorFactory": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "pims": {
       "tags": {
-        "issuanceToken": [""],
+        "fundingManager": [""],
+        "isGraduated": [""],
         "orchestrator": [""],
         "initialVirtualIssuanceSupply": [""],
         "initialVirtualCollateralSupply": [""]
@@ -148,14 +152,15 @@
       "returnNames": [
         "orchestrator",
         "initialVirtualIssuanceSupply",
+        "initialVirtualCollateralSupply",
         "initialVirtualCollateralSupply"
       ]
     },
     "sellTo": {
       "tags": {
-        "issuanceToken": [""],
+        "fundingManager": [""],
         "recipient": [""],
-        "amountIn": ["decimals:params:indirect:issuanceToken", "approval"],
+        "amountIn": ["decimals:extras:issuanceToken", "approval"],
         "minAmountOut": ["decimals"]
       },
       "returnNames": []
