@@ -50,6 +50,7 @@
     "Graduation": {
       "tags": {
         "fundingManager": [""],
+        "issuanceToken": [""],
         "collateralToken": [""],
         "pool": [""],
         "issuanceTokenAmount": [""],
@@ -125,19 +126,24 @@
       },
       "returnNames": ["_0"]
     },
-    "dexAdapter": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "getIsGraduated": {
       "tags": { "fundingManager": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
-    "isImmutable": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "isTrustedForwarder": {
-      "tags": { "forwarder": [""], "_0": [""] },
+    "getIsImmutable": {
+      "tags": { "fundingManager": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
-    "lpTokenRecipient": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "migrationThreshold": {
-      "tags": { "_0": ["decimals"] },
+    "getLpTokenRecipient": {
+      "tags": { "fundingManager": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "getMigrationThreshold": {
+      "tags": { "fundingManager": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "isTrustedForwarder": {
+      "tags": { "forwarder": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
     "orchestratorFactory": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
@@ -145,6 +151,10 @@
       "tags": {
         "fundingManager": [""],
         "isGraduated": [""],
+        "isImmutable": [""],
+        "migrationThreshold": ["decimals:extras:issuanceToken"],
+        "dexAdapter": [""],
+        "lpTokenRecipient": [""],
         "orchestrator": [""],
         "initialVirtualIssuanceSupply": [""],
         "initialVirtualCollateralSupply": [""]
@@ -153,6 +163,10 @@
         "orchestrator",
         "initialVirtualIssuanceSupply",
         "initialVirtualCollateralSupply",
+        "initialVirtualCollateralSupply",
+        "lpTokenRecipient",
+        "orchestrator",
+        "initialVirtualIssuanceSupply",
         "initialVirtualCollateralSupply"
       ]
     },
