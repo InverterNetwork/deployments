@@ -60,12 +60,9 @@
     },
     "PIMWorkflowCreated": {
       "tags": {
-        "fundingManager": [""],
+        "orchestrator": [""],
         "issuanceToken": [""],
-        "deployer": [""],
-        "isImmutable": [""],
-        "migrationThreshold": [""],
-        "lpTokenRecipient": [""]
+        "deployer": [""]
       },
       "returnNames": []
     },
@@ -139,7 +136,7 @@
       "returnNames": ["_0"]
     },
     "getMigrationThreshold": {
-      "tags": { "fundingManager": [""], "_0": [""] },
+      "tags": { "fundingManager": [""], "_0": ["decimals"] },
       "returnNames": ["_0"]
     },
     "isTrustedForwarder": {
@@ -152,7 +149,7 @@
         "fundingManager": [""],
         "isGraduated": [""],
         "isImmutable": [""],
-        "migrationThreshold": ["decimals:extras:issuanceToken"],
+        "migrationThreshold": ["decimals"],
         "dexAdapter": [""],
         "lpTokenRecipient": [""],
         "orchestrator": [""],
