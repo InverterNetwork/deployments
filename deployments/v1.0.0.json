@@ -38,5 +38,5 @@
   "migratingPimFactory": {
     "11155111": "0x2ed207c733776F6f35a992658ACAd57da065FdBe"
   },
-  "envioUrl": "https://indexer.hyperindex.xyz/a414bf3/v1/graphql"
+  "envioUrl": "https://dev.indexer.inverter.network/v1/graphql"
 }
