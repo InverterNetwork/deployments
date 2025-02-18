@@ -62,7 +62,9 @@
       "tags": {
         "orchestrator": [""],
         "issuanceToken": [""],
-        "deployer": [""]
+        "deployer": [""],
+        "initiator": [""],
+        "migrationThreshold": [""]
       },
       "returnNames": []
     },
@@ -150,6 +152,7 @@
         "isGraduated": [""],
         "isImmutable": [""],
         "migrationThreshold": ["decimals"],
+        "initiator": [""],
         "dexAdapter": [""],
         "lpTokenRecipient": [""],
         "orchestrator": [""],
@@ -159,11 +162,12 @@
       "returnNames": [
         "orchestrator",
         "initialVirtualIssuanceSupply",
-        "initialVirtualCollateralSupply",
-        "initialVirtualCollateralSupply",
+        "dexAdapter",
+        "migrationThreshold",
+        "isImmutable",
+        "isGraduated",
         "lpTokenRecipient",
         "orchestrator",
-        "initialVirtualIssuanceSupply",
         "initialVirtualCollateralSupply"
       ]
     },
@@ -173,6 +177,14 @@
         "recipient": [""],
         "amountIn": ["decimals:extras:issuanceToken", "approval"],
         "minAmountOut": ["decimals"]
+      },
+      "returnNames": []
+    },
+    "setRewards": {
+      "tags": {
+        "fundingManager": [""],
+        "amount": ["decimals:extras:issuanceToken"],
+        "duration": [""]
       },
       "returnNames": []
     },
