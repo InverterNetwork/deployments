@@ -49,9 +49,7 @@
   "abiMembers": {
     "Graduation": {
       "tags": {
-        "fundingManager": [""],
-        "issuanceToken": [""],
-        "collateralToken": [""],
+        "orchestrator": [""],
         "pool": [""],
         "issuanceTokenAmount": [""],
         "collateralTokenAmount": [""]
@@ -63,8 +61,13 @@
         "orchestrator": [""],
         "issuanceToken": [""],
         "deployer": [""],
+        "collateralToken": [""],
         "initiator": [""],
-        "migrationThreshold": [""]
+        "isImmutable": [""],
+        "migrationThreshold": [""],
+        "dexAdapter": [""],
+        "lpTokenRecipient": [""],
+        "migrationConfig_": [""]
       },
       "returnNames": []
     },
