@@ -186,7 +186,7 @@
     "setRewards": {
       "tags": {
         "fundingManager": [""],
-        "amount": ["decimals:extras:issuanceToken"],
+        "amount": ["decimals"],
         "duration": [""]
       },
       "returnNames": []
