@@ -39,6 +39,12 @@
             "type": "address",
             "jsType": "0xstring",
             "description": "The address that will receive LP tokens after migration"
+          },
+          {
+            "name": "initialRewardDuration",
+            "type": "uint256",
+            "jsType": "numberString",
+            "description": "The duration of the initial reward"
           }
         ],
         "name": "migrationConfig",
@@ -52,7 +58,8 @@
         "orchestrator": [""],
         "pool": [""],
         "issuanceTokenAmount": [""],
-        "collateralTokenAmount": [""]
+        "collateralTokenAmount": [""],
+        "stakingRewards": [""]
       },
       "returnNames": []
     },
@@ -67,24 +74,8 @@
         "migrationThreshold": [""],
         "dexAdapter": [""],
         "lpTokenRecipient": [""],
+        "initialRewardDuration": [""],
         "migrationConfig_": [""]
-      },
-      "returnNames": []
-    },
-    "PimFeeClaimed": {
-      "tags": {
-        "fundingManager": [""],
-        "claimer": [""],
-        "to": [""],
-        "amount": [""]
-      },
-      "returnNames": []
-    },
-    "PimFeeRecipientUpdated": {
-      "tags": {
-        "fundingManager": [""],
-        "oldRecipient": [""],
-        "newRecipient": [""]
       },
       "returnNames": []
     },
@@ -123,6 +114,7 @@
         "migrationThreshold": [""],
         "dexAdapter": [""],
         "lpTokenRecipient": [""],
+        "initialRewardDuration": [""],
         "migrationConfig_": [""],
         "_0": [""]
       },
@@ -160,7 +152,8 @@
         "lpTokenRecipient": [""],
         "orchestrator": [""],
         "initialVirtualIssuanceSupply": [""],
-        "initialVirtualCollateralSupply": [""]
+        "initialVirtualCollateralSupply": [""],
+        "initialRewardDuration": [""]
       },
       "returnNames": [
         "orchestrator",
@@ -171,7 +164,8 @@
         "isGraduated",
         "lpTokenRecipient",
         "orchestrator",
-        "initialVirtualCollateralSupply"
+        "initialVirtualCollateralSupply",
+        "initialRewardDuration"
       ]
     },
     "sellTo": {
@@ -180,14 +174,6 @@
         "recipient": [""],
         "amountIn": ["decimals:extras:issuanceToken", "approval"],
         "minAmountOut": ["decimals"]
-      },
-      "returnNames": []
-    },
-    "setRewards": {
-      "tags": {
-        "fundingManager": [""],
-        "amount": ["decimals"],
-        "duration": [""]
       },
       "returnNames": []
     },
