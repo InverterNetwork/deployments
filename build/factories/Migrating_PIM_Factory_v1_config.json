@@ -153,7 +153,9 @@
         "orchestrator": [""],
         "initialVirtualIssuanceSupply": [""],
         "initialVirtualCollateralSupply": [""],
-        "initialRewardDuration": [""]
+        "initialRewardDuration": [""],
+        "staking": [""],
+        "paymentRouter": [""]
       },
       "returnNames": [
         "orchestrator",
@@ -165,7 +167,9 @@
         "lpTokenRecipient",
         "orchestrator",
         "initialVirtualCollateralSupply",
-        "initialRewardDuration"
+        "initialRewardDuration",
+        "staking",
+        "paymentRouter"
       ]
     },
     "sellTo": {
@@ -177,6 +181,18 @@
       },
       "returnNames": []
     },
-    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] }
+    "setRewards": {
+      "tags": {
+        "fundingManager": [""],
+        "amount": ["decimals"],
+        "duration": [""]
+      },
+      "returnNames": []
+    },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "withdrawPimFee": {
+      "tags": { "fundingManager": [""], "to": [""] },
+      "returnNames": []
+    }
   }
 }
