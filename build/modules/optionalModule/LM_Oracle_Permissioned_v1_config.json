@@ -1,0 +1,117 @@
+{
+  "deploymentInputs": {
+    "configData": [
+      {
+        "name": "collateralToken",
+        "type": "address",
+        "description": "The address of the collateral token"
+      }
+    ]
+  },
+  "abiMembers": {
+    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
+    "IssuancePriceSet": {
+      "tags": { "price_": [""], "caller_": [""], "timestamp_": [""] },
+      "returnNames": []
+    },
+    "ModuleInitialized": {
+      "tags": {
+        "parentOrchestrator": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""]
+      },
+      "returnNames": []
+    },
+    "ProtocolFeeTransferred": {
+      "tags": { "token": [""], "treasury": [""], "feeAmount": [""] },
+      "returnNames": []
+    },
+    "RedemptionPriceSet": {
+      "tags": { "price_": [""], "caller_": [""], "timestamp_": [""] },
+      "returnNames": []
+    },
+    "getCollateralTokenDecimals": {
+      "tags": { "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "getPriceForIssuance": {
+      "tags": { "_0": ["decimals"] },
+      "returnNames": ["_0"]
+    },
+    "getPriceForRedemption": {
+      "tags": { "_0": ["decimals:extras:issuanceToken"] },
+      "returnNames": ["_0"]
+    },
+    "getPriceSetterRole": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "getPriceSetterRoleAdmin": {
+      "tags": { "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "grantModuleRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "grantModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "identifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "init": {
+      "tags": {
+        "orchestrator_": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata_": [""],
+        "configData_": [""]
+      },
+      "returnNames": []
+    },
+    "isTrustedForwarder": {
+      "tags": { "forwarder": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "revokeModuleRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "revokeModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "setIssuanceAndRedemptionPrice": {
+      "tags": {
+        "issuancePrice_": ["decimals"],
+        "redemptionPrice_": ["decimals"]
+      },
+      "returnNames": []
+    },
+    "setIssuancePrice": {
+      "tags": { "price_": ["decimals"] },
+      "returnNames": []
+    },
+    "setRedemptionPrice": {
+      "tags": { "price_": ["decimals"] },
+      "returnNames": []
+    },
+    "supportsInterface": {
+      "tags": { "interfaceId": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "version": {
+      "tags": { "_0": [""], "_1": [""], "_2": [""] },
+      "returnNames": ["_0", "_1", "_2"]
+    },
+    "PRICE_SETTER_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] }
+  }
+}

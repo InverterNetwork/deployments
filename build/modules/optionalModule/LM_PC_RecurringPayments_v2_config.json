@@ -1,0 +1,181 @@
+{
+  "deploymentInputs": {
+    "configData": [
+      {
+        "name": "epochLength",
+        "type": "uint256",
+        "description": "The length of an epoch in seconds. This will be the common denominator for all payments, as these are specified in epochs (i.e. if an epoch is 1 week, vestings can be done for 1 week, 2 week, 3 week, etc.). Epoch needs to be greater than 1 week and smaller than 52 weeks"
+      }
+    ]
+  },
+  "abiMembers": {
+    "EpochLengthSet": { "tags": { "epochLength": [""] }, "returnNames": [] },
+    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
+    "ModuleInitialized": {
+      "tags": {
+        "parentOrchestrator": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "moduleTitle": [""]
+      },
+      "returnNames": []
+    },
+    "PaymentOrderAdded": {
+      "tags": { "recipient": [""], "token": [""], "amount": ["decimals"] },
+      "returnNames": []
+    },
+    "RecurringPaymentAdded": {
+      "tags": {
+        "recurringPaymentId": [""],
+        "amount": ["decimals"],
+        "startEpoch": [""],
+        "lastTriggeredEpoch": [""],
+        "recipient": [""]
+      },
+      "returnNames": []
+    },
+    "RecurringPaymentRemoved": {
+      "tags": { "recurringPaymentId": [""] },
+      "returnNames": []
+    },
+    "RecurringPaymentsTriggered": {
+      "tags": { "currentEpoch": [""] },
+      "returnNames": []
+    },
+    "addRecurringPayment": {
+      "tags": {
+        "amount": ["decimals"],
+        "startEpoch": [""],
+        "recipient": [""],
+        "id": [""]
+      },
+      "returnNames": ["id"]
+    },
+    "amountPaid": {
+      "tags": { "token": [""], "amount": ["decimals"] },
+      "returnNames": []
+    },
+    "collectPaymentOrders": {
+      "tags": {
+        "_0": [""],
+        "_1": [""],
+        "_2": [""],
+        "recipient": [""],
+        "paymentToken": [""],
+        "amount": ["decimals"],
+        "start": [""],
+        "cliff": [""],
+        "end": [""]
+      },
+      "returnNames": ["_0", "_1", "_2"]
+    },
+    "getCurrentEpoch": { "tags": { "epoch": [""] }, "returnNames": ["epoch"] },
+    "getEpochFromTimestamp": {
+      "tags": { "timestamp": [""], "epoch": [""] },
+      "returnNames": ["epoch"]
+    },
+    "getEpochLength": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "getFutureEpoch": {
+      "tags": { "xEpochsInTheFuture": [""], "futureEpoch": [""] },
+      "returnNames": ["futureEpoch"]
+    },
+    "getPreviousPaymentId": {
+      "tags": { "id": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "getRecurringPaymentInformation": {
+      "tags": {
+        "id": [""],
+        "_0": [""],
+        "amount": ["decimals"],
+        "startEpoch": [""],
+        "lastTriggeredEpoch": [""],
+        "recipient": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "grantModuleRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "grantModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "identifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "init": {
+      "tags": {
+        "orchestrator_": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "configData": [""]
+      },
+      "returnNames": []
+    },
+    "isExistingRecurringPaymentId": {
+      "tags": { "id": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "isTrustedForwarder": {
+      "tags": { "forwarder": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "listRecurringPaymentIds": {
+      "tags": { "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "outstandingTokenAmount": {
+      "tags": { "_token": [""], "_0": ["decimals"] },
+      "returnNames": ["_0"]
+    },
+    "paymentOrders": {
+      "tags": {
+        "_0": [""],
+        "recipient": [""],
+        "paymentToken": [""],
+        "amount": ["decimals"],
+        "start": [""],
+        "cliff": [""],
+        "end": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "removeRecurringPayment": {
+      "tags": { "prevId": [""], "id": [""] },
+      "returnNames": []
+    },
+    "revokeModuleRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "revokeModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "supportsInterface": {
+      "tags": { "interfaceId": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "trigger": { "tags": {}, "returnNames": [] },
+    "triggerFor": {
+      "tags": { "startId": [""], "endId": [""] },
+      "returnNames": []
+    },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "version": {
+      "tags": { "_0": [""], "_1": [""], "_2": [""] },
+      "returnNames": ["_0", "_1", "_2"]
+    }
+  }
+}

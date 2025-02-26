@@ -1,0 +1,167 @@
+{
+  "deploymentInputs": { "configData": [] },
+  "abiMembers": {
+    "PaymentOrderProcessed": {
+      "tags": {
+        "paymentClient": [""],
+        "recipient": [""],
+        "paymentToken": [""],
+        "amount": ["decimals"],
+        "start": [""],
+        "cliff": [""],
+        "end": [""]
+      },
+      "returnNames": []
+    },
+    "TokensReleased": {
+      "tags": { "recipient": [""], "token": [""], "amount": ["decimals"] },
+      "returnNames": []
+    },
+    "UnclaimableAmountAdded": {
+      "tags": {
+        "paymentClient": [""],
+        "token": [""],
+        "recipient": [""],
+        "amount": [""]
+      },
+      "returnNames": []
+    },
+    "log": { "tags": {}, "returnNames": [] },
+    "log_address": { "tags": {}, "returnNames": [] },
+    "log_array": { "tags": { "val": [""] }, "returnNames": [] },
+    "log_bytes": { "tags": {}, "returnNames": [] },
+    "log_bytes32": { "tags": {}, "returnNames": [] },
+    "log_int": { "tags": {}, "returnNames": [] },
+    "log_named_address": {
+      "tags": { "key": [""], "val": [""] },
+      "returnNames": []
+    },
+    "log_named_array": {
+      "tags": { "key": [""], "val": [""] },
+      "returnNames": []
+    },
+    "log_named_bytes": {
+      "tags": { "key": [""], "val": [""] },
+      "returnNames": []
+    },
+    "log_named_bytes32": {
+      "tags": { "key": [""], "val": [""] },
+      "returnNames": []
+    },
+    "log_named_decimal_int": {
+      "tags": { "key": [""], "val": [""], "decimals": [""] },
+      "returnNames": []
+    },
+    "log_named_decimal_uint": {
+      "tags": { "key": [""], "val": [""], "decimals": [""] },
+      "returnNames": []
+    },
+    "log_named_int": {
+      "tags": { "key": [""], "val": [""] },
+      "returnNames": []
+    },
+    "log_named_string": {
+      "tags": { "key": [""], "val": [""] },
+      "returnNames": []
+    },
+    "log_named_uint": {
+      "tags": { "key": [""], "val": [""] },
+      "returnNames": []
+    },
+    "log_string": { "tags": {}, "returnNames": [] },
+    "log_uint": { "tags": {}, "returnNames": [] },
+    "logs": { "tags": {}, "returnNames": [] },
+    "IS_TEST": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "excludeArtifacts": {
+      "tags": { "excludedArtifacts_": [""] },
+      "returnNames": ["excludedArtifacts_"]
+    },
+    "excludeContracts": {
+      "tags": { "excludedContracts_": [""] },
+      "returnNames": ["excludedContracts_"]
+    },
+    "excludeSenders": {
+      "tags": { "excludedSenders_": [""] },
+      "returnNames": ["excludedSenders_"]
+    },
+    "failed": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "setUp": { "tags": {}, "returnNames": [] },
+    "targetArtifactSelectors": {
+      "tags": {
+        "targetedArtifactSelectors_": [""],
+        "addr": [""],
+        "selectors": [""]
+      },
+      "returnNames": ["targetedArtifactSelectors_"]
+    },
+    "targetArtifacts": {
+      "tags": { "targetedArtifacts_": [""] },
+      "returnNames": ["targetedArtifacts_"]
+    },
+    "targetContracts": {
+      "tags": { "targetedContracts_": [""] },
+      "returnNames": ["targetedContracts_"]
+    },
+    "targetSelectors": {
+      "tags": { "targetedSelectors_": [""], "addr": [""], "selectors": [""] },
+      "returnNames": ["targetedSelectors_"]
+    },
+    "targetSenders": {
+      "tags": { "targetedSenders_": [""] },
+      "returnNames": ["targetedSenders_"]
+    },
+    "testCancelPaymentsFailsWhenCalledByNonModule": {
+      "tags": { "nonModule": [""] },
+      "returnNames": []
+    },
+    "testCancelPaymentsFailsWhenCalledOnOtherClient": {
+      "tags": { "nonModule": [""] },
+      "returnNames": []
+    },
+    "testClaimPreviouslyUnclaimable": {
+      "tags": { "recipients": [""] },
+      "returnNames": []
+    },
+    "testClaimPreviouslyUnclaimableFailsIfNothingToClaim": {
+      "tags": {},
+      "returnNames": []
+    },
+    "testInit": { "tags": {}, "returnNames": [] },
+    "testProcessPayments": {
+      "tags": { "recipient": [""], "amount": [""], "paymentsFail": [""] },
+      "returnNames": []
+    },
+    "testProcessPaymentsFailsWhenCalledByNonModule": {
+      "tags": { "nonModule": [""] },
+      "returnNames": []
+    },
+    "testProcessPaymentsFailsWhenCalledOnOtherClient": {
+      "tags": { "nonModule": [""] },
+      "returnNames": []
+    },
+    "testReinitFails": { "tags": {}, "returnNames": [] },
+    "testSupportsInterface": { "tags": {}, "returnNames": [] },
+    "test_ValidPaymentOrder": {
+      "tags": {
+        "recipient": [""],
+        "paymentToken": [""],
+        "amount": [""],
+        "start": [""],
+        "cliff": [""],
+        "end": [""],
+        "order": [""],
+        "sender": [""]
+      },
+      "returnNames": []
+    },
+    "test__validPaymentReceiver": {
+      "tags": { "addr": [""], "sender": [""] },
+      "returnNames": []
+    },
+    "test__validPaymentToken": {
+      "tags": { "randomToken": [""], "sender": [""] },
+      "returnNames": []
+    },
+    "test__validTotal": { "tags": { "_total": [""] }, "returnNames": [] }
+  }
+}

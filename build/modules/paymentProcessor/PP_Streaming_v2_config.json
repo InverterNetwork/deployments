@@ -1,0 +1,242 @@
+{
+  "deploymentInputs": { "configData": [] },
+  "abiMembers": {
+    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
+    "InvalidStreamingOrderDiscarded": {
+      "tags": {
+        "recipient": [""],
+        "paymentToken": [""],
+        "amount": ["decimals"],
+        "start": [""],
+        "cliff": [""],
+        "end": [""]
+      },
+      "returnNames": []
+    },
+    "ModuleInitialized": {
+      "tags": {
+        "parentOrchestrator": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""],
+        "moduleTitle": [""]
+      },
+      "returnNames": []
+    },
+    "PaymentOrderProcessed": {
+      "tags": {
+        "paymentClient": [""],
+        "recipient": [""],
+        "paymentToken": [""],
+        "streamId": [""],
+        "amount": ["decimals"],
+        "start": [""],
+        "cliff": [""],
+        "end": [""]
+      },
+      "returnNames": []
+    },
+    "PaymentReceiverRemoved": {
+      "tags": { "paymentClient": [""], "paymentReceiver": [""] },
+      "returnNames": []
+    },
+    "StreamingPaymentAdded": {
+      "tags": {
+        "paymentClient": [""],
+        "recipient": [""],
+        "paymentToken": [""],
+        "streamId": [""],
+        "amount": ["decimals"],
+        "start": [""],
+        "cliff": [""],
+        "end": [""]
+      },
+      "returnNames": []
+    },
+    "StreamingPaymentRemoved": {
+      "tags": { "paymentClient": [""], "recipient": [""], "streamId": [""] },
+      "returnNames": []
+    },
+    "TokensReleased": {
+      "tags": { "recipient": [""], "token": [""], "amount": ["decimals"] },
+      "returnNames": []
+    },
+    "UnclaimableAmountAdded": {
+      "tags": {
+        "paymentClient": [""],
+        "recipient": [""],
+        "paymentToken": [""],
+        "streamId": [""],
+        "amount": ["decimals"]
+      },
+      "returnNames": []
+    },
+    "cancelRunningPayments": { "tags": { "client": [""] }, "returnNames": [] },
+    "claimAll": { "tags": { "client": [""] }, "returnNames": [] },
+    "claimForSpecificStream": {
+      "tags": { "client": [""], "streamId": [""] },
+      "returnNames": []
+    },
+    "claimPreviouslyUnclaimable": {
+      "tags": { "client": [""], "token": [""], "receiver": [""] },
+      "returnNames": []
+    },
+    "cliffForSpecificStream": {
+      "tags": {
+        "client": [""],
+        "paymentReceiver": [""],
+        "streamId": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "endForSpecificStream": {
+      "tags": {
+        "client": [""],
+        "paymentReceiver": [""],
+        "streamId": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "grantModuleRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "grantModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "identifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "init": {
+      "tags": {
+        "orchestrator_": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""]
+      },
+      "returnNames": []
+    },
+    "isActivePaymentReceiver": {
+      "tags": { "client": [""], "paymentReceiver": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "isTrustedForwarder": {
+      "tags": { "forwarder": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "numStreams": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "processPayments": { "tags": { "client": [""] }, "returnNames": [] },
+    "releasableForSpecificStream": {
+      "tags": {
+        "client": [""],
+        "paymentReceiver": [""],
+        "streamId": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "releasedForSpecificStream": {
+      "tags": {
+        "client": [""],
+        "paymentReceiver": [""],
+        "streamId": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "removeAllPaymentReceiverPayments": {
+      "tags": { "client": [""], "paymentReceiver": [""] },
+      "returnNames": []
+    },
+    "removePaymentForSpecificStream": {
+      "tags": { "client": [""], "paymentReceiver": [""], "streamId": [""] },
+      "returnNames": []
+    },
+    "revokeModuleRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "revokeModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "startForSpecificStream": {
+      "tags": {
+        "client": [""],
+        "paymentReceiver": [""],
+        "streamId": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "streamedAmountForSpecificStream": {
+      "tags": {
+        "client": [""],
+        "paymentReceiver": [""],
+        "streamId": [""],
+        "timestamp": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "supportsInterface": {
+      "tags": { "interfaceId": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "unclaimable": {
+      "tags": {
+        "client": [""],
+        "token": [""],
+        "paymentReceiver": [""],
+        "amount": ["decimals"]
+      },
+      "returnNames": ["amount"]
+    },
+    "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "validPaymentOrder": {
+      "tags": {
+        "recipient": [""],
+        "paymentToken": [""],
+        "amount": [""],
+        "start": [""],
+        "cliff": [""],
+        "end": [""],
+        "order": [""],
+        "_0": [""]
+      },
+      "returnNames": ["_0"]
+    },
+    "version": {
+      "tags": { "_0": [""], "_1": [""], "_2": [""] },
+      "returnNames": ["_0", "_1", "_2"]
+    },
+    "viewAllPaymentOrders": {
+      "tags": {
+        "client": [""],
+        "paymentReceiver": [""],
+        "_0": [""],
+        "_paymentToken": [""],
+        "_streamId": [""],
+        "_total": [""],
+        "_released": [""],
+        "_start": [""],
+        "_cliff": [""],
+        "_end": [""],
+        "_salary": [""],
+        "_dueTo": [""],
+        "_vestingWalletID": [""]
+      },
+      "returnNames": ["_0"]
+    }
+  }
+}
