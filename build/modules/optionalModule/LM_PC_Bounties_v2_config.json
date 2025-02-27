@@ -40,6 +40,10 @@
       "returnNames": []
     },
     "ClaimVerified": { "tags": { "claimId": [""] }, "returnNames": [] },
+    "FlagsSet": {
+      "tags": { "flagCount": [""], "newFlags": [""] },
+      "returnNames": []
+    },
     "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
     "ModuleInitialized": {
       "tags": {
@@ -55,7 +59,19 @@
       "returnNames": []
     },
     "PaymentOrderAdded": {
-      "tags": { "recipient": [""], "token": [""], "amount": ["decimals"] },
+      "tags": {
+        "recipient": [""],
+        "token": [""],
+        "amount": ["decimals"],
+        "originChainId": [""],
+        "targetChainId": [""],
+        "flags": [""],
+        "data": [""]
+      },
+      "returnNames": []
+    },
+    "ProtocolFeeTransferred": {
+      "tags": { "token": [""], "treasury": [""], "feeAmount": [""] },
       "returnNames": []
     },
     "BOUNTY_ISSUER_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
@@ -91,22 +107,26 @@
       "returnNames": ["id"]
     },
     "amountPaid": {
-      "tags": { "token": [""], "amount": ["decimals"] },
+      "tags": {
+        "token_": [""],
+        "amount_": ["decimals:params:indirect:token_"]
+      },
       "returnNames": []
     },
     "collectPaymentOrders": {
       "tags": {
-        "_0": [""],
-        "_1": [""],
-        "_2": [""],
+        "paymentOrders_": [""],
+        "tokens_": [""],
+        "totalAmounts_": [""],
         "recipient": [""],
         "paymentToken": [""],
-        "amount": ["decimals"],
-        "start": [""],
-        "cliff": [""],
-        "end": [""]
+        "amount": ["decimals:params:indirect:paymentToken"],
+        "originChainId": [""],
+        "targetChainId": [""],
+        "flags": [""],
+        "data": [""]
       },
-      "returnNames": ["_0", "_1", "_2"]
+      "returnNames": ["paymentOrders_", "tokens_", "totalAmounts_"]
     },
     "getBountyInformation": {
       "tags": {
@@ -132,6 +152,11 @@
       },
       "returnNames": ["_0"]
     },
+    "getFlagCount": {
+      "tags": { "flagCount_": [""] },
+      "returnNames": ["flagCount_"]
+    },
+    "getFlags": { "tags": { "flags_": [""] }, "returnNames": ["flags_"] },
     "grantModuleRole": {
       "tags": { "role": [""], "target": [""] },
       "returnNames": []
@@ -174,18 +199,22 @@
     "lockBounty": { "tags": { "bountyId": [""] }, "returnNames": [] },
     "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "outstandingTokenAmount": {
-      "tags": { "_token": [""], "_0": ["decimals"] },
-      "returnNames": ["_0"]
+      "tags": {
+        "token_": [""],
+        "total_": ["decimals"]
+      },
+      "returnNames": ["total_"]
     },
     "paymentOrders": {
       "tags": {
         "_0": [""],
         "recipient": [""],
         "paymentToken": [""],
-        "amount": ["decimals"],
-        "start": [""],
-        "cliff": [""],
-        "end": [""]
+        "amount": ["decimals:params:indirect:paymentToken"],
+        "originChainId": [""],
+        "targetChainId": [""],
+        "flags": [""],
+        "data": [""]
       },
       "returnNames": ["_0"]
     },

@@ -9,6 +9,10 @@
     ]
   },
   "abiMembers": {
+    "FlagsSet": {
+      "tags": { "flagCount": [""], "newFlags": [""] },
+      "returnNames": []
+    },
     "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
     "ModuleInitialized": {
       "tags": {
@@ -24,7 +28,19 @@
       "returnNames": []
     },
     "PaymentOrderAdded": {
-      "tags": { "recipient": [""], "token": [""], "amount": [""] },
+      "tags": {
+        "recipient": [""],
+        "token": [""],
+        "amount": [""],
+        "originChainId": [""],
+        "targetChainId": [""],
+        "flags": [""],
+        "data": [""]
+      },
+      "returnNames": []
+    },
+    "ProtocolFeeTransferred": {
+      "tags": { "token": [""], "treasury": [""], "feeAmount": [""] },
       "returnNames": []
     },
     "RewardSet": {
@@ -53,39 +69,51 @@
       "returnNames": []
     },
     "amountPaid": {
-      "tags": { "token": [""], "amount": ["decimals:params:indirect:token"] },
-      "returnNames": []
-    },
-    "balanceOf": {
       "tags": {
-        "user": [""],
-        "_0": ["decimals:contract:indirect:stakingToken"]
+        "token_": [""],
+        "amount_": ["decimals:params:indirect:token_"]
       },
-      "returnNames": ["_0"]
+      "returnNames": []
     },
     "claimRewards": { "tags": {}, "returnNames": [] },
     "collectPaymentOrders": {
       "tags": {
-        "_0": [""],
-        "_1": [""],
-        "_2": [""],
+        "paymentOrders_": [""],
+        "tokens_": [""],
+        "totalAmounts_": [""],
         "recipient": [""],
         "paymentToken": [""],
         "amount": ["decimals:params:indirect:paymentToken"],
-        "start": [""],
-        "cliff": [""],
-        "end": [""]
+        "originChainId": [""],
+        "targetChainId": [""],
+        "flags": [""],
+        "data": [""]
       },
-      "returnNames": ["_0", "_1", "_2"]
+      "returnNames": ["paymentOrders_", "tokens_", "totalAmounts_"]
     },
-    "earned": {
-      "tags": { "user": [""], "_0": ["decimals"] },
+    "getBalance": {
+      "tags": { "user": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
-    "estimateReward": {
-      "tags": { "amount": ["decimals"], "duration": [""], "_0": ["decimals"] },
+    "getEarned": {
+      "tags": { "user": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
+    "getEstimatedReward": {
+      "tags": { "amount": [""], "duration": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "getFlagCount": {
+      "tags": { "flagCount_": [""] },
+      "returnNames": ["flagCount_"]
+    },
+    "getFlags": { "tags": { "flags_": [""] }, "returnNames": ["flags_"] },
+    "getLastUpdate": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "getRewardRate": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "getRewardValue": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "getRewardsEnd": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "getStakingToken": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "getTotalSupply": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "grantModuleRole": {
       "tags": { "role": [""], "target": [""] },
       "returnNames": []
@@ -114,8 +142,8 @@
     },
     "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "outstandingTokenAmount": {
-      "tags": { "_token": [""], "_0": ["decimals:params:indirect:_token"] },
-      "returnNames": ["_0"]
+      "tags": { "token_": [""], "total_": ["decimals:params:indirect:token_"] },
+      "returnNames": ["total_"]
     },
     "paymentOrders": {
       "tags": {
@@ -123,9 +151,10 @@
         "recipient": [""],
         "paymentToken": [""],
         "amount": ["decimals:params:indirect:paymentToken"],
-        "start": [""],
-        "cliff": [""],
-        "end": [""]
+        "originChainId": [""],
+        "targetChainId": [""],
+        "flags": [""],
+        "data": [""]
       },
       "returnNames": ["_0"]
     },
@@ -137,8 +166,6 @@
       "tags": { "role": [""], "targets": [""] },
       "returnNames": []
     },
-    "rewardRate": { "tags": { "_0": ["decimals"] }, "returnNames": ["_0"] },
-    "rewardsEnd": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "setRewards": {
       "tags": { "amount": ["decimals"], "duration": [""] },
       "returnNames": []
@@ -149,16 +176,11 @@
       },
       "returnNames": []
     },
-    "stakingToken": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "supportsInterface": {
       "tags": { "interfaceId": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
     "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "totalSupply": {
-      "tags": { "_0": ["decimals:contract:indirect:stakingToken"] },
-      "returnNames": ["_0"]
-    },
     "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "unstake": {
       "tags": { "amount": ["decimals:contract:indirect:stakingToken"] },
@@ -168,6 +190,28 @@
     "version": {
       "tags": { "_0": [""], "_1": [""], "_2": [""] },
       "returnNames": ["_0", "_1", "_2"]
+    },
+    "balanceOf": {
+      "tags": {
+        "user": [""],
+        "_0": ["decimals:contract:indirect:stakingToken"]
+      },
+      "returnNames": ["_0"]
+    },
+    "earned": {
+      "tags": { "user": [""], "_0": ["decimals"] },
+      "returnNames": ["_0"]
+    },
+    "estimateReward": {
+      "tags": { "amount": ["decimals"], "duration": [""], "_0": ["decimals"] },
+      "returnNames": ["_0"]
+    },
+    "rewardRate": { "tags": { "_0": ["decimals"] }, "returnNames": ["_0"] },
+    "rewardsEnd": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "stakingToken": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "totalSupply": {
+      "tags": { "_0": ["decimals:contract:indirect:stakingToken"] },
+      "returnNames": ["_0"]
     }
   }
 }

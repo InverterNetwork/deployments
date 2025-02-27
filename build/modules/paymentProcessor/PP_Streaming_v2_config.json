@@ -31,8 +31,12 @@
         "paymentClient": [""],
         "recipient": [""],
         "paymentToken": [""],
-        "streamId": [""],
         "amount": ["decimals"],
+        "originChainId": [""],
+        "targetChainId": [""],
+        "flags": [""],
+        "data": [""],
+        "streamId": [""],
         "start": [""],
         "cliff": [""],
         "end": [""]
@@ -41,6 +45,10 @@
     },
     "PaymentReceiverRemoved": {
       "tags": { "paymentClient": [""], "paymentReceiver": [""] },
+      "returnNames": []
+    },
+    "ProtocolFeeTransferred": {
+      "tags": { "token": [""], "treasury": [""], "feeAmount": [""] },
       "returnNames": []
     },
     "StreamingPaymentAdded": {
@@ -102,6 +110,18 @@
       },
       "returnNames": ["_0"]
     },
+    "getProcessorFlags": {
+      "tags": { "flags_": [""] },
+      "returnNames": ["flags_"]
+    },
+    "getStreamingDefaults": {
+      "tags": {
+        "defaultStart_": [""],
+        "defaultCliff_": [""],
+        "defaultEnd_": [""]
+      },
+      "returnNames": ["defaultStart_", "defaultCliff_", "defaultEnd_"]
+    },
     "grantModuleRole": {
       "tags": { "role": [""], "target": [""] },
       "returnNames": []
@@ -119,7 +139,8 @@
         "patchVersion": [""],
         "url": [""],
         "title": [""],
-        "metadata": [""]
+        "metadata": [""],
+        "configData": [""]
       },
       "returnNames": []
     },
@@ -168,6 +189,10 @@
       "tags": { "role": [""], "targets": [""] },
       "returnNames": []
     },
+    "setStreamingDefaults": {
+      "tags": { "newStart_": [""], "newCliff_": [""], "newEnd_": [""] },
+      "returnNames": []
+    },
     "startForSpecificStream": {
       "tags": {
         "client": [""],
@@ -198,7 +223,7 @@
         "client": [""],
         "token": [""],
         "paymentReceiver": [""],
-        "amount": ["decimals"]
+        "amount": ["decimals:contract:indirect:token"]
       },
       "returnNames": ["amount"]
     },
@@ -207,11 +232,11 @@
       "tags": {
         "recipient": [""],
         "paymentToken": [""],
-        "amount": [""],
-        "start": [""],
-        "cliff": [""],
-        "end": [""],
-        "order": [""],
+        "amount": ["decimals:contract:indirect:paymentToken"],
+        "originChainId": [""],
+        "targetChainId": [""],
+        "flags": [""],
+        "data": [""],
         "_0": [""]
       },
       "returnNames": ["_0"]
@@ -227,8 +252,8 @@
         "_0": [""],
         "_paymentToken": [""],
         "_streamId": [""],
-        "_total": [""],
-        "_released": [""],
+        "_total": ["decimals:contract:indirect:_paymentToken"],
+        "_released": ["decimals:contract:indirect:_paymentToken"],
         "_start": [""],
         "_cliff": [""],
         "_end": [""],

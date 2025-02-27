@@ -226,7 +226,7 @@
         "totalAmounts_": [""],
         "recipient": [""],
         "paymentToken": [""],
-        "amount": ["decimals"],
+        "amount": ["decimals:params:indirect:paymentToken"],
         "originChainId": [""],
         "targetChainId": [""],
         "flags": [""],

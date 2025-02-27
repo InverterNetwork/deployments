@@ -1,0 +1,408 @@
+{
+  "deploymentInputs": {
+    "configData": [
+      {
+        "name": "issuanceToken",
+        "type": "address",
+        "description": "The address of the token that will be issued"
+      },
+      {
+        "name": "acceptedToken",
+        "type": "address",
+        "description": "The address of the token that will be accepted as collateral"
+      },
+      {
+        "components": [
+          {
+            "name": "formula",
+            "type": "address",
+            "description": "The formula contract used to calculate the issucance and redemption rate"
+          },
+          {
+            "name": "capitalRequired",
+            "type": "uint256",
+            "description": "The initial capital requirement for the bonding curve"
+          },
+          {
+            "name": "basePriceMultiplier",
+            "type": "uint256",
+            "description": "Base price multiplier in the bonding curve"
+          },
+          {
+            "name": "buyFee",
+            "type": "uint256",
+            "description": "The buy fee expressed in base points"
+          },
+          {
+            "name": "sellFee",
+            "type": "uint256",
+            "description": "The sell fee expressed in base points"
+          },
+          {
+            "name": "buyIsOpen",
+            "type": "bool",
+            "description": "The indicator used for enabling/disabling the buying functionalities on deployment"
+          },
+          {
+            "name": "sellIsOpen",
+            "type": "bool",
+            "description": "The indicator used for enabling/disabling the selling functionalties on deployment"
+          }
+        ],
+        "name": "bondingCurveParams",
+        "type": "tuple"
+      },
+      {
+        "name": "liquidityVaultController",
+        "type": "address",
+        "description": "The address of the liquidity vault controller"
+      },
+      {
+        "name": "newSeize",
+        "type": "uint64",
+        "description": "The new seize amount"
+      },
+      {
+        "name": "buyAndSellIsRestricted",
+        "type": "bool",
+        "description": "Indicates whether buying and selling is restricted to the CURVE_INTERACTION_ROLE or open to anyone."
+      }
+    ]
+  },
+  "abiMembers": {
+    "BasePriceMultiplierChanged": {
+      "tags": {
+        "currentBasePriceMultiplier": [""],
+        "newBasePriceMultiplier": [""]
+      },
+      "returnNames": []
+    },
+    "BasePriceToCapitalRatioChanged": {
+      "tags": {
+        "currentBasePriceToCapitalRatio": [""],
+        "newBasePriceToCapitalRatio": [""]
+      },
+      "returnNames": []
+    },
+    "BuyAndSellIsRestricted": { "tags": {}, "returnNames": [] },
+    "BuyAndSellIsUnrestricted": { "tags": {}, "returnNames": [] },
+    "BuyFeeUpdated": {
+      "tags": { "newBuyFee": [""], "oldBuyFee": [""] },
+      "returnNames": []
+    },
+    "BuyingDisabled": { "tags": {}, "returnNames": [] },
+    "BuyingEnabled": { "tags": {}, "returnNames": [] },
+    "CapitalRequiredChanged": {
+      "tags": { "currentCapitalRequired": [""], "newCapitalRequired": [""] },
+      "returnNames": []
+    },
+    "CollateralSeized": { "tags": { "amount": [""] }, "returnNames": [] },
+    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
+    "IssuanceTokenSet": {
+      "tags": { "issuanceToken": [""], "decimals": [""] },
+      "returnNames": []
+    },
+    "LiquidityPoolChanged": {
+      "tags": { "newValue": [""], "oldValue": [""] },
+      "returnNames": []
+    },
+    "LiquidityVaultControllerChanged": {
+      "tags": {
+        "newLiquidityVaultController": [""],
+        "oldLiquidityVaultController": [""]
+      },
+      "returnNames": []
+    },
+    "ModuleInitialized": {
+      "tags": {
+        "parentOrchestrator": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""]
+      },
+      "returnNames": []
+    },
+    "OrchestratorTokenSet": {
+      "tags": { "token": [""], "decimals": [""] },
+      "returnNames": []
+    },
+    "ProjectCollateralFeeAdded": {
+      "tags": { "amount": [""] },
+      "returnNames": []
+    },
+    "ProjectCollateralFeeWithdrawn": {
+      "tags": { "receiver": [""], "amount": [""] },
+      "returnNames": []
+    },
+    "ProtocolFeeMinted": {
+      "tags": { "token": [""], "treasury": [""], "feeAmount": [""] },
+      "returnNames": []
+    },
+    "ProtocolFeeTransferred": {
+      "tags": { "token": [""], "treasury": [""], "feeAmount": [""] },
+      "returnNames": []
+    },
+    "RepayableAmountChanged": {
+      "tags": { "newValue": [""], "oldValue": [""] },
+      "returnNames": []
+    },
+    "RepaymentTransfer": {
+      "tags": { "receiver": [""], "amount": [""] },
+      "returnNames": []
+    },
+    "SeizeChanged": {
+      "tags": { "currentSeize": [""], "newSeize": [""] },
+      "returnNames": []
+    },
+    "SellFeeUpdated": {
+      "tags": { "newSellFee": [""], "oldSellFee": [""] },
+      "returnNames": []
+    },
+    "SellingDisabled": { "tags": {}, "returnNames": [] },
+    "SellingEnabled": { "tags": {}, "returnNames": [] },
+    "TokenDecimalsUpdated": {
+      "tags": { "oldDecimals": [""], "newDecimals": [""] },
+      "returnNames": []
+    },
+    "TokenVaultSet": { "tags": { "tokenVault": [""] }, "returnNames": [] },
+    "TokensBought": {
+      "tags": {
+        "receiver": [""],
+        "depositAmount": [""],
+        "receivedAmount": [""],
+        "buyer": [""]
+      },
+      "returnNames": []
+    },
+    "TokensSold": {
+      "tags": {
+        "receiver": [""],
+        "depositAmount": [""],
+        "receivedAmount": [""],
+        "seller": [""]
+      },
+      "returnNames": []
+    },
+    "TransferOrchestratorToken": {
+      "tags": { "_to": [""], "_amount": [""] },
+      "returnNames": []
+    },
+    "COVER_MANAGER_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "CURVE_INTERACTION_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "MAX_FEE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "MAX_SEIZE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "MIN_RESERVE": { "tags": { "_0": ["decimals"] }, "returnNames": ["_0"] },
+    "RISK_MANAGER_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "SEIZE_DELAY": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "adjustSeize": { "tags": { "seize_": [""] }, "returnNames": [] },
+    "burnIssuanceToken": {
+      "tags": { "amount_": ["decimals:contract:indirect:getIssuanceToken"] },
+      "returnNames": []
+    },
+    "burnIssuanceTokenFor": {
+      "tags": {
+        "owner_": [""],
+        "amount_": ["decimals:contract:indirect:getIssuanceToken"]
+      },
+      "returnNames": []
+    },
+    "buy": {
+      "tags": {
+        "depositAmount_": ["decimals", "approval"],
+        "minAmountOut_": ["decimals:contract:indirect:getIssuanceToken"]
+      },
+      "returnNames": []
+    },
+    "buyFee": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "buyFor": {
+      "tags": {
+        "receiver_": [""],
+        "depositAmount_": ["decimals", "approval"],
+        "minAmountOut_": ["decimals:contract:indirect:getIssuanceToken"]
+      },
+      "returnNames": []
+    },
+    "buyIsOpen": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "calculateBasePriceToCapitalRatio": {
+      "tags": {
+        "capitalRequired_": ["decimals"],
+        "basePriceMultiplier_": [""],
+        "basePriceTocaptialRatio_": [""]
+      },
+      "returnNames": ["basePriceTocaptialRatio_"]
+    },
+    "calculatePurchaseReturn": {
+      "tags": {
+        "_depositAmount": ["decimals"],
+        "mintAmount": ["decimals:contract:indirect:getIssuanceToken"]
+      },
+      "returnNames": ["mintAmount"]
+    },
+    "calculateSaleReturn": {
+      "tags": {
+        "_depositAmount": ["decimals:contract:indirect:getIssuanceToken"],
+        "redeemAmount": ["decimals"]
+      },
+      "returnNames": ["redeemAmount"]
+    },
+    "closeBuy": { "tags": {}, "returnNames": [] },
+    "closeSell": { "tags": {}, "returnNames": [] },
+    "getBasePriceMultiplier": {
+      "tags": { "basePriceMultiplier_": [""] },
+      "returnNames": ["basePriceMultiplier_"]
+    },
+    "getBasePriceToCapitalRatio": {
+      "tags": { "basePriceToCapitalRatio_": [""] },
+      "returnNames": ["basePriceToCapitalRatio_"]
+    },
+    "getBondingSurfaceFormula": {
+      "tags": { "formula_": [""] },
+      "returnNames": ["formula_"]
+    },
+    "getCapitalRequired": {
+      "tags": { "capitalRequired_": ["decimals"] },
+      "returnNames": ["capitalRequired_"]
+    },
+    "getCurrentSeize": {
+      "tags": { "currentSeize_": [""] },
+      "returnNames": ["currentSeize_"]
+    },
+    "getIssuanceToken": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "getLastSeizeTimestamp": {
+      "tags": { "lastSeizeTimestamp_": [""] },
+      "returnNames": ["lastSeizeTimestamp_"]
+    },
+    "getLiquidityVaultController": {
+      "tags": { "liquidityVaultController_": [""] },
+      "returnNames": ["liquidityVaultController_"]
+    },
+    "getRepayableAmount": {
+      "tags": { "repayableAmount_": ["decimals"] },
+      "returnNames": ["repayableAmount_"]
+    },
+    "getSeizableAmount": {
+      "tags": { "amount_": ["decimals"] },
+      "returnNames": ["amount_"]
+    },
+    "getStaticPriceForBuying": {
+      "tags": { "staticPriceForBuying_": [""] },
+      "returnNames": ["staticPriceForBuying_"]
+    },
+    "getStaticPriceForSelling": {
+      "tags": { "staticPriceForSelling_": [""] },
+      "returnNames": ["staticPriceForSelling_"]
+    },
+    "getTokenVault": {
+      "tags": { "tokenVault_": [""] },
+      "returnNames": ["tokenVault_"]
+    },
+    "grantModuleRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "grantModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "identifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "init": {
+      "tags": {
+        "orchestrator_": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata_": [""],
+        "configData_": [""]
+      },
+      "returnNames": []
+    },
+    "isBuyAndSellRestricted": {
+      "tags": { "buyAndSellIsRestricted_": [""] },
+      "returnNames": ["buyAndSellIsRestricted_"]
+    },
+    "isTrustedForwarder": {
+      "tags": { "forwarder": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "openBuy": { "tags": {}, "returnNames": [] },
+    "openSell": { "tags": {}, "returnNames": [] },
+    "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "projectCollateralFeeCollected": {
+      "tags": { "_0": ["decimals"] },
+      "returnNames": ["_0"]
+    },
+    "restrictBuyAndSell": { "tags": {}, "returnNames": [] },
+    "revokeModuleRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "revokeModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "seize": { "tags": { "amount_": ["decimals"] }, "returnNames": [] },
+    "sell": {
+      "tags": {
+        "depositAmount_": ["decimals:contract:indirect:getIssuanceToken"],
+        "minAmountOut_": ["decimals"]
+      },
+      "returnNames": []
+    },
+    "sellFee": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "sellIsOpen": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "sellTo": {
+      "tags": {
+        "receiver_": [""],
+        "depositAmount_": ["decimals:contract:indirect:getIssuanceToken"],
+        "minAmountOut_": ["decimals"]
+      },
+      "returnNames": []
+    },
+    "setBasePriceMultiplier": {
+      "tags": { "newBasePriceMultiplier_": [""] },
+      "returnNames": []
+    },
+    "setBuyFee": { "tags": { "_fee": [""] }, "returnNames": [] },
+    "setCapitalRequired": {
+      "tags": { "newCapitalRequired_": ["decimals"] },
+      "returnNames": []
+    },
+    "setLiquidityVaultControllerContract": {
+      "tags": { "lvc_": [""] },
+      "returnNames": []
+    },
+    "setRepayableAmount": {
+      "tags": { "amount_": ["decimals"] },
+      "returnNames": []
+    },
+    "setSellFee": { "tags": { "fee_": [""] }, "returnNames": [] },
+    "setTokenVault": { "tags": { "tokenVault_": [""] }, "returnNames": [] },
+    "supportsInterface": {
+      "tags": { "interfaceId_": [""], "supportsInterface_": [""] },
+      "returnNames": ["supportsInterface_"]
+    },
+    "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "token": { "tags": { "token_": [""] }, "returnNames": ["token_"] },
+    "transferOrchestratorToken": {
+      "tags": { "to_": [""], "amount_": ["decimals"] },
+      "returnNames": []
+    },
+    "transferRepayment": {
+      "tags": { "to_": [""], "amount_": ["decimals"] },
+      "returnNames": []
+    },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "unrestrictBuyAndSell": { "tags": {}, "returnNames": [] },
+    "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "version": {
+      "tags": { "_0": [""], "_1": [""], "_2": [""] },
+      "returnNames": ["_0", "_1", "_2"]
+    },
+    "withdrawProjectCollateralFee": { "tags": {}, "returnNames": [] }
+  }
+}

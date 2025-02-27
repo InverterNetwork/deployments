@@ -117,6 +117,10 @@
       "tags": { "_minter": [""], "_allowed": [""] },
       "returnNames": []
     },
+    "spendAllowance": {
+      "tags": { "_from": [""], "_spender": [""], "_amount": ["decimals"] },
+      "returnNames": []
+    },
     "symbol": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "totalSupply": { "tags": { "_0": ["decimals"] }, "returnNames": ["_0"] },
     "transfer": {
