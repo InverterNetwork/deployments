@@ -156,10 +156,7 @@
         "lpTokenRecipient": [""],
         "orchestrator": [""],
         "initialVirtualIssuanceSupply": [""],
-        "initialVirtualCollateralSupply": [""],
-        "initialRewardDuration": [""],
-        "staking": [""],
-        "paymentRouter": [""]
+        "initialVirtualCollateralSupply": [""]
       },
       "returnNames": [
         "orchestrator",
@@ -170,10 +167,7 @@
         "isGraduated",
         "lpTokenRecipient",
         "orchestrator",
-        "initialVirtualCollateralSupply",
-        "initialRewardDuration",
-        "staking",
-        "paymentRouter"
+        "initialVirtualCollateralSupply"
       ]
     },
     "sellTo": {
