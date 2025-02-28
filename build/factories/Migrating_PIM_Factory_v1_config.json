@@ -74,7 +74,6 @@
         "migrationThreshold": [""],
         "dexAdapter": [""],
         "lpTokenRecipient": [""],
-        "initialRewardDuration": [""],
         "migrationConfig_": [""]
       },
       "returnNames": []
@@ -87,6 +86,10 @@
         "minAmountOut": ["decimals:extras:issuanceToken"]
       },
       "returnNames": []
+    },
+    "collateralFeeMultiplier": {
+      "tags": { "_0": [""] },
+      "returnNames": ["_0"]
     },
     "createPIMWorkflow": {
       "tags": {
@@ -114,7 +117,6 @@
         "migrationThreshold": [""],
         "dexAdapter": [""],
         "lpTokenRecipient": [""],
-        "initialRewardDuration": [""],
         "migrationConfig_": [""],
         "_0": [""]
       },
@@ -140,6 +142,8 @@
       "tags": { "forwarder": [""], "_0": [""] },
       "returnNames": ["_0"]
     },
+    "issuanceFeeMultiplier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "mainFundingManager": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "orchestratorFactory": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "pims": {
       "tags": {
@@ -181,6 +185,20 @@
       },
       "returnNames": []
     },
+    "setAdmin": { "tags": { "_admin": [""] }, "returnNames": [] },
+    "setCollateralFeeMultiplier": {
+      "tags": { "_collateralFeeMultiplier": [""] },
+      "returnNames": []
+    },
+    "setIssuanceFeeMultiplier": {
+      "tags": { "_issuanceFeeMultiplier": [""] },
+      "returnNames": []
+    },
+    "setMainFundingManager": {
+      "tags": { "_mainFundingManager": [""] },
+      "returnNames": []
+    },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "setRewards": {
       "tags": {
         "fundingManager": [""],
@@ -189,7 +207,6 @@
       },
       "returnNames": []
     },
-    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "withdrawPimFee": {
       "tags": { "fundingManager": [""], "to": [""] },
       "returnNames": []
