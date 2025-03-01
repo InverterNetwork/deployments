@@ -72,6 +72,7 @@
       },
       "returnNames": []
     },
+    "admin": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "buyFor": {
       "tags": {
         "fundingManager": [""],
@@ -137,6 +138,10 @@
       "returnNames": ["_0"]
     },
     "issuanceFeeMultiplier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "issuanceLiquidityDivisor": {
+      "tags": { "_0": [""] },
+      "returnNames": ["_0"]
+    },
     "mainFundingManager": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "orchestratorFactory": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "pims": {
@@ -180,6 +185,10 @@
     },
     "setIssuanceFeeMultiplier": {
       "tags": { "_issuanceFeeMultiplier": [""] },
+      "returnNames": []
+    },
+    "setIssuanceLiquidityDivisor": {
+      "tags": { "_issuanceLiquidityDivisor": [""] },
       "returnNames": []
     },
     "setMainFundingManager": {
