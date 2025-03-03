@@ -47,6 +47,10 @@
     ]
   },
   "abiMembers": {
+    "FundingManagerRegistered": {
+      "tags": { "fundingManager": [""] },
+      "returnNames": []
+    },
     "Graduation": {
       "tags": {
         "orchestrator": [""],
@@ -117,6 +121,7 @@
       },
       "returnNames": ["_0"]
     },
+    "fundingManagers": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "getIsGraduated": {
       "tags": { "fundingManager": [""], "_0": [""] },
       "returnNames": ["_0"]
@@ -155,7 +160,9 @@
         "lpTokenRecipient": [""],
         "orchestrator": [""],
         "initialVirtualIssuanceSupply": [""],
-        "initialVirtualCollateralSupply": [""]
+        "initialVirtualCollateralSupply": [""],
+        "stakingModule": [""],
+        "paymentRouter": [""]
       },
       "returnNames": [
         "orchestrator",
@@ -166,7 +173,9 @@
         "isGraduated",
         "lpTokenRecipient",
         "orchestrator",
-        "initialVirtualCollateralSupply"
+        "initialVirtualCollateralSupply",
+        "stakingModule",
+        "paymentRouter"
       ]
     },
     "sellTo": {
@@ -196,6 +205,10 @@
       "returnNames": []
     },
     "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "withdrawAllProjectCollateralFeesToStaking": {
+      "tags": {},
+      "returnNames": []
+    },
     "setRewards": {
       "tags": {
         "fundingManager": [""],
