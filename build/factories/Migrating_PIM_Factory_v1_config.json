@@ -47,8 +47,12 @@
     ]
   },
   "abiMembers": {
-    "FundingManagerRegistered": {
-      "tags": { "fundingManager": [""] },
+    "AdminChanged": {
+      "tags": { "oldAdmin": [""], "newAdmin": [""] },
+      "returnNames": []
+    },
+    "CollateralFeeMultiplierChanged": {
+      "tags": { "oldMultiplier": [""], "newMultiplier": [""] },
       "returnNames": []
     },
     "Graduation": {
@@ -59,6 +63,18 @@
         "collateralTokenAmount": [""],
         "stakingRewards": [""]
       },
+      "returnNames": []
+    },
+    "IssuanceFeeMultiplierChanged": {
+      "tags": { "oldMultiplier": [""], "newMultiplier": [""] },
+      "returnNames": []
+    },
+    "IssuanceLiquidityDivisorChanged": {
+      "tags": { "oldDivisor": [""], "newDivisor": [""] },
+      "returnNames": []
+    },
+    "MainFundingManagerChanged": {
+      "tags": { "oldMainFundingManager": [""], "newMainFundingManager": [""] },
       "returnNames": []
     },
     "PIMWorkflowCreated": {
@@ -73,6 +89,17 @@
         "dexAdapter": [""],
         "lpTokenRecipient": [""],
         "migrationConfig_": [""]
+      },
+      "returnNames": []
+    },
+    "StakingModuleMetadataChanged": {
+      "tags": {
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "oldMetadata": [""],
+        "newMetadata": [""]
       },
       "returnNames": []
     },
@@ -203,6 +230,25 @@
     "setMainFundingManager": {
       "tags": { "_mainFundingManager": [""] },
       "returnNames": []
+    },
+    "setStakingModuleMetadata": {
+      "tags": {
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "_stakingModuleMetadata": [""]
+      },
+      "returnNames": []
+    },
+    "stakingModuleMetadata": {
+      "tags": {
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""]
+      },
+      "returnNames": ["majorVersion", "minorVersion", "patchVersion", "url"]
     },
     "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "withdrawAllProjectCollateralFeesToStaking": {
