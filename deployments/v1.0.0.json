@@ -40,7 +40,7 @@
     "11155420": "0x8b71B18a7b86bbB0cb1191c0e81756ca53E6CeBE"
   },
   "migratingPimFactory": {
-    "11155111": "0xd9efea12ff508ea3bd6e67d185387d71f83f4ad1"
+    "11155111": "0xA89eaC3Fc5945e465256EBe4639E9dcdcD51B34C"
   },
-  "envioUrl": "https://dev.indexer.inverter.network/v1/graphql"
+  "envioUrl": "https://indexer.inverter.network/v1/graphql"
 }
