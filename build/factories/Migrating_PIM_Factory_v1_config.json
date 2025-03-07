@@ -69,12 +69,12 @@
       "tags": { "oldMultiplier": [""], "newMultiplier": [""] },
       "returnNames": []
     },
-    "IssuanceLiquidityDivisorChanged": {
-      "tags": { "oldDivisor": [""], "newDivisor": [""] },
-      "returnNames": []
-    },
     "MainFundingManagerChanged": {
       "tags": { "oldMainFundingManager": [""], "newMainFundingManager": [""] },
+      "returnNames": []
+    },
+    "MutableInitialMintAmountChanged": {
+      "tags": { "oldAmount": [""], "newAmount": [""] },
       "returnNames": []
     },
     "PIMWorkflowCreated": {
@@ -170,11 +170,11 @@
       "returnNames": ["_0"]
     },
     "issuanceFeeMultiplier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
-    "issuanceLiquidityDivisor": {
-      "tags": { "_0": [""] },
+    "mainFundingManager": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "mutableInitialMintAmount": {
+      "tags": { "_0": ["decimals:extras:issuanceToken"] },
       "returnNames": ["_0"]
     },
-    "mainFundingManager": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "orchestratorFactory": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "pims": {
       "tags": {
@@ -223,12 +223,14 @@
       "tags": { "_issuanceFeeMultiplier": [""] },
       "returnNames": []
     },
-    "setIssuanceLiquidityDivisor": {
-      "tags": { "_issuanceLiquidityDivisor": [""] },
-      "returnNames": []
-    },
     "setMainFundingManager": {
       "tags": { "_mainFundingManager": [""] },
+      "returnNames": []
+    },
+    "setMutableInitialMintAmount": {
+      "tags": {
+        "_mutableInitialMintAmount": ["decimals:extras:issuanceToken"]
+      },
       "returnNames": []
     },
     "setStakingModuleMetadata": {
