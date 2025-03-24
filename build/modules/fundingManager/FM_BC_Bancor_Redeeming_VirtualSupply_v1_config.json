@@ -301,11 +301,13 @@
     },
     "setSellFee": { "tags": { "_fee": [""] }, "returnNames": [] },
     "setVirtualCollateralSupply": {
-      "tags": { "_virtualSupply": [""] },
+      "tags": { "_virtualSupply": ["decimals"] },
       "returnNames": []
     },
     "setVirtualIssuanceSupply": {
-      "tags": { "_virtualSupply": [""] },
+      "tags": {
+        "_virtualSupply": ["decimals:contract:indirect:getIssuanceToken"]
+      },
       "returnNames": []
     },
     "supportsInterface": {
