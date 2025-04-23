@@ -212,8 +212,8 @@
     },
     "calculateSaleReturn": {
       "tags": {
-        "_depositAmount": ["decimals:contract:indirect:getIssuanceToken"],
-        "redeemAmount": ["decimals"]
+        "depositAmount_": ["decimals:contract:indirect:getIssuanceToken"],
+        "redeemAmount_": ["decimals"]
       },
       "returnNames": ["redeemAmount"]
     },
@@ -368,7 +368,7 @@
       },
       "returnNames": []
     },
-    "setBuyFee": { "tags": { "fee_": [""] }, "returnNames": [] },
+    "setBuyFee": { "tags": { "_fee": [""] }, "returnNames": [] },
     "setIsDirectOperationsOnly": {
       "tags": { "isDirectOperationsOnly_": [""] },
       "returnNames": []
