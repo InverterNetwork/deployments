@@ -1,0 +1,184 @@
+{
+  "deploymentInputs": { "configData": [] },
+  "abiMembers": {
+    "BridgeTransferCompleted": {
+      "tags": {
+        "paymentId_": [""],
+        "intentId_": [""],
+        "recipient_": [""],
+        "client_": [""],
+        "paymentToken_": [""],
+        "amount_": [""],
+        "originChainId_": [""],
+        "targetChainId_": [""],
+        "flags_": [""],
+        "data_": [""]
+      },
+      "returnNames": []
+    },
+    "BridgeTransferFailed": {
+      "tags": {
+        "client_": [""],
+        "recipient_": [""],
+        "paymentToken_": [""],
+        "amount_": [""],
+        "originChainId_": [""],
+        "targetChainId_": [""],
+        "flags_": [""],
+        "data_": [""]
+      },
+      "returnNames": []
+    },
+    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
+    "ModuleInitialized": {
+      "tags": {
+        "parentOrchestrator": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata": [""]
+      },
+      "returnNames": []
+    },
+    "PaymentOrderProcessed": {
+      "tags": {
+        "paymentClient": [""],
+        "recipient": [""],
+        "paymentToken": [""],
+        "amount": [""],
+        "originChainId": [""],
+        "targetChainId": [""],
+        "flags": [""],
+        "data": [""]
+      },
+      "returnNames": []
+    },
+    "ProtocolFeeTransferred": {
+      "tags": { "token": [""], "treasury": [""], "feeAmount": [""] },
+      "returnNames": []
+    },
+    "TokensReleased": {
+      "tags": { "recipient": [""], "token": [""], "amount": [""] },
+      "returnNames": []
+    },
+    "UnclaimableAmountAdded": {
+      "tags": {
+        "paymentClient": [""],
+        "token": [""],
+        "recipient": [""],
+        "amount": [""]
+      },
+      "returnNames": []
+    },
+    "FLAG_MAX_FEE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "FLAG_TTL": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "cancelRunningPayments": { "tags": { "client_": [""] }, "returnNames": [] },
+    "claimPreviouslyUnclaimable": {
+      "tags": { "client_": [""], "token_": [""], "receiver_": [""] },
+      "returnNames": []
+    },
+    "getBridgeDataByPaymentId": {
+      "tags": { "paymentId_": [""], "bridgeData_": [""] },
+      "returnNames": ["bridgeData_"]
+    },
+    "getEverClearSpoke": {
+      "tags": { "everClearSpoke_": [""] },
+      "returnNames": ["everClearSpoke_"]
+    },
+    "getIntentByIntentId": {
+      "tags": {
+        "intentId_": [""],
+        "intent_": [""],
+        "initiator": [""],
+        "receiver": [""],
+        "inputAsset": [""],
+        "outputAsset": [""],
+        "maxFee": [""],
+        "origin": [""],
+        "nonce": [""],
+        "timestamp": [""],
+        "ttl": [""],
+        "amount": ["decimals:params:indirect:inputAsset"],
+        "destinations": [""],
+        "data": [""]
+      },
+      "returnNames": ["intent_"]
+    },
+    "getPaymentId": {
+      "tags": { "paymentId_": [""] },
+      "returnNames": ["paymentId_"]
+    },
+    "grantModuleRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "grantModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "identifier": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "init": {
+      "tags": {
+        "orchestrator_": [""],
+        "majorVersion": [""],
+        "minorVersion": [""],
+        "patchVersion": [""],
+        "url": [""],
+        "title": [""],
+        "metadata_": [""],
+        "configData_": [""]
+      },
+      "returnNames": []
+    },
+    "isTrustedForwarder": {
+      "tags": { "forwarder": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "orchestrator": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "processPayments": { "tags": { "client_": [""] }, "returnNames": [] },
+    "revokeModuleRole": {
+      "tags": { "role": [""], "target": [""] },
+      "returnNames": []
+    },
+    "revokeModuleRoleBatched": {
+      "tags": { "role": [""], "targets": [""] },
+      "returnNames": []
+    },
+    "supportsInterface": {
+      "tags": { "interfaceId_": [""], "_0": [""] },
+      "returnNames": ["_0"]
+    },
+    "title": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "trustedForwarder": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "unclaimable": {
+      "tags": {
+        "client_": [""],
+        "token_": [""],
+        "paymentReceiver_": [""],
+        "amount_": ["decimals:params:indirect:token_"]
+      },
+      "returnNames": ["amount_"]
+    },
+    "url": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
+    "validPaymentOrder": {
+      "tags": {
+        "recipient": [""],
+        "paymentToken": [""],
+        "amount": ["decimals:params:indirect:paymentToken"],
+        "originChainId": [""],
+        "targetChainId": [""],
+        "flags": [""],
+        "data": [""],
+        "order_": [""],
+        "valid_": [""]
+      },
+      "returnNames": ["valid_"]
+    },
+    "version": {
+      "tags": { "_0": [""], "_1": [""], "_2": [""] },
+      "returnNames": ["_0", "_1", "_2"]
+    }
+  }
+}
