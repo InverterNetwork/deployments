@@ -58,6 +58,10 @@
       },
       "returnNames": ["_0"]
     },
+    "deployExternalContract": {
+      "tags": { "code": [""], "calls": [""], "deploymentAddress": [""] },
+      "returnNames": ["deploymentAddress"]
+    },
     "getOrchestratorByID": {
       "tags": { "id": [""], "_0": [""] },
       "returnNames": ["_0"]
