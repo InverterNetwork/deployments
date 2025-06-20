@@ -216,7 +216,7 @@
         "depositAmount_": ["decimals:contract:indirect:getIssuanceToken"],
         "redeemAmount_": ["decimals"]
       },
-      "returnNames": ["redeemAmount"]
+      "returnNames": ["redeemAmount_"]
     },
     "closeBuy": { "tags": {}, "returnNames": [] },
     "closeSell": { "tags": {}, "returnNames": [] },
