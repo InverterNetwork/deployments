@@ -1,14 +1,6 @@
 {
   "deploymentInputs": { "configData": [] },
   "abiMembers": {
-    "OwnershipTransferStarted": {
-      "tags": { "previousOwner": [""], "newOwner": [""] },
-      "returnNames": []
-    },
-    "OwnershipTransferred": {
-      "tags": { "previousOwner": [""], "newOwner": [""] },
-      "returnNames": []
-    },
     "acceptOwnership": { "tags": {}, "returnNames": [] },
     "owner": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "pendingOwner": { "tags": { "_0": [""] }, "returnNames": ["_0"] },

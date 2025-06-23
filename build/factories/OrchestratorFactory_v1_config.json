@@ -16,23 +16,6 @@
     ]
   },
   "abiMembers": {
-    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
-    "OrchestratorCreated": {
-      "tags": { "orchestratorId": [""], "orchestratorAddress": [""] },
-      "returnNames": []
-    },
-    "OrchestratorFactoryInitialized": {
-      "tags": { "beacon": [""], "moduleFactory": [""] },
-      "returnNames": []
-    },
-    "OwnershipTransferStarted": {
-      "tags": { "previousOwner": [""], "newOwner": [""] },
-      "returnNames": []
-    },
-    "OwnershipTransferred": {
-      "tags": { "previousOwner": [""], "newOwner": [""] },
-      "returnNames": []
-    },
     "acceptOwnership": { "tags": {}, "returnNames": [] },
     "beacon": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "createOrchestrator": {

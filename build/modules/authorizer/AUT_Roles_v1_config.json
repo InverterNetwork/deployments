@@ -9,31 +9,6 @@
     ]
   },
   "abiMembers": {
-    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
-    "ModuleInitialized": {
-      "tags": {
-        "parentOrchestrator": [""],
-        "majorVersion": [""],
-        "minorVersion": [""],
-        "patchVersion": [""],
-        "url": [""],
-        "title": [""],
-        "metadata": [""]
-      },
-      "returnNames": []
-    },
-    "RoleAdminChanged": {
-      "tags": { "role": [""], "previousAdminRole": [""], "newAdminRole": [""] },
-      "returnNames": []
-    },
-    "RoleGranted": {
-      "tags": { "role": [""], "account": [""], "sender": [""] },
-      "returnNames": []
-    },
-    "RoleRevoked": {
-      "tags": { "role": [""], "account": [""], "sender": [""] },
-      "returnNames": []
-    },
     "BURN_ADMIN_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "DEFAULT_ADMIN_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "burnAdminFromModuleRole": { "tags": { "role": [""] }, "returnNames": [] },

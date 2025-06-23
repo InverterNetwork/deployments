@@ -1,20 +1,6 @@
 {
   "deploymentInputs": { "configData": [] },
   "abiMembers": {
-    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
-    "ModuleInitialized": {
-      "tags": {
-        "parentOrchestrator": [""],
-        "majorVersion": [""],
-        "minorVersion": [""],
-        "patchVersion": [""],
-        "url": [""],
-        "title": [""],
-        "metadata": [""],
-        "moduleTitle": [""]
-      },
-      "returnNames": []
-    },
     "grantModuleRole": {
       "tags": { "role": [""], "target": [""] },
       "returnNames": []

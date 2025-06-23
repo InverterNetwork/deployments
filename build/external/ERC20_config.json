@@ -1,14 +1,6 @@
 {
   "deploymentInputs": { "configData": [] },
   "abiMembers": {
-    "Approval": {
-      "tags": { "owner": [""], "spender": [""], "value": ["decimals"] },
-      "returnNames": []
-    },
-    "Transfer": {
-      "tags": { "from": [""], "to": [""], "value": ["decimals"] },
-      "returnNames": []
-    },
     "allowance": {
       "tags": { "owner": [""], "spender": [""], "_0": ["decimals"] },
       "returnNames": ["_0"]

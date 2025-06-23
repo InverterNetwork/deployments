@@ -1,40 +1,6 @@
 {
   "deploymentInputs": { "configData": [] },
   "abiMembers": {
-    "FlagsSet": {
-      "tags": { "flagCount": [""], "newFlags": [""] },
-      "returnNames": []
-    },
-    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
-    "ModuleInitialized": {
-      "tags": {
-        "parentOrchestrator": [""],
-        "majorVersion": [""],
-        "minorVersion": [""],
-        "patchVersion": [""],
-        "url": [""],
-        "title": [""],
-        "metadata": [""],
-        "moduleTitle": [""]
-      },
-      "returnNames": []
-    },
-    "PaymentOrderAdded": {
-      "tags": {
-        "recipient": [""],
-        "token": [""],
-        "amount": [""],
-        "originChainId": [""],
-        "targetChainId": [""],
-        "flags": [""],
-        "data": [""]
-      },
-      "returnNames": []
-    },
-    "ProtocolFeeTransferred": {
-      "tags": { "token": [""], "treasury": [""], "feeAmount": [""] },
-      "returnNames": []
-    },
     "FLAG_CLIFF": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "FLAG_END": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "FLAG_START": { "tags": { "_0": [""] }, "returnNames": ["_0"] },

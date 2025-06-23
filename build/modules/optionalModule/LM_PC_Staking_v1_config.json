@@ -9,49 +9,6 @@
     ]
   },
   "abiMembers": {
-    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
-    "ModuleInitialized": {
-      "tags": {
-        "parentOrchestrator": [""],
-        "majorVersion": [""],
-        "minorVersion": [""],
-        "patchVersion": [""],
-        "url": [""],
-        "title": [""],
-        "metadata": [""],
-        "moduleTitle": [""]
-      },
-      "returnNames": []
-    },
-    "PaymentOrderAdded": {
-      "tags": { "recipient": [""], "token": [""], "amount": [""] },
-      "returnNames": []
-    },
-    "RewardSet": {
-      "tags": {
-        "rewardAmount": [""],
-        "duration": [""],
-        "newRewardRate": [""],
-        "newRewardsEnd": [""]
-      },
-      "returnNames": []
-    },
-    "RewardsDistributed": {
-      "tags": { "user": [""], "amount": [""] },
-      "returnNames": []
-    },
-    "Staked": { "tags": { "user": [""], "amount": [""] }, "returnNames": [] },
-    "StakingTokenSet": { "tags": { "token": [""] }, "returnNames": [] },
-    "Unstaked": { "tags": { "user": [""], "amount": [""] }, "returnNames": [] },
-    "Updated": {
-      "tags": {
-        "triggerAddress": [""],
-        "rewardValue": [""],
-        "lastUpdate": [""],
-        "earnedRewards": [""]
-      },
-      "returnNames": []
-    },
     "amountPaid": {
       "tags": { "token": [""], "amount": ["decimals:params:indirect:token"] },
       "returnNames": []

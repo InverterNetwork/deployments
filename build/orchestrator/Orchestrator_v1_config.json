@@ -1,34 +1,6 @@
 {
   "deploymentInputs": { "configData": [] },
   "abiMembers": {
-    "AuthorizerUpdated": { "tags": { "_address": [""] }, "returnNames": [] },
-    "FundingManagerUpdated": {
-      "tags": { "_address": [""] },
-      "returnNames": []
-    },
-    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
-    "ModuleAdded": { "tags": { "module": [""] }, "returnNames": [] },
-    "ModuleRemoved": { "tags": { "module": [""] }, "returnNames": [] },
-    "ModuleTimelockStarted": {
-      "tags": { "module": [""], "timelockUntil": [""] },
-      "returnNames": []
-    },
-    "ModuleUpdateCanceled": { "tags": { "module": [""] }, "returnNames": [] },
-    "OrchestratorInitialized": {
-      "tags": {
-        "orchestratorId_": [""],
-        "fundingManager": [""],
-        "authorizer": [""],
-        "paymentProcessor": [""],
-        "modules": [""],
-        "governor": [""]
-      },
-      "returnNames": []
-    },
-    "PaymentProcessorUpdated": {
-      "tags": { "_address": [""] },
-      "returnNames": []
-    },
     "MODULE_UPDATE_TIMELOCK": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "authorizer": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "cancelAuthorizerUpdate": {

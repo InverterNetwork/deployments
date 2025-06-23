@@ -9,31 +9,6 @@
     ]
   },
   "abiMembers": {
-    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
-    "IssuancePriceSet": {
-      "tags": { "price_": [""], "caller_": [""], "timestamp_": [""] },
-      "returnNames": []
-    },
-    "ModuleInitialized": {
-      "tags": {
-        "parentOrchestrator": [""],
-        "majorVersion": [""],
-        "minorVersion": [""],
-        "patchVersion": [""],
-        "url": [""],
-        "title": [""],
-        "metadata": [""]
-      },
-      "returnNames": []
-    },
-    "ProtocolFeeTransferred": {
-      "tags": { "token": [""], "treasury": [""], "feeAmount": [""] },
-      "returnNames": []
-    },
-    "RedemptionPriceSet": {
-      "tags": { "price_": [""], "caller_": [""], "timestamp_": [""] },
-      "returnNames": []
-    },
     "getCollateralTokenDecimals": {
       "tags": { "_0": [""] },
       "returnNames": ["_0"]

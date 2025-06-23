@@ -1,31 +1,6 @@
 {
   "deploymentInputs": { "configData": [] },
   "abiMembers": {
-    "PaymentOrderProcessed": {
-      "tags": {
-        "paymentClient": [""],
-        "recipient": [""],
-        "paymentToken": [""],
-        "amount": ["decimals"],
-        "start": [""],
-        "cliff": [""],
-        "end": [""]
-      },
-      "returnNames": []
-    },
-    "TokensReleased": {
-      "tags": { "recipient": [""], "token": [""], "amount": ["decimals"] },
-      "returnNames": []
-    },
-    "UnclaimableAmountAdded": {
-      "tags": {
-        "paymentClient": [""],
-        "token": [""],
-        "recipient": [""],
-        "amount": [""]
-      },
-      "returnNames": []
-    },
     "log": { "tags": {}, "returnNames": [] },
     "log_address": { "tags": {}, "returnNames": [] },
     "log_array": { "tags": { "val": [""] }, "returnNames": [] },

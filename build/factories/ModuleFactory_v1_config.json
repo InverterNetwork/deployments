@@ -1,42 +1,6 @@
 {
   "deploymentInputs": { "configData": [] },
   "abiMembers": {
-    "GovernorSet": { "tags": { "governor": [""] }, "returnNames": [] },
-    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
-    "MetadataRegistered": {
-      "tags": {
-        "majorVersion": [""],
-        "minorVersion": [""],
-        "patchVersion": [""],
-        "url": [""],
-        "title": [""],
-        "metadata": [""],
-        "beacon": [""]
-      },
-      "returnNames": []
-    },
-    "ModuleCreated": {
-      "tags": {
-        "orchestrator": [""],
-        "module": [""],
-        "majorVersion": [""],
-        "minorVersion": [""],
-        "patchVersion": [""],
-        "url": [""],
-        "title": [""],
-        "metadata": [""],
-        "identifier": [""]
-      },
-      "returnNames": []
-    },
-    "OwnershipTransferStarted": {
-      "tags": { "previousOwner": [""], "newOwner": [""] },
-      "returnNames": []
-    },
-    "OwnershipTransferred": {
-      "tags": { "previousOwner": [""], "newOwner": [""] },
-      "returnNames": []
-    },
     "acceptOwnership": { "tags": {}, "returnNames": [] },
     "createAndInitModule": {
       "tags": {

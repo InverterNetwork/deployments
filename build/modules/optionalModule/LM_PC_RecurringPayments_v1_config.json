@@ -9,43 +9,6 @@
     ]
   },
   "abiMembers": {
-    "EpochLengthSet": { "tags": { "epochLength": [""] }, "returnNames": [] },
-    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
-    "ModuleInitialized": {
-      "tags": {
-        "parentOrchestrator": [""],
-        "majorVersion": [""],
-        "minorVersion": [""],
-        "patchVersion": [""],
-        "url": [""],
-        "title": [""],
-        "metadata": [""],
-        "moduleTitle": [""]
-      },
-      "returnNames": []
-    },
-    "PaymentOrderAdded": {
-      "tags": { "recipient": [""], "token": [""], "amount": ["decimals"] },
-      "returnNames": []
-    },
-    "RecurringPaymentAdded": {
-      "tags": {
-        "recurringPaymentId": [""],
-        "amount": ["decimals"],
-        "startEpoch": [""],
-        "lastTriggeredEpoch": [""],
-        "recipient": [""]
-      },
-      "returnNames": []
-    },
-    "RecurringPaymentRemoved": {
-      "tags": { "recurringPaymentId": [""] },
-      "returnNames": []
-    },
-    "RecurringPaymentsTriggered": {
-      "tags": { "currentEpoch": [""] },
-      "returnNames": []
-    },
     "addRecurringPayment": {
       "tags": {
         "amount": ["decimals"],

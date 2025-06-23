@@ -1,11 +1,6 @@
 {
   "deploymentInputs": { "configData": [] },
   "abiMembers": {
-    "EIP712DomainChanged": { "tags": {}, "returnNames": [] },
-    "ExecutedForwardRequest": {
-      "tags": { "signer": [""], "nonce": [""], "success": [""] },
-      "returnNames": []
-    },
     "createDigest": {
       "tags": {
         "from": [""],

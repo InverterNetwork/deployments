@@ -47,62 +47,6 @@
     ]
   },
   "abiMembers": {
-    "AdminChanged": {
-      "tags": { "oldAdmin": [""], "newAdmin": [""] },
-      "returnNames": []
-    },
-    "CollateralFeeMultiplierChanged": {
-      "tags": { "oldMultiplier": [""], "newMultiplier": [""] },
-      "returnNames": []
-    },
-    "Graduation": {
-      "tags": {
-        "orchestrator": [""],
-        "pool": [""],
-        "issuanceTokenAmount": [""],
-        "collateralTokenAmount": [""],
-        "stakingRewards": [""]
-      },
-      "returnNames": []
-    },
-    "IssuanceFeeMultiplierChanged": {
-      "tags": { "oldMultiplier": [""], "newMultiplier": [""] },
-      "returnNames": []
-    },
-    "MainFundingManagerChanged": {
-      "tags": { "oldMainFundingManager": [""], "newMainFundingManager": [""] },
-      "returnNames": []
-    },
-    "MutableInitialMintAmountChanged": {
-      "tags": { "oldAmount": [""], "newAmount": [""] },
-      "returnNames": []
-    },
-    "PIMWorkflowCreated": {
-      "tags": {
-        "orchestrator": [""],
-        "issuanceToken": [""],
-        "deployer": [""],
-        "collateralToken": [""],
-        "initiator": [""],
-        "isImmutable": [""],
-        "migrationThreshold": [""],
-        "dexAdapter": [""],
-        "lpTokenRecipient": [""],
-        "migrationConfig_": [""]
-      },
-      "returnNames": []
-    },
-    "StakingModuleMetadataChanged": {
-      "tags": {
-        "majorVersion": [""],
-        "minorVersion": [""],
-        "patchVersion": [""],
-        "url": [""],
-        "oldMetadata": [""],
-        "newMetadata": [""]
-      },
-      "returnNames": []
-    },
     "admin": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "buyFor": {
       "tags": {

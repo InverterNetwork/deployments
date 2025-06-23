@@ -1,49 +1,6 @@
 {
   "deploymentInputs": { "configData": [] },
   "abiMembers": {
-    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
-    "ModuleInitialized": {
-      "tags": {
-        "parentOrchestrator": [""],
-        "majorVersion": [""],
-        "minorVersion": [""],
-        "patchVersion": [""],
-        "url": [""],
-        "title": [""],
-        "metadata": [""]
-      },
-      "returnNames": []
-    },
-    "PaymentOrderProcessed": {
-      "tags": {
-        "paymentClient": [""],
-        "recipient": [""],
-        "paymentToken": [""],
-        "amount": ["decimals"],
-        "originChainId": [""],
-        "targetChainId": [""],
-        "flags": [""],
-        "data": [""]
-      },
-      "returnNames": []
-    },
-    "ProtocolFeeTransferred": {
-      "tags": { "token": [""], "treasury": [""], "feeAmount": [""] },
-      "returnNames": []
-    },
-    "TokensReleased": {
-      "tags": { "recipient": [""], "token": [""], "amount": ["decimals"] },
-      "returnNames": []
-    },
-    "UnclaimableAmountAdded": {
-      "tags": {
-        "paymentClient": [""],
-        "token": [""],
-        "recipient": [""],
-        "amount": [""]
-      },
-      "returnNames": []
-    },
     "cancelRunningPayments": { "tags": { "client": [""] }, "returnNames": [] },
     "claimPreviouslyUnclaimable": {
       "tags": { "client": [""], "token": [""], "receiver": [""] },

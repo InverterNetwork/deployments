@@ -1,24 +1,6 @@
 {
   "deploymentInputs": { "configData": [] },
   "abiMembers": {
-    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
-    "ModuleInitialized": {
-      "tags": {
-        "parentOrchestrator": [""],
-        "majorVersion": [""],
-        "minorVersion": [""],
-        "patchVersion": [""],
-        "url": [""],
-        "title": [""],
-        "metadata": [""],
-        "moduleTitle": [""]
-      },
-      "returnNames": []
-    },
-    "PaymentOrderAdded": {
-      "tags": { "recipient": [""], "token": [""], "amount": [""] },
-      "returnNames": []
-    },
     "PAYMENT_PUSHER_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "amountPaid": {
       "tags": { "token": [""], "amount": [""] },

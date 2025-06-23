@@ -1,25 +1,6 @@
 {
   "deploymentInputs": { "configData": [] },
   "abiMembers": {
-    "Constructed": { "tags": { "majorVersion": [""] }, "returnNames": [] },
-    "OwnershipTransferStarted": {
-      "tags": { "previousOwner": [""], "newOwner": [""] },
-      "returnNames": []
-    },
-    "OwnershipTransferred": {
-      "tags": { "previousOwner": [""], "newOwner": [""] },
-      "returnNames": []
-    },
-    "ShutdownInitiated": { "tags": {}, "returnNames": [] },
-    "ShutdownReversed": { "tags": {}, "returnNames": [] },
-    "Upgraded": {
-      "tags": {
-        "implementation": [""],
-        "newMinorVersion": [""],
-        "newPatchVersion": [""]
-      },
-      "returnNames": []
-    },
     "acceptOwnership": { "tags": {}, "returnNames": [] },
     "emergencyModeActive": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "getImplementationAddress": {

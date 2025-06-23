@@ -9,31 +9,6 @@
     ]
   },
   "abiMembers": {
-    "Deposit": {
-      "tags": { "_from": [""], "_amount": ["decimals"] },
-      "returnNames": []
-    },
-    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
-    "ModuleInitialized": {
-      "tags": {
-        "parentOrchestrator": [""],
-        "majorVersion": [""],
-        "minorVersion": [""],
-        "patchVersion": [""],
-        "url": [""],
-        "title": [""],
-        "metadata": [""]
-      },
-      "returnNames": []
-    },
-    "OrchestratorTokenSet": {
-      "tags": { "token": [""], "decimals": [""] },
-      "returnNames": []
-    },
-    "TransferOrchestratorToken": {
-      "tags": { "_to": [""], "_amount": ["decimals"] },
-      "returnNames": []
-    },
     "deposit": {
       "tags": { "amount": ["decimals", "approval"] },
       "returnNames": []

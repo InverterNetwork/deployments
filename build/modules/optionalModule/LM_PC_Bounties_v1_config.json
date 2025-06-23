@@ -1,63 +1,6 @@
 {
   "deploymentInputs": { "configData": [] },
   "abiMembers": {
-    "BountyAdded": {
-      "tags": {
-        "bountyId": [""],
-        "minimumPayoutAmount": ["decimals"],
-        "maximumPayoutAmount": ["decimals"],
-        "details": ["any"]
-      },
-      "returnNames": []
-    },
-    "BountyLocked": { "tags": { "bountyId": [""] }, "returnNames": [] },
-    "BountyUpdated": {
-      "tags": { "bountyId": [""], "details": ["any"] },
-      "returnNames": []
-    },
-    "ClaimAdded": {
-      "tags": {
-        "claimId": [""],
-        "bountyId": [""],
-        "addr": [""],
-        "claimAmount": ["decimals"],
-        "contributors": [""],
-        "details": ["any"]
-      },
-      "returnNames": []
-    },
-    "ClaimContributorsUpdated": {
-      "tags": {
-        "claimId": [""],
-        "addr": [""],
-        "claimAmount": ["decimals"],
-        "contributors": [""]
-      },
-      "returnNames": []
-    },
-    "ClaimDetailsUpdated": {
-      "tags": { "claimId": [""], "details": ["any"] },
-      "returnNames": []
-    },
-    "ClaimVerified": { "tags": { "claimId": [""] }, "returnNames": [] },
-    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
-    "ModuleInitialized": {
-      "tags": {
-        "parentOrchestrator": [""],
-        "majorVersion": [""],
-        "minorVersion": [""],
-        "patchVersion": [""],
-        "url": [""],
-        "title": [""],
-        "metadata": [""],
-        "moduleTitle": [""]
-      },
-      "returnNames": []
-    },
-    "PaymentOrderAdded": {
-      "tags": { "recipient": [""], "token": [""], "amount": ["decimals"] },
-      "returnNames": []
-    },
     "BOUNTY_ISSUER_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "CLAIMANT_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "VERIFIER_ROLE": { "tags": { "_0": [""] }, "returnNames": ["_0"] },

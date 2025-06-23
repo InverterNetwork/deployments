@@ -19,36 +19,6 @@
     ]
   },
   "abiMembers": {
-    "Initialized": { "tags": { "version": [""] }, "returnNames": [] },
-    "ModuleInitialized": {
-      "tags": {
-        "parentOrchestrator": [""],
-        "majorVersion": [""],
-        "minorVersion": [""],
-        "patchVersion": [""],
-        "url": [""],
-        "title": [""],
-        "metadata": [""],
-        "moduleTitle": [""]
-      },
-      "returnNames": []
-    },
-    "MotionCreated": { "tags": { "motionId": [""] }, "returnNames": [] },
-    "MotionExecuted": { "tags": { "motionId": [""] }, "returnNames": [] },
-    "ThresholdUpdated": {
-      "tags": { "oldThreshold": [""], "newThreshold": [""] },
-      "returnNames": []
-    },
-    "VoteCast": {
-      "tags": { "motionId": [""], "voter": [""], "support": [""] },
-      "returnNames": []
-    },
-    "VoteDurationUpdated": {
-      "tags": { "oldVotingDuration": [""], "newVotingDuration": [""] },
-      "returnNames": []
-    },
-    "VoterAdded": { "tags": { "who": [""] }, "returnNames": [] },
-    "VoterRemoved": { "tags": { "who": [""] }, "returnNames": [] },
     "MAX_VOTING_DURATION": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "MIN_VOTING_DURATION": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
     "addVoter": { "tags": { "who": [""] }, "returnNames": [] },
