@@ -18,7 +18,7 @@
       "returnNames": ["_0"]
     },
     "getPriceForRedemption": {
-      "tags": { "_0": ["decimals:extras:issuanceToken"] },
+      "tags": { "_0": ["decimals"] },
       "returnNames": ["_0"]
     },
     "getPriceSetterRole": { "tags": { "_0": [""] }, "returnNames": ["_0"] },
